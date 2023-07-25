@@ -1,0 +1,23 @@
+last-updated: 30 January 2023
+
+totals:
+  mps: 7
+  core: 15
+
+tiers:
+  - grade: C
+    mps: |
+      No Ns<br>At most 2 Rs<br>At least 2 Es<br>Remainder Ms
+    core:        9xS
+    project: R
+  - grade: B
+    mps: |
+      No Ns or Rs<br>At least 4 Es<br>Remainder Ms
+    core:        11xS
+    project: M
+  - grade: A
+    mps: |
+      No Ns or Rs<br>At least 6 Es<br>Remainder Ms
+    core:        13xS
+    project: E
+

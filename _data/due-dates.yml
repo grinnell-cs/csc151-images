@@ -1,0 +1,70 @@
+- date: 2023-01-30
+  assigned:
+    - page: /mps/mp01.html
+
+- date: 2023-02-06
+  due:
+    - page: /mps/mp01.html
+
+- date: 2023-02-08
+  assigned:
+    - page: /mps/mp02.html
+    
+- date: 2023-02-15
+  due:
+    - page: /mps/mp02.html
+
+- date: 2023-02-20
+  assigned:
+    - page: /mps/mp03.html
+
+- date: 2023-03-01
+  due:
+    - page: /mps/mp03.html
+  assigned:
+    - page: /mps/mp04.html
+
+- date: 2023-03-08
+  due:
+    - page: /mps/mp04.html
+  assigned:
+    - page: /mps/mp05.html
+
+- date: 2023-03-15
+  due:
+    - page: /mps/mp05.html
+
+- date: 2023-04-10
+  assigned:
+    - page: /mps/mp06.html
+
+- date: 2023-04-17
+  assigned:
+    - Mini-project 7
+    - Project Milestone 1
+
+- date: 2023-04-19
+  due:
+    - page: /mps/mp06.html
+  assigned:
+    - page: /mps/mp07.html
+
+- date: 2023-04-24
+  due:
+    - Project Milestone 1
+  assigned:
+    - Project Milestone 2
+
+- date: 2023-04-26
+  due:
+    - page: /mps/mp07.html
+
+- date: 2023-05-01
+  due:
+    - Project Milestone 2
+  assigned:
+    - Project Milestone 3
+
+- date: 2023-05-10
+  due:
+    - Project Milestone 3

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ ! -z "$1" ]
+then
+    tasks/fi $1
+    tasks/deploy-branch $1
+else
+    echo "Branch not specified"
+fi

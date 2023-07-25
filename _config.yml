@@ -1,0 +1,174 @@
+# Jekyll Site settings
+
+# Course title
+title: CSC 151 (Spring 2023)
+
+# baseurl is used for redirects on the same server.
+# url is the full path name
+baseurl: ""
+url: https://csc151.cs.grinnell.edu
+
+# Are we online?  If not, we're in person.  (Some of the lab instructions are
+# affected by this choice.)
+online: false
+
+# Are we in a term (seven weeks)?  If not, we're in a semester
+term: false
+
+# Set the theme color. Options are blue, green, red, orange, purple, and gray
+color: purple
+
+instructors: 
+  - name: Peter-Michael Osera (01)
+    email: osera@cs.grinnell.edu
+    homepage: https://osera.cs.grinnell.edu
+  - name: Priscilla Jiménez-Pazimno (02)
+    email: jimenezp@grinnell.edu
+    homepage: https://jimenezp.cs.grinnell.edu
+  - name: Eric Autry (03)
+    email: autryeri@grinnell.edu
+    homepage: https://ericautry.com
+
+meeting_times: |
+  MWF 8:30–9:50 AM (01), 1:00–2:20 (02), 2:30–4:00 (03), Science 3813
+
+mentors: |
+  Benjamin Stern (01), Will Chapin (02), and Mai Hoang (03)
+
+mentor_sessions:
+  - _TBA!_
+
+tutors:
+  - Sundays, 3--5 PM; Sundays through Thursdays, 7--10 PM @ Science 3813 and 3815
+
+all_work_deadline:  5:00 PM on Friday, 19 May 2023
+# final_exam_time: TBD
+
+copyright: |
+  Copyright &copy; Eric Autry, Charlie Curtsinger, Sarah Dahlby Albright, Janet
+  Davis, Nicole Eikmeier, Fahmida Hamid, Priscilla Jiménez, Barbara
+  Johnson, Titus Klinge, Peter-Michael Osera, Samuel A. Rebelsky,
+  John David Stone, Anya Vostinar, Henry Walker, and Jerod Weinman.
+
+copyright_message: |
+  Unless specified otherwise elsewhere on this page,
+  this work is licensed under a Creative Commons Attribution 3.0 Unported
+  License. To view a copy of this license, visit
+  <http://creativecommons.org/licenses/by-nc/3.0/> or send a letter to Creative
+  Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+# Be picky about front-matter
+strict_front_matter: true
+
+# Set up collections for course content
+collections:
+  admin:
+    output: false
+
+  eboards:
+    output: false
+    permalink: /eboards/:path.html
+
+  handouts:
+    output: true
+    permalink: /handouts/:path.html
+
+  las:
+    output: true
+    permalink: /las/:path.html
+
+  labs:
+    output: true
+    permalink: /labs/:path.html
+
+  links:
+    output: true
+    permalink: /links:path.html
+
+  mps:
+    output: true
+    permalink: /mps/:path.html
+
+  readings:
+    output: true
+    permalink: /readings/:path.html
+
+  sandbox:
+    output: true
+    permalink: /sandbox/:path.html
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  
+  - scope:
+      path: ""
+      type: assignments
+    values:
+      link: false
+      layout: assigned
+      collaboration: |
+        You must work individually on this assignment.
+        You may only discuss this assignment with the course staff.
+
+  - scope:
+      path: ""
+      type: labs
+    values:
+      link: true
+      section: Lab
+      layout: assigned
+      no-due-message: |
+        Lab writeups are always due by Sunday 5:00 PM central the week they are assigned.
+        However as a general rule, try to complete labs *the day that they are assigned*, so that you do not fall behind!
+
+  - scope:
+      path: ""
+      type: readings
+    values:
+      link: true
+      layout: assigned
+
+  - scope:
+      path: ""
+      type: sandbox
+    values:
+      link: true
+      layout: assigned
+
+# Build settings
+exclude:
+  - admin
+  - Gemfile
+  - Gemfile.lock
+  - INSTRUCTOR.md
+  - LICENSE
+  - Makefile
+  - README.md
+  - bin
+  - tasks
+  - vault
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    default_lang: drracket
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+
+# Plugin Settings
+plugins:
+  - jekyll-bootstrap-sass
+  - jekyll-include-cache
+
+bootstrap:
+  assets: true

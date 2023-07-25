@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ ! -z "$1" ]
+then
+    echo "Deploying branch $1..."
+    git checkout $1
+    git pull
+    tasks/deploy
+    git checkout main
+else
+    echo "Branch not specified"
+fi

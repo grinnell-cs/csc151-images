@@ -1,0 +1,15 @@
+#!/bin/bash
+
+branch=$1
+
+if [ ! -z "$1" ]
+then
+    echo "Forward-integrating main into $1 (with pull/push)..."
+    git checkout $1
+    git pull
+    git merge main --no-edit
+    git push
+    git checkout main
+else
+    echo "Branch not specified"
+fi

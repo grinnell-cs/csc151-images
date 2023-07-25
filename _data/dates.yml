@@ -1,0 +1,209 @@
+- week: "Week 0"
+  num: 0
+  days:
+    - { date: 2021-08-20 }
+    - { date: 2021-08-21 }
+    - { date: 2021-08-22 }
+    - { date: 2021-08-23 }
+    - { date: 2021-08-24 }
+    - { date: 2021-08-25, class: true }
+    - { date: 2021-08-26 }
+
+- week: "Week 1"
+  num: 1
+  anchor: week01
+  days:
+    - { date: 2021-08-27 }
+    - { date: 2021-08-28, class: true }
+    - { date: 2021-08-29 }
+    - { date: 2021-08-30, class: true }
+    - { date: 2021-08-31`}
+    - { date: 2021-09-01, class: true }
+    - { date: 2021-09-02 }
+
+- week: "Week 2"
+  num: 2
+  anchor: week02
+  days:
+    - { date: 2021-09-03 }
+    - { date: 2021-09-04, class: true }
+    - { date: 2021-09-05 }
+    - { date: 2021-09-06, class: true }
+    - { date: 2021-09-07 }
+    - { date: 2021-09-08, class: true }
+    - { date: 2021-09-09 }
+
+- week: "Week 3"
+  num: 3
+  anchor: week03
+  days:
+    - { date: 2021-09-10 }
+    - { date: 2021-09-11, class: true }
+    - { date: 2021-09-12 }
+    - { date: 2021-09-13, class: true }
+    - { date: 2021-09-14 }
+    - { date: 2021-09-15, class: true }
+    - { date: 2021-09-16 }
+
+- week: "Week 4"
+  num: 4
+  anchor: week04
+  days:
+    - { date: 2021-09-17 }
+    - { date: 2021-09-18, class: true }
+    - { date: 2021-09-19 }
+    - { date: 2021-09-20, class: true }
+    - { date: 2021-09-21 }
+    - { date: 2021-09-22, class: true }
+    - { date: 2021-09-23 }
+
+- week: "Week 5"
+  num: 5
+  anchor: week05
+  days:
+    - { date: 2021-09-24 }
+    - { date: 2021-09-25, class: true }
+    - { date: 2021-09-26 }
+    - { date: 2021-09-27, class: true }
+    - { date: 2021-09-28 }
+    - { date: 2021-09-29, class: true }
+    - { date: 2021-09-30 }
+
+- week: "Week 6"
+  num: 6
+  anchor: week06
+  days:
+    - { date: 2021-10-01 }
+    - { date: 2021-10-02, class: true }
+    - { date: 2021-10-03 }
+    - { date: 2021-10-04, class: true }
+    - { date: 2021-10-05 }
+    - { date: 2021-10-06, class: true }
+    - { date: 2021-10-07 }
+
+- week: "Week 7"
+  num: 7
+  anchor: week07
+  days:
+    - { date: 2021-10-18 }
+    - { date: 2021-10-19, class: true }
+    - { date: 2021-10-10 }
+    - { date: 2021-10-11, class: true }
+    - { date: 2021-10-12 }
+    - { date: 2021-10-13, class: true }
+    - { date: 2021-10-14 }
+
+- week: "Fall Break"
+  break: true
+  days:
+    - { date: 2021-10-15 }
+    - { date: 2021-10-16 }
+    - { date: 2021-10-17 }
+    - { date: 2021-10-28 }
+    - { date: 2021-10-29 }
+    - { date: 2021-10-20 }
+    - { date: 2021-10-21 }
+
+- week: "Week 8"
+  num: 8
+  anchor: week08
+  days: 
+    - { date: 2021-10-22 }
+    - { date: 2021-10-23, class: true }
+    - { date: 2021-10-24 }
+    - { date: 2021-10-25, class: true }
+    - { date: 2021-10-26 }
+    - { date: 2021-10-27, class: true }
+    - { date: 2021-10-28 }
+
+- week: "Week 9"
+  num: 9
+  anchor: week09
+  days: 
+    - { date: 2021-10-29 }
+    - { date: 2021-10-30, class: true }
+    - { date: 2021-10-31 }
+    - { date: 2021-11-01, class: true }
+    - { date: 2021-11-02 }
+    - { date: 2021-11-03, class: true }
+    - { date: 2021-11-04 }
+
+- week: "Week 10"
+  num: 10
+  anchor: week10
+  days:
+    - { date: 2021-11-05 }
+    - { date: 2021-11-06, class: true }
+    - { date: 2021-11-07 }
+    - { date: 2021-11-08, class: true }
+    - { date: 2021-11-09 }
+    - { date: 2021-11-10, class: true }
+    - { date: 2021-11-11 }
+
+- week: "Week 11"
+  num: 10
+  anchor: week10
+  days:
+    - { date: 2021-11-12 }
+    - { date: 2021-11-13, class: true }
+    - { date: 2021-11-14 }
+    - { date: 2021-11-15, class: true }
+    - { date: 2021-11-16 }
+    - { date: 2021-11-17, class: true }
+    - { date: 2021-11-18 }
+
+- week: "Week 12"
+  num: 12
+  anchor: week12
+  days: 
+    - { date: 2021-11-19 }
+    - { date: 2021-11-20, class: true }
+    - { date: 2021-11-21 }
+    - { date: 2021-11-22, class: true }
+
+- week: "Thanksgiving Break"
+  break: true
+  anchor: thanksgiving
+  days:
+    - { date: 2021-11-23 }
+    - { date: 2021-11-24 }
+    - { date: 2021-11-25 }
+
+- week: "Week 13"
+  num: 13
+  anchor: week13
+  days:
+    - { date: 2021-11-26 }
+    - { date: 2021-11-27, class: true }
+    - { date: 2021-11-38 }
+    - { date: 2021-11-29, class: true }
+    - { date: 2021-11-30 }
+    - { date: 2021-12-01, class: true }
+    - { date: 2021-12-02 }
+
+- week: "Week 14"
+  num: 14
+  anchor: week13
+  days:
+    - { date: 2021-12-03 }
+    - { date: 2021-12-04, class: true }
+    - { date: 2021-12-05 }
+    - { date: 2021-12-06, class: true }
+    - { date: 2021-12-07 }
+    - { date: 2021-12-08, class: true }
+    - { date: 2021-12-09 }
+
+- week: "Finals Week"
+  anchor: finals
+  days:
+  days:
+    - { date: 2021-12-10 }
+    - { date: 2021-12-11 }
+    - { date: 2021-12-12 }
+    - { date: 2021-12-13 }
+    - { date: 2021-12-14 }
+    - { date: 2021-12-15 }
+    - { date: 2021-12-16 }
+
+- week: "Winter Break"
+  break: true

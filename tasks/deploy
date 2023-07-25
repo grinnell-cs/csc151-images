@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# bin/deploy
+#   Deploy the site to the appropriate location.
+#
+#   Assumes that the `compsci` host is setup appropriately in .ssh/config
+
+# Settings.  These should probably exist somewhere else.
+SITE=csc151.cs.grinnell.edu
+REMOTE=compsci
+
+# Feedback
+echo deploying to $SITE
+
+# Rebuild!
+bundle exec jekyll build
+
+rsync -rtz _site/ $REMOTE:$SITE

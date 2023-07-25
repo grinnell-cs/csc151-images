@@ -1,0 +1,24 @@
+- assessment: Learning Assessments, Phase 1 (LAP 1)
+  goals:
+    - "**Decomposition**. Decompose a computational problem into smaller sub-problems amendable to implementation with functions."
+    - "**Procedural abstraction**. Take a concrete implementation in Racket and create a procedure that generalizes that behavior."
+    - "**Tracing**. Trace the execution of a Racket program using a substitutive model of computation."
+    - "**Primitive types**. Express basic computations over primitive values and their associated standard library functions."
+    - "**Lists**. Manipulate lists with fundamental higher-order list functions."
+    
+- assessment: Learning Assessments, Phase 2 (LAP 2)
+  goals:
+    - "**Code style**. Correct the formatting and style of an existing program."
+    - "**Software Engineering in the Small**. Write appropriate levels of documentation and unit tests for functions."
+    - "**Local bindings**. Refactor redundancy and add clarity in computations with let-bindings."
+    - "**List recursion**.  Design and write recursive functions over lists."
+    - "**Numeric recursion**.  Design and write recursive functions over the natural numbers."
+
+- assessment: Learning Assessments, Phase 3 (LAP 3)
+  goals:
+    - "**Dictionaries**.  Design and write functions that use dictionaries."
+    - "**Vectors**.  Design and write functions (potentially recursive functions) that use vectors."
+    - "**Tree recursion**.  Design and write recursive functions over trees."
+    - "**Running time**.  Use a mental model of computation to count the relevant number of operations performed by a function."
+    - "**Sorting and Searching**.  Update or modify fundamental sorting and searching algorithms or trace the execution of those algorithms over concrete inputs."
+
