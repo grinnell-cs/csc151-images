@@ -32,6 +32,9 @@ information.  To ensure that you read the information, I even give you
 [Academic integrity](academic-integrity)
   : A long document that attempts to explain key issues of academic integrity in this course and in the discipline.
 
+[AI programming assistants](ai)
+  : Some notes on why I discourage the use of AI programming assistants in my introductory classes.
+
 [Tips on working more productively](working-tips)
   : Some tips from students, mentors, and instructors.
 
