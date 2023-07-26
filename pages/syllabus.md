@@ -89,7 +89,7 @@ permalink: /syllabus/
 
 Welcome to CSC-151-{{ site.section_number }}, Grinnell College's introductory computer science course.
 In this course, we will work to develop your experience with algorithmic problem solving.
-While we will be using Racket as our programming language for this course, you will quickly see that the problem solving skills we learn in this class are applicable to other languages and in settings that don't involve programming at all.
+While we will be using Scheme as our programming language for this course, you will quickly see that the problem solving skills we learn in this class are applicable to other languages and in settings that don't involve programming at all.
 
 This semester, CSC-151 will emphasize the digital humanities, the use of computing technology to explore humanistic subjects.
 While we will primarily focus on text-based digital humanities, we are likely to touch on other approaches, too.
@@ -110,7 +110,7 @@ We will demonstrate that computational problem-solving is the essence of compute
 By the end of this course, you should be able to:
 
 + Describe the fundamentals of computer science: algorithms, data structures, and abstraction.
-+ Read and write computer programs *in the small* in the Racket programming language.
++ Read and write computer programs *in the small* in the Scheme programming language.
 + Solve problems using design strategies from functional programming: functional decomposition, computational pipelines, and recursive decomposition.
 + Carry out the basics of the software engineering process: design, documentation, development, testing, and debugging.
 
@@ -153,7 +153,7 @@ Across a 14-week term (plus a week finals), that ends up being approximately 12 
 I have not been able to get anyone to answer the question of "180 hours *for whom* and *for what grade*?", I've been given the impression that I should strive for that workload for the "average" student in a course who seeks to earn a B.
 In general, the twelve hours should work out to approximately four hours per week in class, three hours per week on readings (one hour per day), four hours per week on either mini-projects (homework assignments) or SoLAs (exams), and one hour per week for mentor sessions.
 If you find yourself working much more than the expected amount in this course, please let me know.
-It could be that other approaches, or better support resources, can help.
+It could be that other approaches to your work, or better support resources, can help.
 
 ## Diversity and inclusion
 
@@ -165,29 +165,20 @@ Therefore, I strive to create a fully inclusive setting so that we all can ultim
 
 I welcome you to talk to me as early as possible about your distinctive learning needs.
 I particularly encourage students with disabilities to meet with me and discuss how our classroom and course activities could impact their work and what accommodations would be essential.
-I will also make adjustments for students without documented disabilities.  However, I do recommend that you seek official accommodations.
-As part of the accommodations process, I recommend talking to our Coordinator for Student Disability Resources for guidance and further instructions:
+I will also make adjustments for students without documented disabilities.  However, I recommend that you seek official accommodations if it is possible and appropriate to do so.
+In particular, I recommend talking to our Coordinator for Student Disability Resources for guidance and further instructions:
 
-+ Jae Hirschman, Goodnow Hall, 3rd floor (x3089)
++ Jae Baldree, Steiner 209, x3089, baldreej@grinnell.edu
 
-You can find some additional details in [my statement on
-accommodations and adjustments](../handouts/accommodations).
+You can find some additional details in [my statement on accommodations and adjustments](../handouts/accommodations).
 
 ### Religious observance policy
 
-I also support the class's religious diversity and anyone who needs to balance academic work with religious observations.
-Please let me know by **week two** if you will need to be absent from class for any religious holidays this semester, and we can work out an appropriate schedule for making up absences or missed work.
+I also support the class's religious diversity and anyone who needs to balance academic work with religious observations.  Please let me know by the end of **week two** if you will need to be absent from class for any religious holidays this semester, and we can work out an appropriate schedule for making up absences or missed work.
 
 ### Community guidelines
 
-Our class is a community.  We should behave as such.  Among other things, that means treating others with respect, not only in the language that we use (no slurs, please), but also in taking ideas, approaches, and perspectives seriously.  We will discuss appropriate guidelines for the class throughout the semester, developing those guidelines as a community.
-
-### Pandemic issues
-
-The normal instructional structure of this course requires that you be present, physically and mentally, each day.
-However, the ongoing pandemic may disrupt some of your ability to be present physically.
-I will adapt as necessary for those who must join the class remotely or who cannot attend in either way.
-Please provide advance notice if possible.
+Our class is a community.  We should behave as such.  Among other things, that means treating others with respect, not only in the language that we use (no slurs, please), but also in taking others' ideas, approaches, perspectives, and identities seriously.  We will discuss appropriate guidelines for the class throughout the semester, developing those guidelines as a community.
 
 ### Other accommodations
 
@@ -209,53 +200,39 @@ These systems, inspired by adult learning theory, are designed to create a "low-
 Ideally, all of you should be able to meet all of the goals in a reasonable amount of time (see the note about time and workload above).
 To achieve high grades, some of you may find that you have to redo some of the work in the class.
 Many of the components of the course have "no penalty" redos available.
-See the notes below for more details.
+See the notes below and in the [handouts](../handouts) for more details.
 
 ### Deliverables
 
-I use four kinds of deliverables to assess your mastery of the material.
+I rely on five kinds of work to assess your mastery of the material.
 
-+ **Reading problems**: quick assessments of the concepts found in the daily reading in preparation for in-class activities.  To earn an A, one should show appropriate work on most of the reading problems for the semesters.  Your work not need be uniformly correct, but it should show effort.
-+ **Lab exercises**: practice problems worked on during class, frequently collaboratively, with a partner.  To earn an A, one should turn in correct solutions to most of the lab exercises.
-+ **Mini-Projects**: individually completed, small-scale programming projects that apply the weekly concepts to the themes of the course.  (We may, on occasion, refer to "mini-projects" as "demos", using the terminology from the prior term.)  To earn an A, one must do an excellent job on most of the seven mini-projects.  (You will be able to re-do any project that earns less than excellent.)
-+ **Learning assessments**: individually completed problems that directly assess your mastery of the learning goals of the course.  To earn an A, one must pass learning assessments for 26 of the 28 learning objectives.  (You will have the opportunity to retake any of the learning assessments you do not pass.)
++ **Reading problems**: quick assessments of the concepts found in the daily reading in preparation for in-class activities.  **Reading problems are generally due at 10 p.m. the night before class** (e.g., the problems associated with a reading for Wednesday's class are due Tuesday at 10 p.m.)
++ **Lab exercises**: practice problems worked on during class, frequently collaboratively, with a partner.  **Lab exercises are generally due at 10:00 p.m. the night before the next class** (e.g., the problems associated with the lab from Wednesday's class are due Thursday at 10:00 p.m.).
++ **Mini-Projects**: individually completed, small-scale programming projects that apply the weekly concepts to the themes of the course.  (We may, on occasion, refer to "mini-projects" as "demos", using the terminology from the prior term.)  To earn an A, one must do an excellent job on most of the mini-projects and the group project.  (You will be able to re-do any project that earns less than excellent.)  **Mini-Projects are generally due on Tuesdays at 10:00 p.m.**
++ **Group project**: a final, group-based project, that you will complete toward the end of the semester.  The group project brings together the various materials you've learned throughout the semesters.
++ **Learning assessments**: individually completed problems that directly assess your mastery of the learning goals of the course.  To earn an A, one must pass learning assessments for N of the M learning objectives.  (You will have the opportunity to retake any of the learning assessments you do not pass.)  **Sets of Learning Assessments will be distributed on Mondays and be due on Tuesday at 10:00 p.m.**.  There will not be mini-projects in weeks that learning assessments are given.  **Individual learning assessments will also be given in class on Fridays.**
 
-*Reading problems* and *lab exercises* are designed for you to practice and explore the concepts of the course in a supportive environment.
-Consequently, you may collaborate on these problems with your classmates, consult external resources, or ask the course staff for questions, provide that you cite them in your produced deliverable.
-These deliverables are checked primarily for completion and effort rather than total correctness.
+*Reading problems* and *lab exercises* are designed for you to practice and explore the concepts of the course in a supportive environment.  Consequently, you may collaborate on these problems with your classmates, consult external resources, or ask the course staff for questions, provide that you cite them in your produced deliverable.  These deliverables are checked primarily for completion and effort rather than total correctness.  
 
-*Mini-projects* are designed to give you the opportunity to demonstrate your knowledge and mastery on more complex problems.
-Work you turn in for mini-projects should be your own.
-You may consult others for ideas and help, provided you appropriately acknowledge that help.
+*Mini-projects* are designed to give you the opportunity to demonstrate your knowledge and mastery on more complex problems.  Work you turn in for mini-projects should be your own.  You may consult others for ideas and help, provided you appropriately acknowledge that help.  
 
-*Learning assessments* are designed to demonstrate your mastery of the courses naturally measurable learning goals.
-You may only discuss these deliverables with the course staff.
-These deliverables are checked for both correctness and appropriate design.
+*Learning assessments* are designed to demonstrate your mastery of the courses naturally measurable learning goals.  You may only discuss these deliverables with the course staff.  These deliverables are checked for both correctness and appropriate design.  Learning assessments will come in at least two different forms: Weekly in-class quizzes and regularly take-home examinations.
 
-The details of and rationale for the policies are complex enough
-that I have moved them to [a separate document on
-grading](../handouts/grading).
+The details of and rationale for the policies are complex enough that I have moved them to [a separate document on grading](../handouts/grading).
 
 ### Letter grades
 
-Letter grades for the course are determined by *bundles*, a collection of required grades for each of the deliverable categories.
-You will receive the grade corresponding to the bundle for which you meet *all* of the requirements.
-All bundles list *minimum amounts*, you may exceed the requirements for a bundle and still qualify for it.
+Letter grades for the course are determined by *bundles*, a collection of required grades for each of the deliverable categories.  You will receive the grade corresponding to the bundle for which you meet *all* of the requirements.  All bundles list *minimum amounts*, you may exceed the requirements for a bundle and still qualify for it.
 
-Note that I reserve the right to update requirements for grades as circumstances dictate over the course of the semester, *e.g.*, if a deliverable is cut.
-I will always update the requirements so that they are approximately as strict as they were previously.
+Note that I reserve the right to update requirements for grades as circumstances dictate over the course of the semester, *e.g.*, if a deliverable is cut.  I will generally update the requirements so that they are no stricter than they were previously.
 
 ---
-
-(*Last updated: {{ site.data.bundles.last-updated }}*)
 
 <table class="table">
 <thead>
 <tr>
 <th scope="col">Overall</th>
-<th scope="col">Readings ({{ site.data.bundles.totals.readings }})</th>
-<th scope="col">Labs ({{ site.data.bundles.totals.labs }})</th>
-<th scope="col">Projects ({{ site.data.bundles.totals.demos }})</th>
+<th scope="col">Projects ({{ site.data.bundles.totals.projects }})</th>
 <th scope="col">LAs ({{ site.data.bundles.totals.las }})</th>
 </tr>
 </thead>
@@ -263,42 +240,37 @@ I will always update the requirements so that they are approximately as strict a
 {% for tier in site.data.bundles.tiers %}
 <tr>
 <th scope="row">{{ tier.grade }}</th>
-<td>{{ tier.readings }}</td>
-<td>{{ tier.labs }}</td>
-<td>{{ tier.demos }}</td>
+<td>{{ tier.projects }}</td>
 <td>{{ tier.las }}</td>
 </tr>
 {% endfor %}
 </tbody>
 </table>
 
-+ **D**: 3--4 requirements of a C are met.
-+ **F**: 0--2 requirements of a C are met.
-
 **Plus/minus grades**
 
-To earn a plus/minus grade, you must have completed the requirements of one tier and meet the requirements of the next tier for *at least* one of Mini-Projects and/or LAs.
-This will arise in two situations: **C/B** and **B/A**.
-For example, you may completely meet the requirements of a *C* and at least one of Projects and/or LAs is a *B*.
+If your two primary grades are at the same level, you will earn that letter as the base grade.  I hope that you can all demonstate learning at the A level.
 
-+ If both mini-projects and LAs fulfill the requirements for the next tier, then you earn a minus grade for the higher tier, *i.e.*, *B-* if you are between a C and B.
-+ Otherwise, one of Projects and LAs fulfill the requirements for the next tier.
-  If **all of readings, labs, and quizzes** fulfill the requirements for the next tier, you earn a minus grade for the higher tier, *e.g.*, *B-* if you are between a C and B.
-  Otherwise, you earn a plus grade for the lower tier, *e.g.*, *C+* if you are between a C and B.
-+ Note that Grinnell does not award C- or D+ grades.
+If your two primary grades are at different levels (e.g., projects at the B level and learning assessments at the A level), you will generally earn a grade between the two, with the particular level dependent on where in the range of each you fall.  Note that if you receive a C on one primary grade and an A on the other, your base grade will be a B-.
+
+Your grade may also be affected by reading problems, labs, and tokens.
+
+Note that Grinnell does not permit grades of C-, D+, or D-.  A grade below C and at least D will be recorded as a D.  A grade below a D will be recorded as an F.
+
+**Reading problems and laboratory assignments**
+
+You are allowed to miss up to three reading problems and three lab assignments in the semester without penalty.  If you miss more than three reading problems or labs, your overall letter grade will be lowered by one-third of a letter grade for each two additional problems/labs you miss.  For example,
+
+* If you miss four reading problems and no more than three labs, your overall letter grade drops by one-third, such as from a B to a B- or from an A- to a B+.
 
 ### Redos
 
-Because I care more that you learn the material than that you learn it by a particular deadline, I permit redos in this course.
-Redos on learning assessments are automatically available; you may try them again on the next set of learning assessments (SoLA).
-Redos on reading responses and lab writeups are rare.
+Because I care more that you learn the material than that you learn it by a particular deadline, I permit redos for the major work in this course.
+Redos on learning assessments are automatically available. In general, you may try them again on the next set of learning assessments (SoLA).
+Redos on reading responses and lab writeups are rarely permitted.
 Please speak with me if you would like to redo a reading response or lab writeup.
 
-Your first redo on a mini-project is generally free.
-Subsequent redos on mini-projects may require tokens; see below for details.
-When you receive a graded mini-project, it should include a checklist of issues that you must address to get a higher grade.
-Please reproduce the checklist in your re-done project.
-Where appropriate, you should indicate how you addressed the issues we have described.
+Your first redo on a mini-project is generally free.  Subsequent redos on mini-projects may require tokens; see [the handout on tokens](../handouts/tokens) for details.  When you receive a graded mini-project, it will generally include a checklist of issues that you must address to get a higher grade.  Please reproduce the checklist in your re-done project.  Where appropriate, you should indicate how you addressed the issues we have described.
 
 ### Final deadline for all work
 
@@ -309,60 +281,32 @@ If you take an incomplete in the course, the only work you can make up will be o
 
 ## Tokens
 
-Tokens reflect that life inevitably rears its ugly head in some fashion and ruins your best-laid plans.
-You begin the course with **3 tokens**, and you may:
+To provide a consistent and clear mechanism for dealing with the issues that regularly come up during the semester (e.g., late work, extra resubmissions), I rely on a variant of the "[token system](../handouts/tokens)" designed by my colleague Peter-Michael Osera.  In short, you begin the semester with a few tokens and use them up as you turn in work late, show up to class late, or miss class without notifying me.  You may earn additional tokens by attending events that I deem appropriate, such as talks related to the course or your colleages' performances and competitions.
 
-+ Use **1 token** to turn in any reading problem or lab writeup up to 48 hours late.
-+ Use **1 token** to turn in a mini-project up to 48 hours late.
-+ Use **1 token** to turn in a redo of a mini-project up to 48 hours late.
-+ Use **2 tokens** for a second redo on any project.
-+ Use **1 token** to show up to class late (after we take attendance).
-+ Use **2 tokens** to miss class without reasonable notification.
+You can usually check your token status on Gradescope.  The regular status reports may also include information on tokens.
 
-In general, you may not redo reading problems or lab writeups.
-
-In most cases, I will charge tokens automatically.
-You can usually check your token status on Gradescope.
-The regular status reports may also include information on tokens.
-
-You will have opportunities to earn additional tokens throughout the semester by participating in extra-curricular activities such as attending CS community events—CS Table (most Mondays at noon CST) and CS Extras (most Thursdays at 5:00 p.m. CST).
-To earn a token, attend the event (or watch a recording within one day) and submit a one-paragraph reflection on the event in the Tokens assignment on Gradescope.
-You must submit your response paragraph within a week of the event.
-Additional information about these opportunities will be posted to Teams as they arise.
-
-If, at the end of the semester, you have used more tokens than you have, those extra tokens will count against your final grade.
-Overspending of 1--5 tokens will drop your grade by 1/3 letter.
-Overspending of 6--10 tokens will drop your grade by 2/3 letter.
-Overspending of 11--15 tokens will drop your grade by 1 letter.
-And so on and so forth.
-
-Please try not to use more tokens than you have.
+Please read [the handout on tokens](../handouts/tokens) for more details.
 
 ## Software, textbooks, references, technology, and such
 
 There are several software packages we use in this course both for learning how to program as well as conducting learning online.
 
-+ [Dr. Racket](https://racket-lang.org/): an Integrated Development Environment (IDE) for the Racket programming language.
-+ Your [Grinnell Office365 account](https://office365.grinnell.edu) for the following services:
-+ [Microsoft Teams](https://teams.microsoft.com): a collaboration tool for discussion, Q&A, and video/voice conferencing.
-+ [Youtube](https://youtube.com): course videos.
++ [Visual Studio Code](https://code.visualstudio.com), a general-purpose Integrated Development Environment (IDE).
++ [Scamper](https://github.com/slag-plt/scamper-lang), an implementation of a subset of the [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)) programming language as an extension to Visual Studio Code.
++ Your [Grinnell Office365 account](https://office365.grinnell.edu) for email and [Microsoft Teams](https://teams.microsoft.com) for discussion and collaboration.
++ [Gradescope](https://gradescope.com) for assignment submission and feedback communication.
 
 Please make sure you can access all of these resources, and please let me know if you have any problems with access.
+
+**Books**
 
 There is no required textbook for this course, as the material is written by Grinnell faculty and posted on the course website.
 However, there are some useful textbooks and references you may want to bookmark or keep handy.
 
-**Books**
-
 + [Dybvig, Kent R., _The Scheme Programming Language_ (Third Edition), MIT Press, 2003.](https://www.scheme.com/tspl3)
-  *An effective reference and guide to learning the Scheme programming language which is the basis of Racket.*
+  *An effective reference and guide to learning the Scheme programming language.*
 + [Felleisen, Matthias, Findler, Robert Bruce, Flatt, Matthew and Krishnamurthi, Shriram, _How to Design Programs_ (2nd Edition), MIT Press 2018.](http://www.htdp.org)
    *A wonderful guide, particularly for later topics in the course like higher-order programming, re-factoring, and recursion.*
-
-**References**
-
-+ [Racket Documentation](https://docs.racket-lang.org/)
-  *The canonical resource for the Racket language definition as well as documentation for its support tools and libraries.*
 
 ## Help, collaboration, academic honesty, and academic integrity
 
@@ -371,10 +315,10 @@ To help expedite your learning, you can rely on me, our class mentor, and your p
 **The Instructor, course staff, and other resources**
 
 When contacting the course staff, please use direct messages (DM) on Microsoft Teams.
-While we will generally not respond immediately—we will check our messages at fixed times throughout the day—we will prioritize responses to student questions over Teams versus queries sent through other means, *e.g.*, email.
+While we will generally not respond immediately—--we generally check our messages at fixed times throughout the day—--we will prioritize responses to student questions over Teams versus queries sent through other means, *e.g.*, email.
 
-The **course mentors** also hold optional *mentor sessions* outside of regular class time.
-In these sessions, the mentors guide you through practice problems designed to help you master the material and answer any questions you have about the material.
+The **course mentor** also holds weekly *mentor sessions* outside of regular class time.
+In these sessions, the mentor guides you through practice problems designed to help you master the material and answer any questions you have about the material.
 I highly recommend you attend each of these sessions, even if you feel like you understand the material.
 You never know what you don't know, and the purpose of these sessions is to bring these blind spots to light!
 
@@ -388,127 +332,66 @@ Note that if I find that you have fallen behind on assignments or are showing di
 
 **Peer learning**
 
-Utilizing discussion with peers to facilitate your learning is a critical skill for success in computer science.
-However, at the same time, you must be aware that getting stuck and pushing through challenging problems is essential for robust learning.
-To this end, we allow the following forms of collaboration.
+Utilizing discussion with peers to facilitate your learning is a critical skill for success in computer science.  However, at the same time, you must be aware that getting stuck and pushing through challenging problems is essential for robust learning.  To this end, we allow the following forms of collaboration.
 
-+ You are encouraged to collaborate with your peers on reading exercises, labs, and projects.
-  You may also consult the course staff as well as other people and external resources.
-  In all cases, you (or your group in the case of group work) should independently write up your solutions and cite all the resources you used in authoring your work, including the other students.
++ You are encouraged to collaborate with your peers on reading exercises, labs, and projects.  You may also consult the course staff as well as other people and external resources.  In all cases, you (or your group in the case of group work) should independently write up your solutions and cite all the resources you used in authoring your work, including the other students.
 + You may only discuss learning assessments and quizzes with the course staff.
-  When completing assessments and quizzes, you may only consult the course website and the Racket Documentation page in developing your program.
-  You may not collaborate with peers, consult external resources beyond the ones mentioned above, or share information about these assignments with others.
+  When completing assessments and quizzes, you may only consult the course website and any additional documentation we provide.  You may not collaborate with peers, consult external resources beyond the ones mentioned above, or share information about these assignments with others.
 
-Keep in mind that *adaptation of pre-existing code* whether it comes from a peer, myself, or the Internet, requires a citation in cases where it is allowed.
-Also, whenever you are expected to show your code's output, you are expected to reproduce the output faithfully.
-In other words, you should not forge the results of your programs!
+Keep in mind that *adaptation of pre-existing code* whether it comes from a peer, myself, or the Internet, requires a citation in cases where it is allowed.  Also, whenever you are expected to show your code's output, you are expected to reproduce the output faithfully.  In other words, you should not forge the results of your programs!
 
-In all cases, the work that you produce should be your own.
-The golden rule is that you should be capable of reproducing your deliverable on the spot with minimal effort if it was accidentally deleted.
+In all cases, the work that you produce should be your own.  In general, you should be capable of reproducing any part of your deliverable with minimal effort if it was accidentally deleted.
 
-If you feel that the stress and pressure of the course are compelling you to violate the academic honesty policies of the course and the college as explained in the [student handbook](https://catalog.grinnell.edu/content.php?catoid=12&navoid=2537#Honesty
-_in_Academic_Work), **please talk to me as soon as possible**.
-The course's grading policies as designed to help you manage your time in light of the different stressors in your life.
-I will do my best to work with you to figure out how to help you better manage your time relative to your learning goals and desired achievement level for the course.
+If you feel that the stress and pressure of the course or the semester are leading you to consider violating the academic honesty policies of the course and the College as explained in the [student handbook](https://catalog.grinnell.edu/content.php?catoid=12&navoid=2537#Honesty _in_Academic_Work), **please talk to me as soon as possible**.  The course's grading policies as designed to help you manage your time in light of the different stressors in your life.  I will do my best to work with you to figure out how to help you better manage your time relative to your learning goals and desired achievement level for the course.
 
-And just if that wasn't enough, you should check out [my extended statement
-on academic honesty and integrity](../handouts/academic-honesty).
+And just if that wasn't enough, you should check out [my extended statement on academic honesty and integrity](../handouts/academic-honesty).
 
 **Sharing of course materials**
 
-Our goal is to create an inclusive learning environment where people feel free to share, fail, and ultimately grow in knowledge.
-To create such an environment, it is imperative that we be mindful of what we share outside of our learning space.
-To this end, I request that you refraining from sharing any recordings of our class meetings with others.
-Recordings of class meetings that we provide, *e.g.*, recorded through Microsoft Teams, are meant for your *personal use* and should not be shared outside of the class.
+Our goal is to create an inclusive learning environment where people feel free to share, fail, and ultimately grow in knowledge.  To create such an environment, it is imperative that we be mindful of what we share outside of our learning space.  To this end, I request that you refraining from sharing any recordings of our class meetings with others.  Recordings of class meetings that we provide, *e.g.*, recorded through Microsoft Teams, are meant for your *personal use* and should not be shared outside of the class.
 
-Furthermore, while you retain [copyright](https://www.plagiarism.org/blog/2017/09/25/do-i-own-my-work-even-if-im-just-a-student) of the work you produce in this course, we must still uphold the academic integrity of this course.
-To this end, you may not share copies of your assignments with others (unless otherwise allowed by the course policies) or upload your assignments to third party websites unless substantial changes are made to the assignment (*e.g.*, significant extensions and improvements to your code) so that it is clear that the end product is significantly different from what was asked in original assignment.
-I do recognize that there are times where you want to do this, *e.g.*, uploading projects to Github for your resume or to show to friendds and family, and so I encourage you come talk to me in advance, so that we can ensure that you upload a meaningful project that does not run afoul of this policy.
+Furthermore, while you retain [copyright](https://www.plagiarism.org/blog/2017/09/25/do-i-own-my-work-even-if-im-just-a-student) of the work you produce in this course, we must still uphold the academic integrity of this course.  To this end, you may not share copies of your assignments with others (unless otherwise allowed by the course policies) or upload your assignments to third party websites unless substantial changes are made to the assignment (*e.g.*, significant extensions and improvements to your code) so that it is clear that the end product is significantly different from what was asked in original assignment.
 
-ITS has released and then temporarily withdrawn policies that may limit your ability to share your work with others.
-I consider those policies inappropriate for many reasons.
-The CS department managed to convince the College to revisit them, but we are not sure what the new policies will look like.  Stay tuned.
+I recognize that there are times where you want to do this, *e.g.*, uploading projects to Github for your resume or to show to friendds and family, and so I encourage you come talk to me in advance, so that we can ensure that you upload a meaningful project that does not run afoul of this policy.
+
+ITS has released and then temporarily withdrawn policies that may limit your ability to share your work with others.  I consider those policies inappropriate for many reasons.  The CS department managed to convince the College to revisit them, but we are not sure what the new policies will look like.  Stay tuned.
 
 **AI programming assistants**
 
-Please avoid the use of AI-based programming assistants, such as ChatGPT or Microsoft IntelliCode in this course.  You should also review [my policy on AI programming assistants](handouts/ai).
+Please avoid the use of AI-based programming assistants, such as ChatGPT or Microsoft IntelliCode in this course.  You should also review [my policy on AI programming assistants](../handouts/ai).
 
 ## Other issues
 
 **Technology**
 
-This may be your first semester learning with Teams.
-Things will likely mess up from time to time.
-That's okay; it's part of the process.
-(I can almost guarantee that if we were in person, some aspect of the technology would break.  It has every other time. Usually it's the projection system.)
+This may be your first semester learning with Teams.  Things will likely mess up from time to time.  That's okay; it's part of the process.
 
-This may be your first semester using Gradescope.
-Gradescope does some things well and some things less wel.
-Things will likely mess up from time to time.
-That's okay; it's part of the process.
-I'll make adjustments when you have difficulty.
-I hope you'll accept my apologies when I do something wrong
-(or at least fail to adjust my processes to the way Gradescope thinks they
-should be done).
+This may be your first semester using Gradescope.  Gradescope does some things well and some things less well.  Things will likely mess up from time to time.  That's okay; it's part of the process.  I'll make adjustments when you have difficulty.  I hope you'll accept my apologies when I do something wrong (or at least fail to adjust my processes to the way Gradescope thinks they should be done).
 
-I've taught Scheme/Racket for longer than most of you have been alive.
-This is likely your first time encountering Scheme/Racket.
-You will mess up from time to time.
-Believe it or not, but I will, too.
-(I'll be much faster at fixing and identifying problems, though; at least I hope I will be.)
-That's okay; mistakes are part of the process.
+I've taught Scheme for longer than most of you have been alive.  This is likely your first time encountering Scheme.  You will mess up from time to time.  Believe it or not, but I will, too.  (I'll be much faster at fixing and identifying problems, though; at least I hope I will be.) That's okay; mistakes are part of the process.
+
+**Multiple sections**
+
+There are multiple sections of this course, with multiple "themes".  While the instructors and mentors will take generally similar approaches to the material, you'll see that there are differences.  These differences should not affect your overall learning in the course.
 
 **Names**
 
-I get names wrong.  I get names wrong all the time.  Evidence
-suggests that I am not just bad at remembering names, I also have
-some brain differencees that regularly lead me to mix up peoples'
-names.  I think, for example, of two of my favorite research students,
-one with blonde hair, from Minnesota, who also served as a teaching
-assistant for my software design course; the other with dark hair,
-from Massachusetts, who brought a wealth of background in education
-to my research projects.  I can tell you a lot about each student
-(although I wouldn't without their permission), including hobbies,
-where they studied abroad, what they are doing now (or at least
-what they were doing before the pandemic hit), and more.  But I
-inevitably reversed their names, calling Minnesota Massachusetts
-and Massachusetts Minnesota.
+I get names wrong.  I get names wrong all the time.  Evidence suggests that I am not just bad at remembering names, I also have some brain differencees that regularly lead me to mix up peoples' names.  I think, for example, of two of my favorite research students, one with blonde hair, from Minnesota, who also served as a teaching assistant for my software design course; the other with dark hair, from Massachusetts, who brought a wealth of background in education to my research projects.  I can tell you a lot about each student (although I wouldn't without their permission), including hobbies, where they studied abroad, what they are doing now (or at least what they were doing a year so so ago), and more.  But I inevitably reversed their names, calling Minnesota Massachusetts and Massachusetts Minnesota.
 
-When I discussed this issue with my family, my sons laughed and said "Dad,
-you get *our* names backwards, too; we just ignore you when you do so."
-And I've heard from other students I value highly that I do this and
-don't always notice.  (The other day, I almost referred to an alum
-by a different name.)
+When I discussed this issue with my family, my sons laughed and said "Dad, you get *our* names backwards, too; we just ignore you when you do so." And I've heard from other students I value highly that I do this and don't always notice.  (The other day, I almost referred to an alum by a different name.)
 
-If I use the wrong name for you, it is not a sign that I do not
-respect your or that I do not care about you.  It's a deficiency
-in my processing, and one that I seem unable to fix.  Please accept
-and understand that disability, just as I will do my best to accept
-and understand your own differences.
+If I use the wrong name for you, it is not a sign that I do not respect your or that I do not care about you.  It's a deficiency in my processing, and one that I seem unable to fix.  Please accept and understand that disability, just as I will do my best to accept and understand your own differences.
 
 **My health**
 
-I had a heart attack in spring 2021.
-For my health, I am trying to limit my work hours to appropriate amounts, typically 40 hours per week.
-I apologize if that means that I am not always caught up on my work or available at times you would like.
+I had a heart attack in spring 2021.  For my health, I am trying to limit my work hours to appropriate amounts, typically 40 hours per week.  I apologize if that means that I am not always caught up on my work or available at times you would like.
 
-I will also try to be respectful of your time.
-Please let me know if you find yourself regularly spending more than twelve of so hours per week on this class, which is what the College considers appropriate for a four-credit course.  
-(We have four hours in class each week, we suggests that you have eight hours out-of-class for readings, review, and mini projects.)
+I will also try to be respectful of your time.  Please let me know if you find yourself regularly spending more than twelve of so hours per week on this class, which is what the College considers appropriate for a four-credit course.  (We have four hours in class each week, we suggests that you have eight hours out-of-class for readings, review, and mini projects.)
 
 **Teaching is performative**
 
-I believe that all teaching is a form of performance.
-That performance may not always be explicit.
-Nonetheless, I perform a particular role, perhaps even roles.
-In my roles, I may say some things that seem strange.
-Remember; it's a performance.
+I believe that all teaching is a form of performance.  That performance may not always be explicit.  Nonetheless, I perform a particular role, perhaps even roles.  In my roles, I may say some things that seem strange.  Remember; it's a performance.
 
 **Feeling overwhelmed**
 
-You may feel a bit overwhelmed by this point.
-I know that I do after re-reading most of it and re-writing some of it.
-But **don't worry**.
-CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic.  (Yes, I know I am biased.)
-Most students who take the course excel.
-We'll enjoy this together.
+You may feel a bit overwhelmed by this point.  I know that I do after re-reading most of it and re-writing some of it.  But **don't worry**.  CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic.  (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
