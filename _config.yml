@@ -1,12 +1,12 @@
 # Jekyll Site settings
 
 # Course title
-title: CSC 151 (Spring 2023)
+title: CSC 151-01 (Fall 2023)
 
 # baseurl is used for redirects on the same server.
 # url is the full path name
 baseurl: ""
-url: https://csc151.cs.grinnell.edu
+url: https://rebelsky.cs.grinnell.edu/Courses/CSC151/2023Fa/
 
 # Are we online?  If not, we're in person.  (Some of the lab instructions are
 # affected by this choice.)
@@ -16,27 +16,27 @@ online: false
 term: false
 
 # Set the theme color. Options are blue, green, red, orange, purple, and gray
-color: purple
+color: blue 
 
-instructors: 
-  - name: Peter-Michael Osera (01)
-    email: osera@cs.grinnell.edu
-    homepage: https://osera.cs.grinnell.edu
-  - name: Priscilla Jiménez-Pazimno (02)
-    email: jimenezp@grinnell.edu
-    homepage: https://jimenezp.cs.grinnell.edu
-  - name: Eric Autry (03)
-    email: autryeri@grinnell.edu
-    homepage: https://ericautry.com
+instructor: Samuel A. Rebelsky
+
+instructor_title: Professor Rebelsky
+
+instructor_homepage: https://rebelsky.cs.grinnell.edu
+
+instructor_email: rebelsky@grinnell.edu
 
 meeting_times: |
-  MWF 8:30–9:50 AM (01), 1:00–2:20 (02), 2:30–4:00 (03), Science 3813
+  MWF 8:30&ndash;9:50 AM in Science 3813
 
-mentors: |
-  Benjamin Stern (01), Will Chapin (02), and Mai Hoang (03)
+office_hours:
+  - TBD
+
+mentor: 
+  - Ellie Seehorn
 
 mentor_sessions:
-  - _TBA!_
+  - TBD
 
 tutors:
   - Sundays, 3--5 PM; Sundays through Thursdays, 7--10 PM @ Science 3813 and 3815
