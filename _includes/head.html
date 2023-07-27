@@ -3,9 +3,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>{{ site.title }} - {{ page.title }}</title>
+  <title>{{ page.title }} - {{ site.title }}</title>
   
-  <link rel="stylesheet" href="{{ '/assets/css/theme-purple.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/theme-COLOR.css' | replace: 'COLOR', site.color | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/syntax-drracket.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/syntax-shell.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/syntax-xml.css' | relative_url }}">
