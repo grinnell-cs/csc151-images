@@ -137,18 +137,18 @@ permalink: /schedule/
                   <div class="clearfix visible-xs-block"></div>
                   <div class="additional col-md-4 col-sm-4 col-xs-12 {% unless additional %}hidden-xs{% endunless %}">
                     <div class="row">
-                      {% if additional.assigned %}
-                        <div class="col-lg-5 col-md-12 col-sm-12 col-xs-6">
-                          <strong>Assigned</strong>
-                          {% assign assigned = additional.assigned %}
-                          {% include schedule_items.html items=assigned default="_No work assigned_" %}
-                        </div>
-                      {% endif %}
                       {% if additional.due %}
                         <div class="col-lg-7 col-md-12 col-sm-12 col-xs-6">
                           <strong>Due</strong>
                           {% assign due = additional.due %}
                           {% include schedule_items.html items=due default="_No work due_" %}
+                        </div>
+                      {% endif %}
+                      {% if additional.assigned %}
+                        <div class="col-lg-5 col-md-12 col-sm-12 col-xs-6">
+                          <strong>Assigned</strong>
+                          {% assign assigned = additional.assigned %}
+                          {% include schedule_items.html items=assigned default="_No work assigned_" %}
                         </div>
                       {% endif %}
                     </div> <!-- row -->
