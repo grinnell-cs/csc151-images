@@ -90,8 +90,11 @@ permalink: /schedule/
                 <span class="full-date text-nowrap">
                   {{ day.date | date: "%b %e" }} 
                   {% if class %} 
+                    {% if day.unnumbered %}
+                    {% else %}
                     <br/>
                     <em>class {{ classnum }}</em>
+                    {% endif %}
                   {% endif %}
                 </span>
               </div>
