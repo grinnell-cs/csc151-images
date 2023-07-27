@@ -3,6 +3,7 @@
   summary: |
     We begin the class by exploring the definition of computer
     science and by trying to write some basic algorithms.
+  notes: /eboards/eboard01.html
 
 - topic: Getting started with Scheme
   abbrev: racket-tech
@@ -23,7 +24,7 @@
   summary: |
     We look at the fundamental building block of computation in functional
     programming languages, the expression, and build an appropriate model of
-    how expressions "compute."
+    how expressions "compute".
   reading:
     - page: /readings/computation-via-expressions.html
   lab:
