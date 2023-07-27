@@ -1,16 +1,18 @@
 #!/bin/bash
 
-# bin/deploy
+# tasks/deploy
 #   Deploy the site to the appropriate location.
 #
-#   Assumes that the `compsci` host is setup appropriately in .ssh/config
+#   Assumes that the `reclaim` host is setup appropriately in .ssh/config
 
 # Settings.  These should probably exist somewhere else.
-SITE=csc151.cs.grinnell.edu
-REMOTE=compsci
+SEMESTER=2023Fa
+COURSE=CSC151
+SITE=public_html/Courses/$COURSE/$SEMESTER/
+REMOTE=rebelsky.cs.grinnell.edu
 
 # Feedback
-echo deploying to $SITE
+echo $SITE
 
 # Rebuild!
 bundle exec jekyll build
