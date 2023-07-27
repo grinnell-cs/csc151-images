@@ -204,19 +204,22 @@ See the notes below and in the [handouts](../handouts) for more details.
 
 ### Deliverables
 
-I rely on five kinds of work to assess your mastery of the material.
+I rely on six kinds of work to assess your mastery of the material.
 
-+ **Reading problems**: quick assessments of the concepts found in the daily reading in preparation for in-class activities.  **Reading problems are generally due at 10 p.m. the night before class** (e.g., the problems associated with a reading for Wednesday's class are due Tuesday at 10 p.m.)
-+ **Lab exercises**: practice problems worked on during class, frequently collaboratively, with a partner.  **Lab exercises are generally due at 10:00 p.m. the night before the next class** (e.g., the problems associated with the lab from Wednesday's class are due Thursday at 10:00 p.m.).
-+ **Mini-Projects**: individually completed, small-scale programming projects that apply the weekly concepts to the themes of the course.  (We may, on occasion, refer to "mini-projects" as "demos", using the terminology from the prior term.)  To earn an A, one must do an excellent job on most of the mini-projects and the group project.  (You will be able to re-do any project that earns less than excellent.)  **Mini-Projects are generally due on Tuesdays at 10:00 p.m.**
++ **Reading problems**: quick assessments of the concepts found in the daily reading in preparation for in-class activities.  _**Reading problems are generally due at 10 p.m. the night before class**_ (e.g., the problems associated with a reading for Wednesday's class are due Tuesday at 10 p.m.)
++ **Lab exercises**: practice problems worked on during class, frequently collaboratively, with a partner.  _**Lab exercises are generally due immediately before the next class**_ (e.g., the problems associated with the lab from Wednesday's class are due Friday at 8:30 a.m. and the problems associated with the lab from Friday's class are due Monday at 8:30 a.m.).
++ **Mini-Projects**: individually completed, small-scale programming projects that apply the weekly concepts to the themes of the course.  (We may, on occasion, refer to "mini-projects" as "demos", using the terminology from the prior term.)  To earn an A, one must do an excellent job on most of the mini-projects and the group project.  (You will be able to re-do any project that earns less than excellent.)  _**Mini-Projects are generally due on Thursdays at 10:00 p.m.**_
 + **Group project**: a final, group-based project, that you will complete toward the end of the semester.  The group project brings together the various materials you've learned throughout the semesters.
-+ **Learning assessments**: individually completed problems that directly assess your mastery of the learning goals of the course.  To earn an A, one must pass learning assessments for N of the M learning objectives.  (You will have the opportunity to retake any of the learning assessments you do not pass.)  **Sets of Learning Assessments will be distributed on Mondays and be due on Tuesday at 10:00 p.m.**.  There will not be mini-projects in weeks that learning assessments are given.  **Individual learning assessments will also be given in class on Fridays.**
++ **Learning assessments**: individually completed problems that directly assess your mastery of the learning goals of the course.  To earn an A, one must pass learning assessments for 22 of the 24 learning objectives.  (You will have the opportunity to retake any of the learning assessments you do not pass.)  _**Sets of Learning Assessments will be distributed on four Wednesdays throughout the semester and be due on Thursdays at 10:00 p.m.**_.  There will not be mini-projects in weeks that learning assessments are given.  _**Single learning assessments will also be given in class on Fridays.**_
++ **Metacognitive reflections**: Short reflective pieces given before and after most assignments and exams.  _**Pre-task reflections are generally due the evening a task is assigned.  Post-task reflections are generally due the day after the task is due.**_
 
 *Reading problems* and *lab exercises* are designed for you to practice and explore the concepts of the course in a supportive environment.  Consequently, you may collaborate on these problems with your classmates, consult external resources, or ask the course staff for questions, provide that you cite them in your produced deliverable.  These deliverables are checked primarily for completion and effort rather than total correctness.  
 
 *Mini-projects* are designed to give you the opportunity to demonstrate your knowledge and mastery on more complex problems.  Work you turn in for mini-projects should be your own.  You may consult others for ideas and help, provided you appropriately acknowledge that help.  
 
-*Learning assessments* are designed to demonstrate your mastery of the courses naturally measurable learning goals.  You may only discuss these deliverables with the course staff.  These deliverables are checked for both correctness and appropriate design.  Learning assessments will come in at least two different forms: Weekly in-class quizzes and regularly take-home examinations.
+*Learning assessments* are designed to demonstrate your mastery of the courses naturally measurable learning goals.  You may only discuss these deliverables with the course staff.  These deliverables are checked for both correctness and appropriate design.  Learning assessments will come in at least two different forms: Weekly in-class quizzes (on Fridays) and regular take-home examinations (distributed on Wednesdays and due on Thursdays at 10:00 p.m.).
+
+*Metacognitive reflections* are intended to help you build your broader metacognitive skills and will generally ask you to reflect on what you expect from each project (assignment) or SoLA (exam) (e.g., "What will be the hardest part of this project?", "Which topic will you struggle most with on the SoLA?", "How can you best succeed on this SoLA?") and what you discovered from each project or SoLA (e.g., "What aspect of the project took you the most time and why?", "How can you do better on the next SoLA?").
 
 The details of and rationale for the policies are complex enough that I have moved them to [a separate document on grading](../handouts/grading).
 
@@ -253,15 +256,21 @@ If your two primary grades are at the same level, you will earn that letter as t
 
 If your two primary grades are at different levels (e.g., projects at the B level and learning assessments at the A level), you will generally earn a grade between the two, with the particular level dependent on where in the range of each you fall.  Note that if you receive a C on one primary grade and an A on the other, your base grade will be a B-.
 
-Your grade may also be affected by reading problems, labs, and tokens.
+Your grade may also be affected by reading problems, labs, metacognitive reflections, and tokens.
 
 Note that Grinnell does not permit grades of C-, D+, or D-.  A grade below C and at least D will be recorded as a D.  A grade below a D will be recorded as an F.
 
-**Reading problems and laboratory assignments**
+**Reading problems, laboratory assignments, and metacognitive reflections**
 
-You are allowed to miss up to three reading problems and three lab assignments in the semester without penalty.  If you miss more than three reading problems or labs, your overall letter grade will be lowered by one-third of a letter grade for each two additional problems/labs you miss.  For example,
+You are allowed to miss up to six total reading problems, lab assignments, and metacognitive reflections in the semester without penalty.  If you miss more than reading problems, labs, or reflections, your overall letter grade will be lowered by one-third of a letter grade for each two additional problems, labs, or reflections you miss. Excesses of one also result in a loss.  For example,
 
-* If you miss four reading problems and no more than three labs, your overall letter grade drops by one-third, such as from a B to a B- or from an A- to a B+.
+* If you miss four reading problems, one lab, and one reflection, you've missed *six* total things and there is *no penalty*.
+* If you miss three reading problems, three labs, and two reflections, you've missed *eight* total things, which is two more than you are permitted.  *Your overall letter grade drops by one-third*, such as from a B to a B- or from an A- to a B+.
+* If you miss three reading problems, two labs, and two reflections, you've missed *seven* total things, which is one more than you are permitted.  Once again, *your total letter grade drops by one-third*.
+* If you miss three reading problems, four labs, and two reflections, you've missed *nine* total things, which is three more than you are permitted.  *Your overall letter grade drops by two-thirds*, such as from a B to a C+ or from an A- to a B.
+* If you miss ten reading problems, zero labs, and zero reflections, yo've missed *ten* total things, which is four more than you are permitted.  *Your overall letter grade drops by a full letter*, such as from a B to a C, from an A- to a B-, or from a B- to a D (there is no C-).
+
+I hope that you will do your best to miss as few reading problems, labs, and reflections as possible.
 
 ### Redos
 
