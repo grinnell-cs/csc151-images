@@ -54,19 +54,19 @@ information.  To ensure that you read the information, I even give you
 [SamR's Style Guide for Racket](style-guide)
   : Opinions and expectations on what your code should look like.
 
-[Some tips and tricks for DrRacket](drracket-tips)
-  : Just what it says; a selection of tips for DrRacket.
-
 [Tracing `alphabetically-first`](tracing-alphabetically-first)
   : An exploration of some definitions of a recursive procedure.
 
-## Previous versions of the course
+## Other versions of the course
 
 These also aren't strictly handouts, but I didn't have another place for them.
 The list is incomplete.
 
-[CSC 151-01 2021 Fall (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2021Fa)
-  : Last semester's offering of the course.
+[CSC-151 2023 Fall (Autry)](https://csc151.cs.grinnell.edu)
+  : The other Fall 2023 section of the course.
 
-[CSC 151 2019 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2019S/home/)
-  : The first offering of this version of the CSC 151 course
+[CSC-151 2022 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2022Sp)
+  : My previous offereing of 151, focusing on digital humanities.
+
+[CSC-151 2017 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC151/old 2017Sp)
+  : The last version of the media computation course.  Maintained primarily so that I can keep a link around.
