@@ -141,8 +141,8 @@
     - { date: 2023-11-11 }
 
 - week: "Week 11"
-  num: 10
-  anchor: week10
+  num: 11
+  anchor: week11
   days:
     - { date: 2023-11-12 }
     - { date: 2023-11-13, class: true }
@@ -195,7 +195,6 @@
 
 - week: "Finals Week"
   anchor: finals
-  days:
   days:
     - { date: 2023-12-10 }
     - { date: 2023-12-11 }
