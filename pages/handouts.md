@@ -68,5 +68,5 @@ The list is incomplete.
 [CSC-151 2022 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2022Sp)
   : My previous offereing of 151, focusing on digital humanities.
 
-[CSC-151 2017 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC151/old 2017Sp)
+[CSC-151 2017 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2017S)
   : The last version of the media computation course.  Maintained primarily so that I can keep a link around.
