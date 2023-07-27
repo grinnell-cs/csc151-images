@@ -102,6 +102,17 @@
 - date: 2023-12-06
   assigned:
     - SoLA 4
+
 - date: 2023-12-07
   due:
     - SoLA 4
+
+- date: 2023-12-11
+  assigned:
+    - SoLA 5 (_optional_)
+
+- date: 2023-12-15
+  due:
+    - SoLA 5 (_optional_, by 5pm)
+    - All remaining MP redos (_optional_, by 5pm)
+

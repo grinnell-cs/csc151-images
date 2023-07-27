@@ -68,6 +68,46 @@
   lab:
     - page: /labs/basic-types.html
 
+- topic: Pair programming
+  abbrev: pair-programming
+  summary: |
+    We explore the whys and hows of working with others.  
+  reading:
+    - title: How Pair Programming Really Works (Wray)
+      resource: /files/PairProgramming.pdf
+    - title: Coping with Hitchhikers and Couch Potatoes on Teams (from B. Oakley et. al (2004).  Turning Student Groups into Effective Teams.  _Journal of Student-Centered Learning_ 2 (1).)
+      resource: /files/OakleyHitchhikers2004.pdf
+  lab:
+    - (TBA)
+
+- topic: RGB colors
+  abbrev: rgb-colors
+  summary: |
+    We explore one of the basic color models used by computers.
+  reading:
+    - page: /readings/design-and-color.html
+    - page: /readings/rgb-colors.html
+  lab:
+    - page: /labs/rgb-colors
+
+- topic: Transforming colors
+  abbrev: transforming-rgb
+  summary: |
+    We consider additional mechanisms for working with RGB colors.
+  reading:
+    - page: /readings/transforming-rgb.html
+  lab:
+    - page: /labs/transforming-rgb.html
+
+- topic: Transforming images
+  abbrev: transforming-images
+  summary: |
+    We expand our understanding of RGB transformations to image transformations.
+  reading:
+    - page: /readings/transforming-images.html
+  lab:
+    - page: /labs/transforming-images.html
+
 - topic: Booleans, predicates, and conditionals
   abbrev: booleans
   summary: |
@@ -77,6 +117,26 @@
     - page: /readings/conditionals.html
   lab:
     - page: /labs/conditionals.html
+
+- topic: Drawings as values
+  abbrev: drawings
+  summary: |
+    We return to our first model of images to explore a few more mechanisms for working with with such images and to compare models.
+  reading:
+    - page: /readings/drawings-as-values.html
+  lab:
+    - page: /labs/drawings-as-values.html
+
+- topic: Software engineering fundamentals
+  abbrev: software-engineering
+  summary: |
+    We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
+  reading:
+    - page: /readings/documenting-your-code.html
+    - page: /readings/unit-testing.html
+    - page: /readings/hypothesis-driven-debugging.html
+  lab:
+    - page: /labs/documentation-and-testing.html
 
 - topic: Lists
   abbrev: lists
@@ -89,101 +149,72 @@
   lab:
     - page: /labs/list-basics.html
 
-- topic: Computational pipelines
-  abbrev: computational-pipelines
+- topic: Lists, continued
+  abbrev: lists-continued
   summary: |
-    We continue our exploration of lists in Scheme, including "the big
-    three" list procedures: map, fold, and filter.
+    We explore ways to use lists to work with collections of drawings 
+    using "the big three" list procedures: `map`, `reduce`, and `filter`.
+  reading:
+    - page: /readings/list-big-three.html
+    - page: /readings/list-more.html
+  lab:
+    - page: /labs/drawing-lists.html
+
+- topic: Anonymous procedures
+  abbrev: anonymous
+  summary: |
+    We explore ways to write procedures without using `define` (and,
+    sometimes, without even using `lambda`).  We also consider why
+    we might do so.
   reading:
     - page: /readings/anonymous-procedures.html
-    - page: /readings/list-big-three.html
   lab:
-    - page: /labs/lists-more.html
+    - page: /labs/anonymous-procedures.html
 
-- topic: Local bindings
-  abbrev: let
+- topic: Images as functions
+  abbrev: image-compute
   summary: |
-    We explore the issue of redundacy in code: why is it bad? How can we use
-    let-bindings to reduce redundancy?
+    We conside ways to treat images as functions from positions to colors.
   reading:
-    - page: /readings/local-bindings.html
+    - page: /readings/image-compute.html
   lab:
-    - page: /labs/local-bindings.html
+    - page: /labs/image-compute.html
 
-- topic: Musical compositions
-  abbrev: music
-  summary: |
-    We introduce the musical composition features of Scamper as well as give a gentle introduction to music theory.
-  reading:
-    - page: /readings/sound-and-music.html
-    - page: /readings/harmonics.html
-  lab:
-    - page: /labs/music-in-scamper.html
-
-- topic: |
-    Core Exam #1
-  abbrev: exam1
-
-- topic: Collaborative problem solving
-  abbrev: pair-programming
-  summary: |
-    We explore the whys and hows of working with others, in particular, the
-    pair programming techniques we use in this course.
-  reading:
-    - page: /readings/collaborative-problem-solving.html
-  lab:
-    - (Presented in class!)
-
-- topic: Randomness
-  abbrev: randomness
-  summary: |
-    We consider Scheme's `random` procedure and how one might use
-    that procedure in generating language.
-  reading:
-    - (No required reading for today!)
-    #- page: /readings/randomness.html
-  lab:
-    - page: /labs/exploring-randomness.html
-
-- topic: Software engineering fundamentals
-  abbrev: software-engineering
-  summary: |
-    We consider the trifecta of software engineering: documentation, testing, and debugging.
-  reading:
-    - page: /readings/documenting-your-code.html
-    - page: /readings/unit-testing.html
-    - page: /readings/hypothesis-driven-debugging.html
-  lab:
-    - page: /labs/documentation-and-testing.html
-
-- topic: Thinking recursively
+- topic: Introduction to list recursion
   abbrev: recursion-intro
   summary: |
     We begin our exploration of *recursion*, the most general form
     of repetition available in Scheme.  You can use recursion to
     both build and iterate over different kinds of values.
   reading:
-    - page: /readings/thinking-recursively.html
-  lab:
-    - page: /labs/pattern-matching-and-recursive-tracing.html
+    - page: /readings/list-composition.html
+    - page: /readings/recursion-basics.html
 
-- topic: Introduction to list recursion
+- topic: Introduction to list recursion, continued
   summary: |
-    We explore how to design recursive functions involving lists.
+    We continue our introductory exploration of recursion in Scheme.
   reading:
-    - page: /readings/pattern-matching.html
-    - page: /readings/recursion-over-lists.html
+    - page: /readings/recursion-basics.html
+  lab:
+    - page: /labs/recursion-basics.html
+
+- topic: Recursion practice
+  summary: |
+    We continue to continue our introductory exploration of recursion
+    in Racket.
+  reading:
+    - page: /readings/recursion-magic.html
   lab:
     - page: /labs/recursion-practice.html
 
-- topic: List motions
+- topic: Local bindings
+  abbrev: let
   summary: |
-    We continue to explore list recursion by examining how we use recursion to
-    perform basic motions over lists.
+    We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
   reading:
-    - page: /readings/list-motions.html
+    - page: /readings/local-bindings.html
   lab:
-    - page: /labs/more-list-practice.html
+    - page: /labs/local-bindings.html
 
 - topic: Recursion over numbers
   abbrev: number-recursion
@@ -197,42 +228,25 @@
   lab:
     - page: /labs/numeric-recursion.html
 
-- topic: Higher-order Recursive Programming
-  abbrev: higher-order-recursive-programming
+- topic: Ethical considerations in computing
+  abbrev: wrapup
   summary: |
-    We combine higher-order functions and recursive programming to implement the "big three" operations over lists.
-  reading:
-    - (No required reading for today!)
-    #- page: /readings/randomness.html
+    As we close the course, we take a step back from technical material and
+    look at the problem of ethical computing with seasoned programmer-eyes. As
+    newly-informed citizens, what must we be aware of with respect to ethics in
+    computing?
   lab:
-    - page: /labs/implementing-the-big-three.html
+    - page: /labs/ethics-in-computing.html
 
-- topic: Maps and association lists
-  abbrev: maps
+- topic: Pairs
+  abbrev: pairs
   summary: |
-    We consider structures that allow us to store information for
-    quick retrieval.
+    We explore pairs, the basic building blocks of lists, and consider
+    other, non-list structures one might build from pairs.
   reading:
-    - page: /readings/association-lists.html
+    - page: /readings/pairs.html
   lab:
-    - page: /labs/letter-inventory.html
-
-- topic: Tail Recursion
-  summary: |
-    We look at an advanced version of recursion that is ubiquitous in functional programming, tail recursion.
-  reading:
-    - page: /readings/tail-recursion-ex.html
-  lab:
-    - page: /labs/tail-recursion.html
-
-- topic: |
-    Core Exam #2 Preparation
-  summary: |
-    We take a break from content to review before the second core exam.
-
-- topic: |
-    Core Exam #2
-  abbrev: exam2
+    - page: /labs/pairs.html
 
 - topic: Vectors
   abbrev: vectors
@@ -244,64 +258,110 @@
   lab:
     - page: /labs/vectors.html
 
-- topic: Sequencing and effects
-  abbrev: sequencing
+- topic: Vectors, continued
+  abbrev: vectors
   summary: |
-    We examine mutable variables in Scheme and how we sequence
-    these effectul operations in our code.
-  reading:
-    - page: /readings/sequencing-and-effects.html
+    We continue to explore vectors.
   lab:
-    - page: /labs/sequencing-and-effects.html
+    - page: /labs/vectors-continued.html
 
-- topic: File input and output
-  abbrev: files
+- topic: Dictionaries and hash tables
+  abbrev: dictionaries
   summary: |
-    We consider how to store and retrieve data from files.
+    We consider structures that allow us to store information for
+    quick retrieval.
   reading:
-    - (No reading for today!)
+    - page: /readings/hash-tables.html
   lab:
-    - page: /labs/reading-files.html
+    - page: /labs/hash-tables.html
 
-- topic: Waveforms and signals
-  abbrev: signals
-  summary: |
-    We look at how sound is represented at a low-level in a computer program
-    and how we might manipulate that representation.
-  reading:
-    - page: /readings/digital-audio.html
-  lab:
-    - page: /labs/waveforms.html
-
-- topic: Manipulation Waveforms
-  abbrev: dsp
-  summary: |
-    We investigate how to construct and manipulate waveforms.
-  reading:
-    - page: /readings/manipulating-waveforms.html
-  lab:
-    - page: /labs/asdr.html
-
-- topic: The Final Project
-  abbrev: final-project
-  summary: |
-    We introduce the final project for the semester as well as wrap up the labs from this week.
-  reading:
-    - page: /readings/the-final-project.html
-
-- topic: Data abstraction and structured data
+- topic: Data abstraction
   abbrev: data-abstraction
   summary: |
     We build upon the structures we have encountered so far to design
     our own types and reflect on mechanisms for separating the
     interface to a type from the implementation of the type.
-  reading:
+  reading: 
     - page: /readings/data-abstraction.html
-    - page: /readings/preconditions.html
-    #- page: /readings/structs.html
   lab:
-    #- page: /labs/data-abstraction.html
-    - page: /labs/structs.html
+    - page: /labs/data-abstraction.html
+  
+- topic: Higher-order recursive design
+  abbrev: higher-order-recursive-design
+  summary: |
+    We explore patterns of recursion in the design of programs,
+    particularly with regards to higher-order procedures.
+  reading:
+    - page: /readings/higher-order-recursive-design.html
+  lab:
+    - page: /labs/higher-order-recursion.html
+
+- topic: Tail recursion
+  abbrev: tail-recursion
+  summary: |
+    We continue to stretch our brains with recursive thinking.  In 
+    particular, We consider tail recursion, an advanced version of 
+    recursion that is ubiquitous in functional programming.
+  reading:
+    - page: /readings/tail-recursion.html
+    - page: /readings/list-recursion-revisited.html
+  lab:
+    - page: /labs/tail-recursion.html
+
+- topic: Randomness
+  abbrev: randomness
+  summary: |
+    We consider Scheme's `random` procedure and how one might use
+    that procedure in generating images.
+  reading:
+    - page: /readings/randomness.html
+  lab:
+    - page: /labs/exploring-randomness.html
+
+- topic: Turtle graphics
+  abbrev: turtle
+  summary: |  
+    We consider "turtle graphics", a model of image making originally
+    popularized by the Logo programming language.  We also review
+    issues of side effects and program state.
+  reading:
+    - page: /readings/side-effects-reviewed.html
+    - page: /readings/turtle-graphics.html
+  lab:
+    - page: /labs/turtle-graphics.html
+
+- topic: Iteration 
+  summary: |
+    We consider iteration, particularly as it may apply to turtle graphics.
+  reading:
+    - page: /readings/iteration.html
+  labs:
+    - page: /labs/iteration.html
+    
+- topic: Project Kickoff
+  abbrev: final-project
+  summary: |
+    We introduce the final project for the semester.
+  reading:
+    - page: /mps/mp08.html
+
+- topic: Complexity analysis and binary search
+  abbrev: search
+  summary: |
+    We explore techniques for analyzing the number of calls made
+    in evaluating procedures, particularly recursive procedures.
+    We consider why such analysis is useful.  We then delve into
+    a common problem: That of finding values in a collection.
+  reading:
+    - page: /readings/analysis.html
+    - page: /readings/searching.html
+  lab:
+    - page: /labs/searching.html
+
+- topic: Project work day
+  abbrev: project-work-day-1
+  summary: |
+    We provide class time for students to work on their projects.
 
 - topic: Trees
   abbrev: trees
@@ -314,8 +374,10 @@
   lab:
     - page: /labs/binary-trees.html
 
-- topic: Project work day!
-  abbrev: project-work-day-1
+- topic: Project work day
+  abbrev: project-work-day-2
+  summary: |
+    We provide class time for students to work on their projects.
 
 - topic: Tree recursion
   abbrev: tree-recursion
@@ -328,31 +390,7 @@
   lab:
     - page: /labs/tree-recursion.html
 
-
-- topic: Working Differently Day (no class)
-  abbrev: no-class
-  summary: |
-    We explore techniques for analyzing the number of calls made
-    in evaluating procedures, particularly recursive procedures.
-    We consider why such analysis is useful.
-  reading:
-    - page: /readings/analysis.html
-
-- topic: Project work day!
-  abbrev: project-work-day-2
-
-- topic: |
-    Case study: searching
-  abbrev: searching
-  summary: |
-    We delve into a common problem: finding elements inside of a collection.
-  reading:
-    - page: /readings/searching.html
-  lab:
-    - page: /labs/searching.html
-
-- topic: |
-    Case study: sorting
+- topic: "Case study: sorting"
   abbrev: sorting
   summary: |
     We dive into a related problem: sorting the elements of a sequence.
@@ -361,26 +399,18 @@
   lab:
     - page: /labs/sorting.html
 
-- topic: |
-    Core Exam #3
-  abbrev: exam3
+- topic: Project presentations
+  abbrev: presentations
+  summary: Students present their projects
 
-- topic: Project work day!
-  abbrev: ethics
-  summary: |
-    We take a step back from technical material and look at the problem of
-    ethical computing with seasoned programmer-eyes. As newly-informed
-    citizens, what must we be aware of with respect to ethics in computing?
-
-- topic: Project work day!
-  abbrev: project-work-day-3
-
-- topic: Ethical considerations in computing
+- topic: Wrapup
   abbrev: wrapup
   summary: |
-    As we close the course, we take a step back from technical material and
-    look at the problem of ethical computing with seasoned programmer-eyes. As
-    newly-informed citizens, what must we be aware of with respect to ethics in
-    computing?
-  lab:
-    - page: /labs/ethics-in-computing.html
+    We conclude the course.
+
+- topic: All outstanding mini-project redos and learning assessments due by 5pm
+  abbrev: end-of-semester
+  summary: |
+    The College requires that all work be submitted by 5pm.  The 
+    only work I will accept at this point will be redos of mini-projects
+    and learning assessments from SoLA 5.
