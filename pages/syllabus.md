@@ -87,12 +87,10 @@ permalink: /syllabus/
 
 ## About this course
 
-Welcome to CSC-151-{{ site.section_number }}, Grinnell College's introductory computer science course.
-In this course, we will work to develop your experience with algorithmic problem solving.
+Welcome to CSC-151, Grinnell College's introductory computer science course.  In this course, we will work to develop your experience with algorithmic problem solving.
 While we will be using Scheme as our programming language for this course, you will quickly see that the problem solving skills we learn in this class are applicable to other languages and in settings that don't involve programming at all.
 
-This semester, CSC-151 will emphasize the digital humanities, the use of computing technology to explore humanistic subjects.
-While we will primarily focus on text-based digital humanities, we are likely to touch on other approaches, too.
+This semester, CSC-151 will emphasize image making and manipulation.  We will consider a variety of image models along the way.
 
 CSC-151 requires no prior knowledge of computer science or computer programming.
 We'll teach you everything we want you to know.
@@ -288,13 +286,28 @@ This is College policy and cannot be waived for any reason.
 If you find yourself needing to turn in work past this deadline, you must consult with me as soon as possible to submit an *incomplete request* for the course.
 If you take an incomplete in the course, the only work you can make up will be one of the mini projects.
 
-## Tokens
+### Tokens
 
 To provide a consistent and clear mechanism for dealing with the issues that regularly come up during the semester (e.g., late work, extra resubmissions), I rely on a variant of the "[token system](../handouts/tokens)" designed by my colleague Peter-Michael Osera.  In short, you begin the semester with a few tokens and use them up as you turn in work late, show up to class late, or miss class without notifying me.  You may earn additional tokens by attending events that I deem appropriate, such as talks related to the course or your colleages' performances and competitions.
 
 You can usually check your token status on Gradescope.  The regular status reports may also include information on tokens.
 
 Please read [the handout on tokens](../handouts/tokens) for more details.
+
+## Course breakpoints
+
+Our grading system offers flexibility.  However, it adds a cost of giving the illusion that if you fall behind in your work, there is always an opportunity to catch up. While this is true in theory, in practice, it is difficult to do so in many situations because of personal issues, competing courses, extracurricular obligations, etc. This flexibility also makes it difficult---for both you and me---to determine when you have fallen behind in the course and need external help whether that it is from the course staff, tutors, or academic advising.
+
+We encourage you to also preemptively come to any member of the course staff---the instructor, the course mentor, our Peer Education Coordinator---for help and guidance if you feel like you are falling behind. However, to be more clear about when you might be falling behind in the course, I will do my best to track the following _course breakpoints_ in your progress. In particular, when one of the following situations occurs, I will follow up with you as well as academic advising (via an academic alert) to check in. 
+
+* You miss two or more days of classes in a row.
+* You have used all of your tokens.
+* You receive an I on a mini-project.
+* You do not turn in a revision for a mini-project graded as an R.
+* After a SoLA, you have completed less than 60% of the LAs to date.
+* You are otherwise at substantial risk of earning below a C in the course.
+
+If any of those issues happen, we should also talk so that I might provide guidance and help you develop a plan for getting back on track, e.g., by assigning an individual tutor.
 
 ## Software, textbooks, references, technology, and such
 
@@ -404,3 +417,39 @@ I believe that all teaching is a form of performance.  That performance may not 
 **Feeling overwhelmed**
 
 You may feel a bit overwhelmed by this point.  I know that I do after re-reading most of it and re-writing some of it.  But **don't worry**.  CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic.  (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
+
+## Frequently (and not-so-frequently) asked questions
+
+I'm confused about the grading scheme.  Could you explain more?
+
+> Broad overview: To succeed in the class, you must do the learning assessments (LAs) and projects (MPs and the final project).  Since not everyone learns at the same rate, you will have the opportunity to attempt LAs (although with new problems) and projects additional times.  In addition, you must keep up with regular work for the class: readings (and reading responses), labs (and lab writeups), and reflections.  Additional details are found above and in [the page on grading](../handouts/grading).  
+
+> If that's not enough information, feel free to ask questions about particlar points.
+
+I plan to leave early for Fall break and won't be in class on Friday, 13 October 2023.  I'm also a bit worried that it's October 13th.  What are the penalties for missing that class?
+
+> As long as you let me know in advance, there is no penalty for your absence.
+
+> However, you will not be able to take the quiz that day, which means that you will have to complate that learning assessment in one of the following SoLAs.  In addition, you
+be responsible for making up the work from class on your own, and you are still responsible for turning in that lab by 10:00 p.m. in Sunday, 22 October 2023.
+
+I plan to leave early for Thanksgiving and won't be in class on Wednesday, 22 November 22.  What are the penalties for missing that class?
+
+> As long as you let me know in advance, there is no penalty for your absence.
+
+> However, you will be depriving your project team of your presence.  You should discuss with them how you will make up for your absence.
+
+I have an accommodation that gives me extra time on in-class exams.  What should I do about the Friday LA quizzes.
+
+> I am happy to give those to you at 8:00 a.m. on Fridays.
+
+I did not achieve a grade of S on one of the in-class-only learning assessments.  How do I make that up?
+
+> I am happy to give those to you at 8:00 a.m. on the next Friday.
+
+I need a mental health day.  What should I do?
+
+> Send me an email message telling me that you need a mental health day.  Plan to make up the lab on your own.  If you need extra time for the lab, you'll need to use a [token](../handouts/tokens).
+
+> More importantly, please take care of yourself.
+
