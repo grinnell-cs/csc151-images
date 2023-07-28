@@ -16,20 +16,42 @@ There are four primary SoLAs in the course, along with one optional final SoLA.
 + SoLA 2 (LAPs 1&2): Week 7, Wednesday--Thursday, 12--13 October 2023
 + SoLA 3 (LAPs 1--3): Week 10, Wednesday--Thursday, 9--10 November 2023
 + SoLA 4 (LAPs 1--4): Week 14, Wednesday--Thursday, 6--7 December 2023
-+ SoLA 5 (LAPs 1--4): Finals week
++ SoLA 5 (LAPs 1--4): Finals week (distributed Monday, due Friday)
 
-SoLAs consist of a set of individual assessment problems---one problem for each learning objective of the course covered so far.  The approximate lists of learning objectives by LA period are listed below.  You will begin your learning assessments during class time.   If you need extra time (e.g., for individual assessments left over from the prior assessment), you will have slightly more than **one day** to complete the problems.  All problems are released online in Gradescope.  You may choose to attempt as many of the individual assessment problems as you wish for that period.  As described in the [syllabus]({{ "/syllabus" | relative_url }}), LA problems are graded on a binary *satisfactory/non-satisfactory*.
+SoLAs consist of a set of individual assessment problems---one problem for each learning objective of the course covered so far.  
+
+The learning objectives are listed below by LA period.  
+
+Some of the LAs will appear as in-class paper-based ten-minute quiz, given at the start of class each Friday.
+
+All of the LAs in a phase (except those marked as in-class-only) will be released as a SoLA on gradescope.  **Do not discuss the problems on the SoLA with anyone until I have returned graded problems.**
+
+You may choose to attempt as many of the individual assessment problems as you wish for that period.  As described in the [syllabus]({{ "/syllabus" | relative_url }}), LA problems are graded on a binary *satisfactory (S)/not satisfactory (N)*.
 Once you receive a satisfactory on a problem tied to a particular learning objective, you do not need to attempt additional problems tied to that learning objective in subsequent SoLAs, *i.e.*, you have demonstrated sufficient mastery of that objective, so you are done with it!
 
-> **Example**: The first SoLA will have seven problems corresponding to seven learning objectives from the first Learning Assessment Phase described below.
-> Suppose that you receive S grades on the first five problems but not the sixth or seventh.
-> The second SoLA will have 14 problems: seven corresponding to the first set of learning objectives and seven corresponding to the seven new learning objectives from Phase 2.
-> You do not have to answer the questions corresponding to the first five learning objectives you have mastered already.
-> Instead, you are free to attempt the additional seven areas new to SoLA 2 as well as the problems corresponding to the sixth and seventh objectives from LAP 1 that you missed previously.
+> **An Example**
 
-*SoLA 5* during finals week is a *last-chance* assessment period.  No new learning objectives are introduced, but you are free to re-attempt any objectives that you missed in previous LAs.  SoLA 5 will be distributed on Tuesday morning and due Wednesday evening.
+> Your first LA will be a paper-based in-class quiz at the end of week one.  Let's suppose you receive an S on that LA and it is the in-class-only LA.
 
-I will use class time on SoLA days to answer questions.  As [the schedule](../schedule/) suggests, I will hold a review session during class time on reading day.
+> Your second LA will be a paper-based in-class quiz at the end of week two.  Let's suppose you receive an N on that LA.
+
+> Your third LA will be a paper-based in-class quiz at the end of week three.  Let's suppose you receive an S on that LA.
+
+> The first SoLA will occur in week four.  It will be an online out-of-class exam.  There are six learning objectives for that LAP.  However, only five of those will appear on the SoLA, since one of them is marked as an in-class-only LA.  Fortunately, you've completed that one.
+
+> You need not take the LA on the SoLA that corresponds to the third LA quiz.  You will have four left to do.  One will correspond to the learning objective that you did not complete successfully in week two and the remaining three will be for objectives not covered in the weekly quizzes.
+
+> Let's suppose you receive grades of S on two of the new problems, N on the repeated LA, and that you skip one of the new problems.  That's okay.  You're still making good progress; you've completed four of six LAs.
+
+> Your next LA will be a paper-based in-class quiz at the end of week four on an objective from Phase 2.  Let's suppose you receive an S on that LA.
+
+> Your next LA will be a paper-based in-class quiz at the end of week five on an objective from Phase 2.  Let's suppose you receive an S on that LA.
+
+> Your next LA will be a paper-based in-class quiz at the end of week six on an objective from Phase 2.  Let's suppose you receive an N on that LA.
+
+> SoLA 2 appears in week seven.  It will have eleven LAs, corresponding to five of the six objectives from Phase 1 and all six objectives from Phase 2.  At this point, you've already completed LAs for six of the twelve objectives in Phases 1 and 2.  
+
+> You'll have a third chance on the objective from phase 1 that you had difficulty with on the week-2 quiz and SoLA 1.  You'll have a second chance on the objective from phase 1 that you skipped on SoLA 1.  You'll have a second chance on the objective from phase 2 that you missed in week six.  And you'll have a first chance on the remaining three objectives from phase 2.
 
 ## Learning objectives
 
