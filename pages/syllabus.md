@@ -146,12 +146,16 @@ Thus, you should develop a habit of saving your work frequently!
 
 ## Time and workload
 
-Grinnell has indicated that a 4-credit course, like this one, should involve approximately 180 hours of work, which matches some guidance from the U.S. government.
-Across a 14-week term (plus a week finals), that ends up being approximately 12 hours of work per week.
-I have not been able to get anyone to answer the question of "180 hours *for whom* and *for what grade*?", I've been given the impression that I should strive for that workload for the "average" student in a course who seeks to earn a B.
-In general, the twelve hours should work out to approximately four hours per week in class, three hours per week on readings (one hour per day), four hours per week on either mini-projects (homework assignments) or SoLAs (exams), and one hour per week for mentor sessions.
-If you find yourself working much more than the expected amount in this course, please let me know.
-It could be that other approaches to your work, or better support resources, can help.
+Grinnell has indicated that a 4-credit course, like this one, should involve approximately 180 hours of work, which matches some guidance from the U.S. government.  Across a 14-week term (plus a week finals), that ends up being approximately 12 hours of work per week.  I have not been able to get anyone to answer the question of "180 hours *for whom* and *for what grade*?", but I've been given the impression that I should strive for that workload for the "average" student in a course who seeks to earn a B.
+
+In general, the twelve hours should work out to approximately 
+
+* four hours per week in class, 
+* three hours per week on readings (one hour per day), 
+* four hours per week on either mini-projects (homework assignments) or SoLAs (exams), and 
+* one hour per week for mentor sessions.
+
+If you find yourself working much more than the expected amount in this course, please let me know ASAP.  It could be that other approaches to your work, or better support resources, can help.  It may also be that I'm assigning too much work.
 
 ## Diversity and inclusion
 
@@ -178,13 +182,13 @@ I also support the class's religious diversity and anyone who needs to balance a
 
 Our class is a community.  We should behave as such.  Among other things, that means treating others with respect, not only in the language that we use (no slurs, please), but also in taking others' ideas, approaches, perspectives, and identities seriously.  We will discuss appropriate guidelines for the class throughout the semester, developing those guidelines as a community.
 
-### Other accommodations
+### Basic needs security
 
-There are a limitless number of dimensions to diversity and inclusion, the totality of which are unaddressable with a finite set of policies.
-These may include other issues best addressed earlier in the semester (*e.g.*, student-athlete scheduling) or as they arise (*e.g.*, chronic health flare-ups).
-I will do my best to be flexible in these cases with the overall goal of facilitating your growth in this course.
-To do this, I need to receive advanced notice from you **at least one week in advance** so that we can make suitable arrangements.
-For situations that arise within a given week, I will ask you to utilize the token system (described in the evaluation section) to manage your workload.
+Any student who has difficulty affording groceries or accessing sufficient food to eat every day, or who lacks a safe and stable place to live, should know that these difficulties are likely to affect their performance in the course. Such students are urged to contact the [Dean of Students](https://www.grinnell.edu/profiles/student-affairs/staff) or the [CRSSJ](https://www.grinnell.edu/about/offices-services/crssj) for support. You may also notify me, if you feel comfortable doing so, and I will do my best to help you identify and arrange other resources.
+
+### Other accommodations and adustments
+
+There are many other ways in which it may be appropriate to adjust course policies and it is not possible to attempt to address them all in a few policies.  These may include other issues best addressed earlier in the semester (*e.g.*, student-athlete scheduling) or as they arise (*e.g.*, chronic health flare-ups).  I will do my best to be flexible in these cases with the overall goal of facilitating your growth in this course.  Please keep me informed!
 
 ## Evaluation and grading
 
