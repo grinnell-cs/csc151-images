@@ -15,13 +15,13 @@ If you find yourself using a tool to make you more efficient on something you fe
 
 We also ask you to consider the potential ethical and legal issues of using one of these tools.  Most (all?) of these tools have been trained on codebases without the permission of the authors of that code, often in violation of the licenses associated with that code.  There is already [one major class-action lawsuit about this issue](https://githubcopilotlitigation.com).  Hence, many major corporations do not allow their developers to use such tools.  More importantly, it is generally wrong to use the work of others without their permission, and you would be doing so by using these tools.
 
-You should also remember that most tools also gather information from their users.  You consider whether you are comfortable sharing your private information.  It's been suggested that, at some point, some of these tools may market information about your use of the tool (e.g., to prospective employers).  I recommend that you consider turning off data gathering, if possible, such as by selecting Settings -> Data Controls and then turning off Chat history and training in ChatGPT.
+You should also remember that most tools also gather information from their users.  You consider whether you are comfortable sharing your private information.  It's been suggested that, at some point, some of these tools may market information about your use of the tool (e.g., to prospective employers).  I recommend that you consider turning off data gathering, if possible, such as by selecting Settings -> Data Controls and then turning off Chat history and training in ChatGPT. 
 
 Returning to our initial considerations: Many of the problems we give you are problems that have been solved thousands (if not millions) of times.  If all we cared about was that you know an answer, we'd just give you one (or more).  The process of developing the answer is where you learn, and you are here to learn.  That is to say, if you use these tools, you likely harm your learning more than you help yourself.
 
 The mastery-grading approach that we use in the course is also intended to make it okay for you to try things and not succeed.  If your first solution doesn't work, you'll have a chance to try again (and again and ...).
 
-Finally, College policies about Large Language Models and Academic Honesty also apply in this course.  Please make sure to familiarize yourself with those policies.  [URL to follow.]
+Finally, College policies about Large Language Models and Academic Honesty also apply in this course.  Please make sure to familiarize yourself with [the College's policies on honesty in academic work](https://catalog.grinnell.edu/content.php?catoid=32&navoid=5208#Honesty_in_Academic_Work) and the latest [Academic Honesty Handbook](https://grinco.sharepoint.com/sites/DeansOffice/AcademicProgramsLibrary/Forms/AllItems.aspx?id=%2Fsites%2FDeansOffice%2FAcademicProgramsLibrary%2FAcademic%5FHonesty%5FBooklet%2Epdf&parent=%2Fsites%2FDeansOffice%2FAcademicProgramsLibrary).
 
 FAQ
 ---
