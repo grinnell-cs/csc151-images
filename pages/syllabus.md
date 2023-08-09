@@ -190,6 +190,8 @@ Any student who has difficulty affording groceries or accessing sufficient food 
 
 There are many other ways in which it may be appropriate to adjust course policies and it is not possible to attempt to address them all in a few policies.  These may include other issues best addressed earlier in the semester (*e.g.*, student-athlete scheduling) or as they arise (*e.g.*, chronic health flare-ups).  I will do my best to be flexible in these cases with the overall goal of facilitating your growth in this course.  Please keep me informed!
 
+In some cases, I will recommend consulting with the Academic Advising staff. They are an excellent resource for developing strategies for academic success and can connect you with other campus resources as well: <http://www.grinnell.edu/about/offices-services/academic-advising>. If I notice that you are encountering difficulty, in addition to communicating with you directly about it, I will also likely submit an academic alert via Academic Advising's SAL portal. This reminds you of my concern, and it notifies the Academic Advising team and your advisor(s) so that they can reach out to you with additional offers of support.
+
 ## Evaluation and grading
 
 This course employs a grading system based on [*mastery grading* and *specifications grading*](https://docs.google.com/document/d/13V1fsPve19IU-tFNt4AeQ78VepuqVakp3xizJrj5KwY/edit) to evaluate your work.
@@ -396,6 +398,8 @@ This may be your first semester using Gradescope.  Gradescope does some things w
 
 I've taught Scheme for longer than most of you have been alive.  This is likely your first time encountering Scheme.  You will mess up from time to time.  Believe it or not, but I will, too.  (I'll be much faster at fixing and identifying problems, though; at least I hope I will be.) That's okay; mistakes are part of the process.
 
+A totally new version of Scamper, the Scheme implementation we use for the course, was released in late summer.  There are likely to be bugs.  Let me know if you notice potential bugs and I'll raise them with the developer.
+
 **Multiple sections**
 
 There are multiple sections of this course, with multiple "themes".  While the instructors and mentors will take generally similar approaches to the material, you'll see that there are differences.  These differences should not affect your overall learning in the course.
@@ -420,13 +424,15 @@ I believe that all teaching is a form of performance.  That performance may not 
 
 **Feeling overwhelmed**
 
-You may feel a bit overwhelmed by this point.  I know that I do after re-reading most of it and re-writing some of it.  But **don't worry**.  CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic.  (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
+You may feel a bit overwhelmed by this point.  I know that I do after re-reading most of it and re-writing some of it.  But **don't worry**.  CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic. (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
 
 ## Frequently (and not-so-frequently) asked questions
 
 I'm confused about the grading scheme.  Could you explain more?
 
-> Broad overview: To succeed in the class, you must do the learning assessments (LAs) and projects (MPs and the final project).  Since not everyone learns at the same rate, you will have the opportunity to attempt LAs (although with new problems) and projects additional times.  In addition, you must keep up with regular work for the class: readings (and reading responses), labs (and lab writeups), and reflections.  Additional details are found above and in [the page on grading](../handouts/grading).  
+> In short: The grading scheme is designed to assess you on what you've learned, not when in the semester you've learned it.  There's also a strong incentive built in for you to keep up with the work.  Doing regular work, even if it's not perfect, and receiving feedback on that work, is one of the best ways to learn.
+
+> Broad overview: To succeed in the class, you must do the learning assessments (LAs) and projects (MPs and the final project).  Since not everyone learns at the same rate, you will have the opportunity to make additional attempts at  LAs (although with new problems) and projects.  In addition, you must keep up with regular work for the class: readings (and reading responses), labs (and lab writeups), and reflections.  If you keep up with the work and achieve appropriate results on the LAs and projects by the end of the semester, you are likely to do well in the course.  Additional details are found above and in [the page on grading](../handouts/grading).  
 
 > If that's not enough information, feel free to ask questions about particlar points.
 
@@ -437,7 +443,7 @@ I plan to leave early for Fall break and won't be in class on Friday, 13 October
 > However, you will not be able to take the quiz that day, which means that you will have to complate that learning assessment in one of the following SoLAs.  In addition, you
 be responsible for making up the work from class on your own, and you are still responsible for turning in that lab by 10:00 p.m. in Sunday, 22 October 2023.
 
-I plan to leave early for Thanksgiving and won't be in class on Wednesday, 22 November 22.  What are the penalties for missing that class?
+I plan to leave early for Thanksgiving and won't be in class on Wednesday, 22 November 2023.  What are the penalties for missing that class?
 
 > As long as you let me know in advance, there is no penalty for your absence.
 
@@ -457,3 +463,6 @@ I need a mental health day.  What should I do?
 
 > More importantly, please take care of yourself.
 
+If I ask a question about the course, will it end up here?
+
+> Perhaps.  It will depend on a variety of issues, such as whether I consider it of general interest and whether I have time to update the syllabus.
