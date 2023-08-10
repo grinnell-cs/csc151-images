@@ -90,6 +90,27 @@
   lab:
     - page: /labs/rgb-colors
 
+- topic: Booleans, predicates, and conditionals
+  abbrev: booleans
+  summary: |
+    We consider how one writes procedures that make decisions.
+  reading:
+    - page: /readings/booleans.html
+    - page: /readings/conditionals.html
+  lab:
+    - page: /labs/conditionals.html
+
+- topic: Software engineering fundamentals
+  abbrev: software-engineering
+  summary: |
+    We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
+  reading:
+    - page: /readings/documenting-your-code.html
+    - page: /readings/unit-testing.html
+    - page: /readings/hypothesis-driven-debugging.html
+  lab:
+    - page: /labs/documentation-and-testing.html
+
 - topic: Transforming colors
   abbrev: transforming-rgb
   summary: |
@@ -108,16 +129,6 @@
   lab:
     - page: /labs/transforming-images.html
 
-- topic: Booleans, predicates, and conditionals
-  abbrev: booleans
-  summary: |
-    We consider how one writes procedures that make decisions.
-  reading:
-    - page: /readings/booleans.html
-    - page: /readings/conditionals.html
-  lab:
-    - page: /labs/conditionals.html
-
 - topic: Drawings as values
   abbrev: drawings
   summary: |
@@ -126,17 +137,6 @@
     - page: /readings/drawings-as-values.html
   lab:
     - page: /labs/drawings-as-values.html
-
-- topic: Software engineering fundamentals
-  abbrev: software-engineering
-  summary: |
-    We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
-  reading:
-    - page: /readings/documenting-your-code.html
-    - page: /readings/unit-testing.html
-    - page: /readings/hypothesis-driven-debugging.html
-  lab:
-    - page: /labs/documentation-and-testing.html
 
 - topic: Lists
   abbrev: lists
