@@ -3,7 +3,7 @@
   summary: |
     We begin the class by exploring the definition of computer
     science and by trying to write some basic algorithms.
-  notes: /eboards/eboard01.html
+  notes: ../eboards/eboard01.html
 
 - topic: Getting started with Scheme
   abbrev: racket-tech
@@ -14,7 +14,6 @@
     - page: /readings/mathlan.html
     - page: /readings/algorithm-building-blocks.html
     - page: /readings/scamper.html
-    - page: /readings/vscode.html
   lab:
     - page: /labs/mathlan.html
     - page: /labs/scamper-intro-mathlan.html
@@ -210,7 +209,7 @@
 - topic: Local bindings
   abbrev: let
   summary: |
-    We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
+    We explore issues of redundacy in code and mechanisms for reducing such reducancy.
   reading:
     - page: /readings/local-bindings.html
   lab:

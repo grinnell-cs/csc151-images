@@ -319,8 +319,7 @@ If any of those issues happen, we should also talk so that I might provide guida
 
 There are several software packages we use in this course both for learning how to program as well as conducting learning online.
 
-+ [Visual Studio Code](https://code.visualstudio.com), a general-purpose Integrated Development Environment (IDE).
-+ [Scamper](https://github.com/slag-plt/scamper-lang), an implementation of a subset of the [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)) programming language as an extension to Visual Studio Code.
++ [Scamper](https://github.com/slag-plt/scamper-lang), an implementation of a subset of the [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)).
 + Your [Grinnell Office365 account](https://office365.grinnell.edu) for email and [Microsoft Teams](https://teams.microsoft.com) for discussion and collaboration.
 + [Gradescope](https://gradescope.com) for assignment submission and feedback communication.
 
@@ -398,7 +397,7 @@ This may be your first semester using Gradescope.  Gradescope does some things w
 
 I've taught Scheme for longer than most of you have been alive.  This is likely your first time encountering Scheme.  You will mess up from time to time.  Believe it or not, but I will, too.  (I'll be much faster at fixing and identifying problems, though; at least I hope I will be.) That's okay; mistakes are part of the process.
 
-A totally new version of Scamper, the Scheme implementation we use for the course, was released in late summer.  There are likely to be bugs.  Let me know if you notice potential bugs and I'll raise them with the developer.
+A totally new version of Scamper, the Scheme implementation we use for the course, was released in late summer.  There are likely to be bugs.  Let me know if you notice potential bugs and I'll raise them with the developer.  It's also my first time using Scamper, so I'll probably screw things up.
 
 **Multiple sections**
 
