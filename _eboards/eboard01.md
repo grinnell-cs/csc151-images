@@ -17,13 +17,26 @@ _Approximate overview_
 Administrative stuff
 --------------------
 
-_Please take a playing card, if you didn't already._
+* _Please take a playing card, if you didn't already._
+* Sit where you'd like, within reason.
+* If you don't know the people next to you, introduce yourselves.
 
 ### Introductory Notes
 
 * Hi, I'm Sam (or SamR).
-* Our class mentor is Ellie Seehorn
-    * Ellie will introduce themselves.
+* Our class mentors are Ellie Seehorn and Ella Berman.
+    * Ellie and Ella will introduce themselves.
+    * Mentors are here to support your learning. 
+    * They run mentor sessions to help you learn the class material.
+    * They are not here for homework help; we do have evening tutors
+      available for help.
+    * Mentor sessions are great; and should be part of your learning.
+      "Other people have great questions."  And you get to spend more
+      time with your awesome classmates.
+    * Mentor sessions may improve your grade.  (Data suggests that there
+      is a correlation between mentor sessions and higher grades.)
+    * Closer to you; remember struggles better than your faculty do.
+    * They can mentor on things beyond just the class.
 * The class Web site is at 
   <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2023Fa/>.
     * I will email you the link.
@@ -89,18 +102,32 @@ Guidelines
 
 Events
 
+* Academic events: Scholar's convocation next Thursday at 11am with Pres.
+  Harris.
+* Volleyball Scrimmage 5:15 today in Darby
+
 ### Upcoming work
 
 * [Read the Web site and answer questions](../assignments/syllabus).
 * [Tell me about yourself](../assignments/intro-survey).
-* [Read things in preparation for the second day of class and report on those things]
+* [Read things in preparation for the second day of class and report on those things](https://www.gradescope.com/courses/561770/assignments/3167606/submissions)
     * [An intro to the course](../readings/fundhum-intro)
     * [Our Linux workstations](../readings/linux)
     * [Algorithm building blocks](../readings/algorithm-building-blocks)
     * [The DrRacket programming environment](../readings/drracket)
-    * [An abbreviated introduction to Racket](../readings/racket-intro)
+    * [An abbreviated introduction to Scheme](../readings/scheme-intro)
     * _Note that readings responses are generally due in the early evening
       so that I can review them before class._
+
+### PSA 1
+
+* Be careful.  COVID is here.
+
+### Friday PSA
+
+* People care about you.  Please stay well for them.
+* Decide what is right for you, and stick to it.
+* Consent is ESSENTIAL.
 
 ### Attendance
 
@@ -112,13 +139,101 @@ Events
     * If you must call me by last name, please call me Mr./Ms./Mx. LAST NAME.
     * This semester , I am excited about ....
     * _Optionally, ask me a question. You'll also have another chance later._
-* **This will take extra time because we have a class.**
+* **This will take extra time because we have a large class.**
 * Note: For the first few weeks of class, please say your name each time
   you ask or answer a question.
 
 ### Excited About
 
+* Mentoring [x2]
+* Water Polo
+* Ultimate 
+* Starting CS [x2]
+* Learn more about CS
+* Learning [x2]
+* Meeting peole [x3]
+* Join clubs: e.g., Music [x2]
+* Learning another programming language [x2]
+* Learning another natural language
+* Being in the midst of the cornfield
+* Working in MathLAB
+* Running
+* Volleyball [x2]
+* Winter/Snow [x3]
+* Taking classes in new areas.
+* Taking classes in the US.
+* Theatre - Consider auditioning
+* Research assistant
+* Norris
+* Freedom
+* Makerspace
+* Ceramics
+* Intersection of CS and Art
+
+
 ### Q&A
+
+Why does Sam like CS?  Or does he?
+
+: Sam likes torturing students and CS is the best way to do so.  It doesn't
+  matter whether or not he likes it.
+: I like CS because I enjoy building things and I can build things on computers
+  easier than in the physical world.  I also like CS because it scratches my
+  math itch of problem solving without requiring me to write proofs.
+
+What is your favorite part of teaching this course?
+
+: Watching students learn.
+: Getting people excited about computer science.
+: Meeting new students.
+
+What project are you most proud of
+
+: Curriculum for this class.
+: My children.
+: A few of my scupltures.
+: MIST: A weird art making program that I wrote with students.
+
+What's something we don't know about Grinnell?
+
+: Grinnell used to have a natural history museum.  As a prank, a group of students stole a walrus from the museum and buried it on campus.  No one knows where it is, but it may still be there.
+
+: At the turn of the last century, there was an early-fall event in which first-years (freshman) and second-years (sophomores) engaged in campus-wide fisticuffs.  Around 1909 the students decided to discontinue the practice (in spite of the town's appreciation of watching) and swore so on a rock.  About three years ago, John Whittaker in anthropology and a group of students found the rock which had been buried.
+
+What has changed about Grinnell since Sam arrived in the fall of 1997?
+
+: Our student body is much more diverse.  Great!
+: Our endowment is significantly higher (from $1bil to $2.5bil)
+: Students are more willing to exhibit wealth
+: Fewer pajamas in class
+: But Grinnellians stay the same as awesome people who care about each other.
+
+Is cereal a soup?
+
+: No.  Cereal is dry.
+: Milk and cereal (or water and cereal) is a more complex question.
+
+What's the silliest project Sam has ever worked on?
+
+: Sam is an incredibly serious person, never makes jokes, and never does
+  anything silly.
+: In an old version of this class, we had a kitten picture that we manipulated
+  in horrendous ways.
+
+Why are you still excited about teaching?
+
+: Awesome students.  It's fun to watch them learn and grow.
+: Cool topic.
+: Intellectual challenge to design a successful class (or even an unsuccessful one; you learn from failure)
+
+Best dining hall food?
+
+: Quinoa tacos
+
+Does Sam prefer Mac or windows?
+
+: Sam uses Macs and Linux
+: Sam believes windows should be defenestrated
 
 What is computer science?
 -------------------------
@@ -150,9 +265,13 @@ Exercise
 _Practice writing algorithms!_
 
 * Form a group with other people with the same card.
-* Write instructions so that Sam can make a WowButter and jam sandwich
-  using the bag o' sandwich supplies.
+* Write instructions so that Sam can make a wow butter and fruit spread 
+  sandwich using the bag o' sandwich supplies.
+    * Limit the damage to the room and Sam.
+    * Limit the mess in the room.
     * Assume that Sam is clueless.
      
 Debrief
 -------
+
+_Probably not until Friday._
