@@ -13,10 +13,11 @@
   reading:
     - page: /readings/mathlan.html
     - page: /readings/algorithm-building-blocks.html
-    - page: /readings/scamper.html
+    - page: /readings/drracket.html
+    - page: /readings/racket-intro.html
   lab:
     - page: /labs/mathlan.html
-    - page: /labs/scamper-intro-mathlan.html
+    - page: /labs/racket-intro-mathlan.html
 
 - topic: Computation via expressions
   abbrev: expressions

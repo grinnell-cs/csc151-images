@@ -141,19 +141,20 @@ You'll have an opportunity to do so in the corresponding lab.
 
 ## "Scheme" versus "Racket" versus "Scamper"
 
-You may hear about another programming language, _Racket_, from peers who have taken prior versions of CSC 151 or from the various course readings and labs.
+Officially, we teach CSC-151 in Scheme.  But there are lots of versions of Scheme.
+
+In our section, we will be using the DrRacket interactive development environment and the Racket programming language.
 Racket is a _dialect_ of Scheme.
 That is, it is a language derived from Scheme that shares many of the same language constructs and libraries, but also improves on the language in various ways.
 
-In the past, CSC 151 has used Racket as it is a modern, full-featured take on Scheme.
-However, Grinnell decided that we needed our own version of Scheme to make it more easily extensible.
+Interestingly, Scheme is, itself, a dialect of a much older language, LISP.
+
+In the past, all sections of CSC-151 used Racket as it is a modern, full-featured take on Scheme.
+However, some Grinnell faculty decided that we needed our own version of Scheme to make it more easily extensible (and to better support the use of sound).
 In many ways, Scamper draws on modern Racket-isms, but it isn't truly a descendent of Racket as it tries to retain the simplicity of Scheme and thus doesn't adhere precisely to Racket's language standard.
 
 For our intents and purposes as beginning programmers, Scheme, Racket, and Scamper, are all interchangeable names describing the same "functional language with parentheses" that we use in this course.
 So don't fret too much if you hear a different name from a peer or see a different name in a reading!
-However, if want to be precise, we are using:
-
-> A dialect of Scheme, custom-built for CSC 151, called Scamper.
 
 ## Self Checks
 
