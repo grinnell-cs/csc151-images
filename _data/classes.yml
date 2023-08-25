@@ -14,7 +14,7 @@
     - page: /readings/mathlan.html
     - page: /readings/algorithm-building-blocks.html
     - page: /readings/drracket.html
-    - page: /readings/racket-intro.html
+    - page: /readings/intro-scheme.html
   lab:
     - page: /labs/mathlan.html
     - page: /labs/racket-intro-mathlan.html
