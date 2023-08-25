@@ -104,15 +104,6 @@ Once we have a list of words, we can find out how long each word is.
 '(4 7 3 3 6 5)
 ```
 
-We can even split in strange ways, such as at the vowels.  (We'll
-explain the strange `#px"[aeiou]"` in [a subsequent
-reading]({{ "/readings/regexp.html" | relative_url }}).)
-
-```racket
-> (string-split "Twas brillig and the slithy toves" #px"[aeiou]")
-'("Tw" "s br" "ll" "g " "nd th" " sl" "thy t" "v" "s")
-```
-
 ## Computing with images
 
 You've already seen a few of Scheme's basic types. Racket supports
@@ -155,7 +146,7 @@ Racket is a _dialect_ of Scheme.
 That is, it is a language derived from Scheme that shares many of the same language constructs and libraries, but also improves on the language in various ways.
 
 In the past, CSC 151 has used Racket as it is a modern, full-featured take on Scheme.
-However, in order to support the music theme of the course, we developed our own implementation of Scheme, _Scamper_.
+However, Grinnell decided that we needed our own version of Scheme to make it more easily extensible.
 In many ways, Scamper draws on modern Racket-isms, but it isn't truly a descendent of Racket as it tries to retain the simplicity of Scheme and thus doesn't adhere precisely to Racket's language standard.
 
 For our intents and purposes as beginning programmers, Scheme, Racket, and Scamper, are all interchangeable names describing the same "functional language with parentheses" that we use in this course.
