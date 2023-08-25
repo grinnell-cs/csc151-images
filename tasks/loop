@@ -6,7 +6,7 @@ do
   date;   
   echo "----------------------------";
   echo "";
-  bin/deploy; 
+  tasks/deploy; 
   echo "";  
   echo "";  
   sleep 10; 
