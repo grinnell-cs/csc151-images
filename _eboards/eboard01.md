@@ -133,10 +133,10 @@ Events
 
 * Sam will (attempt to) call you by first name.
 * You will respond with 
-    * "Hi, my name is FIRST LAST.
+    * "Hi, my name is GIVEN SURNAME
     * (Optional pronouns.)
     * I prefer to be called NAME.
-    * If you must call me by last name, please call me Mr./Ms./Mx. LAST NAME.
+    * If you must call me by last name, please call me Mr./Ms./Mx./Sr./Sra./Srta./... LAST NAME (San).
     * This semester , I am excited about ....
     * _Optionally, ask me a question. You'll also have another chance later._
 * **This will take extra time because we have a large class.**
@@ -274,4 +274,4 @@ _Practice writing algorithms!_
 Debrief
 -------
 
-_Probably not until Friday._
+_Probably not until Monday._
