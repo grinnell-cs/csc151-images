@@ -159,10 +159,10 @@ $ /home/rebelsky/bin/csc151-setup
 CSC 151: Adding default setup for DrRacket
 CSC 151: Configuring Racket to look for Racket files on the desktop.
 CSC 151: Checking on class software
-CSC 151: Installing loudhum package.  Ignore the long series of messages.
+CSC 151: Installing csc151 package.  Ignore the long series of messages.
 Querying Git references for loudhum at https://github.com/grinnell-cs/loudhum.git
 Downloading repository https://github.com/grinnell-cs/loudhum.git
-raco setup: version: 7.6
+raco setup: version: 8.3
 raco setup: platform: x86_64-linux [3m]
 ...
 raco setup: --- post-installing collections ---
