@@ -120,7 +120,7 @@ Determine whether your prediction matches what DrRacket computes.
 ?
 > (string-split "Snicker snack" "ck")
 ?
-> (circle 10 'solid "teal")
+> (circle 10 "solid" "teal")
 ?
 ```
 
@@ -134,7 +134,7 @@ Feel free to go on to the next exercise, but if you are confused by any of the o
 As you may have noted, you get an error when you try to make a circle.
 
 ```
-> (circle 10 'solid "teal")
+> (circle 10 "solid" "teal")
 Error! circle: undefined;
 Error!  cannot reference an identifier before its definition
 ```
@@ -162,19 +162,19 @@ check the image examples from [the reading]({{ "/readings/racket-intro.html" | r
 Enter each of the following in the interactions pane and ensure that you get the expected output.
 
 ```drracket
-> (circle 15 'outline "blue")
+> (circle 15 "outline" "blue")
 ?
-> (circle 10 'solid "red")
+> (circle 10 "solid" "red")
 ?
-> (above (circle 10 'outline "blue")
-         (circle 15 'outline "red"))
+> (above (circle 10 "outline" "blue")
+         (circle 15 "outline" "red"))
 ?
-> (beside (circle 10 'solid "blue")
-          (circle 10 'outline "blue"))
+> (beside (circle 10 "solid" "blue")
+          (circle 10 "outline" "blue"))
 ?
-> (above (rectangle 15 10 'solid "red")
-         (beside (rectangle 15 10 'solid "blue")
-                 (rectangle 15 10 'solid "black")))
+> (above (rectangle 15 10 "solid" "red")
+         (beside (rectangle 15 10 "solid" "blue")
+                 (rectangle 15 10 "solid" "black")))
 ?
 ```
 
@@ -289,7 +289,7 @@ Let's try using the definitions pane instead.
 
     ```
     ; The following definitions are taken from
-    ;   Curtsinger, C., Davis, J., Eikmeier, N., Hamid, F., Johnson, B., Klinge, T., Osera, P.M., Rebelsky, S.A, and Weinman, J. (2022).
+    ;   Autry, E., Curtsinger, C., Davis, J., Eikmeier, N., Hamid, F., Jimenez, P., Johnson, B., Klinge, T., Osera, P.M., Rebelsky, S.A, and Weinman, J. (2023).
     ;   An introduction to Racket and DrRacket.  Online document available at
     ;   _URL_.
     ```
