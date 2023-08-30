@@ -1,0 +1,9 @@
+
+* Friday quiz
+    * We have fifteen-minute paper quizzes every Friday at the start 
+      of class.  These count as "LAs".  
+    * It's fine if you don't get it right; you'll have other chances.
+    * If you need extended time, please come to class at 8:00 a.m. on
+      Friday. (Let me know if that doesn't work.)
+    * This Friday's quiz will be on tracing/mental models of
+      computation.

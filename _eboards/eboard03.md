@@ -3,49 +3,53 @@ title: "EBoard 03 (Section 1): Mental Models"
 number: 3
 section: eboards
 held: 2023-08-30
-link: false
+link: true
 ---
 # {{ page.title }}
 
-**Warning** This class is being recorded.
+_Reminders to Self_
+
+* **Warning** This class is being recorded.
+* Post link to Otter.ai.
 
 _Getting started_ (this will be our normal start-of-class sequence)
 
-* Grab a card.  The card will have a computer name and a location.
-* Remember the name and location.
-* Drop the card back in the jar.
-* Navigate to the computer.
-* If you arrive first, start the lab.
-* When both partners arrive, introduce yourselves.
-
-For the future: I'm happy to reserve a (somewhat random) seat at
-the front of the classroom for those who need a front seat as an
-adjustment or accommodation.  Just let me know.
+* Same seat as last class.
+* On Friday, we'll return to our "normal" algorithm.
 
 _Approximate overview_
 
-* Administrative stuff; no attendance [10--15 min]
-* Lab one [n min]
-* Lab two [n min]
+* Administrative stuff [15 min]
+* Second lab from last class (submit as "Lab Writeup from Class 2" on Gradescope) [n minutes]
+* New lab, on paper (hand in on Friday). [(- 60 n) minutes]
+* Debrief [5 minutes]
 
 Administrivia
 -------------
 
 ### Introductory notes
 
-* I'm still Sam (or SamR).
-* Our mentors are still Ellie and Ella (or vice versa).
-* I tend to respond faster to Direct Messages (Chat) on Teams than email.
-* We'll talk about Gradescope on Wednesday.  (Our mentors will remind me
-  if I do not.)
-* We will be using a different implementation of Scheme than the other
-  sections of 151.
-* I will do my best to post a link to the Otter.ai transcript on Teams,
-  in the recordings channel.
 * Our class site is still under development.  Let me know if you find
   things missing, including images.
-* About five of you didn't respond to the reading.  Don't forget!
-* Only answer the double-dagger self checks.
+    * Those slash things on the syllabus usually indicate something
+      that I plan to post.  If they show up for a reading, let me know.
+* Normal office hours are in-person (unless you'd prefer to do them
+  remotely).
+* Apologies: I have some significant personal issues that may make me less
+  available in person in the coming weeks.  I will do my best to be available 
+  via email and Teams chat.
+    * These issues have also put me behind.  Apologies for that, too.
+* I have made two updates to the schedule:
+    * We're not doing a quiz this Friday; I don't think we've covered enough.
+    * I've moved the homework pre-assessment to Sunday night.
+* I'm told that all the accounts are now set up.  Let me know if you have difficulty
+  logging in.
+
+### HW 1
+
+* _Warning_: Most of this is based on material we will cover Friday and Monday.
+* I thought you'd benefit from seeing it early so that you can start thinking
+  about it.
 
 ### Upcoming Token activities
 
@@ -57,7 +61,7 @@ Cultural
 
 Peer
 
-* Volleyball scrimmage today at 5:15 in Darby
+* (No more volleyball scrimmages; let's limit ourselves to competitions.)
 * Volleyball game on Friday at 5:00 against Bethany and Dominca.
 * Football a week from Saturday, 1pm, against Rippon.
 
@@ -65,112 +69,26 @@ Wellness
 
 ### Upcoming work
 
-* Intro survey and syllabus questions due tonight by 10:30 p.m.
-* One reading for Wednesday; fill reading on Gradescope by Tuesday night.
-* Lab writeup due before class on **Friday**.
+* One reading for Friday; Complete the reading assignment on Gradescope by 
+  Thursday night.
+* Lab writeup(s) due before class on Friday.
+* Homework one released (probably not doable yet).
+* Homework one pre-assessment due on Sunday night (these will usually be due
+  on Friday nights; I like you to think about assignments early).
 
 Questions on the readings
 -------------------------
 
-Are we using VSCode w/Scamper or DrRacket?
+Lab continued from Monday
+-------------------------
 
-> Whoops.  DrRacket.
+New lab
+-------
 
-Must there be exactly two arguments to an arithmetic operator?
-
-> Nope.  You can have as many (or perhaps as few) as you want, at least
-  for most operators.
-
-> You can write `(+ 2 3 4 6)`
-
-```
-> (* 2 3 4 6)
-144
-> (* (+ 2 3 4) (+ 5 6))
-99
-> (+ 5)
-5
-> (+)
-0
-```
-
-Please go over basic building blocks.
-
-> You need to start somewhere in writing an algorithm.  That is, you
-  need to be able to assume that the computer knows how to do some
-  things (e.g., add).
-
-> The data (I know what a number is) and operations (I know how to add)
-  are the basic building blocks of most programming languages.
-
-Why can't I do the computing with images part?
-
-> You need a special library.  Sorry about that.  You should learn that
-  today.
-
-> When you hit problems like that, please DM me.
-
-Do we read lab instructions prior to class?
-
-> Please don't.
-
-Which questions do we answer on Gradescope?
-
-> Only the ones with the double daggers.
-
-> But you should answer the other ones to yourself.
-
-What is the assignment called on Gradescope?
-
-> Reading assignments are usually called "Readings for class ##"
-
-> Lab assignments are usually called "Lab for class ##"
-
-> If you don't see it, I probably forgot to post it.  Chat me on Teams.
-  Or email me.
-
-> Note: No late penalties for the first reading.
-
-
-Debrief on Prior Class
-----------------------
-
-We will do this as a _Think/Pair/Share_ (or just TPS) activity.
-
-* Think for a minute to yourself.
-* Discuss the idea with your partner.
-* Share with the broader classroom.
-
-**Getting students into card groups was somewhat chaotic.  I intentionally
-don't provide an algorithm, and it sometimes shows.  What would be a better
-algorithm for getting card groups together?**
-
-* Divide into smaller groups (e.g., smaller numbers and larger number)
-  and then divide again and again.
-* Put one designated person with each card somewhere in the room and
-  send everyone to meet that person.
-* Scrap the cards altogether.  Give everyone a pair of numbers that
-  specify their coordinate in the room.
-* Put your fingers in the air, in the air.  Put your fingers in the
-
-Lab 1: Setting up Linux
------------------------
-
-This lab appears in the Schedule.  Each person will do this separately, with
-the other person helping.
-
-In past years, some students have had to edit the launcher to use
-`firefox` instead of `firefox-esr %u`.  I'm not sure why people end up
-with different launchers.
-
-I apologize to those of you who could not get started because of issues
-with MathLAN.  Those should be resolved by the end of the day.
-
-Lab from Monday: Learning Scheme
---------------------------------
+Debrief on lab from Monday: Learning Scheme
+-------------------------------------------
 
 * It's generally a bad idea to skip ahead in the lab.
-* Why doesn't this work
 * **The origin of the short and long versions.**  My colleagues who
   first taught the course wrote the long versions (or at least
   the original versions of the long versions).  When I started
@@ -183,3 +101,5 @@ Lab from Monday: Learning Scheme
     * If I see you running DrRacket on your laptop, I may attempt
       to defenestrate aforementioned laptop.
 
+Debrief on new lab
+------------------
