@@ -58,20 +58,20 @@ After pressing **Run**, the interactions pane will now be ready for us to use fu
 Our [initial reading on the Racket language]({{ "/readings/racket-intro.html" | relative_url }}) introduce us to functions for drawing circles and rectangles:
 
 ~~~racket
-> (circle 50 'outline "blue")
+> (circle 50 "outline" "blue")
 ![An outline of a blue circle.]({{ "/images/decomposition-circle-example.png" | relative_url }})
-> (rectangle 75 50 'solid "red")
+> (rectangle 75 50 "solid" "red")
 ![A solid red rectangle.]({{ "/images/decomposition-rectangle-example.png" | relative_url }})
 ~~~
 
 As well as functions that allow us to place images above and beside each other.
 
 ~~~racket
-> (above (circle 35 'outline "blue")
-         (circle 35 'outline "red"))
+> (above (circle 35 "outline" "blue")
+         (circle 35 "outline" "red"))
 ![Outlines of a blue and red circle stacked on top of each other.]({{ "/images/decomposition-above-example.png" | relative_url }})
-> (beside (rectangle 50 50 'solid "blue")
-          (rectangle 50 50 'solid "red"))
+> (beside (rectangle 50 50 "solid" "blue")
+          (rectangle 50 50 "solid" "red"))
 ![A solid blue and red rectangle side-by-side.]({{ "/images/decomposition-beside-example.png" | relative_url }})
 ~~~
 
@@ -127,8 +127,8 @@ Note that this `define` command should go into the *definitions pane* below your
 
 ~~~racket
 (define top-row
-  (beside (circle 50 'outline "red")
-          (circle 75 'solid "blue")))
+  (beside (circle 50 "outline" "red")
+          (circle 75 "solid" "blue")))
 ~~~
 
 After clicking **Run** to re-load these definitions, we can now go to the interactions pane and test our code.
@@ -143,8 +143,8 @@ Next, we'll define `bottom-row` to be the bottom row of circles in the definitio
 
 ~~~racket
 (define bottom-row
-  (beside (circle 75 'outline "blue")
-          (circle 50 'solid "red")))
+  (beside (circle 75 "outline" "blue")
+          (circle 50 "solid" "red")))
 ~~~~
 
 And we'll check our work in the interactions pane.
@@ -192,8 +192,8 @@ Of course, when we run this code, we the `Hole encountered!  Fill me in!` error,
 Once we define `top-row` as before:
 
 ~~~racket
-  (beside (circle 50 'outline "red")
-          (circle 75 'solid "blue")))
+  (beside (circle 50 "outline" "red")
+          (circle 75 "solid" "blue")))
 ~~~
 
 We can now fill in the corresponding hole in `circles`:
@@ -231,12 +231,12 @@ Take a look at the complete program that we wrote in the definitions pane:
 (require 2htdp/image)
 
 (define top-row
-  (beside (circle 50 'outline "red")
-          (circle 75 'solid "blue")))
+  (beside (circle 50 "outline" "red")
+          (circle 75 "solid" "blue")))
 
 (define bottom-row
-  (beside (circle 75 'outline "blue")
-          (circle 50 'solid "red")))
+  (beside (circle 75 "outline" "blue")
+          (circle 50 "solid" "red")))
 
 (define circles
   (above top-row bottom-row))
@@ -264,10 +264,10 @@ Here is an alternative version of the code to produce the image of this reading.
 (require 2htdp/image)
 
 (define circles
-  (above (beside (circle 50 'outline "red")
-                 (circle 75 'solid "blue"))
-         (beside (circle 75 'outline "blue")
-                 (circle 50 'solid "red"))))
+  (above (beside (circle 50 "outline" "red")
+                 (circle 75 "solid" "blue"))
+         (beside (circle 75 "outline" "blue")
+                 (circle 50 "solid" "red"))))
 ~~~
 
 Paste this code into a fresh DrRacket tab's definitions pane and verify that `circles` produces the same image as before.
