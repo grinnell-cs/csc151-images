@@ -83,6 +83,8 @@ I also recommend that you *regularly create summaries*.  A summary
 will draw upon your notes, my notes, your answers to labs or homework
 assignments, and so on and so forth.  At times, I may incentivize summaries,
 such as by allowing you to bring a page of summary notes to a quiz or test.
+Evidence suggests that you should first summarize _without looking at the reading_
+and then go back and update your summary.
 
 Many students find it useful to *take notes while reading*.  I will admit
 that I have never been good at marking up the texts I read, even though I
@@ -107,5 +109,5 @@ on that vocabulary.
 Final thoughts
 --------------
 
-Take notes.  Realize that there are different ways to take notes.  Explore
+TLDR; Take notes.  Realize that there are different ways to take notes.  Explore
 options, and see what works best for you.  But take notes.

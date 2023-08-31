@@ -25,6 +25,7 @@ How do you deal with this issue?  **Get help!**  If you struggle for more than f
     * Including pointers to things (i.e., find out more about X in ….)
 * After you finish each reading, write a one-minute summary of the key points.
     * In some cases, you might write a short summary after each section.
+    * Do this without looking at the reading.
 * Do the self checks.
     * Some people find it useful to read the self checks first in order to see what might be most important.
 * Get familiar with Racket documentation.
