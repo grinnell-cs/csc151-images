@@ -50,14 +50,14 @@ You've already seen two procedures for creating basic shapes:
 `(rectangle` `width` `height` `mode` `color)` creates a rectangle.
 
 ```drracket
-> (circle 20 'outline "red")
+> (circle 20 "outline" "red")
 ![A white circle outlined by a thin red line.  The circle has a radius of 20.]({{ "/images/image-reading-01.png" | relative_url }})
-> (rectangle 40 25 'solid "blue")
+> (rectangle 40 25 "solid" "blue")
 ![A solid blue rectangle, 40 units wide and 25 units high.  It is approximately the same width as the previous circle.]({{ "/images/image-reading-02.png" | relative_url }})
 ```
 
 There are a few other things you can do with these basic shapes. If,
-instead of `'outline` or `'solid`, you use a number between 0 and 255
+instead of `"outline"` or `"solid"`, you use a number between 0 and 255
 for the mode, DrRacket uses that number as the _opacity_ of the shape.
 
 ```drracket
@@ -89,23 +89,23 @@ Opacity will be especially important as we start to overlay shapes.
 You can also use different "pen" values when outlining a shape.  To
 create a pen, you use `(pen` `color` `width` `style` `cap` `join)` where
 
-* `style` can be `'solid`, `'dot`, `'long-dash`, `'short-dash`, or
-  `'dot-dash`.
+* `style` can be `"solid"`, `"dot"`, `"long-dash"`, `"short-dash"`, or
+  `"dot-dash"`.
 
-* `cap` can be `'round`, `'projecting`, or `'butt`.
+* `cap` can be `"round"`, `"projecting"`, or `"butt"`.
 
-* `join` can be `'round`, `'bevel`, or `'miter`.
+* `join` can be `"round"`, `"bevel"`, or `"miter"`.
 
 ```drracket
-> (define background (rectangle 80 80 'solid "white"))
+> (define background (rectangle 80 80 "solid" "white"))
 > (beside
-   (overlay (circle 30 'outline (pen "red" 4 'solid 'round 'round))
+   (overlay (circle 30 "outline" (pen "red" 4 "solid" "round" "round"))
             background)
-   (overlay (circle 30 'outline (pen "red" 6 'dot-dash 'round 'round))
+   (overlay (circle 30 "outline" (pen "red" 6 "dot-dash" "round" "round"))
             background)
-   (overlay (circle 30 'outline (pen "red" 8 'short-dash 'butt 'round))
+   (overlay (circle 30 "outline" (pen "red" 8 "short-dash" "butt" "round"))
             background)
-   (overlay (circle 30 'outline (pen "red" 8 'short-dash 'projecting 'round))
+   (overlay (circle 30 "outline" (pen "red" 8 "short-dash" "projecting" "round"))
             background))
 ![Four large red circles.  The first has a solid outline.  The second is outlined by alternating short and long lines, each with a curved end.  The third has short line segments with large gaps between them, almost as large as the segments.  The fourth has larger segments.]({{ "/images/image-reading-05.png" | relative_url }})
 ```
@@ -117,11 +117,11 @@ There are also a variety of other basic shapes.
 
 ```drracket
 > (beside
-   (ellipse 40 20 'outline "red")
-   (ellipse 20 40 'solid "blue")
-   (triangle 40 'solid "black")
-   (star 30 'solid "teal")
-   (star 20 'outline "teal"))
+   (ellipse 40 20 "outline" "red")
+   (ellipse 20 40 "solid" "blue")
+   (triangle 40 "solid" "black")
+   (star 30 "solid" "teal")
+   (star 20 "outline" "teal"))
 ![Five shapes in a row.  The first is a wide ellipse, outlined in red.  The second is a tall, thin ellipse, in solid blue.  The third is a black equilateral triangle.  The fourth is a solid teal five-pointed start.  The last is a star made of five lines.]({{ "/images/image-reading-06.png" | relative_url }})
 ```
 
@@ -181,9 +181,9 @@ create RGB colors.  `(make-color` `0` `255` `0)` makes a bright green,
 `(make-color` `64` `0` `64)` makes a relatively dark purple.
 
 ```drracket
-> (beside (circle 20 'solid (make-color 0 255 0))
-          (circle 20 'solid (make-color 0 128 128))
-          (circle 20 'solid (make-color 64 0 64)))
+> (beside (circle 20 "solid" (make-color 0 255 0))
+          (circle 20 "solid" (make-color 0 128 128))
+          (circle 20 "solid" (make-color 64 0 64)))
 ![Three circles in a row.  The first is a bright green circle.  The second is a dull teal-ish color.  The third is a very dark purple.]({{ "/images/image-reading-07.png" | relative_url }})
 ```
 
@@ -204,9 +204,9 @@ images.
   according to their centers.
 
 ```drracket
-> (define small-gray (circle 10 'solid "gray"))
-> (define medium-red (circle 15 'solid "red"))
-> (define large-black (circle 20 'solid "black"))
+> (define small-gray (circle 10 "solid" "gray"))
+> (define medium-red (circle 15 "solid" "red"))
+> (define large-black (circle 20 "solid" "black"))
 > (beside small-gray medium-red large-black)
 ![Three circles in a row of increasing size.  The first is gray, the second is red, the third is black.]({{ "/images/image-reading-08.png" | relative_url }})
 > (above small-gray medium-red large-black)
@@ -222,36 +222,36 @@ library provides alternatives to these three that provide a bit more
 control.
 
 * `(beside/align alignment i1 i2 ...)` allows you to align
-  side-by-side images at the top or bottom (using `'top` and
-  `'bottom`).  You can also align at the center, mimicking `beside`,
-  using `'center` 
+  side-by-side images at the top or bottom (using `"top"` and
+  `"bottom"`).  You can also align at the center, mimicking `beside`,
+  using `"center"` 
 * `(above/align alignment i1 i2 ...)` allows
   you to align vertically stacked images at the left, right, or middle
-  (using   `'left`, `'right`, and `'middle`). 
+  (using   `"left"`, `"right"`, and `'middle`). 
 * `(overlay/align halign valign i1 i2 ...)` allows you to
   align overlaid images.
 
 ```drracket
-> (define small-gray (circle 10 'solid "gray"))
-> (define medium-red (circle 15 'solid "red"))
-> (define large-black (circle 20 'solid "black"))
-> (beside/align 'top small-gray medium-red large-black)
+> (define small-gray (circle 10 "solid" "gray"))
+> (define medium-red (circle 15 "solid" "red"))
+> (define large-black (circle 20 "solid" "black"))
+> (beside/align "top" small-gray medium-red large-black)
 ![A sequence of three circles in increasing size: gray, then red, then black.  The top edges of the circles are aligned.]({{ "/images/image-reading-12.png" | relative_url }})
-> (beside/align 'bottom small-gray medium-red large-black)
+> (beside/align "bottom" small-gray medium-red large-black)
 ![A sequence of three circles in increasing size: gray, then red, then black.  The bottom edges of the circles are aligned.]({{ "/images/image-reading-13.png" | relative_url }})
-> (above/align 'left small-gray medium-red large-black)
+> (above/align "left" small-gray medium-red large-black)
 ![A stack of three circles in increasing size: gray, then red, then black.  The left edges of the circles are aligned.]({{ "/images/image-reading-14.png" | relative_url }})
-> (above/align 'right small-gray medium-red large-black)
+> (above/align "right" small-gray medium-red large-black)
 ![A stack of three circles in incrasing size: gray, then red, then black.  The right edges of the ricles are aligned.]({{ "/images/image-reading-15.png" | relative_url }})
-> (overlay/align 'left 'top small-gray medium-red large-black)
+> (overlay/align "left" "top" small-gray medium-red large-black)
 ![Three circles, or at least the impression of three circles.  A small gray circle is completely visible.  The gray circle obscures the top-left portion of a larger red circle.  That red circle obscures the top-left portion of a black circle.]({{ "/images/image-reading-16.png" | relative_url }})
-> (overlay/align 'left 'center small-gray medium-red large-black)
+> (overlay/align "left" "center" small-gray medium-red large-black)
 ![Three circles, or at least the impression thereof.  A small gray circle is cimplegely visible.  It obscures the left portion of a larger red circle, which obscures the left portion of larger black circle.]({{ "/images/image-reading-17.png" | relative_url }})
-> (overlay/align 'left 'bottom small-gray medium-red large-black)
+> (overlay/align "left" "bottom" small-gray medium-red large-black)
 ![Three circles, or at least the impression of three circles.  A small gray circle is completely visible.  The gray circle obscures the bottom-left portion of a larger red circle.  That red circle obscures the bottom-left portion of a black circle.]({{ "/images/image-reading-18.png" | relative_url }})
-> (overlay/align 'right 'top small-gray medium-red large-black)
+> (overlay/align "right" "top" small-gray medium-red large-black)
 ![Three circles, or at least the impression of three circles.  A small gray circle is completely visible.  The gray circle obscures the top-right portion of a larger red circle.  That red circle obscures the top-right portion of a black circle.]({{ "/images/image-reading-19.png" | relative_url }})
-> (overlay/align 'right 'top large-black medium-red small-gray)
+> (overlay/align "right" "top" large-black medium-red small-gray)
 ![A large black circle.  A small sliver of red is at the top right, and a sliver of grey is after that.]({{ "/images/image-reading-20.png" | relative_url }})
 ```
 
@@ -264,8 +264,8 @@ one relative to the first with
 one is offset by the specified amount from its original position.
 
 ```drracket
-> (define medium-red (circle 15 'solid "red"))
-> (define medium-black (circle 15 'solid "black"))
+> (define medium-red (circle 15 "solid" "red"))
+> (define medium-black (circle 15 "solid" "black"))
 > (overlay/offset medium-red 2 6 medium-black)
 ![A red circle and the impression of a black circle.  The bottom of the black circle is visible, shifted slightly to the right.]({{ "/images/image-reading-21.png" | relative_url }})
 > (overlay/offset medium-red 6 2 medium-black)
