@@ -270,8 +270,21 @@ Note that some of these programs produce errors; that is intentional!
 
 ### Exercise 7: Explaining define
 
-In your own words, explain how a sequence of (interleaved expressions and define
-statements) works.
+In your own words, explain how our Scheme interpreter deals with a sequence of (interleaved expressions and define statements).  
+That is, what does the Scheme interpreter do if you write some define statements and some expressions and some more define statements and some more expressions and so on and so forth?
+
+For example, consider what it does with the following.
+
+```racket
+(define x 10)   ; define statement
+(+ x x)         ; expression
+(define y 11)   ; define statement
+(sqr y)         ; expression
+(sqr x)         ; expression
+(define z 12)   ; define statement
+(define a 1)    ; define statement
+(+ x y z)       ; expression
+```
 
 ## Submitting your work
 
