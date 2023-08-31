@@ -1,5 +1,5 @@
 ---
-title: Note on taking notes in CSC 151
+title: Notes on taking notes in CSC 151
 summary: Some recommendations on why and how to take notes
 section: handouts
 ---
