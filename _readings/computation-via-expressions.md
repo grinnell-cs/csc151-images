@@ -172,10 +172,14 @@ Observe that our procedure for evaluating an arithmetic expression is:
 
 These three steps taken together form a _single step of evaluation_.  We repeatedly take steps of evaluation until the overall expression is a value.  This model of arithmetic computation is also called a _substitutive model of evaluation_ due to the last step where substitute value for subexpression.
 
-Scheme expressions generall operate in the same way as arithmetic expressions.  However, as mentioned above, Scheme's unique syntax makes evaluation easier: because everything is parenthesized, there is no ambiguity as to which subexpression evaluates next.  We just find the leftmost innermost parenthesized expression and evaluate it!  Let's see how the equivalent Scheme expression evaluates:
+Scheme expressions generall operate in the same way as arithmetic expressions.  However, as mentioned above, Scheme's unique syntax makes evaluation easier: because everything is parenthesized, there is no ambiguity as to which subexpression evaluates next.  We just find the leftmost-innermost parenthesized expression and evaluate it!  That is, we go through the expressions from left to right, working innermost-to-outmost for each expression (again, following the leftmost-innermost policy).
+
+Let's see how the equivalent Scheme expression evaluates:
 
 ```racket
-    (* 3 (+ (- 5 2) 1))
+    (* (+ 1 2) (+ (- 5 2) 1))
+       ^^^^^^^
+--> (* 3 (+ (- 5 2) 1))
             ^^^^^^^
 --> (* 3 (+ 3 1))
          ^^^^^^^
@@ -184,7 +188,7 @@ Scheme expressions generall operate in the same way as arithmetic expressions.  
 --> 12
 ```
 
-Substitutive evaluation is our _mental model of computation_ for Scheme expressions!  
+Substitutive evaluation is our primary _mental model of computation_ for Scheme expressions.
 
 In summary:
 
@@ -209,10 +213,10 @@ Consider the following expression that produces a drawing:
 
 Write down a list of:
 
-+   The sub-expressions of the overall expression.
-+   All the identifiers in the expression.
-+   All of the numbers in the expression.
-+   All of the strings in the expression.
+* All non-trivial sub-expressions of the overall expression.
+* All the identifiers in the expression.
+* All of the numbers in the expression.
+* All of the strings in the expression.
 
 ## Check 2: Semantics (‡)
 

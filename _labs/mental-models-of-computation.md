@@ -116,7 +116,7 @@ However, these program constructs are far more like _highly-composable building 
 In this problem, we'll take a look at identifying the various parts of expressions of significant complexity.
 For each of the following expressions, identify:
 
-+ The sub-expressions of the overall expression.
++ The non-trivial sub-expressions of the overall expression.
 + The identifiers of the overall expression.
 + All of the numbers of the overall expression.
 + All of the strings of the overall expression.
@@ -124,19 +124,23 @@ For each of the following expressions, identify:
 In addition to this information, try to "read" the expression and in a sentence, describe what you believe the expression evaluates to.
 Check your work in DrRacket.
 
-~~~racket
+```racket
 ; (a) (Driver B)
 (string-length
   (string-append "hello"
                  " "
                  "world!"))
+```
 
+```racket
 ; (b) (Driver A)
 (+ 32 (* 8 60) (* (/ 1 2) 4 (expt 60 2)))
+```
 
-
+```
 ; (c) (Driver B)
 (odd? (length (string-split "4,9,10,11,2,3" ",")))
+```
 
 Finally, with your partner, review your results for parts (a) and (c) and consider this statement:
 
@@ -148,11 +152,11 @@ Explain why this statement makes sense given what you know about how expressions
 
 In our first Scheme work, we learned that `define` is a construct that allowed us to introduce _identifiers_ or _named values_ into our programs.  Each identifier/name is associated with ("bound to") a value.  (Some people call these "variables"; since they don't vary, we will try to avoid that name.)
 
-~~~racket
+```racket
 > (define x 10) ; binds the identifier/name x to the value 10
 > (+ x 1)
 11
-~~~
+```
 
 Let's go through the process of trying to understanding how `define` in Scheme programs.
 Along the way we'll update our mental model of computation to account for what we observe in our experimentation.
@@ -162,16 +166,16 @@ Usually this evolution amounts to _abstracting_ your understanding so that it ap
 
 At first glance the `define` construct above looks similar to the operator form or _function call_ form of expressions we identified in the reading:
 
-~~~racket
+```racket
 (<identifier> <expr1> ... <exprk>)
-~~~
+```
 
 If this was the case, this implies that we can use `define` anywhere an expression is considered.
 For example, perhaps we can get the same effect as the code above by _inlining_ the `define` into the addition:
 
-~~~racket
+```racket
 > (+ (define x 10) 1)
-~~~
+```
 
 {:type="i"}
 1.  Try this example out in DrRacket.
@@ -199,16 +203,16 @@ Consequently, whenever we mention `x` in our program, we really mean the value t
 First let's address the syntax of a `define`.
 So we far, we have seen that `define` takes the following form:
 
-~~~racket
+```racket
 (define <??> <??>)
-~~~
+```
 
 Where we haven't quite defined what goes in either `<??>` yet.
 We assumed that a `define` statements binds an identifier, so it stands to reason that the first placeholder should be an identifier:
 
-~~~racket
+```racket
 (define <identifier> <??>)
-~~~
+```
 
 With your partner, try out `define` statements with different potential identifiers and different things in the last position.
 You should try out various constructs that you've learned in the reading so far, in particular, the different forms of expressions.
@@ -228,46 +232,46 @@ For each of the following programs:
 
 Note that some of these programs produce errors; that is intentional!
 
-~~~racket
+```racket
 ; (i) (Driver A)
 (define x 5)
 (define y (* 5 8))
 (define z (+ 1 1))
 
 (+ x y z)
-~~~
+```
 
-~~~racket
+```racket
 ; (ii) (Driver B)
 (define x 20)
 (define y (* x 20))
 (define z (* y y))
 
 (+ x y z)
-~~~
+```
 
-~~~racket
+```racket
 ; (iii) (Driver A)
 (define x 10)
 (define y (+ x z))
 (define z (* x 2))
 
 (+ x y z)
-~~~
+```
 
-~~~racket
+```racket
 ; (iv) (Driver B)
 (define x 10)
 (define y (+ x 1))
 (define x (* y 2))
 
 (+ x y)
-~~~
+```
 
 ### Exercise 7: Explaining define
 
-In your own words, explain how a sequence of interleaved expressions and define
-statements work.
+In your own words, explain how a sequence of (interleaved expressions and define
+statements) works.
 
 ## Submitting your work
 
