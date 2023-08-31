@@ -12,7 +12,7 @@ This lab will give you some experience decomposing problems as well as typing ou
 
 ### Introducing Pair Programming
 
-For these next four exercises, we will try out *pair programming*.
+For these next four exercises, we will continue to try out *pair programming*.
 Pair programming is a particular discipline of collaborative programming that we will be using extensively in our lab work.
 We'll have more to say in the coming weeks about the nitty-gritty of working in pairs, but we would like you to dive head-first into the experience.
 
@@ -105,10 +105,10 @@ It is fine if your cottage in the woods does not exactly match ours.
 Here's the sample image, which looks a bit like falling dominoes.
 Once again, it's fine if you don't match exactly.  However, all the dominoes should be on the "baseline".
 
-![A series of black-and-white falling dominoes.]({{ "/images/falling-dominoes.png" | relative_url }})
+![A series of black-and-white falling dominoes.]({{ "/images/decomposition-falling-dominoes.png" | relative_url }})
 
 ### Extra 1: Sun Triangles
 
 Yup, it's another image!
 
-![A collection of transparent yellow triangles on top of an orange circle]({{ "/images/sun-triangles.png" | relative_url }})
+![A collection of transparent yellow triangles on top of an orange circle]({{ "/images/decomposition-sun-triangles.png" | relative_url }})
