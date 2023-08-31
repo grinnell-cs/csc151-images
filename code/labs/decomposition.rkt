@@ -27,7 +27,7 @@ comments on the readings.
 2. Update the CSC151 libraries.  That is, open DrRacket, select
 "Package Manager..." from the "File" menu, enter
 
-    https://github.com/grinnell-cs/csc151.git
+    https://github.com/grinnell-cs/csc151.git#main
 
 click "Update", wait for a bit, click "Close Output", and then close
 the Package manager.
