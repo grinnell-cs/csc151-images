@@ -26,7 +26,7 @@ Expression
   : Initially, either (a) a value or (b) the application of a function to a sequence of expressions.  That application is written with an open parenthesis, the function (often represented by an identifier), the sequence of expressions (often called arguments) separated by spaces, and a close parenthesis.  For example `(+ 2 3)` or `(string-length (string-append "hello" "scheme"))`.  Eventually, we'll also see some expressions that start with keywords.
 
 Nontrivial expression
-  : Any expression that is not a value.  `(+ 2 3)` is a nontrivial expression.  `2` is a trivial expression.
+  : Any expression that is not a basic value.  `(+ 2 3)` is a nontrivial expression.  `2` is a trivial expression.
 
 Immediate subexpression
   : Any in the sequence of expressions in a function application.
