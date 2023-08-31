@@ -30,6 +30,7 @@
     - page: /readings/computation-via-expressions.html
   lab:
     - page: /labs/mental-models-of-computation.html
+  notes: ../eboards/eboard03.html
 
 - topic: Algorithmic decomposition
   abbrev: decomposition
