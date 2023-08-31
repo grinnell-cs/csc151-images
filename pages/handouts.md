@@ -35,6 +35,13 @@ information.  To ensure that you read the information, I even give you
 [AI programming assistants](ai)
   : Some notes on why I discourage the use of AI programming assistants in my introductory classes.
 
+[Notes on taking notes](taking-notes)
+  : Some tips on taking notes.
+
+[Pre-Assessments and Post-Assessments](prepost)
+  : Advance warning of the questions I'll ask before and after each mini-project
+    and SoLA.
+
 [Tips on working more productively](working-tips)
   : Some tips from students, mentors, and instructors.
 
@@ -47,6 +54,9 @@ information.  To ensure that you read the information, I even give you
   : I'm not sure when this is from.  I've kept it around for some reason.  I made a few changes for this term, but not enough.  I may make more.
 
 ## Some Scheme Stuff
+
+[Terminology](terminology)
+  : Some important terminology.
 
 [The Zen of Booleans](zen-of-booleans)
   : Expressing some Boolean expressions more concisely.
