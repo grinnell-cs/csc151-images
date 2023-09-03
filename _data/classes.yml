@@ -55,6 +55,7 @@
     - page: /readings/mental-models.html
   lab:
     - page: /labs/procedures.html
+  notes: ../eboards/eboard05.html
 
 - topic: Expressions and types
   abbrev: exprs-and-types
