@@ -184,5 +184,4 @@ The readings on primitive data have a number of self-checks.
 Please complete the following self-checks for your reading question set for this collection:
 
 + (‡) [Numbers]({{ "/readings/numbers.html" | relative_url }}): Check 1 (Exploring exponentiation)
-+ (‡) [Collating Sequences]({{ "/readings/strings.html" | relative_url }}): Check 2 (Collating sequences)
-+ (‡) [Symbols]({{ "/readings/symbols.html" | relative_url }}) Check 1: Use of symbols
++ (‡) [Strings and Collating Sequences]({{ "/readings/strings.html" | relative_url }}): Check 2 (Collating sequences)
