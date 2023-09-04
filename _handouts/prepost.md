@@ -13,8 +13,7 @@ potential issues that I might address (e.g., if everyone takes too long on an
 assignment, or everyone indicates potential confusion about a topic).  They may
 evolve a bit as the semester progresses.
 
-You can find the pre- and post-assessments on Gradescope.  Note that filling them
-out is _required_.
+You can find the pre- and post-assessments on Gradescope.  Note that filling them out is _required_.
 
 ### Pre-MP assessment
 
@@ -39,21 +38,16 @@ Q6 Time
 ### Post-MP assessment
 
 Q1: Successes
-  : What went well on this assignment/
+  : What went well on this assignment?
 
 Q2: Challenges
-  : What parts of the assignment were most difficult for you?  What made them
-    difficult?
+  : What parts of the assignment were most difficult for you?  What made them difficult?
 
 Q3: Addressing challenges
-  : How can you address those kinds of challenges in the next
-    assignment?  For example, would it help to start earlier?  To
-    ask questions in advance?  To plan to space out the work over
-    several days?  To gather different resources?
+  : How can you address those kinds of challenges in the next assignment?  For example, would it help to start earlier?  To ask questions in advance?  To plan to space out the work over several days?  To gather different resources?
 
 Q4: Time
-  : How long did the assignment take?  Was that longer or shorter than you predicted?
-    What made the difference?
+  : How long did the assignment take?  Was that longer or shorter than you predicted?  What made the difference?
 
 Q5: Pleasures
   : Which parts of the assignment, if any, did you find most enjoyable?
@@ -70,16 +64,10 @@ Q3: Challenges
   : Which of these topics do you expect to find the most difficult?  Why?
 
 Q4: Brain dump
-  : Without looking at any resources (e.g., readings, labs, your
-    notes), write down everything you know about each of the remaining
-    topics.  (Please spend at least a minute or two on each topic,
-    but feel free to spend more.)
+  : Without looking at any resources (e.g., readings, labs, your notes), write down everything you know about each of the remaining topics.  (Please spend at least a minute or two on each topic, but feel free to spend more.)
 
 Q5: Preparation
-  : How will you prepare for the SoLA?  Some good strategies include doing sample 
-    problems, writing sample problems, attending mentor sessions, writing "cheat
-    sheets" (that you don't actually cheat with), and spaced retrieval (spending
-    a little bit of time each day preparing, rather than doing it all at once).
+  : How will you prepare for the SoLA?  Some good strategies include doing sample problems, writing sample problems, attending mentor sessions, writing "cheat sheets" (that you don't actually cheat with), and spaced retrieval (spending a little bit of time each day preparing, rather than doing it all at once).
  
 ### Post-SoLA assessment
 
@@ -93,10 +81,7 @@ Q3: Challenges
   : Which topics did you find the most difficult?  Why?
 
 Q4: Successes
-  : What preparation strategies seemed to have the greatest effect?  (I realize
-    that this can be hard to tell.)
+  : What preparation strategies seemed to have the greatest effect?  (I realize that this can be hard to tell.)
 
 Q5: Changes
-  : What will you do differently next time?  For example, will you prepare differently?
-    Will you try the LAs at a different time of day?  Spread them out throughout the
-    day?
+  : What will you do differently next time?  For example, will you prepare differently?  Will you try the LAs at a different time of day?  Spread them out throughout the day?
