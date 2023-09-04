@@ -18,21 +18,22 @@ _Getting started_ (this will be our normal start-of-class sequence)
 * Remember the name and location.
 * Drop the card back in the jar.
 * Navigate to the computer.
-* If you arrive first, start the lab.
+* If you arrive first, log in and bring up the lab.
 * When both partners arrive, introduce yourselves.
 
 _Approximate overview_
 
 * Administrative stuff [5 min]
-* Questions on the readings [5 min]
-* Questions on the mini-project [5 min]
-* Lab [60 min]
+* Questions on the readings [5-10 min]
+* Questions on the mini-project [5-10 min]
+* Lab [~60 min] (really 55 min)
 
 Administrivia
 -------------
 
 ### Introductory notes
 
+* Mentor sessions: Sundays 1-2 in Science 3813.
 * Sorry that I could not be here on Friday.  (I'm not recording the reason on
   the eboard.)
     * As I said, this is a personally difficult semester/year.
@@ -63,13 +64,20 @@ Administrivia
 
 Academic
 
-* CS Table, Tuesday, Noon, Day PDR (second floor of marketplace)
+* CS Table, Tuesday, Noon, Day PDR (second floor of marketplace).
+  Topic: Controversy over the CHI conference in Hawai'i.  Readings
+    * https://chi2024.acm.org
+    * https://www.chiinhawaii.info
+    * Two PDFs that you can ask me for
 
 Cultural
+
+* Org Fair, Thursday, 4pm-7pm, "Outside"
 
 Peer
 
 * Volleyball vs. Buena Vista, 7pm Tuesday 5 Sept 2023
+    * Detour: Iowa Pronunciation (Buena Vista, Nevada)
 * Football vs. Rippon, 1pm Saturday, 9 Sept 2023
 
 Wellness
@@ -79,7 +87,11 @@ Wellness
 * Two readings for Wednesday; Complete the reading assignment on Gradescope by 
   Tuesday night.
 * Lab writeup(s) due before class on Wednesday.
-* Homework one pre-assessment due on last night.
+* MP01 pre-assessment due last night.
+    * It appears I screwed it up on Gradescope, so it's fine to turn
+      it in tonight.
+* MP01 one due Thursday night.
+    * Gradescope submission form should appear this afternoon.
 
 Questions on the readings
 -------------------------
@@ -92,6 +104,10 @@ such as subtraction or division?
 > `(- 1 2 3)` is the same as `(- (- 1 2) 3)`.
 
 > `(/ 1 2 3)` is the same as `(/ (/ 1 2) 3)`.
+
+Are 2/5 and 0.4 the same?  How about 1/2 and 0.5?
+
+> Nope.  You'll learn more about that in the readings for Wednesday.
 
 Can I write my trace as follows?
 
@@ -112,13 +128,21 @@ Result: 17.5
 
 ```
     (add-3 (* 2 3) (+ 8 3) (/ 1 2))
+--> (add-3 6 (+ 8 3) (/ 1 2))
+--> (add-3 6 11 (/ 1 2))
+--> (add-3 6 11 1/2)
+--> (+ (+ 6 11) 1/2)
+--> (+ 17 1/2)
+--> 17 1/2
 ```
 
-Are 2/5 and 0.4 the same?  How about 1/2 and 0.5?
+Do we have to write out the "x is 6, y is 11, z is 1/2"?
 
-> Nope.  You'll learn more about that in the readings for Wednesday.
+> No.  But you might find it useful.
 
 Why parenthesize `(+ x y)` in the definition of `add-3`?
+
+> `(define add-3 (lambda (x y z) (+ (+ x y) z)))`
 
 > For the time being, we're pretending that addition only takes two
   parameters.  We also want you to practice dealing with nested
@@ -126,7 +150,12 @@ Why parenthesize `(+ x y)` in the definition of `add-3`?
 
 Why define `triple` in reference to `add-3`?
 
+> `(define triple (lambda (x) (add-3 x x x)))`
+
 > We want you to practice multi-step traces.
+
+> It's a good habit to build procedures on top of others you've built
+  in the past.
 
 Don't both these choices add more steps to the overall evaluation
 and make the code for `triple` less resilient (if the `add-3`
@@ -177,15 +206,84 @@ Can you explain part four?
 > We might want to change the size of the circles, the outline color,
   the colors of the individiaul circles, etc.
 
-> So we'll write a procedure to do that.
+> So we'll write a procedure to do that.  (I am not showing our hard
+  work writing this in DrRacket.)
 
 ```
 (define generate-my-image
-  (lambda (...)
-    ...))
+  (lambda (size top-color)
+    (above
+     (overlay (circle size "outline" "black")
+              (circle size "solid" top-color))
+     (beside (overlay (circle size "outline" "black")
+                      (circle size "solid" "purple"))
+             (overlay (circle size "outline" "black")
+                      (circle size "solid" "teal")))
+     (beside (overlay (circle size "outline" "black")
+                      (circle size "solid" "red"))
+             (overlay (circle size "outline" "black")
+                      (circle size "solid" "blue"))
+             (overlay (circle size "outline" "black")
+                      (circle size "solid" "green"))))))
 ```
+
+Provide a call to your procedure that generates the same image you used in part 2. Call it my-image-alt.
+
+> (define my-image-alt (generate-my-image 20 "grey"))
+
+Provide a call to your procedure that generates a substantially different image. Call it my-other-image.
+
+> (define my-other-image (generate-my-image 5 "green"))
 
 Lab
 ---
 
+The person nearest the board is "A".  The other person is "B".  If there
+are three of you, adjust as best you can.
 
+Where should we put our trace?
+
+Between the `#|` and the `|#`.
+
+```
+#| 
+a.
+     (my-func-1 (+ 1 1) 5)
+ --> (my-func-1 2 5)
+ --> (...)
+|#
+```
+
+If you want to check your trace, use `(require csc151/trace)` (in addition
+to your main trace).  (Except that you can't really check tracing of functions
+(yet).)
+
+```
+(define snowman
+  (lambda (size)
+    (above (circle (* size 1/2) "outline" "black")
+           (circle (* size 3/4) "outline" "black")
+           (circle (* size 1) "outline" "black"))))
+```
+
+The height of that snowman is 
+
+```
+  2 * (1/2 + 3/4 + 1) * size
+= 2 * (2/4 + 3/4 + 4/4) * size
+= 2 * (9/4) * size
+= 18/4 * size
+= 9/2 * size
+```
+
+So here's one way to revise
+
+```
+(define snowman-revisited
+  (lambda (height)
+    (snowman (* height 2/9))))
+```
+
+Yay! Math!
+
+Submit what you have!  It's enough for credit.  Do more stuff as you'd like.
