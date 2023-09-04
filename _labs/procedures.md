@@ -11,9 +11,9 @@ notes: |
 
 ## Syntax to remember
 
-*   Defining names: `(define <name> <expression>)`.
-*   Function expressions: `(lambda (<parameters>) <expression>)`.
-*   Defining functions: `(define <name> (lambda (<parameters>) <expression>))`
+* Binding names to values: `(define <name> <expression>)`.
+* Function expressions: `(lambda (<parameters>) <expression>)`.
+* Defining functions: `(define <name> (lambda (<parameters>) <expression>))`
 
 ## The lab
 
@@ -33,7 +33,6 @@ partner using a starter file.
 * [procedures.rkt](../code/labs/procedures.rkt)
 {% endif %}
 
-
 Remember to employ good pair programming practices as discussed in the [previous lab]({{ "/labs/decomposition.html" | relative_url }})!
 
 > +   One person, the *driver*, will share their screen via MS Teams and is in control of keyboard.
@@ -44,8 +43,6 @@ Remember to employ good pair programming practices as discussed in the [previous
 >     They are also responsible for keeping track of the time spent on the problem.
 
 ## Work
-
-
 {% if site.online %}
 **All of the instructions are in the two files!  Switch over to those now.**
 {% else %}
