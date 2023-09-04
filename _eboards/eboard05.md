@@ -84,7 +84,7 @@ Wellness
 
 ### Upcoming work
 
-* Two readings for Wednesday; Complete the reading assignment on Gradescope by 
+* Three readings for Wednesday; Complete the reading assignment on Gradescope by 
   Tuesday night.
 * Lab writeup(s) due before class on Wednesday.
 * MP01 pre-assessment due last night.
