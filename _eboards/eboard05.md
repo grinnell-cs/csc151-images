@@ -23,9 +23,10 @@ _Getting started_ (this will be our normal start-of-class sequence)
 
 _Approximate overview_
 
-* Administrative stuff [15 min]
-* Lab [65 min]
-* Debrief [5 minutes]
+* Administrative stuff [5 min]
+* Questions on the readings [5 min]
+* Questions on the mini-project [5 min]
+* Lab [60 min]
 
 Administrivia
 -------------
@@ -47,6 +48,16 @@ Administrivia
   things missing, including images.
     * Those slash things on the syllabus usually indicate something
       that I plan to post.  If they show up for a reading, let me know.
+* To deal with some of the terminology confusion from last Wednesday, I've
+  added a [terminology handout](../handouts/terminology).
+* I went through all the responses for today's reading and will respond
+  to the questions in a few minutes.  You should see a grade for the
+  reading on gradescope.
+    * My goal is that you spend about an hour on each day's readings.  I see
+      that a few of you spent two hours.  We might discuss ways to make you
+      more efficient (or more willing to have less mastery).
+    * A few of you did not turn in the reading responses.  Please try 
+      to be prompt on those.
 
 ### Upcoming Token activities
 
@@ -72,6 +83,107 @@ Wellness
 
 Questions on the readings
 -------------------------
+
+How does Scheme handle multi-parameter operations in which order matters,
+such as subtraction or division?
+
+> Left to right.  
+
+> `(- 1 2 3)` is the same as `(- (- 1 2) 3)`.
+
+> `(/ 1 2 3)` is the same as `(/ (/ 1 2) 3)`.
+
+Can I write my trace as follows?
+
+```
+(add-3 (* 2 3) (+ 8 3) (/ 1 2))
+(* 2 3) = 6
+(+ 8 3) = 11
+(/ 1 2) = 0.5
+Apply add-3: (add-3 6 11 0.5)
+(+ 6 11) = 17
+(+ 17 0.5) = 17.5
+Result: 17.5
+```
+
+> No.  We really do want to see the full expression at every step.
+  Past experience suggests that it's easy to get lost in more
+  complex expressions if you don't do so.
+
+```
+    (add-3 (* 2 3) (+ 8 3) (/ 1 2))
+```
+
+Are 2/5 and 0.4 the same?  How about 1/2 and 0.5?
+
+> Nope.  You'll learn more about that in the readings for Wednesday.
+
+Why parenthesize `(+ x y)` in the definition of `add-3`?
+
+> For the time being, we're pretending that addition only takes two
+  parameters.  We also want you to practice dealing with nested
+  expressions.
+
+Why define `triple` in reference to `add-3`?
+
+> We want you to practice multi-step traces.
+
+Don't both these choices add more steps to the overall evaluation
+and make the code for `triple` less resilient (if the `add-3`
+function is removed or altered)?
+
+> The first choice should not affect the steps.  Multi-parameter
+  plus usually just does a series of two-parameter additions.
+
+> We normally build more complex procedures in terms of procedures
+  we've already built.  In this case, we didn't gain much, but we'll
+  see gains elsewhere.
+
+> If we define a procedure that others may rely on, we have a
+  responsibility to ensure that any alterations preserve its overall
+  functionality.
+
+Can I simplify `(+ 1 2)` to `(3)`?
+
+> `(+ 1 2)` is `3`, not `(3)`.  Parentheses generally signal to Racket 
+  that you have an expression that you want evaluated.
+
+Questions on the mini-project
+-----------------------------
+
+Can you explain part four?
+
+> I can try.
+
+> Let's suppose we've made an awesome picture.
+
+```
+(define my-image
+  (above
+    (overlay (circle 20 "outline" "black")
+             (circle 20 "solid" "grey"))
+    (beside (overlay (circle 20 "outline" "black")
+                     (circle 20 "solid" "purple"))
+            (overlay (circle 20 "outline" "black")
+                     (circle 20 "solid" "teal")))
+    (beside (overlay (circle 20 "outline" "black")
+                     (circle 20 "solid" "red"))
+            (overlay (circle 20 "outline" "black")
+                     (circle 20 "solid" "blue"))
+            (overlay (circle 20 "outline" "black")
+                     (circle 20 "solid" "green")))))
+```
+
+> We might want to change the size of the circles, the outline color,
+  the colors of the individiaul circles, etc.
+
+> So we'll write a procedure to do that.
+
+```
+(define generate-my-image
+  (lambda (...)
+    ...))
+```
 
 Lab
 ---
