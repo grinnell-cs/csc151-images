@@ -14,15 +14,23 @@ _Reminders to Self_
 
 _Getting started_ (this will be our normal start-of-class sequence)
 
+**Updated for Covid spread**
+
 * Grab a card.  The card will have a computer name and a location.
 * Remember the name and location.
 * Drop the card back in the jar.
 * Navigate to the computer.
-* If you arrive first, log in and bring up the lab, but don't start.
+* If you arrive first, get a santizing cloth and wipe down the station.
+  Then log in and load the lab, but don't start.
 * When both partners arrive, introduce yourselves.
 
 _Approximate overview_
 
+* Administrivia 
+* About quizzes
+* About MP2
+* Questions
+* Lab
 
 Administrivia
 -------------
@@ -35,7 +43,15 @@ Administrivia
     * Evening tutors: Sunday 3-5, Sunday-Thursday 7-10pm in 3813/3815.
     * Sam (via office hours, email, and Teams Chat).
     * Individual tutors.
+* Tracing should work (albeit slightly oddly) with procedures, provided
+  you use `(define/trace proc defn)` rather than `(define proc defn)`.
+    * Demo
 * Using Gradescope
+    * Demo
+* Clarifications on tokens
+    * Earn by writing a few sentences about the activity.  Give me the
+      date and thing, too.
+    * I'll charge them automatically.  At least I'll try to.
 
 ### Upcoming Token activities
 
@@ -62,12 +78,29 @@ Wellness
     * I recommend you do it immediately after MP01.
 * MP02 pre-assessment also due Friday night
 * MP02 due next Thursday.
+* Quiz Friday: Tracing
+
+About quizzes
+-------------
+
+* We have fifteen-minute paper quizzes most Fridays at the start 
+  of class.  These count as learning assessments (or "LAs").
+* It's fine if you don't get it right; you'll have other chances.
+    * I'll announce the other chances.  I'm still working on 
+      scheduling those correctly.
+* If you need or would like extended time, please come to class at 
+  8:00 a.m. on Friday. (Let me know if that doesn't work.)
+* This Friday's quiz will be on tracing and mental models of
+  computation.
+
+MP2
+---
 
 Questions on the readings
 -------------------------
 
-Questions on the mini-project
------------------------------
+Questions on MP 1
+-----------------
 
 Lab
 ---
