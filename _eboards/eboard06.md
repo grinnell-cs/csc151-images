@@ -20,7 +20,7 @@ _Getting started_ (this will be our normal start-of-class sequence)
 * Remember the name and location.
 * Drop the card back in the jar.
 * Navigate to the computer.
-* If you arrive first, get a santizing cloth and wipe down the station.
+* If you arrive first, _get a santizing cloth and wipe down the station_.
   Then log in and load the lab, but don't start.
 * When both partners arrive, introduce yourselves.
 
@@ -28,8 +28,8 @@ _Approximate overview_
 
 * Administrivia 
 * About quizzes
-* About MP2
-* Questions
+* Questions on MP1
+* Questions on readings
 * Lab
 
 Administrivia
@@ -37,7 +37,9 @@ Administrivia
 
 ### Introductory notes
 
-* Attendance
+* I expect a longer-than-normal pre-lab period today.
+* Covid and other illnesses remains issues.  Consider masking.  Clean
+  your keyboards.
 * Remember: Support is available
     * Mentor sessions: Sundays 1-2 in Science 3813 (this room).
     * Evening tutors: Sunday 3-5, Sunday-Thursday 7-10pm in 3813/3815.
@@ -59,6 +61,10 @@ Administrivia
 
 Academic
 
+* Convocation, tomorrow, 11am, HSSC A2231 (Auditorium).
+  Vincent Lloyd on _Abolitionism: Religious Criticism or Secular Criticism?_
+    * Insert Sam's convocation spiel.
+
 Cultural
 
 * Org Fair, Thursday, 4pm-7pm, "Outside"
@@ -72,15 +78,37 @@ Wellness
 ### Upcoming work
 
 * Two readings for Friday; Complete the reading assignment on Gradescope by 
-  Tuesday night.
-* Lab writeup(s) due before class on Friday.
-* MP01 due Thursday night.
-    * Gradescope submission form should appear this afternoon.
-* MP01 post-assessment due Friday night.
-    * I recommend you do it immediately after MP01.
-* MP02 pre-assessment also due Friday night
-* MP02 due next Thursday.
+  Thursday night.
+    * Both are nontechnical readings, but important.
+* Lab writeup due before class on Friday.
+* MP1 due Thursday night.
+* MP1 post-assessment due Friday night.
+    * I recommend you do it immediately after MP01, but you have an
+      extra day.
 * Quiz Friday: Tracing
+* MP2 distributed Friday.
+
+### Attending class remotely
+
+_Given the illnesses going around campus, some of you may need to
+attend class remotely.  That's fine, but please try not to make it
+your norm._
+
+a. Let me know via email that you will not be in class.
+
+b. You are still responsible for the work.  Plan to do the lab on your own. 
+
+c. Synchronous: If you wish, you can join the Teams Meeting during
+   class.  That gives you an opportunity to hear what I say and ask 
+   me questions.
+
+d. Asynchronous: If not, I recommend that you check the recording
+   and the eboard.  (You may want to check those anyway.)
+
+e. Let me know if you need extra time on any assignments.
+
+f. If you can't be here for a quiz, you'll need to take a makeup 
+   another week.
 
 About quizzes
 -------------
@@ -95,8 +123,8 @@ About quizzes
 * This Friday's quiz will be on tracing and mental models of
   computation.
 
-MP2
----
+Questions on MP1
+----------------
 
 Questions on the readings
 -------------------------
