@@ -123,11 +123,27 @@ About quizzes
 * This Friday's quiz will be on tracing and mental models of
   computation.
 
-Questions on MP1
-----------------
+Comments and questions on MP1
+-----------------------------
 
-Questions on the readings
--------------------------
+### Comments
+
+In part two, `my-image` is supposed to be an image, not a procedure.
+If you've defined it as a procedure, change the procedure name and
+define `my-image` in terms of that procedure.  (Our intent was that
+you create it first, before designing procedures, but ....)
+
+Just in case you hadn't noticed, there is a "rubric" at the end of the
+assignment.  Our graders will be using that rubric to assign you a 
+grade.  It is worth reviewing them.
+
+### Questions
+
+Comments and questions on the readings
+--------------------------------------
+
+_These are based on what I saw at about 8pm last night.  You can add
+more questions after I go through them._
 
 ### A preliminary note
 
@@ -207,9 +223,6 @@ Why does (expt 4 1/2) lead to an exact result?
 Why doesn't `(expt 8 1/3)` give an exact result?
 
 > That's puzzling, isn't it?  I'm pretty sure that `expt` uses a different algorithm when the parameter is 1/2 than when it's any other exponent.  For 1/2, it does the right thing for perfect squares.
-
-Questions on MP 1
------------------
 
 Lab
 ---
