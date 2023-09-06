@@ -226,3 +226,6 @@ Why doesn't `(expt 8 1/3)` give an exact result?
 
 Lab
 ---
+
+* There's a bug in the autograder.  I'll be spending the first few minutes
+  of lab updating it.
