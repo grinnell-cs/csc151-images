@@ -70,6 +70,7 @@
     - page: /readings/strings.html
   lab:
     - page: /labs/basic-types.html
+  notes: ../eboards/eboard06.html
 
 - topic: Pair programming
   abbrev: pair-programming
