@@ -78,10 +78,8 @@
   reading:
     - title: How Pair Programming Really Works (Wray)
       resource: /files/PairProgramming.pdf
-    - title: Coping with Hitchhikers and Couch Potatoes on Teams (from B. Oakley et. al (2004).  Turning Student Groups into Effective Teams.  _Journal of Student-Centered Learning_ 2 (1).)
+    - title: Coping with Hitchhikers and Couch Potatoes on Teams (from B. Oakley et. al (2004).  Turning Student Groups into Effective Teams.  <i>Journal of Student-Centered Learning</i> 2 (1).)
       resource: /files/OakleyHitchhikers2004.pdf
-  lab:
-    - (TBA)
 
 - topic: RGB colors
   abbrev: rgb-colors
