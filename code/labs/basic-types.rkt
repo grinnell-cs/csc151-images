@@ -216,58 +216,6 @@ When you are done, feel free to read the notes on this problem which
 can be found in the accompanying lab.
 |#
 
-; +--------------------------+---------------------------------------
-; | Exercise 5: Digit tricks |
-; +--------------------------+
-
-#|
-For these programming problems over numbers, think carefully about
-how you might use integer division and rounding to accomplish the
-desired behavior.
-|#
-
-#|
-a. Write a procedure, (ones-digit-of n), that takes an integer n as
-input and returns the value of the ones digit (i.e., the rightmost
-digit) in that number.  For example:
-
-> (ones-digit-of 21904)
-4
-> (ones-digit-of 0)
-0
-|#
-
-(define ones-digit-of
-  (lambda (n)
-    ???))
-
-#|
-b. Write a procedure (truncate-ones-from n) that takes an integer n
-and returns n, but with the digit in the ones position removed.  If
-the number has only one digit, then 0 is returned.  For example:
-
-> (truncate-ones-from 4210)
-421
-> (truncate-ones-from 3)
-0
-|#
-
-(define truncate-ones-from
-  (lambda (n)
-    ???))
-
-#|
-c. Check your functions on negative numbers.  Do they work as expected?
-If not, how might you fix that issue?
-
-> (ones-digit-of -42)
-2 ; -2 would also be okay
-> (truncate-ones-from -42)
--4
-
-<TODO: Insert notes on how you might fix the issue, if you have it.>
-|#
-
 #| AB |#
 
 #| 
@@ -277,7 +225,7 @@ Switch driver and navigator.  (B will now drive, A will now navigate.)
 #| B |#
 
 ; +--------------------------+---------------------------------------
-; | Exercise 6: Creating @'s |
+; | Exercise 5: Creating @'s |
 ; +--------------------------+
 
 #|
@@ -291,9 +239,9 @@ to make-string, one a call to string, and one a call to list->string.
 
 (define making-@s-with-list->string ???)
 
-; +-----------------------------+------------------------------------
-; | Exercise 7: Textual corners |
-; +-----------------------------+
+; +---------------------------------+--------------------------------
+; | Exercise 6: Textual experiments |
+; +---------------------------------+
 
 #|
 Each of the following expressions evaluates to a string.  For each
@@ -302,35 +250,35 @@ expression write (a) its length of its resulting string value and
 |#
 
 #|
-Length of corner-1: 
-Description of corner-1: 
+Length of texperiment1: 
+Description of texperiment1: 
 |#
-(define corner-1 "")
+(define texperiment1 "")
 
 #|
-Length of corner-2: 
-Description of corner-2: 
+Length of texperiment2: 
+Description of texperiment2: 
 |#
-(define corner-2 "hello world!")
+(define texperiment2 "hello world!")
 
 
 #|
-Length of corner-3: 
-Description of corner-3: 
+Length of texperiment3: 
+Description of texperiment3: 
 |#
-(define corner-3 "\"hello world!\"")
+(define texperiment3 "\"hello world!\"")
 
 #|
-Length of corner-4: 
-Description of corner-4: 
+Length of texperiment4: 
+Description of texperiment4: 
 |#
-(define corner-4 (string #\space))
+(define texperiment4 (string #\space))
 
 #|
-Length of corner-5: 
-Description of corner-5: 
+Length of texperiment5: 
+Description of texperiment5: 
 |#
-(define corner-5 (string))
+(define texperiment5 (string))
 
 #|
 Enter any notes on what you've learned from this exercise.
@@ -338,7 +286,7 @@ Enter any notes on what you've learned from this exercise.
 |#
 
 ; +------------------------+-----------------------------------------
-; | Exercise 8: Substrings |
+; | Exercise 7: Substrings |
 ; +------------------------+
 
 #|
@@ -379,7 +327,7 @@ expressions produces the desired value.
 (define substring-ex-g "TODO!")
 
 ; +---------------------------------+--------------------------------
-; | Exercise 9: Referencing lengths |
+; | Exercise 8: Referencing lengths |
 ; +---------------------------------+
 
 #|
@@ -400,9 +348,42 @@ two in the space below.
 <TODO: write your response here>
 |#
 
-; +---------------------------------------+--------------------------
-; | Exercise 10: Collating your sequences |
-; +---------------------------------------+
+#| AB |#
+
+; +-------------+----------------------------------------------------
+; | Wrapping Up |
+; +-------------+
+
+#|
+Congratulations on finishing this lab!  To turn in your work:
+
+a. If you did this online with separate parts, combine the two parts of 
+   the assignment.
+b. Ensure that your combined file runs properly.
+c. Rename this file to `basic-types.rkt` (i.e., no -a or -b in the
+   name).
+d. Send this completed file to your partner for their records.
+e. Submit this final file to Gradescope.  Make sure, if appropriate,
+   to submit your work as a group submission and include your
+   partner in the submission.
+|#
+
+
+#| AB |#
+
+; +---------------------------+--------------------------------------
+; | For those with extra time |
+; +---------------------------+
+
+#|
+If you find that you finish all of these problems early, try one
+or more of the following problems.  Note that some of these problems
+require you to write functions.
+|#
+
+; +-----------------------------------+------------------------------
+; | Extra 1: Collating your sequences |
+; +-----------------------------------+
 
 #|
 In the reading, we discussed the fact that Racket assigns each of its
@@ -460,45 +441,60 @@ other languages to see if your technique still works!
 <TODO: describe your updated method here>
 |#
 
-#| AB |#
-
-; +-------------+----------------------------------------------------
-; | Wrapping Up |
-; +-------------+
+; +-----------------------+------------------------------------------
+; | Extra 2: Digit tricks |
+; +-----------------------+
 
 #|
-Congratulations on finishing this lab!  To turn in your work:
-
-a. If you did this online with separate parts, combine the two parts of 
-   the assignment.
-b. Ensure that your combined file runs properly.
-c. Rename this file to `basic-types.rkt` (i.e., no -a or -b in the
-   name).
-d. Send this completed file to your partner for their records.
-e. Submit this final file to Gradescope.  Make sure, if appropriate,
-   to submit your work as a group submission and include your
-   partner in the submission.
+For these programming problems over numbers, think carefully about
+how you might use integer division and rounding to accomplish the
+desired behavior.
 |#
 
+#|
+a. Write a procedure, (ones-digit-of n), that takes an integer n as
+input and returns the value of the ones digit (i.e., the rightmost
+digit) in that number.  For example:
 
-#| AB |#
+> (ones-digit-of 21904)
+4
+> (ones-digit-of 0)
+0
+|#
 
-; +---------------------------+--------------------------------------
-; | For those with extra time |
-; +---------------------------+
+(define ones-digit-of
+  (lambda (n)
+    ???))
 
 #|
-If you find that you finish all of these problems early, try one
-or more of the following problems.  Note that some of these problems
-require you to write functions which we will learn about in a day
-or two.  For now feel free to try to write expressions for concrete
-values, *e.g.*, strings, numbers, and lists that produce the effect
-described, and come back once we learn about functions to generalize
-the results with functions!
+b. Write a procedure (truncate-ones-from n) that takes an integer n
+and returns n, but with the digit in the ones position removed.  If
+the number has only one digit, then 0 is returned.  For example:
+
+> (truncate-ones-from 4210)
+421
+> (truncate-ones-from 3)
+0
+|#
+
+(define truncate-ones-from
+  (lambda (n)
+    ???))
+
+#|
+c. Check your functions on negative numbers.  Do they work as expected?
+If not, how might you fix that issue?
+
+> (ones-digit-of -42)
+2 ; -2 would also be okay
+> (truncate-ones-from -42)
+-4
+
+<TODO: Insert notes on how you might fix the issue, if you have it.>
 |#
 
 ; +-------------------------------------+----------------------------
-; | Extra 1: Exploring rational numbers |
+; | Extra 3: Exploring rational numbers |
 ; +-------------------------------------+
 
 #|
@@ -536,7 +532,7 @@ strange numerators and denominators.
 |#
 
 ; +-----------------------------+------------------------------------
-; | Extra 2: Rounding revisited |
+; | Extra 4: Rounding revisited |
 ; +-----------------------------+
 
 #|
