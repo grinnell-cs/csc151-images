@@ -301,7 +301,7 @@ Scheme provides _four_ different ways to round real numbers to nearby integers.
 
 In the examples above, we gave a wide variety of examples of the `expt` procedure in action.  Each was intended to reveal something different about that procedure.  They were also intended to suggest the kinds of exploration you might do when you encounter or design a new procedure.
 
-Suggest what we might be trying to reveal for each of the following.  For example, the for the second, you might note that the first example suggests that if the exponent is inexact, the result is inexact, even if the base and the exponent are integers.
+Suggest what we might be trying to reveal for each of the following.  For example, you might note that the second example suggests that if the exponent is inexact, the result is inexact, even if the base and the exponent are both integers.
 
 a. `(expt 2 10.0)`
 
