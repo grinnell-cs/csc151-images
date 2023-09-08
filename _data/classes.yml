@@ -81,6 +81,7 @@
       resource: /files/PairProgramming.pdf
     - title: Coping with Hitchhikers and Couch Potatoes on Teams (from B. Oakley et. al (2004).  Turning Student Groups into Effective Teams.  <i>Journal of Student-Centered Learning</i> 2 (1).)
       resource: /files/OakleyHitchhikers2004.pdf
+  notes: ../eboards/eboard07.html
 
 - topic: RGB colors
   abbrev: rgb-colors
