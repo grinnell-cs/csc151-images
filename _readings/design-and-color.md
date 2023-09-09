@@ -1,7 +1,7 @@
 ---
-title: Design and Color
+title: Design and color
 summary: |
-   We describe the principle elements of color and some common color schemes.
+   We consider the principle elements of color and some common color schemes.
 ---
 Light and color
 ---------------
