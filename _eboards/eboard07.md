@@ -13,7 +13,7 @@ _Reminders to Self_
 
 _Quiz Day!_
 
-* Grab a quiz when you arrive.
+* Grab a quiz when you arrive.  It's in the orange folder.
 * Follow normal seating protocol (see below).
 * Start the quiz when you are seated.
 * Relax/meditate/read when you are done.
@@ -36,6 +36,7 @@ _Approximate overview_
 * Quiz
 * Administrivia
 * About MP2
+* Background
 * Exercise
 * Discussion
 
@@ -57,7 +58,7 @@ Administrivia
     * Sam (via office hours, email, and Teams Chat).
     * Individual tutors.
 * Today's "Lab Writeup" is a bit different and will be labeled something
-  like "LA: Collaboration".
+  like "LA: Collaboration".  You will also do it outside of class (sorry).
 * I've had some students ask about forming study groups.  That's fine with
   me.  I'm even happy to collect names of students interested in forming
   study groups.  If you are interested, send me your name before class on
@@ -74,10 +75,13 @@ Administrivia
       be there.  However, I am sometimes meeting people elsewhere.
 * Please let me know if you're using the Otter.ai transcription.  If not,
   I'll probably stop using it.  (I'll still do the Teams recordings.)
+* How was the quiz?
 
 ### Upcoming Token activities
 
 Academic
+
+* Mentor Session, 1-2 pm Sunday, here.
 
 Cultural
 
@@ -86,6 +90,11 @@ Peer
 * Football vs. Rippon, 1pm Saturday, 9 Sept 2023
 
 Wellness
+
+### Other Good Things
+
+* Support women's tennis tomorrow morning.
+* Les Duke tomorrow
 
 ### Upcoming work
 
@@ -120,8 +129,65 @@ f. If you can't be here for a quiz, you'll need to take a makeup
 
 ### Friday PSA
 
+* You are wonderful people.  Others care about you.
+* Please take care of yourselves.
+* Know what is appropriate for yourself; don't fall victim to perceived
+  peer pressure.  Decide what's right for you and stick to it.
+* Consent is essential.
+
 About MP2
 ---------
 
+Make sure to update your csc151 library.
+
+Background
+----------
+
+* Today is our talk about pair-programming day
+* Partnering works imperfectly
+
 An Exercise
 -----------
+
+_TPS_ 
+
+* Think TO YOURSELF
+* Talk with your partner about things you heard (or thought you heard)
+* Prepare to share with others
+
+What we heard/thought?
+
+* "partner" is not the same as "parent", although they have similar letters.
+* We heard some reinforcement that "two heads are better than one", which
+  we also saw in the reading.  It's nice to have someone who can unstick
+  you.
+* Two people with no experience can help each other.
+* People seem to make assumptions about each other.  How do we avoid that?
+  You have smart partners, remember that.
+* Meeting new people is great.
+* Don't take the keyboard from your partner.
+* It shouldn't be hard to treat people with respect.
+
+Important moral
+
+* Partnering in CSC151 can be great.  Please make it so.
+
+What else did you take from the readings?
+
+* Please don't be a hitchhiker; please don't let others hitchhike
+* Please don't dominate our partner; please don't let others dominate
+* There are studies behind this; there's proof that working together is
+  better (more efficient, better results, etc.)
+* Programmers have dirty/greasy hands. (That was intended as a joke.
+  Someone please laugh.)
+* The act of coding with someone else can energize you / make you more
+  enthusiastic about the task.
+* Having to talk through a problem is helpful; talking to a rubber plant
+  (or stuffed animal) is good; talking to a human being is great.
+* Big idea: Driver and navigator
+    * Driver types, navigator directs/advises
+
+How should Sam establish that you've learned this?
+
+* Observation.
+* TPS.

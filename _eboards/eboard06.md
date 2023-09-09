@@ -52,6 +52,7 @@ Administrivia
     * Demo
 * Using Gradescope
     * Demo
+    * Important: Press the blue text to see what Sam or the grader wrote.
 * Clarifications on tokens
     * Earn by writing a few sentences about the activity.  Give me the
       date and thing, too.
@@ -64,6 +65,8 @@ Academic
 * Convocation, tomorrow, 11am, HSSC A2231 (Auditorium).
   Vincent Lloyd on _Abolitionism: Religious Criticism or Secular Criticism?_
     * Insert Sam's convocation spiel.
+* CS Extras, Thursday, 4:15-5:15 pm Science 3821, Grad School in CS
+  (Snacks in Commons at 4:00.)
 
 Cultural
 
@@ -133,11 +136,30 @@ If you've defined it as a procedure, change the procedure name and
 define `my-image` in terms of that procedure.  (Our intent was that
 you create it first, before designing procedures, but ....)
 
+And you must call it `my-image`.  It helps the graders (and Sam, when
+he grades).
+
 Just in case you hadn't noticed, there is a "rubric" at the end of the
 assignment.  Our graders will be using that rubric to assign you a 
 grade.  It is worth reviewing them.
 
 ### Questions
+
+Can we write helper procedures to make the rainbow spaceship simpler?
+
+> Certainly.  But it is not expected or required.
+
+Where should we cite the reading?
+
+> Whatever works best for you.  I care that you cite more than where you
+  cite.  If it's best to cite by the particular code that is influenced
+  by a reading, that's fine.  If it's easier to just say "I consulted
+  ..." at the top, that's fine
+
+Do we have to cite readings and labs?
+
+> Good practice suggests that if you refer to something while working,
+  you cite it.
 
 Comments and questions on the readings
 --------------------------------------
@@ -158,14 +180,14 @@ a new procedure."
 
 "Suggest what we might be trying to reveal for each of the following. "
 
-a. `(expt 2 10.0)
+a. `(expt 2 10.0)`
 
 Incorrect: 1024.0
 
 Correct: We are checking what happens when the exponent is inexact.
 It seems that the result is also inexact.
 
-b. `(expt 2.0 10)
+b. `(expt 2.0 10)`
 
 Incorrect: 1024.0
 
@@ -228,4 +250,42 @@ Lab
 ---
 
 * There's a bug in the autograder.  I'll be spending the first few minutes
-  of lab updating it.
+  of lab updating it.  (Fixed.)
+* Please replace the whole `<TODO: ...>` with the response.
+
+From
+
+```
+> (remainder 8 3)
+<TODO: fill in the resulting value here>
+```
+
+To
+
+```
+> (remainder 8 3)
+2
+```
+
+Brief debrief
+-------------
+
+If you didn't finish, add "; SAM SAID I COULD STOP HERE" wherever
+you stopped.
+
+* Look over the rest later.
+* But you don't have to submit it.
+* You can always ask questions on Teams (or from the evening tutors).
+
+Key idea from today: Exploring supplied procedures to understand how 
+they work; experimentation is important.  (Documentation is useful, too.)
+
+Apology: We haven't taught you as much about lists this semester as
+we normally do, so creating the 
+
+Questions:
+
+* What is `(round 2.5)`?
+* What is `(round 3.5)`?
+* Why?
+
