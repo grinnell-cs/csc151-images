@@ -190,7 +190,7 @@ a. Write a procedure, `(ccc c1 c2 c3)`, that takes three colors as
 parameters and creates an image with three concentric circles, each
 on top of the next.  The largest/bottom circle should be colored
 c3 and have radius 30.  The middle circle should be colored c2 and
-have radius 20.  The smallest/top circle should be colored c2 and
+have radius 20.  The smallest/top circle should be colored c1 and
 have radius 10.
 |#
 
@@ -258,7 +258,7 @@ f. What color do you expect to get if you mix blue and green?
 
 #|
 g. Check your answer by creating a set of concentric circles
-of blue, the blue-green mix, and blue.
+of blue, the blue-green mix, and green.
 |#
 (define blue-green-mix ???)
 
@@ -419,7 +419,7 @@ block symbols (#| and |#) around them.
              (rgb 128 64 192))
 (test-equal? "Color-restrict red"
              (color-restrict (rgb 255 0 0))
-             (rgb 192 0 0))
+             (rgb 192 64 64))
 |#
 
 #|
