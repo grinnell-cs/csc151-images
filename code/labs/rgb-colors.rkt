@@ -385,7 +385,7 @@ procedures, using `color-pseudo-complement`.
 
 #|
 a. Write a procedure, `(color-restrict c)`, that produces a new version
-of `c` in which each component is restricted to the range [64..92],
+of `c` in which each component is restricted to the range [64..192],
 with components above 192 dropped to 192 and components below 64 raised
 to 64.  Note that clever application of `min` and `max` should help 
 you with this.
@@ -514,7 +514,7 @@ from each of the green and blue components.
 
 #|
 d. Try each procedure on the kitten to see which version you find
-most successful.
+most successful (or most appropriate).
 
     > (image-map color-redder-a kitten)
     > (image-map color-redder-b kitten)
