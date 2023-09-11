@@ -27,6 +27,10 @@ Administrivia
   your keyboards.
 * Today's lab is new this semester.  Don't worry if you don't get too
   far in it.
+    * I'll be spending the first few minutes of lab trying to get
+      the autograder working.
+* Our mentors graciously provided extra copies of their helpful
+  handouts.
 
 ### Upcoming Token activities
 
@@ -139,6 +143,23 @@ to go through it, but you can look for it on the eboard.)
 
 Questions
 ---------
+
+`(rgb ...)` isn't working for me.
+
+> Did you update our csc151 library?
+
+> Did you remember `(require csc151)`.
+
+What should I see for `(rgb ...)`?
+
+> You should see "color info".  Something like `(color 255 0 128 255)`.
+
+Why can't I use `(color-red "darksalmon")` to get the red component
+of the color `"darksalmon"`?
+
+> `color-red` expects an RGB (or RGBA) color value, not a string.
+  You need to convert the string (color name) to an RGB color
+  using `color-name->rgb`.
 
 Lab
 ---
