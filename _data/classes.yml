@@ -91,7 +91,8 @@
     - page: /readings/design-and-color.html
     - page: /readings/rgb-colors.html
   lab:
-    - page: /labs/rgb-colors
+    - page: /labs/rgb-colors.html
+  notes: ../eboards/eboard08.html
 
 - topic: Booleans, predicates, and conditionals
   abbrev: booleans
