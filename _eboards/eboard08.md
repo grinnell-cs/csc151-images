@@ -7,8 +7,6 @@ link: true
 ---
 # {{ page.title }}
 
-_Reminders to Self_
-
 * **Warning** This class is being recorded.
 
 _Approximate overview_
@@ -31,13 +29,14 @@ Administrivia
       the autograder working.
 * Our mentors graciously provided extra copies of their helpful
   handouts.
+* I read "Grinnell Parents and Families" on Facebook.
 
 ### Upcoming Token activities
 
 Academic
 
 * Tuesday 12 Sept 2023, Noon, CS Table (readings at ends of the hallway)
-* Thursday 14 Sept 2023, 6pm, "Microsfot Campus Visit" (HSSC Kernel/A1231)
+* Thursday 14 Sept 2023, 6pm, "Microsoft Campus Visit" (HSSC Kernel/A1231)
 
 Cultural
 
@@ -133,6 +132,7 @@ to go through it, but you can look for it on the eboard.)
 --> (- (f -4) (g 5))
 --> (- (square (+ -4 1)) (g 5))
 --> (- (square -3) (g 5))
+--> (- (* -3 -3) (g 5))
 --> (- 9 (g 5))
 --> (- 9 (+ (square 5) 1))
 --> (- 9 (+ (* 5 5) 1))
@@ -161,5 +161,43 @@ of the color `"darksalmon"`?
   You need to convert the string (color name) to an RGB color
   using `color-name->rgb`.
 
+Will you pass back quizzes?
+
+> Yup.  As soon as lab starts.  (I'll ask for last names, because I
+  don't know them.)
+
+
 Lab
 ---
+
+A is closest to the board.  A drives first.  For today's lab,
+
+* A: 1,2,5,6
+* B: 3,4,7,8
+
+Your image should be in the same folder as your .rkt file.
+
+`color-name->rgb` turns a color name into RGB.
+
+Once you've defined `ccc` and need three concentric circles, you are
+much better off calling `ccc` than rewriting the code.
+
+Good:
+
+```
+(ccc (rgb 255 0 0) (rgb 255 0 255) (rgb 0 0 255))
+```
+
+Bad:
+
+```
+(overlay (circle 10 "solid" (rgb 255 0 0))
+         (circle 20 "solid" (rgb 255 0 255))
+         (circle 30 "solid" (rgb 0 0 255)))
+```
+
+Debrief
+-------
+
+(TPS) What are some important things you took from this lab?
+
