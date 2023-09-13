@@ -13,6 +13,7 @@ _Approximate overview_
 
 * Administrivia
 * A few notes on Quiz 1
+* Debrief on lab.
 * Questions
 * Lab
 
@@ -42,6 +43,8 @@ Cultural
 
 Peer
 
+* Major Fair, Today 4pm, near the sundial
+
 Wellness
 
 Misc
@@ -56,12 +59,7 @@ Misc
 * Thursday Night: Reading responses due
 * Friday morning: Today's lab due (but we'll get it turned in today)
 * Friday: Quiz (primitive types)
-* Friday Night: MP2 post-assessment
-
-Debrief on last class
----------------------
-
-(TPS) What did you take away from the last lab?
+* Friday Night: MP2 post-assessment (or do that with MP2)
 
 Sample primitive types questions
 --------------------------------
@@ -94,7 +92,7 @@ Write a procedure, `(nth-capital-letter n)` that takes an integer between 1 and 
 
 You may not write a huge conditional; you should write this procedure using the appropriate computation.
 
-You may not use magic numbers; don't rely on a particular collating sequence.  (You may, however, assume that the letters appear in sequence in the collating sequence.)
+You should not use magic numbers; don't rely on a particular collating sequence.  (You may, however, assume that the letters appear in sequence in the collating sequence.)
 
 ```racket
 > (nth-capital-letter 1)
@@ -104,6 +102,20 @@ You may not use magic numbers; don't rely on a particular collating sequence.  (
 > (nth-capital-letter 11)
 #\K
 ```
+
+NOTE: You can bring a sheet of hand-written notes or a stack of flashcards.
+
+Debrief on last class
+---------------------
+
+(TPS) What did you take away from the last lab?
+
+* We practiced pair programming.  Like all Grinnellians, we're awesome, 
+  so we did it particularly well.  It was a good experience.
+* A better understanding of RGB colors, although combining them stlil
+  doesn't completely make sense.
+* We can tweak colors in interesting ways.
+* We got practice writing procedures.
 
 Questions
 ---------
@@ -153,6 +165,35 @@ Why isn't there a place to submit the mini-project on Gradescope?
 
 > Forthcoming.
 
+Where is the grading rubric?
+
+> Tonight.
+
+### Miscellaneous
+
+What's this `list` procedure?
+
+> `list` takes a bunch of expressions as parameters and puts them into
+  a structure we call a "list" (surrounded by parentheses).  Right now,
+  all we know how to do with lists is (a) make them (with `list`) and
+  (b) find out how many values there are with `length`.
+
+> I think we were just trying to show you that undefined values make
+  your life difficult.
+
+Where do you find the garbage (strike that, useful comments) that
+Sam types every day?
+
+> Go to the course Web site.
+
+> Go to the schedule.
+
+> Click on the subject of a class.
+
+> Cross your fingers.
+
+> If that doesn't work, let Sam know.
+
 ### On administrative stuff
 
 Lab
@@ -160,6 +201,16 @@ Lab
 
 A is closest to the board.  A drives first.  For today's lab,
 
-* A: 1,4,5,8
-* B: 2,3,6,7
+* A: 1,4,5
+* B: 2,3,6
 
+Sam is frantically updating Gradescope.  (Done.)
+
+Note: for `median-of-three`, don't use `min` and `max`, just compare
+`x`, `y`, and `z` to each other.
+
+`(<= x y z)` is a shorthand for `(and (<= x y) (<= y z))`
+
+`(or (<= x y z) (<= z y x))` indicates that y is the median of `x`, `y`, `z`.
+
+We will continue this lab next class!

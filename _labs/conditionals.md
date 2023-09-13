@@ -6,8 +6,8 @@ summary: |
   operations, `if`, `when`, and `cond`.
 preimg: true
 notes: |
-  This lab is long.  It may require two days of class.  Perhaps
-    we should leave the ZoB stuff for another day.
+  This lab is long.  It requires two days of class.  It requires two
+  days of classes even after Sam shortening.
   We might want to add a tracing problem that doesn't use #t and #f.
 ---
 We may have reached the point in which you need fewer instructions.  So
