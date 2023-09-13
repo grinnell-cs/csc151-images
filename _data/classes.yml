@@ -105,6 +105,16 @@
     - page: /labs/conditionals.html
   notes: ../eboards/eboard09.html
 
+- topic: Booleans, predicates, and conditionals (continued)
+  abbrev: booleans-continued
+  summary: |
+    We continue to consider how one writes procedures that make decisions.
+  reading:
+    - page: /readings/booleans.html
+    - page: /readings/conditionals.html
+  lab:
+    - page: /labs/conditionals.html
+
 - topic: Software engineering fundamentals
   abbrev: software-engineering
   summary: |
@@ -115,15 +125,6 @@
     - page: /readings/hypothesis-driven-debugging.html
   lab:
     - page: /labs/documentation-and-testing.html
-
-- topic: Transforming colors
-  abbrev: transforming-rgb
-  summary: |
-    We consider additional mechanisms for working with RGB colors.
-  reading:
-    - page: /readings/transforming-rgb.html
-  lab:
-    - page: /labs/transforming-rgb.html
 
 - topic: Transforming images
   abbrev: transforming-images
