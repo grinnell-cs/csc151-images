@@ -103,6 +103,7 @@
     - page: /readings/conditionals.html
   lab:
     - page: /labs/conditionals.html
+  notes: ../eboards/eboard09.html
 
 - topic: Software engineering fundamentals
   abbrev: software-engineering
