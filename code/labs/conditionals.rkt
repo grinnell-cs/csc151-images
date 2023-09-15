@@ -143,6 +143,9 @@ real numbers as input and returns the number that is the middle
 value of the three when put in numerical order.  If two numbers are
 the same, you can return that number.  If all three are the same,
 you can return that number.
+
+Note that you need not put the numbers in order; the definition above
+is for what the median is.
 |#
 
 ; TODO: write your function here!
