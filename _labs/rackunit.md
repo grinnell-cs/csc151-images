@@ -56,12 +56,16 @@ One way to organize our tests is by exploring *positive* and *negative* test cas
 ~~~racket
 ;;; (palindrome? str) -> boolean?
 ;;;   str : string?
-;;; Returns true iff the string s is a palindrome, i.e., str is
-;;; equal to its reversal.
+;;; Returns true iff the string s is a palindrome, i.e., the letters
+;;; in str are the same backwards and forewards.
 (define palindrome?
   (lambda (str)
     (and (string? str)
-         (string=? str (list->string (reverse (string->list str)))))))
+         (let ([stuff (map char-downcase 
+                           (filter char-alphabetic?
+                                   (string->list str)))])
+           (string=? (list->string stuff)
+                     (list->string (reverse stuff)))))))
 ~~~
 
 As in the previous exercise, collaboratively develop a set of tests for this procedure.  For this exercise, make sure to keep in mind the idea of positive and negative test cases.  You'll use `test-true` for positive tests and `test-false` for negative tests.
@@ -171,6 +175,7 @@ b. Write your own version of `describe-triangle`.  Make sure it passes your test
 
 c. Here's an incorrect implementation.  How many errors do your tests find?
 
+```
 #|
 (define describe-triangle
   (lambda (side1 side2 side3)
@@ -191,6 +196,7 @@ c. Here's an incorrect implementation.  How many errors do your tests find?
       [else
        "scalene"])))
 |#
+```
 
 d. Find another group who has written `describe-triangle` and trade procedures with them.  Do you pass all of their tests?  Do they pass all of your tests?
 
