@@ -34,7 +34,7 @@ The driver should open up DrRacket, `require` both the `csc151`, `rackunit`, and
 Define a series of tests for this procedure, each of which you write explicitly in the definitions pane.  For example,
 
 ~~~racket
-(test-equal? "A very small range" (range 1) '(1))
+(test-equal? "A very small range" (range 1) (list 1))
 ~~~
 
 This is a good practice as you are developing your program so you can quickly know if your code meets the current set of tests.
@@ -64,8 +64,7 @@ One way to organize our tests is by exploring *positive* and *negative* test cas
          (string=? str (list->string (reverse (string->list str)))))))
 ~~~
 
-As in the previous exercise, collaboratively develop a set of tests for this procedure.
-For this exercise, make sure to keep in mind the idea of positive and negative test cases.
+As in the previous exercise, collaboratively develop a set of tests for this procedure.  For this exercise, make sure to keep in mind the idea of positive and negative test cases.  You'll use `test-true` for positive tests and `test-false` for negative tests.
 
 When you are done, the driver should make sure that the completed function and its test suite are in the file and then comment out the code.
 
