@@ -125,7 +125,41 @@
     - page: /readings/rackunit.html
     - page: /readings/hypothesis-driven-debugging.html
   lab:
-    - page: /labs/documentation-and-testing.html
+    - page: /labs/rackunit.html
+  notes: ../eboards/eboard11.html
+
+- topic: Lists
+  abbrev: lists
+  summary: |
+    We return to Scheme's *list* data structure and some ways to
+    use lists to work with collections of data.
+  reading:
+    - page: /readings/list-basics.html
+    - page: /readings/list-transform.html
+  lab:
+    - page: /labs/list-basics.html
+
+- topic: Anonymous procedures
+  abbrev: anonymous
+  summary: |
+    We explore ways to write procedures without using `define` (and,
+    sometimes, without even using `lambda`).  We also consider why
+    we might do so.
+  reading:
+    - page: /readings/anonymous-procedures.html
+  lab:
+    - page: /labs/anonymous-procedures.html
+
+- topic: Lists, continued
+  abbrev: lists-continued
+  summary: |
+    We explore ways to use lists to work with collections of drawings 
+    using "the big three" list procedures: `map`, `reduce`, and `filter`.
+  reading:
+    - page: /readings/list-big-three.html
+    - page: /readings/list-more.html
+  lab:
+    - page: /labs/drawing-lists.html
 
 - topic: Transforming images
   abbrev: transforming-images
@@ -144,39 +178,6 @@
     - page: /readings/drawings-as-values.html
   lab:
     - page: /labs/drawings-as-values.html
-
-- topic: Lists
-  abbrev: lists
-  summary: |
-    We return to Scheme's *list* data structure and some ways to
-    use lists to work with collections of data.
-  reading:
-    - page: /readings/list-basics.html
-    - page: /readings/list-transform.html
-  lab:
-    - page: /labs/list-basics.html
-
-- topic: Lists, continued
-  abbrev: lists-continued
-  summary: |
-    We explore ways to use lists to work with collections of drawings 
-    using "the big three" list procedures: `map`, `reduce`, and `filter`.
-  reading:
-    - page: /readings/list-big-three.html
-    - page: /readings/list-more.html
-  lab:
-    - page: /labs/drawing-lists.html
-
-- topic: Anonymous procedures
-  abbrev: anonymous
-  summary: |
-    We explore ways to write procedures without using `define` (and,
-    sometimes, without even using `lambda`).  We also consider why
-    we might do so.
-  reading:
-    - page: /readings/anonymous-procedures.html
-  lab:
-    - page: /labs/anonymous-procedures.html
 
 - topic: Images as functions
   abbrev: image-compute
