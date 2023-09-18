@@ -13,6 +13,7 @@ _Approximate overview_
 
 * Administrivia
 * A little bit about MP1
+* Notes from the readings
 * Questions
 * Lab
 
@@ -65,6 +66,7 @@ You will have a number like 2.75 for your mini-project.
     * 3 is (E)xceptional
 * The number to the right of the decimal point is what the
   autograder reported.  `.99` is "everything is correct".
+  `.75` is "some tests failed"
 
 The graders have left comments.  
 
@@ -73,10 +75,13 @@ The graders have left comments.
 * **Please read the commments.**
 * You should also check the autograder issues if you did not
   get a full score from the autograder.
+* You can talk to me (or DM/Email me) if you have questions.
 
 You may resubmit your mini-project under the "MP1 Redo" assignment
 on Gradescope for _zero_ tokens.  (In the future, those with I's will
 need to spend tokens.)
+
+Resubmissions are due on Thursday Sept. 28.
 
 * In addition to the three files, please submit an extra 
   "README.rkt" file with a comment that indicates what you changed
@@ -93,17 +98,106 @@ my procedures took parameters.  I added those.
 |#
 ```
 
+Notes from the readings
+-----------------------
+
+### Documentation
+
+```
+;;; (substring str start end) -> string?
+;;;   str : string?
+;;;   start : exact-integer? (<= 0 start (string-length str))
+;;;   end : exact-integer? (<= start end (string-length str))
+;;; Extract the substring of `str` starting at index `start`
+;;; (inclusive) and ending at index `end` (exclusive), using
+;;; zero-based indexing.
+```
+
+* Some of you neglected to describe the relationship between `start`
+  and `end`.
+* Some of you neglected to indicated that `start` and `end` should
+  be exact.
+
+### Testing
+
+I expected to see at least five tests.
+
+* A number between 0 and 100 (not including 0 or 100), which should  
+  stay the same.
+* A number less than 0, which should become 0.
+* A number greater than 100, which should become 100.
+* 0, an "edge case".
+* 100, the other "edge case".
+
+More creative testers also explored ...
+
+* Non-integers.
+* Inexact numbers.
+
+Please make sure to give your tests reasonable names.  "bound-grade" is
+not a good name.  "number" is also not a good name.
+
 Questions
 ---------
 
 _Ask questions.  It's part of self gov.  If you have questions, others
 likely do, too._
 
+### On unit testing
+
+What is this "epsilon" thing?
+
+> When we're comparing inexact numbers, we acknowledge that values
+  may be a bit off.  "epsilon" is how far we're willing to have 
+  them off.
+
+> `(test-= "NOTE" expression expected how-close)`
+
+I got different answers from the `test-=` tests with `sqrt`.
+
+> Let's try them.
+
+> `(test-= "sqrt 2 squared, approximately" 2 (* (sqrt 2) (sqrt 2)) 0.00001)`
+
+> `(test-= "sqrt 2 squared, exactly" 2 (* (sqrt 2) (sqrt 2)) 0)`
+
+### On documentation
+
 ### On mini-project 1 grading (general, if possible)
 
 ### On mini-project 3
+
+Are you ever going to fix hsv->rgb?
+
+> I hope so.
+
+> It will be available immediately after class.
+
+What are "related colors"?
+
+> You can decide.  You should document.
+
+> Maybe five tints of the same shade.
+
+> Maybe three colors 120 degrees apart with two tints of each.
+
+> You could go for "what looks good together" (according to you, according
+  to color theory)
+
+> You could go for "what clashes horribly"
+
+Will you give us a filename?
+
+> Stay tuned.
 
 ### On administrative stuff
 
 Lab
 ---
+
+For palindrome, I'd make sure to test
+
+* Both even and odd length palindromes.
+* Edge case: Empty string.
+* Capital and lowercase letters.
+* Palindromes with spaces in them.  (What does it do?  What should it do?)
