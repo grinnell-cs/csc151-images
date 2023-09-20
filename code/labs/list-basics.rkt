@@ -128,14 +128,15 @@ before.)
 Consider the problem of turning a string, like "123" into the
 corresponding integer.  While `string->number` could help with
 such a task, let us assume that it does not exist and we have
-to write it on your own.
+to write it on our own.
 |#
 
 #|
 a. Write or sketch an algorithm, in English, that explains the steps
 in converting such strings to integers.  (You can assume that the
-strings consist only of digits.) *Spend no more than five minutes
-on this part of the exercise.*
+strings consist only of digits.) 
+
+*Spend no more than five minutes on this part of the exercise.*
 
 <INSERT YOUR ANSWER HERE>
 
@@ -214,9 +215,9 @@ the procedures you came up with above.
 |#
 
 #|
-d. One of the things we'll likely need to do is compute powers of
-ten.  Write a procedure, `(ten-to-the n)`, that takes as input an
-integer, `n`, and computes 10 to the nth power.
+d. One of the other things we'll likely need to do is compute powers
+of ten.  Write a procedure, `(ten-to-the n)`, that takes as input
+an integer, `n`, and computes 10 to the nth power.
 
     > (ten-to-the 2)
     100
@@ -272,16 +273,17 @@ not sure about the three-parameter `map`, ask one of the course
 staff.)
 
 Sketch an algorithm, based on those tools, that might allow you to
-do the conversion.  *Once again, spend no moreo than five minutes
-on this part of the exercise.*
+do the conversion.  
+
+*Once again, spend no more than five minutes on this part of the exercise.*
 
 <INSERT YOUR ANSWER HERE>
 |#
 
 #|
 g. Write a procedure, `(string->integer str)` that takes a string
-consisting only of digits as an integer and returns the value of
-that integer.  Do not use `number->integer`.
+consisting only of digits as an input and returns the value of
+the corresponding integer.  Do *not* use `string->number`.
 
    > (string->integer "123")
    123
