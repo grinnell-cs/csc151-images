@@ -136,7 +136,7 @@ a. Write or sketch an algorithm, in English, that explains the steps
 in converting such strings to integers.  (You can assume that the
 strings consist only of digits.) 
 
-*Spend no more than five minutes on this part of the exercise.*
+*Spend no more than three minutes on this part of the exercise.*
 
 <INSERT YOUR ANSWER HERE>
 
@@ -275,7 +275,15 @@ staff.)
 Sketch an algorithm, based on those tools, that might allow you to
 do the conversion.  
 
-*Once again, spend no more than five minutes on this part of the exercise.*
+Here's one way to think of it (in terms of a series of values we might
+produce in converting "8143" into 8143).
+
+* "8143"
+* '(#\8 #\1 #\4 #\3)
+* '(8 1 4 3)
+* '(8000 100 40 3)
+
+*Once again, spend no more than three minutes on this part of the exercise.*
 
 <INSERT YOUR ANSWER HERE>
 |#
