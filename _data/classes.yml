@@ -138,6 +138,7 @@
     - page: /readings/list-transform.html
   lab:
     - page: /labs/list-basics.html
+  notes: ../eboards/eboard12.html
 
 - topic: Anonymous procedures
   abbrev: anonymous
