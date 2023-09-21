@@ -6,27 +6,24 @@
     - "**Primitive types**. Express basic computations over primitive values and their associated standard library functions."
     - "**Conditionals**. Use Boolean expressions and conditional operations to produce conditional behavior."
     - "**Collaboration**. Explain best practices for solving problems in a collaborative setting."
+    - "**Documentation**. Document programs according to good software engineering principles."
+    - "**Testing**. Test programs according to good software engineering principles."
 
 - assessment: Learning Assessments, Phase 2 (LAP 2)
   goals:
     - "**Code style**. Write and structure code in ways that make it easier to understand."
-    - "**Documentation**. Document programs according to good software engineering principles."
-    - "**Testing**. Test programs according to good software engineering principles."
     - "**Lists**. Manipulate lists with fundamental higher-order list functions."
     - "**Lambda-free anonymous procedures**. Use `section` and composition to simplify computations."
     - "**List recursion**.  Design and write recursive functions over lists."
-
-- assessment: Learning Assessments, Phase 3 (LAP 3)
-  goals:
     - "**Ethical considerations**.  Consider implications of the power of computing."
     - "**Local bindings**. Refactor redundancy and add clarity in computations with let-bindings."
     - "**Numeric recursion**.  Design and write recursive functions over the natural numbers."
     - "**Vectors**.  Design and write functions (potentially recursive functions) that use vectors."
+
+- assessment: Learning Assessments, Phase 3 (LAP 3)
+  goals:
     - "**Diagramming structures**.  Use our mental model of memory to describe or diagram the layout of memory for lists, pairs, and vectors/arrays.  _This LA may only be completed in class._"
     - "**Dictionaries**.  Design and write functions that use dictionaries."
-
-- assessment: Learning Assessments, Phase 4 (LAP 4)
-  goals:
     - "**Data abstraction**.  Design data structures to separate interface from implementation."
     - "**Randomness**.  Write programs that produce unpredictable output."
     - "**Higher-order programming**.  Write procedures that take procedures as parameters and return procedures as results."
