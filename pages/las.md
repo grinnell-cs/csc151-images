@@ -73,6 +73,20 @@ For programming problems in learning assessments, we are concerned primarily wit
 
 For problems with written responses, we are looking for responses that *address the prompt directly and concisely*.  In particular, if a written problems asks you to solve a problem in a certain style or show your work, *e.g.*, the trace of the execution of a program, make sure to include this information in the style presented in class.
 
-## Sample SoLAs
+## Sample LAs
 
-_Forthcoming._
+Phase 1
+
+* [Decomposition](decomposition.html)
+* [Procedural abstractions](procedures.html)
+* [Primitive types](primitive-types.html)
+* [Tracing](tracing.html)
+* [Conditionals](conditionals.html)
+* [Collaboration](collaboration.html)
+* [Documentation](documentation.html)
+* [Testing](testing.html)
+
+Phase 2
+
+* [Lists](lists.html)
+
