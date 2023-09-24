@@ -150,6 +150,7 @@
     - page: /readings/anonymous-procedures.html
   lab:
     - page: /labs/anonymous-procedures.html
+  notes: ../eboards/eboard13.html
 
 - topic: Lists, continued
   abbrev: lists-continued
