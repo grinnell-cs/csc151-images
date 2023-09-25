@@ -161,7 +161,7 @@
     - page: /readings/list-big-three.html
     - page: /readings/list-more.html
   lab:
-    - page: /labs/drawing-lists.html
+    - page: /labs/lists-more.html
   notes: ../eboards/eboard14.html
 
 - topic: Introduction to list recursion
@@ -176,16 +176,14 @@
 
 - topic: Introduction to list recursion, continued
   summary: |
-    We continue our introductory exploration of recursion in Scheme.
-  reading:
-    - page: /readings/recursion-basics.html
+    We continue our initial exploration of recursion in Scheme.
   lab:
     - page: /labs/recursion-basics.html
 
 - topic: Recursion practice
   summary: |
-    We continue to continue our introductory exploration of recursion
-    in Racket.
+    We continue to continue our initial exploration of recursion
+    in Scheme.
   reading:
     - page: /readings/recursion-magic.html
   lab:
