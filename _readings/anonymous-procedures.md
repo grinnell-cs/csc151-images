@@ -195,7 +195,7 @@ Unfortunately, the design of `cut` only permits holes at the top level.
 
 Perhaps someday someone will rewrite `cut` to permit deeper holes.
 
-## Combining cutting and sectioning
+## Combining cutting and composition
 
 Composition and partial functions provide concise sysntax for defining certain kinds of procedures.  However, composition works only for one-parameter procedurs and partial-functions only work when you're filling in some parameters of a multi-parameter procedure.  What if you want to do both?  For example, consider the problem of counting the number of words in a string.  While we haven't explored all of hte component parts in close details, we have seen all of them.
 
@@ -290,6 +290,14 @@ You can also create anonymous procedures in other ways.  You've seen that the co
 ```
 
 You can read this as "map (a function that takes one parameter, x, squares x and then adds 1) to the list ...".  What's the name of that function?  It doesn't have one.  it's _anonymous_.
+
+## Sectioning: An alternative to cutting
+
+Some readers find it confusing to see something like `(cut (+ 3 <>))`.  After all, aren't we supposed to evaluate the parameters to our procedures?  Shouldn't we evaluate the `(+ 3 <>)`?  As we noted, `cut` is a syntactic form that embraces a different evaluation strategy.
+
+For those who prefer a different approach, the csc151 library also includes a procedure, `(section proc params-or-diamonds)`, that works much like `cut`, but without the inner parentheses.  Instead of writing `(cut (+ 3 <>))`, one can write `(section + 3 <>)`.  We will generally use `cut`, rather than `section`, because most readers find it clearer.
+
+Note that the `cut` form is a relatively new addition to the csc151 libary, added in Fall 2023.  It was added because students in prior semesters suggested that they found the `reduce` form a bit confusing.
 
 ## Self checks
 
