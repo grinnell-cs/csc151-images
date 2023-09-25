@@ -206,7 +206,7 @@ There's one more "big" higher-order list-processing functional procedure, `(filt
 '(-5 -12.2)
 > (filter integer? stuff)
 '(-5 10 18 23 14.0 87)
-> (filter (section <= 0 <> 10) stuff)
+> (filter (cut (<= 0 <> 10)) stuff)
 '(10 1/2 0.5)
 ```
 
@@ -235,7 +235,7 @@ We can extract all the digits from the list of characters with `filter`.
 ```drracket
 > (filter char-numeric? (string->list "a 1 and a 2 and a 3"))
 '(#\1 #\2 #\3)
-> (map (o (section - <> (char->integer #\0))
+> (map (o (cut (- <> (char->integer #\0)))
           char->integer)
        (filter char-numeric? (string->list "a 1 and a 2 and a 3")))
 '(1 2 3)
@@ -244,7 +244,7 @@ We can extract all the digits from the list of characters with `filter`.
 And then we add them all up.
 
 ```drracket
-> (reduce + (map (o (section - <> (char->integer #\0))
+> (reduce + (map (o (cut (- <> (char->integer #\0)))
                     char->integer)
                  (filter char-numeric? (string->list "a 1 and a 2 and a 3"))))
 6
@@ -267,9 +267,9 @@ We've seen one way to use binary procedures with lists: We can reduce a list of 
 
 > (define first-names (list "Addison" "Bailey" "Casey" "Devon" "Emerson"))
 > (define last-names (list "Smith" "Jones" "Smyth" "Johnson" "Doe"))
-> (map (section string-append <> " " <>) first-names last-names)
+> (map (cut (string-append <> " " <>)) first-names last-names)
 '("Addison Smith" "Bailey Jones" "Casey Smyth" "Devon Johnson" "Emerson Doe")
-> (map (section string-append <> ", " <>) last-names first-names)
+> (map (cut (string-append <> ", " <>)) last-names first-names)
 '("Smith, Addison" "Jones, Bailey" "Smyth, Casey" "Johnson, Devon" "Doe, Emerson")
 ```
 
