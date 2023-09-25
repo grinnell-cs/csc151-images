@@ -1,5 +1,5 @@
 ---
-title: "EBoard 13: Anonymous function"
+title: "EBoard 13: Anonymous functions"
 number: 13
 section: eboards
 held: 2023-09-22
@@ -44,7 +44,7 @@ Academic
 
 Cultural
 
-* CRSSJ today 2:30-5:30, get a Drake Library Card.  Borrow ebooks,
+* CRSSJ today 2:30-4:30, get a Drake Library Card.  Borrow ebooks,
   get free music downloads.  And even BORROW PHYSICAL BOOKS!
 
 Peer
@@ -65,6 +65,10 @@ Misc
 
 ### Friday PSA
 
+* I hope you get some time to relax this weekend.
+* Be responsible on the substances you use.
+* CONSENT IS ESSENTIAL
+
 About SoLAs
 -----------
 
@@ -79,6 +83,8 @@ Similarities
   no need to do it on the SoLA.  (And I'd prefer that you don't.)
 * Difficulty should be similar.
 * You can rely on notes but not other people.
+* If you get an LA wrong on a SoLA, you can try it again on the
+  next SoLA (or the next or ...)
 
 Differences
 
@@ -97,8 +103,27 @@ Differences
 
 ### Questions
 
-Notes from the readings
------------------------
+Once I've received an "S" on an LA topic, do I have to do any more
+LAs on that topic?
+ 
+> No, please don't.
+
+How does this work with the count of LAs?
+
+> Just think of it as more LAs that you happen to be taking at the same
+  time.
+
+How do I prepare?
+
+> Go to mentor session!
+
+> Do practice problems.
+
+> Write your own questions.
+
+> Flashcards (and good notes).
+
+> Do the pre-assessment.
 
 Questions
 ---------
@@ -106,7 +131,36 @@ Questions
 _Ask questions.  It's part of self gov.  If you have questions, others
 likely do, too._
 
+### On Gradescope
+
+What should I do if my code doesn't run?
+
+> DrRacket occasionally saves files in a custom format.  Unfortunately,
+  that format doesn't on gradescope.  So we need to make sure that you
+  save the code as a text file.
+
+Why can't you put diamonds in nested expressions in `cut`?
+
+> Because the designer was too lazy to implement that.
+
+> If I don't implement that, you have to think harder about how to use
+  cut and compose together.
+
+> For example, `(cut (+ (* 3 <>) 5))`, is the same as.
+  `(o (cut (+ <> 5)) (cut (* 3 <>)))`
+
 ### On administrative stuff
+
+Please tell me more about how the SoLA relates to the quizzes and my grade
+in the class.
+
+> I want you to demonstrate mastery of the learning outcomes as part of
+  the grade in the class.  We use learning assessments (LAs) to determine 
+  whether or not you have satisfactorily (sp?) mastered each learning outcome.
+
+> Each quiz is an LA.
+
+> Each problem on a SoLA is an LA.
 
 Lab
 ---

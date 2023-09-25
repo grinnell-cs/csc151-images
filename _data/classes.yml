@@ -173,6 +173,7 @@
   reading:
     - page: /readings/list-composition.html
     - page: /readings/recursion-basics.html
+  notes: ../eboards/eboard15.html
 
 - topic: Introduction to list recursion, continued
   summary: |

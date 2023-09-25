@@ -11,7 +11,6 @@ link: true
 
 _Approximate overview_
 
-* Quiz
 * Administrivia
 * About the SoLA
 * Questions
@@ -20,8 +19,11 @@ _Approximate overview_
 Administrivia
 -------------
 
-* Reminder: Mentor sessions are not intended as homework help; they are
-  an opportunity to extend your learning.
+* Extra copies of the mentor session handout are in the back of the 
+  room. 
+* Reminder: Mentor sessions are an opportunity to extend your learning
+  (and, on occasion, get practice for SoLAs).  They are not a place
+  for homework help.
 * Reminder: Individual tutors are available (free).  I will likely be
   recommending individual tutors for students after I'm done grading
   the SoLA.
@@ -40,6 +42,9 @@ Administrivia
 
 Academic
 
+* CS Table, Tomorrow, Noon, Day PDR.
+* CS Extras, Thursday, 4:15 pm, Science 3821
+
 Cultural
 
 Peer
@@ -54,10 +59,8 @@ Misc
 
 ### Upcoming work
 
-* Tonight: MP3 post-assessment due
-* Sunday night: Reading due
-* Sunday night: SoLA pre-assessment due
-* Monday morning: Today's lab due (but we'll get it turned in today)
+* Tuesday night: Reading (may be complicated; do the best you can)
+* Wednesday morning: Today's lab due (but we'll get it turned in today)
 * Thursday night: SoLA 1 due
 
 Questions
@@ -76,3 +79,28 @@ Lab
 ---
 
 Person closest to the board is A.  Person furthest from board is B.
+
+Make sure to talk to your partner about work habits, knowledge, etc.
+
+(Sam wonders if anyone is watching this in recording form.)
+
+What's the difference between `cut` and `section` (which we saw in the 
+reading)?  They seem similar.
+
+> Mostly just surface syntax.  Both build a new procedure by filling in
+  some of the parameters of an extant procedure.
+
+> `(cut (circle <> "solid" "blue"))`
+
+> `(section circle <> "solid" "blue")`
+
+> `cut` has the advantage that the expression you're cutting is a bit
+  more obvious.
+
+> `section` has fewer parens and doesn't break order of evaluation.
+
+> Congratulations!  You are the first class to get `section`.
+
+What's happening on exercise 4?
+
+> Think about what reduce does.
