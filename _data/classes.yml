@@ -206,7 +206,7 @@
     call themselves.  However, the parameter that we "simplify" at
     every step is a number, rather than a list.
   reading:
-    - page: /readings/recursion-over-numbers.html
+    - page: /readings/numeric-recursion.html
   lab:
     - page: /labs/numeric-recursion.html
 
