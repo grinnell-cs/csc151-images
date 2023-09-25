@@ -287,7 +287,7 @@ predicate that determines whether its input, a real number, is between
 Note that we might might also write
 
 ```
-(define valid-grade? (section <= 0 <> 100))
+(define valid-grade? (cut (<= 0 <> 100)))
 ```
 -->
 

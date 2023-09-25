@@ -564,7 +564,7 @@ procedure we wrote above.
 
 That code is still somewhat repetitious.  After all, we're doing the
 same thing for each of each of the cases: comparing.  We can take
-advantage of our friends `any` and sectioning to help out.
+advantage of our friends `any` and `cut` to help out.
 
 ```drracket
 ;;; (vowel? ch) -> boolean?
@@ -574,7 +574,7 @@ advantage of our friends `any` and sectioning to help out.
   (lambda (ch)
     (let ([lc (char-downcase ch)]
           [vowels (string->list "aeiou")])
-      (ormap (section char=? lc <>) vowels))))
+      (ormap (cut (char=? lc <>)) vowels))))
 ```
 
 But that definition requires DrRacket to build the list every time
@@ -592,7 +592,7 @@ extra work.  Hence, we might more sensibly write the following.
   (let ([vowels (string->list "aeiou")])
     (lambda (ch)
       (let ([lc (char-downcase ch)])
-        (ormap (section char=? lc <>) vowels)))))
+        (ormap (cut (char=? lc <>)) vowels)))))
 ```
 
 Unfortunately, it is not always possible to move the bindings outside of
@@ -607,7 +607,7 @@ need to keep them within the body of the lambda.
   (let ([vowels (string->list "aeiou")]
         [lc (char-downcase ch)])
     (lambda (ch)
-      (ormap (section char=? lc <>) vowels))))
+      (ormap (cut (char=? lc <>)) vowels))))
 ```
 
 If you try to run this, it will complain that it doesn't know what `ch`
