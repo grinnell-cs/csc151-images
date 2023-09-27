@@ -12,6 +12,9 @@ link: true
 _Approximate overview_
 
 * Administrivia
+* A note on last Friday's quiz
+* Questions
+* Algorithms, revisited
 * Our context: Delegation
 
 Administrivia
@@ -30,6 +33,8 @@ Administrivia
 
 Academic
 
+* Convocation, "A Cure for the Epidemic of Loneliness?", Thursday, 11am, 
+  HSSC Kernel.
 * CS Extras, Thursday, 4:15 pm, Science 3821
 
 Cultural
@@ -50,7 +55,7 @@ Misc
 
 * Thursday night: SoLA 1 due
 * There is no reading for Friday; focus your time on the SoLA and the quiz.
-* Quiz Friday!
+* Quiz Friday!  Lists (with the big three)
 
 ### Friday's quiz
 
@@ -93,8 +98,69 @@ You may rely on this following helper function.
 #\I
 ```
 
+Quiz from last Friday
+---------------------
+
+* Many people got "S" but still go lots of red on their quizzes.  Let
+  me know if the red doesn't make sense (after we discuss it).
+* Note that the quiz was quite similar to a lab problem; you'll find
+  that that happens from time to time.
+* I permit (minor) syntax errors on Friday quizzes; I will not permit
+  them on the SoLA, since you can check in DrRacket.
+
+_TPS: What's wrong with (or could be improved about) this solution?_
+
+You should be able to be able to find at least six different issues.
+(Invalid Scheme, won't meet specifications, bad style, unnecessary code ...)
+
+```
+(define grayscale
+  (lambda (c)
+    (cond [< 20 (simple-brightness c)
+           ("black")]
+          ((and (> (simple-brightness c) 20) 
+                (< (simple-brightness c) 40)) ("dark-gray"))
+          ((and (> (simple-brightness c) 40) (< (simple-brightness c) 60))
+           ("medium-gray"))
+          ((and (> (simple-brightness c) 60) (< (simple-brightness c) 80))
+           ("light-gray"))
+          ((> (simple-brightness c) 80)
+           ("white")))))
+```
+
+First revision
+
+```
+(define grayscale
+  (lambda (c)
+    (cond [< 20 (simple-brightness c)
+           ("black")]
+          ((and (> (simple-brightness c) 20) 
+                (< (simple-brightness c) 40)) ("dark-gray"))
+          ((and (> (simple-brightness c) 40) (< (simple-brightness c) 60))
+           ("medium-gray"))
+          ((and (> (simple-brightness c) 60) (< (simple-brightness c) 80))
+           ("light-gray"))
+          ((> (simple-brightness c) 80)
+           ("white")))))
+```
+
+Second revision
+
 Questions
 ---------
+
+### In preparation for the SoLAs
+
+Do I have one hour total for the SoLA?
+
+> No.  You have one hour for each LA you do.
+
+Do I have to do all the LAs at the same time?
+
+> No.  You can take a break?
+
+
 
 ### On administrative stuff
 
@@ -102,11 +168,63 @@ Questions
 
 Can we talk about the relationship between `cut` and `reduce`?
 
-### In preparation for the SoLAs
-
 ### In preparation for Friday's quiz
 
-Lab
----
+Algorithms, revisited
+---------------------
 
-Person closest to the board is A.  Person furthest from board is B.
+It's time to return to something we covered early in the semester.
+
+Six key components:
+
+* _Basic/built-in types, their values, and operations on those values._
+  The things the computer already "knows" how to do.
+* _Subroutines (procedures, etc.)_
+  Named and parameterized (sub)algorithms.
+* _Conditionals._
+  Ways to make choices.
+* _Repetition._
+  Ways to repeat an action.
+* _Naming._
+  Assigning names to values (or parameters).
+* _Sequencing._
+  Controlling the order in which things are done.
+
+_TPS: What do we know about each of these in Scheme?_
+
+### Built-in types (+ values, operations)
+
+### Subroutines (procedures)
+
+### Conditionals
+
+### Repetition
+
+### Naming
+
+### Sequencing
+
+Recursion
+---------
+
+* We know that solve a complex problem, we should decompose the problem 
+  into smaller problems.
+* Recursion says "To solve a complex problem, solve a smaller version 
+  _of the same problem_, and then use that to solve the bigger problem."
+* To write a recursive procedure, we need to
+    * Determine how to "simplify" an input (for lists, it's usually
+      to remove the first value)
+    * Determine how to use the solution to the smaller problem to 
+      solve the bigger problem
+    * Identify when the problem is simple enough we can solve it directly.
+
+The weird part of recursion is that we are solving the "smaller" problem with exactly the same solution as the smaller problem; we have to assume we’ve written something we haven’t written yet.
+
+_The magic recursion fairy makes it work._
+
+Examples
+--------
+
+We're going to rephrase recursion in terms of "delegation".  When given
+a large problem, an executive will normally delegate most of the problem
+to an assistant.  We'll assume that their assistant will do the same.
