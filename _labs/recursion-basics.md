@@ -25,8 +25,8 @@ A side: [recursion-basics-a.rkt](../code/labs/recursion-basics-a.rkt)
 B side: [recursion-basics-b.rkt](../code/labs/recursion-basics-b.rkt)
 -->
 
-b. Grab the code from the following link.  Side A will be the person
-closer to the board.
+b. Grab the code from the following link.  As usual, side A will be 
+the person closer to the board.
 
 * [recursion-basics.rkt](../code/labs/recursion-basics.rkt)
 
