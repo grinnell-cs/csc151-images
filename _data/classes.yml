@@ -180,6 +180,7 @@
     We continue our initial exploration of recursion in Scheme.
   lab:
     - page: /labs/recursion-basics.html
+  notes: ../eboards/eboard16.html
 
 - topic: Recursion practice
   summary: |
