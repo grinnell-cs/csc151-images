@@ -190,6 +190,7 @@
     - page: /readings/recursion-magic.html
   lab:
     - page: /labs/recursion-practice.html
+  notes: ../eboards/eboard17.html
 
 - topic: Local bindings
   abbrev: let
