@@ -19,6 +19,9 @@ Administrivia
 -------------
 
 * Happy October!
+* Maintain the same location and partner as last class.
+* Plan to finish Friday's lab and then do as much of today's lab
+  as you can.
 
 ### Upcoming Token activities
 
@@ -57,6 +60,12 @@ How do I pay tokens to turn something in late?
 How do I tell how I'm doing on tokens?
 
 > Sam plans to update those next weekend.
+
+### MP4
+
+Are you going to record the video?
+
+> Um ... I hope to.
 
 Lab
 ---
