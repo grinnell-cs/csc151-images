@@ -160,7 +160,7 @@ take advantage of composition.
 (define vowel? (o lower-case-vowel? char-downcase))
 ```
 
-Detour: Why are we repeating the documentation each time we show
+_Detour:_ Why are we repeating the documentation each time we show
 you a new imlementation of the `vowel?` predicate?  Mostly to
 remind you that there's a value to writing documentation, even
 when our procedures are short and simple.
@@ -794,3 +794,6 @@ Why would we want to use `let` instead of `let*`?
 > `let` permits simultaneous evaluation, which can be more efficient.
 
 > Also, we may want to use the original value associated with a name.
+
+> However, I'll note that at least one of the instructors in the
+  department thinks that we should only use `let*`.
