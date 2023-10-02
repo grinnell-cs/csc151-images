@@ -12,6 +12,7 @@ link: true
 _Approximate overview_
 
 * Administrivia
+* About MP4.
 * Questions
 * Lab
 
@@ -20,8 +21,14 @@ Administrivia
 
 * Happy October!
 * Maintain the same location and partner as last class.
-* Plan to finish Friday's lab and then do as much of today's lab
-  as you can.
+* I've made some changes to the schedule.  Gradescope changes will
+  follow soon thereafter.
+* Plan to finish Friday's lab.  If you finish that early, feel
+  free to talk through MP4 with your partner.
+* Extra mentor session sheets at the back of the room.
+* Apologies that I am behind on answering emails and messages; I spent
+  approximately 24 hours this weekend on work related to a conference
+  I'm co-chairing.
 
 ### Upcoming Token activities
 
@@ -43,10 +50,19 @@ Misc
 
 ### Upcoming work
 
-* Monday night: MP4 pre-assessment due
-* Tuesday night: Readings due
+* Tonight: MP4 pre-assessment due
+* Tuesday night: No reading due
 * Wednesday morning: Lab writeup due (but turn it in today)
+* Thursday night: Readings due
 * Thursday night: MP4 due
+
+MP4 Discussion
+--------------
+
+_We're doing this live, probably switching back and forth between
+DrRacket and the eboard._
+
+_And yes, I'll be asking you questions._
 
 Questions
 ---------
@@ -59,13 +75,13 @@ How do I pay tokens to turn something in late?
 
 How do I tell how I'm doing on tokens?
 
-> Sam plans to update those next weekend.
+> Sam plans to update those this coming weekend.
 
 ### MP4
 
 Are you going to record the video?
 
-> Um ... I hope to.
+> Um ... no.  That's why we did the discussion.
 
 Lab
 ---
