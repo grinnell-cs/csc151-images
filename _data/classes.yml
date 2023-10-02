@@ -182,6 +182,13 @@
     - page: /labs/recursion-basics.html
   notes: ../eboards/eboard16.html
 
+- topic: Introduction to list recursion, continued again
+  summary: |
+    We continue to continue our initial exploration of recursion in Scheme.
+  lab:
+    - page: /labs/recursion-basics.html
+  notes: ../eboards/eboard17.html
+
 - topic: Recursion practice
   summary: |
     We continue to continue our initial exploration of recursion
@@ -190,16 +197,6 @@
     - page: /readings/recursion-magic.html
   lab:
     - page: /labs/recursion-practice.html
-  notes: ../eboards/eboard17.html
-
-- topic: Local bindings
-  abbrev: let
-  summary: |
-    We explore issues of redundacy in code and mechanisms for reducing such reducancy.
-  reading:
-    - page: /readings/local-bindings.html
-  lab:
-    - page: /labs/local-bindings.html
 
 - topic: Recursion over numbers
   abbrev: number-recursion
@@ -213,23 +210,14 @@
   lab:
     - page: /labs/numeric-recursion.html
 
-- topic: Transforming images
-  abbrev: transforming-images
+- topic: Local bindings
+  abbrev: let
   summary: |
-    We expand our understanding of RGB transformations to image transformations.
+    We explore issues of redundacy in code and mechanisms for reducing such reducancy.
   reading:
-    - page: /readings/transforming-images.html
+    - page: /readings/local-bindings.html
   lab:
-    - page: /labs/transforming-images.html
-
-- topic: Drawings as values
-  abbrev: drawings
-  summary: |
-    We return to our first model of images to explore a few more mechanisms for working with with such images and to compare models.
-  reading:
-    - page: /readings/drawings-as-values.html
-  lab:
-    - page: /labs/drawings-as-values.html
+    - page: /labs/local-bindings.html
 
 - topic: Images as functions
   abbrev: image-compute
@@ -239,6 +227,15 @@
     - page: /readings/image-compute.html
   lab:
     - page: /labs/image-compute.html
+
+- topic: Transforming images
+  abbrev: transforming-images
+  summary: |
+    We expand our understanding of RGB transformations to image transformations.
+  reading:
+    - page: /readings/transforming-images.html
+  lab:
+    - page: /labs/transforming-images.html
 
 - topic: Ethical considerations in computing
   abbrev: etical
