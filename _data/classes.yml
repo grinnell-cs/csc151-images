@@ -182,11 +182,10 @@
     - page: /labs/recursion-basics.html
   notes: ../eboards/eboard16.html
 
-- topic: Introduction to list recursion, continued again
+- topic: "Detour: Thinking about Mini-Project 4"
   summary: |
-    We continue to continue our initial exploration of recursion in Scheme.
-  lab:
-    - page: /labs/recursion-basics.html
+    We continue to continue our initial exploration of recursion in Scheme
+    by considering various aspects of mini-project 4.
   notes: ../eboards/eboard17.html
 
 - topic: Recursion practice
@@ -197,6 +196,7 @@
     - page: /readings/recursion-magic.html
   lab:
     - page: /labs/recursion-practice.html
+  notes: ../eboards/eboard18.html
 
 - topic: Local bindings
   abbrev: let

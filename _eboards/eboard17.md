@@ -1,5 +1,5 @@
 ---
-title: "EBoard 17: More recursion"
+title: "EBoard 17: Thinking about MP4"
 number: 17
 section: eboards
 held: 2023-10-02
@@ -14,7 +14,6 @@ _Approximate overview_
 * Administrivia
 * About MP4.
 * Questions
-* Lab
 
 Administrivia
 -------------
