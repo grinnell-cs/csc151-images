@@ -198,6 +198,15 @@
   lab:
     - page: /labs/recursion-practice.html
 
+- topic: Local bindings
+  abbrev: let
+  summary: |
+    We explore issues of redundacy in code and mechanisms for reducing such reducancy.
+  reading:
+    - page: /readings/local-bindings.html
+  lab:
+    - page: /labs/local-bindings.html
+
 - topic: Recursion over numbers
   abbrev: number-recursion
   summary: |
@@ -210,14 +219,6 @@
   lab:
     - page: /labs/numeric-recursion.html
 
-- topic: Local bindings
-  abbrev: let
-  summary: |
-    We explore issues of redundacy in code and mechanisms for reducing such reducancy.
-  reading:
-    - page: /readings/local-bindings.html
-  lab:
-    - page: /labs/local-bindings.html
 
 - topic: Images as functions
   abbrev: image-compute
