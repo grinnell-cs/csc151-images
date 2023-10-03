@@ -78,44 +78,37 @@
     - SoLA 1 Post-Assessment
     - MP 4 Pre-Assessment
 
-- date: 2023-10-05
+- date: 2023-10-02
   due:
-    - page: /mps/mp04.html
+    - MP 4 Pre-Assessment
 
 - date: 2023-10-06
-  assigned:
-    - page: /mps/mp05.html
   due:
     - Quiz 5
-    - MP 4 Post-Assessment
-
-- date: 2023-10-08
-  assigned:
-    - MP 5 Pre-Assessment
 
 - date: 2023-10-12
   due:
-    - page: /mps/mp05.html
+    - page: /mps/mp04.html
 
 - date: 2023-10-13
   assigned:
-    - page: /mps/mp06.html
+    - page: /mps/mp05.html
   due:
     - Quiz 6
-    - MP 5 Post-Assessment
+    - MP 4 Post-Assessment
 
 - date: 2023-10-22
   due:
-    - MP 6 Pre-Assessment
+    - MP 5 Pre-Assessment
 
 - date: 2023-10-26
   due:
-    - page: /mps/mp06.html
+    - page: /mps/mp05.html
 
 - date: 2023-10-27
   due:
     - Quiz 7
-    - MP 6 Post-Assessment
+    - MP 5 Post-Assessment
 
 - date: 2023-10-29
   due:
@@ -131,40 +124,40 @@
 
 - date: 2023-11-03
   assigned:
-    - page: /mps/mp07.html
+    - page: /mps/mp06.html
   due:
     - Quiz 8
     - SoLA 2 Post-Assessment
-    - MP 7 Pre-Assessment
+
+- date: 2023-11-05
+  due:
+    - MP 6 Pre-Assessment
 
 - date: 2023-11-09
   due:
-    - page: /mps/mp07.html
+    - page: /mps/mp06.html
 
 - date: 2023-11-10
   assigned:
-    - page: /mps/mp08.html
+    - page: /mps/mp07.html
   due: 
     - Quiz 9
-    - MP 7 Post-Assessment
+    - MP 6 Post-Assessment
 
 - date: 2023-11-12
   due:
-    - MP 8 Pre-Assessment
+    - MP 7 Pre-Assessment
 
 - date: 2023-11-16
   due:
-    - page: /mps/mp08.html
+    - page: /mps/mp07.html
 
 - date: 2023-11-17
   assigned:
-    - page: /mps/mp09.html
+    - page: /mps/mp08.html
   due:
     - Quiz 10
-    - MP 8 Post-Assessment
-
-- date: 2023-11-19
-
+    - MP 7 Post-Assessment
 
 - date: 2023-11-22
   due:
@@ -172,7 +165,7 @@
 
 - date: 2023-11-30
   due:
-    - page: /mps/mp09.html
+    - page: /mps/mp08.html
 
 - date: 2023-12-01
   due:

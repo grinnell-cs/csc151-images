@@ -1,15 +1,15 @@
 totals:
-  projects: 9
+  projects: 8
   las: 24
 
 tiers:
   - grade: A
     projects: |
-      No Is or Rs<br>At least 6 Es<br>Remainder Ms
+      No Is or Rs<br>At least 5 Es<br>Remainder Ms
     las:        22xS
   - grade: B
     projects : |
-      No Is or Rs<br>At least 4 Es<br>Remainder Ms
+      No Is or Rs<br>At least 3 Es<br>Remainder Ms
     las:        20xS
   - grade: C
     projects: |
