@@ -23,7 +23,10 @@ Administrivia
 * Last Friday's lab is cancelled.  It's worth looking at, but you
   should not turn anything in.
 * MP4 is now due a week from Thursday.
-* The MP2 redo is now posted.
+* The MP2 redo is now posted.  
+    * It is due October 12th.
+    * Please include a `changes.rkt` file that includes a list
+      of the changes you've made in response to the grading comments.
 
 ### Upcoming Token activities
 
@@ -37,6 +40,7 @@ Peer
   at 7:30 p.m. in Flanagan.  Sunday at 2:00 also in Flanagan.  Get
   tickets at the box office starting at noon on Thursday.  (Maybe
   before.)  The box office is in Bucksbaum, near the courtyard.
+* Volleyball vs. Lawrence Saturday at 1pm (Senior Day).
 
 Wellness
 
@@ -51,12 +55,117 @@ Misc
 * LATE: MP4 pre-assessment due
 * Thursday night: Readings due
 * Friday morning: Lab writeup due (but turn it in today)
-* Friday: Quiz!  You get to vote on the topic.
-    * Anonymous procedures with `cut` and `compose` (`o`).
-    * List recursion.
+* Friday: Quiz!  
+    * Tracing (for the few of you who still need it).
+    * Lists and the big three (see our discussion below).
+    * Documentation (see our discussion below).
+    * One new one (you can vote).
+        * Anonymous procedures with `cut` and `compose` (`o`).
+        * List recursion.
 
 Sample problems
 ---------------
+
+### List recursion
+
+_Design and write recursive functions over lists._
+
+Write a *recursive* procedure, `(increasing-length? words)`, that takes
+a list of strings as input and ensures that every string is at least as
+long as the previous string. If so, it returns true.  If not, it returns
+false.
+
+Here's a partial test suite.
+
+```drracket
+(check-equal? (increasing-length '())
+              #t
+              "No strings: They are in increasing length")
+(check-equal? (increasing-length? '("hello"))
+              #t
+              "A singleton")
+(check-equal? (increasing-length? '("a" "b" "cd" "efg" "hij" "klmn"))
+              #t
+              "Some duplicate-length words")
+(check-equal? (increasing-length? '("a" "bb" "ccc" "dddd" "eee"))
+              #f
+              "Okay until the end.")
+```
+
+### Use higher-order procedures
+
+_Use `cut` and composition to simpllify computation._
+
+Consider the following procedures
+
+```drracket
+;;; (vowel? char) -> boolean
+;;;   char : char?
+;;; Determine if char is a vowel.
+(define vowel?
+  (let ([vowels (string->list "aeiou")])
+    (lambda (ch)
+      (integer? (index-of vowels (char-downcase ch))))))
+
+;;; (count-vowels str) -> integer?
+;;;   str : string?
+;;; Count the number of vowels in str
+(define count-vowels
+  (lambda (str)
+    (tally vowel? (string->list str))))
+
+;;; (select-special-words words) -> list-of string?
+;;;   words : list-of string?
+;;; Selects all the special words in words using the ALTV criterion.
+(define select-special-words
+  (lambda (words)
+    (filter (o (cut (> <> 2)) count-vowels) words)))
+```
+
+a. What kinds of words does `select-special-words` select?
+
+b. Explain how `(o (cut (> <> 2)) count-vowels)` works as a
+predicate for such words.
+
+c. Rewrite `vowel?` using `cut` and composition but no `lambda`.
+
+## Use higher-order procedures (extra)
+
+_This is a particularly evil problem.  You are unlikely to get one
+this hard._
+
+Consider the following procedure.
+
+```drracket
+(define silly
+  (lambda (lst)
+    (map (lambda (x) (sqr (+ 1 x)))
+         (filter odd? lst))))
+```
+
+Rewrite the procedure using `o` and `cut` so that it has *no* lambdas.
+
+Notes:
+
+* Use `o` when you want to sequence actions. (Do *this* to the parameter,
+  then *this* to the result, then *this* to the next result, and so on and
+  so forth.)
+* Use `cut` when you want to fill in one or more parameters to a procedure, 
+  thereby creating a new procedure.
+* This is a case in which the lambda-free version is likely much harder to
+  read.
+
+### Voting!
+
+_We can start with a bit of debate
+
+* `cut` and compose
+* recursion
+
+About the quiz on the big three
+-------------------------------
+
+* The "normal" process:
 
 About SoLA 1
 ------------
@@ -64,7 +173,7 @@ About SoLA 1
 * I've generally included comments when you don't get credit, but may not
   have added comments when you do get credit.  (I hope that makes sense.)
 * I should be sending out summaries of how you are doing on LAs by next
-  Monday.  (Hopefully sooner, depending on how things go.)
+  Monday.  (Hopefully sooner, depending on how things go with the software.)
 
 ### Documentation
 
