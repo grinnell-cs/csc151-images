@@ -89,4 +89,5 @@ Phase 1
 Phase 2
 
 * [Lists](lists.html)
-
+* [List recursion](list-recursion.html)
+* [Using higher-order procedures](hop.html)
