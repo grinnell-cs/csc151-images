@@ -206,6 +206,7 @@
     - page: /readings/local-bindings.html
   lab:
     - page: /labs/local-bindings.html
+  notes: ../eboards/eboard19.html
 
 - topic: Recursion over numbers
   abbrev: number-recursion
