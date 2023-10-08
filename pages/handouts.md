@@ -45,6 +45,9 @@ information.  To ensure that you read the information, I even give you
 [Tips on working more productively](working-tips)
   : Some tips from students, mentors, and instructors.
 
+[Tokens](tokens)
+  : Information on gaining and spending tokens.
+
 ## Secondary topics
 
 [Some thoughts on electronic mail](email)
