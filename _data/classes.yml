@@ -208,6 +208,16 @@
     - page: /labs/local-bindings.html
   notes: ../eboards/eboard19.html
 
+- topic: List recursion, revisited
+  abbrev: list-recursion-revisited
+  summary: |
+    We practice recursion a bit more.
+  reading:
+    - page: /readings/numeric-recursion.html
+  lab:
+    - page: /labs/list-recursion-revisited.html
+  notes: ../eboards/eboard20.html
+
 - topic: Recursion over numbers
   abbrev: number-recursion
   summary: |
@@ -220,7 +230,6 @@
   lab:
     - page: /labs/numeric-recursion.html
 
-
 - topic: Images as functions
   abbrev: image-compute
   summary: |
@@ -230,17 +239,8 @@
   lab:
     - page: /labs/image-compute.html
 
-- topic: Transforming images
-  abbrev: transforming-images
-  summary: |
-    We expand our understanding of RGB transformations to image transformations.
-  reading:
-    - page: /readings/transforming-images.html
-  lab:
-    - page: /labs/transforming-images.html
-
 - topic: Ethical considerations in computing
-  abbrev: etical
+  abbrev: ethical
   summary: |
     After some time exploring various issues in computing, we take
     a step back and consider problems of ethical computing with
