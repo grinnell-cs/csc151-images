@@ -7,7 +7,7 @@ link: true
 ---
 # {{ page.title }}
 
-**Warning** This class is being recorded.
+**Warning** This class is being recorded (and transcribed).
 
 _Approximate overview_
 
@@ -52,6 +52,8 @@ Misc
 
 ### Friday PSA
 
+* Take care of yourselves.
+* Consent is essential.
 
 Questions
 ---------
@@ -68,24 +70,69 @@ recursion?
 Do I have to use recursion, or can I solve things with the big three?
 
 > I'm not sure how you write the most general procedures without
-  some kind of recursion or recursive thinking.
+  some kind of recursion or recursive thinking.  (It may not be
+  list recursion, but it's some kind of recursion.)
 
-Can you give me an example of something that's really deep?
+Can I use `let` and `let*`?
+
+> Certainly.
+
+Can you give me an example of something that's really deeply nested?
 
 > Here's a procedure that will build a nested list of approximately
   `n` levels.
 
-        (define deep
+        (define deep1
           (lambda (stuff n)
             (if (zero? n)
                 (list stuff stuff)
-                (deep-helper stuff (deep stuff (- n 1))))))
+                (deep1-helper stuff (deep1 stuff (- n 1))))))
 
-        (define deep-helper
+        (define deep1-helper
           (lambda (stuff more-stuff)
             (list stuff more-stuff)))
 
 > Sam will attempt to demo.
+
+```
+> red-narrow
+(list 10 20 (color 255 0 0 255))
+> (deep1 red-narrow 0)
+(list (list 10 20 (color 255 0 0 255)) (list 10 20 (color 255 0 0 255)))
+> (deep1 red-narrow 1)
+(list
+ (list 10 20 (color 255 0 0 255))
+ (list (list 10 20 (color 255 0 0 255)) (list 10 20 (color 255 0 0 255))))
+> (deep1 red-narrow 2)
+(list
+ (list 10 20 (color 255 0 0 255))
+ (list
+  (list 10 20 (color 255 0 0 255))
+  (list (list 10 20 (color 255 0 0 255)) (list 10 20 (color 255 0 0 255)))))
+> (deep1 red-narrow 3)
+(list
+ (list 10 20 (color 255 0 0 255))
+ (list
+  (list 10 20 (color 255 0 0 255))
+  (list
+   (list 10 20 (color 255 0 0 255))
+   (list (list 10 20 (color 255 0 0 255)) (list 10 20 (color 255 0 0 255))))))
+> (solid-ellipses (deep1 red-narrow 3))
+(list . (list . (list . (list . .))))
+> (solid-ellipses (deep1 red-narrow 10))
+(list
+ .
+ (list . (list . (list . (list . (list . (list . (list . (list . (list . (list . .)))))))))))`
+```
+
+### Other
+
+Will this recursion ever feel natural?
+
+> Prior experience suggests that it will eventually feel natural for 
+  most of you.
+
+> But it may take until week 10 or beyond.
 
 Lab
 ---
