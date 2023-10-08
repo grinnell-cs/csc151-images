@@ -79,21 +79,9 @@ For instance, here is a procedure that, given a positive integer, `number`, comp
 At Grinnell, this result is traditionally called the "*termial*" of the number, a play on the term "factorial":
 
 ```
-;;; Procedure:
-;;;   termial
-;;; Parameters:
-;;;   number, a positive integer
-;;; Purpose:
-;;;   Compute the sum of the positive integers not greater than a given integer
-;;; Produces:
-;;;   sum, an integer
-;;; Preconditions:
-;;;   number is a number, exact, an integer, and non-negative.
-;;;   The sum is not larger than the largest integer the language
-;;;     permits.
-;;; Postconditions:
-;;;   sum is the sum of positive integers not greater than number.
-;;;   That is, sum = 0 + 1 + 2 + ... + number
+;;; (termial number) -> integer?
+;;;   number : positive-integer?
+;;; Compute the sum 1 + 2 + 3 + ... + number
 (define termial
   (lambda (number)
     (if (zero? number)
@@ -151,6 +139,9 @@ Similarly, if we gave the `termial` procedure an approximation rather than an ex
 ```
 
 Hence, we might use a husk-and-kernel strategy to protect our procedure.
+(If you don't know what a husk-and-kernel strategy is, that's okay.
+Basically, we have a series of checks to ensure that the parameter
+is of the right type.)
 
 ```racket
 (define termial
@@ -186,24 +177,9 @@ The important part of getting recursion to work is making sure that the base cas
 For instance, we can use direct recursion on exact positive integers with a base case of 1, rather than 0.
 
 ```racket
-;;; Procedure:
-;;;   factorial
-;;; Parameters:
-;;;   n, a positive integer
-;;; Purpose:
-;;;   Compute n!, the product of positive integers less than or
-;;;   equal to a given positive integer.
-;;; Produces:
-;;;   product, an integer
-;;; Preconditions:
-;;;   * n is a number, exact, an integer, and positive.
-;;;   * The product is not larger than the largest integer the
-;;;     language permits.  (Not an issue in our implementation of
-;;;     Scheme, but we mention ;;;     it anyway.)
-;;; Postconditions:
-;;;   * product is the product of the positive integers less than or
-;;;     equal to n.  That is,
-;;;       product = 1 * 2 * ... * n
+;;; (factorial n) -> integer?
+;;;   n : non-negative-integer?
+;;; Compute 1*2*3*...*n.
 (define factorial
   (lambda (n)
     (if (= n 1)
@@ -219,19 +195,10 @@ We can, for example, use direct recursion to approach the base case from below b
 Here's a variant of `termial` that sums the values from `a` to `b` (rather than 1 to `n`), inclusive.
 
 ```racket
-;;; Procedure:
-;;;   sum-between
-;;; Parameters:
-;;;   a, an integer
-;;;   b, an integer
-;;; Purpose:
-;;;   Compute the sum of the numbers from a to b, inclusive.
-;;; Produces:
-;;;   sum, an integer
-;;; Preconditions:
-;;;   a <= b.
-;;; Postconditions:
-;;;   sum = a + (a+1) + (a+2) + ... + (b-1) + b.
+;;; (sum-between a b) -> integer?
+;;;   a : integer?
+;;;   b : integer? (greater than or equal to a)
+;;; Compute the sum of the numbers from a to b, inclusive.
 (define sum-between
   (lambda (a b)
     (if (= a b)
