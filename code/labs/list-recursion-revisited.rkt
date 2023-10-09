@@ -252,9 +252,9 @@ use when counting any kind of value.
 
 #| B |#
 
-; +-------------------------------+----------------------------------
-; | Exercise 6: What comes first? |
-; +-------------------------------+
+; +------------------------------+-----------------------------------
+; | Exercise 6: The longest word |
+; +------------------------------+
 
 #|
 Implement a procedure, `(longest-word words)`, that takes a nonempty list
