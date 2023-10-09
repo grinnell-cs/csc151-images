@@ -13,7 +13,7 @@
   goals:
     - "**Code style**. Write and structure code in ways that make it easier to understand."
     - "**Lists**. Manipulate lists with fundamental higher-order list functions."
-    - "**Lambda-free anonymous procedures**. Use `section` and composition to simplify computations."
+    - "**Lambda-free anonymous procedures**. Use `cut` and composition to simplify computations."
     - "**List recursion**.  Design and write recursive functions over lists."
     - "**Ethical considerations**.  Consider implications of the power of computing."
     - "**Local bindings**. Refactor redundancy and add clarity in computations with let-bindings."
