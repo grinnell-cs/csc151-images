@@ -145,14 +145,14 @@ to use some of the ideas from `select-odd` (in terms of how
 you build a new list).
 |#
 
-;;; (join l1 l2) -> list?
-;;;   l1 : list?
-;;;   l2 : list?
-;;; Combine l1 and l2 into a new list that contains the elements
-;;; of l1 (in the same order) followed by the elements of l2 (in
+;;; (join lst1 lst2) -> list?
+;;;   lst1 : list?
+;;;   lst2 : list?
+;;; Combine lst1 and lst2 into a new list that contains the elements
+;;; of lst1 (in the same order) followed by the elements of lst2 (in
 ;;; the same order).
 (define join
-  (lambda (lst1 lst)
+  (lambda (lst1 lst2)
     ???))
 
 #|
