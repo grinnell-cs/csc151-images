@@ -198,8 +198,8 @@ effect, you are figuring out how `map` is implemented.)
 (test-equal? "double-all: singleton list"
              (double-all (list 1))
              (list 2))
-(test-equal? "double-all: longer ist"
-             (double-all 4/3 1/2 5 -2 0)
+(test-equal? "double-all: longer list"
+             (double-all (list 4/3 1/2 5 -2 0))
              (list 8/3 1 10 -4 0))
 |#
 
