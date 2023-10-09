@@ -55,10 +55,11 @@ Misc
 
 ### Upcoming work
 
-* Tuesday night: NO READING DUE!
-* Wednesday morning: Today's lab due
+* Tuesday night: NO READING DUE! (unless you didn't do the numeric recursion
+  reading already)
+* Wednesday morning: Today's lab due (normal policy)
 * Thursday night: MP4
-* Thursday night: Reading for Frieday
+* Thursday night: Reading for Friday
 * Friday Quiz
 
 Questions
@@ -106,8 +107,117 @@ What is this Friday's quiz topic?
 
 ### MP4
 
+Can you explain a bit about mutual recursion?
+
+> Normal recursion occurs when a procedure uses itself as a helper.
+
+> Mutual recursion occurs when one procedure uses another as a helper,
+  and that procedure uses the first as a helper.
+
+> For example, suppose we wanted to alternate doubling values and halving
+  them.
+
+> When thinking about recursion, we identify: (a) base-case test;
+  (b) base value; (c) simplify the parameter; (d) recursive call; 
+  (e) how do we use the result of the recursive call
+
+```
+;;; (double-then-halve nums) -> list-of number?
+;;;   nums : list-of number?
+;;; Double the first element of nums, halve the second, double the
+;;; third, etc etc.
+(define double-then-halve
+  (lambda (nums)
+    (if (null? nums)
+        null
+        (cons (* 2 (car lst)) (halve-then-double (cdr nums))))))
+
+;;; (halve-then-double nums) -> list-of number?
+;;;   nums : list-of number?
+;;; Halve the first element of nums, double the second, halve the
+;;; third, etc etc.
+(define halve-then-double
+  (lambda (nums)
+    (if (null? nums)
+        null
+        (cons (* 1/2 (car lst)) (double-then-halve (cdr nums))))))
+```
+
+Can we trace this?  (Using speed trace, where we don't show all the steps.)
+
+    (double-then-halve (list 1 2 3 4 5))
+--> (cons (* 2 1) (halve-then-double (list 2 3 4 5)))
+--> (cons 2 (halve-then-double (list 2 3 4 5)))
+--> (cons 2 (cons (* 1/2 2) (double-then-halve (list 3 4 5))))
+--> (cons 2 (cons 1 (double-then-halve (list 3 4 5))))
+--> (cons 2 (cons 1 (cons (* 2 3) (halve-then-double (list 4 5)))))
+--> (cons 2 (cons 1 (cons 6 (halve-then-double (list 4 5)))))
+--> (cons 2 (cons 1 (cons 6 (cons (* 1/2 4) (double-then-halve (list 5))))))
+--> (cons 2 (cons 1 (cons 6 (cons 2 (double-then-halve (list 5))))))
+--> (cons 2 (cons 1 (cons 6 (cons 2 (cons (* 2 5) (halve-then-double (list)))))))
+--> (cons 2 (cons 1 (cons 6 (cons 2 (cons 10 (halve-then-double (list)))))))
+--> (cons 2 (cons 1 (cons 6 (cons 2 (cons 10 null)))))
+--> (cons 2 (cons 1 (cons 6 (cons 2 (list 10)))))
+--> (cons 2 (cons 1 (cons 6 (list 2 10))))
+--> (cons 2 (cons 1 (list 6 2 10)))
+--> (list 2 1 6 2 10)
+```
+
+On MP4, you'll be doing similar, alternating between beside and above.
+That is, `stacked-ss` will probably call `sequenced-ss` on each sublist
+and `sequenced-ss` will probabl call `stacked-ss` on each sublist.
+
 ### Other
+
+Quick review
+------------
+
+Check 2: Some base cases (‡)
+
+a. Suppose you want to count how many elements are in a list. What’s
+a list that’s so simple that even a cs prof can figure out how many
+elements are in the list?
+
+> `null`
+
+b. And how many elements are in that list?
+
+> 0
+
+c. Suppose you want to find the last element of a list. What’s a list that’s so simple that even a cs prof can figure out the last element?
+
+> A one-element list.
+
+d. How do they get that last element?
+
+> `(car lst)`
+
+e. Suppose we want to count how many times a value, val, appears in a list. What’s a list that’s so simple that even a CS prof can count the number of appearances of val?
+
+> `null`
+
+f. And how many times does val appear in the list?
+
+> 0
+
+g. Suppose we want to take the drop the first n elements of a list. What’s a value of n that’s so simple that even a cs prof can figure out how to drop n elements?
+
+> 0
+
+h. And how do they drop those n elements?
+
+> Return the same list
 
 Lab
 ---
 
+Note: Here's another way to think about `select-odds`.
+
+```
+(define select-odds
+  (lambda (nums)
+    (if (null? nums)
+        null
+        (let ([remaining-odds (select-odds (cdr nums))])
+          ...))))
+```
