@@ -218,6 +218,13 @@
     - page: /labs/list-recursion-revisited.html
   notes: ../eboards/eboard20.html
 
+- topic: Pause for breath
+  abbrev: pause-week-07
+  summary : |
+    We pause to reflect on some issues of recursion and to give
+    ourselves a bit less stress during week 7.
+  notes: ../eboards/eboard21.html
+
 - topic: Recursion over numbers
   abbrev: number-recursion
   summary: |
@@ -229,16 +236,7 @@
     - page: /readings/numeric-recursion.html
   lab:
     - page: /labs/numeric-recursion.html
-  notes: ../eboards/eboard21.html
-
-- topic: Images as functions
-  abbrev: image-compute
-  summary: |
-    We conside ways to treat images as functions from positions to colors.
-  noreading:
-    - page: /readings/image-compute.html
-  lab:
-    - page: /labs/image-compute.html
+  notes: ../eboards/eboard22.html
 
 - topic: Ethical considerations in computing
   abbrev: ethical
@@ -249,6 +247,15 @@
     we be aware of with respect to ethics in computing?
   lab:
     - page: /labs/ethics-in-computing.html
+
+- topic: Images as functions
+  abbrev: image-compute
+  summary: |
+    We conside ways to treat images as functions from positions to colors.
+  noreading:
+    - page: /readings/image-compute.html
+  lab:
+    - page: /labs/image-compute.html
 
 - topic: Pairs
   abbrev: pairs
@@ -342,14 +349,6 @@
   lab:
     - page: /labs/turtle-graphics.html
 
-- topic: Iteration 
-  summary: |
-    We consider iteration, particularly as it may apply to turtle graphics.
-  reading:
-    - page: /readings/iteration.html
-  labs:
-    - page: /labs/iteration.html
-    
 - topic: Project Kickoff
   abbrev: final-project
   summary: |
