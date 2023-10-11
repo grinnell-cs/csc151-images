@@ -18,7 +18,7 @@ _Approximate overview_
 Administrivia
 -------------
 
-* Happy halfway point.
+* Happy halfway point!
 * I've had a request to permit free late submissions of MP4.  You
   may submit MP4 without penalty until Saturday night.  You may
   submit the MP4 post-assessment without penalty until Sunday night.
@@ -27,13 +27,18 @@ Administrivia
 * If you are struggling because of the conflict (or the world's varied 
   reactions to the conflict), let me know how I can help.  I'm certainly
   willing to push deadlines.
+* It appears that my office hours today and tomorrow are nearly completely
+  booked (completely booked today, just a little time tomorrow).  If you'd
+  like to meet with me, drop me a note and we'll see what we can work out.
+  (Preferred times: noon-1pm and 3:00-3:00pm today; 10:00am-noon tomorrow.
 
 ### Upcoming Token activities
 
 Academic
 
 * CS Extras Thursday (planning for summer)
-* Security talk/movie Friday afternoon.
+* Friday: Talk and movie on security (1pm, Strand 3).
+  <https://forms.office.com/r/u34bDgj8w2>
 
 Cultural
 
@@ -254,7 +259,30 @@ Questions
 
 ### Administrative
 
+### Numeric recursion
+
+I'm confused as to how the "partof" label applies to numeric recursion. I understand how it applies in regard to lists, but it just doesn't make sense to me in the examples given from the reading.
+
+> For numeric recursion, `partof` is almost always just the number.
+
 ### MP4
+
+I'm getting an error with `rgb-red`.
+
+> It should be `color-red`.
+
+Can I have an extension until Saturday night?
+
+> Yes.
+
+Can we assume that all sublists have at least two elements?
+
+> For an M, yes.  For an E, you must handle singleton lists and empty
+  lists.
+
+> Hint: Write something that checks for these cases, does the appropriate
+  thing for them, and applies `beside` or `above` in the remaining
+  cases.  (I think that's the only time it really matters.)
 
 ### Other
 
