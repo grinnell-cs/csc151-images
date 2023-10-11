@@ -1,7 +1,6 @@
 #lang racket
 
 (require csc151)
-(require racket/match)
 (require rackunit)
 
 ;; CSC 151 (SEMESTER)
@@ -34,45 +33,10 @@ infinite recursion can sometimes crash the computer, so it's good
 to save early and offer.
 |#
 
-#| A |#
-
-; +-------------------------+----------------------------------------
-; | Exercise 1: Replicators |
-; +-------------------------+
-
-#|
-Consider the definition of `(replicate n v)` below that takes a
-natural number `n` and returns a list that contains `n` copies of `v`.
-|#
-
-;;; (replicate n v)
-;;;   n : 
-;;;   v :
-;;;
-(define replicate
-  (lambda (n v)
-    (if (zero? n)
-        null
-        (cons v (replicate (- n 1) v)))))
-
-#|
-Fill in the following information for replicate.
-
-base-case-test: <TODO: fill in>
-
-base-case-value: <TODO: fill in>
-
-parameter simplification: <TODO: fill in>
-
-recursive call: <TODO: fill in>
-
-post-recursion step: <TODO: fill in>
-|#
-
 #| B |#
 
 ; +---------------------------+--------------------------------------
-; | Exercise 2: Counting down |
+; | Exercise 1: Counting down |
 ; +---------------------------+
 
 #|
@@ -102,7 +66,7 @@ tests for this procedure to ensure that it is correct.
     ???))
 
 ; +---------------------------------+--------------------------------
-; | Exercise 3: Flipping the script |
+; | Exercise 2: Flipping the script |
 ; +---------------------------------+
 
 #|
@@ -127,17 +91,17 @@ that you used for `count-down`:
 
 #|
 a. Experiment with this function on a few inputs. In a sentence or
-two below, describe the problem with this function and why this is the
-case.
+two below, describe the problem or problems with this function and 
+why we encounter those problems.  
 
 <TODO: describe the problem you encountered here>
 |#
 
 #|
-b. In a sentence or two, describe how you might fix the function.
-Note that you need not fix the function now; just suggest a general
-approach.  And spend no more than three minutes thinking about the
-issue!
+b. In a sentence or two, suggest how you might fix the function.
+Note that you should *not* fix the function now; just suggest a
+general approach.  And spend no more than three minutes thinking
+about the issue!
 
 <TODO: describe a possible fix here>
 |#
@@ -145,42 +109,7 @@ issue!
 #| A |#
 
 ; +-------------------------------+----------------------------------
-; | Exercise 4: Sums of Fractions |
-; +-------------------------------+
-
-#|
-Consider the sum 1/1 + 1/2 + 1/3 + ... + 1/n.  While there may be
-a formula that some mathematicians know for that sum, it may also
-be easier to just have the computer calculate it for us.
-
-Finish writing the procedure, `(fractional-sum n)`, below, which
-computes that sum.
-
-Hint: You will likely find it easier to think of the sum as 
-  1/n + 1/(n-1) + ... + 1/3 + 1/2 + 1/1.
-Or, in Scheme notation
-  (+ (/ 1 n) (+ (/ 1 (- n 1)) ... (+ (/ 1 3) (+ (/ 1 2) (/ 1 1)))))
-|#
-
-;;; (fractional-sum n) -> rational?
-;;;   n : positive-integer?
-;;; Computes 1/1 + 1/2 + 1/3 + ... + 1/n.
-(define fractional-sum
-  (lambda (n)
-    ???))
-
-#|
-(test-equal? "(fractional-sum 1)" (fractional-sum 1) 1)
-(test-equal? "(fractional-sum 2)" (fractional-sum 2) (+ 1 1/2))
-(test-equal? "(fractional-sum 3)" (fractional-sum 3) (+ 1 1/2 1/3))
-(test-equal? "(fractional-sum 4)" (fractional-sum 4) (+ 1 1/2 1/3 1/4))
-(test-equal? "(fractional-sum 5)" (fractional-sum 5) (+ 1 1/2 1/3 1/4 1/5))
-|#
-
-#| B |#
-
-; +-------------------------------+----------------------------------
-; | Exercise 5: Dropping elements |
+; | Exercise 3: Dropping elements |
 ; +-------------------------------+
 
 #|
@@ -243,7 +172,7 @@ c. Complete the definition of `my-drop`.
 #| A |#
 
 ; +-----------------------------+------------------------------------
-; | Exercise 6: Taking Elements |
+; | Exercise 4: Taking Elements |
 ; +-----------------------------+
 
 #|
@@ -304,10 +233,10 @@ c. Complete the definition of `my-take`.
              (my-take '(a b c) 3)
              '(a b c))
 
-#| A |#
+#| B |#
 
 ; +-------------------------+----------------------------------------
-; | Exercise 7: Counting up |
+; | Exercise 5: Counting up |
 ; +-------------------------+
 
 #|
@@ -380,10 +309,10 @@ c. Implement `values-between`.
              '())
 |#
 
-#| B |#
+#| A |#
 
 ; +-------------------------------+----------------------------------
-; | Exercise 8: Repeated division |
+; | Exercise 6: Repeated division |
 ; +-------------------------------+
 
 #|
@@ -399,6 +328,8 @@ or equal to 1.  For example,
     1
     > (rhythm10 5)
     1
+    > (rhythm10 33)
+    2
     > (rhythm10 512)
     3
     > (rhythm10 9812.412)
@@ -435,6 +366,9 @@ b. Write `rhythm10` recursively.
 (test-equal? "two"
              (rhythm10 2)
              1)
+(test-equal? "two digits"
+             (rhythm10 53)
+             2)
 (test-equal? "three digits"
              (rhythm10 212)
              3)
@@ -473,10 +407,43 @@ If you find that you have extra time and want to further explore some
 of these issues, consider implementing any of the following procedures.
 |#
 
+; +----------------------------+----------------------------------
+; | Extra 1: Sums of Fractions |
+; +----------------------------+
+
+#|
+Consider the sum 1/1 + 1/2 + 1/3 + ... + 1/n.  While there may be
+a formula that some mathematicians know for that sum, it may also
+be easier to just have the computer calculate it for us.
+
+Finish writing the procedure, `(fractional-sum n)`, below, which
+computes that sum.
+
+Hint: You will likely find it easier to think of the sum as 
+  1/n + 1/(n-1) + ... + 1/3 + 1/2 + 1/1.
+Or, in Scheme notation
+  (+ (/ 1 n) (+ (/ 1 (- n 1)) ... (+ (/ 1 3) (+ (/ 1 2) (/ 1 1)))))
+|#
+
+;;; (fractional-sum n) -> rational?
+;;;   n : positive-integer?
+;;; Computes 1/1 + 1/2 + 1/3 + ... + 1/n.
+(define fractional-sum
+  (lambda (n)
+    ???))
+
+#|
+(test-equal? "(fractional-sum 1)" (fractional-sum 1) 1)
+(test-equal? "(fractional-sum 2)" (fractional-sum 2) (+ 1 1/2))
+(test-equal? "(fractional-sum 3)" (fractional-sum 3) (+ 1 1/2 1/3))
+(test-equal? "(fractional-sum 4)" (fractional-sum 4) (+ 1 1/2 1/3 1/4))
+(test-equal? "(fractional-sum 5)" (fractional-sum 5) (+ 1 1/2 1/3 1/4 1/5))
+|#
+
 #| B |#
 
 ; +--------------------------------------+---------------------------
-; | Extra 1: Repeated division, repeated |
+; | Extra 2: Repeated division, repeated |
 ; +--------------------------------------+
 
 #|
@@ -514,7 +481,7 @@ b. Implement `rhythm`.
 |#
 
 ; +--------------------------+---------------------------------------
-; | Extra 2: Range revisited |
+; | Extra 3: Range revisited |
 ; +--------------------------+
 
 #|
@@ -589,8 +556,8 @@ tests for this function!
     ???))
 
 #|
-c. Use `acc-range` to implement `(good-range n)` which correctly
-produces a list of the numbers 0 through n, inclusive. 
+c. Use `acc-range` as a helper to implement `(good-range n)` which
+correctly produces a list of the numbers 0 through n, inclusive.
 
 Don't forget to write appropriate documentation and a set of rackunit
 tests for this procedure.
@@ -604,7 +571,7 @@ tests for this procedure.
     (acc-range n ???)))
 
 ; +------------------------+-----------------------------------------
-; | Extra 3: Powers of ... |
+; | Extra 4: Powers of ... |
 ; +------------------------+
 
 #|
@@ -686,7 +653,7 @@ Note: If possible, use `section` rather than `lambda`.
   ???)
 
 ; +------------------+-----------------------------------------------
-; | Extra 4: Fibbing |
+; | Extra 5: Fibbing |
 ; +------------------+
 
 #|
@@ -747,7 +714,7 @@ make `naive-fib` more efficient.
 |#
 
 ; +-----------------------+------------------------------------------
-; | Extra 5: More Fibbing |
+; | Extra 6: More Fibbing |
 ; +-----------------------+
 
 #|
