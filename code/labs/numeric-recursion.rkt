@@ -334,6 +334,9 @@ or equal to 1.  For example,
     3
     > (rhythm10 9812.412)
     4
+
+Conveniently, it gives the number of digits in the whole part of the
+number.
 |#
 
 #|
@@ -342,7 +345,18 @@ are necessary.  If so, add them.
 |#
 
 #|
-b. Write `rhythm10` recursively.
+b. Write `rhythm10` recursively.  You should take the "natural" approach
+of dividing `n` by 10 in each recursive call.
+
+Base case: n <= 1
+
+Base value: ???
+
+Simplify: Divide by 10
+
+Recursive call: ???
+
+What to do with the recursive call: ???
 |#
 
 ;;; (rhythm10 n) -> exact-integer?
