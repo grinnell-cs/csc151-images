@@ -1,6 +1,6 @@
 ---
 title: "EBoard 21: Numeric recursion"
-number: 20
+number: 21
 section: eboards
 held: 2023-10-11
 link: true
@@ -12,6 +12,7 @@ link: true
 _Approximate overview_
 
 * Administrivia
+* A bunch of stuff from Monday
 * Questions
 * Lab
 
@@ -30,7 +31,7 @@ Administrivia
 * It appears that my office hours today and tomorrow are nearly completely
   booked (completely booked today, just a little time tomorrow).  If you'd
   like to meet with me, drop me a note and we'll see what we can work out.
-  (Preferred times: noon-1pm and 3:00-3:00pm today; 10:00am-noon tomorrow.
+  (Preferred times: noon-1pm and 3:00-3:30pm today; 10:00am-noon tomorrow.
 
 ### Upcoming Token activities
 
@@ -48,16 +49,19 @@ Peer
 
 Wellness
 
+* Have a relaxing and rejuvinating fall break.
+
 Misc
 
 ### Other good things
 
 ### Upcoming work
 
-* Wednesday morning: Today's lab due (normal policy)
 * Thursday night: MP4
 * Thursday night: NO READING DUE! 
+* Friday morning: Today's lab due (normal policy)
 * Friday Quiz
+* Saturday night: Permitted late MP4
 
 Friday's Quiz
 -------------
@@ -75,6 +79,14 @@ Timing and such
   multiple quizzes.
 * You can bring a sheet of paper (8.5x11 or A4) with hand-written
   notes if you think it will help.
+
+Studying for quizzes
+
+* Try lab problems related to the topic
+    * On paper, not on DrRacket
+    * If you have to look up something, write it down.
+* Write your own similar problems (and solve them)
+* A brain dump never hurts.
 
 Sample question
 
@@ -137,9 +149,10 @@ with `select-odds`.  I like it because it emphasizes the recursion.
     (if (null? nums)
         null
         (let ([remaining-odds (select-odds (cdr nums))])
-          (if (odd? (car nums))
+          (if (and (integer? (car nums)) (odd? (car nums)))
               (cons (car nums)
-                    remaining-odds))))))
+                    remaining-odds)
+              remaining-odds)))))
 ```
 
 Many ways to write `longest-string`
@@ -221,10 +234,24 @@ Twisting things around: Compare the first two words.
         (car words)
         (if (> (string-length (car words)) (string-length (car (cdr words))))
             (longest-word (cons (car words) (cdr (cdr words))))
-            (longest-word (cons (car (cdr words)) (cdr (cdr words))))))))
+            (longest-word (cdr words))))))
 ```
 
 _TPS_: Load the eboard, look at the variants.  Which do you prefer?  Why?
+
+* To some folks, the last one feels more like (a) how they'd do it by hand
+  and (b) how reduce (or at least `reduce-left`) works.
+* To other folks, the first few were simpler.
+* The term `longer-word` helps with readability.
+
+```
+(define longest-word
+  (lambda (words)
+    (if (singleton? words)
+        (car words)
+        (longest-word (cons (longer-word (list-ref words 0) (list-ref words 1))
+                            (cddr words))))))
+```
 
 `awesum`
 --------
@@ -254,6 +281,54 @@ of either numbers or deeply nested lists of numbers).
 
 _TPS_: Base case, easy recursive case, harder recursive case.
 
+```
+(test-equal? "empty list" (awesum '()) 0)
+(test-equal? "simple list" (awesum '(1 2 1)) 4)
+(test-equal? "slightly nested list" (awesum '(4 (2 3) 5)) 14)
+(test-equal? "more deeply nested list" 
+             (awesum '(1 ((2) 3 () (4 (5 (6))) (7))))
+             28)
+```
+
+```
+(define awesum
+  (lambda (numbers)
+    (if (null? numbers)
+        0
+        (if (number? (car numbers))
+            (+ (car numbers) (awesum (cdr numbers)))
+            (+ (awesum (car numbers)) (awesum (cdr numbers)))))))
+
+```
+    (awesum '(1 ((2) 3 () (4 (5 (6))) (7))))
+--> (+ 1 (awesum '((2) 3 () (4 (5 (6))) (7))))
+--> (+ 1 (+ (awesum '(2)) (awesum '(3 () (4 (5 (6))) (7)))))
+--> (+ 1 (+ (+ 2 (awesum '())) (awesum '(3 () (4 (5 (6))) (7)))))
+--> (+ 1 (+ (+ 2 0) (awesum '(3 () (4 (5 (6))) (7)))))
+--> (+ 1 (+ 2 (awesum '(3 () (4 (5 (6))) (7)))))
+--> (+ 1 (+ 2 (+ 3 (awesum '(() (4 (5 (6))) (7))))))
+--> (+ 1 (+ 2 (+ 3 (+ (awesum '()) (awesum '((4 (5 (6))) (7)))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (awesum '((4 (5 (6))) (7)))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (+ (awesum '(4 (5 (6)))) (awesum '((7))))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (+ (+ 4 (awesum (5 (6)))) (awesum '((7))))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (+ (+ 4 (+ 5 (awesum '(6)))) (awesum '((7))))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (+ (+ 4 (+ 5 (+ 6 (awesum '())))) (awesum '((7))))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (+ (+ 4 (+ 5 (+ 6 0))) (awesum '((7))))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (+ (+ 4 (+ 5 6)) (awesum '((7))))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (+ (+ 4 11) (awesum '((7))))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (+ 15 (awesum '((7))))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (+ 15 (+ (awesum '(7)) (awesum '())))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (+ 15 (+ (+ 7 (awesum '())) (awesum '())))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (+ 15 (+ (+ 7 0) (awesum '())))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (+ 15 (+ 7 0))))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 (+ 15 7)))))
+--> (+ 1 (+ 2 (+ 3 (+ 0 22))))
+--> (+ 1 (+ 2 (+ 3 22)))
+--> (+ 1 (+ 2 25))
+--> (+ 1 27)
+--> 28
+```
+
 Questions
 ---------
 
@@ -277,8 +352,7 @@ Can I have an extension until Saturday night?
 
 Can we assume that all sublists have at least two elements?
 
-> For an M, yes.  For an E, you must handle singleton lists and empty
-  lists.
+> For an M, yes.  For an E, you must handle singleton lists.
 
 > Hint: Write something that checks for these cases, does the appropriate
   thing for them, and applies `beside` or `above` in the remaining
