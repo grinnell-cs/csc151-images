@@ -7,7 +7,8 @@ link: true
 ---
 # {{ page.title }}
 
-**Warning** This class is being recorded (and transcribed).
+**Warning** This class is being recorded (and transcribed), provided
+Sam remembered to hit the "Record" button.
 
 _Approximate overview_
 
@@ -36,7 +37,7 @@ Administrivia
 
 Academic
 
-* Friday: Talk and movie on security (1pm, Strand 3).
+* Today: Talk and movie on security (1pm, Strand 3).
   <https://forms.office.com/r/u34bDgj8w2>
 
 Cultural
@@ -65,6 +66,10 @@ Questions
 
 ### Administrative
 
+When will the MP4 autograder and rubric be ready?
+
+> This evening, I hope.
+
 ### Numeric recursion
 
 Will we have to always write a "helper" definition to control the parameters for a recursion procedure or can we nest that? Would you accept either format?
@@ -86,7 +91,7 @@ Can we write recursive procedures that work with strings?
             (if (equal? str "")
                 null
                 (cons (string-ref str 0)
-                      (substring str 1)))))
+                      (string-to-list (substring str 1))))))
 
         (define string-reverse
           (lambda (str)
@@ -104,7 +109,7 @@ Can we write recursive procedures that work with strings?
             (if (equal? remaining "")
                 so-far
                 (reverse-string-helper (substring remaining 1)
-                                       (string-append (substring str 0 1)
+                                       (string-append (substring remaining 0 1)
                                                       so-far)))))
 
 > Let's trace those last two.
@@ -131,8 +136,11 @@ Can we write recursive procedures that work with strings?
 How do we identify the part-of procedure, the simplify procedure,
 and the combine procedure?
 
+> These are not perfect ways of thinking about things.
+
 > "part-of" is something we can grab immediately from the parameters:
-  a number, the car of the list, etc.
+  a number, the car of the list, the first or last charcter in a string
+  if we're working with strings, etc.
 
 > "simplify" is something that makes the input "simpler" (closer to
   the base case).  For numbers, that's adding or multiplying if we're
@@ -155,3 +163,4 @@ just doesn't make sense to me in the examples given from the reading.
 Lab
 ---
 
+Let's hope that we aren't affected by Friday the 13th falling on Friday.
