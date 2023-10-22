@@ -238,16 +238,6 @@
     - page: /labs/numeric-recursion.html
   notes: ../eboards/eboard22.html
 
-- topic: Ethical considerations in computing
-  abbrev: ethical
-  summary: |
-    After some time exploring various issues in computing, we take
-    a step back and consider problems of ethical computing with
-    seasoned programmer-eyes. As newly-informed citizens, what must
-    we be aware of with respect to ethics in computing?
-  lab:
-    - page: /labs/ethics-in-computing.html
-
 - topic: Images as functions
   abbrev: image-compute
   summary: |
@@ -293,6 +283,16 @@
     - page: /readings/hash-tables.html
   lab:
     - page: /labs/hash-tables.html
+
+- topic: Ethical considerations in computing
+  abbrev: ethical
+  summary: |
+    After some time exploring various issues in computing, we take
+    a step back and consider problems of ethical computing with
+    seasoned programmer-eyes. As newly-informed citizens, what must
+    we be aware of with respect to ethics in computing?
+  lab:
+    - page: /labs/ethics-in-computing.html
 
 - topic: Data abstraction
   abbrev: data-abstraction
