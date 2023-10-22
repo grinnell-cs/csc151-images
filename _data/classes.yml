@@ -245,7 +245,8 @@
   noreading:
     - page: /readings/image-compute.html
   lab:
-    - page: /labs/image-compute.html
+    - page: /labs/bitmaps.html
+  notes: ../eboards/eboard23.html
 
 - topic: Pairs
   abbrev: pairs
