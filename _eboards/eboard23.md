@@ -1,5 +1,5 @@
 ---
-title: "EBoard 23: Functional images"
+title: "EBoard 23: Functional images (bitmaps)"
 number: 23
 section: eboards
 held: 2023-10-23
@@ -47,6 +47,8 @@ Academic
 * CS Extras, Thursday, ???
 
 Cultural
+
+* Latin Cocktail, Tomorrow, 7pm, Herrick
 
 Peer
 
