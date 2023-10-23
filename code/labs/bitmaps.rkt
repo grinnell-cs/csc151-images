@@ -2,6 +2,7 @@
 
 (require csc151)
 (require rackunit)
+(require 2htdp/image)
 
 ;; CSC 151 (SEMESTER)
 ;; Lab: Computing Bitmaps (bitmaps.rkt)
@@ -146,6 +147,10 @@ ENTER YOUR ANSWER HERE.
 #|
 b. Check your answer experimentally.  Add any notes about similarities
 and differences.
+
+If you have trouble seeing the image, you could try something like
+
+> (scale 10 (bitmap->image bitmap-2a))
 
 ENTER ANY NOTES HERE.
 |#
