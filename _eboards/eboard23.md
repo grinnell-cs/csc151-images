@@ -26,6 +26,10 @@ Administrivia
 * Quizzes returned.  Grade reports going out soon.
     * I'm amused that although only four people asked for a documentation
       quiz, about a dozen of you took it.
+* Today's lab is brand new (so is the supporting code).
+    * Ell{a,ie} may also be puzzled.
+    * Things may break.
+    * I need to get the autograder up.
 * Registration starts somewhat soon.  I hope that you consider going on to 
   CSC-161.
     * Check the priority registration page at <https://grinco.sharepoint.com/sites/Registrars_Office/SitePages/PriorityRegistration.aspx> for our latest registration processes.
@@ -66,7 +70,8 @@ Misc
 
 ### Upcoming work
 
-* Thursday night: MP5
+* Tuesday night: Reading for Wednesday (pairs)
+* Sunday night: MP5 (try to get it in earlier)
 * Friday: Quiz(zes)
     * Friday's new topic: Numeric recursion
 * Next week: SoLA 2
@@ -98,12 +103,25 @@ Questions
 
 ### Administrative
 
-### Numeric recursion
-
 ### Other
 
 About bitmaps
 -------------
 
+_Oh no!  Sam did this on the whiteboard!_
+
+* We can think of images as grids of colors.
+* We normally don't want to build these images by hand.  But we can.
+* We will build them with functions instead.
+
 Lab
 ---
+
+Sam will spend the first few minutes of class getting the autograder
+working so that you can submit it on Gradescope.
+
+If you want to scale, add `(require 2htdp/image)` to the top of your file.
+
+```
+; SAM SAID "This lab is (much) too long.  You can stop here."
+```
