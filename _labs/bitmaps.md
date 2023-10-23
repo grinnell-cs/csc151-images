@@ -19,19 +19,6 @@ Procedures to learn or remember
 ```
 
 ```
-;;; (bitmap->image bitmap) -> image?
-;;;   bitmap : bitmap?
-;;; Convert a bitmap (e.g., one created by `compute-bitmap`) to
-;;; a standard image (one that we can rotate, overlay, etc.)
-```
-
-```
-;;; (image->bitmap image) -> bitmap?
-;;;   image : image?
-;;; Convert a standard image to a bitmap.
-```
-
-```
 ;;; (bitmap-pixel bitmap col row) -> color?
 ;;;   bitmap : bitmap?
 ;;;   col : non-negative-integer? (less than (bitmap-width bitmap))
@@ -52,7 +39,7 @@ Procedures to learn or remember
 ;;; (bitmap->image bitmap) -> image?
 ;;;   bitmap : bitmap?
 ;;; Convert a bitmap into an image.  (E.g., so that we can rotate,
-;;; scale, etc.)
+;;; overlay, scale, etc.)
 ```
 
 ```
