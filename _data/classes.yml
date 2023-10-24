@@ -292,7 +292,10 @@
     a step back and consider problems of ethical computing with
     seasoned programmer-eyes. As newly-informed citizens, what must
     we be aware of with respect to ethics in computing?
-  lab:
+  reading:
+    - title: ACM Code of Ethics and Professional Conduct
+    - resource: https://www.acm.org/code-of-ethics
+  nolab:
     - page: /labs/ethics-in-computing.html
 
 - topic: Data abstraction
