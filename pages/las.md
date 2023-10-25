@@ -88,7 +88,15 @@ Phase 1
 
 Phase 2
 
+* [Use higher-order procedures](hop.html)
 * [Lists](lists.html)
 * [List recursion](list-recursion.html)
 * [Using higher-order procedures](hop.html)
 * [Local bindings](local-bindings.html)
+* [Numeric recursion](numeric-recursion.html)
+* [Mental models of memory](memory.html)
+* [Vectors](vectors.html)
+
+Phase 3
+
+* _Forthcoming._
