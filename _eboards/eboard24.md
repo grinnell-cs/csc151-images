@@ -147,6 +147,74 @@ Write a *recursive* procedure, `(bounded-power-of-2 n)`, that finds the largest 
 Questions
 ---------
 
+### The reading
+
+Could you go over the self-checks?
+
+> The way we have drawn pair structures above makes it easy to think about
+`car` and `cdr` operation. Reading from the inside out, you simply
+follow the arrow from the left side of the pair for `car` or the arrow
+from the right side of the pair for `cdr`.
+
+> a. Using this strategy, find the values corresponding to the following
+commands applied to the structure repeated below.
+
+> ![Seven rectangles arranged in two rows.  The first row has four rectangles.
+The second row has three rectangles, which are below the first, third, and
+fourth rectangles in the first row.  Each rectangle is broken up into
+two squares.  In the first row, the right boxes in the first three rectangles
+have arrows to the subsequent rectangle.  The right box in the last rectangle
+on the first row has  a slash through it.  The left box of the first
+rectangle in the first row has an arrow downward to the first rectangle
+in the second row.  The left box of the second rectangle in the first row
+has an arrow pointing downward to the symbol `'b`.  The left box of the
+third rectangle in the first row has an arrow pointing to the second rectangle
+in the second row.  The left box of the fourth rectangle in the first
+row has an arrow pointing downward to the symbol `'e`.  The first rectangle
+in the second row i a rectangle that represents the list `'(a)`.  The left
+box of that rectangle has an arrow pointing downward to the symbol `'a`.
+The right box of that rectangle has a slash through it.  The left box
+of the second rectangle in the second row has an arrow pointing downward
+to the symbol `'c`.  The right box of the second rectangle in the second
+row has an arrow pointing to the right to the third rectangle in the
+second row.  The left box of the third rectangle in the second row has
+an arrow pointing downward to the symbol`'d`.  The right box of the third
+rectangle on the second row has a slash through it.](../images/pairs-4.png)
+
+> - `caar`
+> - `cadr`
+> - `caaddr`
+
+> b. Using an analog of the visual strategy, what sequence of commands
+would you need to extract the `'e` and `'d`, respectively?
+
+Does this mean that Scheme/DrRacket treats all lists as a collection of pairs paired together?
+
+> Yes.
+
+Are the dots in pairs elements of the list, or are they ignored by procedures like `list-ref`?
+
+> The dots represent "this isn't a list; it just looks like one".  
+
+> Lists are supposed to end in null, things that have dots don't end in
+  null.
+
+I still don't get this pair recursion, it is so different with list recursion.
+
+> In list recursion, we typically recurse only on the cdr.
+
+> In pair recursion, we recurse on both the car and the cdr.
+
+> We've already done a bit of that on MP4.
+
+Is using pairs more efficient in terms of processing time and memory than lists?
+
+> I suppose it depends on how you use them.  But lists are just pairs, so
+  in most cases there's no difference.
+
+> The goal in learning this is to better understand what's going on
+  "behind the scenes".
+
 ### Administrative
 
 ### MP5
