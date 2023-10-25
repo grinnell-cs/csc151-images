@@ -13,13 +13,14 @@ Sam remembered to hit the "Record" button.
 _Approximate overview_
 
 * Administrivia
+* About Friday's quizzes
 * Questions
 * Lab
 
 Administrivia
 -------------
 
-* Registration starts somewhat soon.  I hope that you consider going on to 
+* Registration starts next Wednesday.  I hope that you consider going on to 
   CSC-161.
     * Check the priority registration page at <https://grinco.sharepoint.com/sites/Registrars_Office/SitePages/PriorityRegistration.aspx> for our latest registration processes.
     * Check out the the priority rules for each class at <https://grinco.sharepoint.com/:x:/s/Registrars_Office/EQfHJD0_kHlMgqJDvkATg18B8k6Sc5C_SOtUiQ51Ig2LZg?e=HQS7zq>.  CSC's were not yet up-to-date when I last checked.
@@ -38,9 +39,11 @@ Cultural
 
 Peer
 
+* Women's Basketball Scrimmage Thursday at 6pm in Darby
 * Swimming vs. Coe college, Friday at 6pm.
 * Women's Volleyball vs. Cornell, November 1 at 7pm.
 * I hope to hear about more concerts, plays, and such.
+* Get a library card this Friday 3:00-4:30 in HSSC A1231
 
 Wellness
 
@@ -74,7 +77,7 @@ Misc
          * Local bindings (quizzes)
          * Numeric recursion (new, quiz Friday)
          * Vectors (really new, coming Friday)
-         * Diagramming structures (really new, coming Wednesday and Friday)
+         * Diagramming structures (really new, coming today and Friday)
 * A week from Sunday: Various redos (posted to Gradescope)
 
 ### Friday's quizzes
@@ -88,12 +91,12 @@ multiple quizzes can do so._
 * Repeated topic: List recursion
 * Repeated topic: Lists and the big three
 * Not offered: Documentation (it will be on the SoLA)
-* Optional topic: Tracing (let me know if you plan to take this)
+* Optional topic: Tracing (let me know by 8pm tonight if you plan to take this)
 
 Sample quiz problems
 --------------------
 
-### Mental models of memory
+### Diagramming structures
 
 _Describe or diagram the layout of memory for lists and vectors/arrays._
 
@@ -135,7 +138,7 @@ Write a *recursive* procedure, `(bounded-power-of-2 n)`, that finds the largest 
               "normal case: relatively small non-power-of-two")
 (check-equal? (bounded-power-of-2 72)
               64
-              "normal case: somewhat larger non-powr-of-two")
+              "normal case: somewhat larger non-power-of-two")
 (check-equal? (bounded-power-of-2 (expt 2 123))
               (expt 2 123)
               "edge case: large power of 2")
@@ -143,6 +146,9 @@ Write a *recursive* procedure, `(bounded-power-of-2 n)`, that finds the largest 
               (expt 2 123)
               "edge case: large non-power of 2")
 ```
+
+As always, SamR recommends that you review the lab and reading to prepare
+for the quiz.
 
 Questions
 ---------
@@ -188,9 +194,30 @@ rectangle on the second row has a slash through it.](../images/pairs-4.png)
 > b. Using an analog of the visual strategy, what sequence of commands
 would you need to extract the `'e` and `'d`, respectively?
 
+What do we get if we take `(cddddr stuff)`, which I think gives us a slash.
+
+> slash in diagrams is just "null".
+
+Can you have a pair in which the car is null?
+
+> Yes!
+
+> Bad ASCII art
+
+        +---+---+
+        | / | / |
+        +---+---+
+
+> That's the list of null.
+
 Does this mean that Scheme/DrRacket treats all lists as a collection of pairs paired together?
 
 > Yes.
+
+> We do this reading/discussion/lab so that you have a bit of understanding
+  of what's going on behind the scenes.
+
+> This is our mental model of how data are stored in Scheme.
 
 Are the dots in pairs elements of the list, or are they ignored by procedures like `list-ref`?
 
@@ -199,13 +226,32 @@ Are the dots in pairs elements of the list, or are they ignored by procedures li
 > Lists are supposed to end in null, things that have dots don't end in
   null.
 
-I still don't get this pair recursion, it is so different with list recursion.
+Sample code
+
+   > (cons 'a (cons 'b 'c))
+   '(a b . c)
+   > (list? (cons 'a (cons 'b 'c)))
+   #f
+   > (list-ref (cons 'a (cons 'b 'c)) 0)
+   'a
+   > (list-ref (cons 'a (cons 'b 'c)) 1)
+   'b
+   > (list-ref (cons 'a (cons 'b 'c)) 2)
+   . . list-ref: index reaches a non-pair
+     index: 2
+     in: '(a b . c)
+   > (length (cons 'a (cons 'b 'c)))
+   . . length: contract violation
+     expected: list?
+     given: '(a b . c)
+
+I still don't get this pair recursion, it is so different than list recursion.
 
 > In list recursion, we typically recurse only on the cdr.
 
 > In pair recursion, we recurse on both the car and the cdr.
 
-> We've already done a bit of that on MP4.
+> We've already done a bit of recursing on the car on MP4.
 
 Is using pairs more efficient in terms of processing time and memory than lists?
 
@@ -217,10 +263,73 @@ Is using pairs more efficient in terms of processing time and memory than lists?
 
 ### Administrative
 
+Can I have until Sunday for MP3 redo?
+
+> Yes.
+
+Can you fix the due date for MP4 redo?
+
+> Yes.
+
+Does the student who asked deserve people's applause for asking?
+
+> Apparantly.
+
 ### MP5
+
+Does the first fractal problem ask me to make fractals, or just three
+stacked triangles?
+
+> Fractals.  You just don't have to worry about recoloring them, or using
+  different shapes, or ...
+
+Can you go over 2e?
+
+> If we think about the fractal carpets, we should have a mental image
+  of what happens to each square
+
+        +---+---+---+
+        |   |   |   |
+        +---+---+---+
+        |   |   |   |
+        +---+---+---+
+        |   |   |   |
+        +---+---+---+
+
+> Options: 
+
+> * X: We can recurse, keeping the same primary color and secondary
+    color.  (black is the primary in our examples, red is the secondary)
+
+> * Y: We can recurse, swapping the primary and secondary.
+
+> * x: We can just draw a square in the primary.
+
+> * y: We can just draw a square in the secondary.
+
+> Our goal is to write a string describing the pattern.
+
+        +---+---+---+
+        | X | y | X |
+        +---+---+---+
+        | x | Y | x |
+        +---+---+---+
+        | X | y | X |
+        +---+---+---+
+
+> Our call would be `(carpet "XyXxYxXyX" 128 (rgb 0 0 0) (rgb 255 0 0) 3)`.
+
+Can we talk about `new-rgb-fractal-triangle`
+
+> Yes, the recursive portions should have redder, greener, and bluer central
+  triangles, respectively.
+
+> It may be that Sam's example was not correct.  Stay tuned.  Thank you
+  student for noticing.
 
 ### Other
 
 Lab
 ---
 
+_Yay!  We have a whole 30 minutes for lab."
