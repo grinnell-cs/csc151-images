@@ -42,6 +42,7 @@
     - page: /readings/decomposition.html
   lab:
     - page: /labs/decomposition.html
+  notes: ../eboards/eboard04.html
 
 - topic: Reading and writing procedures
   abbrev: procedures
@@ -257,6 +258,7 @@
     - page: /readings/pairs.html
   lab:
     - page: /labs/pairs.html
+  notes: ../eboards/eboard24.html
 
 - topic: Vectors
   abbrev: vectors
