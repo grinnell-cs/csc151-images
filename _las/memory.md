@@ -1,9 +1,9 @@
 ---
-title: "Sample LA: Mental models of memory"
+title: "Sample LA: Diagramming structures"
 ---
 # {{ page.title }}
 
-_Describe or diagram the layout of memory for lists and vectors/arrays._
+_Describe or diagram the layout of memory for lists, pair structures, and vectors/arrays._
 
 Consider the following pair structure represented in ASCII art.
 
