@@ -1,9 +1,7 @@
 #lang racket
 
 (require csc151)
-(require csc151/rex)
 (require rackunit)
-
 
 ;; CSC-151-NN (SEMESTER)
 ;; Lab: Vectors (vectors.rkt)
@@ -15,92 +13,6 @@
 ; +---------------+--------------------------------------------------
 ; | Provided code |
 ; +---------------+
-
-;;; (random-list-elt lst) -> any/c?
-;;;   lst : list?
-;;; Randomly select an element from the list.
-(define random-list-elt
-  (lambda (lst)
-    (list-ref lst (random (length lst)))))
-
-;;; (random-vector-elt vec) -> any/c?
-;;;   vec : vector?
-;;; Randomly select an element from the vector.
-(define random-vector-elt
-  (lambda (vec)
-    (vector-ref vec (random (vector-length vec)))))
-
-;;; (random-nums len max) -> listof integer?
-;;;    len : non-negative-integer?
-;;;    max : positive-integer?
-;;; Make a list of length `len`, containing unpredictable numbers
-;;; from the range [0..max).
-(define random-nums
-  (lambda (len max)
-    (letrec ([helper
-              (lambda (len so-far)
-                (if (zero? len)
-                    so-far
-                    (helper (- len 1) (cons (random max) so-far))))])
-      (helper len '()))))
-
-;;; (ref-experiment collection rounds) -> void?
-;;;   collection : (vectorof integer?) or (listof integer?)
-;;;   rounds : natural?
-;;; Look for integers selected randomly from the range between 
-;;; 0 and the length of collection.  
-;;;
-;;; Returns nothing.  Used mostly for timing purposes.
-(define ref-experiment
-  (lambda (collection rounds)
-    (let* ([ref (if (vector? collection) 
-                    vector-ref 
-                    list-ref)]
-           [len (if (vector? collection) 
-                    (vector-length collection)
-                    (length collection))])
-      (letrec ([kernel
-                 (lambda (n)
-                   (when (> n 0)
-                     (ref collection (random len))
-                     (kernel (- n 1))))])
-        (kernel rounds)))))
-
-;;; word-list : listof string?
-;;; A sample list of strings, taken from one of the Project Gutenberg
-;;; collection.
-;;; N.B., the paragraph is adapted from our old friend, Jane Eyre, 
-;;  in the version from Gutenberg:
-;;;   https://www.gutenberg.org/cache/epub/1260/pg1260.txt
-(define word-list
-  (rex-find-matches (rex-repeat (rex-any-of (rex-char-range #\a #\z) 
-                                            (rex-char-range #\A #\Z)))
-                    "A preface to the first edition of Jane Eyre being unnecessary, I gave none; this second edition demands a few words both of acknowledgment and miscellaneous remark.  My thanks are due in three quarters.  To the Public, for the indulgent ear it has inclined to a plain tale with few pretensions.  To the Press, for the fair field its honest suffrage has opened to an obscure aspirant.  To my Publishers, for the aid their tact, their energy, their practical sense and frank liberality have afforded an unknown and unrecommended Author. The Press and the Public are but vague personifications for me, and I must thank them in vague terms; but my Publishers are definite: so are certain generous critics who have encouraged me as only large-hearted and high-minded men know how to encourage a struggling stranger; to them, _i.e._, to my Publishers and the select Reviewers, I say cordially, Gentlemen, I thank you from my heart.  Having thus acknowledged what I owe those who have aided and approved me, I turn to another class; a small one, so far as I know, but not, therefore, to be overlooked.  I mean the timorous or carping few who doubt the tendency of such books as \"Jane Eyre:\" in whose eyes whatever is unusual is wrong; whose ears detect in each protest against bigotry--that parent of crime--an insult to piety, that regent of God on earth.  I would suggest to such doubters certain obvious distinctions; I would remind them of certain simple truths."))
-
-;;; word-vector : vectorof string?
-;;; A sample vector of strings, taken from one of the Project Gutenberg
-;;; collection.
-(define word-vector
-  (list->vector word-list))
-
-;;; (random-word words) : string?
-;;;   words : (or/c (listof string?) (vectorof string?))
-;;; Randomly select a string from words.
-(define random-word
-  (lambda (words)
-    (if (vector? words)
-        (random-vector-elt words)
-        (random-list-elt words))))
-    
-;;; (random-words words) -> listof? string
-;;;   words : (or/c (listof string?) (vectorof string?))
-;;; Create a list of `n` words randomly selected from `words`.
-(define random-words
-  (lambda (words n)
-    (if (zero? n)
-        null
-        (cons (random-word words)
-              (random-words words (- n 1))))))
 
 ;;; (number-vector-increment-at! vec index) -> (void)
 ;;;   vec : vectorof number?
@@ -193,51 +105,10 @@ e. What do your results of these experiments suggest about vectors in Scheme?
 <TODO: Enter your notes.>
 |#
 
-; +---------------------------------------+--------------------------
-; | Exercise 2: Selecting random elements |
-; +---------------------------------------+
-
-#|
-a. Explain the difference between `random-list-elt`, `random-vector-elt`, 
-and `random-word`.
-
-<TODO: Enter your explanation.>
-|#
-
-#|
-b. Using `random-words` and `word-list`, make a list of ten randomly
-selected words.
-
-<TODO: Enter your code and the output, copied from the interactions pane.>
-|#
-
-#|
-c. Using `random-words` and `word-vector`, make a list of ten randomly
-selected words.
-
-<TODO: Enter your code and the output, copied from the interactions pane.>
-|#
-
-#|
-d. What do you expect to get from each of the following?  (That is,
-how many values do you expect to get and what range of values do
-you expect to get?)
-
-    (random-nums 10 20)
-    (random-nums 20 10)
-
-|#
-
-#|
-e. Check your answer experimentally.
-
-<TODO: Enter the results from the interactions pane here.>
-|#
-
 #| B |#
 
 ; +-------------------------------+----------------------------------
-; | Exercise 3: Vector efficiency |
+; | Exercise 2: Vector efficiency |
 ; +-------------------------------+
 
 #|
@@ -250,9 +121,8 @@ well `list-ref` works on a long list.
     (define size 10000)
     (define rounds 50000)
     (define list-of-values (range size))
-    (define list-of-probes (random-nums rounds size))
     (define list-result 
-      (time (map (section list-ref list-of-values <>) list-of-probes)))
+      (time (map (section list-ref list-of-values <>) list-of-values)))
 |#
 
 #|
@@ -301,7 +171,7 @@ e. Here's a followup experiment for vectors.
 
     (define vector-of-values (list->vector list-of-values))
     (define vector-result 
-      (time (map (section vector-ref vector-of-values <>) list-of-probes)))
+      (time (map (section vector-ref vector-of-values <>) list-of-values)))
 
 Will `vector-result` be the same as `list-result`?  Why or why not?
 
@@ -324,10 +194,9 @@ the computation of `vector-result` take about 50 milliseconds
     (define size 10000)
     (define rounds 2000000)
     (define list-of-values (range size))
-    (define list-of-probes (random-nums rounds size))
     (define vector-of-values (list->vector list-of-values))
     (define vector-result 
-      (time (map (section vector-ref vector-of-values <>) list-of-probes)))
+      (time (map (section vector-ref vector-of-values <>) list-of-values)))
 |#
 
 #|
@@ -360,12 +229,110 @@ j. What have you taken from these experiments?
 <TODO: ENTER AN ANSWER HERE>
 |#
 
+#| B |#
+
+; +-----------------------------------+------------------------------
+; | Exercise 3: Vector-based palettes |
+; +-----------------------------------+
+
 #| A |#
 
-; +------------------------------+-----------------------------------
-; | Exercise 4: Tallying letters |
-; +------------------------------+
+#|
+It is possible to represent a collection of colors (a “palette”)
+as a vector. Why would we do so? Well, once we’ve chosen a palette,
+we can represent an image as a collection of indices into that
+palette. Such a representation is typically much more compact than
+representing each color with the full RGB triplet.
 
+For example, here is a palette that represents the colors in the
+rainbow.
+|#
+
+(define rainbow-palette
+  (list->vector
+   (map color-name->color
+        (list "red" "orange" "yellow" "green" "blue" "indigo" "violet"))))
+
+; +---------------------------------------------+--------------------
+; | Exercise 4: Darkening vector-based palettes |
+; +---------------------------------------------+
+
+#|
+Write a procedure, (palette-darker! palette), that, given a vector of integer-encoded RGB colors, makes each color in the palette slightly darker (i.e., using color-darker).
+
+Note that you will not build a new vector. Rather, you will replace each color in the existing vector by the darker version. You may use the recursion pattern(s) from the reading and number-vector-divide! as a starting point. If you do, be sure to cite your sources appropriately.
+|#
+
+(define palette-darker!
+  (lambda (palette)
+    ???))
+
+#| A |#
+
+; +---------------------------------+--------------------------------
+; | Exercise 4: The brightest color |
+; +---------------------------------+
+
+#|
+Write a procedure, (palette-brightest palette), that takes one argument,
+a vector of colors, and returns the brightest color in that vector.
+You can assume that every position in the vector contains a color.
+
+You will need the definitions of color-brightness and color-brighter-of-two.
+|#
+
+;;; (color-brightness color) -> integer?
+;;;   color : color?
+;;; Compute the brightness of a color on a 0 .. 100 range.
+(define color-brightness
+  (lambda (color)
+    (round (* 100 (/ (+ (* 30/100 (color-red color))
+                        (* 59/100 (color-green color))
+                        (* 11/100 (color-blue color)))
+                      255)))))
+
+;;; (color-brighter-of-two color1 color2) -> color?
+;;;    color1 : color?
+;;;    color2 : color?
+;;; Find the brighter of two colors.
+(define color-brighter-of-two
+  (lambda (color1 color2)
+    (if (>= (color-brightness color1) (color-brightness color2))
+        color1
+        color2)))
+
+#| A |#
+
+; +----------------------------+-------------------------------------
+; | Exercise 5: Using palettes |
+; +----------------------------+
+
+
+#| B |#
+
+
+#| AB |#
+
+; +------------------+-----------------------------------------------
+; | Submit your work |
+; +------------------+
+
+#|
+Yup, it's that time.  You should know the drill.
+|#
+
+; +---------------------------+--------------------------------------
+; | For those with extra time |
+; +---------------------------+
+
+#|
+If you find that you have extra time, you might try the following
+exercise.
+|#
+
+; +---------------------------+--------------------------------------
+; | Extra 1: Tallying letters |
+; +---------------------------+
 #|
 a. Fill in the missing parts of the documentation for the following
 procedure.
@@ -437,25 +404,6 @@ as `(cond [TEST EXP1 EXP2 ...])`.
         (when (char<=? #\a ch #\z)
           ???))
       ???)))
-
-#| AB |#
-
-; +------------------+-----------------------------------------------
-; | Submit your work |
-; +------------------+
-
-#|
-Yup, it's that time.  You should know the drill.
-|#
-
-; +---------------------------+--------------------------------------
-; | For those with extra time |
-; +---------------------------+
-
-#|
-If you find that you have extra time, you might try the following
-exercise.
-|#
 
 ; +--------------------------------------+---------------------------
 ; | Extra 1: Tallying letters, revisited |
