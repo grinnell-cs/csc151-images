@@ -98,7 +98,7 @@ Sample quiz problems
 
 ### Diagramming structures
 
-_Describe or diagram the layout of memory for lists and vectors/arrays._
+_Describe or diagram the layout of memory for lists, pairs structures, and vectors/arrays._
 
 Draw a box-and-pointer diagram for the following structure, named `stuff`.
 

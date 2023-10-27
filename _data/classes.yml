@@ -269,6 +269,7 @@
     - page: /readings/vectors.html
   lab:
     - page: /labs/vectors.html
+  notes: ../eboards/eboard25.html
 
 - topic: Vectors, continued
   abbrev: vectors
