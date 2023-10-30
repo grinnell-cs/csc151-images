@@ -267,7 +267,7 @@
     We consider how data are stored in memory.
   reading:
     - page: /readings/vectors.html
-  lab:
+  nolab:
     - page: /labs/vectors.html
   notes: ../eboards/eboard25.html
 
