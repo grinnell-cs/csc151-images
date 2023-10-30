@@ -413,7 +413,7 @@ named `let`.
 (define number-vector-increment-all!/helper
   (lambda (vec pos len)
     (when (< pos len)   ; When the position is valid
-      (number-vector-increment! vec pos)
+      (number-vector-increment-at! vec pos)
       (number-vector-increment-all!/helper vec (+ pos 1) len))))
 ```
 
@@ -437,7 +437,7 @@ As an example, suppose we wished to convert the tallies to percentages by
 dividing each number by the sum of all the numbers in the vector. Assuming
 you have a means of totalling these numbers (a procedure you will write
 in the lab), we still need to iterate over all vector positions, just as
-we did in `number-vector-increment!` only this time we use the position
+we did in `number-vector-increment-all!` only this time we use the position
 variable *`pos`* directly to index the vector with `vector-ref`, rather
 than with a helper. Putting this together, we might write the following
 procedure.
@@ -682,12 +682,12 @@ b. Try using `number-vector-increment-at!` on a vector from the previous check.
 > v1
 ```
 
-c. Use `number-vector-increment!` on the vector to verify it behaves as intended.
+c. Use `number-vector-increment-all!` on the vector to verify it behaves as intended.
 
 ```
 > (define v2 (make-vector 2 3.14159))
 > (vector-set! v2 12.71828))
-> (number-vector-increment! v2)
+> (number-vector-increment-all! v2)
 > v2
 ```
 
