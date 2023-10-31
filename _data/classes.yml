@@ -272,12 +272,30 @@
   notes: ../eboards/eboard25.html
 
 - topic: Vectors, continued
-  abbrev: vectors
+  abbrev: vectors-02
   summary: |
     We continue to explore vectors.
   lab:
     - page: /labs/vectors-continued.html
   notes: ../eboards/eboard26.html
+
+- topic: Vectors, continued again
+  abbrev: vectors-03
+  summary: |
+    Yup, another day on vectors.
+  lab:
+    - page: /labs/vectors-continued.html
+  notes: ../eboards/eboard27.html
+
+- topic: Randomness
+  abbrev: randomness
+  summary: |
+    We consider Scheme's `random` procedure and how one might use
+    that procedure in generating images.
+  reading:
+    - page: /readings/randomness.html
+  lab:
+    - page: /labs/exploring-randomness.html
 
 - topic: Dictionaries and hash tables
   abbrev: dictionaries
@@ -289,6 +307,17 @@
   lab:
     - page: /labs/hash-tables.html
 
+- topic: Data abstraction
+  abbrev: data-abstraction
+  summary: |
+    We build upon the structures we have encountered so far to design
+    our own types and reflect on mechanisms for separating the
+    interface to a type from the implementation of the type.
+  reading: 
+    - page: /readings/data-abstraction.html
+  lab:
+    - page: /labs/data-abstraction.html
+  
 - topic: Ethical considerations in computing
   abbrev: ethical
   summary: |
@@ -302,17 +331,6 @@
   nolab:
     - page: /labs/ethics-in-computing.html
 
-- topic: Data abstraction
-  abbrev: data-abstraction
-  summary: |
-    We build upon the structures we have encountered so far to design
-    our own types and reflect on mechanisms for separating the
-    interface to a type from the implementation of the type.
-  reading: 
-    - page: /readings/data-abstraction.html
-  lab:
-    - page: /labs/data-abstraction.html
-  
 - topic: Higher-order recursive design
   abbrev: higher-order-recursive-design
   summary: |
@@ -334,28 +352,6 @@
     - page: /readings/list-recursion-revisited.html
   lab:
     - page: /labs/tail-recursion.html
-
-- topic: Randomness
-  abbrev: randomness
-  summary: |
-    We consider Scheme's `random` procedure and how one might use
-    that procedure in generating images.
-  reading:
-    - page: /readings/randomness.html
-  lab:
-    - page: /labs/exploring-randomness.html
-
-- topic: Turtle graphics
-  abbrev: turtle
-  summary: |  
-    We consider "turtle graphics", a model of image making originally
-    popularized by the Logo programming language.  We also review
-    issues of side effects and program state.
-  reading:
-    - page: /readings/side-effects-reviewed.html
-    - page: /readings/turtle-graphics.html
-  lab:
-    - page: /labs/turtle-graphics.html
 
 - topic: Project Kickoff
   abbrev: final-project
@@ -433,3 +429,16 @@
     The College requires that all work be submitted by 5pm.  The 
     only work I will accept at this point will be redos of mini-projects
     and learning assessments from SoLA 5.
+
+- topic: Turtle graphics
+  abbrev: turtle
+  summary: |  
+    We consider "turtle graphics", a model of image making originally
+    popularized by the Logo programming language.  We also review
+    issues of side effects and program state.
+  reading:
+    - page: /readings/side-effects-reviewed.html
+    - page: /readings/turtle-graphics.html
+  lab:
+    - page: /labs/turtle-graphics.html
+
