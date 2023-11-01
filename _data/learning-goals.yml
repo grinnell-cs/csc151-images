@@ -11,7 +11,7 @@
 
 - assessment: Learning Assessments, Phase 2 (LAP 2)
   goals:
-    - "**Code style**. Write and structure code in ways that make it easier to understand."
+    - "**Program style**. Write and structure code in ways that make it easier to understand."
     - "**Lists**. Manipulate lists with fundamental higher-order list functions."
     - "**Lambda-free anonymous procedures**. Use `cut` and composition to simplify computations."
     - "**List recursion**.  Design and write recursive functions over lists."
