@@ -26,6 +26,8 @@ Administrivia
 -------------
 
 * Remember!  The clock stays at 2am for one hour on Sunday morning!
+* As usual, I'll need to spend the first few minutes of lab getting
+  the autograder running.
 
 ### Upcoming Token activities
 
