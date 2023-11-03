@@ -36,6 +36,7 @@ Administrivia
 Academic
 
 * CS Table Tuesday: ???
+* Mentor session Tuesday
 * Convocation Thursday 11am JRC 101: David White '90: Grinnell is the Best 
   F\*\*cking College in the World .. and YOU are Ruining It.  Come Find Out Why.
 * Care in the Academy, Thursday, Noon, HSSC 1231
@@ -95,6 +96,14 @@ I could also add 27, (137, 41, 17)
 
 Questions
 ---------
+
+### SoLA 2
+
+"The style LA killed a little bit of my soul."
+
+> Now you know how our graders feel.
+
+> I'll give a style quiz this Friday (sorry ???).
 
 ### Registration
 
