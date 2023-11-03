@@ -296,6 +296,7 @@
     - page: /readings/randomness.html
   lab:
     - page: /labs/exploring-randomness.html
+  notes: ../eboards/eboard28.html
 
 - topic: Dictionaries and hash tables
   abbrev: dictionaries
