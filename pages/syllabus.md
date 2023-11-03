@@ -465,3 +465,7 @@ I need a mental health day.  What should I do?
 If I ask a question about the course, will it end up here?
 
 > Perhaps.  It will depend on a variety of issues, such as whether I consider it of general interest and whether I have time to update the syllabus.
+
+How do I book your office hours?
+
+> <https://bit.ly/book-samr>
