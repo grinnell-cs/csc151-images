@@ -295,7 +295,7 @@
   reading:
     - page: /readings/randomness.html
   lab:
-    - page: /labs/exploring-randomness.html
+    - page: /labs/random-language.html
   notes: ../eboards/eboard28.html
 
 - topic: Dictionaries and hash tables
