@@ -20,13 +20,13 @@ _Approximate overview_
 Quizzes
 -------
 
-* Congratulations on finishing the SoLA! (or whatever you chose to do of
-  the SoLA)
 * Ending early today!
 
 Administrivia
 -------------
 
+* Congratulations on finishing the SoLA! (or whatever you chose to do of
+  the SoLA)
 * Remember!  The clock stays at 2am for one hour on Sunday morning!
 * As usual, I'll need to spend the first few minutes of lab getting
   the autograder running.

@@ -12,87 +12,66 @@ Sam remembered to hit the "Record" button.
 
 _Approximate overview_
 
-* Quizzes
 * Administrivia
 * Questions
 * Lab
 
-Quizzes
--------
-
-* Congratulations on finishing the SoLA! (or whatever you chose to do of
-  the SoLA)
-* Ending early today!
-
 Administrivia
 -------------
 
-* Remember!  The clock stays at 2am for one hour on Sunday morning!
-* As usual, I'll need to spend the first few minutes of lab getting
-  the autograder running.
+* Please don't ask administrative questions in the reading questions
+  section.
 
 ### Upcoming Token activities
 
 Academic
 
-* CS Table Tuesday: ???
-* Mentor session Tuesday
-* Convocation Thursday 11am JRC 101: David White '90: Grinnell is the Best 
-  F\*\*cking College in the World .. and YOU are Ruining It.  Come Find Out Why.
-* Care in the Academy, Thursday, Noon, HSSC 1231
-* CS Extras Thursday: ???
+* Tuesday, 2023-11-07, Noon, Day PDE: _CS Table_.
+* Tuesday, 2023-11-07, 7pm, TBD: _Mentor Session: Randomness, hash 
+  tables, and exam problems_.
+* Thursday, 2023-11-09, 11am, JRC 101: _Convocation: Grinnell is the Best 
+  Fire-trucking College in the World .. and YOU are Ruining It.  Come Find 
+  Out Why (also Fighting the World’s Fight in a World Gone Mad: A Conversation 
+  about Philosophy Politics and Economics in the Modern Age)._ 
+  (David White '90).
+* Thursday, 2023-11-09, Noon, HSSC 1231 (or Webex).  _Care in the Academy_
+  with Cate Denial.
+  Lunch served (I think; there may be a signup).
+* Thursday, 2023-11-09, 4:15pm, Noyce 3821.  _CS Extras: _.
 
 Cultural
 
+* Wednesday, 2023-11-08, 6-8pm, Bucksbaum 102.  _The Voice as Instrument: 
+  Vocal Exploration and Improvisation_ with Christine Duncan.
+
 Peer
 
-* Swimming vs. Iowa Central CC, Friday, November 3, at 6pm.
-* Football vs. UofC, Saturday, November 4, at noon
 * Drag, Saturday November 11th.  Cheer the performers and the pretty lights.
 
 Wellness
 
 Misc
 
+* Wednesday, 2023-11-08, 7-8pm, HSSC Kernel (A1231).  _First-Gen Celebration Day
+  Keynote._
+* Wednesday, 2023-11-08, 7-8pm, JRC 209, _The Politics of AI spring break tour
+  information session._
+
 ### Other good things (no tokens)
 
 ### Upcoming work
 
-* Tonight: SoLA 2 post-assessment
-* Sunday: Various MP redos (posted to Gradescope)
-* Sunday night: Reading on hash tables and dictionaries
-* Sunday: MP 6 pre-assessment
 * Thursday: MP6
 
-### Friday PSA
+About SoLA 2
+------------
 
-* People care about you.  Take care of yourselves.
-* Make decisions that are right for you; don't feel like you have to 
-  meet others' expectations or presumed habits.
-* Consent is essential.
-
-MP6: Vectors and pixels
------------------------
-
-The color 128,32,8 gives the value 8 after running our formula.  8 is
-h (I think).  We want to modify the color so that it gives the value
-3 (c).  What new/similar color will work?  We need to subtract 5.
-(123, 32, 8) will work.  (122, 33, 8) would also work, but it's even
-further from our original color.  We could also use (125,31,7)
-
-Let's check
-
-```
-> (remainder (+ 125 31 7) 32)
-3
-```
-
-I could also add 27, (137, 41, 17)
-
-```
-> (remainder (+ 137 41 17) 32)
-3
-```
+* If you are missing LAs before a SoLA, you should really attempt them
+  on the SoLA (if only to see what they look like).
+* You have DrRacket available.  You should check your code.
+* Many of you said that `(filter pred? lst)` returns a list of the
+  values for which `pred?` returns true.  What if it returns neither
+  true nor false?
 
 Questions
 ---------
@@ -105,47 +84,46 @@ Questions
 
 > I'll give a style quiz this Friday (sorry ???).
 
-### Registration
+Can we go over _this LA_?
 
-Did 2nd years get priority for CSC-161?
+> You can chat attend the mentor session.  You can also ask the evening
+  tutors.
 
-> Yes, but we may need to update again to clarify that it's all prospective
-  CS majors.  If you are a second-year student already have another
-  declared major, and intend to add a CS major, please drop a note to
-  registrar@grinnell.edu to that effect.
-
-### Randomness
+### MP6
 
 ### Administrative
+
+I had an extension on an MP and emailed you the MP.  How do I email you
+the post-assessment?
+
+> You can find the questions in the [handouts section](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2023Fa/handouts/prepost).
+
+Can I use tokens to turn in pre- and post-assessments late?
+
+> That violates the point of pre- and post-assessments.  Particularly
+  for pre-assessments, it's important for you to do them before the
+  assignment.
+
+What will Friday's quiz be on?
+
+> Randomness.
+
+> Makeup on diagramming data.
+
+> Makeup on style.
+
+My family is coming to visit and I may have to miss class on Nov 10 
+and/or Nov 13.
+
+> "There's more to life than computer science."
+
+> Make up the work on your own.  Check the eboard and talk to peers.
+
+> You do not get a different time to take the quiz.  You'll have to 
+  make it up on a subsequent Friday (or SoLA).
 
 ### Other
 
 Lab
 ---
 
-Why does `roll-a-die` have a lambda with an empty parameter list?
-
-```
-(define roll-a-die
-  (lambda ()
-    (random 1 7)))
-```
-
-Because we want a *procedure*, something that does new work each time.
-Otherwise, we'd be defining a value that is unchangeable (at least for
-one run of the program).
-
-```
-(define random-die
-  (random 1 7))
-```
-
-What are Sam's favorite things about this lab?
-
-> `pair-a-dice` is a wonderfully horrible pun.
-
-> "Rolling Rolling Rolling" brings to mind (a) Tina Turner (or John
-  Fogerty) singing "Proud Mary" and (b) John Belushi singing "Rawhide"
-  in "The Blues Brothers".
-
-> The behavior of random procedures requires some subtlety in understanding.
