@@ -294,7 +294,7 @@
   (lambda (side color angle ratio)
     ???))
 
-;;; (spiral-squares-e side color angle ratio) -> image?
+;;; (spiral-squares-e side color angle ratio color-transform) -> image?
 ;;;   side : positive-real?
 ;;;   color : color?
 ;;;   angle : real?
