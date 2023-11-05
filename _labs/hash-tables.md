@@ -41,7 +41,7 @@ a. Have the traditional start-of-lab conversation.
 b. The person closest to the board is Side A.  The other person is side
 B.
 
-c. Grab your code files
+c. Grab the code files
 
 * [hash-tables.rkt](../code/labs/hash-tables.rkt)
 
