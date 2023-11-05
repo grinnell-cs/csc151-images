@@ -50,9 +50,9 @@
            (ok-key? 'family val)
            (ok-key? 'suffix val)))))
 
-(define name-prefix (section hash-ref <> 'prefix #f))
-(define name-given (section hash-ref <> 'given))
-(define name-middle (section hash-ref <> 'middle #f))
-(define name-family (section hash-ref <> 'family #f))
-(define name-suffix (section hash-ref <> 'suffix #f))
+(define name-prefix (cut (hash-ref <> 'prefix #f)))
+(define name-given (cut (hash-ref <> 'given)))
+(define name-middle (cut (hash-ref <> 'middle #f)))
+(define name-family (cut (hash-ref <> 'family #f)))
+(define name-suffix (cut (hash-ref <> 'suffix #f)))
 

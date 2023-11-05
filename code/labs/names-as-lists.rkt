@@ -41,9 +41,9 @@
            (string-or-false? (name-family val))
            (string-or-false? (name-suffix val))))))
 
-(define name-prefix (section list-ref <> 0))
-(define name-given (section list-ref <> 1))
-(define name-middle (section list-ref <> 2))
-(define name-family (section list-ref <> 3))
-(define name-suffix (section list-ref <> 4))
+(define name-prefix (cut (list-ref <> 0)))
+(define name-given (cut (list-ref <> 1)))
+(define name-middle (cut (list-ref <> 2)))
+(define name-family (cut (list-ref <> 3)))
+(define name-suffix (cut (list-ref <> 4)))
 
