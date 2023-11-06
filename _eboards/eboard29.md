@@ -1,8 +1,8 @@
 ---
-title: "EBoard 28: Randomness"
-number: 28
+title: "EBoard 29: Randomness"
+number: 29
 section: eboards
-held: 2023-11-03
+held: 2023-11-06
 link: true
 ---
 # {{ page.title }}
@@ -20,7 +20,7 @@ Administrivia
 -------------
 
 * Please don't ask administrative questions in the reading questions
-  section.
+  responses.
 
 ### Upcoming Token activities
 
@@ -46,7 +46,7 @@ Cultural
 
 Peer
 
-* Drag, Saturday November 11th.  Cheer the performers and the pretty lights.
+* Saturday, 2023-11-11. _Drag._ Cheer the performers and the pretty lights.
 
 Wellness
 
@@ -61,7 +61,9 @@ Misc
 
 ### Upcoming work
 
+* Tuesday night: Reading
 * Thursday: MP6
+* Friday: MP6 post-assessment, quizzes
 
 About SoLA 2
 ------------
@@ -86,10 +88,22 @@ Questions
 
 Can we go over _this LA_?
 
-> You can chat attend the mentor session.  You can also ask the evening
-  tutors.
+> You can attend the mentor session.  You might also be able to ask the 
+  evening tutors.  You can TM me  or set up an appointment.
 
 ### MP6
+
+I'm a bit worried about the recursion in `blur`.  
+(_Taken from the pre-assessment._)
+
+> `bitmap->vector` gives some ideas on how you can write a procedure that
+  recurses in two dimensions.
+
+> I would recommend that you write a lot of helper procedures.  For example,
+
+> * something that grabs all the pixels around a location
+> * something that grabs a pixel from the vector based on the column and row
+> * something that sets a pixel in the vector based on the column and row
 
 ### Administrative
 
@@ -103,6 +117,8 @@ Can I use tokens to turn in pre- and post-assessments late?
 > That violates the point of pre- and post-assessments.  Particularly
   for pre-assessments, it's important for you to do them before the
   assignment.
+
+> I may be a bit more lenient on assessments than I'd planned.
 
 What will Friday's quiz be on?
 

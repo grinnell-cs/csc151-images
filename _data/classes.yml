@@ -307,6 +307,7 @@
     - page: /readings/hash-tables.html
   lab:
     - page: /labs/hash-tables.html
+  notes: ../eboards/eboard29.html
 
 - topic: Data abstraction
   abbrev: data-abstraction
