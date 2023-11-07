@@ -99,4 +99,5 @@ Phase 2
 
 Phase 3
 
+* [Randomness](randomness.html)
 * _Forthcoming._
