@@ -100,4 +100,10 @@ Phase 2
 Phase 3
 
 * [Randomness](randomness.html)
-* _Forthcoming._
+* [Dictionaries](dictionaries.html)
+* [Data abstraction](data-abstraction.html)
+* Ethics
+* [Higher-order programming](write-hop.html)
+* [Tree recursion](tree-recursion.html)
+* [Running time](running-time.html)
+* [Sorting and searching](searching.html)
