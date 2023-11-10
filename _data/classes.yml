@@ -332,6 +332,7 @@
       url: https://www.acm.org/code-of-ethics
   nolab:
     - page: /labs/ethics-in-computing.html
+  notes: ../eboards/eboard31.html
 
 - topic: Higher-order recursive design
   abbrev: higher-order-recursive-design
