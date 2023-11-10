@@ -25,7 +25,7 @@
     - "**Ethical considerations**.  Consider implications of the power of computing."
     - "**Dictionaries**.  Design and write functions that use dictionaries."
     - "**Data abstraction**.  Design data structures to separate interface from implementation."
-    - "**Randomness**.  Write programs that produce unpredictable output."
+    - "**Randomness**.  Write programs that produce predictably unpredictable output."
     - "**Higher-order programming**.  Write procedures that take procedures as parameters and return procedures as results."
     - "**Tree recursion**.  Design and write recursive functions over trees."
     - "**Running time**.  Use a mental model of computation to count the relevant number of operations performed by a function."
