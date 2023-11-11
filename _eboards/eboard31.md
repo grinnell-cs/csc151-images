@@ -1,5 +1,5 @@
 ---
-title: "EBoard 31: Data abstraction"
+title: "EBoard 31: Ethical considerations in computing"
 number: 31
 section: eboards
 held: 2023-11-10
@@ -16,6 +16,9 @@ _Approximate overview_
 * Administrivia
 * Questions
 * Summarizing the ACM Code of Ethics
+* Activity 1: Reflections
+* Activity 2: A scenario
+* Activity 3: Another scenario
 
 Administrivia
 -------------
@@ -27,20 +30,22 @@ Administrivia
 
 Academic
 
-* Tuesday, 2023-11-14, Noon, Day PDR:
+* Tuesday, 2023-11-14, Noon, Day PDR: _CS Table_
 * Wednesday, 2023-11-15, 4pm, HSSC Kernel: _Madison Van Oort ’08 speaks
   Frictions in the Future of Work_.
 * Thursday, 2023-11-16, 11-noon, JRC 101: _Convocation: Richard Robinson
   on Nanoparticles 101._
-* Thursday, 2023-11-16, 4:15pm, JRC 101:  _CS Poster Session_.
+* Thursday, 2023-11-16, 4:15pm, HSSC Kernel (A1231):  _CS Poster Session_.
 
 Cultural
+
+* Sunday, 2023-11-12, 2-3:30 pm, Sebring-Lewis: _Grinnell Singers_.
 
 Peer
 
 * Friday, 2023-11-10, 7-9pm: _Volleyball at Cornell_ (not the Ithaca one)
-* Saturday, 2023-11-11: _Drag._ Cheer the performers and the illuminating
-  lighting design.
+* Saturday, 2023-11-11, 8:30pm, Harris Gym: _Drag._ Cheer the performers 
+  and the illuminating lighting design.
 * Wednesday, 2023-11-15. 7-9pm, Darby: _Women's Basketball vs. Central_.
 * Friday, 2023-11-17. 7-9pm, Darby: _Women's Basketball vs. Coe._
 
@@ -49,14 +54,13 @@ Wellness
 Misc
 
 * Saturday, 2023-11-11, Noon: _Football vs. Cornell_.
-* Sunday, 2023-11-12, 2-3:30 pm, Sebring-Lewis: _Grinnell Singers_.
 * Monday, 2023-11-13, 4-5:30pm, HSSC N1112: _Politics of AI Info Session_.
 
 ### Other good things (no tokens)
 
 * Friday, 2023-11-10, 7:30 pm, Darby: _Men's Basketball vs. Barclay_.
 * Friday, 2023-11-10, 7:00 pm, Loose Lounge: _RHPS_.  Is RHPS misogynistic
-  or a wonderful embrace of LGBTQ ideals?  Perhaps both?  Perhaps neither?
+  or a wonderful embrace of LGBTQ+ ideals?  Perhaps both?  Perhaps neither?
 
 ### Upcoming work
 
@@ -72,10 +76,13 @@ _Please put these in your notes!_
 
 ### Friday PSA
 
+* Take care of yourselves.
+* Consent is essential.
+
 About MP7
 ---------
 
-Either straightforward or complicated, I'm not sure which.
+Either straightforward or complicated, I'm not sure which.  Maybe both.
 
 Questions
 ---------
@@ -97,13 +104,23 @@ What work do we have left this semester?
 
 > SoLA 3 will be week 14.
 
-> SoLA 4 will be finals week.
+> SoLA 4 will be finals week.  (Distributed Tuesday morning due Friday
+  at 5pm.)
 
 > Regular quizzes, readings, etc.
 
 What will our ethics LA look like?
 
 > An updated version of today's reading responses.
+
+How does the group project count in our grade?
+
+> It's just another project.  You have seven mini-projects and eight
+  projects.
+
+When will Sam post the redo for mini-project 5?
+
+> This afternoon, if he remembers.  TM him.
 
 ### Data abstraction
 
@@ -124,6 +141,11 @@ What was I supposed to take from the data abstraction reading/lab?
 
 > Data abstraction, like procedural abstraction and decomposition, is a 
   key aspect of computational thinking.
+
+> More practically speaking, if I say "We want to store _this kind of data_",
+  you should be able to make decisions about what procedures are appropriate,
+  how to represent the data as a hash/vector/list, and implement the 
+  procedures.
 
 ### Other
 
@@ -171,16 +193,40 @@ A _TPS activity._
 
 ### Which principles did you find surprising (or most surprising)?  Why?
 
-### Which are your "favorite" principles?
+* I found some of them vague.  It feels like a good thing.
+* I was surprised that a code of ethics might include "sharing is caring".
+  2.7: (Sam phrases that as "A responsibility to inform the public.")
+* 1.1: (Contribute to society.)  The longer discussion includes considerations
+  of environmental sustainability.
+    * Computing waste is a *huge* problem; computers are built to be
+      disposable, but not recyclable.
+    * Computing uses a lot of energy.  We see that in cryptocurrency,
+      NFTs, large AI systems, etc.  Timnit Gebru.
+    * The resources that we're using to build computers require
+      enviornmental destruction and often come from the global south.
+* 3.6 Use care when modifying or retiring systems.  People rely on them
+  to get their work done, so unnecessary changes are likely to disrupt
+  peoples' work or their lifestyle.
 
-### Which principles do you expect to be hardest to follow?
+### Which are your "favorite" principles?  Why?
+
+* 1.6 Respect privacy.  "My privacy is important."  People should do
+  their best to keep our private information private.
+* 3.1 Ensure that the public good is the central concern during all professional computing work.  (The "public good" can be hard to define.)
+ 
+### Which principles do you expect to be hardest to follow?  Why?
+
+* Leadership principles; it's hard to be responsible for other
+  people's actions.
+* Avoid harm: It's hard to know what the implications are.
+    * Search plus "help the user" can lead to horrible results.
 
 A case study
 ------------
 
 _Modified from <https://ethics.acm.org/code-of-ethics/using-the-code/case-dark-ux-patterns/>.  (Please don't look there for analysis.)_
 
-The change request Stewart received was simple enough: replace the web site’s rounded rectangle buttons with arrows and adjust the color palette to one that mixes red and green text. But when Stewart looked at the prototype, he found it confusing. The left arrow suggested that the web site would go back to a previous page or cancel some action; instead, this arrow replaced the button for accepting the company’s default product. The right arrow, on the other hand, upgraded the user to the more expensive category; it also silently added a protection warranty without asking for confirmation. Stewart suggested to his manager that this confusing design would probably trick users into more expensive options that they didn’t want. The response was that these were the changes requested by the client.
+The change request Stewart received was simple enough: replace the web site's rounded rectangle buttons with arrows and adjust the color palette to one that mixes red and green text. But when Stewart looked at the prototype, he found it confusing. The left arrow suggested that the web site would go back to a previous page or cancel some action; instead, this arrow replaced the button for accepting the company’s default product. The right arrow, on the other hand, upgraded the user to the more expensive category; it also silently added a protection warranty without asking for confirmation. Stewart suggested to his manager that this confusing design would probably trick users into more expensive options that they didn’t want. The response was that these were the changes requested by the client.
 
 Shortly after the updates were released into their production system, Stewart’s team was invited to a celebration. As a result of these changes, revenues at their client had increased significantly over the previous quarter. At the celebration, Stewart overheard some of the client’s managers discussing the small increase for refunds by users who claimed that they didn’t want the protection plan, but there weren’t many. One manager noted several complaints from visually impaired users, who noted that the mixture of red and green text obscured important disclaimers about the product. “So what you’re saying, then, is that the changes worked as planned,” quipped one of the managers.
 
