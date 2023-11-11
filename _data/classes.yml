@@ -319,6 +319,7 @@
     - page: /readings/data-abstraction.html
   lab:
     - page: /labs/data-abstraction.html
+  notes: ../eboards/eboard30.html
   
 - topic: Ethical considerations in computing
   abbrev: ethical
@@ -343,6 +344,7 @@
     - page: /readings/higher-order-recursive-design.html
   lab:
     - page: /labs/higher-order-recursion.html
+  notes: ../eboards/eboard32.html
 
 - topic: Tail recursion
   abbrev: tail-recursion
