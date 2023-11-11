@@ -9,33 +9,13 @@ For example, calculating the length of a list:
 
 ~~~racket
 (define length
-  (lambda (l)
-    (match l
-      ['() 0]
-      [(cons _ tail) (+ 1 (length tail))])))
-~~~
-
-or
-
-~~~racket
-(define length
   (lambda (lst)
     (if (null? lst)
         0
         (+ 1 (length (cdr lst))))))
 ~~~
 
-Looks awfully similar to summing the elements of a list:
-
-~~~racket
-(define sum
-  (lambda (l)
-    (match l
-      ['() 0]
-      [(cons x tail) (+ x (sum tail))])))
-~~~
-
-or
+That should look similar to summing the elements of a list:
 
 ~~~racket
 (define sum
@@ -50,16 +30,6 @@ Which, with a little bit of eye-contortion, is similar to appending lists:
 ~~~racket
 (define append
   (lambda (l1 l2)
-    (match l1
-      ['() l2]
-      [(cons x tail) (cons x (append tail l2))])))
-~~~
-
-or
-
-~~~racket
-(define append
-  (lambda (l1 l2)
     (if (null? l1)
         l2
         (cons (car l1) (append (cdr l1) l2)))))
@@ -67,9 +37,9 @@ or
 
 In all three cases:
 
-+   We perform a case analysis on list in question.
-+   In the base case, we return a value that is constant relative to the list we perform case analysis over: `0` and `l2`.
-+   In the recursive case, we apply a function (`+` or `cons`) to a value dependent on the head value of the list (`1` or `x`) and the result of recursively calling the function.
+* We perform a case analysis on list in question.
+* In the base case, we return a value that is constant relative to the list we perform case analysis over: `0` and `l2`.
++ In the recursive case, we apply a function (`+` or `cons`) to a value dependent on the head value of the list (`1` or `x`) and the result of recursively calling the function.
 
 In the spirit of functions-as-abstractions, can we write a function that captures this generic behavior?
 This line of investigation leads us back to the big three list functions, `map`, `filter`, and `reduce`/`foldl`/`foldr`!
@@ -77,29 +47,13 @@ We motivate the design of *higher-order recursive functions* by examining their 
 
 ## Map
 
-Recall that `(map f l)` returns list `l` but with every element of `l` transformed by unary function `f`.
-For example, we can `(map increment l)` to increment all the elements of `l` by 1 or we can `(map zero? l)` to turn every element of `l` into a boolean denoting whether that element was zero.
+Recall that `(map fun lst)` returns a new list in which each element is the corresponding element of `lst` transformed by unary function `fun`.
+For example, we can `(map increment nums)` to increment all the elements of `nums` by 1 or we can `(map zero? nums)` to turn every element of `l` into a boolean denoting whether that element was zero.
 
 How can we implement `map`?
 Let's try writing out the `inc-list-1` and `list-zero?` functions using recursion and note the similarities.
 
 {% capture code %}
-~~~racket
-(define inc-list-1
-  (lambda (l)
-    (match l
-      ['() null]
-      [(cons x tail) (cons (+ x 1) (inc-list-1 tail))])))
-
-(define list-zero?
-  (lambda (l)
-    (match l
-      ['() null]
-      [(cons x tail) (cons (zero? x) (list-zero? tail))])))
-~~~
-
-or
-
 ~~~racket
 (define inc-list-1
   (lambda (lst)
@@ -127,18 +81,11 @@ If we take one of the implementations and *abstract away* the applied function t
 
 {% capture code %}
 ~~~racket
-;;; (map f l) -> list?
-;;;   f : procedure?
-;;;   l : list?
-;;; Returns list l but every element of l is transformed by function f.
-(define map
-  (lambda (f l)
-    (match l
-      ['() null]
-      [(cons x tail) (cons (f x) (map f tail))])))
-~~~
-or
-~~~
+;;; (map fun lst) -> list?
+;;;   fun : procedure? (unary)
+;;;   lst : list?
+;;; Returns a list in which each element is the corresponding element
+;;; for lst with fun applied to it.
 (define map
   (lambda (f lst)
     (if (null? lst)
@@ -167,7 +114,7 @@ We can first write a function to test if an individual character is a vowel and 
         (equal? c #\o)
         (equal? c #\u))))
 
-(define list-of-vowels? (section andmap vowel? <>))
+(define list-of-vowels? (cut (andmap vowel? <>)))
 ~~~
 {% endcapture %}
 
@@ -189,10 +136,10 @@ If our transformation requires information about the elements surrounding the on
 
 ## Filter
 
-Recall that `(filter f l)` is like `map` except:
+Recall that `(filter pred? lst)` is like `map` except:
 
-+   We require that `f` is a function that takes an element of `l` and then produces a boolean.
-+   `filter` uses that boolean to determine whether to keep that element (`#t`) or drop that element (`#f`) from the list.
++   We require that `pred?` is a function that takes an element of `lst` and then produces a boolean.
++   `filter` uses that boolean to determine whether to keep that element (`#t` or anything trueish) or drop that element (`#f`) from the list.
 
 We'll omit the implementation of `filter` here because it is very close to `map` and leave it as a self-check exercise below.
 However, `filter` inherits the same non-contextual limitations as `map`---`filter` can only decide whether to keep an element based on the current element and no other information.
@@ -205,17 +152,17 @@ In this situation, we would need to write a custom recursive function for this t
 
 ## Reduce/Fold
 
-`foldl` and `reduce` are used to *summarize* the elements of a list.
+Unliked `map` and `filter`, `reduce` is used to *summarize* the elements of a list.
 Unlike `map` and `filter`, this means that these functions must be contextual in nature: we have to pass information between successive elements in the computation.
 This is the *accumulated* result of the computation so far.
 
 `reduce` was likely a bit arcane when we first encountered it several weeks ago.
-Recall that `(reduce f l)` took two arguments as input:
+Recall that `(reduce fun lst)` took two arguments as input:
 
-+   A function `f` of two arguments (a *binary* function).
-    The first argument is an element of `l`.
++   A function `fun` of two arguments (a *binary* function).
+    The first argument is an element of `lst`.
     The second argument is the result *accumulated* so far in the computation.
-+   A list `l` that `reduce` traverses in some order.
++   A list `lst` that `reduce` traverses in some order.
 
 ~~~racket
 > (reduce + (list 1 2 3 4 5))
@@ -227,24 +174,6 @@ Recall that `(reduce f l)` took two arguments as input:
 To get a better sense of what `reduce` is doing, let's again try writing specialized recursive functions `reduce-by-+` and `reduce-by-*` that reduce the list with `+` and `*`, respectively.
 
 {% capture code %}
-~~~racket
-(define reduce-by-+
-  (lambda (l)
-    (match l
-      ['() (error "(reduce-by-+) received an empty list")]
-      [(cons x '()) x]
-      [(cons x tail) (+ x (reduce-by-+ tail))])))
-
-(define reduce-by-*
-  (lambda (l)
-    (match l
-      ['() (error "(reduce-by-*) received an empty list")]
-      [(cons x '()) x]
-      [(cons x tail) (* x (reduce-by-* tail))])))
-~~~
-
-or
-
 ~~~
 (define reduce-by-+
   (lambda (lst)
@@ -291,23 +220,12 @@ And with this intuition and our two concrete implementations, we can derive the 
 +   (If the list is empty, we raise an error.)
 +   If the list contains 1 element, we return that element.
 +   Otherwise, the list contains at least 2 elements.
-    We apply `f` to the head of the list and the result of recursively reducing the rest of the list.
+    We apply `fun` to the head of the list and the result of recursively reducing the rest of the list.
 
 And then turn this design into an implementation of `reduce`:
 
 {% capture code %}
 ~~~racket
-(define reduce-right
-  (lambda (f l)
-    (match l
-      ['() (error "(reduce) received an empty list")]
-      [(cons x '()) x]
-      [(cons x tail) (f x (reduce-right f tail))])))
-~~~
-
-or
-
-~~~
 (define reduce-right
   (lambda (f lst)
     (if (null? (cdr lst))
@@ -339,17 +257,11 @@ We call this generalization `foldr`:
 {% capture code %}
 ~~~racket
 (define foldr
-  (lambda (f init l)
-    (match l
-      ['() init]
-      [(cons x tail) (f x (foldr f init tail))])))
-
-(define foldr
-  (lambda (f init lst)
+  (lambda (fun init lst)
     (if (null? lst)
         init
-        (f (car lst)
-           (foldr f init (cdr lst))))))
+        (fun (car lst)
+             (foldr fun init (cdr lst))))))
 
 > (foldr + 0 (list 1 2 3 4 5))
 15
@@ -568,7 +480,7 @@ How is `right-section` defined? We leave that as an exercise for the reader.
 ### Check 1: Implementing `filter` (‡)
 
 In our discussion of higher-order recursive functions, we elided the implementation of `filter`.
-Write `(filter f l)` based on the recursive design we described in the reading.
+Write `(filter pred? lst)` based on the recursive design we described in the reading.
 
 ### Check 2: Implementing `right-section`.
 
