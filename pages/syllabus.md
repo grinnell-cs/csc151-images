@@ -266,15 +266,17 @@ Note that Grinnell does not permit grades of C-, D+, or D-.  A grade below C and
 
 **Reading problems, laboratory assignments, and metacognitive reflections**
 
-You are allowed to miss up to six total reading problems, lab assignments, and metacognitive reflections in the semester without penalty.  If you miss more than reading problems, labs, or reflections, your overall letter grade will be lowered by one-third of a letter grade for each two additional problems, labs, or reflections you miss. Excesses of one also result in a loss.  For example,
+You are allowed to miss up to six total reading problems, lab assignments, and metacognitive reflections in the semester without penalty.  If you miss more than six reading problems, labs, or reflections, your overall letter grade will be lowered by one-third of a letter grade for each two additional problems, labs, or reflections you miss. Excesses of one also result in a loss.  For example,
 
 * If you miss four reading problems, one lab, and one reflection, you've missed *six* total things and there is *no penalty*.
 * If you miss three reading problems, three labs, and two reflections, you've missed *eight* total things, which is two more than you are permitted.  *Your overall letter grade drops by one-third*, such as from a B to a B- or from an A- to a B+.
 * If you miss three reading problems, two labs, and two reflections, you've missed *seven* total things, which is one more than you are permitted.  Once again, *your total letter grade drops by one-third*.
 * If you miss three reading problems, four labs, and two reflections, you've missed *nine* total things, which is three more than you are permitted.  *Your overall letter grade drops by two-thirds*, such as from a B to a C+ or from an A- to a B.
-* If you miss ten reading problems, zero labs, and zero reflections, yo've missed *ten* total things, which is four more than you are permitted.  *Your overall letter grade drops by a full letter*, such as from a B to a C, from an A- to a B-, or from a B- to a D (there is no C-).
+* If you miss ten reading problems, zero labs, and zero reflections, yo've missed *ten* total things, which is four more than you are permitted.  *Your overall letter grade drops by a full letter*, such as from a B to a C, from an A- to a B-, or from a B- to a C.
 
 I hope that you will do your best to miss as few reading problems, labs, and reflections as possible.
+
+If your LAs and MPs indicate that you should receive a passing grade (C or above), missing tokens, readings, labs, or reflections cannot drop your grade below a C.
 
 ### Redos
 
