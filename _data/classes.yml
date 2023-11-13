@@ -416,7 +416,7 @@
     We dive into a related problem: sorting the elements of a sequence.
   reading:
     - page: /readings/sorting.html
-  lab:
+  nolab:
     - page: /labs/sorting.html
 
 - topic: Project presentations
