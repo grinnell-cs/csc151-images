@@ -357,6 +357,7 @@
     - page: /readings/list-recursion-revisited.html
   lab:
     - page: /labs/tail-recursion.html
+  notes: ../eboards/eboard33.html
 
 - topic: Project Kickoff
   abbrev: final-project
@@ -364,6 +365,7 @@
     We introduce the final project for the semester.
   reading:
     - page: /mps/mp08.html
+  notes: ../eboards/eboard34.html
 
 - topic: Complexity analysis and binary search
   abbrev: search
