@@ -23,14 +23,8 @@
 ; +----------+
 
 #|
-NAME    YYYY-MM-DD      HH:MM-HH:MM     ACTIVITY
-NAME    YYYY-MM-DD      HH:MM-HH:MM     ACTIVITY
-NAME    YYYY-MM-DD      HH:MM-HH:MM     ACTIVITY
-NAME    YYYY-MM-DD      HH:MM-HH:MM     ACTIVITY
-NAME    YYYY-MM-DD      HH:MM-HH:MM     ACTIVITY
-NAME    YYYY-MM-DD      HH:MM-HH:MM     ACTIVITY
-NAME    YYYY-MM-DD      HH:MM-HH:MM     ACTIVITY
-
+NAME    YYYY-MM-DD HH:MM-HH:MM  NN min  ACTIVITY
+NAME    YYYY-MM-DD HH:MM-HH:MM  NN min  ACTIVITY
 |#
 
 ; +--------------+---------------------------------------------------
@@ -48,6 +42,18 @@ NAME    YYYY-MM-DD      HH:MM-HH:MM     ACTIVITY
 
 #|
 
+What are two image-making techniques you've used?  Where do you
+use them?
+
+???
+
+What are two instances of recursion in your program? 
+
+???
+
+Describe a piece of code that you are particularly of.
+
+???
 
 |#
 
