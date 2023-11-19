@@ -15,44 +15,110 @@
 ; | Structs |
 ; +---------+
 
-; (student given-name surname id major year) -> student?
-; A simple representation of students.
-(struct student (given-name surname id major year)
-  #:transparent)
+;;; (student given-name surname id major year) -> student?
+;;;   given-name : string?
+;;;   surname : string?
+;;;   id : non-negative-integer?
+;;;   major : string?
+;;;   year : non-negative-integer?
+;;; Create a new student.
+(define student
+  (lambda (given-name surname id major year)
+    (cond
+      [(not (string? given-name))
+       (error "student: expected a string for given name, received" given-name)]
+      [(not (string? surname))
+       (error "student: expected a string for surname, received" surname)]
+      [(not (and (integer? id) (>= id 0)))
+       (error "student: expected a positive integer for id, received" id)]
+      [(not (string? major))
+       (error "student: expected a string for major, received" major)]
+      [(not (and (integer? year) (<= 2023 year 2027)))
+       (error "student: expected a year between 2023 and 2027, received" year)]
+      [else
+       (vector given-name surname id major year)])))
+
+;;; (student? val) -> boolean?
+;;;   val : any?
+;;; Determine if val is a student.
+(define student?
+  (lambda (val)
+    (and (vector? val)
+         (= (vector-length val) 5)
+         (string? (vector-ref val 0))
+         (string? (vector-ref val 1))
+         (integer? (vector-ref val 2))
+         (>= (vector-ref val 2) 0)
+         (string? (vector-ref val 3))
+         (integer? (vector-ref val 4))
+         (<= 2023 (vector-ref val 4) 2027))))
+
+;;; (student-given-name student) -> string?
+;;;   student : student?
+;;; Determine the given name of a student
+(define student-given-name
+  (cut (vector-ref <> 0)))
+
+;;; (student-surname student) -> string?
+;;;   student : student?
+;;; Determine the surname of a student
+(define student-surname
+  (cut (vector-ref <> 1)))
+
+;;; (student-id student) -> positive-integer?
+;;;   student : student?
+;;; Determine the id of a student
+(define student-id
+  (cut (vector-ref <> 2)))
+
+;;; (student-major student) -> string?
+;;;   student : student?
+;;; Determine the major of a student
+(define student-major
+  (cut (vector-ref <> 3)))
+
+;;; (student-year student) -> positive-integer?
+;;;   student : student?
+;;; Determine the year of a student
+(define student-year
+  (cut (vector-ref <> 4)))
 
 ; +-----------------------------+------------------------------------
 ; | Provided code: Sets of data |
 ; +-----------------------------+
+
+; Note: Long lists/vectors of data are one of the few times that it
+; is acceptable to have close parents on a line by themselves.
 
 ;;; simulated-students : vectorof student?
 ;;; Students organized by name
 (define simulated-students
   (vector
    (student "Amy"       "Zevon"    1336804 "Computer Science"  2023)
-   (student "Bob"       "Smith"    1170605 "Mathematics"       2020)
-   (student "Charlotte" "Davis"    1304091 "Independent"       2022)
-   (student "Danielle"  "Jones"    1472662 "Undeclared"        2021)
-   (student "Devon"     "Smith"    1546921 "Computer Science"  2022)
+   (student "Bob"       "Smith"    1170605 "Mathematics"       2024)
+   (student "Charlotte" "Davis"    1304091 "Independent"       2026)
+   (student "Danielle"  "Jones"    1472662 "Undeclared"        2027)
+   (student "Devon"     "Smith"    1546921 "Computer Science"  2026)
    (student "Erin"      "Anderson" 1320727 "Philosophy"        2023)
-   (student "Fred"      "Stone"    1260057 "Linguistics"       2022)
-   (student "Greg"      "Jones"    1668280 "Classics"          2020)
-   (student "Heather"   "Jones"    1046860 "Classics"          2021)
-   (student "Ira"       "Jackson"  1070103 "Political Science" 2022)
+   (student "Fred"      "Stone"    1260057 "Linguistics"       2026)
+   (student "Greg"      "Jones"    1668280 "Classics"          2024)
+   (student "Heather"   "Jones"    1046860 "Classics"          2027)
+   (student "Ira"       "Jackson"  1070103 "Political Science" 2026)
    (student "Janet"     "Smith"    1488985 "Chemistry"         2023)
-   (student "Karla"     "Hill"     1821167 "Psychology"        2022)
+   (student "Karla"     "Hill"     1821167 "Psychology"        2026)
    (student "Leo"       "Levens"   1399810 "English"           2023)
-   (student "Maria"     "Moody"    1168059 "Computer Science"  2020)
-   (student "Ned"       "Black"    1177023 "Russian"           2022)
+   (student "Maria"     "Moody"    1168059 "Computer Science"  2024)
+   (student "Ned"       "Black"    1177023 "Russian"           2026)
    (student "Otto"      "White"    1908656 "Chinese"           2023)
-   (student "Paula"     "Hall"     1218704 "Psychology"        2022)
-   (student "Quentin"   "Smith"    1679081 "Art History"       2022)
-   (student "Rebecca"   "Davis"    1658200 "Biology"           2020)
-   (student "Sam"       "Sky"      1085519 "Mathematics"       2022)
+   (student "Paula"     "Hall"     1218704 "Psychology"        2026)
+   (student "Quentin"   "Smith"    1679081 "Art History"       2026)
+   (student "Rebecca"   "Davis"    1658200 "Biology"           2024)
+   (student "Sam"       "Sky"      1085519 "Mathematics"       2026)
    (student "Ted"       "Tedly"    1480618 "GWSS"              2023)
-   (student "Urkle"     "Andersen" 1681805 "Anthropology"      2022)
+   (student "Urkle"     "Andersen" 1681805 "Anthropology"      2026)
    (student "Violet"    "Teal"     1493989 "Economics"         2023)
    (student "Xerxes"    "Homer"    1547425 "Economics"         2023)
-   (student "Yvonne"    "Stein"    1748611 "Sociology"         2022)
+   (student "Yvonne"    "Stein"    1748611 "Sociology"         2026)
    (student "Zed"       "Rebel"    1540899 "Computer Science"  2024)
   ))
 
@@ -62,13 +128,13 @@
   (vector
    (student "Heather"   "Jones"    1046860 "Classics"          2025)
    (student "Ira"       "Jackson"  1070103 "Political Science" 2026)
-   (student "Sam"       "Sky"      1085519 "Mathematics"       2022)
+   (student "Sam"       "Sky"      1085519 "Mathematics"       2026)
    (student "Maria"     "Moody"    1168059 "Computer Science"  2024)
    (student "Bob"       "Smith"    1170605 "Mathematics"       2024)
-   (student "Ned"       "Black"    1177023 "Russian"           2022)
-   (student "Paula"     "Hall"     1218704 "Psychology"        2022)
-   (student "Fred"      "Stone"    1260057 "Linguistics"       2022)
-   (student "Charlotte" "Davis"    1304091 "Independent"       2022)
+   (student "Ned"       "Black"    1177023 "Russian"           2026)
+   (student "Paula"     "Hall"     1218704 "Psychology"        2026)
+   (student "Fred"      "Stone"    1260057 "Linguistics"       2026)
+   (student "Charlotte" "Davis"    1304091 "Independent"       2026)
    (student "Erin"      "Anderson" 1320727 "Philosophy"        2023)
    (student "Amy"       "Zevon"    1336804 "Computer Science"  2023)
    (student "Leo"       "Levens"   1399810 "English"           2023)
@@ -76,47 +142,47 @@
    (student "Ted"       "Tedly"    1480618 "GWSS"              2023)
    (student "Janet"     "Smith"    1488985 "Chemistry"         2023)
    (student "Violet"    "Teal"     1493989 "Economics"         2023)
-   (student "Zed"       "Rebel"    1540899 "Computer Science"  2021)
-   (student "Devon"     "Smith"    1546921 "Computer Science"  2022)
+   (student "Zed"       "Rebel"    1540899 "Computer Science"  2027)
+   (student "Devon"     "Smith"    1546921 "Computer Science"  2026)
    (student "Xerxes"    "Homer"    1547425 "Economics"         2023)
    (student "Rebecca"   "Davis"    1658200 "Biology"           2024)
    (student "Greg"      "Jones"    1668280 "Classics"          2024)
-   (student "Quentin"   "Smith"    1679081 "Art History"       2022)
-   (student "Urkle"     "Andersen" 1681805 "Anthropology"      2022)
-   (student "Yvonne"    "Stein"    1748611 "Sociology"         2022)
-   (student "Karla"     "Hill"     1821167 "Psychology"        2022)
+   (student "Quentin"   "Smith"    1679081 "Art History"       2026)
+   (student "Urkle"     "Andersen" 1681805 "Anthropology"      2026)
+   (student "Yvonne"    "Stein"    1748611 "Sociology"         2026)
+   (student "Karla"     "Hill"     1821167 "Psychology"        2026)
    (student "Otto"      "White"    1908656 "Chinese"           2023)
    ))
 
-;;; simulated-students-by-year : vectorof student?
-(define simulated-students-by-year
+;;; simulated-students-by-major : vectorof student?
+(define simulated-students-by-major
   (vector
-   (student "Zed"       "Rebel"    1540899 "Computer Science"  2021)
-   (student "Ned"       "Black"    1177023 "Russian"           2022)
-   (student "Yvonne"    "Stein"    1748611 "Sociology"         2022)
-   (student "Karla"     "Hill"     1821167 "Psychology"        2022)
-   (student "Paula"     "Hall"     1218704 "Psychology"        2022)
-   (student "Charlotte" "Davis"    1304091 "Independent"       2022)
-   (student "Fred"      "Stone"    1260057 "Linguistics"       2022)
-   (student "Quentin"   "Smith"    1679081 "Art History"       2022)
-   (student "Sam"       "Sky"      1085519 "Mathematics"       2022)
-   (student "Urkle"     "Andersen" 1681805 "Anthropology"      2022)
-   (student "Devon"     "Smith"    1546921 "Computer Science"  2022)
-   (student "Ted"       "Tedly"    1480618 "GWSS"              2023)
-   (student "Leo"       "Levens"   1399810 "English"           2023)
-   (student "Otto"      "White"    1908656 "Chinese"           2023)
+   (student "Urkle"     "Andersen" 1681805 "Anthropology"      2026)
+   (student "Quentin"   "Smith"    1679081 "Art History"       2026)
+   (student "Rebecca"   "Davis"    1658200 "Biology"           2024)
    (student "Janet"     "Smith"    1488985 "Chemistry"         2023)
+   (student "Otto"      "White"    1908656 "Chinese"           2023)
+   (student "Greg"      "Jones"    1668280 "Classics"          2024)
+   (student "Heather"   "Jones"    1046860 "Classics"          2025)
+   (student "Amy"       "Zevon"    1336804 "Computer Science"  2023)
+   (student "Maria"     "Moody"    1168059 "Computer Science"  2024)
+   (student "Devon"     "Smith"    1546921 "Computer Science"  2026)
+   (student "Zed"       "Rebel"    1540899 "Computer Science"  2027)
    (student "Violet"    "Teal"     1493989 "Economics"         2023)
    (student "Xerxes"    "Homer"    1547425 "Economics"         2023)
-   (student "Erin"      "Anderson" 1320727 "Philosophy"        2023)
-   (student "Amy"       "Zevon"    1336804 "Computer Science"  2023)
-   (student "Rebecca"   "Davis"    1658200 "Biology"           2024)
-   (student "Greg"      "Jones"    1668280 "Classics"          2024)
+   (student "Leo"       "Levens"   1399810 "English"           2023)
+   (student "Ted"       "Tedly"    1480618 "GWSS"              2023)
+   (student "Charlotte" "Davis"    1304091 "Independent"       2026)
+   (student "Fred"      "Stone"    1260057 "Linguistics"       2026)
    (student "Bob"       "Smith"    1170605 "Mathematics"       2024)
-   (student "Maria"     "Moody"    1168059 "Computer Science"  2024)
-   (student "Heather"   "Jones"    1046860 "Classics"          2025)
-   (student "Danielle"  "Jones"    1472662 "Undeclared"        2025)
+   (student "Sam"       "Sky"      1085519 "Mathematics"       2026)
+   (student "Erin"      "Anderson" 1320727 "Philosophy"        2023)
    (student "Ira"       "Jackson"  1070103 "Political Science" 2026)
+   (student "Karla"     "Hill"     1821167 "Psychology"        2026)
+   (student "Paula"     "Hall"     1218704 "Psychology"        2026)
+   (student "Ned"       "Black"    1177023 "Russian"           2026)
+   (student "Yvonne"    "Stein"    1748611 "Sociology"         2026)
+   (student "Danielle"  "Jones"    1472662 "Undeclared"        2025)
    ))
 
 ;;; small-primes : vectorof integer?
@@ -148,14 +214,14 @@
 ;;; get-key is used to extract the keys and less-equal?
 ;;;   specifies the ordering.
 ;;; Pre: The vector is "sorted".  That is,
-;;;   (less-equal? (get-key (vector-ref vec i)) 
+;;;   (less-equal? (get-key (vector-ref vec i))
 ;;;                (get-key (vector-ref vec (+ i 1))))
-;;; holds for all reasonable i.  
+;;; holds for all reasonable i.
 (define binary-search
   (lambda (vec key get-key less-equal?)
-    ; Search a portion of the vector from lower-bound (inclusive) 
+    ; Search a portion of the vector from lower-bound (inclusive)
     ; to upper-bound (exclusive)
-    (letrec ([search-portion 
+    (letrec ([search-portion
               (lambda (lower-bound upper-bound)
                 ; A bit of feedback
                 ; (displayln (list 'search-portion lower-bound upper-bound))
@@ -164,7 +230,7 @@
                 (if (>= lower-bound upper-bound)
                     ; Indicate the value cannot be found
                     #f
-                    ; Otherwise, identify the middle point, the element at that 
+                    ; Otherwise, identify the middle point, the element at that
                     ; point and the key of that element.
                     (let* ([midpoint (quotient (+ lower-bound upper-bound) 2)]
                            [middle-element (vector-ref vec midpoint)]
@@ -178,16 +244,17 @@
                         ; of the region.
                         [(less-equal? key middle-key)
                          (search-portion lower-bound midpoint)]
-                        ; Otherwise, the middle key must be too small, so look 
+                        ; Otherwise, the middle key must be too small, so look
                         ; in the right half of the region.
                         [else
                          (search-portion (+ midpoint 1) upper-bound)]))))])
       (search-portion 0 (vector-length vec)))))
 
-;;; (lookup-by-given-name directory name) -> student? (or boolean?)
+;;; (lookup-by-given-name directory name) -> student? or false?
 ;;;   directory : vectorof student?
 ;;;   name : string?
-;;; Find the entry associated with name
+;;; Find the entry associated with name.  If there is no such entry,
+;;; returns false.
 (define lookup-by-given-name
   (lambda (directory name)
     (let ([index (binary-search directory name student-given-name string-ci<=?)])
@@ -204,7 +271,7 @@
 ;;; (counter name) -> counter?
 ;;;   name : string
 ;;; Create a new counter that can be used for the other counter procedures.
-(define counter 
+(define counter
   (lambda (name)
     (let ([counts (make-hash)])
       (hash-set! counts "" 0)
@@ -347,7 +414,7 @@
     (letrec ([helper
               (lambda (l so-far)
                 (match l
-                  ['() 
+                  ['()
                    so-far]
                   [(cons x tail)
                    (helper tail (cons x so-far))]))])
@@ -401,7 +468,7 @@ a. Conduct the traditional start-of-lab discussion.
 b. Spend no more than five minutes reviewing any provided procedures
 at the top of the file to see what is new.  You should feel free
 to quickly experiment with any new procedures, but we'll also be
-looking at most of them in the lab.  
+looking at most of them in the lab.
 |#
 
 #| A |#
@@ -418,7 +485,7 @@ to find `"Heather"`.
 
 > (binary-search simulated-students "Heather" ___ ___)
 
-<TODO: Enter the result here>
+TODO: Enter the result here
 
 *Hint:* If you can't fill in the blanks yourself, the example is in the
 reading. We are asking you to run the search yourself.
@@ -428,7 +495,7 @@ reading. We are asking you to run the search yourself.
 b. Verify that binary search can correctly find the entry for a student
 of your choice in `simulated-students`.
 
-<TODO: Enter your experiment here>
+TODO: Enter your experiment here
 |#
 
 #|
@@ -436,7 +503,7 @@ c. Verify that binary search can correctly find the first entry in
 `simulated-students`. You will need to supply the name associated with
 that entry.
 
-<TODO: Enter your experiment here>
+TODO: Enter your experiment here
 |#
 
 #|
@@ -444,7 +511,7 @@ d. Verify that binary search can correctly find the last entry in
 `simulated-students`. You will need to supply the name associated with
 that entry.
 
-<TODO: Enter your experiment here>
+TODO: Enter your experiment here
 |#
 
 #|
@@ -452,7 +519,7 @@ e. Verify that binary search terminates and returns #f for something that
 would fall in the middle of the vector and is not there. That is, pick
 a name that starts with M or N and that does not appear in the vector.
 
-<TODO: Enter your experiment here>
+TODO: Enter your experiment here
 |#
 
 #|
@@ -460,7 +527,7 @@ f. Verify that binary search terminates and returns #f for something that
 comes before the first entry in `simulated-students`. You will need to
 pick a name that alphabetically precedes `"Amy"`.
 
-<TODO: Enter your experiment here>
+TODO: Enter your experiment here
 |#
 
 #|
@@ -468,13 +535,13 @@ g. Verify that binary search terminates and returns #f for something
 that comes after the last entry. You will need to pick a name that
 alphabetically follows `"Zed"`.
 
-<TODO: Enter your experiment here>
+TODO: Enter your experiment here
 |#
 
 #|
 h. Why do you think we had you verify each of these conditions?
 
-<TODO: Enter your answer here>
+TODO: Enter your answer here
 |#
 
 ; +--------------------------------------+---------------------------
@@ -486,7 +553,7 @@ It is often useful when exploring a recursive algorithm to observe the
 steps the algorithm performs.  In Racket, we can sometimes observe steps
 in recursive calls by printing out the steps
 
-Begin by uncommenting the lines at the start of `search-portion` that 
+Begin by uncommenting the lines at the start of `search-portion` that
 display values.
 |#
 
@@ -495,7 +562,7 @@ a. Redo the examples above, reporting on the number for each call.
 You should be counting manually.  If you choose to use the BSC
 counter, make sure to reset it before each.
 
-<TODO: Enter numbers below>
+TODO: Enter numbers below
 
 Heather #
 ??????  #
@@ -509,7 +576,7 @@ Middle  #
 #|
 b. Why do you think we had you re-check each of these conditions?
 
-<TODO: Enter your answer here>
+TODO: Enter your answer here
 |#
 
 #| B |#
@@ -519,10 +586,10 @@ b. Why do you think we had you re-check each of these conditions?
 ; +----------------------------+
 
 #|
-a. What do you expect binary search to do if there are entries with 
-duplicate keys?  
+a. What do you expect binary search to do if there are entries with
+duplicate keys?
 
-<TODO: Enter your answer here>
+TODO: Enter your answer here
 |#
 
 #|
@@ -538,39 +605,39 @@ entries that have a key of "Otto" and three that have a key of "Amy"
    (student "Amy"       "Two"      2336804 "Computer Science"  2023)
    (student "Amy"       "Three"    3336804 "Computer Science"  2023)
    (student "Bob"       "Smith"    1170605 "Mathematics"       2024)
-   (student "Charlotte" "Davis"    1304091 "Independent"       2022)
+   (student "Charlotte" "Davis"    1304091 "Independent"       2026)
    (student "Danielle"  "Jones"    1472662 "Undeclared"        2025)
-   (student "Devon"     "Smith"    1546921 "Computer Science"  2022)
+   (student "Devon"     "Smith"    1546921 "Computer Science"  2026)
    (student "Erin"      "Anderson" 1320727 "Philosophy"        2023)
-   (student "Fred"      "Stone"    1260057 "Linguistics"       2022)
+   (student "Fred"      "Stone"    1260057 "Linguistics"       2026)
    (student "Greg"      "Jones"    1668280 "Classics"          2024)
    (student "Heather"   "Jones"    1046860 "Classics"          2025)
    (student "Ira"       "Jackson"  1070103 "Political Science" 2026)
    (student "Janet"     "Smith"    1488985 "Chemistry"         2023)
-   (student "Karla"     "Hill"     1821167 "Psychology"        2022)
+   (student "Karla"     "Hill"     1821167 "Psychology"        2026)
    (student "Leo"       "Levens"   1399810 "English"           2023)
    (student "Maria"     "Moody"    1168059 "Computer Science"  2024)
-   (student "Ned"       "Black"    1177023 "Russian"           2022)
+   (student "Ned"       "Black"    1177023 "Russian"           2026)
    (student "Otto"      "One"      1908656 "Chinese"           2023)
    (student "Otto"      "Two"      2908656 "Chinese"           2023)
    (student "Otto"      "Three"    3908656 "Chinese"           2023)
-   (student "Paula"     "Hall"     1218704 "Psychology"        2022)
-   (student "Quentin"   "Smith"    1679081 "Art History"       2022)
+   (student "Paula"     "Hall"     1218704 "Psychology"        2026)
+   (student "Quentin"   "Smith"    1679081 "Art History"       2026)
    (student "Rebecca"   "Davis"    1658200 "Biology"           2024)
-   (student "Sam"       "Sky"      1085519 "Mathematics"       2022)
+   (student "Sam"       "Sky"      1085519 "Mathematics"       2026)
    (student "Ted"       "Tedly"    1480618 "GWSS"              2023)
-   (student "Urkle"     "Andersen" 1681805 "Anthropology"      2022)
+   (student "Urkle"     "Andersen" 1681805 "Anthropology"      2026)
    (student "Violet"    "Teal"     1493989 "Economics"         2023)
    (student "Xerxes"    "Homer"    1547425 "Economics"         2023)
-   (student "Yvonne"    "Stein"    1748611 "Sociology"         2022)
-   (student "Zed"       "Rebel"    1540899 "Computer Science"  2021)
+   (student "Yvonne"    "Stein"    1748611 "Sociology"         2026)
+   (student "Zed"       "Rebel"    1540899 "Computer Science"  2027)
    ))
 
 #|
-b. Which of the three Otto entries do you expect binary search to return 
+b. Which of the three Otto entries do you expect binary search to return
 if you search for `"Otto"`?
 
-<TODO: Enter an answer>
+TODO: Enter an answer
 
 Check your answer experimentally.  Revise your answer above as necessary.
 |#
@@ -579,7 +646,7 @@ Check your answer experimentally.  Revise your answer above as necessary.
 c. Which of the three Amy entries do you expect binary search to return if
 you search for `"Amy"`?
 
-<TODO: Enter an answer>
+TODO: Enter an answer
 
 Check your answer experimentally.  Revise your answer above as necessary.
 |#
@@ -588,14 +655,14 @@ Check your answer experimentally.  Revise your answer above as necessary.
 e. What does your experience in this exercise suggest about what
 binary search will do with duplicate keys?
 
-<TODO: Enter an answer>
+TODO: Enter an answer
 |#
 
 ; +----------------------------+-------------------------------------
 ; | Exercise 4: Counting calls |
 ; +----------------------------+
 
-#| 
+#|
 a. The reading on analysis had a series of experiments that
 involved `alphabetically-first`.  Rerun those experiments and
 verify that the results are the same as those in the reading.
@@ -625,9 +692,9 @@ procedure.
 
 ;;; (af-experiment! n) -> void?
 ;;;   n -> integer? non-negative?
-;;; Conduct an experiment with the varous versions alphabetically-first, 
+;;; Conduct an experiment with the varous versions alphabetically-first,
 ;;;   using (a) a list of length n ordered alphabetically and (b) a list
-;;;   of length n ordered reverse-alphabetically.  
+;;;   of length n ordered reverse-alphabetically.
 ;;; n must be less than or equal to 26.
 ;;; The results of the experiment are printed on the screen.
 (define af-experiment!
@@ -646,12 +713,12 @@ procedure.
       (alphabetically-first-1 (reverse (take letters n)))
       (alphabetically-first-2 (reverse (take letters n)))
       (display-counter AFC))))
-      
+
 #|
-b. Try a few experiments with ordered and reverse-ordered lists of 
+b. Try a few experiments with ordered and reverse-ordered lists of
 length 4, 8, 12, 14, 15, 16, and 17.
 
-<TODO: Enter your data here>
+TODO: Enter your data here
 |#
 
 #|
@@ -659,17 +726,17 @@ c. What do you observe about the growth of `alphabetically-first-1`
 and `alphabetically-first-2`?  You don't need an exact formula.  Spend
 no more than three minutes on this part of the exercise.
 
-<TODO: Enter your answer here>
+TODO: Enter your answer here
 |#
 
 #|
-Consider the following procedure procedure for conducting 
+Consider the following procedure procedure for conducting
 experiments with randomly generated lists.
 |#
 
 ;;; (af-random-experiment! n) -> void?
 ;;;   n : integer? non-negative?
-;;; Run both versions of alphabetically-first on a random list of 
+;;; Run both versions of alphabetically-first on a random list of
 ;;;   length n.
 ;;; Prints the results of the experiment.
 (define af-random-experiment!
@@ -686,13 +753,13 @@ d. You've seen that `alphabetically-first-1` ranges from 16 to
 65535 calls for a list of length 16.  How many do you expect for
 a random list of 16 elements?
 
-<TODO: Enter your answer here>
+TODO: Enter your answer here
 
 Try some experiments to check your answer.
 
 How many do you expect for a random list of 17 elements?
 
-<TODO: Enter your answer here>
+TODO: Enter your answer here
 |#
 
 #| A |#
@@ -728,34 +795,34 @@ a. Find out how many times `list-append` is called in reversing a list of seven 
     > (list-reverse-1 (range 7)
     > (display-counter RC)
 
-<TODO: Enter the results of your experiment>
+TODO: Enter the results of your experiment
 |#
 
 #|
 b. Did you get the same answer as in self-check 2(c)? If not, why do
 you think you got a different result?
 
-<TODO: Enter you comments>
+TODO: Enter you comments
 |#
 
 #|
 c. Find out how many times `helper` is called in reversing a list of
 seven elements with `list-reverse-2`.
 
-<TODO: Enter the results of your experiment>
+TODO: Enter the results of your experiment
 |#
 
 #|
 d. Did you get the same answer as in self-check 2(e)? If not, what
 difference do you see?
 
-<TODO: Enter any more results>
+TODO: Enter any more results
 |#
 
 #|
 e. Write a procedure like `af-experiment!` or `af-random-experiment!`
 that lets you quickly find the number of calls for each version of
-`list-reverse`, given a list of length `n`.  
+`list-reverse`, given a list of length `n`.
 
 Note: Make sure to reset the counter between runs of `list-reverse-1`
 and `list-reverse-2`.
@@ -773,7 +840,7 @@ and `list-reverse-2`.
 f. Conduct some experiments to see how the number of total steps
 `list-reverse-1` and `list-reverse-2` take on different size lists.
 
-<TODO: Enter your results here>
+TODO: Enter your results here
 |#
 
 #|
@@ -781,13 +848,13 @@ g. What patterns do you see in the running times?  That is, how does
 each procedure grow with respect to the input size?  Spend no more
 than three minutes on this subproblem and the next.
 
-<TODO: Enter your analysis here>
+TODO: Enter your analysis here
 |#
 
 #|
 h. Explain, to the best of your ability, why we get those results.
 
-<TODO: Enter your explanation here>
+TODO: Enter your explanation here
 |#
 
 #| AB |#
@@ -813,7 +880,7 @@ for you to uncomment.  Do so now.
 a. How would you use binary search to search a list of strings
 to determine if a particular string is present?
 
-<TODO: Enter code below.>
+TODO: Enter code below.
 
 Hint: Review how we found small primes.
 |#
@@ -856,13 +923,13 @@ Here are some procedures to help you analyze binary search.
       (write "Searching for ") (writeln value)
       (binary-search-strings vec value)
       (display-counter BSC))))
-    
+
 #|
 b. Run some experiments using `binary-search-experiment!`.  For small
 experiments, you might create the vector by hand.  For larger experiments,
 you'll likely want to use an integer as a parameter.
 
-<TODO: Enter your experiments>
+TODO: Enter your experiments
 |#
 
 #|
@@ -891,21 +958,21 @@ v. Something less than the first element of the vector, such as "AAAAAA"
 
 vi. Something after the last element of the vector, such as "ZZZZZZ".
 
-<TODO: Enter the results of your experiments>
+TODO: Enter the results of your experiments
 |#
 
 #|
 e. Create another large vector of double that size and repeat those
 experiments.
 
-<TODO: Enter the results of your experiments>
+TODO: Enter the results of your experiments
 |#
 
 #|
 f. What did your experiments tell you about the running time for
 binary search?
 
-<TODO: Enter your analysis>
+TODO: Enter your analysis
 |#
 
 ; +----------------------------------+-------------------------------
@@ -917,20 +984,20 @@ a. As you may have observed, `simulated-students-by-id` contains the same
 entries as in `simulated-students`, but with the students organized by
 their id, rather than by name.
 
-Write an expression to find a student with an id of 1658200
+Write an expression to find a student with an id of 1658200.
 |#
 
 ;(define student-1658200
 ;  (binary-search simulated-students-by-id 1658200 ___ ___))
 
 #|
-b. As you may have observed, `simulated-students-by-year` contains the same
+b. As you may have observed, `simulated-students-by-major` contains the same
 entries as in `simulated-students`, but with the students organized by
-their year, rather than by name.
+their major, rather than by name.
 
-Write an expression to find a student with a graduation year of 2024
+Write an expression to find a student with a mathematics major.
 |#
 
-;(define graduate-2024
-;  (binary-search simulated-students-by-year 2024 ___ ___))
+;(define math-major
+;  (binary-search simulated-students-by-year "Mathematics" ___ ___))
 
