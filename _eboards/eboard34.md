@@ -66,7 +66,7 @@ _Please put these in your notes!_
 
 ### Wednesday quiz topics
 
-* Tail recursion (new)
+* Data abstraction (new)
 * _Others TBD_.
 
 ### Friday PSA
