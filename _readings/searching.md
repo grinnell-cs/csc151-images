@@ -607,18 +607,20 @@ on the number of recursive calls in `list-sequential-search`?
 
 a. Explain the role of the *`less-equal?`* in `binary-search`.
 
-b. Explain the role of `midpoint`, `middle-element`, `middle-key`,
+b. In `binary-search`, how do we know if two values are equal?
+
+c. Explain the role of `midpoint`, `middle-element`, `middle-key`,
 which are bound in the `let*` of `binary-search`.
 
-c. Describe why the *`upper-bound`* of helper `search-portion`
+d. Describe why and how the *`upper-bound`* of helper `search-portion`
 changes when the key we're looking for is less than the middle key.
 (If it doesn't change, explain why not.)
 
-d. Describe how and why the *`lower-bound`* of helper `search-portion`
+e. Describe why and how the *`lower-bound`* of helper `search-portion`
 changes when the key we're looking for is greater than the middle key.
 (If it doesn't change, explain why not.)
 
-e. If we double the length of the vector, what is the worst case effect
+f. If we double the length of the vector, what is the worst case effect
 on the number of recursive calls in `binary-search`?
 
 ## Acknowledgements
