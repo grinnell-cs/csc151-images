@@ -520,7 +520,7 @@ procedures and even do a bit less manual counting.
 First, we create the counters.  
 
 ```drracket
-(define AF (make-counter "experiments with alphabetically-first"))
+(define AF (counter "experiments with alphabetically-first"))
 ```
 
 Next, we update the code to `alphabetically-first-1` and `alphabetically-first-2`.
