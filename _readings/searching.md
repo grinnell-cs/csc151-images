@@ -623,6 +623,9 @@ on the number of recursive calls in `binary-search`?
 
 ## Acknowledgements
 
+This reading was updated again in Fall 2023 to return to the use of vectors,
+since we didn't cover vectors (and may not for the near future).
+
 This reading was updated in Fall 2021 to use structs rather than vectors
 for the directory and student entries.  The Fall 2021 update also included
 other minor cleanup.
