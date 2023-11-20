@@ -89,22 +89,19 @@ example, we'll use two very different versions.
 ;;; Returns a list with the elements of lst in the opposite order.
 (define list-reverse-1
   (lambda (lst)
-    (match lst
-      ['() 
-       null]
-      [(cons head tail) 
-       (list-append (list-reverse-1 tail) (list head))])))
+    (if (null? lst)
+        null
+        (list-append (list-reverse-1 (cdr lst)) (list (car lst))))))
 
 (define list-reverse-2
   (lambda (lst)
-    (letrec ([helper
-              (lambda (so-far remaining)
-                (match remaining
-                  ['() 
-                   so-far]
-                  [(cons head  tail) 
-                   (helper (cons head so-far) tail)]))])
-      (helper null lst))))
+    (letrec ([kernel
+              (lambda (remaining so-far)
+                (if (null? remaining)
+                    so-far
+                    (kernel (cdr remaining)
+                            (cons (car remaining) so-far))))])
+      (kernel lst null))))
 ```
 
 You'll note that we've used `list-append` rather than `append`. Why? Because we know that the `append` procedure is recursive, so we want to make sure that we can count the calls that happen there, too. We've used the standard implementation strategy for `append` in defining `list-append`.
@@ -246,6 +243,25 @@ First, we'll annotate the procedures to display each call.
 (define list-reverse-1
   (lambda (lst)
     (writeln (list 'list-reverse-1 lst))
+    (if (null? lst)
+        null
+        (list-append (list-reverse-1 (cdr lst)) (list (car lst))))))
+
+(define list-reverse-2
+  (lambda (lst)
+    (writeln (list 'list-reverse-2 lst))
+    (letrec ([kernel
+              (lambda (remaining so-far)
+                (writeln (list 'list-reverse-2-kernel remaining so-far))
+                (if (null? remaining)
+                    so-far
+                    (kernel (cdr remaining)
+                            (cons (car remaining) so-far))))])
+      (kernel lst null))))
+```
+
+(define list-reverse-1
+  (lambda (lst)
     (match lst
       ['() 
        null]
@@ -254,10 +270,8 @@ First, we'll annotate the procedures to display each call.
 
 (define list-reverse-2
   (lambda (lst)
-    (writeln (list 'list-reverse-2 lst))
     (letrec ([helper
               (lambda (so-far remaining)
-                (writeln (list 'list-reverse-2-kernel so-far remaining))
                 (match remaining
                   ['() 
                    so-far]
