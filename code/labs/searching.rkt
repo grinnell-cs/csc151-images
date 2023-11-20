@@ -402,23 +402,20 @@
 ;;;   l : list?
 ;;; Returns l with the elements in the opposite order.
 (define list-reverse-1
-  (lambda (l)
-    (match l
-      ['()
-       null]
-      [(cons x tail)
-       (list-append (list-reverse-1 tail) (list x))])))
+  (lambda (lst)
+    (if (null? lst)
+        null
+        (list-append (list-reverse-1 (cdr lst))
+                     (list (car lst))))))
 
 (define list-reverse-2
-  (lambda (l)
+  (lambda (lst)
     (letrec ([helper
-              (lambda (l so-far)
-                (match l
-                  ['()
-                   so-far]
-                  [(cons x tail)
-                   (helper tail (cons x so-far))]))])
-      (helper l null))))
+              (lambda (lst so-far)
+                (if (null? lst)
+                    so-far
+                    (helper (cdr lst) (cons (car lst) so-far))))])
+      (helper lst null))))
 
 ; +----------------------------+-------------------------------------
 ; | Provided code: Random data |
