@@ -377,12 +377,28 @@
   reading:
     - page: /readings/analysis.html
     - page: /readings/searching.html
-  lab:
+  nolab:
     - page: /labs/searching.html
   notes: ../eboards/eboard35.html
 
 - topic: Project work day
   abbrev: project-work-day-1
+  summary: |
+    We provide class time for students to work on their projects.
+
+- topic: Complexity analysis and binary search
+  abbrev: search
+  summary: |
+    We continue our exploration of analysis techniques and
+    binary search.
+  reading:
+    - page: /readings/analysis.html
+    - page: /readings/searching.html
+  lab:
+    - page: /labs/searching.html
+
+- topic: Project work day
+  abbrev: project-work-day-2
   summary: |
     We provide class time for students to work on their projects.
 
@@ -397,11 +413,6 @@
   lab:
     - page: /labs/binary-trees.html
 
-- topic: Project work day
-  abbrev: project-work-day-2
-  summary: |
-    We provide class time for students to work on their projects.
-
 - topic: Tree recursion
   abbrev: tree-recursion
   summary: |
@@ -412,15 +423,6 @@
     - page: /readings/binary-search-trees.html
   lab:
     - page: /labs/tree-recursion.html
-
-- topic: "Case study: sorting"
-  abbrev: sorting
-  summary: |
-    We dive into a related problem: sorting the elements of a sequence.
-  reading:
-    - page: /readings/sorting.html
-  nolab:
-    - page: /labs/sorting.html
 
 - topic: Project presentations
   abbrev: presentations
@@ -437,6 +439,15 @@
     The College requires that all work be submitted by 5pm.  The 
     only work I will accept at this point will be redos of mini-projects
     and learning assessments from SoLA 5.
+
+- topic: "Case study: sorting"
+  abbrev: sorting
+  summary: |
+    We dive into a related problem: sorting the elements of a sequence.
+  reading:
+    - page: /readings/sorting.html
+  nolab:
+    - page: /labs/sorting.html
 
 - topic: Turtle graphics
   abbrev: turtle
