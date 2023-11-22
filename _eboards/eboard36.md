@@ -27,6 +27,8 @@ Administrivia
 -------------
 
 * Have a great Turkey break!
+* Good news: We've opened another section of CSC-161 (8:30--9:50 a.m. MWF).
+    * You can find other intersting news on the "Search Schedule of Courses" page for CS.
 
 ### Upcoming Token activities
 
