@@ -385,6 +385,7 @@
   abbrev: project-work-day-1
   summary: |
     We provide class time for students to work on their projects.
+  notes: ../eboards/eboard36.html
 
 - topic: Complexity analysis and binary search
   abbrev: search
