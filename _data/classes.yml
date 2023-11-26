@@ -397,6 +397,7 @@
     - page: /readings/searching.html
   lab:
     - page: /labs/searching.html
+  notes: ../eboards/eboard37.html
 
 - topic: Project work day
   abbrev: project-work-day-2
