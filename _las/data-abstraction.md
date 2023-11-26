@@ -187,3 +187,64 @@ _Design data structures to separate interface from implementation._
 
 Variants of the name question above, using hash tables or vectors (rather
 than structs) are also possible.
+
+## Data abstraction (extra)
+
+_Design data structures to separate interface from implementation._
+
+_Note: We have inserted sample answers to clarify what would be expected for a problem like this._
+
+Suppose we wanted a data structure that can represent the three basic shapes (squares, circles, and equilateral triangles) which will be rendered in a single color.  What procedures should we support?
+
+> We need a way to build new values. Let's call that `shape`. For shapes, we will likely need the kind of shape, the size of the shape, and the color of the shape. The constructor is `(shape kind size color)`. We might also call this `make-shape` or `new-shape`.
+
+> We need ways to extract those three values. Following convention, we name those `(shape-kind shape)`, `(shape-size shape)`, and `(shape-color shape)`.
+
+> Those procedures will have require that their parameter is a shape. Hence, we'll need a predicate, `(shape? val)`.
+
+> Those are the basic procedures that everyone should list in some form or other. Better answers would include more reflection on other things we might do with shapes.
+
+> We'll want to be able to render this information as an image. Perhaps `(shape-render shape)` or `(shape->image shape)`.
+
+> We might want to resize shapes. `(scale shape amt)` creates a new shape that is scaled from the current shape.
+
+> We might want to recolor shapes. `(recolor shape newcolor)` creates a new version of the shape with a different color.
+
+Assume we’re storing shapes as vectors.  Write the procedure that someone would call to make a new shape.  (I'd normally name that procedure `shape`, `make-shape`, or `new-shape`.)
+
+> The easiest answer is to just make `shape` an alias for `vector`.
+
+>```
+(define shape vector)
+```
+
+> If we want Racket to verify the number of parameters, we should be a bit more careful.
+
+>```
+(define shape
+  (lambda (kind shape color)
+    (vector kind shape color)))
+```
+
+> If we want to be especially careful, we should check the types of the parameters.
+
+>```
+(define shape
+  (lambda (kind size color)
+    (cond
+      [(not (member? kind '("circle" "square" "triangle")))
+       (error "shape: invalid kind of shape: " kind)]
+      [(not (and (integer? size) (positive? size)))
+       (error "shape: requires a positive size, received: " size)]
+      [(not (image-color? color))
+       (error "shape: requires an image color, received: " color)]
+      [else 
+       (vector kind size color)])))
+```
+
+Assume we're storing shapes as vectors and that they are created using the procedure you just wrote.  Implement one other procedure you listed above.
+
+>``` 
+(define shape-size
+  (cut (vector-ref <> 1)))
+```
