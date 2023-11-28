@@ -676,7 +676,7 @@ verify that the results are the same as those in the reading.
     > (counter-reset-all! AFC)
     > (alphabetically-first-1 (reverse animals))
     ???
-    > (alphabetically-first-1 (reverse animals))
+    > (alphabetically-first-2 (reverse animals))
     ???
     > (display-counter AFC)
     ???
