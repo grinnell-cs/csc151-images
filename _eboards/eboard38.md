@@ -18,6 +18,14 @@ _Approximate overview_
 Administrivia
 -------------
 
+* Some of you have been turning in the second redo for pixel problems;
+  note that the first redo is still available.
+* As one of you requested, I have sent out the latest grade reports.
+    * Pre- and post-assessments are not up to date.
+    * Tokens are not up to date.
+* A variety of illnesses seem to be progressing through campus.  I 
+  recommend that you consider masking and disinfecting (or vice versa).
+
 ### Upcoming Token activities
 
 Academic
@@ -28,10 +36,14 @@ Cultural
 
 Peer
 
+_Congrats to Women's Basketball for one of their best starts in the
+past two decades!_
+
 * Friday, 2023-12-01, 5:00ish, Fieldhouse: _Indoor Track and Field_
 * Friday, 2023-12-01, 5:30pm, Natatorium: _Swimming (Pioneer Classic)_
 * Saturday, 2023-12-02, all day, Natatorium: _Swimming (Pioneer Classic)_
 * Saturday, 2023-12-02, 3pm, Darby: _Women's Baskeball vs. Lawrence_
+* Wednesday, 2023-12-06, 7:30pm, Darby, _Women's Basketball vs. Cornell_
 
 Wellness
 
@@ -39,6 +51,8 @@ Wellness
 * Monday, 2023-12-04, 4:00--5:00pm, HSSC North Atrium, _Therapy Dogs_
 
 Misc
+
+* Saturday, 2023-12-02, 11am-1pm, HSSC S1325, _Girls who code study break_
 
 ### Other good things (no tokens)
 
@@ -51,6 +65,7 @@ _Please put these in your notes!_
 * Friday December 1st: Our last set of quizzes!
 * Friday December 1st: (Mini-)Project 8 post-assessment.
 * Sunday the 3rd: Late (Mini-)Project 8.
+* Mondaty the 4th: Late (Mini-)Project 8 post-assessment.
 
 Friday quiz
 -----------
@@ -83,11 +98,19 @@ Questions
 
 ### Administrative
 
+The most recent labs seem to be missing on the grade reports
+
+> Fixed. Stay tuned for the next grade report.
+
 ### Project
 
 How many tokens does it cost to turn in mini-project 8 late?
 
 > None.
+
+Can we turn it in after Sunday night?
+
+> No.
 
 ### Binary search
 
@@ -98,3 +121,5 @@ How many tokens does it cost to turn in mini-project 8 late?
 Project work time
 -----------------
 
+Please make sure to use or reference the starter code to ensure that
+you include everything.
