@@ -69,7 +69,7 @@ Describe a piece of code that you are particularly of.
 ;;; goals specified above.  Given the same `n`, always creates the same 
 ;;; image.  Given different values of `n`, creates different images.
 (define image-series
-  (lambda (n)
+  (lambda (n width height)
     ???))
 
 ; +-------------------+----------------------------------------------
