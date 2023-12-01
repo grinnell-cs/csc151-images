@@ -103,12 +103,15 @@ a. Conduct the normal start-of-lab discussion.
 
 b. Save this file as `binary-trees.rkt`.
 
-b. In the space below, describe the normal "start of lab" steps
+c. In the space below, describe the normal "start of lab" steps
 and summarize what you answered for each.
 
 [TODO: ENTER YOUR ANSWER HERE]
 
-d. Review the code at
+d. If you did not include "update the CSC-151 library" as one of your
+   instructions, please update the library.
+   
+e. Review the code at
 https://github.com/grinnell-cs/csc151/blob/main/binary-trees-from-lists.rkt
 
 You may want to keep that code at hand as you progress through the lab.
@@ -251,7 +254,8 @@ Why?
 ; +--------------------+
 
 #|
-a. As you may have noted, in the sample code, we use the very verbose
+a. As you may have noted, in the sample code, we create leaves (the
+values at the ends of trees) with the very verbose.
 
     (binary-tree val (empty-tree) (empty-tree))
 
@@ -417,13 +421,13 @@ b. Check your answers expermentally.
 
 #|
 c. Open 
-https://github.com/grinnell-cs/csc151/blob/main/binary-trees-from-structs.rkt
+https://github.com/grinnell-cs/csc151/blob/main/binary-trees-from-hashes.rkt
 in your Web browser and quickly skim through it.
 |#
 
 #|
 d. Replace the `(require csc151/binary-trees-from-lists)` line at the start
-of this file with `(require csc151/binary-trees-from-structs)`.  Do you
+of this file with `(require csc151/binary-trees-from-hashes)`.  Do you
 expect to get the same or different answers for each of the above?
 
     > (binary-tree? sample)
@@ -456,7 +460,7 @@ e. Check your answer experimentally.
 #|
 e. If all has gone well, the only difference you will see is how the
 binary tree is represented when we ask Racket to print it by giving
-its name.
+its name. That's one of those advantages of data abstraction.
 |#
 
 #| A |#
@@ -500,35 +504,8 @@ Other
 
 #| B |#
 
-; +-------------------------------+----------------------------------
-; | Exercise 6: Binary tree nodes |
-; +-------------------------------+
-
 #|
-a. As you may have noticed, the list-based implementation of binary
-trees uses somewhat cumbersome code to determine if a list appears to
-be an interior node of a binary tree.
-
-    ;;; (binary-tree-node? t) -> boolean?
-    ;;;   t : any?
-    ;;; Returns true iff t is a node in a tree.  In the current implementation,
-    ;;; that's a list of length three.
-    (define binary-tree-node?
-      (lambda (t)
-        (and (pair? t)
-             (pair? (cdr t))
-             (pair? (cddr t))
-             (null? (cdddr t)))))
-
-Rewrite the code using `match`.
-|#
-
-(define my-binary-tree-node?
-  (lambda (t)
-    ???))
-
-#|
-b. As you may have noticed, the `binary-tree?` procedure in the list-based 
+As you may have noticed, the `binary-tree?` procedure in the list-based 
 implementation of binary trees makes a lot of assumptions about the 
 implementation of binary trees.
 
