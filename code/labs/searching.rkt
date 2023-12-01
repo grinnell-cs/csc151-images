@@ -4,7 +4,7 @@
 (require racket/match)
 (require rackunit)
 
-;; CSC-151-NN (SEMSESTER)
+;; CSC-151-NN (SEMESTER)
 ;; Lab: Searching and Analysis (searching.rkt)
 ;; Authors: YOUR NAMES HERE
 ;; Date: THE DATE HERE
