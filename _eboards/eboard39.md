@@ -14,7 +14,7 @@ _Approximate overview_
 * Quizzes
 * Administrivia
 * Questions
-* Labs
+* Lab
 
 Quizzes
 -------
@@ -30,12 +30,13 @@ Administrivia
   note that the first redo is still available.
 * A variety of illnesses seem to be progressing through campus.  I 
   recommend that you consider masking and disinfecting (or vice versa).
+* Don't forget, we have slots in CSC-161!
 
 ### Upcoming Token activities
 
 Academic
 
-* Monday, 2023-12-04, noon--1pm, _Lunch & Learn: Summer Research_
+* Monday, 2023-12-04, noon--1pm, Noyce 2021, _Lunch & Learn: Summer Research_
     * Email barks@grinnell.edu with dietary restrictions or to
       request accommodations.
 * Tuesday, 2023-12-05, 7pm, 3821, _Mentor session: Review for SoLA 3_
@@ -48,12 +49,13 @@ Cultural
 
 Peer
 
-* Friday, 2023-12-01, 5:00--7:00 pm, HSSC N3118, _Greek Time_
+* Friday, 2023-12-01, 5:00--7:00 pm, HSSC N3118, _Greek Time_ (may not exist)
 * Friday, 2023-12-01, 5:00ish, Fieldhouse: _Indoor Track and Field_
 * Friday, 2023-12-01, 5:30pm, Natatorium: _Swimming (Pioneer Classic)_
 * Saturday, 2023-12-02, all day, Natatorium: _Swimming (Pioneer Classic)_
 * Saturday, 2023-12-02, 3pm, Darby: _Women's Baskeball vs. Lawrence_
 * Wednesday, 2023-12-06, 7:30pm, Darby, _Women's Basketball vs. Cornell_
+* Monday, 2023-12-04, 9:00--11:00pm, Bob's, _Bob's Underground Open Mic_
 
 Wellness
 
@@ -72,8 +74,6 @@ Misc
 
 ### Other good things (no tokens)
 
-* Monday, 2023-12-04, 9:00--11:00pm, Bob's, _Bob's Underground Open Mic_
-
 ### Upcoming work
 
 _Please put these in your notes!_
@@ -88,6 +88,9 @@ _Please put these in your notes!_
 * Friday the 8th: Attendance is expected.
 
 ### Friday PSA
+
+* Take care of yourselves.
+* Consent is essential.
 
 Questions
 ---------
@@ -109,7 +112,27 @@ Can I take an incomplete in this class?
 > Incompletes do not permit you to make up LAs (or anything other than 
   mini-projects).
 
+What should I do if I emailed Sam a late assignment/redo and he forgot
+to upload it?
+
+> Ask him again (and again) (and again)
+
 ### Trees
+
+How do you do a family tree with computer trees?
+
+> Um, it doesn't work well.
+
+What should we do if there's only one child?
+
+> We can have either the left child or the right child be null/empty.
+  Sometimes, the leftness/rightness of a child has meaning.
+
+### Project
+
+What should I do if GradeScope won't let me upload the project files?
+
+> Email them to me.
 
 ### Other
 
