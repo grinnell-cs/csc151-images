@@ -415,6 +415,7 @@
     #- page: /readings/tree-structs.html
   lab:
     - page: /labs/binary-trees.html
+  notes: ../eboards/eboard39.html
 
 - topic: Tree recursion
   abbrev: tree-recursion
