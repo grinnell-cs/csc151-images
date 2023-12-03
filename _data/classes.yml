@@ -427,6 +427,7 @@
     - page: /readings/binary-search-trees.html
   lab:
     - page: /labs/tree-recursion.html
+  notes: ../eboards/eboard40.html
 
 - topic: Project presentations
   abbrev: presentations
