@@ -88,8 +88,8 @@
 (define random-bst
   (o vector->tree 
      list->vector 
-     (section sort <> string-ci<=?)
-     (section random-list <> random-id)))
+     (cut (sort <> string-ci<=?))
+     (cut (random-list <> random-id))))
 
 ;;; (binary-tree-contains? tree val) -> boolean?
 ;;;   tree : binary-tree?
@@ -200,7 +200,7 @@ a. Have your traditional start-of-lab discussion.
 |#
 
 #|
-b. Save this as `tree-recursion.rkt`
+b. Save this file as `tree-recursion.rkt`
 |#
 
 #|
