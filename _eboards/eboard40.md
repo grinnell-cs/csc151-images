@@ -23,7 +23,12 @@ Administrivia
   or `CHANGES.rkt` file. (That's a way for you to check the autograder
   without having them grade it.)
 * If you have a compelling reason that you will need an extension on
-  the SoLA, please let me know asap.
+  SoLA 3, please let me know asap.
+* I have no scheduled office hours during Finals Week. I will be in
+  my office as much as I can. Feel free to DM me to check if I'm there
+  or to ask questions.
+* For some reason, some of you never did the Ethics LA. I've reopened that.
+  (It will be listed as late, but there's no penalty.)
 
 ### Upcoming Token activities
 
@@ -56,18 +61,37 @@ Misc
 
 _Please put these in your notes!_
 
-* Monday the 4th: Late (Mini-)Project 8 post-assessment.
+* Tonight: Late (Mini-)Project 8 post-assessment.
 * Wednesday the 6th: Project presentations.
 * Wednesday the 6th: SoLA 3 distributed.
 * Thursday the 7th: SoLA 3 collected.
 * Friday the 8th: Attendance is expected.
+
+### Notes on binary search quiz
+
+* Remember that when we recurse on the left half, the midpoint becomes
+  the new upper bound. _Make sure you understand why._
+* Remember that when we recurse on the right half, 1 + the midpoint
+  becomes the new lower bound. _Make sure you understand why._
+* We only return false when we determine that the element is not there.
+  We determine that the element is not there because the lower bound
+  is greater than or equal to the upper bound.
 
 Questions
 ---------
 
 ### Administrative
 
-### Trees
+### Trees, tree recursion, and binary search trees
+
+What will the LA on tree recursion look like?
+
+> See <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2023Fa/las/tree-recursion.html>
+
+I'm not sure how to deal with the issues in `binary-tree-largest`.
+
+> Chat with your partner when you get to the problem on the lab. If
+  you're still not sure, ask me or one of the mentors.
 
 ### Other
 

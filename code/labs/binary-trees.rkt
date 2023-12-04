@@ -470,7 +470,7 @@ its name. That's one of those advantages of data abstraction.
 ; +--------------------------------------------+
 
 #|
-Suppose we are switching from lists or structs to vectors.  Check
+Suppose we are switching from lists or hashes to vectors.  Check
 off the procedures or values you would expect to have to update if
 we decided to change our representation of non-empty binary trees
 from three-element lists or three-element structs to three-element 
