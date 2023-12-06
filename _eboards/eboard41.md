@@ -25,19 +25,22 @@ _Approximate overview_
 Administrivia
 -------------
 
-* Grades were distributed around noon on Tuesday. I have not yet updated
+* Grades were distributed around 5pm on Tuesday. I have not yet updated
   tokens.
 * Reminder: I have no scheduled office hours during Finals Week. I will 
   be in my office as much as I can. Feel free to DM me to check if I'm 
   there or to ask questions.
 * For some reason, some of you never did the Ethics LA. I've reopened that.
-  (It will be listed as late, but there's no penalty.)
+  (It will be listed as late, but there's no penalty.)  I also opened a
+  new Collaboration LA.
 * I expect to see all of you here on Friday.
 * If you plan to request an incomplete, note that those are due on 
   Friday. As I mentioned earlier, those should be for just one mini-project.
 * Since we'll be filling out EOCEs in class on Friday and we have fewer
   computers than people, it would be nice if some of you brought laptops
   on Friday.
+* If there is an LA you need and it doesn't show up by 10am today, please
+  let me know and I'll get it posted this afternoon.
 
 ### Upcoming Token activities
 
@@ -59,8 +62,6 @@ Misc
 ### Other good things (no tokens)
 
 ### Upcoming work
-
-_Please put these in your notes!_
 
 * Immediately after class: SoLA 3 distributed.
 * Tomorrow at 10:30pm (Thursday the 7th): SoLA 3 due.

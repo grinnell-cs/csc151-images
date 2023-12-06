@@ -72,31 +72,49 @@ all, we'll discuss them (as time permits)._
 
 Was "Sam says stop here" on the labs a good thing?
 
-* Yes, in general
-* No, in general
-* No strong opinion
+* Yes, in general       [  ]
+* No, in general        [  ]
+* No strong opinion     [  ]
 
-Did I spend too much my time on the pre-lab discussion?
+Did Sam spend too much my time on the pre-lab discussion?
 
-* Yes, in general
-* No, in general
-* No strong opinion
+* Yes, in general       [  ]
+* No, in general        [  ]
+* No strong opinion     [  ]
 
-The other course had a much larger and much longer final project, including
-many more classes devoted to team work on the project. In exchange, they
-didn't have the kinds of days in which the course debriefs on a topic or
-plans for an assignment or ....
+The other section had a much larger and much longer final project,
+including many more classes devoted to team work on the project.
+In exchange, they didn't have the kinds of days in which the course
+debriefs on a topic or plans for an assignment or ....
 
 * I'd prefer a much longer project and would give up those days.
+                        [  ]
 * I'd prefer that you maintain the current model.
-* No strong opinion.
+                        [  ]
+* No strong opinion.    [  ]
 
 We needed to spend more time on how to treat your partner appropriately.
 (Everyone but the E's closes their eyes for this.)
 
-* Yes
-* No
-* No strong opinion
+* Yes                   [  ]
+* No                    [  ]
+* No strong opinion     [  ]
+
+What did you think about the assorted greetings on the email messages?
+
+* Great         [  ]
+* Annoying      [  ]
+* There were greetings on email messages?
+               `[  ]
+* No opinion    [  ]
+
+What did you think about the strange names for take-home LA problems?
+
+* Great         [  ]
+* Annoying      [  ]
+* There were strange names for take-home LA problems?   
+                [  ]
+* No opinion    [  ]
 
 Final thoughts
 --------------
