@@ -13,9 +13,10 @@ _Approximate overview_
 
 * Administrivia
 * Questions
+* A class activity, part 1
 * "The subject matter of this class"
 * EOCEs
-* A class activity
+* A class activity, part 2
 * Debriefing on various issues
 * Final thoughts
 
@@ -53,6 +54,9 @@ Questions
 
 ### Other
 
+A class activity, part 1
+------------------------
+
 "The subject matter of this class"
 ----------------------------------
 
@@ -61,14 +65,24 @@ EOCEs
 
 * I will not be in class for EOCEs.
 
-A class activity
-----------------
+A class activity, part 2
+------------------------
 
 Debriefing on various issues
 ----------------------------
 
 _I'll close my eyes as you vote on each thing. After we've done them
 all, we'll discuss them (as time permits)._
+
+How useful were the Teams recordings?
+
+* Essential             [  ]
+* Useful                [  ]
+* I didn't use them, but I'm glad you made them
+                        [  ]
+* I'd prefer you didn't record class
+                        [  ]
+* No preference         [  ]
 
 Was "Sam says stop here" on the labs a good thing?
 
@@ -85,7 +99,8 @@ Did Sam spend too much my time on the pre-lab discussion?
 The other section had a much larger and much longer final project,
 including many more classes devoted to team work on the project.
 In exchange, they didn't have the kinds of days in which the course
-debriefs on a topic or plans for an assignment or ....
+debriefs on a topic or plans for an assignment or I spend too long
+answering a question or ....
 
 * I'd prefer a much longer project and would give up those days.
                         [  ]
@@ -108,7 +123,7 @@ What did you think about the assorted greetings on the email messages?
                `[  ]
 * No opinion    [  ]
 
-What did you think about the strange names for take-home LA problems?
+What did you think about the strange names for SoLA problems?
 
 * Great         [  ]
 * Annoying      [  ]
