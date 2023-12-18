@@ -285,7 +285,7 @@ Redos on learning assessments are automatically available. In general, you may t
 Redos on reading responses and lab writeups are rarely permitted.
 Please speak with me if you would like to redo a reading response or lab writeup.
 
-Your first redo on a mini-project is generally free.  Subsequent redos on mini-projects may require tokens; see [the handout on tokens](../handouts/tokens) for details.  When you receive a graded mini-project, it will generally include a checklist of issues that you must address to get a higher grade.  Please reproduce the checklist in your re-done project.  Where appropriate, you should indicate how you addressed the issues we have described.
+Your first redo on a mini-project is generally free.  Subsequent redos on mini-projects may require tokens; see [the handout on tokens](../handouts/tokens) for details.  When you receive a graded mini-project, it will generally include a checklist of issues that you must address to get a higher grade.  Please reproduce the checklist in your re-done project.  Where appropriate, you should indicate how you addressed the issues we have described. Please see the [handout on redoing mini-projects](../handouts/redos) for more details.
 
 ### Final deadline for all work
 
