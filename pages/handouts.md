@@ -42,6 +42,9 @@ information.  To ensure that you read the information, I even give you
   : Advance warning of the questions I'll ask before and after each mini-project
     and SoLA.
 
+[Redos](redos)
+  : Instructions related to redoing mini-projects.
+
 [Tips on working more productively](working-tips)
   : Some tips from students, mentors, and instructors.
 
