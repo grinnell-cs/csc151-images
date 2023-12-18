@@ -9,9 +9,9 @@ As you have heard, the _mastery grading_ approach we use in CSC-151 permits you 
 
 * A header giving the basic information.
 * The previous version you submitted. (E.g., "I was unable to submit the original assignment" or "I submitted the original version but not the first redo.")
-* A list of all the major issues in that previous version, including those noted within the program code and those listed in the comments section, as well as a summary of how you have addressed them.
+* A list of all the major issues in that previous version---including those noted within the program code, those listed in the comments section, and the rubric items that were not completed---as well as a summary of how you have addressed them.
 
-**Please do not include the `CHANGES.rkt` file until you are ready to have the redo graded.** For example, if you are only submitting to check autograder results, do not include the changes file.
+**Please do not submit the `CHANGES.rkt` file until you are ready to have the redo graded.** For example, if you are only submitting to check autograder results, do not include the changes file.
 
 Here's a sample `CHANGES.rkt` file.
 
