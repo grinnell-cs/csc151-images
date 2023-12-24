@@ -1,12 +1,12 @@
 # Jekyll Site settings
 
 # Course title
-title: CSC 151-01 (Fall 2023)
+title: CSC 151-XX (Spring 2024)
 
 # baseurl is used for redirects on the same server.
 # url is the full path name
-baseurl: /Courses/CSC151/2023Fa
-url: https://rebelsky.cs.grinnell.edu/Courses/CSC151/2023Fa/
+baseurl: /Courses/CSC151/2024Sp
+url: https://USERNAME.cs.grinnell.edu/Courses/CSC151/2024Sp/
 
 # Are we online?  If not, we're in person.  (Some of the lab instructions are
 # affected by this choice.)
@@ -18,46 +18,47 @@ term: false
 # Set the theme color. Options are blue, green, red, orange, purple, and gray
 color: blue 
 
-instructor: Samuel A. Rebelsky
+instructor: Prof. Essor
 
-instructor_title: Professor Rebelsky
+instructor_title: Professor P
 
-instructor_homepage: https://rebelsky.cs.grinnell.edu
+instructor_homepage: https://instructor.cs.grinnell.edu
 
-instructor_email: rebelsky@grinnell.edu
+instructor_email: isntructor@grinnell.edu
 
 meeting_times: |
-  MWF 8:30&ndash;9:50 AM CT in Science 3813
+  MWF N:NN&ndash;N:NN MM CT in Science 3813
 
 office_hours:
-  - Tu 9:30&ndash;11:00 AM, W 1:00&ndash;3:00 PM, Th 1:00&ndash;2:30 PM (CT); <https://bit.ly/book-samr>
-
+  - TBD
 
 mentors: 
-  - Ella Berman
-  - Ellie Seehorn
+  - Maddy Thompson (Section 1)
+  - Mai Hoang (Section 2)
 
 mentor_sessions:
-  - Sundays, 1:00&ndash;2:00 PM CT
+  - TBD
 
 tutors:
   - Sundays, 3&ndash;5 PM; Sundays through Thursdays, 7&ndash;10 PM in Science 3813 and 3815
 
-all_work_deadline:  5:00 PM on Friday, 8 December 2023
+all_work_deadline:  5:00 PM on Friday, 17 May 2024
 # final_exam_time: TBD
 
 copyright: |
-  Copyright &copy; Eric Autry, Charlie Curtsinger, Sarah Dahlby Albright, Janet
-  Davis, Nicole Eikmeier, Fahmida Hamid, Priscilla Jiménez, Barbara
-  Johnson, Titus Klinge, Peter-Michael Osera, Samuel A. Rebelsky,
-  John David Stone, Anya Vostinar, Henry Walker, and Jerod Weinman.
+  Copyright &copy; Eric Autry, Charlie Curtsinger, Sarah Dahlby
+  Albright, Janet Davis, Nicole Eikmeier, Fahmida Hamid, Priscilla
+  Jiménez, Barbara Johnson, Titus Klinge, Peter-Michael Osera, Leah
+  Perlmutter, Samuel A. Rebelsky, John David Stone, Anya Vostinar,
+  Henry Walker, and Jerod Weinman.
 
 copyright_message: |
-  Unless specified otherwise elsewhere on this page,
-  this work is licensed under a Creative Commons Attribution 3.0 Unported
-  License. To view a copy of this license, visit
-  <http://creativecommons.org/licenses/by-nc/3.0/> or send a letter to Creative
-  Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+  Unless specified otherwise elsewhere on this page, this work is
+  licensed under a Creative Commons Attribution 3.0 Unported License.
+  To view a copy of this license, visit
+  <http://creativecommons.org/licenses/by-nc/3.0/> or send a letter
+  to Creative Commons, 543 Howard Street, 5th Floor, San Francisco,
+  California, 94105, USA.
 
 # Be picky about front-matter
 strict_front_matter: true
