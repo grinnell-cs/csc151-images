@@ -87,29 +87,25 @@ permalink: /syllabus/
 
 ## About this course
 
-Welcome to CSC-151, Grinnell College's introductory computer science course.  In this course, we will work to develop your experience with algorithmic problem solving.
-While we will be using Scheme as our programming language for this course, you will quickly see that the problem solving skills we learn in this class are applicable to other languages and in settings that don't involve programming at all.
+Welcome to CSC-151, Grinnell College's introductory computer science course.  In this course, we will work to develop your experience with algorithmic problem solving.  While we will be using Scheme as our programming language for this course, you will quickly see that the problem solving skills we learn in this class are applicable to other languages and in settings that don't involve programming at all.
 
 This semester, CSC-151 will emphasize image making and manipulation.  We will consider a variety of image models along the way.
 
-CSC-151 requires no prior knowledge of computer science or computer programming.
-We'll teach you everything we want you to know.
-It's okay if you have some experience (although this may sometimes put you at a disadvantage; we do things differently), but it's certainly not necessary.
+CSC-151 requires no prior knowledge of computer science or computer programming.  We'll teach you everything we want you to know. It's okay if you have some experience (although this may sometimes put you at a disadvantage; we do things differently), but it's certainly not necessary. We've found that those with prior experience and those with no experience generally seem to have the same distribution of grades.
 
-*Due to the rapidly changing world that we find ourselves in, the policies of this syllabus are perpetually subject to change.*
-*Significant changes to course policies will be announced in class in addition to being reflected in the syllabus online.*
+*Due to the rapidly changing world that we find ourselves in, the policies of this syllabus are perpetually subject to change. Significant changes to course policies will be announced in class in addition to being reflected in the syllabus online.*
 
 ## Overview
 
-How do we harness the power of modern-day computation to solve problems?  Why is computation so pervasive in this information age?  What is this field, computer science, that drives much of this innovation?
+How do we harness the power of modern-day computation to solve problems? Why is computation so pervasive in this information age?  What is this field, computer science, that drives much of this innovation?
 
-To address these questions, we will introduce you to the basics of *computational problem-solving*: describing and decomposing problems of a computational nature so that we can implement their solutions with a computer.
-We will demonstrate that computational problem-solving is the essence of computer science and is an essential first step in understanding the discipline and its effects on society.
+To address these questions, we will introduce you to the basics of *computational thinking* and *computational problem solving*: describing and decomposing problems of a computational nature so that we can implement their solutions with a computer. We will demonstrate that computational problem-solving is the essence of computer science and is an essential first step in understanding the discipline and its effects on society.  
+
 By the end of this course, you should be able to:
 
 + Describe the fundamentals of computer science: algorithms, data structures, and abstraction.
 + Read and write computer programs *in the small* in the Scheme programming language.
-+ Solve problems using design strategies from functional programming: functional decomposition, computational pipelines, and recursive decomposition.
++ Solve problems using design strategies from functional programming: functional decomposition, computational pipelines, recursive decomposition, and higher-order programming.
 + Carry out the basics of the software engineering process: design, documentation, development, testing, and debugging.
 
 In addition to these primary outcomes, we also expect you will take away more general skills and knowledge related to the discipline:
@@ -118,39 +114,27 @@ In addition to these primary outcomes, we also expect you will take away more ge
 
 **Problem domain: Image making and manipulation**
 
-Computational thinking and computational techniques can be applied to a wide variety of domains.  At Grinnell, we have a tradition of picking a domain or "theme" for each offering of CSC-151.
-The theme for this section is *image making and manipulation*. 
-That is, we'll explore how to write programs that create new images (most often, abstract images) or that manipulate existing images to create new images.
-Along the way, we'll explore a variety of ways to think about images.
+Computational thinking and computational techniques can be applied to a wide variety of domains.  At Grinnell, we have a tradition of picking a domain or "theme" for each offering of CSC-151. The theme for this section is *image making and manipulation*. That is, we'll explore how to write programs that create new images (most often, abstract images) or that manipulate existing images to create new images. Along the way, we'll explore a variety of ways to think about images.
 
 **Why take CSC-151?**
 
-Basic knowledge about solving problems computationally is useful in careers involving *every* major and concentration offered at Grinnell.
-This course outfits you with some versatile concepts applicable to other programming languages and environments you will encounter in the wild.
-Finally, you have the opportunity to be creative in many ways, from problem solutions to finding new approaches to data.
-Creativity is highly encouraged!
+Basic knowledge about solving problems computationally is useful in careers involving *every* major and concentration offered at Grinnell. This course outfits you with some versatile concepts applicable to other programming languages and environments you will encounter in the wild. Many skills, particularly decomposition, are also applicable in a wide variety of other situations. Finally, you have the opportunity to be creative in many ways, from problem solutions to finding new approaches to data. Creativity is highly encouraged!
 
 **Important Notices**
 
-+ Experience shows that CSC-151 exercises different parts of your brain than other courses (even other math and science courses).
-  Expect some challenges, but have confidence that you can work through them and that you'll come out of the course with much more knowledge.
-+ Like learning a foreign language, learning in this course is cumulative: new ideas often build on ideas from earlier.
-  If you feel like you've missed something important, please get in touch with the course staff as soon as possible for assistance!
-+ Computers have no common sense or compassion.
-  They are complex, and sometimes they do things we don't expect.
-  When things go wrong, don't blame yourself.
-  Ask your instructor, your mentor, or a tutor for help.
++ Experience shows that CSC-151 exercises different parts of your brain than other courses (even other math and science courses). Expect some challenges, but have confidence that you can work through them and that you'll come out of the course with much more knowledge.
++ Like learning a foreign language, learning in this course is cumulative: new ideas often build on ideas from earlier. If you feel like you've missed something important, please get in touch with the course staff as soon as possible for assistance!
++ Computers have no common sense or compassion. They are complex, and sometimes they do things we don't expect.  When things go wrong, don't blame yourself.  Ask your instructor, your mentor, or a tutor for help.
 
-We are also using software developed at Grinnell and may still have some bugs lurking within.
-Thus, you should develop a habit of saving your work frequently!
+We are also using software developed at Grinnell and may still have some bugs lurking within. Thus, you should develop a habit of saving your work frequently!
 
 ## Time and workload
 
-Grinnell has indicated that a 4-credit course, like this one, should involve approximately 180 hours of work, which matches some guidance from the U.S. government.  Across a 14-week term (plus a week finals), that ends up being approximately 12 hours of work per week.  I have not been able to get anyone to answer the question of "180 hours *for whom* and *for what grade*?", but I've been given the impression that I should strive for that workload for the "average" student in a course who seeks to earn a B.
+Grinnell has indicated that a 4-credit course, like this one, should involve approximately 180 hours of work, which matches some guidance from the U.S. government. Across a 14-week term (plus a week of finals), that ends up being approximately 12 hours of work per week. We have not been able to get anyone to answer the question of "180 hours *for whom* and *for what grade*?", but some of us have been given the impression that we should strive for that workload for the "average" student in a course who seeks to earn a B.
 
 In general, the twelve hours should work out to approximately 
 
-* four hours per week in class, 
+* four hours per week in class,
 * three hours per week on readings (one hour per day), 
 * four hours per week on either mini-projects (homework assignments) or SoLAs (exams), and 
 * one hour per week for mentor sessions.
@@ -159,20 +143,13 @@ If you find yourself working much more than the expected amount in this course, 
 
 ## Diversity and inclusion
 
-I believe that any college-level course should challenge you and put you outside of your comfort zone.
-My mission as an instructor is to help you manage that discomfort so that you can grow in knowledge and maturity.
-Therefore, I strive to create a fully inclusive setting so that we all can ultimately succeed in the classroom.
+I believe that any college-level course should challenge you and put you outside of your comfort zone. My mission as an instructor is to help you manage that discomfort so that you can grow in knowledge and maturity. Therefore, I strive to create a fully inclusive setting so that we all can ultimately succeed in the classroom.
 
 ### Learning needs
 
-I welcome you to talk to me as early as possible about your distinctive learning needs.
-I particularly encourage students with disabilities to meet with me and discuss how our classroom and course activities could impact their work and what accommodations would be essential.
-I will also make adjustments for students without documented disabilities.  However, I recommend that you seek official accommodations if it is possible and appropriate to do so.
-In particular, I recommend talking to our Coordinator for Student Disability Resources for guidance and further instructions:
+I welcome you to talk to me as early as possible about your distinctive learning needs. I particularly encourage students with disabilities to meet with me and discuss how our classroom and course activities could impact their work and what accommodations would be essential. I will also make adjustments for students without documented disabilities.  However, I recommend that you seek official accommodations if it is possible and appropriate to do so. In particular, I recommend talking to our Coordinator for Student Disability Resources for guidance and further instructions:
 
 + Jae Baldree, Steiner 209, x3089, baldreej@grinnell.edu
-
-You can find some additional details in [my statement on accommodations and adjustments](../handouts/accommodations).
 
 ### Religious observance policy
 
@@ -194,34 +171,30 @@ In some cases, I will recommend consulting with the Academic Advising staff. The
 
 ## Evaluation and grading
 
-This course employs a grading system based on [*mastery grading* and *specifications grading*](https://docs.google.com/document/d/13V1fsPve19IU-tFNt4AeQ78VepuqVakp3xizJrj5KwY/edit) to evaluate your work.
-These systems, inspired by adult learning theory, are designed to create a "low-threat" learning environment where:
+This course employs a grading system based on [*mastery grading* and *specifications grading*](https://docs.google.com/document/d/13V1fsPve19IU-tFNt4AeQ78VepuqVakp3xizJrj5KwY/edit) to evaluate your work.  These systems, inspired by adult learning theory, are designed to create a "low-threat" learning environment where:
 
 + Mastery obtained via exploration, experimentation, and failure is encouraged and valued as highly as "getting it right" the first time.
 + Your final grade accurately reflects your mastery of the learning goals of the course.
 + The expectations for grades should be easy to understand and easily trackable.
 
-Ideally, all of you should be able to meet all of the goals in a reasonable amount of time (see the note about time and workload above).
-To achieve high grades, some of you may find that you have to redo some of the work in the class.
-Many of the components of the course have "no penalty" redos available.
-See the notes below and in the [handouts](../handouts) for more details.
+Ideally, all of you should be able to meet all of the goals in a reasonable amount of time (see the note about time and workload above).  To achieve high grades, some of you may find that you have to redo some of the work in the class.  Many of the components of the course have "no penalty" redos available.  See the notes below and in the [handouts](../handouts) for more details.
 
 ### Deliverables
 
-I rely on six kinds of work to assess your mastery of the material.
+We rely on six kinds of work to assess your mastery of the material.
 
 + **Reading problems**: quick assessments of the concepts found in the daily reading in preparation for in-class activities.  _**Reading problems are generally due at 10 p.m. the night before class**_ (e.g., the problems associated with a reading for Wednesday's class are due Tuesday at 10 p.m.)
 + **Lab exercises**: practice problems worked on during class, frequently collaboratively, with a partner.  _**Lab exercises are generally due immediately before the next class**_ (e.g., the problems associated with the lab from Wednesday's class are due Friday at 8:30 a.m. and the problems associated with the lab from Friday's class are due Monday at 8:30 a.m.).
-+ **Mini-Projects**: individually completed, small-scale programming projects that apply the weekly concepts to the themes of the course.  (We may, on occasion, refer to "mini-projects" as "demos", using the terminology from the prior term.)  To earn an A, one must do an excellent job on most of the mini-projects and the group project.  (You will be able to re-do any project that earns less than excellent.)  _**Mini-Projects are generally due on Thursdays at 10:00 p.m.**_
-+ **Group project**: a final, group-based project, that you will complete toward the end of the semester.  The group project brings together the various materials you've learned throughout the semesters.
++ **Mini-Projects**: individually completed, small-scale programming projects that apply the weekly concepts to the themes of the course. (We may, on occasion, refer to "mini-projects" as "demos", using the terminology from the prior term.)  To earn an A, one must do an excellent job on most of the mini-projects and the group project.  (You will be able to re-do any project that earns less than excellent.)  _**Mini-Projects are generally due on Tuesdays at 10:00 p.m.**_
++ **Group project**: a final, group-based project, that you will complete toward the end of the semester. The group project brings together the various materials you've learned throughout the semesters. In computing a final grade, we treat the group project as a mini-project.
 + **Learning assessments**: individually completed problems that directly assess your mastery of the learning goals of the course.  To earn an A, one must pass learning assessments for 22 of the 24 learning objectives.  (You will have the opportunity to retake any of the learning assessments you do not pass.)  _**Sets of Learning Assessments will be distributed on four Wednesdays throughout the semester and be due on Thursdays at 10:00 p.m.**_.  There will not be mini-projects in weeks that learning assessments are given.  _**Single learning assessments will also be given in class on Fridays.**_
-+ **Metacognitive reflections**: Short reflective pieces given before and after most assignments and exams.  _**Pre-task reflections are generally due the evening a task is assigned.  Post-task reflections are generally due the day after the task is due.**_
++ **Metacognitive reflections**: Short reflective pieces given before and after most assignments and exams.  _**Pre-task reflections are generally due the evening after a task is assigned.  Post-task reflections are generally due the day after the task is due.**_
 
 *Reading problems* and *lab exercises* are designed for you to practice and explore the concepts of the course in a supportive environment.  Consequently, you may collaborate on these problems with your classmates, consult external resources, or ask the course staff for questions, provide that you cite them in your produced deliverable.  These deliverables are checked primarily for completion and effort rather than total correctness.  
 
 *Mini-projects* are designed to give you the opportunity to demonstrate your knowledge and mastery on more complex problems.  Work you turn in for mini-projects should be your own.  You may consult others for ideas and help, provided you appropriately acknowledge that help.  
 
-*Learning assessments* are designed to demonstrate your mastery of the courses naturally measurable learning goals.  You may only discuss these deliverables with the course staff.  These deliverables are checked for both correctness and appropriate design.  Learning assessments will come in at least two different forms: Weekly in-class quizzes (on Fridays) and regular take-home examinations (distributed on Wednesdays and due on Thursdays at 10:00 p.m.).
+*Learning assessments* are designed to demonstrate your mastery of the courses naturally measurable learning goals.  You may only discuss these deliverables with the course staff.  These deliverables are checked for both correctness and appropriate design.  Learning assessments will come in at least two different forms: Weekly in-class quizzes (on Fridays) and regular take-home examinations (distributed on Mondays and due on Tuesdays at 10:00 p.m.).
 
 *Metacognitive reflections* are intended to help you build your broader metacognitive skills and will generally ask you to reflect on what you expect from each project (assignment) or SoLA (exam) (e.g., "What will be the hardest part of this project?", "Which topic will you struggle most with on the SoLA?", "How can you best succeed on this SoLA?") and what you discovered from each project or SoLA (e.g., "What aspect of the project took you the most time and why?", "How can you do better on the next SoLA?").
 
@@ -256,17 +229,17 @@ Note that I reserve the right to update requirements for grades as circumstances
 
 **Plus/minus grades**
 
-If your two primary grades are at the same level, you will earn that letter as the base grade.  I hope that you can all demonstate learning at the A level.
+If your two primary grades are at the same level, you will earn that letter as the base grade.  I hope that you will all demonstate learning at the A level.
 
 If your two primary grades are at different levels (e.g., projects at the B level and learning assessments at the A level), you will generally earn a grade between the two, with the particular level dependent on where in the range of each you fall.  Note that if you receive a C on one primary grade and an A on the other, your base grade will be a B-.
 
-Your grade may also be affected by reading problems, labs, metacognitive reflections, and tokens.
+Your grade may also be affected by missing reading problems, labs, metacognitive reflections, and tokens.
 
 Note that Grinnell does not permit grades of C-, D+, or D-.  A grade below C and at least D will be recorded as a D.  A grade below a D will be recorded as an F.
 
 **Reading problems, laboratory assignments, and metacognitive reflections**
 
-You are allowed to miss up to six total reading problems, lab assignments, and metacognitive reflections in the semester without penalty.  If you miss more than six reading problems, labs, or reflections, your overall letter grade will be lowered by one-third of a letter grade for each two additional problems, labs, or reflections you miss. Excesses of one also result in a loss.  For example,
+You are allowed to miss up to **six total** reading problems, lab assignments, and metacognitive reflections in the semester without penalty.  If you miss more than six reading problems, labs, or reflections, your overall letter grade will be lowered by one-third of a letter grade for each two additional problems, labs, or reflections you miss. Excesses of one also result in a loss.  For example,
 
 * If you miss four reading problems, one lab, and one reflection, you've missed *six* total things and there is *no penalty*.
 * If you miss three reading problems, three labs, and two reflections, you've missed *eight* total things, which is two more than you are permitted.  *Your overall letter grade drops by one-third*, such as from a B to a B- or from an A- to a B+.
@@ -276,29 +249,26 @@ You are allowed to miss up to six total reading problems, lab assignments, and m
 
 I hope that you will do your best to miss as few reading problems, labs, and reflections as possible.
 
-If your LAs and MPs indicate that you should receive a passing grade (C or above), missing tokens, readings, labs, or reflections cannot drop your grade below a C.
+Note: If your LAs and MPs indicate that you should receive a passing grade (C or above), missing tokens, readings, labs, or metacognitive reflections cannot drop your grade below a C.
 
 ### Redos
 
-Because I care more that you learn the material than that you learn it by a particular deadline, I permit redos for the major work in this course.
-Redos on learning assessments are automatically available. In general, you may try them again on the next set of learning assessments (SoLA).
-Redos on reading responses and lab writeups are rarely permitted.
-Please speak with me if you would like to redo a reading response or lab writeup.
+Because I care more that you learn the material than that you learn it by a particular deadline, I permit redos for the major work in this course.  Redos on learning assessments are automatically available. In general, you may try them again on the next set of learning assessments (SoLA).  
+
+In contrast, redos on reading responses, lab writeups, and metacognitive reflections are are rarely permitted.  Please speak with me if you would like to redo a reading response or lab writeup. Since metacognitive reflections only work when done with a task, you may not make those up.
 
 Your first redo on a mini-project is generally free.  Subsequent redos on mini-projects may require tokens; see [the handout on tokens](../handouts/tokens) for details.  When you receive a graded mini-project, it will generally include a checklist of issues that you must address to get a higher grade.  Please reproduce the checklist in your re-done project.  Where appropriate, you should indicate how you addressed the issues we have described. Please see the [handout on redoing mini-projects](../handouts/redos) for more details.
 
 ### Final deadline for all work
 
 Note that *all* work must be submitted by {{ site.all_work_deadline }}.
-This is College policy and cannot be waived for any reason.
-If you find yourself needing to turn in work past this deadline, you must consult with me as soon as possible to submit an *incomplete request* for the course.
-If you take an incomplete in the course, the only work you can make up will be one of the mini projects.
+This is College policy and cannot be waived for any reason.  If you find yourself needing to turn in work past this deadline, you must consult with me as soon as possible to submit an *incomplete request* for the course.  The Committee on Academic Standing notes that ""An incomplete is generally not appropriate when […] there are multiple assignments to be completed." Hence, if you take an incomplete in the course, the only work you can make up will be one of the mini projects.
 
 ### Tokens
 
-To provide a consistent and clear mechanism for dealing with the issues that regularly come up during the semester (e.g., late work, extra resubmissions), I rely on a variant of the "[token system](../handouts/tokens)" designed by my colleague Peter-Michael Osera.  In short, you begin the semester with a few tokens and use them up as you turn in work late, show up to class late, or miss class without notifying me.  You may earn additional tokens by attending events that I deem appropriate, such as talks related to the course or your colleages' performances and competitions.
+To provide a consistent and clear mechanism for dealing with the issues that regularly come up during the semester (e.g., late work, extra resubmissions), I rely on a variant of the "[token system](../handouts/tokens)" designed by my colleague Peter-Michael Osera.  In short, you begin the semester with a few tokens and use them up as you turn in work late, show up to class late, or miss class without notifying me. You may earn additional tokens by attending events that I deem appropriate, such as talks related to the course or your colleages' performances and competitions.
 
-You can usually check your token status on Gradescope.  The regular status reports may also include information on tokens.
+The regular status reports will include information on tokens.
 
 Please read [the handout on tokens](../handouts/tokens) for more details.
 
@@ -308,7 +278,7 @@ Our grading system offers flexibility.  However, it adds a cost of giving the il
 
 We encourage you to also preemptively come to any member of the course staff---the instructor, the course mentor, our Peer Education Coordinator---for help and guidance if you feel like you are falling behind. However, to be more clear about when you might be falling behind in the course, I will do my best to track the following _course breakpoints_ in your progress. In particular, when one of the following situations occurs, I will follow up with you as well as academic advising (via an academic alert) to check in. 
 
-* You miss two or more days of classes in a row.
+* You miss two or more days of classes in a row (for any reason).
 * You have used all of your tokens.
 * You receive an I on a mini-project.
 * You do not turn in a revision for a mini-project graded as an R.
@@ -321,7 +291,7 @@ If any of those issues happen, we should also talk so that I might provide guida
 
 There are several software packages we use in this course both for learning how to program as well as conducting learning online.
 
-+ [Scamper](https://github.com/slag-plt/scamper-lang), an implementation of a subset of the [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)).
++ The [DrRacket](https://docs.racket-lang.org/drracket/) programming environment.
 + Your [Grinnell Office365 account](https://office365.grinnell.edu) for email and [Microsoft Teams](https://teams.microsoft.com) for discussion and collaboration.
 + [Gradescope](https://gradescope.com) for assignment submission and feedback communication.
 
@@ -343,19 +313,15 @@ To help expedite your learning, you can rely on me, our class mentor, and your p
 
 **The Instructor, course staff, and other resources**
 
-When contacting the course staff, please use direct messages (DM) on Microsoft Teams.
-While we will generally not respond immediately—--we generally check our messages at fixed times throughout the day—--we will prioritize responses to student questions over Teams versus queries sent through other means, *e.g.*, email.
+When contacting the course staff, please use direct messages (DM) on Microsoft Teams. While we will generally not respond immediately—--we generally check our messages at fixed times throughout the day—--we will prioritize responses to student questions over Teams versus queries sent through other means, *e.g.*, email.
 
-The **course mentor** also holds weekly *mentor sessions* outside of regular class time.
-In these sessions, the mentor guides you through practice problems designed to help you master the material and answer any questions you have about the material.
-I highly recommend you attend each of these sessions, even if you feel like you understand the material.
-You never know what you don't know, and the purpose of these sessions is to bring these blind spots to light!
+The **course mentor** also holds weekly *mentor sessions* outside of regular class time. In these sessions, the mentor guides you through practice problems designed to help you master the material and answer any questions you have about the material. **I highly recommend you attend each of these sessions**, even if you feel like you understand the material. You never know what you don't know, and the purpose of these sessions is to bring these blind spots to light!
 
 The CS department provides **evening tutors** from 7--10 p.m. most nights of the week (Sunday through Thursday).  I encourage you to make use of the evening tutors.  
 
 The CS department also provides **individual tutors** as needed.  If you find yourself struggling with the material, please let me know and I'll work with our peer education coordinator to get one assigned to you.
 
-Finally, if you would like to discuss things in more detail—--course content, more general questions about computer science, or other things—--feel free to schedule a (virtual) meeting with me, either [during office hours](https://bit.ly/book-samr) or, if those don't work, by sending me a message with available times.
+Finally, if you would like to discuss things in more detail—--course content, more general questions about computer science, or other things—--feel free to schedule a meeting with me, either [during office hours](https://bit.ly/book-samr) or, if those don't work, by sending me a message with available times.
 
 Note that if I find that you have fallen behind on assignments or are showing difficulty on quizzes or learning assessments, I will invite you to meet with me.  Please accept those invitations; they are intended to be supportive, not punative.
 
@@ -363,11 +329,12 @@ Note that if I find that you have fallen behind on assignments or are showing di
 
 Utilizing discussion with peers to facilitate your learning is a critical skill for success in computer science.  However, at the same time, you must be aware that getting stuck and pushing through challenging problems is essential for robust learning.  To this end, we allow the following forms of collaboration.
 
-+ You are encouraged to collaborate with your peers on reading exercises, labs, and projects.  You may also consult the course staff as well as other people and external resources.  In all cases, you (or your group in the case of group work) should independently write up your solutions and cite all the resources you used in authoring your work, including the other students.
++ You are encouraged to seek help and advice from your peers as you work on reading exercises, labs, and mini-projects. You may also consult the course staff as well as other people and external resources.  
 + You may only discuss learning assessments and quizzes with the course staff.
   When completing assessments and quizzes, you may only consult the course website and any additional documentation we provide.  You may not collaborate with peers, consult external resources beyond the ones mentioned above, or share information about these assignments with others.
++ **In all cases, you (or your group in the case of group work) should independently write up your solutions and cite all the resources you used in authoring your work, including other students, your instructor, and our peer educators.**
 
-Keep in mind that *adaptation of pre-existing code* whether it comes from a peer, myself, or the Internet, requires a citation in cases where it is allowed.  Also, whenever you are expected to show your code's output, you are expected to reproduce the output faithfully.  In other words, you should not forge the results of your programs!
+Keep in mind that *adaptation of pre-existing code* whether it comes from a peer, myself, or the Internet, requires a citation in cases where we allow such adaptation.  Also, whenever you are expected to show your code's output, you are expected to reproduce the output faithfully.  In other words, you should not forge the results of your programs!
 
 In all cases, the work that you produce should be your own.  In general, you should be capable of reproducing any part of your deliverable with minimal effort if it was accidentally deleted.
 
@@ -387,7 +354,7 @@ ITS has released and then temporarily withdrawn policies that may limit your abi
 
 **AI programming assistants**
 
-Please avoid the use of AI-based programming assistants, such as ChatGPT or Microsoft IntelliCode in this course.  You should also review [my policy on AI programming assistants](../handouts/ai).
+Please avoid the use of AI-based programming assistants, such as ChatGPT or Microsoft IntelliCode in this course.
 
 ## Other issues
 
@@ -397,35 +364,13 @@ This may be your first semester learning with Teams.  Things will likely mess up
 
 This may be your first semester using Gradescope.  Gradescope does some things well and some things less well.  Things will likely mess up from time to time.  That's okay; it's part of the process.  I'll make adjustments when you have difficulty.  I hope you'll accept my apologies when I do something wrong (or at least fail to adjust my processes to the way Gradescope thinks they should be done).
 
-I've taught Scheme for longer than most of you have been alive.  This is likely your first time encountering Scheme.  You will mess up from time to time.  Believe it or not, but I will, too.  (I'll be much faster at fixing and identifying problems, though; at least I hope I will be.) That's okay; mistakes are part of the process.
-
-A totally new version of Scamper, the Scheme implementation we use for the course, was released in late summer.  There are likely to be bugs.  Let me know if you notice potential bugs and I'll raise them with the developer.  It's also my first time using Scamper, so I'll probably screw things up.
-
 **Multiple sections**
 
-There are multiple sections of this course, with multiple "themes".  While the instructors and mentors will take generally similar approaches to the material, you'll see that there are differences.  These differences should not affect your overall learning in the course.
-
-**Names**
-
-I get names wrong.  I get names wrong all the time.  Evidence suggests that I am not just bad at remembering names, I also have some brain differencees that regularly lead me to mix up peoples' names.  I think, for example, of two of my favorite research students, one with blonde hair, from Minnesota, who also served as a teaching assistant for my software design course; the other with dark hair, from Massachusetts, who brought a wealth of background in education to my research projects.  I can tell you a lot about each student (although I wouldn't without their permission), including hobbies, where they studied abroad, what they are doing now (or at least what they were doing a year so so ago), and more.  But I inevitably reversed their names, calling Minnesota Massachusetts and Massachusetts Minnesota.
-
-When I discussed this issue with my family, my sons laughed and said "Dad, you get *our* names backwards, too; we just ignore you when you do so." And I've heard from other students I value highly that I do this and don't always notice.  (The other day, I almost referred to an alum by a different name.)
-
-If I use the wrong name for you, it is not a sign that I do not respect your or that I do not care about you.  It's a deficiency in my processing, and one that I seem unable to fix.  Please accept and understand that disability, just as I will do my best to accept and understand your own differences.
-
-**My health**
-
-I had a heart attack in spring 2021.  For my health, I am trying to limit my work hours to appropriate amounts, typically 40 hours per week.  I apologize if that means that I am not always caught up on my work or available at times you would like.
-
-I will also try to be respectful of your time.  Please let me know if you find yourself regularly spending more than twelve of so hours per week on this class, which is what the College considers appropriate for a four-credit course.  (We have four hours in class each week, we suggests that you have eight hours out-of-class for readings, review, and mini projects.)
-
-**Teaching is performative**
-
-I believe that all teaching is a form of performance.  That performance may not always be explicit.  Nonetheless, I perform a particular role, perhaps even roles.  In my roles, I may say some things that seem strange.  Remember; it's a performance.
+There are multiple sections of this course.  While the instructors and mentors will take generally similar approaches to the material, you'll see that there are differences.  These differences should not affect your overall learning in the course.
 
 **Feeling overwhelmed**
 
-You may feel a bit overwhelmed by this point.  I know that I do after re-reading most of it and re-writing some of it.  But **don't worry**.  CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic. (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
+You may feel a bit overwhelmed by this point. I know that I do after re-reading it.  But **don't worry**.  CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic. (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
 
 ## Frequently (and not-so-frequently) asked questions
 
@@ -437,37 +382,26 @@ I'm confused about the grading scheme.  Could you explain more?
 
 > If that's not enough information, feel free to ask questions about particlar points.
 
-I plan to leave early for Fall break and won't be in class on Friday, 13 October 2023.  I'm also a bit worried that it's October 13th.  What are the penalties for missing that class?
+I plan to leave early for Spring break and won't be in class on Friday, 15 March 2024. What are the penalties for missing that class?
 
 > As long as you let me know in advance, there is no penalty for your absence.
 
-> However, you will not be able to take the quiz that day, which means that you will have to complate that learning assessment in one of the following SoLAs.  In addition, you
-be responsible for making up the work from class on your own, and you are still responsible for turning in that lab by 10:00 p.m. in Sunday, 22 October 2023.
-
-I plan to leave early for Thanksgiving and won't be in class on Wednesday, 22 November 2023.  What are the penalties for missing that class?
-
-> As long as you let me know in advance, there is no penalty for your absence.
-
-> However, you will be depriving your project team of your presence.  You should discuss with them how you will make up for your absence.
+> However, you will not be able to take the quiz that day, which means that you will have to complate that learning assessment in one of the following SoLAs.  In addition, you are responsible for making up the work from class on your own, and you are still responsible for turning in that labs.
 
 I have an accommodation that gives me extra time on in-class exams.  What should I do about the Friday LA quizzes.
 
-> I am happy to give those to you at 8:00 a.m. on Fridays.
+> Please chat with me.
 
 I did not achieve a grade of S on one of the in-class-only learning assessments.  How do I make that up?
 
-> I am happy to give those to you at 8:00 a.m. on the next Friday.
+> I am happy to give those to you at 4:00 p.m. on the next Friday.
 
 I need a mental health day.  What should I do?
 
-> Send me an email message telling me that you need a mental health day.  Plan to make up the lab on your own.  If you need extra time for the lab, you'll need to use a [token](../handouts/tokens).
+> Send me an email message telling me that you need a mental health day. Plan to make up the lab on your own and submit it before the next class. If you need extra time for the lab, you'll need to use a [token](../handouts/tokens).
 
 > More importantly, please take care of yourself.
 
 If I ask a question about the course, will it end up here?
 
 > Perhaps.  It will depend on a variety of issues, such as whether I consider it of general interest and whether I have time to update the syllabus.
-
-How do I book your office hours?
-
-> <https://bit.ly/book-samr>
