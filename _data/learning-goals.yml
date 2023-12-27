@@ -6,26 +6,29 @@
     - "**Primitive types**. Express basic computations over primitive values and their associated standard library functions."
     - "**Conditionals**. Use Boolean expressions and conditional operations to produce conditional behavior."
     - "**Collaboration**. Explain best practices for solving problems in a collaborative setting."
-    - "**Documentation**. Document programs according to good software engineering principles."
-    - "**Testing**. Test programs according to good software engineering principles."
 
 - assessment: Learning Assessments, Phase 2 (LAP 2)
   goals:
+    - "**Documentation**. Document programs according to good software engineering principles."
+    - "**Testing**. Test programs according to good software engineering principles."
     - "**Program style**. Write and structure code in ways that make it easier to understand."
     - "**Lists**. Manipulate lists with fundamental higher-order list functions."
     - "**Lambda-free anonymous procedures**. Use `cut` and composition to simplify computations."
     - "**List recursion**.  Design and write recursive functions over lists."
-    - "**Local bindings**. Refactor redundancy and add clarity in computations with let-bindings."
-    - "**Numeric recursion**.  Design and write recursive functions over the natural numbers."
-    - "**Vectors**.  Design and write functions (potentially recursive functions) that use vectors."
-    - "**Diagramming structures**.  Use our mental model of memory to describe or diagram the layout of memory for lists, pairs, and vectors/arrays."
 
 - assessment: Learning Assessments, Phase 3 (LAP 3)
   goals:
+    - "**Local bindings**. Refactor redundancy and add clarity in computations with let-bindings."
+    - "**Numeric recursion**.  Design and write recursive functions over the natural numbers."
+    - "**Vectors**.  Design and write functions (potentially recursive functions) that use vectors."
+    - "**Diagramming structures**.  Use our mental model of memory to describe or diagram the layout of memory for lists, pairs, and vectors/arrays. _This LA may only be completed in class._"
     - "**Ethical considerations**.  Consider implications of the power of computing."
+    - "**Randomness**.  Write programs that produce predictably unpredictable output."
+
+- assessment: Learning Assessments, Phase 4 (LAP 4)
+  goals:
     - "**Dictionaries**.  Design and write functions that use dictionaries."
     - "**Data abstraction**.  Design data structures to separate interface from implementation."
-    - "**Randomness**.  Write programs that produce predictably unpredictable output."
     - "**Higher-order programming**.  Write procedures that take procedures as parameters and return procedures as results."
     - "**Tree recursion**.  Design and write recursive functions over trees."
     - "**Running time**.  Use a mental model of computation to count the relevant number of operations performed by a function."
