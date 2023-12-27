@@ -6,10 +6,10 @@
 #   Assumes that the `reclaim` host is setup appropriately in .ssh/config
 
 # Settings.  These should probably exist somewhere else.
-SEMESTER=2023Fa
+SEMESTER=2024Fa
 COURSE=CSC151
 SITE=public_html/Courses/$COURSE/$SEMESTER/
-REMOTE=rebelsky.cs.grinnell.edu
+REMOTE=instructor.cs.grinnell.edu
 
 # Feedback
 echo $SITE
