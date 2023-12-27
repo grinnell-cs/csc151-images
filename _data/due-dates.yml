@@ -1,202 +1,225 @@
-- date: 2023-08-25
+- date: 2024-01-22
   assigned:
     - page: /mps/syllabus.html
     - page: /mps/intro-survey.html
 
-- date: 2023-08-28
+- date: 2024-01-23
   due:
     - page: /mps/syllabus.html
     - page: /mps/intro-survey.html
 
-- date: 2023-08-30
+- date: 2024-01-24
   assigned:
     - page: /mps/mp01.html
 
-- date: 2023-09-03
+- date: 2024-01-26
   due:
     - MP 1 Pre-Assessment
+    - Quiz 1
 
-- date: 2023-09-06
-
-- date: 2023-09-07
+- date: 2024-01-30
   due:
     - page: /mps/mp01.html
 
-- date: 2023-09-08
+- date: 2024-01-31
+  due:
+    - MP 1 Post-Assessment
   assigned:
     - page: /mps/mp02.html
-  due:
-    - Quiz 1
-    - MP 1 Post-Assessment
 
-- date: 2023-09-10
+- date: 2024-02-02
   due:
     - MP 2 Pre-Assessment
+    - Quiz 2
 
-
-- date: 2023-09-14
+- date: 2024-02-06
   due:
     - page: /mps/mp02.html
 
-- date: 2023-09-15
-  assigned:
-    - page: /mps/mp03.html
+- date: 2024-02-07
   due:
-    - Quiz 2
     - MP 2 Post-Assessment
 
-- date: 2023-09-17
+- date: 2024-02-09
   due:
-    - MP 3 Pre-Assessment
-
-- date: 2023-09-21
-  due:
-    - page: /mps/mp03.html
-
-- date: 2023-09-22
-  due:
-    - Quiz 3
-    - MP 3 Post-Assessment
-
-- date: 2023-09-24
-  due: 
     - SoLA 1 Pre-Assessment
+    - Quiz 3
 
-- date: 2023-09-27
+- date: 2024-02-12
   assigned:
     - SoLA 1
 
-- date: 2023-09-28
+- date: 2024-02-13
   due:
-    - page: SoLA 1
+    - SoLA 1
 
-- date: 2023-09-29
+- date: 2024-02-14
+  due:
+    - SoLA 1 Post-Assessment
+  assigned:
+    - page: /mps/mp03.html
+
+- date: 2024-02-16
+  due:
+    - MP 3 Pre-Assessment
+    - Quiz 4
+
+
+- date: 2024-02-20
+  due: 
+    - page: /mps/mp03.html
+
+- date: 2024-02-21
+  due:
+    - MP 3 Post-Assessment
   assigned:
     - page: /mps/mp04.html
-  due:
-    - Quiz 4
-    - SoLA 1 Post-Assessment
-    - MP 4 Pre-Assessment
 
-- date: 2023-10-02
+- date: 2024-02-23
   due:
     - MP 4 Pre-Assessment
-
-- date: 2023-10-06
-  due:
     - Quiz 5
 
-- date: 2023-10-12
+- date: 2024-02-27
   due:
     - page: /mps/mp04.html
 
-- date: 2023-10-13
-  assigned:
-    - page: /mps/mp05.html
+- date: 2024-02-28
   due:
-    - Quiz 6
     - MP 4 Post-Assessment
 
-- date: 2023-10-22
+- date: 2024-03-01
   due:
-    - MP 5 Pre-Assessment (cancelled)
+    - SoLA 2 Pre-Assessment
+    - Quiz 6
 
-- date: 2023-10-26
+- date: 2024-03-04
+  assigned:
+    - SoLA 2
+
+- date: 2024-03-05
+  due:
+    - SoLA 2
+
+- date: 2024-03-06
+  due:
+    - SoLA 2 Post-Assessment
+  assigned:
+    - page: /mps/mp05.html
+
+- date: 2024-03-08
+  due:
+    - MP 5 Pre-Assessment
+    - Quiz 7
+
+- date: 2024-03-12
   due:
     - page: /mps/mp05.html
 
-- date: 2023-10-27
+- date: 2024-03-13
   due:
-    - Quiz 7
     - MP 5 Post-Assessment
-
-- date: 2023-10-29
-  due:
-    - SoLA 2 Pre-Assessment
-
-- date: 2023-11-01
-  assigned:
-    - SoLA 2
-
-- date: 2023-11-02
-  due:
-    - SoLA 2
-
-- date: 2023-11-03
   assigned:
     - page: /mps/mp06.html
+
+- date: 2024-03-15
   due:
     - Quiz 8
-    - SoLA 2 Post-Assessment
 
-- date: 2023-11-05
+- date: 2024-04-01
   due:
     - MP 6 Pre-Assessment
 
-- date: 2023-11-09
+- date: 2024-04-04
   due:
     - page: /mps/mp06.html
 
-- date: 2023-11-10
-  assigned:
-    - page: /mps/mp07.html
-  due: 
-    - Quiz 9
+- date: 2024-04-05
+  due:
     - MP 6 Post-Assessment
-
-- date: 2023-11-12
-  due:
-    - MP 7 Pre-Assessment
-
-- date: 2023-11-16
-  due:
-    - page: /mps/mp07.html
-
-- date: 2023-11-17
-  assigned:
-    - page: /mps/mp08.html
-  due:
-    - Quiz 10
-    - MP 7 Post-Assessment
-
-- date: 2023-11-22
-  due:
-    - Quiz 11
-
-- date: 2023-11-30
-  due:
-    - page: /mps/mp08.html
-
-- date: 2023-12-01
-  due:
-    - Quiz 12
-
-- date: 2023-12-03
-  due:
     - SoLA 3 Pre-Assessment
+    - Quiz 9
 
-- date: 2023-12-06
+- date: 2024-04-08
   assigned:
     - SoLA 3
 
-- date: 2023-12-07
+- date: 2024-04-09
   due:
     - SoLA 3
 
-- date: 2023-12-08
+- date: 2024-04-10
   due:
     - SoLA 3 Post-Assessment
-
-- date: 2023-12-11
-  due:
-    - SoLA 4 Pre-Assessment (_optional_)
-
-- date: 2023-12-12
   assigned:
-    - SoLA 4 (_optional_)
-
-- date: 2023-12-15
+    - page: /mps/mp07.html
+    
+- date: 2024-04-12
   due:
-    - SoLA 4 (_optional_, by 5pm)
-    - All remaining MP redos (_optional_, by 5pm)
+    - MP 7 Pre-Assessment
+    - Quiz 10
+
+- date: 2024-04-16
+  due:
+    - page: /mps/mp07.html
+
+- date: 2024-04-17
+  due:
+    - MP 7 Post-Assessment
+  assigned:
+    - page: /mps/mp08.html
+
+- date: 2024-04-19
+  due:
+    - MP 8 Pre-Assessment
+    - Quiz 11
+
+- date: 2024-04-23
+  due:
+    - page: /mps/mp08.html
+
+- date: 2024-04-24
+  due:
+    - MP 8 Post-Assessment
+  assigned:
+    - page: /mps/mp09.html
+
+- date: 2024-04-26
+  due:
+    - MP 9 Pre-Assessment
+    - Quiz 12
+
+- date: 2024-05-03
+  due:
+    - SoLA 4 Pre-Assessment
+    - Quiz 13
+
+- date: 2024-05-05
+  due: 
+    - page: /mps/mp09.html
+
+- date: 2024-05-06
+  assigned:
+    - SoLA 4
+
+- date: 2024-05-07
+  due:
+    - SoLA 4
+
+- date: 2024-05-08
+  due:
+    - SoLA 4 Post-Assessment
+    - MP 9 Post-Assessment
+
+- date: 2024-05-10
+  due:
+    - End-of-course evaluation
+
+- date: 2024-05-14
+  assigned:
+    - SoLA 5
+
+- date: 2024-05-17
+  due:
+    - SoLA 5
 
