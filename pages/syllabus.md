@@ -151,6 +151,8 @@ I welcome you to talk to me as early as possible about your distinctive learning
 
 + Jae Baldree, Steiner 209, x3089, baldreej@grinnell.edu
 
+You can find some additional details in [my statement on accommodations and adjustments](../handouts/accommodations).
+
 ### Religious observance policy
 
 I also support the class's religious diversity and anyone who needs to balance academic work with religious observations.  Please let me know by the end of **week two** if you will need to be absent from class for any religious holidays this semester, and we can work out an appropriate schedule for making up absences or missed work.
@@ -262,7 +264,9 @@ Your first redo on a mini-project is generally free.  Subsequent redos on mini-p
 ### Final deadline for all work
 
 Note that *all* work must be submitted by {{ site.all_work_deadline }}.
-This is College policy and cannot be waived for any reason.  If you find yourself needing to turn in work past this deadline, you must consult with me as soon as possible to submit an *incomplete request* for the course.  The Committee on Academic Standing notes that ""An incomplete is generally not appropriate when […] there are multiple assignments to be completed." Hence, if you take an incomplete in the course, the only work you can make up will be one of the mini projects.
+This is College policy and cannot be waived for any reason.  If you find yourse
+lf needing to turn in work past this deadline, you must consult with me as soon 
+as possible to submit an *incomplete request* for the course.  The Committee on Academic Standing notes that ""An incomplete is generally not appropriate when […] there are multiple assignments to be completed." Hence, if you take an incomplete in the course, the only work you can make up will be one of the mini projects.
 
 ### Tokens
 
@@ -354,7 +358,7 @@ ITS has released and then temporarily withdrawn policies that may limit your abi
 
 **AI programming assistants**
 
-Please avoid the use of AI-based programming assistants, such as ChatGPT or Microsoft IntelliCode in this course.
+Please avoid the use of AI-based programming assistants, such as ChatGPT or Microsoft IntelliCode in this course.  You should also review [my policy on AI programming assistants](../handouts/ai).
 
 ## Other issues
 
@@ -364,13 +368,33 @@ This may be your first semester learning with Teams.  Things will likely mess up
 
 This may be your first semester using Gradescope.  Gradescope does some things well and some things less well.  Things will likely mess up from time to time.  That's okay; it's part of the process.  I'll make adjustments when you have difficulty.  I hope you'll accept my apologies when I do something wrong (or at least fail to adjust my processes to the way Gradescope thinks they should be done).
 
+I've taught Scheme for longer than most of you have been alive.  This is likely your first time encountering Scheme.  You will mess up from time to time.  Believe it or not, but I will, too.  (I'll be much faster at fixing and identifying problems, though; at least I hope I will be.) That's okay; mistakes are part of the process.
+
 **Multiple sections**
 
 There are multiple sections of this course.  While the instructors and mentors will take generally similar approaches to the material, you'll see that there are differences.  These differences should not affect your overall learning in the course.
 
+**Names**
+
+I get names wrong.  I get names wrong all the time.  Evidence suggests that I am not just bad at remembering names, I also have some brain differencees that regularly lead me to mix up peoples' names.  I think, for example, of two of my favorite research students, one with blonde hair, from Minnesota, who also served as a teaching assistant for my software design course; the other with dark hair, from Massachusetts, who brought a wealth of background in education to my research projects.  I can tell you a lot about each student (although I wouldn't without their permission), including hobbies, where they studied abroad, what they are doing now (or at least what they were doing a year so so ago), and more.  But I inevitably reversed their names, calling Minnesota Massachusetts and Massachusetts Minnesota.
+
+When I discussed this issue with my family, my sons laughed and said "Dad, you get *our* names backwards, too; we just ignore you when you do so." And I've heard from other students I value highly that I do this and don't always notice.  (The other day, I almost referred to an alum by a different name.)
+
+If I use the wrong name for you, it is not a sign that I do not respect your or that I do not care about you.  It's a deficiency in my processing, and one that I seem unable to fix.  Please accept and understand that disability, just as I will do my best to accept and understand your own differences.
+
+**My health**
+
+I had a heart attack in spring 2021.  For my health, I am trying to limit my work hours to appropriate amounts, typically 40 hours per week.  I apologize if that means that I am not always caught up on my work or available at times you would like.
+
+I will also try to be respectful of your time.  Please let me know if you find yourself regularly spending more than twelve of so hours per week on this class, which is what the College considers appropriate for a four-credit course.  (We have four hours in class each week, we suggests that you have eight hours out-of-class for readings, review, and mini projects.)
+
+**Teaching is performative**
+
+I believe that all teaching is a form of performance.  That performance may not always be explicit.  Nonetheless, I perform a particular role, perhaps even roles.  In my roles, I may say some things that seem strange.  Remember; it's a performance.
+
 **Feeling overwhelmed**
 
-You may feel a bit overwhelmed by this point. I know that I do after re-reading it.  But **don't worry**.  CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic. (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
+You may feel a bit overwhelmed by this point.  I know that I do after re-reading most of it and re-writing some of it.  But **don't worry**.  CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic. (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
 
 ## Frequently (and not-so-frequently) asked questions
 
@@ -386,15 +410,15 @@ I plan to leave early for Spring break and won't be in class on Friday, 15 March
 
 > As long as you let me know in advance, there is no penalty for your absence.
 
-> However, you will not be able to take the quiz that day, which means that you will have to complate that learning assessment in one of the following SoLAs.  In addition, you are responsible for making up the work from class on your own, and you are still responsible for turning in that labs.
+>  However, you will not be able to take the quiz that day, which means that you will have to complate that learning assessment in one of the following SoLAs.  In addition, you are responsible for making up the work from class on your own, and you are still responsible for turning in that labs.
 
 I have an accommodation that gives me extra time on in-class exams.  What should I do about the Friday LA quizzes.
 
-> Please chat with me.
+> I am happy to give those to you at 8:00 a.m. on Fridays.
 
 I did not achieve a grade of S on one of the in-class-only learning assessments.  How do I make that up?
 
-> I am happy to give those to you at 4:00 p.m. on the next Friday.
+> I am happy to give those to you at 8:00 a.m. on the next Friday (or earlier, if necessary).
 
 I need a mental health day.  What should I do?
 
@@ -405,3 +429,7 @@ I need a mental health day.  What should I do?
 If I ask a question about the course, will it end up here?
 
 > Perhaps.  It will depend on a variety of issues, such as whether I consider it of general interest and whether I have time to update the syllabus.
+
+How do I book your office hours?
+
+> <https://bit.ly/book-samr>
