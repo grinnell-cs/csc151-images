@@ -6,7 +6,7 @@ title: CSC 151-XX (Spring 2024)
 # baseurl is used for redirects on the same server.
 # url is the full path name
 baseurl: /Courses/CSC151/2024Sp
-url: https://USERNAME.cs.grinnell.edu/Courses/CSC151/2024Sp/
+url: https://perlmutter.cs.grinnell.edu/Courses/CSC151/2024Sp/
 
 # Are we online?  If not, we're in person.  (Some of the lab instructions are
 # affected by this choice.)
@@ -16,18 +16,18 @@ online: false
 term: false
 
 # Set the theme color. Options are blue, green, red, orange, purple, and gray
-color: blue 
+color: purple
 
-instructor: Prof. Essor
+instructor: Leah Perlmutter
 
-instructor_title: Professor P
+instructor_title: Professor Perlmutter
 
-instructor_homepage: https://instructor.cs.grinnell.edu
+instructor_homepage: https://perlmutter.cs.grinnell.edu
 
-instructor_email: isntructor@grinnell.edu
+instructor_email: perlmutter@grinnell.edu
 
 meeting_times: |
-  MWF N:NN&ndash;N:NN MM CT in Science 3813
+  MWF 2:30&ndash;3:50 PM CT in Science 3813
 
 office_hours:
   - TBD
@@ -67,10 +67,6 @@ strict_front_matter: true
 collections:
   admin:
     output: false
-
-  eboards:
-    output: true
-    permalink: /eboards/:path.html
 
   handouts:
     output: true
