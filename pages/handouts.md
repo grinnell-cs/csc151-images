@@ -8,10 +8,8 @@ You'd think the [syllabus](../syllabus) and [schedule](../schedule) would provid
 
 ## Teaching, grading, and such
 
-<!-- Sam
 [On teaching and learning](teaching)
   : A bit of philosophy (more or less).
--->
 
 [Grading](grading)
   : More details on grading processes (and a bit on the underlying philosophy).
@@ -27,25 +25,17 @@ You'd think the [syllabus](../syllabus) and [schedule](../schedule) would provid
 
 ## Other important issues
 
-<!-- Sam
 [Accommodations and adjustments](accommodations)
   : Policies and practices (and why I use two terms)
--->
 
-<!-- Sam
 [Accessibility of Web pages](accessibility)
   : Why I try to keep pages accessible and who to report to when they're not.
--->
 
-<!-- Sam
 [Academic integrity](academic-integrity)
   : A long document that attempts to explain key issues of academic integrity in this course and in the discipline.
--->
 
-<!-- Sam
 [AI programming assistants](ai)
   : Some notes on why I discourage the use of AI programming assistants in my introductory classes.
--->
 
 [Notes on taking notes](taking-notes)
   : Some tips on taking notes.
@@ -74,9 +64,6 @@ You'd think the [syllabus](../syllabus) and [schedule](../schedule) would provid
 ## Other versions of the course
 
 These also aren't strictly handouts, but we didn't have a better place for them.  The list is incomplete.
-
-[CSC-151 2024 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/)
-  : Professor Rebelsky's Spring 2024 version.
 
 [CSC-151 2023 Fall (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2023Fa/)
   : Professor Rebelsky's Fall 2023 version, which uses a slightly different image library. This was the first image-based version since Spring 2017.
