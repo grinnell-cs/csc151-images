@@ -3,7 +3,7 @@
   summary: |
     We begin the class by exploring the definition of computer
     science and by trying to write some basic algorithms.
-  notes: ../eboards/eboard01.html
+  notes: /eboards/eboard01.html
 
 - topic: Getting started with Scheme
   abbrev: racket-tech
@@ -18,7 +18,6 @@
   lab:
     - page: /labs/mathlan.html
     - page: /labs/racket-intro-mathlan.html
-  notes: ../eboards/eboard02.html
 
 - topic: Computation via expressions
   abbrev: expressions
@@ -30,7 +29,6 @@
     - page: /readings/computation-via-expressions.html
   lab:
     - page: /labs/mental-models-of-computation.html
-  notes: ../eboards/eboard03.html
 
 - topic: Algorithmic decomposition
   abbrev: decomposition
@@ -42,7 +40,8 @@
     - page: /readings/decomposition.html
   lab:
     - page: /labs/decomposition.html
-  notes: ../eboards/eboard04.html
+  todo:
+    - Check the images reading to make sure it works with the new model.
 
 - topic: Reading and writing procedures
   abbrev: procedures
@@ -56,7 +55,6 @@
     - page: /readings/mental-models.html
   lab:
     - page: /labs/procedures.html
-  notes: ../eboards/eboard05.html
 
 - topic: Expressions and types
   abbrev: exprs-and-types
@@ -69,20 +67,11 @@
     - page: /readings/exprs-and-types.html
     - page: /readings/numbers.html
     - page: /readings/strings.html
+    - page: /readings/symbols.html
   lab:
     - page: /labs/basic-types.html
-  notes: ../eboards/eboard06.html
-
-- topic: Pair programming
-  abbrev: pair-programming
-  summary: |
-    We explore the whys and hows of working with others.  
-  reading:
-    - title: How Pair Programming Really Works (Wray)
-      resource: /files/PairProgramming.pdf
-    - title: Coping with Hitchhikers and Couch Potatoes on Teams (from B. Oakley et. al (2004).  Turning Student Groups into Effective Teams.  <i>Journal of Student-Centered Learning</i> 2 (1).)
-      resource: /files/OakleyHitchhikers2004.pdf
-  notes: ../eboards/eboard07.html
+  todo:
+    - Consider adding symbols to the lab.
 
 - topic: RGB colors
   abbrev: rgb-colors
@@ -92,8 +81,42 @@
     - page: /readings/design-and-color.html
     - page: /readings/rgb-colors.html
   lab:
-    - page: /labs/rgb-colors.html
-  notes: ../eboards/eboard08.html
+    - page: /labs/rgb-colors
+  todo:
+    - Make sure this works with the new model.
+
+- topic: Transforming colors
+  abbrev: transforming-rgb
+  summary: |
+    We consider additional mechanisms for working with RGB colors.
+  reading:
+    - page: /readings/transforming-rgb.html
+  lab:
+    - page: /labs/transforming-rgb.html
+
+- topic: Pair programming
+  abbrev: pair-programming
+  summary: |
+    We explore the whys and hows of working with others.  
+  reading:
+    - title: How Pair Programming Really Works (Wray)
+      resource: /files/PairProgramming.pdf
+    - title: Coping with Hitchhikers and Couch Potatoes on Teams (from B. Oakley et. al (2004).  Turning Student Groups into Effective Teams.  <em>Journal of Student-Centered Learning</em> 2 (1).)
+      resource: /files/OakleyHitchhikers2004.pdf
+  lab:
+    - (TBA)
+
+- topic: Transforming images
+  abbrev: transforming-images
+  summary: |
+    We expand our understanding of RGB transformations to image transformations.
+  reading:
+    - page: /readings/anonymous-procedures.html
+    - page: /readings/transforming-images.html
+  lab:
+    - page: /labs/transforming-images.html
+  todo:
+    - Incorporate anonymous procedures. (At least that's the plan.)
 
 - topic: Booleans, predicates, and conditionals
   abbrev: booleans
@@ -104,18 +127,24 @@
     - page: /readings/conditionals.html
   lab:
     - page: /labs/conditionals.html
-  notes: ../eboards/eboard09.html
+  todo:
+    - Last semester, we needed two days for this. I'm inserting a pause for breath
 
-- topic: Booleans, predicates, and conditionals (continued)
-  abbrev: booleans-continued
+- topic: Pause for Breath
+  abbrev: pause-01
   summary: |
-    We continue to consider how one writes procedures that make decisions.
+    We pause to catch up on a variety of topics.
+
+- topic: Images as collections of shapes
+  abbrev: drawings
+  summary: |
+    We return to our first model of images to explore a few more mechanisms for working with with such images and to compare models.
   reading:
-    - page: /readings/booleans.html
-    - page: /readings/conditionals.html
+    - page: /readings/drawings-as-values.html
   lab:
-    - page: /labs/conditionals.html
-  notes: ../eboards/eboard10.html
+    - page: /labs/drawings-as-values.html
+  todo:
+    - We did not have this topic last semester.
 
 - topic: Software engineering fundamentals
   abbrev: software-engineering
@@ -127,7 +156,6 @@
     - page: /readings/hypothesis-driven-debugging.html
   lab:
     - page: /labs/rackunit.html
-  notes: ../eboards/eboard11.html
 
 - topic: Lists
   abbrev: lists
@@ -139,31 +167,48 @@
     - page: /readings/list-transform.html
   lab:
     - page: /labs/list-basics.html
-  notes: ../eboards/eboard12.html
+  todo:
+    - Do we also include `car`, `cdr`, and `cons` here?  Do we
+     perhaps include a separate day?
 
-- topic: Anonymous procedures
-  abbrev: anonymous
-  summary: |
-    We explore ways to write procedures without using `define` (and,
-    sometimes, without even using `lambda`).  We also consider why
-    we might do so.
-  reading:
-    - page: /readings/anonymous-procedures.html
-  lab:
-    - page: /labs/anonymous-procedures.html
-  notes: ../eboards/eboard13.html
-
-- topic: Lists, continued
-  abbrev: lists-continued
+- topic: Processing lists
+  abbrev: processing-lists
   summary: |
     We explore ways to use lists to work with collections of drawings 
     using "the big three" list procedures: `map`, `reduce`, and `filter`.
+    We also consider other ways of processing lists, particularly how
+    we sort lists and tally individual values in lists.
   reading:
     - page: /readings/list-big-three.html
     - page: /readings/list-more.html
   lab:
     - page: /labs/lists-more.html
-  notes: ../eboards/eboard14.html
+  todo:
+    - Incorporate sort and tally.
+    - Consider incorporating the old /labs/drawing-lists.html
+
+- topic: Other ways to build lists
+  abbrev: building-lists
+  summary: |
+    We continue our exploration of lists through some "finer-grained"
+    operations.
+  reading:
+    - page: /readings/list-composition.html
+  lab:
+    - page: /labs/list-composition.html
+  todo:
+    - It's a new lab! Students shouldn't be learning cons, car, and cdr at the same time they are learning recursion.
+
+- topic: Ethical considerations in computing
+  abbrev: ethical
+  summary: |
+    Now that we've spent some time exploring various issues in computing,
+    we take a step back and consider problems of ethical computing
+    with seasoned programmer-eyes. As newly-informed citizens, what
+    must we be aware of with respect to ethics in computing?
+  reading:
+    - link: ACM Code of Ethics and Professional Conduct
+      url: https://www.acm.org/code-of-ethics
 
 - topic: Introduction to list recursion
   abbrev: recursion-intro
@@ -174,57 +219,32 @@
   reading:
     - page: /readings/list-composition.html
     - page: /readings/recursion-basics.html
-  notes: ../eboards/eboard15.html
 
 - topic: Introduction to list recursion, continued
   summary: |
-    We continue our initial exploration of recursion in Scheme.
+    We continue our introductory exploration of recursion in Scheme.
+  reading:
+    - page: /readings/recursion-basics.html
   lab:
     - page: /labs/recursion-basics.html
-  notes: ../eboards/eboard16.html
-
-- topic: "Detour: Thinking about Mini-Project 4"
-  summary: |
-    We continue to continue our initial exploration of recursion in Scheme
-    by considering various aspects of mini-project 4.
-  notes: ../eboards/eboard17.html
 
 - topic: Recursion practice
   summary: |
-    We continue to continue our initial exploration of recursion
-    in Scheme.
+    We continue to continue our introductory exploration of recursion
+    in Racket.
   reading:
     - page: /readings/recursion-magic.html
   lab:
     - page: /labs/recursion-practice.html
-  notes: ../eboards/eboard18.html
 
 - topic: Local bindings
   abbrev: let
   summary: |
-    We explore issues of redundacy in code and mechanisms for reducing such reducancy.
+    We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
   reading:
     - page: /readings/local-bindings.html
   lab:
     - page: /labs/local-bindings.html
-  notes: ../eboards/eboard19.html
-
-- topic: List recursion, revisited
-  abbrev: list-recursion-revisited
-  summary: |
-    We practice recursion a bit more.
-  reading:
-    - page: /readings/numeric-recursion.html
-  lab:
-    - page: /labs/list-recursion-revisited.html
-  notes: ../eboards/eboard20.html
-
-- topic: Pause for breath
-  abbrev: pause-week-07
-  summary : |
-    We pause to reflect on some issues of recursion and to give
-    ourselves a bit less stress during week 7.
-  notes: ../eboards/eboard21.html
 
 - topic: Recursion over numbers
   abbrev: number-recursion
@@ -234,20 +254,28 @@
     call themselves.  However, the parameter that we "simplify" at
     every step is a number, rather than a list.
   reading:
-    - page: /readings/numeric-recursion.html
+    - page: /readings/recursion-over-numbers.html
   lab:
     - page: /labs/numeric-recursion.html
-  notes: ../eboards/eboard22.html
+
+- topic: Randomness
+  abbrev: randomness
+  summary: |
+    We consider Scheme's `random` procedure and how one might use
+    that procedure in generating images.
+  reading:
+    - page: /readings/randomness.html
+  lab:
+    - page: /labs/exploring-randomness.html
 
 - topic: Images as functions
   abbrev: image-compute
   summary: |
     We conside ways to treat images as functions from positions to colors.
-  noreading:
+  reading:
     - page: /readings/image-compute.html
   lab:
-    - page: /labs/bitmaps.html
-  notes: ../eboards/eboard23.html
+    - page: /labs/image-compute.html
 
 - topic: Pairs
   abbrev: pairs
@@ -258,7 +286,6 @@
     - page: /readings/pairs.html
   lab:
     - page: /labs/pairs.html
-  notes: ../eboards/eboard24.html
 
 - topic: Vectors
   abbrev: vectors
@@ -267,36 +294,15 @@
     We consider how data are stored in memory.
   reading:
     - page: /readings/vectors.html
-  nolab:
+  lab:
     - page: /labs/vectors.html
-  notes: ../eboards/eboard25.html
 
 - topic: Vectors, continued
-  abbrev: vectors-02
+  abbrev: vectors
   summary: |
     We continue to explore vectors.
   lab:
     - page: /labs/vectors-continued.html
-  notes: ../eboards/eboard26.html
-
-- topic: Vectors, continued again
-  abbrev: vectors-03
-  summary: |
-    Yup, another day on vectors.
-  lab:
-    - page: /labs/vectors-continued.html
-  notes: ../eboards/eboard27.html
-
-- topic: Randomness
-  abbrev: randomness
-  summary: |
-    We consider Scheme's `random` procedure and how one might use
-    that procedure in generating images.
-  reading:
-    - page: /readings/randomness.html
-  lab:
-    - page: /labs/random-language.html
-  notes: ../eboards/eboard28.html
 
 - topic: Dictionaries and hash tables
   abbrev: dictionaries
@@ -307,7 +313,6 @@
     - page: /readings/hash-tables.html
   lab:
     - page: /labs/hash-tables.html
-  notes: ../eboards/eboard29.html
 
 - topic: Data abstraction
   abbrev: data-abstraction
@@ -319,22 +324,7 @@
     - page: /readings/data-abstraction.html
   lab:
     - page: /labs/data-abstraction.html
-  notes: ../eboards/eboard30.html
   
-- topic: Ethical considerations in computing
-  abbrev: ethical
-  summary: |
-    After some time exploring various issues in computing, we take
-    a step back and consider problems of ethical computing with
-    seasoned programmer-eyes. As newly-informed citizens, what must
-    we be aware of with respect to ethics in computing?
-  reading:
-    - link: ACM Code of Ethics and Professional Conduct
-      url: https://www.acm.org/code-of-ethics
-  nolab:
-    - page: /labs/ethics-in-computing.html
-  notes: ../eboards/eboard31.html
-
 - topic: Higher-order recursive design
   abbrev: higher-order-recursive-design
   summary: |
@@ -344,7 +334,6 @@
     - page: /readings/higher-order-recursive-design.html
   lab:
     - page: /labs/higher-order-recursion.html
-  notes: ../eboards/eboard32.html
 
 - topic: Tail recursion
   abbrev: tail-recursion
@@ -357,15 +346,6 @@
     - page: /readings/list-recursion-revisited.html
   lab:
     - page: /labs/tail-recursion.html
-  notes: ../eboards/eboard33.html
-
-- topic: Project Kickoff
-  abbrev: final-project
-  summary: |
-    We introduce the final project for the semester.
-  reading:
-    - page: /mps/mp08.html
-  notes: ../eboards/eboard34.html
 
 - topic: Complexity analysis and binary search
   abbrev: search
@@ -377,33 +357,8 @@
   reading:
     - page: /readings/analysis.html
     - page: /readings/searching.html
-  nolab:
-    - page: /labs/searching.html
-  notes: ../eboards/eboard35.html
-
-- topic: Project work day
-  abbrev: project-work-day-1
-  summary: |
-    We provide class time for students to work on their projects.
-  notes: ../eboards/eboard36.html
-
-- topic: Complexity analysis and binary search
-  abbrev: search
-  summary: |
-    We continue our exploration of analysis techniques and
-    binary search.
-  reading:
-    - page: /readings/analysis.html
-    - page: /readings/searching.html
   lab:
     - page: /labs/searching.html
-  notes: ../eboards/eboard37.html
-
-- topic: Project work day
-  abbrev: project-work-day-2
-  summary: |
-    We provide class time for students to work on their projects.
-  notes: ../eboards/eboard38.html
 
 - topic: Trees
   abbrev: trees
@@ -415,7 +370,15 @@
     #- page: /readings/tree-structs.html
   lab:
     - page: /labs/binary-trees.html
-  notes: ../eboards/eboard39.html
+  todo:
+    - Don't forget to add code to draw a tree
+
+- topic: Project kickoff
+  abbrev: final-project
+  summary: |
+    We introduce the final project for the semester.
+  reading:
+    - page: /mps/mp09.html
 
 - topic: Tree recursion
   abbrev: tree-recursion
@@ -427,12 +390,34 @@
     - page: /readings/binary-search-trees.html
   lab:
     - page: /labs/tree-recursion.html
-  notes: ../eboards/eboard40.html
+
+- topic: Project work day
+  abbrev: project-work-day-1
+  summary: |
+    We provide class time for students to work on their projects.
+
+- topic: Sorting out sorting
+  abbrev: sorting
+  summary: |
+    We dive into an important problem: Arranging the values in a list or vector.
+
+- topic: Project work day
+  abbrev: project-work-day-2
+  summary: |
+    We provide class time for students to their projects.
+
+- topic: "Case study: sorting"
+  abbrev: sorting-lab
+  summary: |
+    We ground our exploration of sorting in some details.
+  reading:
+    - page: /readings/sorting.html
+  lab:
+    - page: /labs/sorting.html
 
 - topic: Project presentations
   abbrev: presentations
   summary: Students present their projects
-  notes: ../eboards/eboard41.html
 
 - topic: Wrapup
   abbrev: wrapup
@@ -446,15 +431,6 @@
     only work I will accept at this point will be redos of mini-projects
     and learning assessments from SoLA 5.
 
-- topic: "Case study: sorting"
-  abbrev: sorting
-  summary: |
-    We dive into a related problem: sorting the elements of a sequence.
-  reading:
-    - page: /readings/sorting.html
-  nolab:
-    - page: /labs/sorting.html
-
 - topic: Turtle graphics
   abbrev: turtle
   summary: |  
@@ -466,4 +442,7 @@
     - page: /readings/turtle-graphics.html
   lab:
     - page: /labs/turtle-graphics.html
+  todo:
+    - All new! (or all revised from a few years ago)
+    - Will we ever find time to include this in the new version of the course?
 
