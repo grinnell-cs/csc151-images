@@ -404,7 +404,7 @@ I'm confused about the grading scheme.  Could you explain more?
 
 > Broad overview: To succeed in the class, you must do the learning assessments (LAs) and projects (MPs and the final project).  Since not everyone learns at the same rate, you will have the opportunity to make additional attempts at  LAs (although with new problems) and projects.  In addition, you must keep up with regular work for the class: readings (and reading responses), labs (and lab writeups), and reflections.  If you keep up with the work and achieve appropriate results on the LAs and projects by the end of the semester, you are likely to do well in the course.  Additional details are found above and in [the page on grading](../handouts/grading).  
 
-> If that's not enough information, feel free to ask questions about particlar points.
+> If that's not enough information, feel free to ask questions about particular points.
 
 I plan to leave early for Spring break and won't be in class on Friday, 15 March 2024. What are the penalties for missing that class?
 
@@ -412,7 +412,7 @@ I plan to leave early for Spring break and won't be in class on Friday, 15 March
 
 >  However, you will not be able to take the quiz that day, which means that you will have to complate that learning assessment in one of the following SoLAs.  In addition, you are responsible for making up the work from class on your own, and you are still responsible for turning in that labs.
 
-I have an accommodation that gives me extra time on in-class exams.  What should I do about the Friday LA quizzes.
+I have an accommodation that gives me extra time on in-class exams.  What should I do about the Friday LA quizzes?
 
 > I am happy to give those to you at 8:00 a.m. on Fridays.
 
