@@ -57,26 +57,29 @@ Phase 1
 * [Tracing](tracing.html)
 * [Conditionals](conditionals.html)
 * [Collaboration](collaboration.html)
-* [Documentation](documentation.html)
-* [Testing](testing.html)
 
 Phase 2
 
-* [Use higher-order procedures](hop.html)
+* [Documentation](documentation.html)
+* [Testing](testing.html)
+* [Lambda-free anonymous procedures](hop.html)
 * [Lists](lists.html)
-* [List recursion](list-recursion.html)
 * [Program style](program-style.html)
-* [Local bindings](local-bindings.html)
-* [Numeric recursion](numeric-recursion.html)
-* [Mental models of memory](memory.html)
-* [Vectors](vectors.html)
+* Ethics
 
 Phase 3
 
+* [List recursion](list-recursion.html)
+* [Local bindings](local-bindings.html)
+* [Numeric recursion](numeric-recursion.html)
+* [Diagramming structures](memory.html)
+* [Vectors](vectors.html)
 * [Randomness](randomness.html)
+
+Phase 4
+
 * [Dictionaries](dictionaries.html)
 * [Data abstraction](data-abstraction.html)
-* Ethics
 * [Higher-order programming](write-hop.html)
 * [Tree recursion](tree-recursion.html)
 * [Running time](running-time.html)
