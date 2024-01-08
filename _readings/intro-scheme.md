@@ -111,7 +111,7 @@ numbers, strings (text), and lists of values.  Of course, these are
 not the only types it supports.  Some additional types are available
 through separate libraries.  For example, it is comparatively
 straightforward to get Scheme to draw simple shapes if you
-add `(import image)` to the top of the interactions pane.
+add `(require 2htdp/image)` to the top of the interactions pane.
 
 ```racket
 > (circle 60 "outline" "blue")
