@@ -77,9 +77,9 @@ See the [learning assessment page]({{ "las" | relative_url }}) for specific deta
 Class participation and attendance
 ----------------------------------
 
-I realize that there are other exceptional circumstances, such as academic and athletic responsibilities that call you away from Grinnell.  If you provide appropriate notification, I am likely to excuse such absences.  However, I do expect you to limit excused absences.
+I realize that there are other exceptional circumstances, such as academic and athletic responsibilities that call you away from Grinnell.  If you provide appropriate notification, I am likely to excuse such absences.  However, I do expect you to limit excused absences. 
 
-**If you miss class for any reason, you are responsible for notifying me.** You may, but need not, specify the reason for the absence.  I would prefer that you notify me via email before the class period (or before the end of the class period).  If that is not possible, you should notify me via email by 5 p.m. on the day that you missed class.  With very few exceptions, I will not excuse an absence if you do not notify me of within this time frame.  I expect that you will notify me, even if your absence is unlikely to qualify as an excused absence.  Absences without notification have greater consequence to your grade than absences with notification.
+**If you miss class for any reason, you are responsible for notifying me.** You may, but need not, specify the reason for the absence.  I would prefer that you notify me via email before the class period (or before the end of the class period).  If that is not possible, you should notify me via email by 5 p.m. on the day that you missed class.  With very few exceptions, I will not excuse an absence if you do not notify me of within this time frame.  I expect that you will notify me, even if your absence is unlikely to qualify as an excused absence.  Absences without notification have greater consequence to your grade than absences with notification. In particular, you will be charged tokens for each unexcused absence.
 
 ### Expected absences
 
@@ -115,4 +115,4 @@ You will submit your lab writeups via Gradescope.
 
 As noted above, Lab writeups are generally graded with a satisfactory (S/1) or unsatisfactory (U/0) binary.  Your write up is acceptable if it includes a solution or evidence of serious effort for each assigned exercise.  Your writeup is unacceptable if it was not turned in, if there was no evidence of reasonable effort, of if your answer is incorrect and you do not note that you realize it is incorrect.  If you were not able to complete an exercise because of its difficulty, your work is still acceptable if you explain where you got stuck and come talk to me to get help.  So, in case it's not clear, *every diligent student will earn full credit for lab writeups*.
 
-In some cases, the lab writeups will have auto-graders that report potential problems in your code.  The auto-graders will not be comprehensive, but they will help you understand potential problems.  And, as noted, if you can't get a problem and you come talk to me, you can still earn credit for the lab writeup.
+In some cases, the lab writeups will have auto-graders that report potential problems in your code.  The auto-graders will not be comprehensive, but they will help you understand potential isues.  And, as noted, if you can't understand a problem and you come talk to me, you can still earn credit for the lab writeup.
