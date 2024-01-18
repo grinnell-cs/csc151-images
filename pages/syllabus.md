@@ -126,8 +126,6 @@ Basic knowledge about solving problems computationally is useful in careers invo
 + Like learning a foreign language, learning in this course is cumulative: new ideas often build on ideas from earlier. If you feel like you've missed something important, please get in touch with the course staff as soon as possible for assistance!
 + Computers have no common sense or compassion. They are complex, and sometimes they do things we don't expect.  When things go wrong, don't blame yourself.  Ask your instructor, your mentor, or a tutor for help.
 
-We are also using software developed at Grinnell and may still have some bugs lurking within. Thus, you should develop a habit of saving your work frequently!
-
 ## Time and workload
 
 Grinnell has indicated that a 4-credit course, like this one, should involve approximately 180 hours of work, which matches some guidance from the U.S. government. Across a 14-week term (plus a week of finals), that ends up being approximately 12 hours of work per week. We have not been able to get anyone to answer the question of "180 hours *for whom* and *for what grade*?", but some of us have been given the impression that we should strive for that workload for the "average" student in a course who seeks to earn a B.
