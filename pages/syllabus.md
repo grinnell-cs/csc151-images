@@ -348,8 +348,6 @@ Furthermore, while you retain [copyright](https://www.plagiarism.org/blog/2017/0
 
 I recognize that there are times where you want to do this, *e.g.*, uploading projects to Github for your resume or to show to friendds and family, and so I encourage you come talk to me in advance, so that we can ensure that you upload a meaningful project that does not run afoul of this policy.
 
-ITS has released and then temporarily withdrawn policies that may limit your ability to share your work with others.  I consider those policies inappropriate for many reasons.  The CS department managed to convince the College to revisit them, but we are not sure what the new policies will look like.  Stay tuned.
-
 **AI programming assistants**
 
 Please avoid the use of AI-based programming assistants, such as ChatGPT or Microsoft IntelliCode in this course.
@@ -364,15 +362,15 @@ This may be your first semester using Gradescope.  Gradescope does some things w
 
 **Multiple sections**
 
-There are multiple sections of this course.  While the instructors and mentors will take generally similar approaches to the material, you'll see that there are differences.  These differences should not affect your overall learning in the course.
+There are multiple sections of this course. While the instructors and mentors will take generally similar approaches to the material, you'll see that there are differences. These differences should not affect your overall learning in the course.
 
 **Feeling overwhelmed**
 
-You may feel a bit overwhelmed by this point. I know that I do after re-reading it.  But **don't worry**.  CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic. (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
+You may feel a bit overwhelmed by this point. I know that I do after re-reading it. **Don't worry**. CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic. (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
 
 ## Frequently (and not-so-frequently) asked questions
 
-I'm confused about the grading scheme.  Could you explain more?
+I'm confused about the grading scheme. Could you explain more?
 
 > In short: The grading scheme is designed to assess you on what you've learned, not when in the semester you've learned it.  There's also a strong incentive built in for you to keep up with the work.  Doing regular work, even if it's not perfect, and receiving feedback on that work, is one of the best ways to learn.
 
@@ -386,7 +384,7 @@ I plan to leave early for Spring break and won't be in class on Friday, 15 March
 
 > However, you will not be able to take the quiz that day, which means that you will have to complate that learning assessment in one of the following SoLAs.  In addition, you are responsible for making up the work from class on your own, and you are still responsible for turning in that labs.
 
-I have an accommodation that gives me extra time on in-class exams.  What should I do about the Friday LA quizzes.
+I have an accommodation that gives me extra time on in-class exams. What should I do about the Friday LA quizzes.
 
 > Please chat with me.
 
@@ -394,7 +392,7 @@ I did not achieve a grade of S on one of the in-class-only learning assessments.
 
 > I am happy to give those to you at 4:00 p.m. on the next Friday.
 
-I need a mental health day.  What should I do?
+I need a mental health day. What should I do?
 
 > Send me an email message telling me that you need a mental health day. Plan to make up the lab on your own and submit it before the next class. If you need extra time for the lab, you'll need to use a [token](../handouts/tokens).
 
@@ -402,4 +400,4 @@ I need a mental health day.  What should I do?
 
 If I ask a question about the course, will it end up here?
 
-> Perhaps.  It will depend on a variety of issues, such as whether I consider it of general interest and whether I have time to update the syllabus.
+> Perhaps. It will depend on a variety of issues, such as whether I consider it of general interest and whether I have time to update the syllabus.
