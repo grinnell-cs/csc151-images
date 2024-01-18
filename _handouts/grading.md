@@ -4,7 +4,7 @@ section: handouts
 ---
 # {{ page.title }}
 
-The [syllabus](../home/syllabus) summarizes the basic approach for grading of various course components.  This document provides a bit more detail on how we will be grading this particular class.  We have borrowed many of the processes and much of the language from our colleague, Peter-Michael Osera.
+The [syllabus](../syllabus) summarizes the basic approach for grading of various course components.  This document provides a bit more detail on how we will be grading this particular class.  We have borrowed many of the processes and much of the language from our colleague, Peter-Michael Osera.
 
 Late assignments
 ----------------
