@@ -55,7 +55,7 @@ We believe that mastery of learning goals earned later in the course is just as 
 + Each **lab exercise** is due before the next class.  If you need to turn in a lab exercise past this deadline, you will need to use a token to do so.  You will find that you complete most labs by the end of the class period, so we encourage you to submit them as soon as you complete them.
 + **Quizzes** take place at the start of class on Fridays. 
 + **Mini-Projects** are due weekly on Tuesday evenings at 10:00 p.m..  You may also submit a re-do of a previous week's mini-project.  Except in rare cases, you will only get one re-do per mini-project.  (Yes, you can use tokens for more.)
-+ **Learning assessments** are released approximately every three weeks (except for LAs 4 and 5) and close about **1 day** after they are released.
++ **Set of learning assessments** are released approximately every three weeks (except for SoLAs 4 and 5) and close about **1 day** after they are released.
 
 In all cases, deadlines are *set in stone and non-negotiable* unless we have made prior arrangements or extenuating circumstances arise as described earlier in the syllabus.  Note that if you miss a deadline for whatever reason, you have ample opportunity to make up the work as long as you are proactive about make-up, *e.g.*, by using a token or waiting until the next window or assessment period.
 
@@ -70,7 +70,7 @@ Please review the [notes on redos](../handouts/redos) for further details.
 Learning assessments
 --------------------
 
-Learning assessment (LA) are, in essence, exams each of whose problems correspond to one of the learning objects of the course.  Every LA features problems for every learning objective covered in the course up to that point.  Ultimately, your goal is to show mastery for every learning objective by earning a satisfactory grade on a learning goal's associated problem during a LA.  Once you have shown mastery for a learning objective, you do not need to do it again.  For example, if the first set of learning assessments has two problems corresponding to objectives *P* and *Q* and you earn a satisfactory for *P* but not *Q*, you do not need to complete problems associated with goal *P* in later assessments.  However, you have the opportunity to demonstrate mastery for *Q* by completing a problem corresponding to goal *Q* in a future set of learning assessments.
+Sets of Learning Assessments (SoLsA) are, in essence, exams each of whose problems correspond to one of the learning objects of the course.  Every SoLA features a learning assessment (LA) for every learning objective covered in the course up to that point.  Ultimately, your goal is to show mastery for every learning objective by earning a satisfactory grade on a learning goal's associated problems, which you may do on Friday quizzes or on SoLAs.  Once you have shown mastery for a learning objective, you do not need to do it again.  For example, if the first set of learning assessments has two problems corresponding to objectives *P* and *Q* and you earn a satisfactory for *P* but not *Q*, you do not need to complete problems associated with goal *P* in later assessments.  However, you have the opportunity to demonstrate mastery for *Q* by completing a problem corresponding to goal *Q* in a future set of learning assessments.
 
 See the [learning assessment page]({{ "las" | relative_url }}) for specific details of LAs for this course.
 
