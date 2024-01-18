@@ -336,9 +336,9 @@ Keep in mind that *adaptation of pre-existing code* whether it comes from a peer
 
 In all cases, the work that you produce should be your own.  In general, you should be capable of reproducing any part of your deliverable with minimal effort if it was accidentally deleted.
 
-If you feel that the stress and pressure of the course or the semester are leading you to consider violating the academic honesty policies of the course and the College as explained in the [student handbook](https://catalog.grinnell.edu/content.php?catoid=12&navoid=2537#Honesty _in_Academic_Work), **please talk to me as soon as possible**.  The course's grading policies as designed to help you manage your time in light of the different stressors in your life.  I will do my best to work with you to figure out how to help you better manage your time relative to your learning goals and desired achievement level for the course.
+If you feel that the stress and pressure of the course or the semester are leading you to consider violating the academic honesty policies of the course and the College as explained in the [student handbook](https://catalog.grinnell.edu/content.php?catoid=12&navoid=2537#Honesty _in_Academic_Work), **please talk to me as soon as possible**.  The course's grading policies are designed to help you manage your time in light of the different stressors in your life.  I will do my best to work with you to figure out how to help you better manage your time relative to your learning goals and desired achievement level for the course.
 
-And just if that wasn't enough, you should check out [my extended statement on academic honesty and integrity](../handouts/academic-honesty).
+And just if that wasn't enough, you should check out [my extended statement on academic honesty and integrity](../handouts/academic-integrity).
 
 **Sharing of course materials**
 
