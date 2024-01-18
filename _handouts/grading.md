@@ -4,7 +4,7 @@ section: handouts
 ---
 # {{ page.title }}
 
-The [syllabus](../home/syllabus) summarizes the basic approach for grading of various course components.  The [narrative on teaching and learning](../handouts/teaching) provides some general perspectives on how I teach, how I hope you learn, and how I grade.  This document provides a bit more detail on how I will be grading this particular class.  I have borrowed most of the processes and much of the language from my colleague, Peter-Michael Osera
+The [syllabus](../home/syllabus) summarizes the basic approach for grading of various course components.  This document provides a bit more detail on how we will be grading this particular class.  We have borrowed many of the processes and much of the language from our colleague, Peter-Michael Osera.
 
 Late assignments
 ----------------
@@ -31,11 +31,11 @@ Rather than using a point-based system which obscures these two dimensions, we c
 Mini-projects are graded on a four-point scale:
 
 +   **Excellent/Exemplary (E)**
-    -   Complete understanding of the material is evident.
     -   Exhibits no errors and can serve as an exemplar solution for the course.
+    -   Complete understanding of the material is evident.
 +   **Meets Expectations (M)**
-    -   Complete understanding of the material is evident without the need for further revision.
-    -   Exhibits some minor errors that warrants revision but are covered by comments.
+    -   May exhibit a few minor errors.
+    -   Complete understanding of the material is evident (potentially in spite of some minor errors).
 +   **Needs Revision (R)**
     -   Limited understanding of the material is evident.
     -   Exhibits many minor errors or one or more major errors that necessitate revision.
@@ -55,7 +55,7 @@ We believe that mastery of learning goals earned later in the course is just as 
 + Each **lab exercise** is due before the next class.  If you need to turn in a lab exercise past this deadline, you will need to use a token to do so.  You will find that you complete most labs by the end of the class period, so we encourage you to submit them as soon as you complete them.
 + **Quizzes** take place at the start of class on Fridays. 
 + **Mini-Projects** are due weekly on Tuesday evenings at 10:00 p.m..  You may also submit a re-do of a previous week's mini-project.  Except in rare cases, you will only get one re-do per mini-project.  (Yes, you can use tokens for more.)
-+ **Learning assessments** are released approximately every three weeks (except for LAs 4 and 5) and close **1 day** after they are released.
++ **Learning assessments** are released approximately every three weeks (except for LAs 4 and 5) and close about **1 day** after they are released.
 
 In all cases, deadlines are *set in stone and non-negotiable* unless we have made prior arrangements or extenuating circumstances arise as described earlier in the syllabus.  Note that if you miss a deadline for whatever reason, you have ample opportunity to make up the work as long as you are proactive about make-up, *e.g.*, by using a token or waiting until the next window or assessment period.
 
@@ -63,7 +63,7 @@ You will turn in your work for this course on [Gradescope](../handouts/gradescop
 
 **Revising mini-projects**
 
-You may submit any mini-projects that have either an **M** or **R** grade for revision once without spending any tokens.  Revisions are graded as entirely new submissions, so it is essential to check that your revised work fixes all outstanding issues raised in the feedback. Finally, if you earn an **I** on a mini-project, you will need to spend a token to revise it, so please ensure that the mini-projects you turn in represent your best work!
+You may submit any mini-projects that have either an **M** or **R** grade for revision _once_ without spending any tokens.  Revisions are graded as entirely new submissions, so it is essential to check that your revised work fixes all outstanding issues raised in the feedback. Finally, if you earn an **I** on a mini-project, you will need to spend a token to revise it, so please ensure that the mini-projects you turn in represent your best work!
 
 Please review the [notes on redos](../handouts/redos) for further details.
 
