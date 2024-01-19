@@ -29,6 +29,10 @@ instructor_email: perlmutter@grinnell.edu
 meeting_times: |
   MWF 2:30&ndash;3:50 PM CT in Science 3813
 
+meeting_start_time: 2:30 PM
+
+evening_due_time: 10:00 PM
+
 office_hours:
   - TBD
 
