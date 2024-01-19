@@ -41,7 +41,7 @@ The objectives may change slightly during the semester as the schedule shifts.
 
 **Programming problems**
 
-For programming problems in learning assessments, we are concerned primarily with correctness rather than design.  Make sure that your program works according to the specification outlined in the problem by testing it on a variety of inputs.  Pay attempt to the prompt for guidance about what aspects of design you need to include in your program, *e.g.*, documentation or explicit test suites.
+For programming problems in learning assessments, we are concerned primarily with correctness rather than design.  Make sure that your program works according to the specification outlined in the problem by testing it on a variety of inputs.  Pay attention to the prompt for guidance about what aspects of design you need to include in your program, *e.g.*, documentation or explicit test suites.
 
 **Written problems**
 
