@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+import yaml
+
+if __name__ == '__main__':
+  config = yaml.load(open('_config.yml'), Loader=yaml.FullLoader)
+  
+  if 'deploy_dir' not in config or 'deploy_ssh' not in config:
+    print('_config.yml does not specify deploy_dir or deploy_ssh')
+    exit(2)
+  
+  os.system('tasks/build')
+  os.system('rsync -rtz --rsync-path="mkdir -p {0} && rsync" _site/ {1}:{0}'.format(config['deploy_dir'], config['deploy_ssh']))

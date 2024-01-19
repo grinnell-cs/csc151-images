@@ -8,6 +8,10 @@ title: CSC 151
 baseurl: /teaching/2024S/CSC_151_02/
 url: https://perlmutter.cs.grinnell.edu/teaching/2024S/CSC_151_02/
 
+# deploy settings
+deploy_ssh: reclaim
+deploy_dir: ~/public_html//teaching/2024S/CSC_151_02/
+
 # Are we online?  If not, we're in person.  (Some of the lab instructions are
 # affected by this choice.)
 online: false
@@ -19,11 +23,8 @@ term: false
 color: purple
 
 instructor: Leah Perlmutter
-
 instructor_title: Professor Perlmutter
-
 instructor_homepage: https://perlmutter.cs.grinnell.edu
-
 instructor_email: perlmutter@grinnell.edu
 
 meeting_times: |
