@@ -11,7 +11,7 @@ collaboration: |
   need to cite course pages you were instructed to read for this assignment.
 submitting: |
   Please submit your responses on Gradescope.
-link: true 
+link: false
 ---
 # {{ page.title }}
 
