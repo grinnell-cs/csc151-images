@@ -107,9 +107,6 @@ By the end of this course, you should be able to:
 + Read and write computer programs *in the small* in the Scheme programming language.
 + Solve problems using design strategies from functional programming: functional decomposition, computational pipelines, recursive decomposition, and higher-order programming.
 + Carry out the basics of the software engineering process: design, documentation, development, testing, and debugging.
-
-In addition to these primary outcomes, we also expect you will take away more general skills and knowledge related to the discipline:
-
 + Describe the benefits of collaboration in problem-solving and employ best-practices when working in groups.
 
 **Problem domain: Image making and manipulation**
