@@ -275,7 +275,7 @@ Our grading system offers flexibility.  However, it adds a cost of giving the il
 
 We encourage you to also preemptively come to any member of the course staff---the instructor, the course mentor, our Peer Education Coordinator---for help and guidance if you feel like you are falling behind. However, to be more clear about when you might be falling behind in the course, I will do my best to track the following _course breakpoints_ in your progress. In particular, when one of the following situations occurs, I will follow up with you as well as academic advising (via an academic alert) to check in. 
 
-* You miss two or more days of classes in a row (for any reason).
+* You miss three or more days of classes in a row (for any reason).
 * You have used all of your tokens.
 * You receive an I on a mini-project.
 * You do not turn in a revision for a mini-project graded as an R.
@@ -308,6 +308,9 @@ However, there are some useful textbooks and references you may want to bookmark
 
 To help expedite your learning, you can rely on me, our class mentor, and your peers as outlets in this course.
 
+If you are even unsure about whether you are seeking the "right" kind of help, ask yourself: **Am I getting help in a way that supports my learning?** Or does it undermine my learning to get correct answers faster?
+
+
 **The Instructor, course staff, and other resources**
 
 When contacting the course staff, please use direct messages (DM) on Microsoft Teams. While we will generally not respond immediately---we generally check our messages at fixed times throughout the day---we will prioritize responses to student questions over Teams versus queries sent through other means, *e.g.*, email.
@@ -318,7 +321,7 @@ The CS department provides **evening tutors** from 7--10 p.m. most nights of the
 
 The CS department also provides **individual tutors** as needed.  If you find yourself struggling with the material, please let me know and I'll work with our peer education coordinator to get one assigned to you.
 
-Finally, if you would like to discuss things in more detail---course content, more general questions about computer science, or other things---feel free to schedule a meeting with me, either [during office hours](https://bit.ly/book-samr) or, if those don't work, by sending me a message with available times.
+Finally, if you would like to discuss things in more detail---course content, more general questions about computer science, or other things---feel free to schedule a meeting with me, either during office hours or, if those don't work, by sending me a message with available times.
 
 Note that if I find that you have fallen behind on assignments or are showing difficulty on quizzes or learning assessments, I will invite you to meet with me.  Please accept those invitations; they are intended to be supportive, not punative.
 
@@ -336,8 +339,6 @@ Keep in mind that *adaptation of pre-existing code* whether it comes from a peer
 In all cases, the work that you produce should be your own.  In general, you should be capable of reproducing any part of your deliverable with minimal effort if it was accidentally deleted.
 
 If you feel that the stress and pressure of the course or the semester are leading you to consider violating the academic honesty policies of the course and the College as explained in the [student handbook](https://catalog.grinnell.edu/content.php?catoid=32&navoid=5208#Honesty_in_Academic_Work), **please talk to me as soon as possible**.  The course's grading policies are designed to help you manage your time in light of the different stressors in your life.  I will do my best to work with you to figure out how to help you better manage your time relative to your learning goals and desired achievement level for the course.
-
-And just if that wasn't enough, you should check out [my extended statement on academic honesty and integrity](../handouts/academic-integrity).
 
 **Sharing of course materials**
 
@@ -389,7 +390,7 @@ I have an accommodation that gives me extra time on in-class exams. What should 
 
 I did not achieve a grade of S on one of the in-class-only learning assessments.  How do I make that up?
 
-> I am happy to give those to you at 4:00 p.m. on the next Friday.
+> You can complete that LA in one of the following SoLAs. To lower your workload for the SoLAs, you should try to earn an S on as many in-class LAs as possible.
 
 I need a mental health day. What should I do?
 
