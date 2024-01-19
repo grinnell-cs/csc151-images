@@ -105,7 +105,7 @@ defaults:
   
   - scope:
       path: ""
-      type: assignments
+      type: mps
     values:
       link: false
       layout: assigned
