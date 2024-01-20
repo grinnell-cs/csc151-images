@@ -315,6 +315,17 @@ However, there are some useful textbooks and references you may want to bookmark
 + [Felleisen, Matthias, Findler, Robert Bruce, Flatt, Matthew and Krishnamurthi, Shriram, _How to Design Programs_ (2nd Edition), MIT Press 2018.](http://www.htdp.org)
    *A wonderful guide, particularly for later topics in the course like higher-order programming, re-factoring, and recursion.*
 
+### Installing DrRacket
+
+You should feel free to install DrRacket on your own computer. Note, however, that you will also need to install the library for CSC-151.
+
+* Download DrRacket from [the Racket download site](https://racket-lang.org/download/).
+* Follow the instructions.
+* Start DrRacket.
+* In the **Language** menu, select **Choose Language ...**. In the dialog box that appears, click on the radio button next to **The Racket Language**.
+Then click **OK**.  Finally, click **Run**.
+* From the **File** menu, select **Install Package ...**. In the window that appears, enter [https://github.com/grinnell-cs/csc151.git#main](https://github.com/grinnell-cs/csc151.git). Click **Install**. Eventually, a **Close** button should appear. Click that button. It will be your only notification that the installation succeeded.
+
 ## Help, collaboration, academic honesty, and academic integrity
 
 To help expedite your learning, you can rely on me, our class mentor, and your peers as outlets in this course.
@@ -393,17 +404,6 @@ This may be your first semester learning with Teams.  Things will likely mess up
 This may be your first semester using Gradescope.  Gradescope does some things well and some things less well.  Things will likely mess up from time to time.  That's okay; it's part of the process.  I'll make adjustments when you have difficulty.  I hope you'll accept my apologies when I do something wrong (or at least fail to adjust my processes to the way Gradescope thinks they should be done).
 
 I've taught Scheme for longer than most of you have been alive.  This is likely your first time encountering Scheme.  You will mess up from time to time.  Believe it or not, but I will, too.  (I'll be much faster at fixing and identifying problems, though; at least I hope I will be.) That's okay; mistakes are part of the process.
-
-### Installing DrRacket
-
-You should feel free to install DrRacket on your own computer. Note, however, that you will also need to install the library for CSC-151.
-
-* Download DrRacket from [the Racket download site](https://racket-lang.org/download/).
-* Follow the instructions.
-* Start DrRacket.
-* In the **Language** menu, select **Choose Language ...**. In the dialog box that appears, click on the radio button next to **The Racket Language**.
-Then click **OK**.  Finally, click **Run**.
-* From the **File** menu, select **Install Package ...**. In the window that appears, enter [https://github.com/grinnell-cs/csc151.git#main](https://github.com/grinnell-cs/csc151.git). Click **Install**. Eventually, a **Close** button should appear. Click that button. It will be your only notification that the installation succeeded.
 
 ### Multiple sections
 
