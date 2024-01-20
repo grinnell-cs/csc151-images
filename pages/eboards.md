@@ -3,8 +3,7 @@ title: EBoards
 permalink: /eboards/
 ---
 # EBoards
-Here you can find a record of what we talked about each day of class
-(more of less).
+Here you can find an approximate record of what we talked about each day of class.
 
 {% assign eboards = site.eboards | sort: 'held' | reverse %}
 {% for eboard in eboards %}
