@@ -112,15 +112,15 @@ In addition to these primary outcomes, we also expect you will take away more ge
 
 + Describe the benefits of collaboration in problem-solving and employ best-practices when working in groups.
 
-**Problem domain: Image making and manipulation**
+### Problem domain: Image making and manipulation
 
 Computational thinking and computational techniques can be applied to a wide variety of domains.  At Grinnell, we have a tradition of picking a domain or "theme" for each offering of CSC-151. The theme for this section is *image making and manipulation*. That is, we'll explore how to write programs that create new images (most often, abstract images) or that manipulate existing images to create new images. Along the way, we'll explore a variety of ways to think about images.
 
-**Why take CSC-151?**
+### Why take CSC-151?
 
 Basic knowledge about solving problems computationally is useful in careers involving *every* major and concentration offered at Grinnell. This course outfits you with some versatile concepts applicable to other programming languages and environments you will encounter in the wild. Many skills, particularly decomposition, are also applicable in a wide variety of other situations. Finally, you have the opportunity to be creative in many ways, from problem solutions to finding new approaches to data. Creativity is highly encouraged!
 
-**Important Notices**
+### Important Notices
 
 + Experience shows that CSC-151 exercises different parts of your brain than other courses (even other math and science courses). Expect some challenges, but have confidence that you can work through them and that you'll come out of the course with much more knowledge.
 + Like learning a foreign language, learning in this course is cumulative: new ideas often build on ideas from earlier. If you feel like you've missed something important, please get in touch with the course staff as soon as possible for assistance!
@@ -227,7 +227,7 @@ Note that I reserve the right to update requirements for grades as circumstances
 </tbody>
 </table>
 
-**Plus/minus grades**
+### Plus/minus grades
 
 If your two primary grades are at the same level, you will earn that letter as the base grade.  I hope that you will all demonstate learning at the A level.
 
@@ -237,7 +237,7 @@ Your grade may also be affected by missing reading problems, labs, metacognitive
 
 Note that Grinnell does not permit grades of C-, D+, or D-.  A grade below C and at least D will be recorded as a D.  A grade below a D will be recorded as an F.
 
-**Reading problems, laboratory assignments, and metacognitive reflections**
+### Reading problems, laboratory assignments, and metacognitive reflections
 
 You are allowed to miss up to **six total** reading problems, lab assignments, and metacognitive reflections in the semester without penalty.  If you miss more than six reading problems, labs, or reflections, your overall letter grade will be lowered by one-third of a letter grade for each two additional problems, labs, or reflections you miss. Excesses of one also result in a loss.  For example,
 
@@ -297,7 +297,7 @@ There are several software packages we use in this course both for learning how 
 
 Please make sure you can access all of these resources, and please let me know if you have any problems with access.
 
-**Books**
+### Books
 
 There is no required textbook for this course, as the material is written by Grinnell faculty and posted on the course website.
 However, there are some useful textbooks and references you may want to bookmark or keep handy.
@@ -311,7 +311,7 @@ However, there are some useful textbooks and references you may want to bookmark
 
 To help expedite your learning, you can rely on me, our class mentor, and your peers as outlets in this course.
 
-**The Instructor, course staff, and other resources**
+### The Instructor, course staff, and other resources
 
 When contacting the course staff, please use direct messages (DM) on Microsoft Teams. While we will generally not respond immediately---we generally check our messages at fixed times throughout the day---we will prioritize responses to student questions over Teams versus queries sent through other means, *e.g.*, email.
 
@@ -325,7 +325,7 @@ Finally, if you would like to discuss things in more detail---course content, mo
 
 Note that if I find that you have fallen behind on assignments or are showing difficulty on quizzes or learning assessments, I will invite you to meet with me.  Please accept those invitations; they are intended to be supportive, not punative.
 
-**Peer learning**
+### Peer learning
 
 Utilizing discussion with peers to facilitate your learning is a critical skill for success in computer science.  However, at the same time, you must be aware that getting stuck and pushing through challenging problems is essential for robust learning.  To this end, we allow the following forms of collaboration.
 
@@ -342,7 +342,7 @@ If you feel that the stress and pressure of the course or the semester are leadi
 
 And just if that wasn't enough, you should check out [my extended statement on academic honesty and integrity](../handouts/academic-integrity).
 
-**Sharing of course materials**
+### Sharing of course materials
 
 Our goal is to create an inclusive learning environment where people feel free to share, fail, and ultimately grow in knowledge.  To create such an environment, it is imperative that we be mindful of what we share outside of our learning space.  To this end, I request that you refraining from sharing any recordings of our class meetings with others.  Recordings of class meetings that we provide, *e.g.*, recorded through Microsoft Teams, are meant for your *personal use* and should not be shared outside of the class.
 
@@ -350,7 +350,7 @@ Furthermore, while you retain [copyright](https://www.plagiarism.org/blog/2017/0
 
 I recognize that there are times where you want to do this, *e.g.*, uploading projects to Github for your resume or to show to friendds and family, and so I encourage you come talk to me in advance, so that we can ensure that you upload a meaningful project that does not run afoul of this policy.
 
-**AI programming assistants**
+### AI programming assistants
 
 Please avoid the use of AI-based programming assistants, such as ChatGPT or Microsoft IntelliCode in this course.
 
