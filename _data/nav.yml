@@ -2,15 +2,20 @@
   path: /syllabus/
 - title: Schedule
   path: /schedule/
+- title: Eboards
+  path: /eboards/
 - title: LAs
   path: /las/
 - title: MPs
   path: /mps/
 - title: Handouts
   path: /handouts/
+- title: Reference
+  url: |
+    https://rebelsky.cs.grinnell.edu/Courses/CSC151/reference/
 - title: Teams
   url: |
-    https://teams.microsoft.com/l/team/19%3aXGAQeIKBfOEsC5pfpuy2hp0nOkxCZWJmjar8dJFqhbI1%40thread.tacv2/conversations?groupId=c9028bfc-2d62-4e8d-97fc-f2250544c73c&tenantId=524f9e3e-faca-4f64-b3ec-adb2baee8807
+    https://teams.microsoft.com/l/team/19%3aYdSgciv5Mx8WYULL7RVz-BlpxJEDbiRSXQSvaQtuoQM1%40thread.tacv2/conversations?groupId=24c067eb-1f6f-47b2-9206-3005c8ab387b&tenantId=524f9e3e-faca-4f64-b3ec-adb2baee8807
 - title: Gradescope
   url: |
-    https://www.gradescope.com/courses/561770
+    https://www.gradescope.com/courses/690100/
