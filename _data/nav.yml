@@ -8,6 +8,9 @@
   path: /mps/
 - title: Handouts
   path: /handouts/
+- title: Reference
+  url: |
+    https://rebelsky.cs.grinnell.edu/Courses/CSC151/reference/
 - title: Teams
   url: |
 
