@@ -374,6 +374,18 @@ Feel free to answer each others' questions.
 
 We understand that not all students are comfortable asking questions in public and that not all questions are appropriate for the whole class. Feel free to ask us questions via Teams chat, via email, and in person.
 
+### Office hours
+
+I have a different approach to office hours than most faculty. I prefer that you book my office hours in advance, rather than just showing up during office hours. You can book office hours at <https://bit.ly/book-samr>. In general, you should book a fifteen-minute slot unless you've discussed using a longer slot with me.
+
+You may, of course, show up during office hours without booking them. In those circumstances, I will be happy to meet with you if no one has booked the time or if someone finishes early. I am also often happy to meet with students outside my regular office hours. If my door is open, feel free to knock and ask.
+
+If my office hours do not work for you, I am happy to meet with you at other times. You can propose a meeting time with the Microsoft Scheduling Assistant. You can also email me. Please stick to the normal workday (8am to 5pm).
+
+I tend to respond to questions submitted on Teams (preferably on the Questions and Answers channel, but also sent via direct message) outside of office hours, including in the evening.
+
+I have some complex personal circumtances that may require that I hold office hours remotely or cancel office hours. I will do my best to keep you posted about such issues.
+
 ### Technology
 
 This may be your first semester learning with Teams.  Things will likely mess up from time to time.  That's okay; it's part of the process.
