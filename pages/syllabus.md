@@ -356,6 +356,16 @@ Please avoid the use of AI-based programming assistants, such as ChatGPT or Micr
 
 ## Other issues
 
+### Asking questions
+
+We prefer that you ask general questions in the Questions and Answers channel on Teams. Doing so helps ensure that everyone has access to the answers. If you ask us questions in other ways, we will encourage you to use the Q&A channel.
+
+We also prefer that you title your questions on Teams. After clicking "New Conversation", click on the icon with an A and a pencil. That will give you the opportunity to add a subject.  Click on the paper airplane in the lower-right-hand corner to post the question.
+
+Feel free to answer each others' questions.
+
+We understand that not all students are comfortable asking questions in public and that not all questions are appropriate for the whole class. Feel free to ask us questions via Teams chat, via email, and in person.
+
 ### Technology
 
 This may be your first semester learning with Teams.  Things will likely mess up from time to time.  That's okay; it's part of the process.
