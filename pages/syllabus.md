@@ -356,17 +356,17 @@ Please avoid the use of AI-based programming assistants, such as ChatGPT or Micr
 
 ## Other issues
 
-**Technology**
+### Technology
 
 This may be your first semester learning with Teams.  Things will likely mess up from time to time.  That's okay; it's part of the process.
 
 This may be your first semester using Gradescope.  Gradescope does some things well and some things less well.  Things will likely mess up from time to time.  That's okay; it's part of the process.  I'll make adjustments when you have difficulty.  I hope you'll accept my apologies when I do something wrong (or at least fail to adjust my processes to the way Gradescope thinks they should be done).
 
-**Multiple sections**
+### Multiple sections
 
 There are multiple sections of this course. While the instructors and mentors will take generally similar approaches to the material, you'll see that there are differences. These differences should not affect your overall learning in the course.
 
-**Feeling overwhelmed**
+### Feeling overwhelmed
 
 You may feel a bit overwhelmed by this point. I know that I do after re-reading it. **Don't worry**. CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic. (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
 
