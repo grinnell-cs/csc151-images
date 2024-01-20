@@ -360,7 +360,17 @@ Please avoid the use of AI-based programming assistants, such as ChatGPT or Micr
 
 ## Other issues
 
-**Technology**
+### Asking questions
+
+We prefer that you ask general questions in the Questions and Answers channel on Teams. Doing so helps ensure that everyone has access to the answers. If you ask us questions in other ways, we will encourage you to use the Q&A channel.
+
+We also prefer that you title your questions on Teams. After clicking "New Conversation", click on the icon with an A and a pencil. That will give you the opportunity to add a subject.  Click on the paper airplane in the lower-right-hand corner to post the question.
+
+Feel free to answer each others' questions.
+
+We understand that not all students are comfortable asking questions in public and that not all questions are appropriate for the whole class. Feel free to ask us questions via Teams chat, via email, and in person.
+
+### Technology
 
 This may be your first semester learning with Teams.  Things will likely mess up from time to time.  That's okay; it's part of the process.
 
@@ -368,11 +378,22 @@ This may be your first semester using Gradescope.  Gradescope does some things w
 
 I've taught Scheme for longer than most of you have been alive.  This is likely your first time encountering Scheme.  You will mess up from time to time.  Believe it or not, but I will, too.  (I'll be much faster at fixing and identifying problems, though; at least I hope I will be.) That's okay; mistakes are part of the process.
 
-**Multiple sections**
+### Installing DrRacket
+
+You should feel free to install DrRacket on your own computer. Note, however, that you will also need to install the library for CSC-151.
+
+* Download DrRacket from [the Racket download site](https://racket-lang.org/download/).
+* Follow the instructions.
+* Start DrRacket.
+* In the **Language** menu, select **Choose Language ...**. In the dialog box that appears, click on the radio button next to **The Racket Language**.
+Then click **OK**.  Finally, click **Run**.
+* From the **File** menu, select **Install Package ...**. In the window that appears, enter [https://github.com/grinnell-cs/csc151.git#main](https://github.com/grinnell-cs/csc151.git). Click **Install**. Eventually, a **Close** button should appear. Click that button. It will be your only notification that the installation succeeded.
+
+### Multiple sections
 
 There are multiple sections of this course. While the instructors and mentors will take generally similar approaches to the material, you'll see that there are differences. These differences should not affect your overall learning in the course.
 
-**Names**
+### Names
 
 I get names wrong.  I get names wrong all the time.  Evidence suggests that I am not just bad at remembering names, I also have some brain differencees that regularly lead me to mix up peoples' names.  I think, for example, of two of my favorite research students, one with blonde hair, from Minnesota, who also served as a teaching assistant for my software design course; the other with dark hair, from Massachusetts, who brought a wealth of background in education to my research projects.  I can tell you a lot about each student (although I wouldn't without their permission), including hobbies, where they studied abroad, what they are doing now (or at least what they were doing a year so so ago), and more.  But I inevitably reversed their names, calling Minnesota Massachusetts and Massachusetts Minnesota.
 
@@ -380,19 +401,17 @@ When I discussed this issue with my family, my sons laughed and said "Dad, you g
 
 If I use the wrong name for you, it is not a sign that I do not respect your or that I do not care about you.  It's a deficiency in my processing, and one that I seem unable to fix.  Please accept and understand that disability, just as I will do my best to accept and understand your own differences.
 
-**My health**
-
-I had a heart attack in spring 2021.  For my health, I am trying to limit my work hours to appropriate amounts, typically 40 hours per week.  I apologize if that means that I am not always caught up on my work or available at times you would like.
-
-I will also try to be respectful of your time.  Please let me know if you find yourself regularly spending more than twelve of so hours per week on this class, which is what the College considers appropriate for a four-credit course.  (We have four hours in class each week, we suggests that you have eight hours out-of-class for readings, review, and mini projects.)
-
-**Teaching is performative**
+### Teaching is performative
 
 I believe that all teaching is a form of performance.  That performance may not always be explicit.  Nonetheless, I perform a particular role, perhaps even roles.  In my roles, I may say some things that seem strange.  Remember; it's a performance.
 
-**Feeling overwhelmed**
+Note also that I am snarky by nature. I find that my teaching performances are more successful when they follow this nature. Remember, **snark is love**.
 
-You may feel a bit overwhelmed by this point. I know that I do after re-reading it. **Don't worry**. CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic. (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
+### Feeling overwhelmed
+
+You may feel a bit overwhelmed by this point. I know that I do after re-reading it. **Don't worry!**. CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic. (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
+
+I will also try to be respectful of your time.  Please let me know if you find yourself regularly spending more than twelve of so hours per week on this class, which is what the College considers appropriate for a four-credit course.  (We have four hours in class each week, we suggests that you have eight hours out-of-class for readings, review, and mini projects.)
 
 ## Frequently (and not-so-frequently) asked questions
 
