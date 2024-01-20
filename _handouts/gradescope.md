@@ -9,9 +9,8 @@ We will use [Gradescope](https://gradescope.com) for managing course submissions
 You should have already received an invite to our Gradescope site in your Grinnell email box.
 If not, please let a member of the course staff know, so we can get you set up.
 
-When signing up for Gradescope, please make sure that your password is strong, ideally fulfilling the requirements of Grinnell's password policies:
+When signing up for Gradescope, please make sure that your password is strong, ideally fulfilling the requirements of [Grinnell's password policies](https://grinco.sharepoint.com/sites/it/SitePages/Documentation/PasswordReset.aspx#password-policy).
 
-> <https://grinco.sharepoint.com/sites/IT/SitePages/PasswordRequirements.aspx>
 
 ## Turning In Work
 

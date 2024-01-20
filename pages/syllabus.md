@@ -167,7 +167,7 @@ Any student who has difficulty affording groceries or accessing sufficient food 
 
 There are many other ways in which it may be appropriate to adjust course policies and it is not possible to attempt to address them all in a few policies.  These may include other issues best addressed earlier in the semester (*e.g.*, student-athlete scheduling) or as they arise (*e.g.*, chronic health flare-ups).  I will do my best to be flexible in these cases with the overall goal of facilitating your growth in this course.  Please keep me informed!
 
-In some cases, I will recommend consulting with the Academic Advising staff. They are an excellent resource for developing strategies for academic success and can connect you with other campus resources as well: <http://www.grinnell.edu/about/offices-services/academic-advising>. If I notice that you are encountering difficulty, in addition to communicating with you directly about it, I will also likely submit an academic alert via Academic Advising's SAL portal. This reminds you of my concern, and it notifies the Academic Advising team and your advisor(s) so that they can reach out to you with additional offers of support.
+In some cases, I will recommend consulting with the [Academic Advising staff](http://www.grinnell.edu/about/offices-services/academic-advising). They are an excellent resource for developing strategies for academic success and can connect you with other campus resources as well. If I notice that you are encountering difficulty, in addition to communicating with you directly about it, I will also likely submit an academic alert via Academic Advising's SAL portal. This reminds you of my concern, and it notifies the Academic Advising team and your advisor(s) so that they can reach out to you with additional offers of support.
 
 ## Evaluation and grading
 
@@ -198,7 +198,9 @@ We rely on six kinds of work to assess your mastery of the material.
 
 *Metacognitive reflections* are intended to help you build your broader metacognitive skills and will generally ask you to reflect on what you expect from each project (assignment) or SoLA (exam) (e.g., "What will be the hardest part of this project?", "Which topic will you struggle most with on the SoLA?", "How can you best succeed on this SoLA?") and what you discovered from each project or SoLA (e.g., "What aspect of the project took you the most time and why?", "How can you do better on the next SoLA?").
 
-The details of and rationale for the policies are complex enough that I have moved them to [a separate document on grading](../handouts/grading).
+### Grading Scale and Policies
+
+The details of and rationale for the policies are complex enough that I have moved them to [a separate document on grading](../handouts/grading). It describes the EMRI grading scale and other things that might be useful to know before you continue reading below.
 
 ### Letter grades
 
@@ -315,7 +317,7 @@ To help expedite your learning, you can rely on me, our class mentor, and your p
 
 **The Instructor, course staff, and other resources**
 
-When contacting the course staff, please use direct messages (DM) on Microsoft Teams. While we will generally not respond immediately—--we generally check our messages at fixed times throughout the day—--we will prioritize responses to student questions over Teams versus queries sent through other means, *e.g.*, email.
+When contacting the course staff, please use direct messages (DM) on Microsoft Teams. While we will generally not respond immediately---we generally check our messages at fixed times throughout the day---we will prioritize responses to student questions over Teams versus queries sent through other means, *e.g.*, email.
 
 The **course mentor** also holds weekly *mentor sessions* outside of regular class time. In these sessions, the mentor guides you through practice problems designed to help you master the material and answer any questions you have about the material. **I highly recommend you attend each of these sessions**, even if you feel like you understand the material. You never know what you don't know, and the purpose of these sessions is to bring these blind spots to light!
 
@@ -323,7 +325,7 @@ The CS department provides **evening tutors** from 7--10 p.m. most nights of the
 
 The CS department also provides **individual tutors** as needed.  If you find yourself struggling with the material, please let me know and I'll work with our peer education coordinator to get one assigned to you.
 
-Finally, if you would like to discuss things in more detail—--course content, more general questions about computer science, or other things—--feel free to schedule a meeting with me, either [during office hours](https://bit.ly/book-samr) or, if those don't work, by sending me a message with available times.
+Finally, if you would like to discuss things in more detail---course content, more general questions about computer science, or other things---feel free to schedule a meeting with me, either [during office hours](https://bit.ly/book-samr) or, if those don't work, by sending me a message with available times.
 
 Note that if I find that you have fallen behind on assignments or are showing difficulty on quizzes or learning assessments, I will invite you to meet with me.  Please accept those invitations; they are intended to be supportive, not punative.
 
@@ -340,7 +342,7 @@ Keep in mind that *adaptation of pre-existing code* whether it comes from a peer
 
 In all cases, the work that you produce should be your own.  In general, you should be capable of reproducing any part of your deliverable with minimal effort if it was accidentally deleted.
 
-If you feel that the stress and pressure of the course or the semester are leading you to consider violating the academic honesty policies of the course and the College as explained in the [student handbook](https://catalog.grinnell.edu/content.php?catoid=12&navoid=2537#Honesty _in_Academic_Work), **please talk to me as soon as possible**.  The course's grading policies are designed to help you manage your time in light of the different stressors in your life.  I will do my best to work with you to figure out how to help you better manage your time relative to your learning goals and desired achievement level for the course.
+If you feel that the stress and pressure of the course or the semester are leading you to consider violating the academic honesty policies of the course and the College as explained in the [student handbook](https://catalog.grinnell.edu/content.php?catoid=32&navoid=5208#Honesty_in_Academic_Work), **please talk to me as soon as possible**.  The course's grading policies are designed to help you manage your time in light of the different stressors in your life.  I will do my best to work with you to figure out how to help you better manage your time relative to your learning goals and desired achievement level for the course.
 
 And just if that wasn't enough, you should check out [my extended statement on academic honesty and integrity](../handouts/academic-integrity).
 
@@ -351,8 +353,6 @@ Our goal is to create an inclusive learning environment where people feel free t
 Furthermore, while you retain [copyright](https://www.plagiarism.org/blog/2017/09/25/do-i-own-my-work-even-if-im-just-a-student) of the work you produce in this course, we must still uphold the academic integrity of this course.  To this end, you may not share copies of your assignments with others (unless otherwise allowed by the course policies) or upload your assignments to third party websites unless substantial changes are made to the assignment (*e.g.*, significant extensions and improvements to your code) so that it is clear that the end product is significantly different from what was asked in original assignment.
 
 I recognize that there are times where you want to do this, *e.g.*, uploading projects to Github for your resume or to show to friendds and family, and so I encourage you come talk to me in advance, so that we can ensure that you upload a meaningful project that does not run afoul of this policy.
-
-ITS has released and then temporarily withdrawn policies that may limit your ability to share your work with others.  I consider those policies inappropriate for many reasons.  The CS department managed to convince the College to revisit them, but we are not sure what the new policies will look like.  Stay tuned.
 
 **AI programming assistants**
 
@@ -370,7 +370,7 @@ I've taught Scheme for longer than most of you have been alive.  This is likely 
 
 **Multiple sections**
 
-There are multiple sections of this course.  While the instructors and mentors will take generally similar approaches to the material, you'll see that there are differences.  These differences should not affect your overall learning in the course.
+There are multiple sections of this course. While the instructors and mentors will take generally similar approaches to the material, you'll see that there are differences. These differences should not affect your overall learning in the course.
 
 **Names**
 
@@ -392,11 +392,11 @@ I believe that all teaching is a form of performance.  That performance may not 
 
 **Feeling overwhelmed**
 
-You may feel a bit overwhelmed by this point.  I know that I do after re-reading most of it and re-writing some of it.  But **don't worry**.  CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic. (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
+You may feel a bit overwhelmed by this point. I know that I do after re-reading it. **Don't worry**. CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic. (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
 
 ## Frequently (and not-so-frequently) asked questions
 
-I'm confused about the grading scheme.  Could you explain more?
+I'm confused about the grading scheme. Could you explain more?
 
 > In short: The grading scheme is designed to assess you on what you've learned, not when in the semester you've learned it.  There's also a strong incentive built in for you to keep up with the work.  Doing regular work, even if it's not perfect, and receiving feedback on that work, is one of the best ways to learn.
 
@@ -418,7 +418,7 @@ I did not achieve a grade of S on one of the in-class-only learning assessments.
 
 > I am happy to give those to you at 8:00 a.m. on the next Friday (or earlier, if necessary).
 
-I need a mental health day.  What should I do?
+I need a mental health day. What should I do?
 
 > Send me an email message telling me that you need a mental health day. Plan to make up the lab on your own and submit it before the next class. If you need extra time for the lab, you'll need to use a [token](../handouts/tokens).
 
@@ -426,7 +426,7 @@ I need a mental health day.  What should I do?
 
 If I ask a question about the course, will it end up here?
 
-> Perhaps.  It will depend on a variety of issues, such as whether I consider it of general interest and whether I have time to update the syllabus.
+> Perhaps. It will depend on a variety of issues, such as whether I consider it of general interest and whether I have time to update the syllabus.
 
 How do I book your office hours?
 

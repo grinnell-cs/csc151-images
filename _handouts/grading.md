@@ -4,7 +4,7 @@ section: handouts
 ---
 # {{ page.title }}
 
-The [syllabus](../home/syllabus) summarizes the basic approach for grading of various course components.  This document provides a bit more detail on how we will be grading this particular class.  We have borrowed many of the processes and much of the language from our colleague, Peter-Michael Osera.
+The [syllabus](../syllabus) summarizes the basic approach for grading of various course components.  This document provides a bit more detail on how we will be grading this particular class.  We have borrowed many of the processes and much of the language from our colleague, Peter-Michael Osera.
 
 Late assignments
 ----------------
@@ -113,6 +113,6 @@ Your writeup should include your solution to each assigned exercise.  If the exe
 
 You will submit your lab writeups via Gradescope.
 
-As noted above, Lab writeups are generally graded with a satisfactory (S/1) or unsatisfactory (U/0) binary.  Your write up is acceptable if it includes a solution or evidence of serious effort for each assigned exercise.  Your writeup is unacceptable if it was not turned in, if there was no evidence of reasonable effort, of if your answer is incorrect and you do not note that you realize it is incorrect.  If you were not able to complete an exercise because of its difficulty, your work is still acceptable if you explain where you got stuck and come talk to me to get help.  So, in case it's not clear, *every diligent student will earn full credit for lab writeups*.
+As noted above, Lab writeups are generally graded with a satisfactory (S/1) or unsatisfactory (U/0) binary.  Your write up is acceptable if it includes a solution or evidence of serious effort for each assigned exercise.  Your writeup is unacceptable if it was not turned in, if there was no evidence of reasonable effort, of if your answer is incorrect and you do not note that you realize it is incorrect.  If you were not able to complete an exercise because of its difficulty, your work is still acceptable if you explain where you got stuck and come talk to me to get help.  So, in case it's not clear, *every diligently completed lab writeup will receive full credit*.
 
 In some cases, the lab writeups will have auto-graders that report potential problems in your code.  The auto-graders will not be comprehensive, but they will help you understand potential isues.  And, as noted, if you can't understand a problem and you come talk to me, you can still earn credit for the lab writeup.
