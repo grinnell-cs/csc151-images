@@ -362,6 +362,17 @@ This may be your first semester learning with Teams.  Things will likely mess up
 
 This may be your first semester using Gradescope.  Gradescope does some things well and some things less well.  Things will likely mess up from time to time.  That's okay; it's part of the process.  I'll make adjustments when you have difficulty.  I hope you'll accept my apologies when I do something wrong (or at least fail to adjust my processes to the way Gradescope thinks they should be done).
 
+### Installing DrRacket
+
+You should feel free to install DrRacket on your own computer. Note, however, that you will also need to install the library for CSC-151.
+
+* Download DrRacket from [the Racket download site](https://racket-lang.org/download/).
+* Follow the instructions.
+* Start DrRacket.
+* In the **Language** menu, select **Choose Language ...**. In the dialog box that appears, click on the radio button next to **The Racket Language**.
+Then click **OK**.  Finally, click **Run**.
+* From the **File** menu, select **Install Package ...**. In the window that appears, enter [https://github.com/grinnell-cs/csc151.git#main](https://github.com/grinnell-cs/csc151.git). Click **Install**. Eventually, a **Close** button should appear. Click that button. It will be your only notification that the installation succeeded.
+
 ### Multiple sections
 
 There are multiple sections of this course. While the instructors and mentors will take generally similar approaches to the material, you'll see that there are differences. These differences should not affect your overall learning in the course.
