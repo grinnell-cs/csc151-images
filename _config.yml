@@ -33,6 +33,10 @@ meeting_start_time: 8:30 AM
 
 evening_due_time: 11:00 PM
 
+meeting_start_time: 2:30 PM
+
+evening_due_time: 10:00 PM
+
 office_hours:
   - TBD
 
