@@ -280,7 +280,7 @@ The regular status reports will include information on tokens.
 
 Please read [the handout on tokens](../handouts/tokens) for more details.
 
-## Course breakpoints
+### Course breakpoints
 
 Our grading system offers flexibility.  However, it adds a cost of giving the illusion that if you fall behind in your work, there is always an opportunity to catch up. While this is true in theory, in practice, it is difficult to do so in many situations because of personal issues, competing courses, extracurricular obligations, etc. This flexibility also makes it difficult---for both you and me---to determine when you have fallen behind in the course and need external help whether that it is from the course staff, tutors, or academic advising.
 
