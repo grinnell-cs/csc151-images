@@ -116,6 +116,8 @@ In addition to these primary outcomes, we also expect you will take away more ge
 
 Computational thinking and computational techniques can be applied to a wide variety of domains.  At Grinnell, we have a tradition of picking a domain or "theme" for each offering of CSC-151. The theme for this section is *image making and manipulation*. That is, we'll explore how to write programs that create new images (most often, abstract images) or that manipulate existing images to create new images. Along the way, we'll explore a variety of ways to think about images.
 
+**Note**: We have a new image-making library this semester (Spring 2024), one that differs from the library we've used in past semester. If you see a reference to `2htdp/image` or one of the procedures doesn't work the way you expect, please let us know.
+
 ### Why take CSC-151?
 
 Basic knowledge about solving problems computationally is useful in careers involving *every* major and concentration offered at Grinnell. This course outfits you with some versatile concepts applicable to other programming languages and environments you will encounter in the wild. Many skills, particularly decomposition, are also applicable in a wide variety of other situations. Finally, you have the opportunity to be creative in many ways, from problem solutions to finding new approaches to data. Creativity is highly encouraged!
