@@ -47,12 +47,12 @@ You'd think the [syllabus](../syllabus) and [schedule](../schedule) would provid
   : Some notes on why I discourage the use of AI programming assistants in my introductory classes.
 -->
 
-[Notes on taking notes](taking-notes)
-  : Some tips on taking notes.
-
-[Pre-Assessments and Post-Assessments](prepost)
+[Metacognitive reflections (Pre-reflections and Post-reflection](prepost)
   : Advance warning of the questions we will ask before and after each 
     mini-project and SoLA.
+
+[Notes on taking notes](taking-notes)
+  : Some tips on taking notes.
 
 [Tips on working more productively](working-tips)
   : Some tips from students, mentors, and instructors.
