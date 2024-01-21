@@ -5,13 +5,7 @@ summary: Notes on the extra work Sam asks you to do
 ---
 # {{ page.title }}
 
-We ask you to fill out a short reflection before and after each major
-assignment ("mini project") and exam ("SoLA").  These surveys suggest the kinds
-of questions that I think you should be asking yourself before and after each
-major assignment and exam in any class you take.  They also help inform me of 
-potential issues that I might address (e.g., if everyone takes too long on an
-assignment, or everyone indicates potential confusion about a topic).  They may
-evolve a bit as the semester progresses.
+We ask you to fill out a short reflection before and after each major assignment ("mini project") and exam ("SoLA"). These reflections suggest the kinds of questions that I think you should be asking yourself before and after each major assignment and exam in any class you take. They also help inform me of potential issues that I might address (e.g., if everyone takes too long on an assignment, or everyone indicates potential confusion about a topic). They may evolve a bit as the semester progresses.
 
 You can find the pre- and post-reflections on Gradescope.  Note that filling them out is _required_.
 
@@ -30,7 +24,7 @@ Q4 Resources
   : What resources (e.g., individual procedures you've written, readings, labs) will be helpful as you work on this assignment?
 
 Q5 Missing pieces
-  : What open questions do you have?  What would you like to know in order to make this assignment easier to complete?  (Please don't answer "a solution".)
+  : What open questions do you have?  What would you like to know in order to make this assignment easier to complete?  (Please don't answer "a solution".) _Remember that you can ask these questions on Teams or elsewhere._
 
 Q6 Time
   : How long do you expect this assignment to take?
@@ -55,7 +49,7 @@ Q5: Pleasures
 ### Pre-SoLA reflection
 
 Q1: Topic check
-  : What are the topics (LAs) for this SoLA?
+  : What are the topics (LOs/LAs) for this SoLA?
 
 Q2: Accomplishments
   : Which of those have you already mastered (received credit for)?

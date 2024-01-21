@@ -42,8 +42,9 @@ ons);
   although you may find it useful to do so.); 
 * [Instructions for using Gradescope]({{ site.url }}/handouts/gradescope); and
 * [Instructions for using Teams]({{ site.url }}/handouts/teams).
+* [Some tips for working more productively]({{ site.url }}/handouts/working-tips)
 
-Log in to Gradescope and navigate to this class.
+Next, log in to Gradescope and navigate to this class.
 
 Finally, look for the the "Course details" assignment, select it, and answer the questions there.
 
