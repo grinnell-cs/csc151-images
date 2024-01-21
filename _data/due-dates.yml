@@ -12,7 +12,7 @@
 
 - date: 2024-01-26
   due:
-    - MP 1 Pre-Assessment
+    - MP 1 Pre-reflection
     - Quiz 1
 
 - date: 2024-01-31
@@ -23,8 +23,8 @@
 
 - date: 2024-02-02
   due:
-    - MP 1 Post-Assessment
-    - MP 2 Pre-Assessment
+    - MP 1 Post-reflection
+    - MP 2 Pre-reflection
     - Quiz 2
 
 - date: 2024-02-07
@@ -33,8 +33,8 @@
 
 - date: 2024-02-09
   due:
-    - MP 2 Post-Assessment
-    - SoLA 1 Pre-Assessment
+    - MP 2 Post-reflection
+    - SoLA 1 Pre-reflection
     - Quiz 3
 
 - date: 2024-02-12
@@ -49,8 +49,8 @@
 
 - date: 2024-02-16
   due:
-    - SoLA 1 Post-Assessment
-    - MP 3 Pre-Assessment
+    - SoLA 1 Post-reflection
+    - MP 3 Pre-reflection
     - Quiz 4
 
 - date: 2024-02-21
@@ -61,8 +61,8 @@
 
 - date: 2024-02-23
   due:
-    - MP 3 Post-Assessment
-    - MP 4 Pre-Assessment
+    - MP 3 Post-reflection
+    - MP 4 Pre-reflection
     - Quiz 5
 
 - date: 2024-02-28
@@ -71,8 +71,8 @@
 
 - date: 2024-03-01
   due:
-    - MP 4 Post-Assessment
-    - SoLA 2 Pre-Assessment
+    - MP 4 Post-reflection
+    - SoLA 2 Pre-reflection
     - Quiz 6
 
 - date: 2024-03-04
@@ -87,8 +87,8 @@
 
 - date: 2024-03-08
   due:
-    - SoLA 2 Post-Assessment
-    - MP 5 Pre-Assessment
+    - SoLA 2 Post-reflection
+    - MP 5 Pre-reflection
     - Quiz 7
 
 - date: 2024-03-13
@@ -99,12 +99,12 @@
 
 - date: 2024-03-15
   due:
-    - MP 5 Post-Assessment
+    - MP 5 Post-reflection
     - Quiz 8
 
 - date: 2024-04-01
   due:
-    - MP 6 Pre-Assessment
+    - MP 6 Pre-reflection
 
 - date: 2024-04-04
   due:
@@ -112,8 +112,8 @@
 
 - date: 2024-04-05
   due:
-    - MP 6 Post-Assessment
-    - SoLA 3 Pre-Assessment
+    - MP 6 Post-reflection
+    - SoLA 3 Pre-reflection
     - Quiz 9
 
 - date: 2024-04-08
@@ -128,8 +128,8 @@
     
 - date: 2024-04-12
   due:
-    - SoLA 3 Post-Assessment
-    - MP 7 Pre-Assessment
+    - SoLA 3 Post-reflection
+    - MP 7 Pre-reflection
     - Quiz 10
 
 - date: 2024-04-17
@@ -140,8 +140,8 @@
 
 - date: 2024-04-19
   due:
-    - MP 7 Post-Assessment
-    - MP 8 Pre-Assessment
+    - MP 7 Post-reflection
+    - MP 8 Pre-reflection
     - Quiz 11
 
 - date: 2024-04-24
@@ -152,13 +152,13 @@
 
 - date: 2024-04-26
   due:
-    - MP 8 Post-Assessment
-    - MP 9 Pre-Assessment
+    - MP 8 Post-reflection
+    - MP 9 Pre-reflection
     - Quiz 12
 
 - date: 2024-05-03
   due:
-    - SoLA 4 Pre-Assessment
+    - SoLA 4 Pre-reflection
     - Quiz 13
 
 - date: 2024-05-05
@@ -172,11 +172,11 @@
 - date: 2024-05-08
   due:
     - SoLA 4
-    - MP 9 Post-Assessment
+    - MP 9 Post-reflection
 
 - date: 2024-05-10
   due:
-    - SoLA 4 Post-Assessment
+    - SoLA 4 Post-reflection
     - End-of-course evaluation
 
 - date: 2024-05-14
