@@ -10,16 +10,17 @@ preimg: true
 
 ## Introduction: Algorithms and programming languages
 
-While our main goals in this course are for you to develop your skills in
-"algorithmic thinking" and apply algorithmic techniques to problems in the
-digital humanities, you will find it equally useful to learn how to direct
-computers to perform these algorithms. _Programming languages_ provide a formal
-notation for expressing algorithms that can be read by both humans and
-computers.  We will use the Scheme programming language, itself a dialect of
-the Lisp programming language, one of the first important programming
-languages. More specifically, we'll use _Scamper_, a derivative of Scheme
-custom-built for CSC 151, but we'll frequently use "Scheme" and "Scamper"
-interchangeably throughout the course.
+While our main goals in this course are for you to develop your
+skills in "algorithmic thinking" and apply algorithmic techniques
+to problems in the digital humanities, you will find it equally
+useful to learn how to direct computers to perform these algorithms.
+_Programming languages_ provide a formal notation for expressing
+algorithms that can be read by both humans and computers.  We will
+use the Scheme programming language, itself a dialect of the Lisp
+programming language, one of the first important programming
+languages. More specifically, we'll use _Racket_, a derivative of
+Scheme, but we'll frequently use "Scheme" and "Racket" interchangeably
+throughout the course.
 
 One thing that sets these languages apart from most other languages is a
 simple, but non-traditional, syntax.  To tell the computer to apply a
@@ -111,13 +112,13 @@ numbers, strings (text), and lists of values.  Of course, these are
 not the only types it supports.  Some additional types are available
 through separate libraries.  For example, it is comparatively
 straightforward to get Scheme to draw simple shapes if you
-add `(require 2htdp/image)` to the top of the interactions pane.
+add `(require csc151)` to the top of the interactions pane.
 
 ```racket
-> (circle 60 "outline" "blue")
-![A white circle of radius 15 designated by a thin blue line along its circumference]({{ "/images/racket-intro-01.png" | relative_url }})
-> (circle 40 "solid" "red")
-![A red disc of radius 10]({{ "/images/racket-intro-02.png" | relative_url }})
+> (outlined-circle 60 "blue" 1)
+![A white circle of radius 30 designated by a thin blue line along its circumference]({{ "/images/racket-intro-01.png" | relative_url }})
+> (solid-circle 40 "red")
+![A red disc of radius 20]({{ "/images/racket-intro-02.png" | relative_url }})
 ```
 
 We can also combine shapes by putting them above or beside each other.
@@ -150,10 +151,10 @@ That is, it is a language derived from Scheme that shares many of the same langu
 Interestingly, Scheme is, itself, a dialect of a much older language, LISP.
 
 In the past, all sections of CSC-151 used Racket as it is a modern, full-featured take on Scheme.
-However, some Grinnell faculty decided that we needed our own version of Scheme to make it more easily extensible (and to better support the use of sound).
+However, some Grinnell faculty decided that we needed our own version of Scheme to make it more easily extensible (and to better support the use of sound) and developed a langauge called _Scamper_.
 In many ways, Scamper draws on modern Racket-isms, but it isn't truly a descendent of Racket as it tries to retain the simplicity of Scheme and thus doesn't adhere precisely to Racket's language standard.
 
-For our intents and purposes as beginning programmers, Scheme, Racket, and Scamper, are all interchangeable names describing the same "functional language with parentheses" that we use in this course.
+For our intents and purposes as beginning programmers, Scheme, Racket, and Scamper are all interchangeable names describing the same "functional language with parentheses" that we use in this course.
 So don't fret too much if you hear a different name from a peer or see a different name in a reading!
 
 ## Self Checks
