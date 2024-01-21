@@ -1,11 +1,11 @@
 ---
-title: Pre- and Post-Assessments
+title: Metacognitive reflections (Pre- and Post-Reflections)
 section: Handouts
 summary: Notes on the extra work Sam asks you to do
 ---
 # {{ page.title }}
 
-I ask you to fill out a short survey ("assessment") before and after each major
+We ask you to fill out a short reflection before and after each major
 assignment ("mini project") and exam ("SoLA").  These surveys suggest the kinds
 of questions that I think you should be asking yourself before and after each
 major assignment and exam in any class you take.  They also help inform me of 
@@ -13,9 +13,9 @@ potential issues that I might address (e.g., if everyone takes too long on an
 assignment, or everyone indicates potential confusion about a topic).  They may
 evolve a bit as the semester progresses.
 
-You can find the pre- and post-assessments on Gradescope.  Note that filling them out is _required_.
+You can find the pre- and post-reflections on Gradescope.  Note that filling them out is _required_.
 
-### Pre-MP assessment
+### Pre-MP reflection
 
 Q1. Key concepts
   : What do you see as the key concepts that this assignment is asking you to learn or develop?
@@ -35,7 +35,7 @@ Q5 Missing pieces
 Q6 Time
   : How long do you expect this assignment to take?
 
-### Post-MP assessment
+### Post-MP refection
 
 Q1: Successes
   : What went well on this assignment?
@@ -52,7 +52,7 @@ Q4: Time
 Q5: Pleasures
   : Which parts of the assignment, if any, did you find most enjoyable?
 
-### Pre-SoLA assessment
+### Pre-SoLA reflection
 
 Q1: Topic check
   : What are the topics (LAs) for this SoLA?
@@ -69,7 +69,7 @@ Q4: Brain dump
 Q5: Preparation
   : How will you prepare for the SoLA?  Some good strategies include doing sample problems, writing sample problems, attending mentor sessions, writing "cheat sheets" (that you don't actually cheat with), and spaced retrieval (spending a little bit of time each day preparing, rather than doing it all at once).
  
-### Post-SoLA assessment
+### Post-SoLA reflection
 
 Q1: Attempts
   : How many LAs did you attempt on the SoLA?
