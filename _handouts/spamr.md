@@ -11,33 +11,33 @@ Dear Sandwich Specifiers,
 
 Thanks for a good first day of class. And CONGRATULATIONS on getting done quickly enough that we could start our debrief. Sorry about the computer problems; I hope to have those solved before the next class.
 
-1\. You have a bunch of readings for the next class.
+1. You have a bunch of readings for the next class.
 
-<https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/readings/mathlan.html>
+    <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/readings/mathlan.html>
 
-<https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/readings/algorithm-building-blocks.html>
+    <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/readings/algorithm-building-blocks.html>
 
-<https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/readings/drracket.html>
+    <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/readings/drracket.html>
 
-<https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/readings/intro-scheme.html>
+    <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/readings/intro-scheme.html>
 
-2\. The last reading has three "Self Check" problems marked with double daggers (‡). You should enter your answers to those problems on the reading assignment on Gradescope.  **Those are due by 11pm on Tuesday.** I am more likely to read over the ones that I receive by 8pm on Tuesday.
+2. The last reading has three "Self Check" problems marked with double daggers (‡). You should enter your answers to those problems on the reading assignment on Gradescope.  **Those are due by 11pm on Tuesday.** I am more likely to read over the ones that I receive by 8pm on Tuesday.
 
-<https://www.gradescope.com/courses/690100/assignments/3974526/>
+    <https://www.gradescope.com/courses/690100/assignments/3974526/>
 
-3\. Like many classes, CSC-151 has an introductory survey. You can find it at
+3. Like many classes, CSC-151 has an introductory survey. You can find it at
 
-<https://www.gradescope.com/courses/690100/assignments/3974524/>
+    <https://www.gradescope.com/courses/690100/assignments/3974524/>
 
-It is due by 11pm on Wednesday, but you should try to get it done earlier.
+    It is due by 11pm on Wednesday, but you should try to get it done earlier.
 
-4\. As I mentioned, I'd like you to read the syllabus on your own and answer some questions. You can find that assignment at
+4. As I mentioned, I'd like you to read the syllabus on your own and answer some questions. You can find that assignment at
 
-<https://www.gradescope.com/courses/690100/assignments/3974523/>
+    <https://www.gradescope.com/courses/690100/assignments/3974523/>
+    
+    It is also due by 11pm on Wednesday, but you should try to get it done earlier.
 
-It is also due by 11pm on Wednesday, but you should try to get it done earlier.
-
-5\. You might also reflect on what else you learned from the PB&J (well, Almond Butter and Jam) exercise.
+5. You might also reflect on what else you learned from the PB&J (well, Almond Butter and Jam) exercise.
 
 Regards,
 
@@ -53,7 +53,7 @@ Welcome back to campus! I hope that you had a good winter break and that you are
 
 2. If you've never been to Noyce 3rd before, it may be a little complex to find our classroom.  Science 3813 is near the northwest end of the third floor of Noyce. There are stairways from the first floor to the third floor at the northeast and northwest corners of Noyce. The elevator to the third floor is slightly south of the northeast corner.
 
-If you aren't sure about your cardinal directions, the JRC is NORTH of Noyce (as is 8th Avenue) and the railroad tracks are EAST of Noyce.
+    If you aren't sure about your cardinal directions, the JRC is NORTH of Noyce (as is 8th Avenue) and the railroad tracks are EAST of Noyce.
 
 3. There is no textbook for CSC-151. We provide all of the necessary materials online.
 
