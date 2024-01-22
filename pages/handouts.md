@@ -47,6 +47,11 @@ You'd think the [syllabus](../syllabus) and [schedule](../schedule) would provid
 [Tips on working more productively](working-tips)
   : Some tips from students, mentors, and instructors.
 
+## Miscellaneous
+
+[Spam from Sam](spamr)
+  : My attempt to log all the email I sent this semester.
+
 ## Some Scheme Stuff
 
 [Terminology](terminology)
