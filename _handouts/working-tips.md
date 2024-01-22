@@ -29,7 +29,7 @@ How do you deal with this issue?  **Get help!**  If you struggle for more than f
 * Do the self checks.
     * Some people find it useful to read the self checks first in order to see what might be most important.
 * Get familiar with Racket documentation.
-    * [The course reference](../reference/)
+    * [The course reference](https://rebelsky.cs.grinnell.edu/Courses/CSC151/reference/)
     * [The Racket Reference](https://docs.racket-lang.org/reference/)
     * [The Racket Guide](https://docs.racket-lang.org/guide/)
 * Read (and play with) the examples; they are usually intended to illustrate a point.
