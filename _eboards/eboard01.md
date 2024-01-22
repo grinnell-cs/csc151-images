@@ -17,7 +17,12 @@ _Approximate overview_
 Administrative stuff
 --------------------
 
+**Warning! You are being recorded** (and transcribed) (provided the technology
+is working correctly).
+
 _Please take a playing card, if you didn't already._
+
+_You may also wish to take a mask._
 
 ### Introductory Notes
 
@@ -45,8 +50,8 @@ _Please take a playing card, if you didn't already._
     * **Don't just rely on my notes**; There is good evidence that taking 
       your own notes helps you learn.
 * I will record our class sessions (audio only + mediocre transcript)
-  using Otter.ai.  I will try to remember to post the link to Teams.
-  Remind me if I don't.
+  using Team and Otter.ai.  I will try to remember to post the link to 
+  Teams.  Remind me if I don't.
 
 ### Other introductory stuff
 
@@ -58,7 +63,8 @@ _Please take a playing card, if you didn't already._
     * Also large post-it pads that are gridded.
     * And pens.
 * I prefer to have you book office hours.  First priority in any time
-  slot goes to those who book.  https:/bit.ly/book-samr
+  slot goes to those who book.  <https:/bit.ly/book-samr>
+    * Office hours are not yet set.
 * You'll learn more introductory stuff when you read the syllabus.
 
 ### Apologies
@@ -68,8 +74,8 @@ _Please take a playing card, if you didn't already._
   Ish.
 * I am traditionally bad at names+faces.  I will be worse with masks.  It
   will take me some time to learn your names.
-* My family is ill. I may be absent at unexpected times (esp. during office 
-  hours).
+* I have some significant life issues at play. I may be absent at unexpected 
+  times (esp. during office hours).
 * More to come ....
 
 ### Upcoming activities
@@ -80,14 +86,20 @@ Guidelines
   academic events or supporting your classmates in their pursuits.
 * Attend (or watch recording within a day or so) and **record a one-paragraph 
   reflection within three days afterwards**.
-* Only those activities I list count.
+* Only those activities that I list count.
     * But you can suggest others.
 * Links might appear in the Announcements channel on MS Teams.
 * Unless otherwise specified, these each earn one token.  
 
 Scholarly
 
+* Friday, 2024-01-26, 6:00--7:30 p.m., JRC 101. 
+  _Celebration of MLK day with Alan Page_.
+
 Cultural
+
+* Saturday, 2024-01-27, 11:55 a.m.--3:55 p.m., Harris Cinema. 
+  _Met Opera presents Carmen_.
 
 Peer
 
@@ -95,16 +107,21 @@ Wellness
 
 Misc
 
+### Other good things
+
+* Saturday, 2024-01-27, 10:00 a.m.--1:00 p.m., Field House.
+  _Grinnell Track and Field Invitational_.
+
 ### Upcoming work
 
 * [Read the Web site and answer questions](../assignments/syllabus).
 * [Tell me about yourself](../assignments/intro-survey).
-* Read things in preparation for the second day of class and report on those things
-    * [An intro to the course](../readings/fundhum-intro)
+* Read things in preparation for the second day of class and report on those 
+  things
     * [Our Linux workstations](../readings/linux)
     * [Algorithm building blocks](../readings/algorithm-building-blocks)
     * [The DrRacket programming environment](../readings/drracket)
-    * [An abbreviated introduction to Racket](../readings/racket-intro)
+    * [An abbreviated introduction to Racket](../readings/intro-scheme)
     * _Note that readings responses are generally due in the early evening
       so that I can review them before class._
 
