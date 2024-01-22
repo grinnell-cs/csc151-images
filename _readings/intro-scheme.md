@@ -137,6 +137,15 @@ We can also combine shapes by putting them above or beside each other.
 ![Three rectangles in a pyramid.  The top rectangle is red.  The lower-left one is blue.  The lower-right one is black.  The red rectangle is centered over the other two rectangles.]({{ "/images/rectangle-pyramid.png" | relative_url }})
 ```
 
+We can also ask Racket to describe images or provide our own descriptions. These are useful (perhaps essential) for those with vision impairments.
+
+```
+> (image-description (solid-circle 40 "blue"))
+"a solid blue circle with diameter 40"
+> (image-description (solid-circle 40 "blue" "a small blue disc"))
+"a small blue disc"
+```
+
 As you may have discovered in your youth, there are a wide variety of
 interesting images we can make by just combining simple colored shapes.
 You'll have an opportunity to do so in the corresponding lab.
@@ -179,7 +188,7 @@ Do not try them on your own.
 (- 1 (/ 1 2))
 (string-length "Snicker snack")
 (string-split "Snicker snack" "ck")
-(circle 10 'solid "teal")
+(solid-circle 10 "teal")
 ```
 
 ### Check 3: Precedence (‡)
