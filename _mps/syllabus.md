@@ -11,7 +11,7 @@ collaboration: |
   need to cite course pages you were instructed to read for this assignment.
 submitting: |
   Please submit your responses on Gradescope.
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -24,25 +24,21 @@ some basic questions.
 
 First, read the following items.
 
-* [The course syllabus]({{ site.url }}/syllabus/);
-* [The course schedule]({{ site.url }}/schedule/);
-* [My notes on teaching and learning]({{site.url}}/handouts/teaching);
-* [My additional notes on grading]({{site.url}}/handouts/grading);
-* [Some additional notes on learning assessments]({{site.url}}/las/);
-* [My notes on taking notes]({{site.url}}/handouts/taking-notes);
-* [My notes on academic honesty]({{site.url}}/handouts/academic-honesty);
+* [The course syllabus]({{ site.baseurl }}/syllabus/);
+* [The course schedule]({{ site.baseurl }}/schedule/);
+* [My additional notes on grading]({{site.baseurl}}/handouts/grading);
+* [Some additional notes on learning assessments]({{site.baseurl}}/las/);
+* [My notes on taking notes]({{site.baseurl}}/handouts/taking-notes);
 * [The Computer Science Department's policy on academic honesty](https://www.cs.
 grinnell.edu/academic-honesty-policy);
-* [My notes on accommodations and adjustments]({{site.url}}/handouts/accommodati
-ons);
 * [My answers to any questions students have already asked about the
-  course]({{site.url}}/handouts/faq)
+  course]({{site.baseurl}}/handouts/faq)
   (That page will change over the next few days as I start receiving and
   answering questions for students.  You need not keep returning to it,
   although you may find it useful to do so.); 
-* [Instructions for using Gradescope]({{ site.url }}/handouts/gradescope); and
-* [Instructions for using Teams]({{ site.url }}/handouts/teams).
-* [Some tips for working more productively]({{ site.url }}/handouts/working-tips)
+* [Instructions for using Gradescope]({{ site.baseurl }}/handouts/gradescope); and
+* [Instructions for using Teams]({{ site.baseurl }}/handouts/teams).
+* [Some tips for working more productively]({{ site.baseurl }}/handouts/working-tips)
 
 Next, log in to Gradescope and navigate to this class.
 

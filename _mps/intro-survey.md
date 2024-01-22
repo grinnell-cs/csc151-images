@@ -1,6 +1,6 @@
 ---
 title: Introductory survey
-link: false
+link: true
 ---
 # {{ page.title }}
 

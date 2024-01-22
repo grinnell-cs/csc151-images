@@ -38,12 +38,4 @@ You should see an "Add a subject" line where you can type the title or subject.
 You must also enter something below the subject.
 You submit the question by clicking the paper airplane button in the lower-right-hand corner.
 
-### Announcements
-
-I tend to use the announcements channel primarily for announcements of events on campus.
-I also use it to announce changes in deadlines and such.
-
-### Class Chat
-
-Feel free to use the Class Chat channel for building community.
-I am unlikely to spend much time on this channel unless you explicitly tag me.
+While Questions and Answers is the preferred channel for asking questions, you can ask in any channel. Don't let confusion about which channel to post in stop you from posting!
