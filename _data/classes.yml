@@ -18,6 +18,7 @@
   lab:
     - page: /labs/mathlan.html
     - page: /labs/racket-intro-mathlan.html
+  notes: /eboards/eboard02.html
 
 - topic: Computation via expressions
   abbrev: expressions
