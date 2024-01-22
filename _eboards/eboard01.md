@@ -46,6 +46,7 @@ _You may also wish to take a mask._
       throughout the semester.
 * I type our online class notes in a format called "markdown".  You should
   find it relatively readable.  It permits me to make "nice" Web pages.
+    * Isn't this beautiful?
     * Sam: Don't forget to show off today's eboard.
     * **Don't just rely on my notes**; There is good evidence that taking 
       your own notes helps you learn.
@@ -62,6 +63,10 @@ _You may also wish to take a mask._
     * Small cards to serve as flashcards, which are a good learning technique.
     * Also large post-it pads that are gridded.
     * And pens.
+    * And masks.
+* On that note ... a friendly reminder that Grinnellians are returning
+  from around the world and brining viruses and bacteria back with them.
+    * Plus, covid is on the rise.
 * I prefer to have you book office hours.  First priority in any time
   slot goes to those who book.  <https:/bit.ly/book-samr>
     * Office hours are not yet set.
@@ -129,10 +134,11 @@ Misc
 
 * Sam will (attempt to) call you by first name.
 * You will respond with 
-    * "Hi, my name is FIRST LAST.
+    * "Hi, my name is FIRST LAST.  (PROPER SURNAME)
     * (Optional pronouns.)
     * I prefer to be called NAME.
-    * If you must call me by last name, please call me Mr./Ms./Mx. LAST NAME.
+    * If you must call me by last name, please call me 
+      Mr./Ms./Mx./Srta./Sr./etc. LAST NAME.
     * This semester , I am excited about ....
     * _Optionally, ask me a question. You'll also have another chance later._
 * Note: For the first few weeks of class, please say your name each time
@@ -140,7 +146,48 @@ Misc
 
 ### Excited About
 
+* My last semester.
+* Taking CSC. [+6]
+* All classes.
+* Global learning program.
+* Jiu-jit-su
+* Electronics
+* The onslaught of spring
+* First spring semester at Grinnell.
+* Winter.
+* Snow. [x2]
+* The onslaught of warmth in four months. [x2]
+* Playing in the snow.
+* Learn a new language.
+* Tennis.
+* Indoor soccer.
+* Harp.
+* Guitar.
+
 ### Q&A
+
+* Grinnell claims that Grinnellians ask good questions and question 
+  easy answers. Why don't I have a good question? [+5001]
+* How did you choose that sequence of titles?
+* Why did Prof. P steal my question?
+* What theme are you using for your terminal?
+  _I have no idea._
+* Have you done any sports?
+  _Have you looked at my shape? I did archery in College. I played
+  volleyball and tennis (not competitively) in middle school._
+  _My kids played american football, real football, swimming, diving,
+   cross country, and more that I forget. I attended a lot!_
+* Why is there more snow in Iowa than Smallpop? (Mini-soda).
+  _Because when it gets too cold, there's no moisture in the air and
+  it can't snow._
+* What's your favorite color? _Plaid._ _Purple._
+* Do you have a hex code for purple? _No, I am not a witch._
+* How old is "SamR's musings and rants"? _About eight years._
+* Do you prefer light mode or dark mode? _Although I am evil (see the
+  last name), I prefer light mode._
+* How many offspring? _Three_.
+* Why do you like plaid and purple? _Does one attempt to explain the beauty
+  of the flight of a butterfly?_
 
 What is computer science?
 -------------------------
@@ -177,3 +224,17 @@ _Practice writing algorithms!_
      
 Debrief
 -------
+
+* Be very specific, particularly when there are multiple things that
+  could be described in the same way (e.g., "the bread").
+* It's important to know what the data are like.
+* It's important to know what the computer can and can't do. Don't assume.
+* Break big tasks down into smaller tasks.
+* Some processes can be repeated (e.g., spreading).
+
+And ...
+
+* Things will go wrong when you write algorithms. Laugh!
+* Four heads are better than one.
+* It's nice to watch an algorithm while it's performing and correct as
+  you go.
