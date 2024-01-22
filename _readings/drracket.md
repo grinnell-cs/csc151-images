@@ -7,10 +7,10 @@ summary: |
 prereqs: |
   _This section has no prerequisites._  However, you will find there
   is a bit of a "chicken and egg problem" for this reading and [the
-  reading that introduces the Racket programming
-  language](../readings/racket-intro.html).  That is, it is difficult
+  reading that introduces the Scheme programming
+  language](../readings/intro-scheme.html).  That is, it is difficult
   to introduce DrRacket, the environment in which you will develop
-  programs, without first introducing Racket, the language in which
+  programs, without first introducing Scheme, the language in which
   you will express those programs.  At the same time, it is difficult
   to experiment with the language without first understanding the
   environment.  In this section, we will emphasize the environment,
