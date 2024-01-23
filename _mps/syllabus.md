@@ -11,7 +11,7 @@ collaboration: |
   need to cite course pages you were instructed to read for this assignment.
 submitting: |
   Please submit your responses on Gradescope.
-link: true 
+link: true
 ---
 # {{ page.title }}
 
@@ -24,25 +24,21 @@ some basic questions.
 
 First, read the following items.
 
-* [The course syllabus]({{ site.url }}/syllabus/);
-* [The course schedule]({{ site.url }}/schedule/);
-* [My notes on teaching and learning]({{site.url}}/handouts/teaching);
-* [My additional notes on grading]({{site.url}}/handouts/grading);
-* [Some additional notes on learning assessments]({{site.url}}/las/);
-* [My notes on taking notes]({{site.url}}/handouts/taking-notes);
-* [My notes on academic honesty]({{site.url}}/handouts/academic-honesty);
+* [The course syllabus]({% link pages/syllabus.md %});
+* [The course schedule]({% link pages/schedule.html %});
+* [My additional notes on grading]({% link _handouts/grading.md %});
+* [Some additional notes on learning assessments]({% link pages/las.md %});
+* [My notes on taking notes]({% link _handouts/taking-notes.md %});
 * [The Computer Science Department's policy on academic honesty](https://www.cs.
 grinnell.edu/academic-honesty-policy);
-* [My notes on accommodations and adjustments]({{site.url}}/handouts/accommodati
-ons);
 * [My answers to any questions students have already asked about the
-  course]({{site.url}}/handouts/faq)
+  course]({% link _handouts/faq.md %})
   (That page will change over the next few days as I start receiving and
   answering questions for students.  You need not keep returning to it,
   although you may find it useful to do so.); 
-* [Instructions for using Gradescope]({{ site.url }}/handouts/gradescope); and
-* [Instructions for using Teams]({{ site.url }}/handouts/teams).
-* [Some tips for working more productively]({{ site.url }}/handouts/working-tips)
+* [Instructions for using Gradescope]({% link _handouts/gradescope.md %}); and
+* [Instructions for using Teams]({% link _handouts/teams.md %}).
+* [Some tips for working more productively]({% link _handouts/working-tips.md %})
 
 Next, log in to Gradescope and navigate to this class.
 
