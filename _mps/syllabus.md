@@ -24,21 +24,21 @@ some basic questions.
 
 First, read the following items.
 
-* [The course syllabus]({{ site.baseurl }}/syllabus/);
-* [The course schedule]({{ site.baseurl }}/schedule/);
-* [My additional notes on grading]({{site.baseurl}}/handouts/grading);
-* [Some additional notes on learning assessments]({{site.baseurl}}/las/);
-* [My notes on taking notes]({{site.baseurl}}/handouts/taking-notes);
+* [The course syllabus]({% link pages/syllabus.md %});
+* [The course schedule]({% link pages/schedule.html %});
+* [My additional notes on grading]({% link _handouts/grading.md %});
+* [Some additional notes on learning assessments]({% link pages/las.md %});
+* [My notes on taking notes]({% link _handouts/taking-notes.md %});
 * [The Computer Science Department's policy on academic honesty](https://www.cs.
 grinnell.edu/academic-honesty-policy);
 * [My answers to any questions students have already asked about the
-  course]({{site.baseurl}}/handouts/faq)
+  course]({% link _handouts/faq.md %})
   (That page will change over the next few days as I start receiving and
   answering questions for students.  You need not keep returning to it,
   although you may find it useful to do so.); 
-* [Instructions for using Gradescope]({{ site.baseurl }}/handouts/gradescope); and
-* [Instructions for using Teams]({{ site.baseurl }}/handouts/teams).
-* [Some tips for working more productively]({{ site.baseurl }}/handouts/working-tips)
+* [Instructions for using Gradescope]({% link _handouts/gradescope.md %}); and
+* [Instructions for using Teams]({% link _handouts/teams.md %}).
+* [Some tips for working more productively]({% link _handouts/working-tips.md %})
 
 Next, log in to Gradescope and navigate to this class.
 
