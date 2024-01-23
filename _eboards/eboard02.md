@@ -48,6 +48,10 @@ Administrative stuff
     * And I use the process to push you a bit.
     * Feel free to say "I'm not sure" or "I'd prefer not to answer."
     * If you don't want to be called on in class, please let me know.
+* Reminder to self: Demo Gradescope.
+* Reminder to self: Asking questions
+* Reminder to self: Vygotsky's zone of proximal development.
+
 
 ### Upcoming activities
 
@@ -76,8 +80,9 @@ Misc
 
 * Read things in preparation for the thrid day of class and report on those 
   things
-    * _Note that readings responses are generally due in the early evening
-      so that I can review them before class._
+    * _Note that readings responses are generally due in the evening. If
+      you turn them in by 8pm or so, it's more likely that I'll read
+      them before class._
 
 Questions on the readings
 -------------------------
