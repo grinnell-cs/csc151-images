@@ -84,11 +84,15 @@ Misc
 
 ### Upcoming work
 
+* [Read the Web site and answer questions](../assignments/syllabus).
+  (Due tonight.)
+* [Tell me about yourself](../assignments/intro-survey).
+  (Due tonight.)
 * Read things in preparation for the third day of class and report on those 
   things
     * [Images](../readings/images)
     * [Decomposition](../readings/decomposition)
-    * Do the [Reading Response] (on gradescope)
+    * Do the [Reading Response](https://www.gradescope.com/courses/690100/assignments/3974528/submissions)
     * _Note that readings responses are generally due in the evening. If
       you turn them in by 8pm or so, it's more likely that I'll read
       them before class._
