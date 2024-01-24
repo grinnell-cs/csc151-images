@@ -3,7 +3,7 @@
   summary: |
     We begin the class by exploring the definition of computer
     science and by trying to write some basic algorithms.
-  notes: /eboards/eboard01.html
+  notes: https://docs.google.com/presentation/d/1NFvjcsHVXWey40Hzf7kjICw3G_YD6jLTOXPQDfXhC4Q/edit?usp=sharing
 
 - topic: Getting started with Scheme
   abbrev: racket-tech
