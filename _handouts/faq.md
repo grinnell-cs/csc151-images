@@ -38,3 +38,13 @@ _I've heard that this is intended as a "weed out" course.  Is that really the ca
 > We also use the mastery grading approach to help ensure that every student can succeed.
 
 > In their end-of-course evaluation in Spring 2024, one student wrote _I think this class made me realize the rumors of it being a "really difficult weed out class" are completely wrong._
+
+I am a bit worried about the different kinds of work. How do I keep track?
+
+> You are correct; it can get a bit confusing as to what work is due. That's one reason I try to summarize it at the start of each class. (_Unfortunately, Gradescope seems to make things more confusing rather than less._) I'm also trying to put upcoming work on the board.
+
+> You should eventually fall into a rhythm.
+
+How can you check how many tokens you have?
+
+> I'll send out a regular notice.
