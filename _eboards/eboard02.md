@@ -218,8 +218,19 @@ What's a comment?
 
 > A note to the human reader that the computer should ignore.
 
-Debrief (if time)
+What are `circle` and `rectangle`? I only saw `solid-circle` and
+`outlined-circle` (similar for rectangles)?
 
+> Remnants of an old version of the image library.
+
+We're not done. What should we do?
+
+> For this lab, _and this lab only_, you may finish the lab on your own.
+  (Or set up a time to meet with your partner.) If you finish the lab on
+  your own, please ignore the "include your partners on Gradescope"
+  instructions.
+
+Debrief (if time)
 -----------------
 
 _There usually isn't time, but I'm an optimist._
