@@ -19,7 +19,7 @@ Start by comparing your answers on the self-check from [the reading on DrRacket]
 
 If you successfully completed [the MathLAN laboratory](../labs/mathlan.html), you should have an icon for DrRacket at the bottom of your screen. Click on that icon to start DrRacket.
 
-DrRacket comes with a comprehensive standard *library* of functions that we will use throughout the course.  However, we have created additional functionality for you to support your exploration into the Digital Humanities in Racket in the form of the `csc151` package.  To install this package in your `DrRacket` installation:
+DrRacket comes with a comprehensive standard *library* of functions that we will use throughout the course.  However, we have created additional functionality for you to support your exploration of Racket in the form of the `csc151` package.  To install this package in your `DrRacket` installation:
 
 * Go to `File` → `Package Manager...` in the menu.
 * Enter the following URL into the "Package Source" textbox: <https://github.com/grinnell-cs/csc151.git#main>
