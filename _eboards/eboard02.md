@@ -92,10 +92,11 @@ Misc
   things
     * [Images](../readings/images)
     * [Decomposition](../readings/decomposition)
-    * Do the [Reading Response](https://www.gradescope.com/courses/690100/assignments/3974528/submissions)
+    * Do the [Reading Response](https://www.gradescope.com/courses/690100/assignments/3974528/)
     * _Note that readings responses are generally due in the evening. If
       you turn them in by 8pm or so, it's more likely that I'll read
       them before class._
+* [Mini-project 1](../mps/mp01) due next Wednesday at 11pm.
 
 Questions on the readings
 -------------------------
