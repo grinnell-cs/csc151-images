@@ -3,7 +3,7 @@
   summary: |
     We begin the class by exploring the definition of computer
     science and by trying to write some basic algorithms.
-  notes: /eboards/eboard01.html
+  notes: ../eboards/eboard01.html
 
 - topic: Getting started with Scheme
   abbrev: racket-tech
@@ -18,7 +18,7 @@
   lab:
     - page: /labs/mathlan.html
     - page: /labs/racket-intro-mathlan.html
-  notes: /eboards/eboard02.html
+  notes: ../eboards/eboard02.html
 
 - topic: Algorithmic decomposition
   abbrev: decomposition
