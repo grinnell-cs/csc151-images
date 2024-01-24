@@ -120,7 +120,7 @@ Determine whether your prediction matches what DrRacket computes.
 ?
 > (string-split "Snicker snack" "ck")
 ?
-> (circle 10 "solid" "teal")
+> (solid-circle 20 "teal")
 ?
 ```
 
@@ -134,8 +134,8 @@ Feel free to go on to the next exercise, but if you are confused by any of the o
 As you may have noted, you get an error when you try to make a circle.
 
 ```
-> (solid-circle 10 "teal")
-Error! circle: undefined;
+> (solid-circle 20 "teal")
+Error! solid-circle: undefined;
 Error!  cannot reference an identifier before its definition
 ```
 
@@ -162,19 +162,19 @@ check the image examples from [the reading]({{ "/readings/racket-intro.html" | r
 Enter each of the following in the interactions pane and ensure that you get the expected output.
 
 ```drracket
-> (circle 15 "outline" "blue")
+> (outlined-circle 40 "blue" 5)
 ?
-> (circle 10 "solid" "red")
+> (outlined-circle 20 "red" 5)
 ?
-> (above (circle 10 "outline" "blue")
-         (circle 15 "outline" "red"))
+> (above (outlined-circle 20 "blue" 5)
+         (outlined-circle 40 "red" 5))
 ?
-> (beside (circle 10 "solid" "blue")
-          (circle 10 "outline" "blue"))
+> (beside (solid-circle 40 "blue")
+          (outlined-circle 30 "blue" 5))
 ?
-> (above (rectangle 15 10 "solid" "red")
-         (beside (rectangle 15 10 "solid" "blue")
-                 (rectangle 15 10 "solid" "black")))
+> (above (solid-rectangle 15 10 "red")
+         (beside (solid-rectangle 15 10 "blue")
+                 (solid-rectangle 15 10 "black")))
 ?
 ```
 
