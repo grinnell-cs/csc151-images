@@ -116,7 +116,7 @@ In a bottom-up style, we first implement the individual of pieces of the program
 In a top-down style of design, we first *partially* implement the complete program and then implement the individual pieces.
 We'll illustrate both styles of design below.
 
-## Bottom-up Design
+## Bottom-up design
 
 Let's begin with the top row.
 We'll define `top-row` to be the top row of circles using the `circle` and `beside` functions.
@@ -167,7 +167,7 @@ We can check that `circles` is the image that we wanted in the interactions pane
 ![Four circles in a grid. The top-left circle is a small red outline. The top-right circle is large, blue, and filled-in. The bottom-left circle is a large blue outline. The bottom-right circle is small, red, and filled-in]({{ "/images/decomposition-circles-overall.png" | relative_url }})
 ~~~
 
-## Top-Down Design
+## Top-down design
 
 With top-down design, rather than starting with `top-row` and `bottom-row`, we start with the overall program `circles`.
 We have identified that `circles` is a stack of two rows of images, so we know that the definition of `circles` will involve `above`.
@@ -216,7 +216,7 @@ In other cases, you might not see the pieces and want to essentially outline how
 In this case, you can use top-down design to write this outline and then fill it in incrementally.
 Either strategy is valid---be willing to experiment early on with both styles to discover your preferences and be flexible in how you design your code!
 
-## Decomposition In code
+## Decomposition in code
 
 Finally, let's look at the big picture.
 Take a look at the complete program that we wrote in the definitions pane:
@@ -248,7 +248,7 @@ By employing algorithmic decomposition in our problem solving and programming, w
 As we move forward in the course, *always* approach problems with decomposition in mind even if they are easy to solve at first.
 Honing this skill early on in your programming journey will prepare you well for the complex problems will encounter later in the semester!
 
-## Self Checks
+## Self checks
 
 ### Check 1: Readability (‡)
 
@@ -276,7 +276,7 @@ Answer each of the following questions in a few sentences each.
 +   Which version allows you to better predict the results *without* running the program?
     Why?
 
-### Check 2: Alternative Decomposition (‡)
+### Check 2: Alternative decomposition (‡)
 
 There are many ways to decompose a problem, many of which are equivalent, but many produce subtlety different solutions.
 The decomposition we chose in the reading was one where we recognized the image was *two rows stacked on top of each other*.
