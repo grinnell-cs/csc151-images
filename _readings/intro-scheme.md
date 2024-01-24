@@ -115,25 +115,35 @@ straightforward to get Scheme to draw simple shapes if you
 add `(require csc151)` to the top of the interactions pane.
 
 ```racket
-> (outlined-circle 60 "blue" 1)
-![A white circle of radius 30 designated by a thin blue line along its circumference]({{ "/images/racket-intro-01.png" | relative_url }})
-> (solid-circle 40 "red")
-![A red disc of radius 20]({{ "/images/racket-intro-02.png" | relative_url }})
+> (require csc151)
+> (solid-circle 30 "blue")
+![a solid blue circle with diameter 30](../images/solid-blue-circle-30.png)
+> (outlined-circle 20 "red" 5)
+![an outlined red circle with diameter 20](../images/outlined-5-red-circle-20.png)
 ```
 
 We can also combine shapes by putting them above or beside each other.
 
 ```racket
-> (above (circle 40 "outline" "blue")
-         (circle 60 "outline" "red"))
-![Two circles stacked on top of each other.  The top one, which is smaller, is outlined in blue.  The bottom one is outlined in red.]({{ "/images/racket-intro-03.png" | relative_url }})
-> (beside (circle 40 "solid" "blue")
-          (circle 40 "outline" "blue"))
-![Two identical-size circles next to each other.  The first is a solid blue disc.  The second is a white circle outlined in blue.]({{ "/images/racket-intro-04.png" | relative_url }})
-> (above (rectangle 60 40 "solid" "red")
-         (beside (rectangle 60 40 "solid" "blue")
-                 (rectangle 60 40 "solid" "black")))
-![Three rectangles in a pyramid.  The top rectangle is red.  The lower-left one is blue.  The lower-right one is black.  The red rectangle is centered over the other two rectangles.]({{ "/images/racket-intro-05.png" | relative_url }})
+> (above (outlined-circle 30 "blue" 5)
+         (outlined-circle 40 "red" 10))
+![Two circles stacked on top of each other.  The top one, which is smaller, is outlined in blue.  The bottom one is outlined in red.]({{ "/images/blue-over-red.png" | relative_url }})
+> (beside (solid-circle 40 "blue")
+          (outlined-circle 30 "blue" 5))
+![Two identical-size circles next to each other.  The first is a solid blue disc.  The second is a transparent circle outlined in blue.]({{ "/images/blue-solid-outlined.png" | relative_url }})
+> (above (solid-rectangle 30 20 "red")
+         (beside (solid-rectangle 30 20 "blue")
+                 (solid-rectangle 30 20 "black")))
+![Three rectangles in a pyramid.  The top rectangle is red.  The lower-left one is blue.  The lower-right one is black.  The red rectangle is centered over the other two rectangles.]({{ "/images/rectangle-pyramid.png" | relative_url }})
+```
+
+We can also ask Racket to describe images or provide our own descriptions. These are useful (perhaps essential) for those with vision impairments.
+
+```
+> (image-description (solid-circle 40 "blue"))
+"a solid blue circle with diameter 40"
+> (image-description (solid-circle 40 "blue" "a small blue disc"))
+"a small blue disc"
 ```
 
 As you may have discovered in your youth, there are a wide variety of
@@ -178,12 +188,12 @@ Do not try them on your own.
 (- 1 (/ 1 2))
 (string-length "Snicker snack")
 (string-split "Snicker snack" "ck")
-(circle 10 'solid "teal")
+(solid-circle 10 "teal")
 ```
 
 ### Check 3: Precedence (‡)
 
-Consider the expression `3 - 4 × 5 - 6`{:.language-text}.
+Consider the expression $3 - 4 × 5 - 6$.
 
 If we did not have rules for order of evaluation, one possible way to
 evaluate the expression would be to subtract six from five (giving us
@@ -201,6 +211,6 @@ We'd express that in Scheme as
 2. How would you express that in Scheme?
 
 3. Come up with at least two other orders in which to evaluate that
-expression.
+expression (assuming that we don't use the standard rules of precedence).
 
 4. Express those other two orders in Scheme.
