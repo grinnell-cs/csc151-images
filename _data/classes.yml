@@ -19,17 +19,6 @@
     - page: /labs/mathlan.html
     - page: /labs/racket-intro-mathlan.html
 
-- topic: Computation via expressions
-  abbrev: expressions
-  summary: |
-    We look at the fundamental building block of computation in functional
-    programming languages, the expression, and build an appropriate model of
-    how expressions "compute".
-  reading:
-    - page: /readings/computation-via-expressions.html
-  lab:
-    - page: /labs/mental-models-of-computation.html
-
 - topic: Algorithmic decomposition
   abbrev: decomposition
   summary: |
@@ -42,6 +31,17 @@
     - page: /labs/decomposition.html
   todo:
     - Check the images reading to make sure it works with the new model.
+
+- topic: Computation via expressions
+  abbrev: expressions
+  summary: |
+    We look at the fundamental building block of computation in functional
+    programming languages, the expression, and build an appropriate model of
+    how expressions "compute".
+  reading:
+    - page: /readings/computation-via-expressions.html
+  lab:
+    - page: /labs/mental-models-of-computation.html
 
 - topic: Reading and writing procedures
   abbrev: procedures
@@ -72,6 +72,7 @@
     - page: /labs/basic-types.html
   todo:
     - Consider adding symbols to the lab.
+    - Consider which types reading to use (or combine them).
 
 - topic: RGB colors
   abbrev: rgb-colors
