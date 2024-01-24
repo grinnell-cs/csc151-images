@@ -36,7 +36,7 @@ Administrative stuff
 
 ### Introductory Notes
 
-* Hi, I'm Sam (or SamR).
+* Hi, I'm still Sam (or SamR).
 * Our class mentor is still Maddy Thompson.
 * Fingers crossed that the instructor workstation works better today.
 * You will find that I call on students randomly using a set of cards
@@ -48,6 +48,10 @@ Administrative stuff
     * And I use the process to push you a bit.
     * Feel free to say "I'm not sure" or "I'd prefer not to answer."
     * If you don't want to be called on in class, please let me know.
+* The `csc151` library (which you'll learn about in lab today) is
+  updated daily. Each time you sit down to work, you should try to 
+  update the version you have.
+    * Also: Let me know when you encounter bugs or unexpected behavior.
 * Reminder to self: Demo Gradescope.
 * Reminder to self: Asking questions
 * Reminder to self: Vygotsky's zone of proximal development.
@@ -78,8 +82,10 @@ Misc
 
 ### Upcoming work
 
-* Read things in preparation for the thrid day of class and report on those 
+* Read things in preparation for the third day of class and report on those 
   things
+    * [Images](../readings/images)
+    * [Decomposition](../readings/decomposition)
     * _Note that readings responses are generally due in the evening. If
       you turn them in by 8pm or so, it's more likely that I'll read
       them before class._
