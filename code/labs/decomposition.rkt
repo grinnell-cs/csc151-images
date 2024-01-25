@@ -12,7 +12,6 @@
 ; +-----------+
 
 (require csc151)
-(require 2htdp/image)
 
 ; +-------------------------+----------------------------------------
 ; | Exercise 0: Preparation |
@@ -25,12 +24,13 @@ any questions you had on the readings and/or review any additional
 comments on the readings.
 
 2. Update the CSC151 libraries.  That is, open DrRacket, select
-"Package Manager..." from the "File" menu, enter
+"Install Pckage..." or "Package Manager..." from the "File" menu, 
+enter
 
     https://github.com/grinnell-cs/csc151.git#main
 
-click "Update", wait for a bit, click "Close Output", and then close
-the Package manager.
+click "Update", wait for a bit, click "Close" or "Close Output", and then 
+close the Package manager if necessary.
 |#
 
 #| A |#
@@ -47,14 +47,14 @@ take you about ten minutes.
 Define an image called `party-people` that looks like the image in
 the lab instructions.
 
-To draw equilateral triangles, you should use the `triangle` function, 
+To draw equilateral triangles, you should use the `solid-equilateral-triangle` function, 
 e.g.,
 |#
 
 ; Creates an equilateral triangle with sides of length
 ; 10 (in pixels) that is solid and green.
 (define little-green-triangle
-  (triangle 10 'solid "green"))
+  (solid-equilateral-triangle 10 "green"))
 
 #|
 As the reading suggests, you should use the technique of *algorithmic
@@ -101,20 +101,18 @@ take fifteen minutes or so.
 
 For this exercise, we'll introduce two new drawing functions:
 
-* `(rotate deg img)` produces a copy of the image `img`, but rotated 
+* `(rotate img deg)` produces a copy of the image `img`, but rotated 
   `deg` degrees counter-clockwise.
 * `(beside/align yalign img1 img2 ...)` places the images `img1`, `img2`, 
   ..., side-by-side as with `beside`.  However the are aligned relative 
   to `yalign` which can be one of the following strings:
     * `"top"`
-    * `"bottom"`
-    * `"middle"`
     * `"center"`
-    * `"baseline"`
+    * `"bottom"`
   The images are aligned according to this policy, *e.g.*, `beside/align`
-  behaves like `beside` if it is passed `middle`.
+  behaves like `beside` if it is passed `center`.
 * Coincidentally, `above/align` also exists with options to align
-  `"left"`, `"right"`, `"middle"`, or `"center"`.
+  `"left"`, `"center"`, and `"right"`.
 
 Use these functions to define an image, `falling-dominoes`, that
 looks like the one in the lab handout.
