@@ -19,7 +19,7 @@ Start by comparing your answers on the self-check from [the reading on DrRacket]
 
 If you successfully completed [the MathLAN laboratory](../labs/mathlan.html), you should have an icon for DrRacket at the bottom of your screen. Click on that icon to start DrRacket.
 
-DrRacket comes with a comprehensive standard *library* of functions that we will use throughout the course.  However, we have created additional functionality for you to support your exploration into the Digital Humanities in Racket in the form of the `csc151` package.  To install this package in your `DrRacket` installation:
+DrRacket comes with a comprehensive standard *library* of functions that we will use throughout the course.  However, we have created additional functionality for you to support your exploration of Racket in the form of the `csc151` package.  To install this package in your `DrRacket` installation:
 
 * Go to `File` → `Package Manager...` in the menu.
 * Enter the following URL into the "Package Source" textbox: <https://github.com/grinnell-cs/csc151.git#main>
@@ -120,7 +120,7 @@ Determine whether your prediction matches what DrRacket computes.
 ?
 > (string-split "Snicker snack" "ck")
 ?
-> (circle 10 "solid" "teal")
+> (solid-circle 20 "teal")
 ?
 ```
 
@@ -134,19 +134,19 @@ Feel free to go on to the next exercise, but if you are confused by any of the o
 As you may have noted, you get an error when you try to make a circle.
 
 ```
-> (circle 10 "solid" "teal")
-Error! circle: undefined;
+> (solid-circle 20 "teal")
+Error! solid-circle: undefined;
 Error!  cannot reference an identifier before its definition
 ```
 
 Why do you get an error?
 Because the `circle` procedure is not built-in to standard Racket.
-Instead, `circle` and other image-drawing functions are part of the `2hdtp/image` library (also called a *module* in Racket).
+Instead, `circle` and other image-drawing functions are part of the `csc151` library (also called a *module* in Racket).
 We need to tell Racket that we would like to *include* this module with a `require` statement.
 At the top of the definitions pane (but after `#lang racket`), add a line that reads:
 
 ```
-(require 2htdp/image)
+(require csc151)
 ```
 
 Click the **Run** button and try making the circle again.
@@ -162,19 +162,19 @@ check the image examples from [the reading]({{ "/readings/racket-intro.html" | r
 Enter each of the following in the interactions pane and ensure that you get the expected output.
 
 ```drracket
-> (circle 15 "outline" "blue")
+> (outlined-circle 40 "blue" 5)
 ?
-> (circle 10 "solid" "red")
+> (outlined-circle 20 "red" 5)
 ?
-> (above (circle 10 "outline" "blue")
-         (circle 15 "outline" "red"))
+> (above (outlined-circle 20 "blue" 5)
+         (outlined-circle 40 "red" 5))
 ?
-> (beside (circle 10 "solid" "blue")
-          (circle 10 "outline" "blue"))
+> (beside (solid-circle 40 "blue")
+          (outlined-circle 30 "blue" 5))
 ?
-> (above (rectangle 15 10 "solid" "red")
-         (beside (rectangle 15 10 "solid" "blue")
-                 (rectangle 15 10 "solid" "black")))
+> (above (solid-rectangle 15 10 "red")
+         (beside (solid-rectangle 15 10 "blue")
+                 (solid-rectangle 15 10 "black")))
 ?
 ```
 
@@ -334,11 +334,11 @@ We'll discuss these definitions---which define *variables*---in detail in a subs
 {:type="a"}
 1.  Open a new definitions tab with **File** > **New Tab** or <kbd>Ctrl</kbd>-<kbd>T</kbd>.
 
-2.  In the definitions pane, write definitions for `blue-circle`, a solid circle of radius 10, `red-square`, a solid red square of edge-length 20, and `black-rectangle`, an outlined black rectangle of width 30 and height 10.
+2.  In the definitions pane, write definitions for `blue-circle`, a solid circle of diameter 10, `red-square`, a solid red square of edge-length 20, and `black-rectangle`, an outlined black rectangle of width 30, height 20, and pen-width 10.
 
     ```
     #lang racket
-    (require 2htdp/image)
+    (require csc151)
     ; shapes.rkt
     ; A file from the first lab for CSC-151-NN SEMESTER
     ; Authors: 
@@ -446,7 +446,7 @@ _If you find that you have finished this laboratory before the end of class, you
 ### Extra 1: Compound images
 
 Write instructions to make an image of a simple house.
-If you are so inclined, you can use the `(triangle edge-length 'solid "color")` procedure to create a triangle for the roof.
+If you are so inclined, you can use the `(solid-equilateral-triangle edge-length "color")` procedure to create a triangle for the roof.
 
 ### Extra 2: Definitions, revisited
 

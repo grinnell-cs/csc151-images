@@ -98,14 +98,14 @@ We call `<expr1>` and `<expr2>` _sub-expressions_ of the overall expression.
 Of course, our last reading quickly moved from arithmetic to drawings, so we need our rules for Scheme expressions to generalize accordingly.  Let's look at one of these expressions from our previous reading:
 
 ```racket
-(circle 60 "outline" "blue")
+(solid-circle 60 "blue")
 ```
 
 What's different between this expression that produces a circle versus the arithmetic Scheme expression we studied earlier?
 
 * The "operator" is no longer a symbol.  Instead, it is a name or _identifier_.
-* There are more than two operands to this `circle` operation.
-* The operands are no longer just numbers, they also include these words-in-quotes, _strings_.
+* There are still just two operands to this `solid-circle` operation.
+* The operands are no longer just numbers, they also include a word-in-quotation-mark, also known as a _string_.
 
 We'll learn more about strings next week when we look at the primitive types of Scheme.  For now, think of them as another sort of value we can perform computation over.
 
@@ -122,10 +122,9 @@ Our template for describing expressions that perform operations now looks like t
 
 Where the `<expr1> ... <exprk>` represents a _sequence of sub-expressions_ separated by whitespace.  For example, in the example expression above:
 
-* `circle` is the identifier.
+* `solid-circle` is the identifier.
 * `60` is the first sub-expression.
-* `"outline"` is the second sub-expression.
-* `"blue"` is the third sub-expression.
+* `"blue"` is the second sub-expression.
 
 Putting everything together, we can write down the syntax of well-formed Scheme expressions as follows:
 

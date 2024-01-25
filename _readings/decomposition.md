@@ -6,11 +6,12 @@ preimg: true
 mathjax: true
 ---
 
-As we learned in [yesterday's reading]({{ "/readings/algorithm-building-blocks.html" | relative_url }}), an algorithm is a step-by-step procedure for solving a problem.
-These problems vary in scope from simple one-off tasks to complicated, generalized tasks that form the core of large, complex systems.
-For example, consider the problem of going through a web page and finding the links it contains.
-It turns out that a web page is plain text in a format known as *hypertext markup language* (HTML), so we can search the web page source file for occurrences of the text `<a href="...">...</a>` which correspond to links.
-For example, the beginning of this paragraph is rendered with the following HTML:
+_As a reminder, I encourage you not to read this passively; instead, enter the code interactively as you cover it in your reading.
+This will not only help you get used to typing out Racket code but also encourage you to play around and experiment with the language._
+
+---
+
+As we learned in [a recent reading]({{ "/readings/algorithm-building-blocks.html" | relative_url }}), an algorithm is a step-by-step procedure for solving a problem.  These problems vary in scope from simple one-off tasks to complicated, generalized tasks that form the core of large, complex systems.  For example, consider the problem of going through a web page and finding the links it contains.  It turns out that a web page is plain text in a format known as *hypertext markup language* (HTML), so we can search the web page source file for occurrences of the text `<a href="...">...</a>` which correspond to links.  For example, the beginning of this paragraph is rendered with the following HTML:
 
 ~~~html
 <p>As we learned in <a href="/csc151/readings/algorithm-building-blocks.html">yesterday’s reading</a>, an algorithm is a step-by-step procedure for solving a problem.
@@ -37,41 +38,37 @@ As such, we introduce this concept in this first week of the course to start get
 
 > The problem that I am trying to solve can be decomposed into these smaller problems...
 
-## Visual Decomposition with Pictures
+## Visual decomposition with pictures
 
-While we haven't seen much of the Racket programming language yet, we know enough to introduce the basics of algorithmic decomposition with the `images` library introduced in yesterday's reading.
-As a reminder, I encourage you not to read this passively; instead, enter the code interactively as you cover it in your reading.
-This will not only help you get used to typing out Racket code but also encourage you to play around and experiment with the language.
+While we haven't seen much of the Racket programming language yet, we know enough to introduce the basics of algorithmic decomposition with the image-making procedures.
 
-From last class period's class, recall that we must include a `require` command in our definitions so that Racket knows we're using the `images` library.
-We'll also include the class library `csc151` so that we have access to some additional functions that we will use.
+From last class period's class, recall that we must include a `require` command in our definitions so that Racket knows we're using the appropriate library.
 
 ~~~racket
 #lang racket
 
-(require 2htdp/image)
 (require csc151)
 ~~~
 
 After pressing **Run**, the interactions pane will now be ready for us to use functions from the `image` library.
 
-Our [initial reading on the Racket language]({{ "/readings/racket-intro.html" | relative_url }}) introduce us to functions for drawing circles and rectangles:
+Our [initial reading on the Racket language]({{ "/readings/intro-scheme.html" | relative_url }}) introduced us to functions for drawing circles and rectangles:
 
 ~~~racket
-> (circle 50 "outline" "blue")
+> (outlined-circle 98 "blue" 1)
 ![An outline of a blue circle.]({{ "/images/decomposition-circle-example.png" | relative_url }})
-> (rectangle 75 50 "solid" "red")
+> (solid-rectangle 75 50 "red")
 ![A solid red rectangle.]({{ "/images/decomposition-rectangle-example.png" | relative_url }})
 ~~~
 
-As well as functions that allow us to place images above and beside each other.
+It also introduced functions that permit us to place images above and beside each other.
 
 ~~~racket
-> (above (circle 35 "outline" "blue")
-         (circle 35 "outline" "red"))
+> (above (outlined-circle 70 "blue" 1)
+         (outlined-circle 70 "red" 1))
 ![Outlines of a blue and red circle stacked on top of each other.]({{ "/images/decomposition-above-example.png" | relative_url }})
-> (beside (rectangle 50 50 "solid" "blue")
-          (rectangle 50 50 "solid" "red"))
+> (beside (solid-rectangle 50 50 "blue")
+          (solid-rectangle 50 50 "red"))
 ![A solid blue and red rectangle side-by-side.]({{ "/images/decomposition-beside-example.png" | relative_url }})
 ~~~
 
@@ -119,7 +116,7 @@ In a bottom-up style, we first implement the individual of pieces of the program
 In a top-down style of design, we first *partially* implement the complete program and then implement the individual pieces.
 We'll illustrate both styles of design below.
 
-## Bottom-up Design
+## Bottom-up design
 
 Let's begin with the top row.
 We'll define `top-row` to be the top row of circles using the `circle` and `beside` functions.
@@ -127,8 +124,8 @@ Note that this `define` command should go into the *definitions pane* below your
 
 ~~~racket
 (define top-row
-  (beside (circle 50 "outline" "red")
-          (circle 75 "solid" "blue")))
+  (beside (outlined-circle 100 "red" 1)
+          (solid-circle 150 "blue")))
 ~~~
 
 After clicking **Run** to re-load these definitions, we can now go to the interactions pane and test our code.
@@ -143,8 +140,8 @@ Next, we'll define `bottom-row` to be the bottom row of circles in the definitio
 
 ~~~racket
 (define bottom-row
-  (beside (circle 75 "outline" "blue")
-          (circle 50 "solid" "red")))
+  (beside (outlined-circle 150 "blue" 1)
+          (solid-circle 100 "red")))
 ~~~~
 
 And we'll check our work in the interactions pane.
@@ -170,7 +167,7 @@ We can check that `circles` is the image that we wanted in the interactions pane
 ![Four circles in a grid. The top-left circle is a small red outline. The top-right circle is large, blue, and filled-in. The bottom-left circle is a large blue outline. The bottom-right circle is small, red, and filled-in]({{ "/images/decomposition-circles-overall.png" | relative_url }})
 ~~~
 
-## Top-Down Design
+## Top-down design
 
 With top-down design, rather than starting with `top-row` and `bottom-row`, we start with the overall program `circles`.
 We have identified that `circles` is a stack of two rows of images, so we know that the definition of `circles` will involve `above`.
@@ -192,8 +189,8 @@ Of course, when we run this code, we the `Hole encountered!  Fill me in!` error,
 Once we define `top-row` as before:
 
 ~~~racket
-  (beside (circle 50 "outline" "red")
-          (circle 75 "solid" "blue")))
+  (beside (outlined-circle 100 "red" 1)
+          (solid-circle 150 "blue")))
 ~~~
 
 We can now fill in the corresponding hole in `circles`:
@@ -210,7 +207,7 @@ Finally, we can define `bottom-row` just like before and then complete the defin
   (above top-row bottom-row))
 ~~~
 
-## Top-down vs. Bottom-up Design
+## Top-down vs. bottom-up design
 
 You might wonder which sort of design---top-down or bottom-up---to use when writing your programs.
 The short answer is that *it depends* on the kind of problem you are tackling and your own personal preference.
@@ -219,7 +216,7 @@ In other cases, you might not see the pieces and want to essentially outline how
 In this case, you can use top-down design to write this outline and then fill it in incrementally.
 Either strategy is valid---be willing to experiment early on with both styles to discover your preferences and be flexible in how you design your code!
 
-## Decomposition In Code
+## Decomposition in code
 
 Finally, let's look at the big picture.
 Take a look at the complete program that we wrote in the definitions pane:
@@ -228,15 +225,14 @@ Take a look at the complete program that we wrote in the definitions pane:
 #lang racket
 
 (require csc151)
-(require 2htdp/image)
 
 (define top-row
-  (beside (circle 50 "outline" "red")
-          (circle 75 "solid" "blue")))
+  (beside (outlined-circle 100 "red" 1)
+          (solid-circle 150 "blue")))
 
 (define bottom-row
-  (beside (circle 75 "outline" "blue")
-          (circle 50 "solid" "red")))
+  (beside (outlined-circle 150 "blue" 1)
+          (solid-circle 100 "red")))
 
 (define circles
   (above top-row bottom-row))
@@ -252,7 +248,7 @@ By employing algorithmic decomposition in our problem solving and programming, w
 As we move forward in the course, *always* approach problems with decomposition in mind even if they are easy to solve at first.
 Honing this skill early on in your programming journey will prepare you well for the complex problems will encounter later in the semester!
 
-## Self Checks
+## Self checks
 
 ### Check 1: Readability (‡)
 
@@ -261,16 +257,14 @@ Here is an alternative version of the code to produce the image of this reading.
 ~~~racket
 #lang racket
 
-(require 2htdp/image)
-
 (define circles
-  (above (beside (circle 50 "outline" "red")
-                 (circle 75 "solid" "blue"))
-         (beside (circle 75 "outline" "blue")
-                 (circle 50 "solid" "red"))))
+  (above (beside (outlined-circle 100 "red" 1)
+                 (solid-circle 150 "blue"))
+         (beside (outlined-circle 150 "blue" 1)
+                 (solid-circle 100 "red"))))
 ~~~
 
-Paste this code into a fresh DrRacket tab's definitions pane and verify that `circles` produces the same image as before.
+Paste this code into the definitions pane in a fresh DrRacket tab and verify that `circles` produces the same image as before.
 
 Compare and contrast the final version of the code the reading with this version.
 Answer each of the following questions in a few sentences each.
@@ -282,7 +276,7 @@ Answer each of the following questions in a few sentences each.
 +   Which version allows you to better predict the results *without* running the program?
     Why?
 
-### Check 2: Alternative Decomposition (‡)
+### Check 2: Alternative decomposition (‡)
 
 There are many ways to decompose a problem, many of which are equivalent, but many produce subtlety different solutions.
 The decomposition we chose in the reading was one where we recognized the image was *two rows stacked on top of each other*.

@@ -10,17 +10,7 @@ preimg: true
 
 ## Introduction: Algorithms and programming languages
 
-While our main goals in this course are for you to develop your
-skills in "algorithmic thinking" and apply algorithmic techniques
-to problems in the digital humanities, you will find it equally
-useful to learn how to direct computers to perform these algorithms.
-_Programming languages_ provide a formal notation for expressing
-algorithms that can be read by both humans and computers.  We will
-use the Scheme programming language, itself a dialect of the Lisp
-programming language, one of the first important programming
-languages. More specifically, we'll use _Racket_, a derivative of
-Scheme, but we'll frequently use "Scheme" and "Racket" interchangeably
-throughout the course.
+While our main goals in this course are for you to develop your skills in "algorithmic thinking" and apply algorithmic techniques to problems, you will find it equally useful to learn how to direct computers to perform these algorithms.  _Programming languages_ provide a formal notation for expressing algorithms that can be read by both humans and computers.  We will use the Scheme programming language, itself a dialect of the Lisp programming language, one of the first important programming languages. More specifically, we'll use _Racket_, a derivative of Scheme, but we'll frequently use "Scheme" and "Racket" interchangeably throughout the course.
 
 One thing that sets these languages apart from most other languages is a
 simple, but non-traditional, syntax.  To tell the computer to apply a
