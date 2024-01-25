@@ -40,7 +40,7 @@ close the Package manager if necessary.
 ; +---------------------+
 
 #|
-As the A above suggests, Partner A should drive on this exercise and
+a. As the A above suggests, Partner A should drive on this exercise and
 Partner B should navigate.  If all goes well, this exercise should 
 take you about ten minutes.
 
@@ -67,6 +67,15 @@ decomposition you identified.
 (define party-people 
   ???)
 
+#|
+b. If you have not done so already, ensure that your image has an
+appropriate *short* description. For example,
+
+     > (describe-image party-people)
+     "five stick-figure people with party hats arranged side-by-side"
+
+|#
+
 #| B |#
 
 ; +-------------------------+----------------------------------------
@@ -74,7 +83,7 @@ decomposition you identified.
 ; +-------------------------+
 
 #|
-Now, switch roles!  The navigator of the previous problem should
+a. Now, switch roles!  The navigator of the previous problem should
 become the driver.
 
 Now, try building a program that defines `landscape` as the image
@@ -88,6 +97,16 @@ parts you identified.
 
 (define landscape
   ???)
+
+#|
+b. In case you've forgotten, make sure to add descriptions to both
+the landscape and the components thereof. For example.
+
+    (define small-tree
+      (solid-isosceles-triangle 20 50 "darkgreen")
+      "a small tree")
+
+|#
 
 #| A |#
 
@@ -155,7 +174,8 @@ You should also check to make sure that the file looks readable.
 things to your file.  In such cases, ask the class staff for help.)
 
 Finally, we would also recommend that you use Teams or email to
-exchange files or portions thereof.
+exchange files or portions thereof. (You should also be able to
+download the code from Teams.)
 |#
 
 #| AB |#
