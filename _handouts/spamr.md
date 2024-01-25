@@ -5,6 +5,44 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-151-01 2024F] Notes in preparation for Quiz 1 (Thursday, 2024-01-25)
+
+Dear Beginning Image Makers,
+
+I hope you are having a pleasant day.
+
+A few of you have been asking about tomorrow's quiz, which I conveniently forgot to mention in class on Wednesday.  Here's some relevant info.
+
+**Process**
+
+When you arrive in class, you will grab a quiz, grab a computer name card, figure out where the computer is, drop the card in the jar, navigate to the computer, and start the quiz.
+
+Most students will arrive at 8:30-ish.
+
+Those who have accommodations indicating extra time and those who feel they would need extra time can arrive at 8:15.
+
+I will start class at 8:45. Maddy will collect the quizzes at that time.
+
+If you finish early, you can log in to the computer, start DrRacket, and direct the Web browser to the lab. (Don't start until your partner is ready.) You can also sit and read on your phone, or just relax and meditate (we don't take enough time to do so).
+
+**Topic**
+
+The first quiz will be on decomposition. We will give you a compound image and ask you to decompose it (something like in the reading). Here's an example.
+
+https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/las/decomposition.html
+
+**Notes**
+
+Normally, we will not give quizzes on topics you haven't done a lab on. This week, we have not yet covered any quiz topic, so we are giving this quiz primarily so that you can see what quizzes are like in 151. Don't stress about it (either in preparation or when you see the quiz).
+
+You are new to Scheme and to the image library. As long as your answer is close, you'll get credit. (That is, your syntax need not be perfect.)
+
+Let me know if you have further questions.
+
+Regards,
+
+-- SamR
+
 ## [CSC-151-01 2024Sp] Assignments and such (Monday, 2023-01-22)
 
 Dear Sandwich Specifiers,
