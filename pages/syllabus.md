@@ -19,7 +19,7 @@ permalink: /syllabus/
     </ul>
   </dd>
 
-  <dt>Office Hours</dt>
+  <dt>Instructor Office Hours</dt>
   <dd>
     <ul class="list-unstyled">
       {% for item in site.office_hours %}
