@@ -207,12 +207,11 @@ Here's one more function for this exercise:
 the images were overlaid on top of each other (not above, but
 "nearer" in the third dimension.  
 
-In addition, when we specify the fill of an image, *e.g.*, using
-`"solid"` as in `(square 50 "solid" "red")`, we can also specify a
-number, *e.g.*, `(square 50 100 "red")`.  The number, which must
-range from 0–255 is interpreted as the degree of *opacity* of
-the shape's color.  0 is interpreted as fully transparent whereas
-255 is equivalent to `"solid"`.
+In addition, when you specify the color of an image, you can add
+an alpha value to the color, provided you give it in RGBA form.
+That number, which must be in the range 0-255, is interpreted
+as the opacity of the color. For example, `(rgb 255 0 0 100)` is
+a semi-transparent red.
 
 Use these functions to define an image, `sun-triangles`, that looks
 like the one in the lab handout.
@@ -220,11 +219,11 @@ like the one in the lab handout.
 The image is a collection of transparent yellow triangles with black
 outlines on top of an orange circle.
 
-This one is a bit trickier than the previous ones, and there is a
-few ways you might approach it.  Not all approaches will result in
-the exact same image, so we aren't looking for your result to be
-identical, but it is possible, and we encourage you to think carefully
-about your decomposition to get that result.
+This image is a bit trickier than the previous ones, and there is
+a few ways you might approach it.  Not all approaches will result
+in the exact same image, so we aren't looking for your result to
+be identical, but it is possible, and we encourage you to think
+carefully about your decomposition to get that result.
 
 At the very least, you will need to draw yellow triangles with
 outlines.  To achieve this effect, you should use `overlay` and two
