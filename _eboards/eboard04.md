@@ -96,5 +96,12 @@ What's the best way to check what work is due?
 Lab
 ---
 
-_Note: You are best off right clicking on the link to the Racket
-file and saving it in an appropriate place._
+### Notes
+
+* You are best off right clicking on the link to the Racket file and 
+  saving it in an appropriate place.
+* As you may have noticed, the autograder cares that you have the right
+  file name and that you give your values the right names. Following
+  these kinds of guidelines is good practice.
+
+### Questions and answers
