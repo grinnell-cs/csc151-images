@@ -80,6 +80,7 @@ Misc
 * [Mini-Project 1 Pre-Reflection](https://www.gradescope.com/courses/690100/questions/32503307/) due tonight.
 * By Sunday at 11pm: Read things in preparation for the fourth day of 
   class and report on those things
+    * Read [writing your own procedures](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/readings/procedures.html) 
     * Do the [Reading Response](https://www.gradescope.com/courses/690100/assignments/3994740/)
 * [Mini-Project 1](../mps/mp01) due Wednesday night.
 
