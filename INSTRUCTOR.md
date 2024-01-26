@@ -34,7 +34,7 @@ for more details).
 
 Try the server.
 
-    tasks serve
+    tasks/serve
 
 Check which branches are available.  If there's already one for your
 course, use it.  If there's not one for your course, create it.
@@ -44,6 +44,20 @@ Try the server again.
 Edit the various files (see below).
 
 Try the server again.
+
+Try deploying to your Web server.  **Make sure that you've edited `tasks/deploy`!**
+
+    tasks/serve
+
+Check a few links on your Web server. 
+
+_Some instructors have encountered issues with URLs that don't end
+in `.html`. Smart Web servers automatically add the `.html`. If
+your server doesn't do so automatically, it often works to add a
+`.htaccess` file that contains the following line. (That certainly
+works for reclaim hosting.)_
+
+    Options +MultiViews
 
 Primary commands
 ----------------
