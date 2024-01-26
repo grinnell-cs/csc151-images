@@ -54,9 +54,9 @@
     how expressions "compute".
   reading:
     - page: /readings/computation-via-expressions.html
+    - page: /readings/mental-models.html
   lab:
     - page: /labs/mental-models-of-computation.html
-    - page: /readings/mental-models.html
 
 - topic: Expressions and types
   abbrev: exprs-and-types
