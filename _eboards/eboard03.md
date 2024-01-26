@@ -49,6 +49,8 @@ Administrative stuff
 ### MP1
 
 * Due next Wednesday.
+* We'll look at it quickly.
+* We'll also look at the pre-assessment on Gradescope
 
 ### Upcoming activities
 
@@ -89,12 +91,53 @@ Questions
 
 ### General
 
+_It's better to ask general questions via Teams Messages, email, or
+the Q&A channel than on the reading responses. You'll get quicker
+answers._
+
 That [passwordreset](https://passwordreset.grinnell.edu) detour was, um,
-interesting. Do you often go off on tangents?
+interesting, but not necessarily relevant. Do you often go off on tangents?
 
 > Squirrel!
 
+Where do I submit tokens?
+
+> Stay tuned. The token assignments should be available on Gradescope
+  by Monday.
+
+From the Q&A channel, it sounds like some of the section 2 students have
+finished MP1 already. Should I be worried?
+
+> Not at all. It's not due until next Wednesday. I just want to make
+  sure you read it and think about it today.
+
 ### On the readings
 
-Lab
+How does the order of the numbers correspond to the dimensions of
+the shapes (length/width etc.) and can this be changed (such that
+the first number corresponds to height instead of length or vice
+versa)
+
+> For shapes that have different width and height, the first number is
+  usually the width and the second is the height.
+
+> The documentation (see the Reference link) will usually give you
+  the details. (I'm still working on the documentation.)
+
+> You can write a new procedure that takes the parameters in a different
+  order (at least you will be able to after you do Monday's reading).
+
+Does top-down coding necessarily have to continue from the largest
+procedure to the most simple, or if you understand what the code
+should look like, could you start working out the 'middle bit'
+first?  
+
+> Top-down usually starts only at the top. In practice, most people
+  work in multiple directions at once.
+
+I would like more examples of top-down and bottom-up.
+
+> We'll do some in lab (at least I think we will).
+
+Lab 
 ---

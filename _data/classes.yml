@@ -32,6 +32,7 @@
     - page: /labs/decomposition.html
   todo:
     - Check the images reading to make sure it works with the new model.
+  notes: ../eboards/eboard03.html
 
 - topic: Reading and writing procedures
   abbrev: procedures
