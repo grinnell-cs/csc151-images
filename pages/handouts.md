@@ -70,6 +70,9 @@ You'd think the [syllabus](../syllabus) and [schedule](../schedule) would provid
 
 These also aren't strictly handouts, but we didn't have a better place for them.  The list is incomplete.
 
+[CSC-151 2024 Spring (Perlmutter)](https://perlmutter.cs.grinnell.edu/teaching/2024S/CSC_151_02/)
+  : Professor Perlmutter's Spring 2024 version. Our "partner class", as it were.
+
 [CSC-151 2023 Fall (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2023Fa/)
   : Professor Rebelsky's Fall 2023 version, which uses a slightly different image library. This was the first image-based version since Spring 2017.
 
