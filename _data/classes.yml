@@ -7,6 +7,7 @@
 
 - topic: Getting started with Scheme
   abbrev: racket-tech
+  notes: https://docs.google.com/presentation/d/1YVqSv6N4IrdBx8zJV_PfH9QKdKhGmba09nrH_vJYIfI/edit#slide=id.g2666291cd13_0_239
   summary: |
     We consider Scheme, the programming language we will use
     throughout the course.
