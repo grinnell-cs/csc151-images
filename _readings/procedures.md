@@ -4,7 +4,7 @@ summary: |
   We explore why and how to define your own procedures in Scheme.
 prereqs: |
   [Algorithm building blocks]({{ "/readings/algorithm-building-blocks.html" | relative_url }}).
-  [An abbreviated introduction to Scheme]({{ "/readings/racket-intro.html" | relative_url }}).
+  [An abbreviated introduction to Scheme]({{ "/readings/intro-scheme.html" | relative_url }}).
 preimg: true
 ---
 
@@ -44,7 +44,7 @@ consider an example.
 ![A large red square placed on top of smaller blue and purple squares.]({{ "/images/procedures-03.png" | relative_url }})
 ```
 
-As you may recall, the `2hdtp/image` library already defines a `square` procedure, so it's unlikely to be a good idea for us to define our own `square` procedure, whether for numbers or images.
+The `csc151` library already defines a `square` procedure, so it's unlikely to be a good idea for us to define our own `square` procedure, whether for numbers or images.
 More generally, when we choose names in Scheme, we should try not to conflict with existing names.
 Sometimes Scheme will stop us from reusing a name; other times it will blithely move along, letting us break things through such reuse.
 
@@ -113,7 +113,7 @@ procedure works.
 #<procedure:square-number>
 ```
 
-You may note in the last line that when we asked our Scheme interpreter for the "value" of `square-number`, it told us that it's a procedure named `square-number`.
+You may note in the last line that when we asked our Scheme interpreter for the value of `square-number`, it told us that it's a procedure named `square-number`.
 Compare that to other values we might define.
 
 ```drracket
@@ -123,7 +123,7 @@ Compare that to other values we might define.
 > (define phrase "All mimsy were the borogoves")
 > phrase
 "All mimsy were the borogoves"
-> (define red-square (rectangle 15 15 "solid" "red"))
+> (define red-square (solid-rectangle 15 15 "red"))
 > red-square
 ![A red square of side length 15.]({{ "/images/procedures-07.png" | relative_url }})
 > (define multiply *)
@@ -171,16 +171,16 @@ If we want a procedure to make squares, we'll just call the `rectangle` procedur
 ```drracket
 (define color-square
   (lambda (side color)
-    (rectangle side side "solid" color)))
+    (solid-rectangle side side color)))
 ```
 
 What happens if we call `color-square` on inputs of `10` and `"red"`?
-Scheme substitutes `10` for `side` and `"red"` for color, giving us `(rectangle 10 10 "solid" "red")`.  
+Scheme substitutes `10` for `side` and `"red"` for color, giving us `(solid-rectangle 10 10 "red")`.  
 And, as we saw in the examples above, that's a red square of side-length 10.
 
 ```
     (color-square 10 "red")
---> (rectangle 10 10 "solid" "red")
+--> (rectangle 10 10 "red")
 --> ![A red square of side-length 10.]({{ "/images/procedures-01.png" | relative_url }})
 ```
 
@@ -193,10 +193,10 @@ following definition of a simple drawing of a house.
 ```drracket
 > (overlay/align "center" "bottom"
                  (overlay/align "left" "center"
-                                (circle 3 "solid" "yellow")
-                                (rectangle 15 25 "solid" "brown"))
-                 (above (triangle 50 "solid" "red")
-                        (rectangle 40 50 "solid" "black")))
+                                (solid-circle 6 "yellow")
+                                (solid-rectangle 15 25 "brown"))
+                 (above (solid-equilateral-triangle 50 "red")
+                        (solid-rectangle 40 50 "black")))
 ![A simple picture of a house.  The house is black with a red triangular roof, a brown door in the center, and a yellow doorknob.]( {{ "/images/procedures-04.png" | relative_url }})
 ```
 
@@ -224,8 +224,8 @@ Remember: Decomposition is your friend!
 If we did not care about resizing the house, we might just write an expression like the following.
 
 ```drracket
-(above (triangle 50 "solid" "red")
-       (rectangle 40 50 "solid" "black"))
+(above (solid-equilateral-triangle 50 "red")
+       (solid-rectangle 40 50 "black"))
 ```
 
 But we'd like to "parameterize" the code to take the size as an input.
@@ -236,8 +236,8 @@ Let's see how that works.
 ```drracket
 > (define simple-house
     (lambda (size)
-      (above (triangle size "solid" "red")
-             (rectangle (* 4/5 size) size "solid" "black"))))
+      (above (solid-equilateral-triangle size "red")
+             (solid-rectangle (* 4/5 size) size "black"))))
 > (simple-house 20)
 ![A very simple black house with a red roof.]({{ "/images/procedures-08.png" | relative_url }})
 > (simple-house 30)
@@ -309,7 +309,7 @@ That doesn't seem very useful, does it?
 And it's *much* harder to read, at least for now.
 But it's worth it.
 The power comes in when we use these "anonymous" procedures along with other tools.
-For example, the `map` procedure which we covered briefly and will return to applies a procedure to each element of a list.
+For example, the `map` procedure (which we will return to later) applies a procedure to each element of a list.
 
 ```
     (map (lambda (x) (* 3 x)) (list 1 2 3))
@@ -328,7 +328,7 @@ We'll return to the concepts in a week or two.
 
 ## Self Checks
 
-### Check 1: A simple procedure
+### Check 1: A simple procedure (‡)
 
 Write a procedure, `(subtract2 val)`, that takes a number as input and
 subtracts 2 from that number.
@@ -347,7 +347,11 @@ subtracts 2 from that number.
    2
 ```
 
-### Check 2: Exploring steps
+### Check 2: Building blocks (‡)
+
+Write a procedure, `(block color)`, that takes a color as input and builds a 40x20 "block" of the given color (a solid rectangle).
+
+### Check 3: Exploring steps
 
 Show the steps involved in computing `(square (subtract2 5))` and
 `(subtract2 (square 5))`.
