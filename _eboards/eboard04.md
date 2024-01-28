@@ -1,5 +1,5 @@
 ---
-title: "EBoard 04: Writing your own procedures
+title: "EBoard 04: Writing your own procedures"
 number: 4
 section: eboards
 held: 2024-01-29
@@ -24,16 +24,19 @@ _Start of class instructions_
 
 _Approximate overview_
 
-* Administrative stuff; no attendance [15 min]
+* Administrative stuff, including attendance [15 min]
 * Lab [60 min]
 * Turn in lab [5 min]
 
 Administrative stuff
 --------------------
 
+### Attendance
+
 ### Introductory Notes
 
 * Reminder to self: Demo Gradescope.
+* You can now submit mini-project 4.
 
 ### Upcoming activities
 
@@ -53,15 +56,29 @@ Misc
 
 ### Upcoming work
 
-* By Tuesday at 11pm: Read things in preparation for the fifth day of 
+* Tuesday, 2024-01-30, 11pm: Read things in preparation for the fifth day of 
   class and report on those things
     * [Computation via expressions](../readings/computation-via-expressions)
     * [More on mental models](../readings/mental-models)
     * Do the [Reading Response](https://www.gradescope.com/courses/690100/assignments/4007931/submissions)
-* [Mini-Project 1](../mps/mp01) due Wednesday night.
+* Wednesday, 2024-01-31, 8:30am: Submit today's lab writeup.
+    * [Submit on Gradescope](...)
+* Wednesday, 2024-01-1, 11:00pm: [Mini-Project 1](../mps/mp01) due.
+    * [Submit on Gradescope](https://www.gradescope.com/courses/690100/assignments/4014689/)
 
 Questions
 ---------
+
+### Administrative
+
+What's the best way to check what work is due?
+
+> The daily eboards are most likely to have links to everything.
+
+> Gradescope will have the things you need to turn in, but Gradescope
+  is sometimes overwhelming.
+
+> The schedule lists most things, but won't always have links.
 
 ### Quizzes
 
@@ -80,18 +97,25 @@ What should I do if I did not receive credit for this quiz?
   assessments (SoLA) in a few weeks. (The SoLA will be on the
   computer.)
 
-### Administrative
-
-What's the best way to check what work is due?
-
-> The daily eboards are most likely to have links to everything.
-
-> Gradescope will have the things you need to turn in, but Gradescope
-  is sometimes overwhelming.
-
-> The schedule lists most things, but won't always have links.
-
 ### Readings
+
+Can one make a list of colors or numbers and feed it into a procedure to generate lots of things with little effort?
+
+> Yup. We'll see how in a week or so.
+
+Can you make optional parameters for lambdas?
+
+> Yes. You put them in square brackets and add a default value.
+
+> Here's a way to define a procedure, `disc`, that takes a diameter and 
+  an optional color, using "black" if it's not given one.
+
+    (define disc
+      (lambda (diameter [color "black"])
+        (ellipse diameter diameter color)))
+
+> There are also some more complicated approaches that we might
+  consider later in the semester.
 
 Lab
 ---
