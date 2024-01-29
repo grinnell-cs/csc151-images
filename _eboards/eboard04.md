@@ -33,14 +33,20 @@ Administrative stuff
 
 ### Attendance
 
+_Yes, we'll do that once in a while._
+
 ### Introductory Notes
 
-* Reminder to self: Demo Gradescope.
-* You can now submit mini-project 4.
+* You can now submit mini-project 1.
 
 ### Upcoming activities
 
+_Sam: Don't forget to do a token demo._
+
 Scholarly
+
+* Thursday, 2024-02-01, 11am, HSSC 2231 (Auditorium), 
+  _Scholars' Convocation, Being a Pandemic Citizen._
 
 Cultural
 
@@ -49,6 +55,9 @@ Cultural
 Peer
 
 Wellness
+
+* Today, 2024-01-29, 4pm, HSSC Atrium, 
+  _Therapy Dogs_.
 
 Misc
 
@@ -93,6 +102,10 @@ What's the best way to check what work is due?
 
 > The schedule lists most things, but won't always have links.
 
+When are the mentor sessions?
+
+> I'm not sure. I'll check with Maddy.
+
 ### Quizzes
 
 Why do you have us do quizzes on paper rather than the computer?
@@ -114,7 +127,18 @@ What should I do if I did not receive credit for this quiz?
 
 _I've put most of the questions and answers in the mini-project._
 
-For part 4 of the MP1, how can my-image-alt and my-image be compared if we had to edit the code to make the generation procedure?
+How do I make a semicircle?
+
+> Overlay two circles.
+
+> Ask Sam for a better approach and wait until tonight.
+
+Can I use procedures we haven't learned yet?
+
+> Yes, provided you cite how you learned them.
+
+For part 4 of the MP1, how can my-image-alt and my-image be compared if
+we had to edit the code to make the generation procedure?
 
 > You shouldn't alter your code from part 2 to make part 4.  Suppose this is my code from part 2.
 
@@ -160,13 +184,31 @@ For part 4 of the MP1, how can my-image-alt and my-image be compared if we had t
 
 > And something like the following to generate an alternate
 
-    (define my-other-image (generate-my-image "green" "red" "black"))
+    (define my-other-image (generate-my-image "green" "red" "white"))
 
 > I hope that makes sense.
 
+Can we name our parameters whatever we'd like?
+
+> Yes, within reason.
+
+Is there a way to place something at a particular location in an image?
+
+> Yes, there's a `place` procedure.
+
+> _Sam demos._
+
 ### Readings
 
-Can one make a list of colors or numbers and feed it into a procedure to generate lots of things with little effort?
+Is there a way to guarantee that what someone passes in is the correct
+type of thing so that, say, someone doesn't give me a color where I
+expect a number?
+
+> Yes, but we won't cover it for a few weeks. For now, assume that people
+  know what the input type is and get it right.
+
+Can one make a list of colors or numbers and feed it into a procedure
+to generate lots of things with little effort?
 
 > Yup. We'll see how in a week or so.
 
@@ -179,7 +221,7 @@ Can you make optional parameters for lambdas?
 
     (define disc
       (lambda (diameter [color "black"])
-        (ellipse diameter diameter color)))
+        (solid-ellipse diameter diameter color)))
 
 > There are also some more complicated approaches that we might
   consider later in the semester.
@@ -195,4 +237,31 @@ Lab
   file name and that you give your values the right names. Following
   these kinds of guidelines is good practice.
 
-### Questions and answers
+### More comments from Sam
+
+Here's what I'd like for problem 1a
+
+```
+(define my-func-1
+  (lambda (x y)
+    (+ x (* y y) x)))
+
+     (my-func-1 (+ 1 1) 5)
+---> (my-func-1 2 5)
+---> (+ 2 (* 5 5) 2)
+---> (+ 2 25 2)
+---> 29
+```
+
+Stop working on problem 1 at 9:20.
+
+It's 9:45. It's time to stop.
+
+```
+; Sam said I should stop here.
+```
+
+Submit on gradescope. It's okay if you don't pass all of the tests.
+
+I would recommend that you try to do the snowperson problem if you have
+not managed to do it.
