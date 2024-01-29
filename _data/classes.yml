@@ -22,6 +22,7 @@
 
 - topic: Computation via expressions
   abbrev: expressions
+  notes:  https://docs.google.com/presentation/d/1JhnqOroQDgvSsazfkUO8WJ1cPyc1LAaI5zIEriAh36o/edit#slide=id.g266cec9e5e9_0_59
   summary: |
     We look at the fundamental building block of computation in functional
     programming languages, the expression, and build an appropriate model of
