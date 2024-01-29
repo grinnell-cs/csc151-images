@@ -66,6 +66,19 @@ Misc
 * Wednesday, 2024-01-1, 11:00pm: [Mini-Project 1](../mps/mp01) due.
     * [Submit on Gradescope](https://www.gradescope.com/courses/690100/assignments/4014689/)
 
+Notes on quiz 1
+---------------
+
+* You did a good job, in general. Congratulations!
+* Please write your full name (first and last)
+* Naming is important. If I tell you to call something `three-by-three`,
+  don't call it `image` or `grid` or something else.
+* Please write your name on the back and do your work on the front
+  so that I can grade anonymously.
+* Think about the naming of subimages. `column1` doesn't tell me much.
+  `red-diamonds` or `red-column` is better.
+* Similarly, using the name `red-row` for a column is a bit misleading.
+
 Questions
 ---------
 
@@ -96,6 +109,60 @@ What should I do if I did not receive credit for this quiz?
   on the makeup, you can try again on the first set of learning
   assessments (SoLA) in a few weeks. (The SoLA will be on the
   computer.)
+
+### MP1
+
+_I've put most of the questions and answers in the mini-project._
+
+For part 4 of the MP1, how can my-image-alt and my-image be compared if we had to edit the code to make the generation procedure?
+
+> You shouldn't alter your code from part 2 to make part 4.  Suppose this is my code from part 2.
+
+    (define ayes
+      (beside (solid-circle 20 "blue")
+              (solid-rectangle 20 1 (rgb 0 0 0 0))
+              (solid-circle 20 "blue"))) 
+
+    (define smile
+      (overlay (above (solid-circle 50 "yellow")
+                      (solid-rectangle 1 10 (rgb 0 0 0 0)))
+               (solid-circle 50 "red"))) 
+
+    (define my-image
+      (overlay (above ayes smile)
+               (solid-circle 150 "yellow")
+               (outlined-circle 150 "black" 5)))
+
+> For part 4, I'd write something like the following.
+
+    (define make-eyes
+      (lambda (eye-color)
+        (beside (solid-circle 20 eye-color)
+                (solid-rectangle 20 1 (rgb 0 0 0 0))
+                (solid-circle 20 eye-color)))) 
+    
+    (define make-smile
+      (lambda (smile-color face-color)
+        (overlay (above (solid-circle 50 face-color)
+                        (solid-rectangle 1 10 (rgb 0 0 0 0)))
+                 (solid-circle 50 smile-color)))) 
+    
+    (define generate-my-image
+      (lambda (face-color eye-color smile-color)
+          (overlay (above (make-eyes eye-color)
+                          (make-smile smile-color face-color))
+                   (solid-circle 150 face-color)
+                   (outlined-circle 150 "black" 5))))
+
+> Now, I'd write the following to generate the image.
+
+    (define my-image-alt (generate-my-image "yellow" "blue" "red"))
+
+> And something like the following to generate an alternate
+
+    (define my-other-image (generate-my-image "green" "red" "black"))
+
+> I hope that makes sense.
 
 ### Readings
 
