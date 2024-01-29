@@ -45,6 +45,7 @@
     - page: /readings/procedures.html
   lab:
     - page: /labs/procedures.html
+  notes: ../eboards/eboard04.html
 
 - topic: Computation via expressions
   abbrev: expressions
@@ -57,6 +58,7 @@
     - page: /readings/mental-models.html
   lab:
     - page: /labs/mental-models-of-computation.html
+  notes: ../eboards/eboard05.html
 
 - topic: Expressions and types
   abbrev: exprs-and-types

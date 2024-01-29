@@ -59,9 +59,59 @@ Misc
 Notes on Monday's lab
 ---------------------
 
-The joy of ctrl-up-arrow.
+### Stopping with five minutes to go.
 
-Ways to define `snowperson` and `snowperson-revisited`.
+In general, I'll tell you to stop when there are five minutes left.
+
+* Different people will have accomplished different amounts.
+* I strongly encourage you to try to finish the lab on your own. At
+  least one student from last semester said I should force you to
+  finish the lab on your own. (We'll revisit why I don't.)
+* It's okay if you don't pass all the tests. However, it's nice to
+  have an idea why you haven't passed the test.
+* You will generally get an "S" (1.0 or .9999) if you submit something.
+
+### The joy of ctrl-up-arrow (or Esc-P)
+
+There is a command history.
+
+### Ways to define `snowperson` and `snowperson-revisited`
+
+```
+(define snowperson
+  (lambda (size)
+    (above (outlined-circle (* 2/5 size) "black" 1)
+           (outlined-circle (* 3/5 size) "black" 1)
+           (outlined-circle (* 5/5 size) "black" 1))))
+
+(define snowperson-revisited
+  (lambda (height)
+    (above (outlined-circle (* 2/5 1/2 height) "black" 1)
+           (outlined-circle (* 3/5 1/2 height) "black" 1)
+           (outlined-circle (* 5/5 1/2 height) "black" 1))))
+```
+
+vs.
+
+```
+(define snowperson-revisited
+  (lambda (height)
+    (snowperson (* 1/2 height))))
+```
+
+vs.
+
+```
+(define snowball
+  (lambda (diameter)
+    (outlined-circle diameter "black" 1)))
+
+(define snowperson
+  (lambda (size)
+    (above (snowball (* 2/5 size))
+           (snowball (* 3/5 size))
+           (snowball (* 5/5 size)))))
+```
 
 Questions
 ---------
