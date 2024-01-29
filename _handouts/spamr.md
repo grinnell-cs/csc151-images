@@ -5,7 +5,31 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
-## [CSC-151-01 2024F] Notes in preparation for Quiz 1 (Thursday, 2024-01-25)
+## [CSC-151-01 2024Fa] More Token Activities (Monday, 2024-01-29)
+
+Dear Stackers of Simulated Snowballs,
+
+It appears that I forgot a host of token events, many of which occur on Tuesday this week. I'm passing them along in case they are interest to any of you.
+
+Tuesday, 2024-01-30, noon, JRC 224A: _CS Table_. CS Table is a weekly meeting of people interested in talking about CS, most frequently about the societal aspects of CS. If you aren't on a meal plan, you can sign in on the sign-in sheet.
+
+Tuesday, 2024-01-30, noon, BRAC P103 (Multipurpose Dance Studio): _HIIT & Strength Fitness Class_.
+
+Tuesday, 2024-01-30, 4pm, BRAC P103 (Multipurpose Dance Studio): _Yoga_.
+
+Tuesday, 2024-01-30, 4pm, HSSC S2377: _SPARK Information Session_. SPARK is a social good innovation challenge. Come and hear more!
+
+Thursday, 2024-02-01, 4pm, Science 3821: _CS Extras: Summer research_. While it's unlikely that CSC-151 students will be eligible for research this summer, you may find it useful to hear what kinds of research the faculty are planning.
+
+Friday, 2024-02-02, 8pm, Harris Concert Hall: _Weekend Murder Mystery_.
+
+Let me know if you have other things to suggest. I see that Men's Tennis and the Swim Team have home meets this weekend. I can't recall if I have any swimmers, divers, or tennis players.
+
+Regards,
+
+-- SamR
+
+## [CSC-151-01 2024Fa] Notes in preparation for Quiz 1 (Thursday, 2024-01-25)
 
 Dear Beginning Image Makers,
 
@@ -29,7 +53,7 @@ If you finish early, you can log in to the computer, start DrRacket, and direct 
 
 The first quiz will be on decomposition. We will give you a compound image and ask you to decompose it (something like in the reading). Here's an example.
 
-https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/las/decomposition.html
+<https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/las/decomposition.html>
 
 **Notes**
 
