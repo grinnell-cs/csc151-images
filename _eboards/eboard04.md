@@ -45,8 +45,12 @@ _Sam: Don't forget to do a token demo._
 
 Scholarly
 
-* Thursday, 2024-02-01, 11am, HSSC 2231 (Auditorium), 
-  _Scholars' Convocation, Being a Pandemic Citizen._
+* Tuesday, 2024-01-30, noon, JRC 224A:
+  _CS Table_.
+* Thursday, 2024-02-01, 11am, HSSC 2231 (Auditorium),;
+  _Scholars' Convocation, Being a Pandemic Citizen_
+* Thursday, 2024-02-01, 4:00pm, Science 3821:
+  _CS Extras: Summer research_.
 
 Cultural
 
@@ -58,8 +62,17 @@ Wellness
 
 * Today, 2024-01-29, 4pm, HSSC Atrium, 
   _Therapy Dogs_.
+* Tuesday, 2024-01-30, noon, BRAC P103 (Multipurpose Dance Studio):
+  _HIIT & Strength Fitness Class_
+* Tuesday, 2024-01-30, 4pm, BRAC P103 (Multipurpose Dance Studio):
+  _Yoga_
 
 Misc
+
+* Tuesday, 2024-01-30, 4pm, HSSC S2377:
+  _SPARK Information Session_.
+* Friday, 2024-02-02, 8pm, Harris Concert Hall:
+  _Weekend Murder Mystery_.
 
 ### Other good things
 
@@ -71,7 +84,7 @@ Misc
     * [More on mental models](../readings/mental-models)
     * Do the [Reading Response](https://www.gradescope.com/courses/690100/assignments/4007931/submissions)
 * Wednesday, 2024-01-31, 8:30am: Submit today's lab writeup.
-    * [Submit on Gradescope](...)
+    * [Submit on Gradescope](https://www.gradescope.com/courses/690100/assignments/4017382/)
 * Wednesday, 2024-01-1, 11:00pm: [Mini-Project 1](../mps/mp01) due.
     * [Submit on Gradescope](https://www.gradescope.com/courses/690100/assignments/4014689/)
 
