@@ -1,7 +1,6 @@
 #lang racket
 
 (require csc151)
-(require 2htdp/image)
 
 ;; CSC 151-NN (TERM)
 ;; Lab: Reading and writing procedures
@@ -14,21 +13,13 @@
 ; | Helper functions |
 ; +------------------+
 
-;;; (color-square side-length color) -> image?
-;;;   side-length : non-negative-integer?
-;;;   color : color?
-;;; Create a solid square in the given color.
-(define color-square
-  (lambda (side-length color)
-    (rectangle side-length side-length 'solid color)))
-
 ;;; red-square : image?
 ;;; A small red square, useful for exercises in this lab.
-(define red-square (color-square 20 'red))
+(define red-square (solid-square 20 "red"))
 
 ;;; black-square : image?
 ;;; A small black square, useful for exercises in this lab.
-(define black-square (color-square 20 'black))
+(define black-square (solid-square 20 "black"))
 
 #| AB |#
 
@@ -124,8 +115,8 @@ reproduced below for your use.
 ; Copied from the CSC-151 reading "Writing your own procedures"
 (define simple-house
   (lambda (size)
-    (above (triangle size "solid" "red")
-           (rectangle (* 4/5 size) size "solid" "black"))))
+    (above (solid-equilateral-triangle size "red")
+           (solid-rectangle (* 4/5 size) size "black"))))
 
 #|
 a.  Use the Interactions Pane (i.e., the REPL) to verify that you
@@ -176,9 +167,9 @@ like a snowperson.
 
 #|
 a. Complete the definition of the procedure, (snowperson size),
-that creates a simple snowperson with three white circles with black
-outlines, where the size parameter is used for the size of the
-largest part of the snowperson, the base.  
+that creates a simple snowperson with three white circles with thin
+black outlines, where the size parameter is used for the size of
+the largest part of the snowperson, the base.
 |#
 
 (define snowperson
@@ -191,6 +182,9 @@ creates a simple snowperson with three white circles with black
 outlines.  Unlike snowperson, this function's parameter controls
 the *total height* of the snowperson rather than just the base.
 (It should be as close to the height parameter as you can get it.)
+
+Make sure to try `(image-height (snowperson-revisited 100))` or
+something similar to ensure that you get the right height.
 |#
 
 (define snowperson-revisited
@@ -202,6 +196,9 @@ c.  Complete the definition of (snowperson-with-hat height) that
 behaves like snowperson-revisited but adds a black top hat to the
 top of the snowperson.  Note that the total height should include
 the top hat.
+
+Once again, make sure to try `(image-height (snowperson-revisited
+100))` or something similar to ensure that you get the right height.
 |#
 
 (define snowperson-with-hat
