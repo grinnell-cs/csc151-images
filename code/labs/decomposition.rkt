@@ -103,8 +103,8 @@ b. In case you've forgotten, make sure to add descriptions to both
 the landscape and the components thereof. For example.
 
     (define small-tree
-      (solid-isosceles-triangle 20 50 "darkgreen")
-      "a small tree")
+      (solid-isosceles-triangle 20 50 "darkgreen"
+       "a small tree"))
 
 |#
 
