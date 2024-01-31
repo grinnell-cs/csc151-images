@@ -19,11 +19,12 @@ _Approximate overview_
 Administrative stuff
 --------------------
 
+* My goal is always to do these in fifteen minutes or less. 
+  I rarely succeed.
+
 ### Attendance
 
 _Yes, we'll do that once in a while._
-
-### Introductory Notes
 
 ### Upcoming activities
 
@@ -31,16 +32,19 @@ Scholarly
 
 * Thursday, 2024-02-01, 11am, HSSC 2231 (Auditorium), 
   _Scholars' Convocation, Being a Pandemic Citizen._
+* Thursday, 2024-02-01, 4:00pm, Science 3821:
+  _CS Extras: Summer research_.
 
 Cultural
-
-* Art gallery opening.
 
 Peer
 
 Wellness
 
 Misc
+
+* Friday, 2024-02-02, 8pm, Harris Concert Hall:
+  _Weekend Murder Mystery_.
 
 ### Other good things
 
@@ -50,11 +54,14 @@ Misc
     * [Submit on Gradescope](https://www.gradescope.com/courses/690100/assignments/4014689/)
 * Thursday, 2024-02-01, 11pm: Read things in preparation for the sixth day of 
   class and report on those things
-    * [Computation via expressions](../readings/computation-via-expressions)
-    * [More on mental models](../readings/mental-models)
-    * Do the [Reading Response](https://www.gradescope.com/courses/690100/assignments/4007931/submissions)
+    * [_Submit the _reading response on Gradescope_](...)
+* Friday, 2024-02-02, Class time: Quiz
+    * New quiz: Tracing
+    * Quiz redo: Decomposition
+    * You can arrive as early as 7:45 a.m. if you'd like to take both quizzes.
 * Friday, 2024-02-02, 8:30am: Submit today's lab writeup.
     * [Submit on Gradescope](...)
+    * Preferred: Submit before the end of class today.
 
 Notes on Monday's lab
 ---------------------
@@ -73,7 +80,11 @@ In general, I'll tell you to stop when there are five minutes left.
 
 ### The joy of ctrl-up-arrow (or Esc-P)
 
-There is a command history.
+* There is a command history.
+* You can get to prior commands Ctrl-UpArrow 
+    * That doesn't work on the Mac, because Ctrl-UpArrow already has
+      a meaning.
+* You can also get prior commands with Esc-P.
 
 ### Ways to define `snowperson` and `snowperson-revisited`
 
@@ -113,8 +124,24 @@ vs.
            (snowball (* 5/5 size)))))
 ```
 
+vs.
+
+```
+???
+```
+
 Questions
 ---------
+
+### Administrative
+
+Do you mind if we point out the plethora of mistakes on your Web pages?
+I've found typos, broken links, bad HTML and more.
+
+> Let me know. I would prefer to correct them. Perhaps you'll even
+  earn a token.
+
+### Reading
 
 Lab
 ---

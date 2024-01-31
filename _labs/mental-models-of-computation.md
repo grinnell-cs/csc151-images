@@ -58,11 +58,11 @@ a. Write down a step-by-step evaluation of this expression (we call
 this a _trace_ or _evaluation trace_).  If you're not sure what
 we're asking for, grab one of the course staff (professor or mentors).
 
-b. The CSC151 library has a simple tool that permits you to trace some
+b. The `csc151` library has a simple tool that permits you to trace some
 kinds of code.  (It's new for 2023Fa, so there may be bugs.)  Let's try
 it.  In DrRacket, 
 
-i. Add (require csc151/trace) to the definitions pane.
+i. Add `(require csc151/trace)` to the definitions pane.
 
 ii. Click "Run"
 
@@ -268,7 +268,7 @@ Note that some of these programs produce errors; that is intentional!
 (+ x y)
 ```
 
-### Exercise 7: Explaining define
+### Exercise 7: Explaining `define`
 
 In your own words, explain how our Scheme interpreter deals with a sequence of (interleaved expressions and define statements).  
 That is, what does the Scheme interpreter do if you write some define statements and some expressions and some more define statements and some more expressions and so on and so forth?
