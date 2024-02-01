@@ -5,6 +5,40 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-151-01 2024Sp] Finding Sam today (Thursday) / Office Hours / Mentor Session (2024-02-01)
+
+Dear Talented Tracers,
+
+Happy Leap February!
+
+1. Finding Sam Today
+
+I'll be hanging out in our classroom (Science 3813) from 8:00-10:30 and from 2:00-3:30 today (Thursday) to answer questions from students. I have one student who booked time at 10:00 a.m., but other than that, it will be more-or-less first come, first served.
+
+2. Office Hours
+
+Starting next week, my regular office hours will be Tuesday 10:00-11:30 and Thursday 2:00-3:30. I should have those up on bookings soon.
+
+3. Mentor Session
+
+The ever-amazing Maddy Thompson will be hosting a mentor session tonight at 8pm in Science 3819 (down the hall from our classroom). Maddy plans to discuss tracing and to answer other questions.
+
+4. Quiz
+
+Don't forget our Quiz protocol. Arrive in class. Grab the quiz. Grab a card. Navigate to a computer. Take the quiz. Wait until 8:45 a.m. for Sam to start class.
+
+You may arrive as early as 7:45 a.m.
+
+5. Welcome to our new class members! You'll meet two more on Friday.
+
+- - -
+
+As always, feel free to DM me on teams. (Is that "TM me". Does that mean applying for a trademark? Transcendental meditation? No, it's just "Teams Message".)
+
+Regards,
+
+-- SamR
+
 ## [CSC-151-01 2024Fa] More Token Activities (Monday, 2024-01-29)
 
 Dear Stackers of Simulated Snowballs,
