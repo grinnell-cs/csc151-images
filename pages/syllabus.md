@@ -468,3 +468,5 @@ If I ask a question about the course, will it end up here?
 How do I book your office hours?
 
 > <https://bit.ly/book-samr>
+
+> If that doesn't work, try [this booking link](https://outlook.office365.com/owa/calendar/SamuelARebelsky@grinco.onmicrosoft.com/bookings/).
