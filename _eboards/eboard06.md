@@ -21,8 +21,12 @@ _Approximate overview_
 Administrative stuff
 --------------------
 
-* Welcome to two new class members!
-* What should they know?
+### Welcome to new class members!
+
+* We met one new class member on Wednesday.
+* We have two new class members to meet today.
+
+TPS: _What should they know about the class?_
 
 ### Upcoming activities
 
@@ -42,13 +46,14 @@ Wellness
 
 Misc
 
+* InfoSec security (coming via email)
 ### Other good things
 
 ### Upcoming work
 
 * Friday, 2024-02-02, 11pm: [Mini-project 1 post-refelection](https://www.gradescope.com/courses/690100/assignments/3974516) due.
 * Friday, 2024-02-02, 11:00pm: [Mini-project 2 pre-reflection](https://www.gradescope.com/courses/690100/assignments/4030975) due.
-* _No readings for Monday!_ (Don't read ahead.)
+* _No readings for Monday!_ (Please don't try to do Wednesday's readings ahead.)
 * Monday, 2024-02-05, 8:30am: Submit today's lab writeup.
     * Preferred: Submit before the end of class today.
     * It's paper. You must hand it to me.
@@ -79,4 +84,6 @@ Why do we learn symbols?
 Lab
 ---
 
-
+All of today's problems are "think and try" rather than "write a
+procedure". Hence, the autograder will only check that the file
+exists.
