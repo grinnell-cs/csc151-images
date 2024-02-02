@@ -78,6 +78,7 @@
     - Consider adding symbols to the lab.
     - Consider which types reading to use (or combine them).
     - Might do some cleanup; we split numbers and strings in 2024Sp
+  notes: ../eboards/eboard06.html
 
 - topic: Characters and strings
   abbrev: strings
