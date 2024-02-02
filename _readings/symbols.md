@@ -5,7 +5,7 @@ summary: |
    values, symbols.
 prereqs: |
   [An abbreviated introduction to Racket](../readings/racket-intro).
-  [Data types](../readings/data-types).
+  [Expressions and types](../readings/exprs-and--types).
 ---
 ## Introduction
 
@@ -91,7 +91,7 @@ distinction will become natural.
 
 ## Self checks
 
-### Check 1: Uses of symbols (‡)
+### Check 1: Uses of symbols
 
 We've identified `'solid` as a symbol we've used already.  Identify
 a few others.
