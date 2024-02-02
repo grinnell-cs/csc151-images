@@ -60,8 +60,7 @@ quoted versions of each element (more or less).
 What good are symbols?  It turns out that the design of Lisp (and Scheme,
 and Racket) is such that it's much faster to compare symbols than to 
 compare strings.  That means that we often use symbols when we want to
-provide a mnemonic value to a procedure.  For example, you've seen us
-use the `'solid` parameter to the `circle` procedure.
+provide a mnemonic value to a procedure.  
 
 For the first part of the semester, we will primarily use symbols in
 this fashion.  Later in the semester, we may consider other approaches
@@ -88,13 +87,6 @@ distinction will become natural.
 > '(sample)
 '(sample)
 ```
-
-## Self checks
-
-### Check 1: Uses of symbols
-
-We've identified `'solid` as a symbol we've used already.  Identify
-a few others.
 
 ## Q&A
 
