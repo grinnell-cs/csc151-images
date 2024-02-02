@@ -25,7 +25,7 @@ We've seen some examples already, *e.g.*,
 
 +   Images:
     ~~~racket
-    > (beside (circle 50 "solid" "blue") (square 25 "solid" "red"))
+    > (beside (solid-circle 100 "blue") (solid-square 25 "red"))
     ![A large blue circle to the left of a small red square]({{ "/images/circle-square.png" | relative_url }})
     ~~~
 

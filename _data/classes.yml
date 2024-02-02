@@ -73,9 +73,21 @@
     - page: /readings/strings.html
     - page: /readings/symbols.html
   lab:
-    - page: /labs/basic-types.html
+    - page: /labs/numbers.html
   todo:
     - Consider adding symbols to the lab.
+    - Consider which types reading to use (or combine them).
+    - Might do some cleanup; we split numbers and strings in 2024Sp
+
+- topic: Characters and strings
+  abbrev: strings
+  summary: |
+    We explore the ways in which we represent text in Scheme,
+    including both strings and the characters we use to build
+    strings.
+  lab:
+    - page: /labs/strings.html
+
 
 - topic: RGB colors
   abbrev: rgb-colors
@@ -84,19 +96,13 @@
   reading:
     - page: /readings/design-and-color.html
     - page: /readings/rgb-colors.html
-  lab:
-    - page: /labs/rgb-colors
-  todo:
-    - Make sure this works with the new model.
-
-- topic: Transforming colors
-  abbrev: transforming-rgb
-  summary: |
-    We consider additional mechanisms for working with RGB colors.
-  reading:
     - page: /readings/transforming-rgb.html
   lab:
+    - page: /labs/rgb-colors
     - page: /labs/transforming-rgb.html
+  todo:
+    - Make sure this works with the new model.
+    - Combine the labs
 
 - topic: Pair programming
   abbrev: pair-programming
