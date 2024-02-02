@@ -34,6 +34,7 @@
 
 - topic: Algorithmic decomposition
   abbrev: decomposition
+  notes: https://docs.google.com/presentation/d/1rh7F4wALxHCC7LqW4iDdA4G5u_vIwWjQamaRjyFaL3w/edit?usp=sharing
   summary: |
     We consider a key technique in algorithmic thinking, how one “decomposes” a
     more complex problem or algorithm into simpler ones.
@@ -47,6 +48,7 @@
 
 - topic: Reading and writing procedures
   abbrev: procedures
+  notes: https://docs.google.com/presentation/d/1LNLiy8FKeP5L0ZmMXIJ13yi0EvbIRaU0yrAaVwNgP3k/edit?usp=sharing
   summary: |
     We consider ways to write your own procedures and why you might do so.
     We also explore how one interprets the algorithms others write.
