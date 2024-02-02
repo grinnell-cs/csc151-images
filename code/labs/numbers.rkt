@@ -186,11 +186,17 @@ enough values as the special value "infinity".
 a. See what happens if you try to have DrRacket compute with some very
 large exact integers. You may find the expt function helpful. Then see
 what happens if you try convert those integers to inexact values. Here
-are two examples to start with, but you should try more.
+are a few examples to start with, but you should try more.
 
-> (define x (expt 2 100))
-> (define ex (exact->inexact x))
-
+    > (define x (expt 2 100))
+    > (define ex (exact->inexact x))
+    > x
+    > ex
+    > (+ x 1)
+    > (+ ex 1)
+    > (- (+ x 1) x)
+    > (- (+ ex 1) ex)
+    
 <TODO: Fill in your observations here>
 |#
 
