@@ -10,19 +10,23 @@ Procedures to remember
 Basic color procedures
 
 * `(rgb r g b)` - create a new RGB color.
+* `(rgb-red c)` - extract the red component of an rgb color.
+* `(rgb-green c)` - extract the green component of an rgb color.
+* `(rgb-blue c)` - extract the blue component of an rgb color.
 * `(color-red c)` - extract the red component of a color.
 * `(color-green c)` - extract the green component of a color.
 * `(color-blue c)` - extract the blue component of a color.
 
 Working with color names
 
+* `(all-color-names)` - list all the color names.
 * `(color-name->rgb name)` - convert a color name to an RGB color.
-* `(colors-find name)` - find all the colors that include name
+* `(find-colors name)` - find all the colors that include name.
 
 Working with images
 
-* `(load-image name)` - load an image
-* `(image-map color-transformation image)` 
+* `(image-load name)` - load an image.
+* `(pixel-map color-transformation image)` 
 
 The lab
 -------

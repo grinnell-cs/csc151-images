@@ -1,7 +1,6 @@
 #lang racket
 
 (require csc151)
-(require 2htdp/image)
 (require rackunit)
 
 ;; CSC 151-NN (TERM)
@@ -328,7 +327,7 @@ bit for you.)
 b. Verify that it seems to work appropriately by creating a darker
 version of the kitten.
 
-    > (image-map color-darker kitten)
+    > (pixel-map color-darker kitten)
 
 |#
 
@@ -402,6 +401,10 @@ you with this.
 #|
 You can run the following tests on the procedure by removing the comment
 block symbols (#| and |#) around them.
+
+If you haven't encountered testing before, the test-equal? procedures
+either return nothing (if the second and third parameters match) or
+issue an error message (if they do not).
 |#
 
 #|
@@ -426,7 +429,7 @@ block symbols (#| and |#) around them.
 b. Verify that it seems to work appropriately by creating a restricted
 version of the kitten.
 
-    > (image-map color-restrict kitten)
+    > (pixel-map color-restrict kitten)
 
 |#
 
@@ -507,7 +510,7 @@ version of `c` by subtracting 64 from the green and blue components.
 |#
 
 #|
-c. Write a procedure, `(color-rdder-c c)`, that produces a redder
+c. Write a procedure, `(color-redder-c c)`, that produces a redder
 version of `c` by adding 32 to the red component and subtracting 32
 from each of the green and blue components.
 |#
@@ -516,8 +519,8 @@ from each of the green and blue components.
 d. Try each procedure on the kitten to see which version you find
 most successful (or most appropriate).
 
-    > (image-map color-redder-a kitten)
-    > (image-map color-redder-b kitten)
-    > (image-map color-redder-c kitten)
+    > (pixel-map color-redder-a kitten)
+    > (pixel-map color-redder-b kitten)
+    > (pixel-map color-redder-c kitten)
 |#
 
