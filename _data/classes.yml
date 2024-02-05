@@ -62,6 +62,7 @@
 
 - topic: Expressions and types
   abbrev: exprs-and-types
+  notes: https://docs.google.com/presentation/d/1xD07fpSXtivHyKcMkwq-RB7pivrsYkZCviK8k2z8fe0/edit#slide=id.g2666291cd13_0_234
   summary: |
     We explore many of the basic types of values in Scheme, the
     capabilities Scheme provides for working with those types, and
@@ -81,6 +82,7 @@
 
 - topic: Characters and strings
   abbrev: strings
+  notes: https://docs.google.com/presentation/d/11n3YjGa_ZLVm1_m3m2TdD0cFb6G-R5iYoRf1HiyKcQM/edit#slide=id.g2666291cd13_0_234
   summary: |
     We explore the ways in which we represent text in Scheme,
     including both strings and the characters we use to build
@@ -96,10 +98,8 @@
   reading:
     - page: /readings/design-and-color.html
     - page: /readings/rgb-colors.html
-    - page: /readings/transforming-rgb.html
   lab:
-    - page: /labs/rgb-colors
-    - page: /labs/transforming-rgb.html
+    - page: /labs/rgb-colors.html
   todo:
     - Make sure this works with the new model.
     - Combine the labs
