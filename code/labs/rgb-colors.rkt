@@ -147,13 +147,13 @@ v.
 |#
 
 #|
-b. Check to see if any of them are defined using `(colors-find name)`.
+b. Check to see if any of them are defined using `(find-colors name)`.
 This procedure returns a list of all color names that contain `name`.
 
 For example, if one of my favorite colors is a kind of pink (say,
 hot pink), I might write,
 
-    > (colors-find "pink")
+    > (find-colors "pink")
     '("deeppink" "hotpink" "lightpink" "pink")
 
 There is nothing to submit for this sub-exercise.
@@ -187,9 +187,9 @@ d. Create a palette of these three colors.
 #|
 a. Write a procedure, `(ccc c1 c2 c3)`, that takes three colors as
 parameters and creates an image with three concentric circles, each
-on top of the next.  The largest/bottom circle should be colored
+on top of the next.  The largest/back circle should be colored
 c3 and have radius 30.  The middle circle should be colored c2 and
-have radius 20.  The smallest/top circle should be colored c1 and
+have radius 20.  The smallest/front circle should be colored c1 and
 have radius 10.
 |#
 
