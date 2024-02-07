@@ -102,6 +102,7 @@
   todo:
     - Make sure this works with the new model.
     - Combine the labs
+  notes: ../eboards/eboard08.html
 
 - topic: Pair programming
   abbrev: pair-programming
