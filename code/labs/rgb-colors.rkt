@@ -147,13 +147,13 @@ v.
 |#
 
 #|
-b. Check to see if any of them are defined using `(colors-find name)`.
+b. Check to see if any of them are defined using `(find-colors name)`.
 This procedure returns a list of all color names that contain `name`.
 
 For example, if one of my favorite colors is a kind of pink (say,
 hot pink), I might write,
 
-    > (colors-find "pink")
+    > (find-colors "pink")
     '("deeppink" "hotpink" "lightpink" "pink")
 
 There is nothing to submit for this sub-exercise.
