@@ -178,8 +178,6 @@ Here are the binary RGB procedures mentioned above in the discussion of cutting.
 ;;; the corresponding component of `c1`.
 (define rgb-subtract
   (lambda (c1 c2)
-    (param-check! rgb-subtract 1 rgb? c1)
-    (param-check! rgb-subtract 2 rgb? c2)
     (rgb (- (rgb-red c1) (rgb-red c2))
          (- (rgb-green c1) (rgb-green c2))
          (- (rgb-blue c1) (rgb-blue c2))
@@ -192,8 +190,6 @@ Here are the binary RGB procedures mentioned above in the discussion of cutting.
 ;;; c1 and c2.
 (define rgb-average
   (lambda (c1 c2)
-    (param-check! rgb-average 1 rgb? c1)
-    (param-check! rgb-average 2 rgb? c2)
     (rgb (* 1/2 (+ (rgb-red c1) (rgb-red c2)))
          (* 1/2 (+ (rgb-green c1) (rgb-green c2)))
          (* 1/2 (+ (rgb-blue c1) (rgb-blue c2)))
