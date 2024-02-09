@@ -67,8 +67,7 @@ d. Before beginning this lab, please update your csc151 library.
 e. The person closer to the board is A.  The person further from the 
    board is B.
 
-f. Make sure that you can load the kitten image.  (We won't be using it
-   explicitly in the lab, but it never hurts to try.)
+f. Make sure that you can load the kitten image.  
 
      > (define kitten (image-load "kitten.jpg"))
      > kitten

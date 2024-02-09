@@ -347,7 +347,8 @@ Utilizing discussion with peers to facilitate your learning is a critical skill 
 
 + You are encouraged to seek help and advice from your peers as you work on reading exercises, labs, and mini-projects. You may also consult the course staff as well as other people and external resources.
 + You may only discuss learning assessments and quizzes with the course staff.
-  When completing assessments and quizzes, you may only consult the course website and any additional documentation we provide.  You may not collaborate with peers, consult external resources beyond the ones mentioned above, or share information about these assignments with others.
++ When completing take-home learning assessments, you may only consult the course website, any additional documentation we provide, and your notes. You may not collaborate with peers, consult external resources beyond the ones mentioned above, or share information about these assignments with others.
++ When completing in-class learning assessments (e.g., Friday quizzes), you may rely on on sheet of hand-written notes that you have brought to class.
 + **In all cases, you (or your group in the case of group work) should independently write up your solutions and cite all the resources you used in authoring your work, including other students, your instructor, and our peer educators.**
 
 Keep in mind that *adaptation of pre-existing code* whether it comes from a peer, myself, or the Internet, requires a citation in cases where we allow such adaptation.  Also, whenever you are expected to show your code's output, you are expected to reproduce the output faithfully.  In other words, you should not forge the results of your programs!

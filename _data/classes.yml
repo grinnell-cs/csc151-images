@@ -125,6 +125,7 @@
     We expand our understanding of RGB transformations to image transformations.
   reading:
     - page: /readings/anonymous-procedures.html
+    - page: /readings/transforming-rgb.html
     - page: /readings/transforming-images.html
   lab:
     - page: /labs/transforming-images.html
