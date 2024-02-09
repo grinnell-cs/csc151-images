@@ -142,7 +142,7 @@ If, instead, we want to subtract the current color from white (which is how we c
 As in the case of unary functions created with `compose`, we don't have to name the function we create. Here's an instruction that will make a somewhat bluer version of the kitten.
 
 ```
-> (pixel-map (section rgb-average (rgb 127 127 127) <>) pic)
+> (pixel-map (section rgb-average (rgb 0 0 255) <>) pic)
 ![a much bluer version of the kitten image](../images/kitten-much-bluer.jpg)
 ```
 
