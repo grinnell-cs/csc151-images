@@ -14,30 +14,43 @@ _Approximate overview_
 
 * Quiz [15 min]
 * Administrative stuff [15 min]
-* Discussion [40 min]
+* An exercise [~20 min]
+* Reflections on the readings and broader issues [~20 min]
 * Write and turn in lab [10 min]
 
 Administrative stuff
 --------------------
 
-* There are many sick people on campus. Consider masking.
 * We have class 9 on the 9th. Yay!
+* There are many sick people on campus. Consider masking.
+* Feel free to send me questions on Teams, even at night. If I'm available,
+  I'll answer them quickly. If not, I'll try to answer them the next day.
+* Warning! You will sometimes see the next class's eboard on our site.
+* I'm glad that so many of you attended the mentor session last night.
+  I'll remind you that mentor sessions are much like class in that we
+  expect you to participate actively. Mentors won't lecture.
 
 ### Token activities
 
 Scholarly
 
+* Tuesday, 2024-02-13, noon-1:00pm. Some PDR.
+  _CS Table: Functional programming_.
+
 Cultural
 
 Peer
 
-* Roller skating this Friday in Harris center.
+* Saturday, 2024-02-10, 8:00-11:00pm, Harris Gym.
+  _Roller Skating_.
 
 Wellness
 
 Misc
 
-* InfoSec security survey (coming via email)
+* Monday, 2024-02-12, 4:30-5:30pm, JRC 101.
+  _Talking about disability policy with Daniel Van Sant, Director
+   of disability policy at the Harkin Institute._
 
 ### Other good things
 
@@ -48,10 +61,19 @@ Misc
 * Friday, 2024-02-09, 11:00pm: Pre-reflection for SoLA 1
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/3974512/)
 * Sunday, 2024-02-11, 11:00pm: Submit reading responses.
-    * [_Submit on Gradescope_](...)
+    * [Anonymous procedures](../readings/anonymous-procedures)
+    * [Transforming RGB colors](../readings/transforming-rgb)
+    * [Transforming images](../readings/transforming-images)
+    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4079162/)
 * Monday, 2024-02-12, 8:30am: Submit today's lab writeup.
-    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4066784/)
+    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4079067/)
     * Preferred: Submit before the end of class today.
+* Monday, 2024-02-12, 4:00pm: SoLA 1 released
+* Wednesday, 2024-02-14, 11:00pm, SoLA 1 due
+
+### About SoLAs
+
+### Friday PSA
 
 Questions
 ---------
@@ -81,6 +103,23 @@ What if I can't make any of your office hours?
 
 ### Readings (Pair Programming)
 
+_I will not take questions on the readings until the discussion._
+
+Background
+----------
+
+* Today is our "talk about pair programming" day.
+* In our experience, partnering works imperfectly.
+    *
+    *
+* We use this day to help make partnering better.
+* We will return to these issues throughout the semester.
+
+An exercise
+-----------
+
+Reflecting on the readings
+--------------------------
+
 Lab
 ---
-

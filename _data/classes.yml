@@ -117,6 +117,7 @@
       resource: /files/DiverseTeams2016.pdf
   lab:
     - (TBA)
+  notes: ../eboards/eboard09.html
 
 - topic: Transforming images
   abbrev: transforming-images
