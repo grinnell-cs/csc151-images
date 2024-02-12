@@ -107,6 +107,7 @@
 
 - topic: Pair programming
   abbrev: pair-programming
+  notes: https://docs.google.com/presentation/d/1XCCWKQpxNy3ZD-9NhZbIYhfLFPoiViL9AmuCiG60UYU/edit#slide=id.g2666291cd13_0_234
   summary: |
     We explore the whys and hows of working with others.  
   reading:
@@ -121,6 +122,7 @@
 
 - topic: Transforming images
   abbrev: transforming-images
+  notes: https://docs.google.com/presentation/d/1edaoW8ZbtbIJrrjnbV6PL7cdLHkBSOJUxsj3DOX9UvA/edit#slide=id.g268c5b2609f_0_62
   summary: |
     We expand our understanding of RGB transformations to image transformations.
   reading:
