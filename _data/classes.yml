@@ -129,8 +129,7 @@
     - page: /readings/transforming-images.html
   lab:
     - page: /labs/transforming-images.html
-  todo:
-    - Incorporate anonymous procedures. (At least that's the plan.)
+  notes: ../eboards/eboard10.html
 
 - topic: Booleans, predicates, and conditionals
   abbrev: booleans
