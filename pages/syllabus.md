@@ -193,7 +193,7 @@ We rely on six kinds of work to assess your mastery of the material.
 
 Mini-projects are graded on an EMRI scale. E is "Excellent or Exemplar". M is "Meets Expectations", the standard grade for a correct assignment. R is "Redo", the grade you'll receive for an assignment that does shows incomplete understanding. And I is "Incomplete", the grade you'll receive for an assignment that is missing key components. These grades will appear as 3, 2, 1, and 0 on Gradescope.
 
-*Learning assessments* (LAs) are designed to demonstrate your mastery of the courses naturally measurable learning goals.  You may only discuss these deliverables with the course staff.  These deliverables are checked for both correctness and appropriate design.  Learning assessments will come in at least two different forms: Weekly in-class quizzes (on Fridays) and regular take-home examinations/SoLAs (distributed on Mondays and due on Wednesdays at {{ site.evening_due_time }}).
++*Learning assessments* (LAs) are designed to demonstrate your mastery of the courses naturally measurable learning goals.  You may only discuss these deliverables with the course staff.  (Since not all students will choose to take LAs at times that the course staff are available, the only questions the course staff are likely to answer are whether there's an error in a problem.)  These deliverables are checked for both correctness and appropriate design.  Learning assessments will come in at least two different forms: Weekly in-class quizzes (on Fridays) and regular take-home examinations/SoLAs (distributed on Mondays and due on Wednesdays at {{ site.evening_due_time }}).
 
 LAs are graded using a Satisficatory (S or 1) or Unsatisfactory (U or 0) scale.
 
