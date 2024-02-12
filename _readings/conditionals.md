@@ -101,7 +101,7 @@ Let's consider a call to `categorize-city` and see how it evaluates:
 Note in this example how we first evaluate the condition to `#f` and then *substitute* the `alternative` expression for the overall conditional expression.
 If we had, instead evaluated the condition to `#t`, then we would have substituted the `consequent` expression in the place of the overall expression.
 
-## The Semantics of conditionals
+## The semantics of conditionals
 
 How do conditional work with our mental model of computation?
 At a high-level, a conditional proceeds as follows:
