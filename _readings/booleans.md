@@ -576,7 +576,7 @@ is strictly less than the length of `str2`.
 #f
 > (shorter? "ab" "ba")
 #f
-> (shorter "" "abc")
+> (shorter? "" "abc")
 #t
 ```
 
