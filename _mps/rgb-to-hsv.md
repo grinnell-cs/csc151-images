@@ -1,0 +1,259 @@
+---
+title: Mini-Project 3
+xsubtitle: Color representations
+summary: |
+  In this mini-project, you will explore color types and some novel 
+  color transformations.  It will give you the opportunity to practice
+  with conditionals and color representations, including the 
+  hue-saturation-value color representation.
+collaboration: |
+  Each student should submit their own responses to this project. You may
+  consult other students in the class as you develop your solution.  If you
+  receive help from anyone, make sure to cite them in your responses. 
+link: false
+---
+# {{ page.title }} : {{ page.subtitle }}
+
+_Warning!  There may be a bug in either `hsv->rgb` or my description of getting the hue of a color.  I've seen some strange things happen when transforming images._
+
+You will create only one file for this mini-project, `colors.rkt`.
+
+Part one: Converting colors
+---------------------------
+
+a. Document, write tests for, and write a predicate, `(is-color?
+value)`, that returns `#t` when value is either an RGB color or a
+recognized color name.
+
+```
+> (is-color? (rgb 1 2 3))
+#t
+> (is-color? "blue")
+#t
+> (is-color? "zebra")
+#f
+> (is-color? 23)
+#f
+```
+
+You can use the predicates `color?` and `color-name?`, which are
+already defined, to help you.  
+
+b. Document, write tests for, and write a procedure, `(color->rgb
+value)`, that should behave as follows.
+
+* If given an RGB color, it returns that color unchanged.
+* If given a color name, it returns the result of calling
+  `color-name->rgb` on that color name.
+* If given any other type of value, it returns false (`#f`).
+
+Part 2: HSV colors
+------------------
+
+As we learned in [the reading on design and color](../readings/design-and-color-reading.html), RGB is not the only way to represent colors on the computer.  For example, we might represent a color in terms of hue, saturation, and value.  _Hue_ represents the pure color (e.g., red, blue, yellow, or a combination of these). _Saturation_ represents the "colorfulness" of the hue in the color. For instance, a completely saturated color would be a pure hue (like red), while a less saturated color might appear just as bright but somewhat faded (perhaps rose or pink). Finally, _Value_ represents the brightness or darkness of the color.
+
+As shown below, hue is represented as an angle, or a point on a circle. Thus, the values 0-360 sweep through colors red (0 degrees), yellow (60 degrees), green (120 degrees), cyan (180 degrees), blue (240 degrees), magenta (300 degrees), and back to red (at 360 or 0 degrees).
+
+![An HSV color wheel](../images/hsv.svg)
+
+There are a variety of transformations that can take an RGB color and give an HSV representation. 
+
+Before we describe how to calculate hue, we need some basic values to refer to.  Let (red, green, blue) refer to the red, green, and blue components of an RGB color, respectively. The chroma of a color is the largest of the RGB components minus the smallest of the RGB components.  For example, the chroma of (128,64,50) is 128-50, or 78; the chroma of (0,255,0) is 255-0, or 255.  The chroma of (255,255,255) is 255-255, or 0.
+
+The raw hue can then be calculated as follows:
+
+* (green-blue)/chroma if red is a largest component;
+* ((blue-red)/chroma) + 2 if green is a largest component
+* ((red-green)/chroma) + 4 if blue is a largest component
+
+If chroma=0 the hue is undefined, because all the components are the same and we would have a gray. In this case, one convention is to set the hue to 0.
+
+Note that the numerators of the fractions make some intuitive sense.  For example, if the red component is largest, and the green component is larger than the blue component, then we should move counter-clockwise (positive), toward green.  And, as we'd hope, the (green-blue) is positive.  Similarly, if the red component is largest and the blue component is larger than the green component, then we should move counter-clockwise (negative), toward blue.  And, as we'd hope, the (green-blue) is negative.
+
+The raw hue as given above produces a value between -1 and 6 (corresponding to the 6 cardinal colors described above). Why would we end up with a negative number?  Well, we just saw that colors in which red dominates that have a larger blue component shift by a negative value.  If the raw hue is negative, we should add 6 to get us back to a positive representation. The final result is converted to the range 0-360 by multiplying by 60 degrees (which is 360/6).
+
+What happens if chroma is not 0, and two of the components are both the largest?  Which of the three choices should we make?  If the formulae are well-designed, it shouldn't matter.  But are they?  Let's design a quick test.
+
+a. Write three functions, `reddish-raw-hue`, `greenish-raw-hue`, and `blueish-raw-hue`, that take as input an RGB color with a nonzero chroma and return the computed raw hue, assuming the associated color dominates (red for reddish, green for greenish, and blue for blueish).  For example, `(blueish-raw-hue (rgb 255 0 255))` should return `5`, because the chroma is `255`, (red-green) is `255`, `(/ 255 255)` is `1`, and `(+ 1 4)` is `5`.  Similarly, `(reddish-raw-hue (rgb 255 0 255))` should also return `5`, because the chroma is `255`, `(green-blue) is `-255`, `(/ -255 255)` is `-1`, and we add six to negative numbers, giving `5`.
+
+b. Write a set of tests that confirm the assertion that when a color has two equal RGB components, it doesn't matter which of the two corresponding computations we use.
+
+Here's a start.
+
+```
+(test-= "equal red and blue, both dominate green (large components)"
+        (reddish-raw-hue (rgb 255 0 255)) (blueish-raw-hue (rgb 255 0 255))
+        0)
+(test-= "equal red and blue, both dominate green (medium components)"
+        (reddish-raw-hue (rgb 128 0 128)) (blueish-raw-hue (rgb 128 0 128))
+        0)
+(test-= "equal red and blue, both dominate green (small components)"
+        (reddish-raw-hue (rgb 1 0 1)) (blueish-raw-hue (rgb 1 0 1))
+        0)
+```
+
+c. Using the algorithm given above, document, write tests for, and write a procedure, `(rgb-hue c)`, that takes an RGB color as an input and produces its hue.  For example,
+
+```
+> (rgb-hue (color->rgb "red"))
+0
+> (rgb-hue (color->rgb "yellow"))
+60
+> (rgb-hue (color->rgb "green"))
+120
+> (rgb-hue (color->rgb "cyan"))
+180
+> (rgb-hue (color->rgb "blue"))
+240
+> (rgb-hue (color->rgb "magenta"))
+300
+> (rgb-hue (color->rgb "pink"))
+350 ; or 7340/21
+```
+
+Note: You do not need to use the procedures you wrote for part a, although you may find them helpful.  You may also find it useful to write other procedures to decompose your implementation into managable, meaningful units. Please be sure to give your variables and procedures meaningful names.  Please be sure to document all the helper procedures you write.
+
+d. The saturation is a percentage (from 0% saturated to 100% saturated).  We therefore normally represent the saturation as either a real number between 0 and 1 or an integer between 0 and 100.  We'll use the latter.
+
+How do we compute the saturation?  If the maximum component is 0, the saturation is 0.  Otherwise, we divide the difference between the maximum and minimum component by the maximum component.  (If we want a number between 0 and 100, we then multiply by 100, round, and convert to an exact number.)  
+
+Document, write tests for, and write `rgb-saturation`.
+
+```
+> (rgb-saturation (color-name->rgb "red"))
+100
+> (rgb-saturation (rgb 128 128 128))
+0
+> (rgb-saturation (rgb 128 0 0))
+100
+> (rgb-saturation (rgb 255 128 128))
+50
+```
+
+e. All that's left is the value.  Like the saturation, the value is a percentage.  In this case, it's the largest component divided by 255.  (If we want a number between 0 and 100, we then multiply by 100, round, and convert to an exact number.)
+
+Document, write tests for, and write `rgb-value`.
+
+```
+> (rgb-value (color-name->rgb "red"))
+100
+> (rgb-value (rgb 128 128 128))
+50
+> (rgb-value (rgb 128 0 0))
+50
+> (rgb-value (rgb 255 0 0))
+100
+```
+
+Part 3: Hue-based transformations
+---------------------------------
+
+Being able to manipulate the hue in a color can actually be quite useful. You can convert an HSV color into an RGB color with the procedure `(hsv->rgb h s v)`.
+For example, to create a magenta-like color with 50% saturation and 25% value, we would use `(hsv->rgb 300 50 25)`.
+
+a. Document and write a procedure, `(rgb-change-hue c new-hue)`, that takes an integer-encoded RGB color and a hue value (in the range 0-360) as parameters and creates a new RGB color using the new hue with the saturation and value of `c`.
+
+Here's a quick way to explore the power of `rgb-change-hue`.
+
+```
+> (define kitten (image-load "kitten.jpg"))
+> (define make-magenta
+    (lambda (c)
+      (rgb-change-hue c 300)))
+> (image-map make-magenta kitten)
+```
+
+b. Document and write a procedure, `(rgb-true-complement c)` that finds the true complement of `c`, one that is 180 degrees away on the color wheel with the same saturation
+  and value.
+
+c. Using the procedures you have written so far, document and write a procedure `(rgb-rotate-hue rgb-color angle)` that takes an RGB color and an angle as parameters and produces a new RGB color where the HSV equivalent has a hue rotated by angle degrees, a number between 0-360.
+
+Hint: If the rotated angle is greater than 360, be sure to wrap around properly (e.g., using modulo) to get the correct hue angle.
+
+Part four: Generating color schemes
+-----------------------------------
+
+Write a procedure, `(color-palette c)`, that generates a palette of at least five colors "related to" c.  The "palette" should be five 20x40 rectangles in a row.  You can choose what "related to" means.  For example, you might take the color plus the two colors you get by rotating by 60 and -60, plus each of those colors fully saturated.
+
+Grading rubric
+--------------
+
+### Redo or above
+
+Submissions that lack any of these characteristics will get an I.
+
+```
+[ ] Passes all of the one-star autograder tests.
+[ ] Includes the specified file, `colors.rkt`.
+[ ] Includes an appropriate header on the file that indicates the
+    course, author, etc.
+[ ] Acknowledges appropriately.
+[ ] Code runs in DrRacket.
+[ ] Most procedures are documented in some form.
+```
+
+### Meets expectations or above
+
+Submissions that lack any of these characteristics but have all of the
+prior characteristics will get an R.
+
+```
+[ ] Passes all of the two-star autograder tests.
+[ ] Code is well-formatted with appropriate names and indentation.
+[ ] Includes appropriate tests to ensure that the different raw hue 
+    computations return the same value on the same inputs.
+[ ] Code has been reformatted with Ctrl-I before submitting.
+[ ] Code generally follows style guidelines.
+[ ] Documentation for all core procedures is correct / has the correct form.
+[ ] Includes tests for `is-color?`.
+[ ] Includes tests for `color->rgb`.
+[ ] Includes tests for `rgb-hue`.
+[ ] Includes tests for `rgb-saturation`.
+[ ] Includes tests for `rgb-value`.
+[ ] `color-palette` shows at least five "related colors" (or should)
+```
+
+### Exemplary / Exceeds expectations
+
+Submissions that lack any of these characteristics but have all of the
+prior characteristics will get an M.
+
+```
+[ ] Passes all of the three-star autograder tests.
+[ ] Style is impeccable (or nearly so).
+[ ] Avoids repeated work.
+[ ] Tests for `rgb-hue` include well-designed edge cases.
+[ ] Tests for `rgb-saturation` include well-designed edge cases.
+[ ] Tests for `rgb-value` include well-designed edge cases.
+[ ] Tests have clear description strings.
+[ ] Documentation for all procedures is correct / has the correct form.
+```
+
+Q&A
+---
+
+Do we have to write tests for the raw hue procedures?
+
+> You do not need to write any other tests for the raw hue procedures
+  except for those that ensure that two hue procedures return the
+  same value when the two corresponding components are the same.
+
+Can we round our hues to the nearest integer?
+
+> Certainly.  I would recommend it.
+
+Acknowledgments
+---------------
+
+Many of these problems were adapted from problems written in the distant past for the old "MediaScheme" version of CSC-151.
+
+The HSV hexagon is adapted from an original by Jacob Rus, available
+at
+<http://en.wikipedia.org/w/index.php?title=File:HSL-HSV_hue_and_chroma.svg>.
+Both the original and our version are licensed under the <ulink
+url="http://creativecommons.org/licenses/by-sa/3.0/deed.en"> [Creative
+Commons Attribution-Share Alike 3.0 Unported
+license](http://creativecommons.org/licenses/by-sa/3.0/deed.en).
+
+In developing parts of this assignment, we relied on conversion formulae from [RapidTables](https://www.rapidtables.com), available at <https://www.rapidtables.com/convert/color/rgb-to-hsv.html>.
+
