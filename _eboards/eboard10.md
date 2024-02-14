@@ -42,7 +42,7 @@ Administrative stuff
 
 ### Token activities
 
-Scholarly
+Academic/Scholarly
 
 * Tuesday, 2024-02-13, noon--1:00pm, Some PDR.
   _CS Table: Functional programming_.

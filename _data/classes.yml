@@ -142,6 +142,7 @@
     - page: /labs/conditionals.html
   todo:
     - Last semester, we needed two days for this. I'm inserting a pause for breath
+  notes: ../eboards/eboard10.html
 
 - topic: Pause for Breath
   abbrev: pause-01
