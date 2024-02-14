@@ -13,14 +13,17 @@ is working correctly).
 _Approximate overview_
 
 * Administrative stuff [20 min]
-* Lab [55 min]
-* Turn in lab [5 min]
+* Lab [60 min]
 
 Administrative stuff
 --------------------
 
 * Happy Valentine's Day (or Ash Wednesday). I brought you a Valentine's
   day present: Stickers.
+* As an experiment, I'm going to answer questions on conditionals on 
+  Friday, rather than today.
+* Friday is scheduled as a "pause for breath", a time for all of us
+  to catch up a bit (including finishing today's lab).
 
 ### Token activities
 
@@ -32,6 +35,9 @@ Academic/Scholarly
 * Thursday, 2024-02-15, 4:00pm, Science 3821.
   _CS Extras: Peter Michael Osera on The Missing Link Between Programming 
   and Proving_.
+* Thursday, 2024-02-15, 7:00pm, Science 3819.
+  _Mentor session_.  
+    * Try to show up on time. 
 * Tuesday, 2024-02-20, noon--1:00pm, Some PDR.
   _CS Table_.
 
@@ -52,6 +58,7 @@ Peer
     * Up to two separate sessions.
 * Sunday, 2024-02-18, Simpson College Baseball Diamond.
   _Baseball_.
+* Friday, Main Quad, Slumber Party!
 
 Wellness
 
@@ -91,13 +98,95 @@ Misc
 
 ### Notes on MP3
 
+Sam decided to rewrite it completely. Ran out of time. But getting close.
+
+* A bunch of RGB transformations.
+* A bunch of HSV transformations.
+* A few more of your own.
+
 Questions
 ---------
 
 ### Administrative
+
+Do we need to submit the sample LA.
+
+> No.
+
+> Sam thinks he's funny, but he's not.
 
 ### Misc
 
 Lab
 ---
 
+### Exercise 1a
+
+Please use `#t` for true and `#f` for false.
+
+`(remainder dividend divisor)` tells you what's left over after you
+divide `dividend` by `divisor`.
+
+### Exercise 1b
+
+What's wrong with this?
+
+```
+(define is-even?
+  (lambda (n)
+    (if (zero? (remainder n 2))
+        #t
+        #f)))
+
+(define is-even-integer?
+  (lambda (n)
+    (if (and (integer? n) 
+             (zero? (remainder n 2)))
+        #t
+        #f)))
+```
+
+Is it correct? It seems to be.
+
+How would we make it better?
+
+Since we've already defined an `is-even?` predicate, we should be using it.
+
+```
+(define is-even-integer?
+  (lambda (n)
+    (if (and (integer? n) 
+             (is-even? n))
+        #t
+        #f)))
+```
+
+If `(and (integer? n) (is-even? n))` is `#t`, we return `#t`
+
+If `(and (integer? n) (is-even? n))` is `#f`, we return `#f`
+
+We're just returning the result of the test, so we can return the value
+of the test, rather than putting it in an `if`.
+
+```
+(define is-even-integer?
+  (lambda (n)
+    (and (integer? n) 
+         (is-even? n))))
+```
+
+Just like we don't normally write `(* 1 (+ 0 exp))`, if our test just
+returns `#t` or `#f`, we normally don't write the `if` part.
+
+---
+
+Are the following employee ids?
+
+* "12345/6"
+* "12435.0"
+
+Don't worry if they are not.
+
+---
+
+**For the quiz, I expect that you will have finished only exercise 1.**
