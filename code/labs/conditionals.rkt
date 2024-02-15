@@ -104,6 +104,15 @@ works as expected.
 a. Write a predicate `(is-even? n)` that takes an integer as input
 and returns true if `n` is even and false otherwise.
 
+    > (is-even? 4)
+    #t
+    > (is-even? 5)
+    #f
+    > (is-even? -11)
+    #f
+    > (is-even? -22)
+    #t
+
 You may not use the built-in `even?` or `odd?` predicates.
 
 You may, however, use the `remainder` procedure you recently learned.
@@ -117,12 +126,30 @@ You may, however, use the `remainder` procedure you recently learned.
 b. In your experiments with `is-even?`, you may have determined that
 `is-even?` reports an error when `n` is not an integer.
 
+    > (is-even? 3.4)
+    Boom!
+    > (is-even? "four")
+    Boom!
+
 Write a predicate, `(is-even-integer? n)`, that returns true when
 `n` is an even integer and false otherwise.  
 
 Your procedure should return false when `n` is a complex number, a
 non-integer real, a string, an image, and, well, anything that's
 not an integer.
+
+    > (is-even-integer? 3.4)
+    #f
+    > (is-even-integer? "four")
+    #f
+    > (is-even-integer? 4)
+    #t
+    > (is-even-integer? 3/2)
+    #f
+    > (is-even-integer? -8)
+    #t
+    > (is-even-integer? 7)
+    #f
 |#
 
 (define is-even-integer?
@@ -130,8 +157,18 @@ not an integer.
     ???))
 
 #|
-c. Write a function (number-not-integer? n) that returns true if `n`
+c. Write a function (number-but-not-integer? n) that returns true if `n`
 is a number that is not an integer and false otherwise.
+
+    > (number-but-not-integer? 3)
+    #f
+    > (number-but-not-integer? 3.4)
+    #t
+    > (number-but-not-integer? 3/2)
+    #t
+    > (number-but-not-integer? "hello")
+    #f
+
 |#
 
 ; TODO: write your function here!
@@ -174,16 +211,20 @@ Write a function, `(employee-id? str)`, that takes a string as input
 and determines whether the string is a valid employee id.  You need
 not check that `str` is a string.
 
-> (employee-id? "123456")
-#t
-> (employee-id? "1")
-#f
-> (employee-id? "000111")
-#t
-> (employee-id? "00011x")
-#f
-> (employee-id? 123456)
-Boom!  Crash!
+    > (employee-id? "123456")
+    #t
+    > (employee-id? "1")
+    #f
+    > (employee-id? "000111")
+    #t
+    > (employee-id? "00011x")
+    #f
+    > (employee-id? 123456)
+    Boom!  Crash!
+    > (employee-id? "123.45")
+    #f
+    > (employee-id? "123/45")
+    #f
 
 Hint: `string->number` may help.  `string-length` may help.  `substring`
 may help.
