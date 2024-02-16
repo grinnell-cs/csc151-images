@@ -80,10 +80,22 @@ Misc
 * Friday, 2024-02-16, 11:00pm: [SoLA 1 post-reflection](https://www.gradescope.com/courses/690100/assignments/3974516)
     * Try to do it earlier.
 * Friday, 2024-02-16, 11:00pm: [MP3 pre-reflection](https://www.gradescope.com/courses/690100/assignments/4087963)
+* Sunday, 2024-02-18, 11:00pm: Readings
+    * [List basics](../readings/list-basics)
+    * [Transforming lists](../readings/transforming-lists)
+    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4112277)
 * Monday, 2024-02-19, 8:30am: Submit today's lab writeup.
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4087975)
-    * Preferred: Submit before the end of class Friday.
+    * Preferred: Submit before the end of class today.
 * Wednesday, 2024-02-21, 11:00pm: [MP3](../mps/mp3)
+
+### Friday PSA
+
+A problem 
+----------
+
+Some notes on Wednesday's lab
+-----------------------------
 
 Questions
 ---------
