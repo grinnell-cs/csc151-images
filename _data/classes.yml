@@ -149,28 +149,6 @@
   summary: |
     We pause to catch up on a variety of topics.
 
-- topic: Images as collections of shapes
-  abbrev: drawings
-  summary: |
-    We return to our first model of images to explore a few more mechanisms for working with with such images and to compare models.
-  reading:
-    - page: /readings/drawings-as-values.html
-  lab:
-    - page: /labs/drawings-as-values.html
-  todo:
-    - We did not have this topic last semester.
-
-- topic: Software engineering fundamentals
-  abbrev: software-engineering
-  summary: |
-    We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
-  reading:
-    - page: /readings/documenting-your-code.html
-    - page: /readings/rackunit.html
-    - page: /readings/hypothesis-driven-debugging.html
-  lab:
-    - page: /labs/rackunit.html
-
 - topic: Lists
   abbrev: lists
   summary: |
@@ -200,6 +178,17 @@
   todo:
     - Incorporate sort and tally.
     - Consider incorporating the old /labs/drawing-lists.html
+
+- topic: Software engineering fundamentals
+  abbrev: software-engineering
+  summary: |
+    We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
+  reading:
+    - page: /readings/documenting-your-code.html
+    - page: /readings/rackunit.html
+    - page: /readings/hypothesis-driven-debugging.html
+  lab:
+    - page: /labs/rackunit.html
 
 - topic: Other ways to build lists
   abbrev: building-lists
@@ -271,6 +260,11 @@
     - page: /readings/recursion-over-numbers.html
   lab:
     - page: /labs/numeric-recursion.html
+
+- topic: Pause for breath
+  abbrev: pause
+  summary: |
+    We pause to explore and revisit ideas associated with recursion.
 
 - topic: Randomness
   abbrev: randomness
