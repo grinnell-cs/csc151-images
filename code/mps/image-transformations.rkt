@@ -2,7 +2,7 @@
 
 (require csc151)
 
-;;; transforming-images.rkt
+;;; image-transformations.rkt
 ;;;   A variety of procedures that transform images, created for MP3 in
 ;;;   CSC-151-XX 2024Sp.
 ;;;
@@ -53,6 +53,13 @@
     (pixel-map (o rgb-pseudo-complement rgb-greener rgb-pseudo-complement)
                img)))
 
+;;; (cyclic-add-90 n) -> integer?
+;;;   n : integer?
+;;; Add 90 to `n`, wrapping around when we hit 256.
+(define cyclic-add-90
+  (lambda (val)
+    (remainder (+ val 90) 256)))
+
 ; +-------------------------------------+----------------------------
 ; | Part one: RGB-based transformations |
 ; +-------------------------------------+
@@ -78,7 +85,7 @@
 ;;; (enhance-dominance img) -> image?
 ;;;   img : image?
 ;;; ???
-(define extreme
+(define enhance-dominance
   (cut (pixel-map rgb-enhance-dominance <>)))
 
 ;;; (image-flatten-32 img) -> image?
@@ -125,18 +132,16 @@
 (define gamma-correct-color
   ????)
 
-;;; (gamma-correct-two c) -> rgb?
-;;;   c : rgb?
-;;;   gamma : real?
-;;; Gamma correct `c` by correcting each component by 2.
+;;; (gamma-correct-two img) -> image?
+;;;   img : image?
+;;; Gamma correct `img` by correcting each pixel by 2.
 (define gamma-correct-color-two
   ???)
 
-;;; (gamma-correct-half c gamma) -> rgb?
-;;;   c : rgb?
-;;;   gamma : real?
+;;; (gamma-correct-half img) -> image?
+;;;   img : image?
 ;;; Gamma correct `c` by correcting each component by 1/2.
-(define gamma-correct-color
+(define gamma-correct-half
   ???)
 
 ; +-------------------------------------+----------------------------
