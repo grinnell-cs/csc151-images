@@ -23,6 +23,14 @@ _Approximate overview_
 Administrative stuff
 --------------------
 
+* MP3 has been updated. More updates are likely coming (mostly to the
+  rubric).
+* MP2 grades have been released. Remember! It's a learning process; it's
+  okay if you didn't get an M or an E. (Please strive to avoid I's.)
+* I think I've fixed the autograder for the MP1 redo. Sorry about that.
+* For redos: Make sure to submit a `CHANGES.rkt` file when your redo is
+  ready for grading.
+
 ### Token activities
 
 Academic/Scholarly
@@ -84,18 +92,26 @@ Misc
     * [List basics](../readings/list-basics)
     * [Transforming lists](../readings/transforming-lists)
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4112277)
+* Sunday, 2024-02-18, 11:00pm, [MP1](../mps/mp1)
+    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4034420/)
 * Monday, 2024-02-19, 8:30am: Submit today's lab writeup.
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4087975)
     * Preferred: Submit before the end of class today.
 * Wednesday, 2024-02-21, 11:00pm: [MP3](../mps/mp3)
+* Sunday, 2024-02-25, 11:00pm, [MP2](../mps/mp2) Redo
+    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4113572/)
 
 ### Friday PSA
 
 A problem 
 ----------
 
+_Yay! A TPS activity._
+
 Some notes on Wednesday's lab
 -----------------------------
+
+_Yay! Potentially some more TPS activities._
 
 Questions
 ---------
@@ -111,3 +127,4 @@ Questions
 Lab
 ---
 
+If you finish early, please work on the extra problems at the end.
