@@ -5,8 +5,8 @@ summary: |
   is used to collect multiple values.  We explore the ways to create
   lists and a few operations used to manipulate lists.
 prereqs: |
-  [An abbreviated introduction to Racket](../readings/racket-intro).
-  [Data types](../readings/data-types).
+  [An abbreviated introduction to Scheme](../readings/intro-scheme).
+  [Data types](../readings/types).
 ---
 
 ## Introduction
@@ -38,7 +38,7 @@ always see this tick mark on lists that Racket displays.
 
 ## Creating lists
 
-Because lists play a central role in Scheme, there a wide variety of ways to create lists.  One common way to create lists is with the `(list exp0 exp1 ...)` procedure, which evaluates all of its parameters and creates a list from those parameters.
+Because lists play a central role in Scheme, Scheme provides a wide variety of ways to create lists.  One common way to create lists is with the `(list exp0 exp1 ...)` procedure, which evaluates all of its parameters and creates a list from those parameters.
 
 ```drracket
 > (list 2 3 5 7)
