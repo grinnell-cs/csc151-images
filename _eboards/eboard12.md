@@ -35,9 +35,6 @@ Administrative stuff
 
 Academic/Scholarly
 
-* Thursday, 2024-02-15, 4:00pm, Science 3821.
-  _CS Extras: Peter Michael Osera on The Missing Link Between Programming 
-  and Proving_.
 * Tuesday, 2024-02-20, noon--1:00pm, Some PDR.
   _CS Table_.
 * Tuesday, 2024-02-20, 7:00pm, Science 3819.
@@ -62,6 +59,7 @@ Peer
     * Up to two separate sessions.
 * Sunday, 2024-02-18, Simpson College Baseball Diamond.
   _Baseball_.
+* Slumber party tonight.
 
 Wellness
 
@@ -92,7 +90,7 @@ Misc
     * [List basics](../readings/list-basics)
     * [Transforming lists](../readings/transforming-lists)
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4112277)
-* Sunday, 2024-02-18, 11:00pm, [MP1](../mps/mp1)
+* Sunday, 2024-02-18, 11:00pm, Redo of [MP1](../mps/mp1)
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4034420/)
 * Monday, 2024-02-19, 8:30am: Submit today's lab writeup.
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4087975)
@@ -103,15 +101,72 @@ Misc
 
 ### Friday PSA
 
+* You are awesome!
+* People care about you.
+* Please take care of yourselves, especially for those who care about you.
+* Be moderate in what you consume.
+* CONSENT IS ESSENTIAL.
+
 A problem 
 ----------
 
 _Yay! A TPS activity._
 
+* Option one: "The vomit in the dorm lounge" option. Everyone pays a fine.
+  (In this case, the fine is zero on the SoLA.)
+* Option two: Try to identify them and talk to them individually.
+* Option three: Set clearer expectations.
+    * DO NOT TALK ABOUT SOLAS WHILE THE SOLAS ARE LIVE!!!!!!!!
+    * READ THE DAMN THING YOU ARE SIGNING!!!!
+* Option four: No more take-home SoLAs.
+* Option five: Treat everyone as criminals by taking over their webcams.
+  I refuse to violate your privacy. I'd prefer not to treat you as criminals.
+* Option six: Ask people to explain answers.
+* Option seven: Randomized questions (great idea, lots of work for 
+  Sam)
+* Observation: Those who clearly didn't vomit in the lounge because they
+  were playing baseball at Simpson don't have to pay the fine.
+* Observation: The only person you are cheating is yourself. (Which isn't
+  true: You are undermining Sam's trust in students and inclnation to
+  a nice system.)
+
 Some notes on Wednesday's lab
 -----------------------------
 
 _Yay! Potentially some more TPS activities._
+
+```
+(define median-of-three
+  (lambda (x y z)
+    (cond 
+      [(or (<= x y z) (<= z y x))
+       y]
+      [(or (<= y x z) (<= z x y))
+       x]
+      [(or (<= x z y) (<= y z x))
+       z]
+      [else
+       "AGH! Math failed."])))
+```
+
+"I want to take the three numbers and remove the largest and remove
+the smallest."
+
+```
+(define median-of-three
+  (lambda (x y z)
+    (- (+ x y z)
+       (min x y z)
+       (max x y z))))
+```
+
+REMINDER TO SELF: Talk about talking about how you did
+------------------------------------------------------
+
+* People take different amounts of time. 
+* Don't brag. 
+* Don't ask.
+* You can ask "How did you do this problem?"
 
 Questions
 ---------
@@ -120,9 +175,27 @@ Questions
 
 ### MP3
 
+When will the full MP3 be ready?
+
+> 5pm today. Maybe earlier.
+
+Can we start the preflection for MP3?
+
+> Yes.
+
 ### Conditionals
 
 ### Misc
+
+Why don't I have any questions?
+
+> Perhaps you are an imposter from Carleton. Grinnellians ask good questions.
+
+How should I format my code?
+
+> Avoid really long lines.
+
+> Skim through [this document](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/handouts/style-guide)
 
 Lab
 ---
