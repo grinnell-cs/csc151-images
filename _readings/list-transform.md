@@ -577,8 +577,9 @@ a. Using `apply` and `map`, make a picture of seven outlined circles in the rain
 
 ![Seven outlined circles in the rainbow colors.]({{ "/images/thickly-outlined-rainbow-circles.png" | relative_url }})
 
-b. Using `apply` and `map`, make a picture of seven outlined circles in darker versions of the rainbow colors.  Note that you'll need to convert the color names to RGB colors with `color-name->rgb` and then make the darker with two calls to `rgb-darker`.
+b. Using `apply` and `map`, make a picture of seven outlined circles in darker versions of the rainbow colors (using two calls to `rgb-darker`).  Note that you'll need to convert the color names to RGB colors with `color-name->rgb` and then make them darker with two calls to `rgb-darker`.
 
 ![Seven outlined circles in slightly darker versions of the rainbow colors.]({{ "/images/thickly-outlined-darker-rainbow-circles.png" | relative_url }})
 
-Note: You might need three calls to `map` (or a particularly good composition of functions).
+Note: You might need three or four calls to `map` (or a particularly good composition of functions).
+
