@@ -13,6 +13,7 @@ is working correctly).
 _Approximate overview_
 
 * Administrative stuff [10 min]
+* Some notes from SoLA 1 [10 min]
 * Some notes from MP2 [10 min]
 * Questions [10 min]
 * Lab [45 min]
@@ -42,8 +43,12 @@ Academic/Scholarly
 
 * Tuesday, 2024-02-20, noon--1:00pm, Some PDR.
   _CS Table_.
+* Tuesday, 2024-02-20, 4:15-5:30pm, HSSC A1231 (the Kernel).
+  _The Meskwaki and the Amana Colonies_.
 * Tuesday, 2024-02-20, 7:00pm, Science 3819.
   _Mentor Session_.
+* Thursday, 2024-02-22, 11:00-noon, JRC 101.
+  _Scholars' Convocation: Luis Fabiano De Assis on Human Trafficking._
 * Thursday, 2024-02-22, 4:00pm, Room TBD.
   _CS Extra: Declaring a CS Major._
 * Thursday, 2024-02-22, 7:00pm, Science 3819.
@@ -53,6 +58,8 @@ Cultural
 
 * Friday, 2024-02-23, 4:00--5:00pm, HSSC N1170 (Global Living Room).
   _Middle of Everywhere._
+* Friday, 2024-02-23, 7:00--9:00pm, Sebring-Lewis.
+  _Squatters on Red Earth_.
 
 Peer
 
@@ -68,6 +75,9 @@ Wellness
 Misc
 
 ### Other good things (no tokens)
+
+* Monday, 2024-02-20, 9-11pm, Bob's Underground. 
+  _Bob's undergound open mic night 9-11pm_
 
 ### Upcoming work
 
@@ -87,10 +97,61 @@ Some notes from SoLA 1
 * Many of you spent the full hour on cut and compose. I generally suggest
   that you stop after the fifeen minutes unless you are making good progress.
   There's a difference between productive struggle and wasteful struggle.
-* Good news! We should be through all of the round 2 topics by the 
+* Good news! We should be through all of the round 2 topics by the
   Wednesday before SoLA 2.
 * I'll remind you closer to SoLA 2, but doing practice problems (including
   some you write) is often the best way to prepare for a SoLA.
+
+### Cut and compose
+
+This problem gave the most difficulty. So we're going to talk through
+a similar problem.
+
+First, let's review what the two procedures do.
+
+* `cut` builds a procedure by "cutting out" parts of an expression. You
+  can also think about it as filling in some, but not all, parameters
+  to a procedure.
+* `compose` (`o`) sequences unary procedures, creating a new procedure
+  that applies them right to left.
+
+Let's consider an example.
+
+```
+(define rgb-fun-one
+  (lambda (color)
+    (rgb-subtract (rgb 255 255 255)
+                  (rgb-darker
+                   (rgb-darker
+                    (rgb-subtract (rgb 255 255 255)
+                                  (rgb-lighter color)))))))
+```
+
+TPS: Describe in English what's happening.
+
+* First we ....
+* Then we ...
+* Then we ...
+* Then we ...
+* Then we ...
+* Then we ...
+
+We can rewrite that to ...
+
+Here's another example.
+
+``
+(define munge-shape
+  (lambda (shape)
+    (rotate
+     (beside (solid-square 10 "black")
+             (recolor 
+              (rotate
+               (scale shape 2)
+               45)
+              "red"))
+     -45)))
+```
 
 Some notes from MP2
 -------------------
@@ -157,13 +218,51 @@ Many of you wrote something like the following for `solid-pentagon`.
 Isn't the repetitious? What could you do to make it less so?
 
 _TPS_
-                     
+
+Some notes from your pre-reflections on MP3
+-------------------------------------------
+
+_What do you see as the key concepts that this assignment is asking you to learn or develop?_
+
+Please think about big-picture issues and what we've been doing lately.
+
+_Without looking at any resources (e.g., readings, labs, your notes), write down everything you know that might be useful for this assignment._
+
+This should really be a brain dump. Write procedures. Write procedure names.
+
+_What resources (e.g., individual procedures you've written, readings, labs) will be helpful as you work on this assignment?_
+
+I'd like to see more notes on individual procedures. Now's the time to look some up.
+
+_How long do you expect this assignment to take?_
+
+Please express this in hours, not days or weeks.
+
 Questions
 ---------
 
 ### Administrative
 
 ### MP3
+
+### Lists
+
+Can you go over the darker circles problem?
+
+> Sure.
+
+```
+;;; (thickly-outlined-circle color) -> image?
+;;;   color : color?
+;;; Make a thickly outlined circle of the specified color.
+(define thickly-outlined-circle
+  (lambda (color)
+    (overlay (outlined-circle 20 "black" 5)
+             (solid-circle 20 color))))
+
+```
+
+b. Using `apply` and `map`, make a picture of seven outlined circles in darker versions of the rainbow colors (computed by using two calls to `rgb-darker`).  Note that you'll need to convert the color names to RGB colors with `color-name->rgb` and then make them darker with two calls to `rgb-darker`.
 
 Lab
 ---
