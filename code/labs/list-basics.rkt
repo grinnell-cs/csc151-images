@@ -1,7 +1,6 @@
 #lang racket
 
 (require csc151)
-(require 2htdp/image)
 (require rackunit)
 
 ;; CSC 151 (SEMESTER)
@@ -57,7 +56,7 @@ prediction.
 |#
 
 #|
-b. If you haven't done so already, heck your predictions with DrRacket.
+b. If you haven't done so already, check your predictions with DrRacket.
 (Do the checks in the interactions pane, not here.)
 |#
 
@@ -207,6 +206,11 @@ the procedures you came up with above.
     ???))
 
 #|
+You could try uncommenting the block of tests to see which succeed
+and which do not.
+|#
+
+#|
 (test-equal? "Edge case: One digit (0)" (string->digits "0") (list 0))
 (test-equal? "Edge case: One digit (9)" (string->digits "9") (list 9))
 (test-equal? "Normal case: 123" (string->digits "123") (list 1 2 3))
@@ -239,6 +243,10 @@ problem.
 (define ten-to-the
   (lambda (n)
     ???))
+
+#| 
+Once again, you might find it useful to uncomment the tests.
+|#
 
 #|
 (test-equal? "ten to the zero is 1" (ten-to-the 0) 1)
@@ -354,7 +362,7 @@ here's a procedure that builds a palette of three colors.
 ;;; Build one element of a typical palette
 (define palette-element
   (lambda (c)
-    (rectangle 20 40 "solid" c)))
+    (solid-rectangle 20 40 c)))
 
 #|
 a. Write a procedure, `(color-palette list-of-colors)`, that takes
@@ -371,20 +379,7 @@ colors.
     ???))
 
 #|
-b. Here's a procedure that takes a color and a size and makes a
-square of the given size in the given color.
-|#
-
-;;; (solid-square c size) -> image?
-;;;   c : color?
-;;;   size : positive-integer?
-;;; Make square of the given size and color.
-(define solid-square
-  (lambda (c size)
-    (square size "solid" c)))
-
-#|
-Write a procedure, `(concentric-palette colors)`, that takes a list of 
+b. Write a procedure, `(concentric-palette colors)`, that takes a list of 
 colors as a parameter and makes an image of concentric squares of sizes
 20, 30, 40, ... (* 10 (length colors)).
 
@@ -442,18 +437,18 @@ Consider the following procedure that makes a darker shade of a given
 colors.
 |#
 
-;;; (darker c amt) -> color?
-;;;    c : color?
+;;; (darker c amt) -> rgb?
+;;;    c : rgb?
 ;;;    amt : non-negative-integer?
 ;;; Make `c` darker by subtracting amt from each component.
 (define darker 
   (lambda (c amt)
-    (rgb (- (color-red c) amt)
-         (= (color-green c) amt)
-         (- (color-blue c) amt))))
+    (rgb (- (rgb-red c) amt)
+         (- (rgb-green c) amt)
+         (- (rgb-blue c) amt))))
 
 #|
-Write a procedure, `(shades c n)`, that makes a palette of n shades of c.  
+Write a procedure, `(shades c n)`, that makes a palette of `n` shades of `c`.  
 
 * The first color will be c [or (darker c 0)].
 * The next will be (darker c (quotient 255 n))
@@ -465,7 +460,7 @@ Write a procedure, `(shades c n)`, that makes a palette of n shades of c.
 ;;; (shades c n) -> image?
 ;;;   c : color?
 ;;;   n : positive-integer?
-;;; Make a palette of n shades of c.
+;;; Make a palette of `n` shades of `c`.
 (define shades
   (lambda (c n)
     ???))
