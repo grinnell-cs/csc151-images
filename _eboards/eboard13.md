@@ -16,7 +16,7 @@ _Approximate overview_
 * Some notes from SoLA 1 [10 min]
 * Some notes from MP2 [10 min]
 * Questions [10 min]
-* Lab [45 min]
+* Lab [35 min or less]
 * Turn in lab [5 min]
 
 Administrative stuff
@@ -35,7 +35,12 @@ Administrative stuff
 * I'll be working with Prof. Perlmutter and the mentors to discuss what
   to do for those of you who are still struggling with tracing.
 * I'm still waiting for a replacement hearing aid. Expect me to continue
-  to exhibit difficulty hearing.
+  to exhibit difficulty hearing. (It's worse today because my other hearing
+  aid didn't charge. I may ask those up front to help out.)
+* I think I've responded to all of today's readings, the MP3 pre-assessments,
+  and the SoLA post-assessments.
+* I've been teaching section 2 while Prof. Perlmutter is ill, so you'll
+  see extra eboards.
 
 ### Token activities
 
@@ -81,11 +86,11 @@ Misc
 
 ### Upcoming work
 
-* Monday, 2024-02-19, 8:30am: Submit today's lab writeup.
+* Tuesday, 2024-02-20, 11:00pm: Reading responses
+    * [_Submit on Gradescope_](...)
+* Wednesday, 2024-02-21, 8:30am: Submit today's lab writeup.
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4087975)
     * Preferred: Submit before the end of class today.
-* Tuesday, 2024-02-21, 11:00pm: Reading responses
-    * [_Submit on Gradescope_](...)
 * Wednesday, 2024-02-21, 11:00pm: [MP3](../mps/mp3)
     * [_Submit on Gradescope_](...)
 * Sunday, 2024-02-25, 11:00pm, [MP2](../mps/mp2) Redo
@@ -129,14 +134,75 @@ Let's consider an example.
 
 TPS: Describe in English what's happening.
 
-* First we ....
-* Then we ...
-* Then we ...
-* Then we ...
-* Then we ...
-* Then we ...
+* First we make the color lighter
+* Then we subtract it (the result of the prior command) from white
+* Then we make it darker
+* Then we make it darker again
+* Then we subtract it from white
+* And then we're done
 
 We can rewrite that to ...
+
+```
+(define subtract-from-white
+  (lambda (color)
+    (rgb-subtract (rgb 255 255 255) color)))
+
+(define rgb-fun-one
+  (o subtract-from-white rgb-darker rgb-darker subtract-from-white rgb-lighter))
+```
+
+Where's the parameter to `rgb-fun-one`?
+
+> It's implicit. The `o` says "this is a function that applies `rgb-lighter` to
+  its parameter, the subtract-from-white to the result, then rgb-darker to the
+  result, then rgb-darker to the new result, then subtract-from white.
+
+Can we verify that it's a procedure and that it works similarly?
+
+```
+> rgb-fun-one
+#<procedure:...pkgs/csc151/hop.rkt:170:4>
+> (rgb-fun-one (rgb 255 0 0))
+.
+```
+
+Can we compose a procedure that needs multiple parameters?
+
+> Nope. You can't compose it, at least not given how we've written compose.
+
+> For now, we only compose one-parameter (unary) procedures.
+
+Let's revisit `subtract-from-white`.
+
+```
+(define subtract-from-white
+  (lambda (color)
+    (rgb-subtract (rgb 255 255 255) color)))
+``
+
+This is a candidate for `cut`. Rewrite subtract-from-white using `cut`.
+
+```
+(define subtract-from-white
+  (cut (rgb-subtract (rgb 255 255 255) <>)))
+```
+
+Once we have that, we can just shove the `cut` into our composition.
+
+```
+(define rgb-fun-one
+  (o (cut (rgb-subtract (rgb 255 255 255) <>))
+     rgb-darker 
+     rgb-darker 
+     (cut (rgb-subtract (rgb 255 255 255) <>))
+     rgb-lighter))
+```
+
+Do we really need `subtract-from-white`? 
+
+> No. That was just to get us moving forward in thinking about the problem.
+  (Aka decomosition.)
 
 Here's another example.
 
@@ -145,12 +211,59 @@ Here's another example.
   (lambda (shape)
     (rotate
      (beside (solid-square 10 "black")
-             (recolor 
-              (rotate
-               (scale shape 2)
-               45)
-              "red"))
+             (recolor (rotate (scale shape 2)
+                              45)
+                      "red"))
      -45)))
+```
+
+What steps are there?
+
+* Scale the shape by 2 `(cut (scale <> 2))`
+* Rotate by 45 `(cut (rotate <> 45))`
+* Recolor to red `(cut (recolor <> "red"))`
+* Put a solid black square next to it `(cut (beside (solid-square 10 "black") <>))`
+* Rotate by -45 `(cut (rotate <> -45))`
+
+How do we turn those into Racket?
+
+* See above.
+
+```
+(define munge-shape
+  (o (cut (rotate <> -45))
+     (cut (beside (solid-square 10 "black") <>))
+     (cut (recolor <> "red"))
+     (cut (rotate <> 45))
+     (cut (scale <> 2))))
+```
+
+* This new one is a bit shorter.
+* Once we've figured out how to read cut and compose, the second seems
+  a bit easier to read.
+
+Other notes
+
+* We often need to use `cut` on multiple procedures when we employ this
+  approach.
+
+How do we document the cut and composed procedures given that they
+don't have explicit parameters?
+
+> We pretend they have parameters.
+
+```
+;;; (munge-shape shape) -> image?
+;;;   shape : image?
+;;; Create a larger version of the shape with a diamond attached
+;;; to its upper-left-hand-corner.
+```
+
+```
+;;; (subtract-from-white color) -> rgb?
+;;;   color : rgb?
+;;; Subtract `color` from `white`, computing the pseudo-complement
+;;; of the color.
 ```
 
 Some notes from MP2
@@ -164,6 +277,7 @@ Some notes from MP2
     * 02/11/2024 could be February 11 or November 2.
     * (Sorry, I don't have a good strategy for being more inclusive
       to those who use other calendar systems.)
+    * The computer also does a better job sorting those.
 * Please read the instructions and examples. We had some students submit
   multiple files.
 * Please don't include expressions in the middle of your definitions
@@ -217,7 +331,41 @@ Many of you wrote something like the following for `solid-pentagon`.
 
 Isn't the repetitious? What could you do to make it less so?
 
-_TPS_
+* Write a procedure that converts an angle and a radius to a point.
+* [If we knew `map`, we could use that.]
+* Write a helper function for the x coordinate and the y coordinate.
+* The radius is always the same, so we might want to find a way to
+  avoid that recompuation.
+
+```
+(define solid-pentagon
+  (lambda (side-length color)
+    (alternate-solid-pentagon (/ side-length (* 2 (sin (/ pi 5)))) color)))
+
+(define alternate-solid-pentagon
+  (lambda (radius color)
+    (solid-polygon (list (pt (real-part (make-polar radius
+                                                    (* 2/5 pi)))
+                             (imag-part (make-polar radius
+                                                    (* 2/5 pi))))
+                         (pt (real-part (make-polar radius
+                                                    (* 4/5 pi)))
+                             (imag-part (make-polar radius
+                                                    (* 4/5 pi))))
+                         (pt (real-part (make-polar radius
+                                                    (* 6/5 pi)))
+                             (imag-part (make-polar radius
+                                                    (* 6/5 pi))))
+                         (pt (real-part (make-polar radius
+                                                    (* 8/5 pi)))
+                             (imag-part (make-polar radius
+                                                    (* 8/5 pi))))
+                         (pt (real-part (make-polar radius
+                                                    (* 10/5 pi)))
+                             (imag-part (make-polar radius
+                                                    (* 10/5 pi)))))
+                   color)))
+```
 
 Some notes from your pre-reflections on MP3
 -------------------------------------------
@@ -230,9 +378,27 @@ _Without looking at any resources (e.g., readings, labs, your notes), write down
 
 This should really be a brain dump. Write procedures. Write procedure names.
 
+```
+Here's an example of a procedure where I change a color.
+(define rgb-invert
+  (cut (rgb-subtract (rgb 255 255 255) <>)))
+```
+
 _What resources (e.g., individual procedures you've written, readings, labs) will be helpful as you work on this assignment?_
 
 I'd like to see more notes on individual procedures. Now's the time to look some up.
+
+```
+In the class notes for class 13 <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/eboards/eboard13>, we wrote a procedure that made colors "something". It looked like this.
+
+```
+(define rgb-fun-one
+  (o (cut (rgb-subtract (rgb 255 255 255) <>))
+     rgb-darker
+     rgb-darker 
+     (cut (rgb-subtract (rgb 255 255 255) <>))
+     rgb-lighter))
+```
 
 _How long do you expect this assignment to take?_
 
@@ -242,6 +408,16 @@ Questions
 ---------
 
 ### Administrative
+
+Will Sam update tokens so that we can enter more?
+
+> Sure. It's on my agenda for tonight.
+
+### MP2
+
+Can you give us a diagram for outlined right triangles?
+
+> Sure. I'll add it to my agenda for tonight.
 
 ### MP3
 
@@ -260,9 +436,41 @@ Can you go over the darker circles problem?
     (overlay (outlined-circle 20 "black" 5)
              (solid-circle 20 color))))
 
+(define rainbow-color-names
+  (list "red" "orange" "yellow" "green" "blue" "indigo" "violet"))
 ```
 
 b. Using `apply` and `map`, make a picture of seven outlined circles in darker versions of the rainbow colors (computed by using two calls to `rgb-darker`).  Note that you'll need to convert the color names to RGB colors with `color-name->rgb` and then make them darker with two calls to `rgb-darker`.
+
+What do we want to do to each color name?
+
+* convert to an RGB
+* then make it darker
+* then make it darker
+* then make it into a circle
+
+It's an opportunity to compose. And map
+
+```
+(map (o thickly-outlined-circle rgb-darker rgb-darker color-name->rgb)
+     rainbow-color-names)
+```
+
+```
+> (apply beside (map (o thickly-outlined-circle rgb-darker rgb-darker color-name->rgb)
+                     rainbow-color-names))
+```
+
+### More questions on lists and such
+
+When do we use `apply`?
+
+> When we have a procedure that expects a bunch of parameters and we've
+  somehow managed to put all of those parameters into a list.
+
+> Most frequently, when we have a procedure that expects "as many parameters
+  as you give it" and a list. We might apply `+`, `string-append`, 
+  `beside`, `above`.
 
 Lab
 ---
