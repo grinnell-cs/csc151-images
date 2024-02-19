@@ -15,8 +15,9 @@ single-quote mark (`'`, also called "tick") means "take this
 verbatim", which means that no expressions inside the parentheses
 will be evaluated.
 
-`'(list val1 val2 ... valn)` - another way that DrRacket sometimes
-shows lists. 
+`(list val1 val2 ... valn)` - another way that DrRacket sometimes 
+shows lists. (We don't know why it sometimes chooses one notation
+and other times another.)
 
 ### Creating lists
 
