@@ -10,6 +10,8 @@ collaboration: |
 link: true
 preimg: true
 ---
+_Warning! This assignment was newly created on Wednesday, 31 January 2024. It will likely be updated over the next few days. Feel free to report infelicities or missing pieces of information._
+
 For this project, you should put all of your code in the file `polygons.rkt`.
 
 ## Some background
@@ -42,6 +44,10 @@ In this assignment, you will build a few useful shapes that seem to be missing f
 ### Warnings!
 
 As the documentation for `solid-polygon` suggests, no matter what coordinates you use for the vertices, the polygon gets shifted so that the leftmost point is at the left edge of the image and the topmost point is at the top edge of the image. You can likely use this feature to your advantage. For example, if you're making a somewhat symmetrical image, you can use (0,0) as the center.
+
+Um ... I just checked, and that documentation seems to be missing. Stay tuned!
+
+The `image-subtract` procedure that you will need for one or more problems is not yet implemented. It should be ready by the end of the day on February 1.
 
 ### Documentation
 
@@ -89,7 +95,7 @@ Note that you can generate the description for the triangle with an expression s
 
 ```
 (string-append "a solid " 
-               (color-description color) 
+               (describe-color color) 
                " triangle whose width is "
                (number->string width)
                " and height is "

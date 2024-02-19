@@ -119,18 +119,23 @@
 ;;; (gamma-correct-component component gamma) -> nonnegative-integer?
 ;;;   component : (all-of nonnegative-integer? (less-than 256))
 ;;;   gamma : non-negative-real?
-;;; Gamma correct `component` by `gamma` using the standard formula.
+;;; Gamma correct `component` by `gamma` using the standard algorithm.
+;;;
+;;; The standard algorithm is 
+;;; * Convert `component` to a number between 0 and 1 by dividing by 255.
+;;; * Take that number to the `gamma` power.
+;;; * Multiply that number by 255 
+;;; * Round the result.
 (define gamma-correct-component
   ???)
 
-;;; 
 ;;; (gamma-correct-color c gamma) -> rgb?
 ;;;   c : rgb?
 ;;;   gamma : real?
 ;;; Gamma correct `c` by `gamma` by gamma correcting each component
 ;;; by `gamma`.
 (define gamma-correct-color
-  ????)
+  ???)
 
 ;;; (gamma-correct-two img) -> image?
 ;;;   img : image?
@@ -150,12 +155,81 @@
 
 ;;; (hsv->string c) -> string?
 ;;;   c : hsv?
-;;; Convert `c` to a string of the form `"hue-saturation-value-alpha"`.
+;;; Convert `c` to a string of the form `"hue-saturation-value"`.
 (define hsv->string
   (lambda (c)
-    (param-check! hsv->string 1 hsv? c)
-    "300-100-100-255")) ; STUB
+    ???))
+
+;;; (string->hsv str) -> hsv?
+;;;   str : a string of the form "hue-saturation-value"
+;;; Convert a string of the given form to an HSV color.
+(define string->hsv
+  (lambda (str)
+    ???))
+
+;;; (saturate img) -> image?
+;;;   img : image?
+;;; Create a new version of `img` in which the saturation of each pixel
+;;; is set to 100.
+(define saturate
+  (lambda (img)
+    ???))
+
+;;; (rotate-hue img angle) -> image?
+;;;   img : image?
+;;; Create a new version of `img` in which the hue of each pixel is
+;;; change by `angle`.
+(define rotate-hue
+  ???)
+
+;;; (set-hue img hue) -> image?
+;;;   img : image?
+;;; Create a new version of `img` in which the hue of each pixel
+;;; is set to `hue`.
+(define set-hue
+  ???)
 
 ; +-----------------------+------------------------------------------
 ; | Part three: Freestyle |
 ; +-----------------------+
+
+;;; (my-rgb-transformation img value) -> image?
+;;;   img : image?
+;;;   value : 
+;;; ???
+(define my-rgb-transformation
+  ???)
+
+;;; (my-hsv-transformation img value) -> image?
+;;;   img : image?
+;;;   value : 
+;;; ???
+(define my-hsv-transformation
+  ???)
+
+#|
+I created `kitten-rgb-transformed-01.jpg` using the following instructions:
+
+>
+
+I created `kitten-rgb-transformed-02.jpg` using the following instructions:
+
+>
+I created `kitten-rgb-transformed-03.jpg` using the following instructions:
+
+>
+
+I created `kitten-hsv-transformed-01.jpg` using the following instructions:
+
+>
+
+I created `kitten-hsv-transformed-02.jpg` using the following instructions:
+
+>
+
+I created `kitten-hsv-transformed-03.jpg` using the following instructions:
+
+>
+
+|#
+
