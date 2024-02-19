@@ -142,12 +142,13 @@
     - page: /labs/conditionals.html
   todo:
     - Last semester, we needed two days for this. I'm inserting a pause for breath
-  notes: ../eboards/eboard10.html
+  notes: ../eboards/eboard11.html
 
 - topic: Pause for Breath
   abbrev: pause-01
   summary: |
     We pause to catch up on a variety of topics.
+  notes: ../eboards/eboard12.html
 
 - topic: Lists
   abbrev: lists
@@ -162,6 +163,7 @@
   todo:
     - Do we also include `car`, `cdr`, and `cons` here?  Do we
      perhaps include a separate day?
+  notes: ../eboards/eboard13.html
 
 - topic: Processing lists
   abbrev: processing-lists
