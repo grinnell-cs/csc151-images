@@ -229,7 +229,7 @@ though we've lost the helpful `lambda (color)`?
 
 Here's another example.
 
-``
+```
 (define munge-shape
   (lambda (shape)
     (rotate
@@ -269,8 +269,6 @@ Would we ever write a compose inside of a cut?
 > Sure.
 
 > Here's a bad example.
-
-> `(define rgbfun->namefun (cut (o rgb->color-name <> color-name->rgb)))`
 
 ```
 > (define rgbfun->namefun (cut (o rgb->color-name <> color-name->rgb)))
