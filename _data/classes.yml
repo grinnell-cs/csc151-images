@@ -140,6 +140,11 @@
   summary: |
     We pause to catch up on a variety of topics.
 
+- topic: Another pause for breath
+  abbrev: pause-week-5
+  summary: |
+    We continue to catch up on topics.
+
 - topic: Lists
   abbrev: lists
   summary: |
@@ -266,15 +271,6 @@
     - page: /readings/randomness.html
   lab:
     - page: /labs/exploring-randomness.html
-
-- topic: Images as functions
-  abbrev: image-compute
-  summary: |
-    We conside ways to treat images as functions from positions to colors.
-  reading:
-    - page: /readings/image-compute.html
-  lab:
-    - page: /labs/image-compute.html
 
 - topic: Pairs
   abbrev: pairs
