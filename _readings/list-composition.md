@@ -1,8 +1,6 @@
 ---
 title: Composing and decomposing lists
 ---
-# {{ page.title }}
-
 *Summary:* We delve more deeply into Scheme's list data type. We consider,
 in particular, how we work with the individual elements of lists and not
 just with the list as a whole.
@@ -19,13 +17,7 @@ We call lists with mixtures of kinds of values "heterogeneous lists".
 
 ## An Example: UFO sightings
 
-Here's one example of a heterogeneous list.  Consider the list of
-UFO sightings available at <http://www.ufocasebook.com/casefiles.html>.
-For each sighting we have a year, a name, a date (or date-like
-description), a location (mostly a country), a Yes/No for effect,
-media, contact, and abduction.  (You can look at the page for what
-each of those mean.)  We might therefore represent each entry as an
-eight element list.
+Here's one example of a heterogeneous list.  Consider the list of UFO sightings available at <http://www.ufocasebook.com/casefiles.html>.  For each sighting we have a year, a name, a date (or date-like description), a location (mostly a country), a Yes/No for effect, media, contact, and abduction.  (You can look at the page for what each of those mean.)  We might therefore represent each entry as an eight element list.
 
 * Element 0 is the *year*, which we will represent as an integer.
 * Element 1 is the *name*, which we will represent as a string.
@@ -48,13 +40,11 @@ For example, here's what we might see for one entry.
 '(1969 "The Russian Crash - Sverdlovsky" "Mar, 1969" "Russia" #t #t #t #f)
 ```
 
-Why did we start with zero, rather than one?  Because lists, like strings, are "zero indexed".
-The index represents the number of items that come before the element.
+Why did we start with zero, rather than one?  Because lists, like strings, are "zero indexed".  The index represents the number of items that come before the element.
 
 While most of the list procedures we've examined so far---procedures like `reduce`, `map`, and `filter`---work on the list as a whole, if we're using lists for this kind of prupose, we want to work with the individual elements of the list.
 
-How do we extract the different elements from the list, either to display them or compare them?  
-The most straightforward is to use `list-ref`, a two-parameter procedure that takes a list and an index as inputs and returns the item at that index.
+How do we extract the different elements from the list, either to display them or compare them?  The most straightforward is to use `list-ref`, a two-parameter procedure that takes a list and an index as inputs and returns the item at that index.
 
 ```
 > (define sverdlovsky
@@ -85,9 +75,7 @@ Scheme also provides two other operations to extract values from lists: `car` ex
 ## Building lists
 
 We've been building new lists using `list`, `make-list`, or the quote operation.
-But what if we have an existing list and we want to add an element to the front?
-Say, suppose we want to add a unique identifier to each sighting, such as `'ufo023`.
-Scheme provides an operation called `cons` that builds a *new* list by adding a value to the front of the list.
+But what if we have an existing list and we want to add an element to the front?  Say, suppose we want to add a unique identifier to each sighting, such as `'ufo023`.  Scheme provides an operation called `cons` that builds a *new* list by adding a value to the front of the list.
 
 ```
 > (cons 'ufo023 sverdlovsky)
