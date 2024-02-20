@@ -1,5 +1,5 @@
 ---
-title: "EBoard 13: Lists"
+title: "EBoard 13: Lists (Section 2)"
 number: 13
 section: eboards
 held: 2024-02-19
