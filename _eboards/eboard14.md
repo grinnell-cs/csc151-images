@@ -1,6 +1,6 @@
 ---
 title: "EBoard 14: Lists"
-number: 13
+number: 14
 section: eboards
 held: 2024-02-21
 link: true
@@ -29,15 +29,13 @@ Administrative stuff
     * Since the parties have not come forward, I'll just remind them
       that the "I won't report you to the committee on academic
       standing" policy doesn't hold when I identify you.
-* I'm still waiting for a replacement hearing aid. Expect me to continue
-  to exhibit difficulty hearing. (It's worse today because my other hearing
-  aid didn't charge. I may ask those up front to help out.)
 * MP4 should be released tomorrow night.
 * Reminders:
     * If I don't respond on Teams within 12 hours (weekdays), feel free
       to DM me again.
-    * If I don't respond to email within 24 hours (weekdays), freel free
+    * If I don't respond to email within 24 hours (weekdays), feel free
       to email me again.
+* Otter is fun!
 
 ### Token activities
 
@@ -48,7 +46,7 @@ Academic/Scholarly
 * Thursday, 2024-02-22, 4:00pm, Science 2022.
   _CS Extra: Declaring a CS Major._
 * Thursday, 2024-02-22, 7:00pm, Science 3819.
-  _Mentor Session_.
+  _Mentor Session_. (lists, map, apply, and things similarly fun)
 * Tuesday, 2024-04-27, 7:00pm, Science 3819.
   _Mentor Session_.
 
@@ -61,13 +59,15 @@ Cultural
 
 Peer
 
+* Saturday night Casino night in Harris
+
 Wellness
 
-* Tuesday, 2024-02-20, noon-1pm, BRAC P103.
+* Tuesday, 2024-02-27, noon-1pm, BRAC P103.
   _HIIT and Strength Fitness Class._
-* Tuesday, 2024-02-20, 12:15--12:50, Bucksbaum 131.
+* Tuesday, 2024-02-27, 12:15--12:50, Bucksbaum 131.
   _Yoga in the Museum._
-* Tuesday, 2024-02-20, 4pm, BRAC P103 (Multipurpose Dance Studio):
+* Tuesday, 2024-02-27, 4pm, BRAC P103 (Multipurpose Dance Studio):
   _Yoga_.
 
 Misc
@@ -86,14 +86,14 @@ Misc
 * Friday, 2024-02-23, 8:00am: Quizzes!
     * Tracing (please try to talk to me if you haven't been getting this)
     * Cut and compose (bonus quiz because many of you struggled)
-    * Program style
+    * Program style (Handouts -> Style)
     * _You may bring one page of notes_.
 * Friday, 2024-02-23, 8:30am: Submit today's lab writeup.
     * [_Submit lab writeup on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4087975)
     * Preferred: Submit before the end of class today.
 * Friday, 2024-02-23, 11:00pm: Submit the MP3 post-reflection
     * [_Submit MP3 post-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4087964)
-* Friday, 2024-02-23, 11:00pm: Submit the MP4 post-reflection
+* Friday, 2024-02-23, 11:00pm: Submit the MP4 pre-reflection
     * [_Submit MP4 pre-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4136298/)
 * Sunday, 2024-02-25, 11:00pm, [MP2](../mps/mp2) Redo
     * [_Submit MP2 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4113572/)
@@ -126,5 +126,71 @@ When do we use `apply`?
   as you give it" and a list. We might apply `+`, `string-append`, 
   `beside`, `above`.
 
+> In the next reading, you'll learn a similar procedure, `reduce`, that
+  works with pairs of elements.
+
+### Random
+
+Why are pears so important?
+
+> They are an awesome fruit.
+
+Why are pairs so important?
+
+> We use them to build lists. They were part of LiSP, the ancestor
+  of Racket. They've been shown to be powerful. We'll explore them
+  in a few weeks.
+
 Lab
 ---
+
+### Observations
+
+There are three versions of `range`.
+
+* One parameter: `(range n)` -> `'(0 1 2 ... n-1)`
+* Two parameters: `(range m n)` -> `'(m m+1 m+2 ... n-1)`
+* Three parameters: `(range m n i)` -> `'(m m+i m+2i ...)`
+
+Why so many experiments with `range`?
+
+* To remind you that when you're exploring a new procedure, you should
+  try lots of different kinds of inputs.
+* To suggest the different kinds of inputs you might give to `range`.
+
+### Help
+
+Procedures that work with strings and make lists
+
+* `(string->lst str)`
+* `(string-split str)`
+
+The `test` procedures return nothing if the test succeeds and issue
+an error message if they fail.
+
+```
+(define char->digit
+  (lambda (char)
+    5))
+
+(test-equal? "five" (char->digit 5) 5)
+(test-equal? "six" (char->digit 6) 6)
+```
+
+```
+--------------------
+six
+. FAILURE
+name:       check-equal?
+location:   3-unsaved-editor:10:0
+actual:     5
+expected:   6
+--------------------
+```
+
+What's the "three-parameter map"?
+
+> You've seen it already: `(map - (range 3) (list 2 1 2))`
+
+> It builds a new list by applying the procedure to the corresponding 
+  elements of the two lists.
