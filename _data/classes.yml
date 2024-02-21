@@ -154,6 +154,7 @@
   abbrev: pause-week-5
   summary: |
     We continue to catch up on topics.
+  notes: ../eboards/eboard13.html
 
 - topic: Lists
   abbrev: lists
@@ -165,10 +166,7 @@
     - page: /readings/list-transform.html
   lab:
     - page: /labs/list-basics.html
-  todo:
-    - Do we also include `car`, `cdr`, and `cons` here?  Do we
-     perhaps include a separate day?
-  notes: ../eboards/eboard13.html
+  notes: ../eboards/eboard14.html
 
 - topic: Processing lists
   abbrev: processing-lists
