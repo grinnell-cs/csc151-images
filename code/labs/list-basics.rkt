@@ -277,8 +277,10 @@ f. Reconsider the problem of converting a string to an integer.
 How will/might the procedures you've just written help you in that
 activity?  How might `map` and `apply` help you with that that
 activity?  How might the three-parameter `map` help?  (If you're
-not sure about the three-parameter `map`, ask one of the course
-staff.)
+not sure about the three-parameter `map`, it takes a procedure and
+two lists as parameters. You were asked to make a prediction relative
+to that procedur ein exercise 1 Ask one of the course staff if you
+need more help understanding it.)
 
 Sketch an algorithm, based on those tools, that might allow you to
 do the conversion.  
@@ -332,6 +334,7 @@ might be necessary.
 (test-equal? "three digits" (string->integer "123") 123)
 (test-equal? "two digits" (string->integer "42") 42)
 (test-equal? "many digits" (string->integer "2342341211231667") 2342341211231667)
+(test-equal? "zero" (string->integer "0") 0)
 |#
 
 #| A |#
@@ -347,9 +350,9 @@ here's a procedure that builds a palette of three colors.
 |#
 
 ;;; (three-color-palette c1 c2 c3) -> image?
-;;;   c1 : color?
-;;;   c2 : color?
-;;;   c3 : color?
+;;;   c1 : rgb?
+;;;   c2 : rgb?
+;;;   c3 : rgb?
 ;;; Create a simple palette of c1, c2, and c3 side-by-side.
 (define three-color-palette
   (lambda (c1 c2 c3)
@@ -358,7 +361,7 @@ here's a procedure that builds a palette of three colors.
             (palette-element c3))))
 
 ;;; (palette-element c) -> image?
-;;;   c : color?
+;;;   c : rgb?
 ;;; Build one element of a typical palette
 (define palette-element
   (lambda (c)
@@ -371,7 +374,7 @@ colors.
 |#
 
 ;;; (color-palette list-of-colors) -> image?
-;;;   list-of-colors: list-of color?
+;;;   list-of-colors: (list-of rgb?)
 ;;; Create a palette with the specified colors in order from
 ;;; first (leftmost) to last (rightmost).
 (define color-palette
@@ -403,7 +406,7 @@ If `colors` is `(c01 c02 c03 c04)`, we'd get something like this.
 |#
 
 ;;; (concentric-palette colors) -> image?
-;;;   colors : list-of color?
+;;;   colors : (list-of rgb?)
 ;;; Create a palette of concentric squares of the given colors.
 (define concentric-palette
   (lambda (colors)
