@@ -623,3 +623,7 @@ I can write `hsv-rotate-hue`, which rotates the hue of a single HSV color. Howev
 > Don't forget that `pixel-map` expects a procedure that takes an RGB color as an input and returns an RGB color. If your procedure expects an HSV color, you'll need to do some conversions.
 
 > You may also end up needing to cut that procedure, since `hsv-rotate-hue` needs two parameters and `pixel-map` needs a one-parameter procedure.
+
+I've tried using 36 and 37 as the even distribution values for the 3-bit components of the 8-bit color. Neither seems to work (as in they don't meet the tests).
+
+> You should probably use 255/7, which lets you precisely distribute the components. It may require a bit more care in rounding.
