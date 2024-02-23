@@ -10,9 +10,11 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
-link: false
+link: true
 preimg: true
 ---
+Please start with the [template code](../code/mps/shape-lists.rkt).
+
 Please save all of your work as `shape-lists.rkt`.
 
 ## Introduction
@@ -185,6 +187,114 @@ Unfortunately, we can't convert those to images quite as easily.
 
 Our goal in this assignment is to write procedures that will help us deal with these nested (perhaps deeply nested) lists of shapes.
 
+### Detour: Tests and testing
+
+Up until this point, we have asked you to experiment with the functions that you write in the interactions window to check for correctness.  This has the upside of being fast, but if you change your code, you need manually type in all those tests again which is tedious (which in turn makes it less likely you'll recheck the correctness of your code).  A better solution is to *codify* your tests in your code so that you can rerun the tests at will.
+
+During our unit on software engineering fundamentals, we'll introduce you to a library, `rackunit`, that makes test authoring and execution a breeze.  For now, we'll look at two basic RackUnit procedures
+
+When we are developing predicates (procedures that return a Boolean) value, Racket (RackUnit) provides an important procedure to help us make that list of inputs/outputs and automatically check it for us: `(test-equal? DESCRIPTION EXP EXPECTED)`, which evaluates `EXP`, compares it to `EXPECTED`, and prints an error message only if it fails.
+
+For example,
+
+```
+> (test-equal? "the square root of 3 squared is 3" (sqrt (sqr 3)) 3)
+> (test-equal? "the square root of 4 squared is 4" (sqrt (sqr 4)) 4)
+> (test-equal? "the square root of 100 squared is 100" (sqrt (sqr 100)) 100)
+> (test-equal? "the square of the square root of 100 is 100" (sqr (sqrt 100)) 100)
+> (test-equal? "the square of the square root of 4 is 4" (sqr (sqrt 4)) 4)
+> (test-equal? "the square of the square root of 3 is 3" (sqr (sqrt 3)) 3)
+--------------------
+the square of the square root of 3 is 3
+. FAILURE
+name:       check-equal?
+location:   31-interactions from an unsaved editor:22:2
+actual:     2.9999999999999996
+expected:   3
+--------------------
+```
+
+As this suggests, if the test succeeds, you get no output.  However, if the test fails, you get a helpful FAILURE message.  (Please don't feel like a failure for getting such messages.  All of us get them from time to time.)
+
+While we cannot normally use `test-equal?` to compare images, we can use it to cmpare characteristics of those images.  For example, consider the following procedure that is supposed to make a snowman of a certain height.
+
+```
+(define my-snowman
+  (lambda (height)
+    (above (solid-circle (* height 1/2) "black")
+           (solid-circle (* height 2/3) "black")
+           (solid-circle (* height 5/6) "black"))))
+```
+
+Here are a few tests we've written to see whether it works.  The first is what some folks call a "corner" or "corner case" (also "edge" or "edge case"): one with a strange but valid input.  In this case, we've made a zero-height snowman.
+
+```
+(test-equal? "zero height snowman" (image-height (my-snowman 0)) 0)
+(test-equal? "normal snowman" (image-height (my-snowman 40)) 40)
+(test-equal? "small snowman" (image-height (my-snowman 5)) 5)
+(test-equal? "large snowman" (image-height (my-snowman 100)) 100)
+```
+
+This time, we're going to put the tests in the definitions pane and click "Run".  What do you think will happen?  Let's see ...
+
+```
+--------------------
+normal snowman
+. FAILURE
+name:       check-equal?
+location:   let-it-snow.rkt:13:0
+actual:     80
+expected:   40
+--------------------
+--------------------
+small snowman
+. FAILURE
+name:       check-equal?
+location:   let-it-snow.rkt:14:0
+actual:     10
+expected:   5
+--------------------
+--------------------
+large snowman
+. FAILURE
+name:       check-equal?
+location:   let-it-snow.rkt:15:0
+actual:     200
+expected:   100
+--------------------
+```
+
+Whoops!  There's something wrong with our procedure.  Interestingly, it got the right height for the "zero height" snowman, but not for the rest.  If we look closely, we see that each result is twice as large as it should be.  
+
+```
+(define my-snowman
+  (lambda (height)
+    (above (solid-circle (* height 1/4) "outline")
+           (solid-circle (* height 1/3) "outline")
+           (solid-circle (* height 5/12) "outline"))))
+
+(test-equal? "zero height snowman" (image-height (my-snowman 0)) 0)
+(test-equal? "normal snowman" (image-height (my-snowman 40)) 40)
+(test-equal? "small snowman" (image-height (my-snowman 5)) 5)
+(test-equal? "large snowman" (image-height (my-snowman 100)) 100)
+```
+
+What happens when I click run this time?
+
+```
+Welcome to DrRacket, version 8.11.1 [cs].
+Language: racket, with debugging; memory limit: 128 MB.
+> 
+```
+
+Whoo!  No errors.  That suggests that I got the height right.
+
+As this example suggests, we should put our tests immediately after our code in the definitions pane.  Then, when we click "Run", we'll quickly determine if there are any problems (and what those problems are).  If we see no reports, we can be sure that the code passed all of our tests.
+
+Note that to use these procedures, one must require the `rackunit` library with `(require rackunit)`.
+
+Now, on to the problems!
+
 ## Part 1: Making lists of shape parameters
 
 Our `five-variants` procedure is nice, but it's a bit cumbersome to apply.  For example, what if we already have a nested list of `shape-params?` and we want to make five variants of each shape?  We can't just call `five-variants`; you may recall that in our example above, we had to use `map` once we had a list.  But if we have nested lists, `map` won't even work.
@@ -200,7 +310,14 @@ a. Document, create at least three tests for, and write a procedure, `(color-var
 * The third should be a greener version of the original shape.
 * The fourth should be a bluer version of the original shape.
 
-You can use `rgb-redder`, `rgb-greener`, and `rgb-bluer` to make those variants.
+You should use `rgb-redder`, `rgb-greener`, and `rgb-bluer` to make those variants.
+
+```
+> (color-variants-0 (solid-square 20 (rgb 128 128 128)))
+'(![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png) ![a solid rosybrown 20-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png))
+```
+
+What will your tests look like? Here's one example.
 
 ```
 (test-equal? "color-variants-0: Middle grey"
@@ -211,165 +328,158 @@ You can use `rgb-redder`, `rgb-greener`, and `rgb-bluer` to make those variants.
                    (solid-rectangle 30 30 (color-bluer (rgb 128 128 128)))))
 ```
 
-b. Write a procedure, `(color-variants-1 stuff)`, that takes a list of shapes as a parameter and applies `color-variants-0` to each of them.
+
+b. Document, write one test for, and write a procedure, `(color-variants-1 stuff)`, that takes a shape list as a parameter and applies `color-variants-0` to each of them.
 
 ```
-;;; (color-variants-1 stuff) -> (list-of (list-of basic-image?))
-;;;   stuff : (list-of basic-image?)
-;;; Apply `color-variants-0` to each element of stuff.
+;;; (color-variants-1 shapes) -> (list-of (list-of shape?))
+;;;   shapes : (list-of shape?)
+;;; Apply `color-variants-0` to each element of `shapes`.
+```
+
+```
+> (color-variants-1 (list (solid-square 20 (rgb 128 128 128)) (solid-square 20 (rgb 64 64 64)) (solid-square 20 (rgb 192 192 192))))
+'((![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png) ![a solid rosybrown 20-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png)) (![a solid dark slate gray 20-by-20 rectangle](../images/mps/shape-lists/solid-dark slate gray-20x20-rectangle.png) ![a solid brown 20-by-20 rectangle](../images/mps/shape-lists/solid-brown-20x20-rectangle.png) ![a solid dark slate gray 20-by-20 rectangle](../images/mps/shape-lists/solid-dark slate gray-20x20-rectangle.png) ![a solid cornflower blue 20-by-20 rectangle](../images/mps/shape-lists/solid-cornflower blue-20x20-rectangle.png)) (![a solid silver 20-by-20 rectangle](../images/mps/shape-lists/solid-silver-20x20-rectangle.png) ![a solid lightpink 20-by-20 rectangle](../images/mps/shape-lists/solid-lightpink-20x20-rectangle.png) ![a solid silver 20-by-20 rectangle](../images/mps/shape-lists/solid-silver-20x20-rectangle.png) ![a solid light steel blue 20-by-20 rectangle](../images/mps/shape-lists/solid-light steel blue-20x20-rectangle.png)))
+> (color-variants-1 (color-variants-0 (solid-square 15 (rgb 128 128 128))))
+'((![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png) ![a solid rosybrown 15-by-15 rectangle](../images/mps/shape-lists/solid-rosybrown-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png)) (![a solid rosybrown 15-by-15 rectangle](../images/mps/shape-lists/solid-rosybrown-15x15-rectangle.png) ![a solid indian red 15-by-15 rectangle](../images/mps/shape-lists/solid-indian red-15x15-rectangle.png) ![a solid dim gray 15-by-15 rectangle](../images/mps/shape-lists/solid-dim gray-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png)) (![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png) ![a solid dim gray 15-by-15 rectangle](../images/mps/shape-lists/solid-dim gray-15x15-rectangle.png) ![a solid medium sea green 15-by-15 rectangle](../images/mps/shape-lists/solid-medium sea green-15x15-rectangle.png) ![a solid cadetblue 15-by-15 rectangle](../images/mps/shape-lists/solid-cadetblue-15x15-rectangle.png)) (![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png) ![a solid cadetblue 15-by-15 rectangle](../images/mps/shape-lists/solid-cadetblue-15x15-rectangle.png) ![a solid slate blue 15-by-15 rectangle](../images/mps/shape-lists/solid-slate blue-15x15-rectangle.png)))
+> (map (cut (apply beside <>))
+       (color-variants-1 (color-variants-0 (solid-square 15 (rgb 128 128 128)))))
+'(![a center-aligned sequence of images (a solid slategray 15-by-15 rectangle beside a solid rosybrown 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle)](../images/mps/shape-lists/image004.png) ![a center-aligned sequence of images (a solid rosybrown 15-by-15 rectangle beside a solid indian red 15-by-15 rectangle beside a solid dim gray 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle)](../images/mps/shape-lists/image005.png) ![a center-aligned sequence of images (a solid slategray 15-by-15 rectangle beside a solid dim gray 15-by-15 rectangle beside a solid medium sea green 15-by-15 rectangle beside a solid cadetblue 15-by-15 rectangle)](../images/mps/shape-lists/image006.png) ![a center-aligned sequence of images (a solid slategray 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle beside a solid cadetblue 15-by-15 rectangle beside a solid slate blue 15-by-15 rectangle)](../images/mps/shape-lists/image007.png))
+> (apply above
+         (map (cut (apply beside <>))
+              (color-variants-1 (color-variants-0 (solid-square 15 (rgb 128 128 128))))))
+![a four-by-four grid of various colors](../images/mps/shape-lists/image008.png)
 ```
 
 _Hint_: Use `map`.
 
-c. Write a procedure `(color-variants-1a stuff)`, that takes either a shape or a list of shapes as a parameter. If it receives a shape, it should return the result of applying `color-variants-0` to the shape. If it receives a list of shapes, it should apply `color-varants-1` to that list.
+c. Document, write two tests for, and write a procedure `(color-variants-1x stuff)`, that takes either a shape or a shape list as a parameter. If it receives a shape, it should return the result of applying `color-variants-0` to the shape. If it receives a shape list, it should apply `color-variants-1` to that list. 
 
-d. Write a procedure, `(color-variants-2 lst)`, that takes a slightly nested list of shapes as a parameter and applies `color-variants-1a` to each element.
+```
+;;; (color-variants-1x stuff) -> (any-of (list-of shape?) (list-of (list-of shape?)))
+;;;   stuff : (any-of shape? (list-of shape?))
+;;; Make variants of all the shapes in `stuff`.
+```
 
-By "slightly nested list of `shape-params?` values", we mean a list that contains only
+```
+> (color-variants-1x (solid-rectangle 10 20 (rgb 128 128 128)))
+'(![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid rosybrown 10-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png))
+'(. . . .)
+> (color-variants-1x (color-variants-1x (solid-rectangle 10 20 (rgb 128 128 128))))
+'((![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid rosybrown 10-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png)) (![a solid rosybrown 10-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-10x20-rectangle.png) ![a solid indian red 10-by-20 rectangle](../images/mps/shape-lists/solid-indian red-10x20-rectangle.png) ![a solid dim gray 10-by-20 rectangle](../images/mps/shape-lists/solid-dim gray-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png)) (![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid dim gray 10-by-20 rectangle](../images/mps/shape-lists/solid-dim gray-10x20-rectangle.png) ![a solid medium sea green 10-by-20 rectangle](../images/mps/shape-lists/solid-medium sea green-10x20-rectangle.png) ![a solid cadetblue 10-by-20 rectangle](../images/mps/shape-lists/solid-cadetblue-10x20-rectangle.png)) (![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid cadetblue 10-by-20 rectangle](../images/mps/shape-lists/solid-cadetblue-10x20-rectangle.png) ![a solid slate blue 10-by-20 rectangle](../images/mps/shape-lists/solid-slate blue-10x20-rectangle.png)))
+```
 
-* `shape-params?` values or
-* lists of `shape-params?` values.
+You may assume that `color-variants-1x` receives either a shape or a shape list as a parameter. That is, if its parameter is not a shape, it must be a shape list.
 
-Since we have only two options, you may assume that anything that isn't a `shape-params?` value must be a list of `shape-params?` values.
+Note that the `shape?` predicate lets you determine if a value is a shape.
 
-_Note_: Here and elsewhere, you may assume that procedures are given correct inputs.  For example, you won't get an integer or a list that contains other values as input to `color-variants-1`.
+d. Document and write a procedure, `(color-variants-2 stuff)`, that takes a slightly nested shape list as a parameter and applies `color-variants-1x` to each element.
 
-SAM GO THIS FAR IN THE DRAFT
+By "slightly nested shape list", we mean a list that contains only
 
-d. Write a procedure, `(color-variants-2 stuff)`, that takes a potentially doubly-nested list of `shape-params?` values as a parameter and applies `color-variants` to any `shape-params?` values that appear within the list.
+* shapes or
+* lists of shapes.
 
-By "potentially doubly-nested list of `shape-params?` values, we mean one in which each element is either
+Since we have only two options, you may assume that anything in the list that isn't a shape must be a shape list.
 
-* A `shape-params?` value or
-* A slightly-nested list of `shape-params?` values.
+```
+> (color-variants-2 (list (solid-square 10 (rgb 128 128 128))
+                           (list (solid-rectangle 10 20 (rgb 128 128 128))
+                                 (solid-rectangle 20 10 (rgb 128 128 128)))))
+'((![a solid slategray 10-by-10 rectangle](../images/mps/shape-lists/solid-slategray-10x10-rectangle.png) ![a solid rosybrown 10-by-10 rectangle](../images/mps/shape-lists/solid-rosybrown-10x10-rectangle.png) ![a solid slategray 10-by-10 rectangle](../images/mps/shape-lists/solid-slategray-10x10-rectangle.png) ![a solid slategray 10-by-10 rectangle](../images/mps/shape-lists/solid-slategray-10x10-rectangle.png)) ((![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid rosybrown 10-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png)) (![a solid slategray 20-by-10 rectangle](../images/mps/shape-lists/solid-slategray-20x10-rectangle.png) ![a solid rosybrown 20-by-10 rectangle](../images/mps/shape-lists/solid-rosybrown-20x10-rectangle.png) ![a solid slategray 20-by-10 rectangle](../images/mps/shape-lists/solid-slategray-20x10-rectangle.png) ![a solid slategray 20-by-10 rectangle](../images/mps/shape-lists/solid-slategray-20x10-rectangle.png))))
+```
 
-Since we only have two options, you may assume that anything that isn't a `shape-params?` value must be a slightly-nested list of `shape-params?` values, which means that you can apply `color-variants-1` to that list.
+We've also provided a `slightly-nested-shape-list?` predicate.
 
-_Hint_: Write a helper procedure that checks whether its parameter is a `shape-params?" or not.  If it is, apply `color-variant`.  If not, apply `color-variants-1`. 
+```
+;;; (slightly-nested-shape-list? val) -> boolean?
+;;;   val : any?
+;;; Determines whether `val` is a slightly-nested shape list. That is,
+;;; either a shape or a shape list.
+(define slightly-nested-shape-list?
+  (list-of (any-of shape? (list-of shape?))))
+```
 
-e. Have you noticed a pattern here?  Let's write a general version of these procedures.  Write a procedure `(color-variants-all stuff)`, that takes an _arbitrarily nested_ list of `shape-params?` values as a parameter and applies `color-variants` to each `shape-params?` value, no matter how deeply nested it is.
+```
+> (slightly-nested-shape-list? red-narrow)
+#f
+> (slightly-nested-shape-list? (list red-narrow red-narrow))
+#t
+> (slightly-nested-shape-list? (list (list red-narrow red-narrow)
+                                     blue-narrow))
+#t
+> (slightly-nested-shape-list? (list (list red-narrow red-narrow)
+                                     (list blue-narrow blue-narrow)))
+#t
+> (slightly-nested-shape-list? (list (list red-narrow red-narrow)
+                                     (list (list blue-narrow blue-narrow)
+                                           purple-narrow)))
+#f
+```
 
-Note that each element of an "_arbitrarily nested_ list of `shape-params?` values is either:
+Note that this returns a "doubly nested shape list". That's a list in which each element is either
 
-* a `shape-params?` value or
-* a simpler arbitrarily nested list of `shape-params?` values.
+* A shape or
+* A slightly-nested shape list.
 
-Since we only have two options, you may assume that anything that isn't a `shape-params?` value must be a simpler nested list of `shape-params?` values.
+As you might expect, we've provided a `doubly-nested-shape-list` predicate.
 
-Sorry, you don't get a hint for this one.
+```
+;;; (doubly-nested-shape-list? val) -> boolean?
+;;;   val : any?
+;;; Determines whether `val` is a doubly-nested shape list. That is,
+;;; a shape list, shape lists, and slightly-nested shape lists.
+(define doubly-nested-shape-list?
+  (list-of (any-of shape?
+                   slightly-nested-shape-list)))
+```
 
-_This procedure is not necessary for an **M**, only for an **E**._
+However, you are unlikely to need this predicate.
 
-## Part 3: From lists to shapes
+## Part 2: Transforming lists of shapes
 
-_Estimated time: 30 minutes._
-
-a. Document and write a procedure, `(solid-ellipses-0 list-of-params)`, that takes a list of shape parameters as input and returns a list of solid ellipses determined by the corresponding parameters.
+a. Document, write at least three tests for, and write a procedure, `(shape->solid-isosceles-triangle shape)`, that takes a shape as a parameter and returns a solid isosceles triangle of the same width, height, and color.
 
 Here and elsewhere, you may assume that the procedure is only given correct inputs.
 
-```
-> (define red-params (list red-narrow red-medium red-wide))
-> (solid-ellipses-0 red-params)
-(list . . .) 
-; Image forthcoming: A list of a narrow red ellipse, a red circle,
-; and a wide red ellipse.
-```
+b. Document, write at least three tests for, and write a procedure `(shapes->solid-isosceles-triangles-0 shapes)`, that takes a shape list as a parameter and returns a shape of solid isosceles triangles that have the same width, height, and color.
 
-Hint: Use `map`.
+c. Document and write a procedure, `(shapes->solid-isosceles-triangles-1 shapes)`, that takes a slightly nested shape list as a parameter and converts each shape in the list into a solid isosceles triangle of the same widht, height, and color. See part 1 for ideas on how to write such a procedure.
 
-b. Document and write a procedure, `(solid-ellipses-1 stuff)`, that takes as a parameter a list that consists of both shape parameters _and_ lists of shape parameters and turns each individual shape parameter (whether nested or not) into an ellipse.
+d. Document and write a procedure, `(shapes->solid-isosceles-triangles-2 shapes)`, that takes a doubly nested shape list as a parameter and converts each shape in the list into a solid isosceles triangle of the same widht, height, and color. See part 1 for ideas on how to write such a procedure.
 
-Here and elsewhere, you may assume that the procedure is only given correct inputs.
-
-```
-> (define red-params (list red-narrow red-medium red-wide))
-> (define blue-params (list blue-narrow blue-medium blue-wide))
-> (solid-ellipses-1 (list red-params
-                          purple-medium
-                          blue-params))
-(list (list . . .) . (list . . .)) ; Image forthcoming.
-```
-
-Hint: Write a helper procedure that checks whether its parameter is a set of shape paramerters.  If so, use `solid-ellipse`.  If not, it must be a list, so use `solid-ellipses-0`.
-
-c. Document and write a procedure, `(solid-ellipses-2 stuff)`, that takes as a parameter a list that consists of
-
-* Individual shape parameters
-* Lists of either (i) individual shape parameters or (ii) lists of shape parameters.
-
-```
-> (define red-params (list red-narrow red-medium red-wide))
-> (solid-ellipses-2 (list (list red-params (reverse red-params) red-params)
-                          red-params
-                          red-medium))
-(list (list (list . . .) (list . . .) (list . . .)) (list . . .) .)
-```
-
-Hint: Write a helper procedure that checks whether its parameter is a set of `shape-params?` values.  If so, use `solid-ellipse`.  If not, it must be a list, so use `solid-ellipses-1`.
-
-d. It feels like it's time to generalize, doesn't it?  Write a procedure, `(solid-ellipses stuff)`, that takes an _arbitrarily nested_ list of color-parameters and turns each into the corresponding ellipse.
-
-```
-> (solid-ellipses (list (list red-params (reverse red-params) red-params)
-                        (list red-medium (list red-params red-medium))
-                        red-medium))
-
-(list (list (list . . .) (list . . .) (list . . .)) (list . (list (list . . .) .)) .)
-```
-
-_This procedure is only necessary for an E._
-
-e. Now that we've written `solid-ellipses`, it feels like we should be able to write similar procedures for the other shapes. 
-
-i. Write a procedure, `(solid-right-triangles stuff)`, that takes an _arbitrarily nested_ list of color-parameters and turns each into the corresponding right triangle.
-
-ii. Write a procedure, `(boxed-solid-ellipses stuff)`, that takes an _arbitrarily nested_ list of color-parameters and turns each into the corresponding boxed solid ellipse.
-
-iii. Write a procedure, `(outlined-solid-rectangles stuff)`, that takes an _arbitrarily nested_ list of color-parameters and turns each into the corresponding outlined solid rectangle.
-
-_These procedures are only necessary for an E._
-
-## Part 4: Combining images
-
-_Estimated time: 30 minutes._
+## Part 3: Combining images
 
 We can now build complex nested lists of images.  As you might expect, we'd like to be able to convert these nested lists to a single image.
 
-a. Write a procedure, `(stack images)`, that takes a list of images as a parameter and returns a single image in which each image in the list is placed above the next.  In this case, your input list is not nested; it is the output from a procedure like `solid-ellipses-0`.
+a. Document and write a procedure, `(stack images)`, that takes a list of images as a parameter and returns a single image in which each image in the list is placed above the next.  In this case, your input list is not nested; it is the output from a procedure like `shapes->solid-isosceles-triangles-0`.
 
-b. Write a procedure, `(sequence images)`, that takes a list of images as a parameter and returns a single image in which each image in the list is placed next to the subsequent images.  Once again, in this case, your input list is not nested.
+b. Document and write a procedure, `(sequence images)`, that takes a list of images as a parameter and returns a single image in which each image in the list is placed next to the subsequent images.  Once again, in this case, your input list is not nested.
 
-c. Write a procedure, `(stack-then-sequence stuff)`, that takes a singly nested list of images as a parameter and returns an image in which each sublist is stacked and then the stacks are placed next to each other.  You can assume that your input to this is something like the output from `solid-ellipses-1`.  
+c. Document and write a procedure, `(stack-then-sequence stuff)`, that takes a slightly nested list of images as a parameter and returns an image in which each sublist is stacked and then the stacks are placed next to each other.  
 
-Note that, as in the case of `solid-ellipses-1`, you will likely want to write a helper procedure.  In this case, it should check whether the parameter is an image or not.  If it's an image, you can leave it as is.  If it's a list, you probably want to stack it.  After applying that helper to each element of `stuff`, you can put them beside each other.
+Note that, as in the previous parts you will likely want to write a helper procedure.  In this case, it should check whether the parameter is a image or not or not.  If it's an image, you can leave it as is.  If it's a list, you probably want to stack it.  After applying that helper to each element of `stuff`, you can put them beside each other.
 
-d. Write a procedure, `(sequence-then-stack stuff)`, that takes a singly nested list of images as a parameter and returns an image in which each sublist is stacked and then the stacks are placed next to each other.  You can assume that your input to this is something like the output from `solid-ellipses-1`.  
+d. Write a procedure, `(sequence-then-stack stuff)`, that takes a singly nested list of images as a parameter and returns an image in which each sublist is stacked and then the stacks are placed next to each other.  
 
 e. Write a procedure, `(sequence-then-stack-then-sequence stuff)`, that takes a doubly-nested list as input.  You should be able to guess what it should do.
 
 f. Write a procedure, `(stack-then-sequence-then-stack stuff)`, that takeks a doubly-nested list as input.  You should be able to guess what it should do.
 
-g. It's time to generalize.  Write procedures `(stacked-ss stuff)` and `(sequenced-ss stuff)`, that take arbitrarily nested lists of images as input and either (a) sequence then stack then ... then stack the images (for `stacked-ss`) or (b) stack then sequence then .. then sequence the images (for `sequenced-ss`).  _This procedure is only necessary for an E._
-
-Note that, in contrast to the prior procedures, the names of the procedures indicate what we do at the "top level".
-
-_Hint_: You should consider using `sequenced-ss` as a helper for `stacked-ss` and vice versa.  This technique is called "mutual recursion".
-
-## Part 5: Freestyle
-
-_Estimated time: 15--30 minutes._
+## Part 4: Freestyle
 
 Using these procedures and any others you write, create an interesting image which you should call `freestyle`.
 
 ```
-(define freestyle (stacked-ss ...))
+(define freestyle (stack-then-sequence-then-stack ...))
 ```
 
-To earn an E, you will need to write your own variants of the procedures in parts 2, 3, and 4.
+To earn an E, you will need to write your own variants of the procedures in parts 1, 2, and 3.
 
 Grading rubric
 --------------
+
+_Still under development._
 
 ### Redo or above
 
@@ -377,7 +487,7 @@ Submissions that lack any of these characteristics will get an I.
 
 ```
 [ ] Passes all of the one-star autograder tests.
-[ ] Includes the specified file, `similar-shapes.rkt`.
+[ ] Includes the specified file, `shape-lists.rkt`.
 [ ] Includes an appropriate header on the file that indicates the
     course, author, etc.
 [ ] Acknowledges appropriately.
@@ -432,7 +542,7 @@ prior characteristics will get an M.
     as a parameter and creates a list of similar shapes.
 [ ] Adds a new procedure akin to `stacked-ss` or `sequenced-ss` (e.g.,
     overlaying or combining diagonally).  That is, adds a procedure that
-    takes a nested-list of shapes as a parameter and builds an image
+    takes a nested-shape list as a parameter and builds an image
     from them (other than by using `stacked-ss` or `sequenced-ss`).
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.
