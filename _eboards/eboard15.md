@@ -22,6 +22,8 @@ Administrative stuff
 --------------------
 
 * MP4 is now live. I'll be adding examples tonight and tomorrow.
+* Since MP4 went live late, I've pushed the pre-reflection until
+  Sunday night.
 
 ### Token activities
 
