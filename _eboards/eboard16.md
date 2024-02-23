@@ -1,8 +1,8 @@
 ---
-title: "EBoard 15: More fun with lists"
-number: 15
+title: "EBoard 16: Unit testing"
+number: 16
 section: eboards
-held: 2024-02-23
+held: 2024-02-26
 link: true
 ---
 # {{ page.title }}
@@ -12,7 +12,6 @@ is working correctly).
 
 _Approximate overview_
 
-* Quiz [20 min]
 * Administrative stuff [10 min]
 * Questions [5 min]
 * Lab [40 min or so]
@@ -20,11 +19,6 @@ _Approximate overview_
 
 Administrative stuff
 --------------------
-
-* The mints are back.
-* MP4 is now live. I'll be adding examples tonight and tomorrow.
-* Since MP4 went live late, I've pushed the pre-reflection until
-  Sunday night.
 
 ### Token activities
 
@@ -83,57 +77,25 @@ Misc
     * _Gradescope forthcoming_.
     * Reminder: Read the rubric (not yet available) and try to avoid incompletes.
 
-### Friday PSA
-
-* You are awesome! Please take care of yourselves.
-* Be moderate in what you do.
-* Plan in advance for what is appropriate for you.
-* Consent is essential!
-
 Questions
 ---------
 
+### Friday's Lab
+
+How should we write "add 5 to all"?
+
+> `(map (cut (+ 5 <>)) lst)`
+
 ### Administrative
-
-When will I have a chance to make up the conditionals quiz?
-
-> On the next SoLA. 
-
-> In general, if you miss quiz LAs or SoLA LAs, you make them up on the
-  next SoLA. There are a few exceptions.
-
-What's the style quiz going to be like?
-
-> This is generally not a good question to ask at 10pm the night
-  before the quiz.
-
-> The [LAs page](../las) has sample problems for most LAs.
 
 ### MP4
 
 ### Lists
 
-Why is `reduce` in random order?
-
-> In practice, if we're doing a "parallel reduce", we can't predict the
-  order.  Hence, we try to give you experience with something similar.
-
-Why is `map` given that name?
-
-> I have no idea.
-
-> A "map" is another name for a function (something that converts one
-  thing to another).
-
-> It could be an acronym for "multiply apply procedure".
-
-> A [random web page](https://www.gnu.org/software/emacs/manual/html_node/eintr/mapcar.html) tells me that
-
-> > [map] comes from the mathematical phrase, "mapping over a domain", meaning to apply a function to each of the elements in a domain. The mathematical phrase is based on the metaphor of a surveyor walking, one step at a time, over an area [they are] mapping.
+### Testing
 
 ### Assorted
 
 Lab
 ---
 
-Reminder to Sam: Give the list of "add-5-to-each" to students on Monday.
