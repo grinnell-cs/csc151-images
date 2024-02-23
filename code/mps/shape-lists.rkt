@@ -117,6 +117,12 @@
           (solid-rectangle (* 4/3 width) height (rgb-lighter color))
           (solid-rectangle (* 5/3 width) height (rgb-lighter (rgb-lighter color))))))
 
+;;; (shape-list? val) -> boolean?
+;;;   val : any?
+;;; Determines whether `val` is a list of shapes.
+(define shape-list?
+  (list-of shape?))
+
 ;;; (slightly-nested-shape-list? val) -> boolean?
 ;;;   val : any?
 ;;; Determines whether `val` is a slightly-nested shape list. That is,
@@ -131,6 +137,27 @@
 (define doubly-nested-shape-list?
   (list-of (any-of shape? 
                    slightly-nested-shape-list?)))
+
+;;; (image-list? val) -> boolean?
+;;;   val : any?
+;;; Determines whether `val` is a list of images.
+(define image-list?
+  (list-of image?))
+
+;;; (slightly-nested-image-list? val) -> boolean?
+;;;   val : any?
+;;; Determines whether `val` is a slightly-nested image list. That is,
+;;; a list of images and image lists.
+(define slightly-nested-image-list?
+  (list-of (any-of image? (list-of image?))))
+
+;;; (doubly-nested-image-list? val) -> boolean?
+;;;   val : any?
+;;; Determines whether `val` is a doubly-nested image list. That is,
+;;; a list of images, image lists, and slightly-nested image lists.
+(define doubly-nested-image-list?
+  (list-of (any-of image? 
+                   slightly-nested-image-list?)))
 
 ; +------------------------------------------+-----------------------
 ; | Part 1: Making lists of shape parameters |
