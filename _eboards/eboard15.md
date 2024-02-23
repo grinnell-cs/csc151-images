@@ -1,5 +1,5 @@
 ---
-title: "EBoard 14: More fun with lists"
+title: "EBoard 15: More fun with lists"
 number: 15
 section: eboards
 held: 2024-02-23
@@ -25,6 +25,8 @@ Administrative stuff
 
 Academic/Scholarly
 
+* Tuesday, 2024-04-27, noon, Some PDR.
+  _CS Table_.
 * Tuesday, 2024-04-27, 7:00pm, Science 3819.
   _Mentor Session_.
 * Thursday, 2024-02-29, 11:00-noon, JRC 101.
@@ -83,11 +85,25 @@ Questions
 
 ### Administrative
 
+When will I have a chance to make up the conditionals quiz?
+
+> On the next SoLA. 
+
+> In general, if you miss quiz LAs or SoLA LAs, you make them up on the
+  next SoLA. There are a few exceptions.
+
+What's the style quiz going to be like?
+
+> This is generally not a good question to ask at 10pm the night
+  before the quiz.
+
+> The [LAs page](../las) has sample problems for most LAs.
+
 ### MP3
 
 ### Lists
 
-### Random
+### Assorted
 
 Lab
 ---
