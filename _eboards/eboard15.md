@@ -21,6 +21,8 @@ _Approximate overview_
 Administrative stuff
 --------------------
 
+* MP4 is now live. I'll be adding examples tonight and tomorrow.
+
 ### Token activities
 
 Academic/Scholarly
