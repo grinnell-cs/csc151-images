@@ -180,9 +180,7 @@
     - page: /readings/list-more.html
   lab:
     - page: /labs/lists-more.html
-  todo:
-    - Incorporate sort and tally.
-    - Consider incorporating the old /labs/drawing-lists.html
+  notes: ../eboards/eboard15.html
 
 - topic: Software engineering fundamentals
   abbrev: software-engineering
