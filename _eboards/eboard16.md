@@ -77,6 +77,14 @@ Misc
     * _Gradescope forthcoming_.
     * Reminder: Read the rubric (not yet available) and try to avoid incompletes.
 
+Some notes from your instructors
+--------------------------------
+
+Lots of techniques. It's okay that you're struggling to figure out which.
+
+Important to think about what type of thing you want. (Is this asking for a
+procedure, a string, a list?)
+
 Questions
 ---------
 
