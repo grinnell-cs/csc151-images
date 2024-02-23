@@ -8,7 +8,7 @@ summary: |
 
 *Hypothesis-driven debugging* captures the idea that we can use the scientific process to make debugging systematic rather than ad-hoc.
 In this framework, we are observing and ultimately making predictions about the behavior of our program.
-There are five steps to hypothesis-driven debugging:
+There are five primary steps to hypothesis-driven debugging:
 
 1.  Gather data
 2.  State assumptions
@@ -184,3 +184,4 @@ If your prediction was the root cause, then congratulations; you're done!
 Otherwise, your prediction has given you some new information.
 What further predictions can you make that will get you closer to the root cause of the problem?
 Repeat the hypothesis-driven debugging process until you unveil this cause!
+
