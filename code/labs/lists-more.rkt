@@ -1,6 +1,6 @@
 #lang racket
 
-;; CSC-151 (SEMESTER)
+;; CSC-151-NN (SEMESTER)
 ;; Lab: More Fun with Lists
 ;; Authors: YOUR NAMES HERE
 ;; Date: THE DATE HERE
@@ -11,10 +11,8 @@
 ; | Requirements and such |
 ; +-----------------------+
 
-(provide (all-defined-out))
-(require csc151)
-(require 2htdp/image)
 (require rackunit)
+(require csc151)
 
 ; +-------------+----------------------------------------------------
 ; | Preparation |
@@ -22,27 +20,32 @@
 
 #|
 In this lab, you and your partner will practice manipulating lists
-using the big-three higher-order functions: map, filter, and reduce.
-There are four exercises; here's the division.
+using the big-three higher-order functions---map, filter, and
+reduce---as well as some other useful functions.
+
+There are five exercises; here's the division.
 
 Exercise 1: A-Side
 Exercise 2: B-Side
-Exercise 3: A-Side
-Exercise 4: B-Side
+Exercise 3: B-Side
+Exercise 4: A-Side
+Exericse 5: Both sides
 
 The person with the problem description should drive and their
 partner should navigate.  Again, make sure to be good partners and
 focus completely on solving the current problem together rather than
 working ahead on your own.
 
-a. Don't forget our "start of session".  Chat with your partner
+a. Don't forget our "start of session" steps.  Chat with your partner
 about working habits and strengths.  Maybe share something interesting
 about yourself.
 
-b. If you haven't done so yet, make sure to open tabs in your browser
+b. Update the csc151 library.
+
+c. If you haven't done so yet, make sure to open tabs in your browser
 for the lab and the recent readings.
 
-c. Do't forget to save this file as `lists-more.rkt`!
+d. Don't forget to save this file as `lists-more.rkt`!
 |#
 
 #| A |#
@@ -52,15 +55,19 @@ c. Do't forget to save this file as `lists-more.rkt`!
 ; +---------------------------------+
 
 #|
-Complete each of the definitions that manipulate ex-1-list in various sorts
-of ways using one or more of the big three functions.  You may also use the
-other standard library functions for lists (e.g., length) when appropriate.
+Complete each of the definitions that manipulate ex-1-list in various
+sorts of ways using one or more of the primary list functions.  You
+may also use other standard library functions for lists (e.g.,
+length) when appropriate.
+
+Please write expressions that compute the result, rather than computing
+the result by hand.
 |#
 
 (define ex-1-list (list 25 25 23 5 21 20 20 18 10 1 22 21))
 
-; Increments the value of each element of the list `ex-1-list` by 5
-(define ex-1-list-adjusted "<TODO: fill me in>")
+; a. Increments the value of each element of the list `ex-1-list` by 5
+(define ex-1-list-adjusted ???)
 
 #|
 (test-equal? "Adjusting the list"
@@ -68,8 +75,8 @@ other standard library functions for lists (e.g., length) when appropriate.
              '(30 30 28 10 26 25 25 23 15 6 27 26))
 |#
 
-; Keeps only the elements of the list that are greater than 10.
-(define ex-1-list-filtered "<TODO: fill me in>")
+; b. Keeps only the elements of the list that are greater than 10.
+(define ex-1-list-filtered ???)
 
 #|
 (test-equal? "Filtering the list"
@@ -77,14 +84,45 @@ other standard library functions for lists (e.g., length) when appropriate.
              '(25 25 23 21 20 20 18 22 21))
 |#
 
-; Computes the average of the list (Hint: this computation is more
+; c. Computes the average of the list (Hint: this computation is more
 ; than just a single call to reduce!)
-(define ex-1-list-average "<TODO: fill me in>")
+(define ex-1-list-average ???)
 
 #|
 (test-equal? "Averaging the list" 
              ex-1-list-average 
              211/12)
+|#
+
+; d. Counts the odd values.
+
+(define ex-1-odd-count ???)
+
+
+#|
+(test-equal? "odd count"
+             ex-1-odd-count
+             7)
+|#
+
+; e. Puts them in inceasing order, from smallest to largest
+
+(define ex-1-increasing ???)
+
+#|
+(test-equal? "increasing order"
+             ex-1-increasing
+             '(1 5 10 18 20 20 21 21 22 23 25 25))
+|#
+
+; f. Puts them in decreasing order, from largest to smallest
+
+(define ex-1-decreasing ???)
+
+#|
+(test-equal? "decreasing order"
+             ex-1-decreasing
+             '(25 25 23 22 21 21 20 20 18 10 5 1))
 |#
 
 #| B |#
@@ -108,12 +146,12 @@ TODO: ENTER YOUR ANSWER
 
 #|
 b. As we hope you've learned, you can use `cut` to help with this
-problem.  Write an expression  using `cut` that adds five to each
+problem.  Write an expression using `cut` that adds five to each
 element of `numbers`.
 |#
 
 (define numbers (list 3 1 4 1 5 9 2 6))
-(define numbers-plus-five-b "<TODO: FILL ME IN, NOT AS A STRING>")
+(define numbers-plus-five-b ???)
 
 #|
 (test-equal? "numbers-plus-5-b"
@@ -148,10 +186,101 @@ d. Which of those definitions do you most prefer?  Why?
 ENTER YOUR ANSWER HERE
 |#
 
+#| B |#
+
+; +---------------------------------------+--------------------------
+; | Exercise 3: Manipulating another list |
+; +---------------------------------------+
+
+#|
+Complete each of the definitions that manipulate ex-1-list in various sorts
+of ways using one or more of list functions.  You may also use other standard
+library functions for lists (e.g., length) when appropriate. At times,
+you may find it useful to write helper procedures.
+
+Please write expressions that compute the result, rather than computing
+the result by hand.
+|#
+
+(define ex-3-list
+  (list "someone" "suggests" "that" "something" "may" "be" "smart" "&" "snarky"))
+
+; a. Uses `string-titlecase` to convert each word to title case
+
+(define ex-3-title-case ???)
+
+#|
+(test-equal? "Titlecasing elements"
+             ex-3-title-case
+             '("Someone" "Suggests" "That" "Something" "May" "Be" "Smart" "&" "Snarky"))
+|#
+
+; b. Keeps only the elements of the list that start with s
+
+(define ex-3-s-words ???)
+
+#|
+(test-equal? "Selecting s words"
+             ex-3-s-words
+             '("someone" "suggests" "something" "smart" "snarky"))
+|#
+
+; c. Joins the words together without worrying about spaces
+
+(define ex-3-smushed ???)
+
+#|
+(test-equal? "smushed together"
+             ex-3-smushed
+             "someonesuggeststhatsomethingmaybesmart&snarky")
+|#
+
+; d. Joins the words together with spaces in between them
+
+(define ex-3-spaced ???)
+
+#|
+(test-equal? "spaced out"
+             ex-3-spaced
+             "someone suggests that something may be smart & snarky")
+|#
+
+
+; e. Counts how many words have four or fewer letters
+
+(define ex-3-short-count ???)
+
+#|
+(test-equal? "short count"
+             ex-3-short-count
+             4)
+|#
+
+; f. Puts them in alphabetical order
+
+(define ex-3-alphabetical ???)
+
+#|
+(test-equal? "alphabetical"
+             ex-3-alphabetical
+             '("&" "be" "may" "smart" "snarky" "someone" "something" "suggests" "that"))
+|#
+
+; g. Puts them in order from shortest to longest. Note that you may want to
+; write a separate procedure that compares two strings by size.
+
+(define ex-3-by-size ???)
+
+#|
+(test-equal? "by size"
+             ex-3-by-size
+             '("&" "be" "may" "that" "smart" "snarky" "someone" "suggests" "something"))
+|#
+
 #| A |#
 
 ; +------------------------------------+-----------------------------
-; | Exercise 3: Party people revisited |
+; | Exercise 4: Party people revisited |
 ; +------------------------------------+
 
 #|
@@ -178,9 +307,9 @@ images to procedures.
 |#
 
 (define original-party-person
-  (above (triangle 20 'solid 'green)
-         (circle 20 'outline 'black)
-         (rectangle 10 40 'solid 'black)))
+  (above (solid-equilateral-triangle 20 "green")
+         (outlined-circle 40 "black" 1)
+         (solid-rectangle 10 40 "black")))
 
 (define party-person
   (lambda (scale)
@@ -198,7 +327,7 @@ What functions can we use in combination to transform this list of factors
 into a list of images?
 |#
 
-(define party-list "TODO: fill me in!")
+(define party-list ???)
 
 #|
 c. You might notice that the type of `party-list` isn't quite an
@@ -252,7 +381,7 @@ the partygoers along the baseline.
 
 Note: You can't just write
 
-    (reduce beside/align 'baseline party-list)
+    (reduce beside/align "baseline" party-list)
 
 Remember: `reduce` needs a two-parameter procedure, so you'll need
 to build one from `beside/align`.
@@ -261,10 +390,10 @@ to build one from `beside/align`.
 (define party-g 
   ???)
 
-#| B |#
+#| AB |#
 
 ; +------------------------------------+-----------------------------
-; | Exercise 4: Exercises in reduction |
+; | Exercise 5: Exercises in reduction |
 ; +------------------------------------+
 
 #| 
@@ -314,9 +443,9 @@ Don't check yet!  Wait until you get to part d.
 (define combine-abcde-3 (reduce combine (list "A" "B" "C" "D" "E")))
 
 (define all-the-same 
-   (and (equal? combine-abcde-1 combine-abcde-2)
-        (equal? combine-abcde-1 combine-abcde-3)
-        (equal? combine-abcde-2 combine-abcde-3)))
+  (and (equal? combine-abcde-1 combine-abcde-2)
+       (equal? combine-abcde-1 combine-abcde-3)
+       (equal? combine-abcde-2 combine-abcde-3)))
 
 #|
 d. Check your answer experimentally.  That is, print out the value
@@ -392,6 +521,3 @@ the prior approach.
 (define less-extreme-party-people
   (lambda (list-of-scales)
     ???))
-
-
-
