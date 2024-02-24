@@ -176,9 +176,9 @@
 (test-equal? "color-variants-0: Middle grey"
              (color-variants-0 (solid-rectangle 30 30 (rgb 128 128 128)))
              (list (solid-rectangle 30 30 (rgb 128 128 128))
-                   (solid-rectangle 30 30 (color-redder (rgb 128 128 128)))
-                   (solid-rectangle 30 30 (color-greener (rgb 128 128 128)))
-                   (solid-rectangle 30 30 (color-bluer (rgb 128 128 128)))))
+                   (solid-rectangle 30 30 (rgb-redder (rgb 128 128 128)))
+                   (solid-rectangle 30 30 (rgb-greener (rgb 128 128 128)))
+                   (solid-rectangle 30 30 (rgb-bluer (rgb 128 128 128)))))
 |#
 
 ; b. color-variants-1
