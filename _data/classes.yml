@@ -153,11 +153,13 @@
 
 - topic: Another pause for breath
   abbrev: pause-week-5
+  notes:  https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/eboards/eboard13b
   summary: |
     We continue to catch up on topics.
 
 - topic: Lists
   abbrev: lists
+  notes: https://docs.google.com/presentation/d/1mB62X3bGfMFa9bfkbodtM9A9UwAeUIhPWDNuLAbzcIM/edit#slide=id.g2666291cd13_0_234
   summary: |
     We return to Scheme's *list* data structure and some ways to
     use lists to work with collections of data.
@@ -172,6 +174,7 @@
 
 - topic: Processing lists
   abbrev: processing-lists
+  notes: https://docs.google.com/presentation/d/1dm19XMTXOTnw_J4Np3Uy5vLMHe8Hb2nCEsIPNcAlTro/edit#slide=id.g2666291cd13_0_234
   summary: |
     We explore ways to use lists to work with collections of drawings 
     using "the big three" list procedures: `map`, `reduce`, and `filter`.
