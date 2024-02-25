@@ -20,6 +20,20 @@ _Approximate overview_
 Administrative stuff
 --------------------
 
+* It appears that I've been forgetting to publish grades on Gradescope.
+  I'm working on getting that caught up.
+* For pre-reflections and readings that I had not responded to in a
+  timely fashion, I often just gave you credit.
+* Please make sure that the autograder can run on your submissions!
+    * For MP3, it was often because you referred to "kitten.jpg" but
+      did not include it.
+* The range of times reported for MP3 worries me (from 3 to 20). We hope
+  that MPs will normally take you 4--5 hours. (Unfortunately, there's a
+  range of how long people take. In the real world, successful professional
+  programmers can have a factor of ten difference in productivity.)
+    * Shoot for M as a starting point!
+    * Ask questions early.
+
 ### Token activities
 
 Academic/Scholarly
