@@ -551,4 +551,17 @@ prior characteristics will get an M.
 
 ## Q&A
 
-_Forthcoming._
+### Testing
+
+Do we have to write tests for every procedure?
+
+> No. Only those we expicitly ask you to test.
+
+### Miscellaneous
+
+It says we are unlikely to need to use `doubly-nested-shape-list?`. Out of curiosity, what would be an example of a situation where it would be helpful?
+
+> Some of your procedures expect a doubly-nested shape list as a parameter. You might find it useful to verify that the parameter has the correct type.
+
+> I used it in documentation; you might want to, too.
+
