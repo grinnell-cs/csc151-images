@@ -117,25 +117,25 @@ The first argument to the outer-string append is now complete. The second argume
 All the arguments to the inner `string-append` are complete. We can apply that procedure.
 
 ```
---> (g (string-append "(B)-(B)" "/" "(A)"))
+--> (g (string-append "(B)-(B)" "/" "(A-A)"))
 ```
 
 We're getting close. The outer call to `string-append` can now be evaluated.
 
 ```
---> (g "(B)-(B)/(A)")
+--> (g "(B)-(B)/(A-A)")
 ```
 
-We now substitute `"(B)-(B)/(A)"` for `y` in `g`.
+We now substitute `"(B)-(B)/(A-A)"` for `y` in `g`.
 
 ```
---> (string-append "(" "(B)-(B)/(A)" ")")
+--> (string-append "(" "(B)-(B)/(A-A)" ")")
 ```
 
 Finally, we append those strings.
 
 ```
---> "((B)-(B)/(A))"
+--> "((B)-(B)/(A-A))"
 ```
 
 And we're done.
@@ -154,10 +154,10 @@ Putting it all together, we get the following.
 --> (g (string-append (string-append "(B)" "-" "(B)") "/" (g "A-A")))
 --> (g (string-append "(B)-(B)" "/" (g "A-A")))
 --> (g (string-append "(B)-(B)" "/" (string-append "(" "A-A" ")")))
---> (g (string-append "(B)-(B)" "/" "(A)"))
---> (g "(B)-(B)/(A)")
---> (string-append "(" "(B)-(B)/(A)" ")")
---> "((B)-(B)/(A))"
+--> (g (string-append "(B)-(B)" "/" "(A-A)"))
+--> (g "(B)-(B)/(A-A)")
+--> (string-append "(" "(B)-(B)/(A-A)" ")")
+--> "((B)-(B)/(A-A))"
 ```
 
 Now, you may say to yourself "I could tell that `g` surrounds its parameter with parentheses and that `f` makes two copies and separates them with a dash. And you'd be right. However, for tracing (at least for LAs), our goal is that you can work out the steps, not just that you get the right answer for these procedures. Why? Because tracing is important when you *can't* figure out what a procedure does. And if you don't master the skill of tracing straightforward procedures, you won't be able to transfer more subtle ones
