@@ -63,7 +63,7 @@ value "red". The result of your call should be '("red").
 (define ex1a ???)
 
 #|
-(test-equal? ex1a '("red"))
+(test-equal? "ex1a" ex1a '("red"))
 |#
 
 #|
@@ -75,7 +75,7 @@ Note that you will need to call `cons` twice to build this list.
 (define ex1b ???)
 
 #|
-(test-equal? ex1b '(5 "red"))
+(test-equal? "ex1b" ex1b '(5 "red"))
 |#
 
 #|
@@ -88,7 +88,7 @@ to build this list.
 (define ex1c ???)
 
 #|
-(test-equal? ex1c '(2 5 "red"))
+(test-equal? "ex1c" ex1c '(2 5 "red"))
 |#
 
 #|
@@ -98,7 +98,7 @@ d. Build the same list as in step c, using `list` rather than `cons`.
 (define ex1d ???)
 
 #|
-(test-equal? ex1d '(2 5 "red"))
+(test-equal? "ex1d" ex1d '(2 5 "red"))
 |#
 
 #| B |#
@@ -152,7 +152,7 @@ not use `list-ref`.
 (define ex2f ???)
 
 #|
-(test-equal? ex2f 'f)
+(test-equal? "ex2f" ex2f 'f)
 |#
 
 #| A |#
@@ -561,9 +561,9 @@ If you find that you have extra time, you may wish to attempt the
 following exercise.
 |#
 
-; +----------------------+-------------------------------------------
-; | Exercise 1: Sublists |
-; +----------------------+
+; +-------------------+----------------------------------------------
+; | Extra 1: Sublists |
+; +-------------------+
 
 #|
 Write a procedure, `(sublist lst n m)`, that extracts the elements from
