@@ -579,8 +579,7 @@ You will likely find `take` and `drop` useful.
 ;;; Extract the elements of `lst` from indices `n` (inclusive) to `m`
 ;;; (exclusive)
 (define sublist
-  (lambda (lst n m)
-    ???))
+  ???)
 
 #|
 (test-equal? "(sublist 0 1)"
