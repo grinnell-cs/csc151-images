@@ -234,6 +234,36 @@ If the value does not appear in the list, `indexes-of` returns the empty list.
 '()
 ```
 
+### `drop` and `take`: Extracting sublists
+
+The `(drop lst n)` procedure removes ("drops") the first `n` elements of `lst`.
+
+```
+> (drop (list "a" "b" "c" "d" "e") 3)
+'("d" "e")
+> (drop (list "a" "b" "c" "d" "e") 2)
+'("c" "d" "e")
+> (drop (list "a" "b" "c" "d" "e") 5)
+'()
+```
+
+In contrast, the `(take lst n)` procedure takes the first `n` elements of `lst`, dropping all remaining elements.
+
+```
+> (take (list "a" "b" "c" "d" "e") 1)
+'("a")
+> (take (list "a" "b" "c" "d" "e") 2)
+'("a" "b")
+> (take (list "a" "b" "c" "d" "e") 3)
+'("a" "b" "c")
+> (take (list "a" "b" "c" "d" "e") 4)
+'("a" "b" "c" "d")
+> (take (list "a" "b" "c" "d" "e") 6)
+. . take: contract violation
+  expected: a list with at least 6 elements
+  given: '("a" "b" "c" "d" "e")
+```
+
 ### `cadr` and company: Combining `car` and `cdr`
 
 To reduce the amount of typing necessary for the programmer, many
@@ -265,43 +295,49 @@ In working with the `c*r` procedures, we find it easiest to read them from right
 `null` *Standard list constant.*
 :   The empty list.
 
-`(cons value lst)`{:.signature} *Standard List Procedure.*
+`(cons value lst)`{:.signature} *Standard list procedure.*
 :   Create a new list by prepending *`value`* to the front of *`lst`*.
 
-`(cdr lst)`{:.signature} *Standard List Procedure.*
+`(cdr lst)`{:.signature} *Standard list procedure.*
 :   Get a list the same as *`lst`* but without the first element.
 
-`(car lst)`{:.signature} *Standard List Procedure.*
+`(car lst)`{:.signature} *Standard list procedure.*
 :   Get the first element of *`lst`*.
 
 `(null? lst)`{:.signature} *Standard list predicate.*
 :   Checks if *`lst`* is the empty list.
 
-`(list-ref lst n)`{:.signature} *Standard List Procedure.*
+`(list-ref lst n)`{:.signature} *Standard list procedure.*
 :   Get the *`n`*th element of *`lst`*. Note that elements are numbered starting at 0.
 
-`(length lst)`{:.signature} *Standard List Procedure.*
+`(length lst)`{:.signature} *Standard list procedure.*
 :   Return the number of elements of list *`lst`*.
 
-`(append lst_0 lst_1 ... lst_n)`{:.signature} *Standard List Procedure.*
+`(append lst_0 lst_1 ... lst_n)`{:.signature} *Standard list procedure.*
 :   Create a new list by concatenating the elements of *`lst_0`*, *`lst_1`*, ... *`lst_n`*.
 
-`(index-of lst val)`{:.signature} *Stanrdard List Procedure.*
+`(index-of lst val)`{:.signature} *Standard list procedure.*
 :   Find the index of `val` in `lst`.  If `val` does not appear in `lst`, returns false (`#f`).
 
-`(indexes-of lst val)`{:.signature} *Stanrdard List Procedure.*
+`(indexes-of lst val)`{:.signature} *Standard list procedure.*
 :   Find all the indices of `val` in `lst`.  If `val` does not appear in `lst`, returns the empty list.
 
-`(caar lst)`{:.signature} *Standard List Procedure.*
+`(drop lst n)`{:.signature} *Standard list procedure.*
+: Remove the first `n` elements of `lst`.
+
+`(take lst n)`{:.signature} *Standard list procedure.*
+: Grab the first `n` elements of `lst`.
+
+`(caar lst)`{:.signature} *Standard list procedure.*
 :   If *`lst`*'s first element is a list, gets the first element of that first element, the the `car` of the `car` of *`lst`*. If *`lst`* is not a list, or its first element is not a list, reports an error.
 
-`(cadr lst)`{:.signature} *Standard List Procedure.*
+`(cadr lst)`{:.signature} *Standard list procedure.*
 :   Get the second element of *`lst`*, the `car` of the `cdr` of *`lst`*
 
-`(cddr lst)`{:.signature} *Standard List Procedure.*
+`(cddr lst)`{:.signature} *Standard list procedure.*
 :   Get all but the first two elements of *`lst`*, the `cdr` of the `cdr` of *`lst`*
 
-`(caddr lst)`{:.signature} *Standard List Procedure.*
+`(caddr lst)`{:.signature} *Standard list procedure.*
 :   Get the third element of *`lst`*, the `car` of the `cdr` of the `cdr` of *`lst`*.
 
 ## Self Checks
