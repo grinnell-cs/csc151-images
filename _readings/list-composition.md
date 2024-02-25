@@ -1,19 +1,11 @@
 ---
 title: Composing and decomposing lists
 ---
-*Summary:* We delve more deeply into Scheme's list data type. We consider,
-in particular, how we work with the individual elements of lists and not
-just with the list as a whole.
+*Summary:* We delve more deeply into Scheme's list data type. We consider, in particular, how we work with the individual elements of lists and not just with the list as a whole.
 
 ## Introduction: Representing data
 
-As we've said, computer scientists study both the *algorithms* we write to
-manipulate information and the ways in which we *represent* information.
-We've looked at one way of representing collections so far, lists.
-As we've explored lists, we've focused on lists that contain all the
-same kinds of values, mostly lists of numbers.  We call such lists
-"homogeneous lists".  But lists can contain mixtures of kinds of values.
-We call lists with mixtures of kinds of values "heterogeneous lists".
+As we've said, computer scientists study both the *algorithms* we write to manipulate information and the ways in which we *represent* information.  We've looked at one way of representing collections so far, lists.  As we've explored lists, we've focused on lists that contain all the same kinds of values, such as lists of numbers, lists of colors, or lists of images.  We call such lists "homogeneous lists".  But lists can contain mixtures of kinds of values.  We call lists with mixtures of kinds of values "heterogeneous lists".
 
 ## An Example: UFO sightings
 
@@ -92,11 +84,13 @@ But what if we have an existing list and we want to add an element to the front?
 ```
 
 Why is the operation called `cons` instead of `list-prepend` or something similar?
-Well, `cons` is the name John McCarthy, the designer of Lisp, chose about sixty years ago.
+Well, `cons` is the name John McCarthy, the designer of Lisp, chose over sixty years ago.
 "`cons`" is short for *construct*, because `cons` constructs lists.
 (The custom of naming procedures with the basic type they operate on, a dash, and the key operation did not start until a few decades later.)
 The names `car` and `cdr` were chosen for very specific reasons that will not make sense for a few more weeks.
 For now, just accept that you're learning a bit of strange computer-ese.
+
+Some people use `head` and `tail` instead of `car` and `cdr`. We prefer to stick with the traditional nomenclature.
 
 ## Nested lists
 
@@ -115,14 +109,12 @@ How can you get started, given that `cons` expects a list as one of its paramete
 You start with the empty list.
 
 Scheme's name for the empty list is a pair of parentheses with nothing between them: `'()`.
-Most implementations of Scheme permit you to refer to that list as `nil` or `null`.
+Most implementations of Scheme permit you to refer to that list as `null`.
 You can also create it with `(list)`.
 All permit you to describe the empty list by putting a single quote before the pair of parentheses.
 
 ```
 > '()
-'()
-> nil
 '()
 > null
 '()
@@ -130,16 +122,7 @@ All permit you to describe the empty list by putting a single quote before the p
 '()
 ```
 
-You will find that we prefer to use a name for that list. If sample code
-does not work in your version of Scheme, try inserting the following
-definitions.
-
-```
-(define nil '())
-(define null '())
-```
-
-Note that by using `cons` and `nil`, we can build up a list of any length by starting with the empty list and repeatedly prepending a value.
+Note that by using `cons` and `null`, we can build up a list of any length by starting with the empty list and repeatedly prepending a value.
 
 ```
 > (define singleton (cons "Russia" null))
@@ -275,6 +258,8 @@ of the car of a list (applicable only to nested lists).
 '("green" "blue" "indigo" "violet")
 ```
 
+In working with the `c*r` procedures, we find it easiest to read them from right to left (as if often the case in Scheme) and to treat `d` as "drop" and `a` as "access". So, for example `cdddr` means "drop three elements" and `cadddr` means drp three elements and then access the first element".
+
 ## Summary of new list procedures
 
 `null` *Standard list constant.*
@@ -321,7 +306,7 @@ of the car of a list (applicable only to nested lists).
 
 ## Self Checks
 
-### Check 1: List procedures
+### Check 1: List procedures (‡)
 
 Predict the results of evaluating the following expressions.
 
