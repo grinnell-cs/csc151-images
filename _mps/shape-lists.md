@@ -323,9 +323,9 @@ What will your tests look like? Here's one example.
 (test-equal? "color-variants-0: Middle grey"
              (color-variants-0 (solid-rectangle 30 30 (rgb 128 128 128)))
              (list (solid-rectangle 30 30 (rgb 128 128 128))
-                   (solid-rectangle 30 30 (color-redder (rgb 128 128 128)))
-                   (solid-rectangle 30 30 (color-greener (rgb 128 128 128)))
-                   (solid-rectangle 30 30 (color-bluer (rgb 128 128 128)))))
+                   (solid-rectangle 30 30 (rgb-redder (rgb 128 128 128)))
+                   (solid-rectangle 30 30 (rgb-greener (rgb 128 128 128)))
+                   (solid-rectangle 30 30 (rgb-bluer (rgb 128 128 128)))))
 ```
 
 
@@ -551,4 +551,17 @@ prior characteristics will get an M.
 
 ## Q&A
 
-_Forthcoming._
+### Testing
+
+Do we have to write tests for every procedure?
+
+> No. Only those we expicitly ask you to test.
+
+### Miscellaneous
+
+It says we are unlikely to need to use `doubly-nested-shape-list?`. Out of curiosity, what would be an example of a situation where it would be helpful?
+
+> Some of your procedures expect a doubly-nested shape list as a parameter. You might find it useful to verify that the parameter has the correct type.
+
+> I used it in documentation; you might want to, too.
+
