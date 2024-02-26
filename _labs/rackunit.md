@@ -34,7 +34,7 @@ The driver should open up DrRacket, `require` both the `csc151`, `rackunit`, and
 Define a series of tests for this procedure, each of which you write explicitly in the definitions pane.  For example,
 
 ~~~racket
-(test-equal? "A very small range" (range 1) (list 1))
+(test-equal? "A very small range" (range1 1) (list 1))
 ~~~
 
 This is a good practice as you are developing your program so you can quickly know if your code meets the current set of tests.
