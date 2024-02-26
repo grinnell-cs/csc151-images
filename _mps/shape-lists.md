@@ -677,6 +677,7 @@ prior characteristics will get an R.
 [ ] Code generally follows style guidelines.
 [ ] Documentation for all core procedures is correct / has the correct form.
 [ ] Creates an image called `freestyle`.
+[ ] Includes all the specified tests.
 ```
 
 ### Exemplary / Exceeds expectations
@@ -702,6 +703,8 @@ prior characteristics will get an M.
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.
 [ ] Documentation for all procedures is correct / has the correct form.
+[ ] Each set of tests includes at least one edge case (e.g., an empty
+    list, if appropriate).
 ```
 
 ## Q&A
