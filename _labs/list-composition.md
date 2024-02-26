@@ -1,5 +1,5 @@
 ---
-title: Composing and decomposiing lists
+title: Composing and decomposing lists
 summary: |
   We continue our exploration of Scheme's *list* structures, focusing
   on lists as ways to collect *heterogeneous* data.  We explore new 
