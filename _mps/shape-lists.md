@@ -339,9 +339,9 @@ b. Document, write one test for, and write a procedure, `(color-variants-1 stuff
 
 ```
 > (color-variants-1 (list (solid-square 20 (rgb 128 128 128)) (solid-square 20 (rgb 64 64 64)) (solid-square 20 (rgb 192 192 192))))
-'((![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png) ![a solid rosybrown 20-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png)) (![a solid dark slate gray 20-by-20 rectangle](../images/mps/shape-lists/solid-dark slate gray-20x20-rectangle.png) ![a solid brown 20-by-20 rectangle](../images/mps/shape-lists/solid-brown-20x20-rectangle.png) ![a solid dark slate gray 20-by-20 rectangle](../images/mps/shape-lists/solid-dark slate gray-20x20-rectangle.png) ![a solid cornflower blue 20-by-20 rectangle](../images/mps/shape-lists/solid-cornflower blue-20x20-rectangle.png)) (![a solid silver 20-by-20 rectangle](../images/mps/shape-lists/solid-silver-20x20-rectangle.png) ![a solid lightpink 20-by-20 rectangle](../images/mps/shape-lists/solid-lightpink-20x20-rectangle.png) ![a solid silver 20-by-20 rectangle](../images/mps/shape-lists/solid-silver-20x20-rectangle.png) ![a solid light steel blue 20-by-20 rectangle](../images/mps/shape-lists/solid-light steel blue-20x20-rectangle.png)))
+'((![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-808080-20x20-rectangle.png) ![a solid rosybrown 20-by-20 rectangle](../images/mps/shape-lists/solid-a07070-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-70a070-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-7070a0-20x20-rectangle.png)) (![a solid dark slate gray 20-by-20 rectangle](../images/mps/shape-lists/solid-404040-20x20-rectangle.png) ![a solid brown 20-by-20 rectangle](../images/mps/shape-lists/solid-603030-20x20-rectangle.png) ![a solid dark slate gray 20-by-20 rectangle](../images/mps/shape-lists/solid-306030-20x20-rectangle.png) ![a solid cornflower blue 20-by-20 rectangle](../images/mps/shape-lists/solid-303060-20x20-rectangle.png)) (![a solid silver 20-by-20 rectangle](../images/mps/shape-lists/solid-c0c0c0-20x20-rectangle.png) ![a solid lightpink 20-by-20 rectangle](../images/mps/shape-lists/solid-e0b0b0-20x20-rectangle.png) ![a solid silver 20-by-20 rectangle](../images/mps/shape-lists/solid-b0e0b0-20x20-rectangle.png) ![a solid light steel blue 20-by-20 rectangle](../images/mps/shape-lists/solid-b0b0e0-20x20-rectangle.png)))
 > (color-variants-1 (color-variants-0 (solid-square 15 (rgb 128 128 128))))
-'((![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png) ![a solid rosybrown 15-by-15 rectangle](../images/mps/shape-lists/solid-rosybrown-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png)) (![a solid rosybrown 15-by-15 rectangle](../images/mps/shape-lists/solid-rosybrown-15x15-rectangle.png) ![a solid indian red 15-by-15 rectangle](../images/mps/shape-lists/solid-indian red-15x15-rectangle.png) ![a solid dim gray 15-by-15 rectangle](../images/mps/shape-lists/solid-dim gray-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png)) (![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png) ![a solid dim gray 15-by-15 rectangle](../images/mps/shape-lists/solid-dim gray-15x15-rectangle.png) ![a solid medium sea green 15-by-15 rectangle](../images/mps/shape-lists/solid-medium sea green-15x15-rectangle.png) ![a solid cadetblue 15-by-15 rectangle](../images/mps/shape-lists/solid-cadetblue-15x15-rectangle.png)) (![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-slategray-15x15-rectangle.png) ![a solid cadetblue 15-by-15 rectangle](../images/mps/shape-lists/solid-cadetblue-15x15-rectangle.png) ![a solid slate blue 15-by-15 rectangle](../images/mps/shape-lists/solid-slate blue-15x15-rectangle.png)))
+'((![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-808080-15x15-rectangle.png) ![a solid rosybrown 15-by-15 rectangle](../images/mps/shape-lists/solid-a07070-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-70a070-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-7070a0-15x15-rectangle.png)) (![a solid rosybrown 15-by-15 rectangle](../images/mps/shape-lists/solid-a07070-15x15-rectangle.png) ![a solid indian red 15-by-15 rectangle](../images/mps/shape-lists/solid-c06060-15x15-rectangle.png) ![a solid dim gray 15-by-15 rectangle](../images/mps/shape-lists/solid-909060-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-906090-15x15-rectangle.png)) (![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-70a070-15x15-rectangle.png) ![a solid dim gray 15-by-15 rectangle](../images/mps/shape-lists/solid-909060-15x15-rectangle.png) ![a solid medium sea green 15-by-15 rectangle](../images/mps/shape-lists/solid-60c060-15x15-rectangle.png) ![a solid cadetblue 15-by-15 rectangle](../images/mps/shape-lists/solid-609090-15x15-rectangle.png)) (![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-7070a0-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-906090-15x15-rectangle.png) ![a solid cadetblue 15-by-15 rectangle](../images/mps/shape-lists/solid-609090-15x15-rectangle.png) ![a solid slate blue 15-by-15 rectangle](../images/mps/shape-lists/solid-6060c0-15x15-rectangle.png)))
 > (map (cut (apply beside <>))
        (color-variants-1 (color-variants-0 (solid-square 15 (rgb 128 128 128)))))
 '(![a center-aligned sequence of images (a solid slategray 15-by-15 rectangle beside a solid rosybrown 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle)](../images/mps/shape-lists/image004.png) ![a center-aligned sequence of images (a solid rosybrown 15-by-15 rectangle beside a solid indian red 15-by-15 rectangle beside a solid dim gray 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle)](../images/mps/shape-lists/image005.png) ![a center-aligned sequence of images (a solid slategray 15-by-15 rectangle beside a solid dim gray 15-by-15 rectangle beside a solid medium sea green 15-by-15 rectangle beside a solid cadetblue 15-by-15 rectangle)](../images/mps/shape-lists/image006.png) ![a center-aligned sequence of images (a solid slategray 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle beside a solid cadetblue 15-by-15 rectangle beside a solid slate blue 15-by-15 rectangle)](../images/mps/shape-lists/image007.png))
@@ -363,10 +363,9 @@ c. Document, write two tests for, and write a procedure `(color-variants-1x stuf
 
 ```
 > (color-variants-1x (solid-rectangle 10 20 (rgb 128 128 128)))
-'(![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid rosybrown 10-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png))
-'(. . . .)
+'(![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-808080-10x20-rectangle.png) ![a solid rosybrown 10-by-20 rectangle](../images/mps/shape-lists/solid-a07070-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-70a070-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-7070a0-10x20-rectangle.png))
 > (color-variants-1x (color-variants-1x (solid-rectangle 10 20 (rgb 128 128 128))))
-'((![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid rosybrown 10-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png)) (![a solid rosybrown 10-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-10x20-rectangle.png) ![a solid indian red 10-by-20 rectangle](../images/mps/shape-lists/solid-indian red-10x20-rectangle.png) ![a solid dim gray 10-by-20 rectangle](../images/mps/shape-lists/solid-dim gray-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png)) (![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid dim gray 10-by-20 rectangle](../images/mps/shape-lists/solid-dim gray-10x20-rectangle.png) ![a solid medium sea green 10-by-20 rectangle](../images/mps/shape-lists/solid-medium sea green-10x20-rectangle.png) ![a solid cadetblue 10-by-20 rectangle](../images/mps/shape-lists/solid-cadetblue-10x20-rectangle.png)) (![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid cadetblue 10-by-20 rectangle](../images/mps/shape-lists/solid-cadetblue-10x20-rectangle.png) ![a solid slate blue 10-by-20 rectangle](../images/mps/shape-lists/solid-slate blue-10x20-rectangle.png)))
+'((![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-808080-10x20-rectangle.png) ![a solid rosybrown 10-by-20 rectangle](../images/mps/shape-lists/solid-a07070-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-70a070-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-7070a0-10x20-rectangle.png)) (![a solid rosybrown 10-by-20 rectangle](../images/mps/shape-lists/solid-a07070-10x20-rectangle.png) ![a solid indian red 10-by-20 rectangle](../images/mps/shape-lists/solid-c06060-10x20-rectangle.png) ![a solid dim gray 10-by-20 rectangle](../images/mps/shape-lists/solid-909060-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-906090-10x20-rectangle.png)) (![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-70a070-10x20-rectangle.png) ![a solid dim gray 10-by-20 rectangle](../images/mps/shape-lists/solid-909060-10x20-rectangle.png) ![a solid medium sea green 10-by-20 rectangle](../images/mps/shape-lists/solid-60c060-10x20-rectangle.png) ![a solid cadetblue 10-by-20 rectangle](../images/mps/shape-lists/solid-609090-10x20-rectangle.png)) (![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-7070a0-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-906090-10x20-rectangle.png) ![a solid cadetblue 10-by-20 rectangle](../images/mps/shape-lists/solid-609090-10x20-rectangle.png) ![a solid slate blue 10-by-20 rectangle](../images/mps/shape-lists/solid-6060c0-10x20-rectangle.png)))
 ```
 
 You may assume that `color-variants-1x` receives either a shape or a shape list as a parameter. That is, if its parameter is not a shape, it must be a shape list.
@@ -384,9 +383,9 @@ Since we have only two options, you may assume that anything in the list that is
 
 ```
 > (color-variants-2 (list (solid-square 10 (rgb 128 128 128))
-                           (list (solid-rectangle 10 20 (rgb 128 128 128))
-                                 (solid-rectangle 20 10 (rgb 128 128 128)))))
-'((![a solid slategray 10-by-10 rectangle](../images/mps/shape-lists/solid-slategray-10x10-rectangle.png) ![a solid rosybrown 10-by-10 rectangle](../images/mps/shape-lists/solid-rosybrown-10x10-rectangle.png) ![a solid slategray 10-by-10 rectangle](../images/mps/shape-lists/solid-slategray-10x10-rectangle.png) ![a solid slategray 10-by-10 rectangle](../images/mps/shape-lists/solid-slategray-10x10-rectangle.png)) ((![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid rosybrown 10-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-slategray-10x20-rectangle.png)) (![a solid slategray 20-by-10 rectangle](../images/mps/shape-lists/solid-slategray-20x10-rectangle.png) ![a solid rosybrown 20-by-10 rectangle](../images/mps/shape-lists/solid-rosybrown-20x10-rectangle.png) ![a solid slategray 20-by-10 rectangle](../images/mps/shape-lists/solid-slategray-20x10-rectangle.png) ![a solid slategray 20-by-10 rectangle](../images/mps/shape-lists/solid-slategray-20x10-rectangle.png))))
+                          (list (solid-rectangle 10 20 (rgb 128 128 128))
+                                (solid-rectangle 20 10 (rgb 128 128 128)))))
+'((![a solid slategray 10-by-10 rectangle](../images/mps/shape-lists/solid-808080-10x10-rectangle.png) ![a solid rosybrown 10-by-10 rectangle](../images/mps/shape-lists/solid-a07070-10x10-rectangle.png) ![a solid slategray 10-by-10 rectangle](../images/mps/shape-lists/solid-70a070-10x10-rectangle.png) ![a solid slategray 10-by-10 rectangle](../images/mps/shape-lists/solid-7070a0-10x10-rectangle.png)) (![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-808080-10x20-rectangle.png) ![a solid rosybrown 10-by-20 rectangle](../images/mps/shape-lists/solid-a07070-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-70a070-10x20-rectangle.png) ![a solid slategray 10-by-20 rectangle](../images/mps/shape-lists/solid-7070a0-10x20-rectangle.png)) (![a solid slategray 20-by-10 rectangle](../images/mps/shape-lists/solid-808080-20x10-rectangle.png) ![a solid rosybrown 20-by-10 rectangle](../images/mps/shape-lists/solid-a07070-20x10-rectangle.png) ![a solid slategray 20-by-10 rectangle](../images/mps/shape-lists/solid-70a070-20x10-rectangle.png) ![a solid slategray 20-by-10 rectangle](../images/mps/shape-lists/solid-7070a0-20x10-rectangle.png)))
 ```
 
 We've also provided a `slightly-nested-shape-list?` predicate.
@@ -442,29 +441,189 @@ a. Document, write at least three tests for, and write a procedure, `(shape->sol
 
 Here and elsewhere, you may assume that the procedure is only given correct inputs.
 
+```
+> (shape->solid-isosceles-triangle red-narrow)
+![a solid red 10-by-20 isosceles triangle](../images/mps/shape-lists/solid-ff0000-10x20-isosceles-triangle.png)
+> (shape->solid-isosceles-triangle blue-medium)
+![a solid blue 20-by-20 isosceles triangle](../images/mps/shape-lists/solid-0000ff-20x20-isosceles-triangle.png)
+> (shape->solid-isosceles-triangle purple-wide)
+![a solid purple 30-by-20 isosceles triangle](../images/mps/shape-lists/solid-a020f0-30x20-isosceles-triangle.png)
+```
+
 b. Document, write at least three tests for, and write a procedure `(shapes->solid-isosceles-triangles-0 shapes)`, that takes a shape list as a parameter and returns a shape of solid isosceles triangles that have the same width, height, and color.
+
+```
+> (shapes->solid-isosceles-triangles-0 (list red-narrow purple-medium blue-wide))
+'(![a solid red 10-by-20 isosceles triangle](../images/mps/shape-lists/solid-ff0000-10x20-isosceles-triangle.png) ![a solid purple 20-by-20 isosceles triangle](../images/mps/shape-lists/solid-a020f0-20x20-isosceles-triangle.png) ![a solid blue 30-by-20 isosceles triangle](../images/mps/shape-lists/solid-0000ff-30x20-isosceles-triangle.png))
+
+> (shapes->solid-isosceles-triangles-0 (color-variants-0 (solid-rectangle 30 10 (rgb 128 128 128))))
+'(![a solid slategray 30-by-10 isosceles triangle](../images/mps/shape-lists/solid-808080-30x10-isosceles-triangle.png) ![a solid rosybrown 30-by-10 isosceles triangle](../images/mps/shape-lists/solid-a07070-30x10-isosceles-triangle.png) ![a solid slategray 30-by-10 isosceles triangle](../images/mps/shape-lists/solid-70a070-30x10-isosceles-triangle.png) ![a solid slategray 30-by-10 isosceles triangle](../images/mps/shape-lists/solid-7070a0-30x10-isosceles-triangle.png))
+```
 
 c. Document and write a procedure, `(shapes->solid-isosceles-triangles-1 shapes)`, that takes a slightly nested shape list as a parameter and converts each shape in the list into a solid isosceles triangle of the same widht, height, and color. See part 1 for ideas on how to write such a procedure.
 
+```
+> (shapes->solid-isosceles-triangles-1 (list red-narrow (list blue-medium purple-medium) red-wide))
+'(![a solid red 10-by-20 isosceles triangle](../images/mps/shape-lists/solid-ff0000-10x20-isosceles-triangle.png) ![a solid blue 20-by-20 isosceles triangle](../images/mps/shape-lists/solid-0000ff-20x20-isosceles-triangle.png) ![a solid purple 20-by-20 isosceles triangle](../images/mps/shape-lists/solid-a020f0-20x20-isosceles-triangle.png) ![a solid red 30-by-20 isosceles triangle](../images/mps/shape-lists/solid-ff0000-30x20-isosceles-triangle.png))
+
+> (shapes->solid-isosceles-triangles-1 (color-variants-1 (color-variants-0 (solid-rectangle 10 25 (rgb 128 128 128)))))
+'((![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-808080-10x25-isosceles-triangle.png) ![a solid rosybrown 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-a07070-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-70a070-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-7070a0-10x25-isosceles-triangle.png)) (![a solid rosybrown 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-a07070-10x25-isosceles-triangle.png) ![a solid indian red 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-c06060-10x25-isosceles-triangle.png) ![a solid dim gray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-909060-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-906090-10x25-isosceles-triangle.png)) (![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-70a070-10x25-isosceles-triangle.png) ![a solid dim gray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-909060-10x25-isosceles-triangle.png) ![a solid medium sea green 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-60c060-10x25-isosceles-triangle.png) ![a solid cadetblue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-609090-10x25-isosceles-triangle.png)) (![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-7070a0-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-906090-10x25-isosceles-triangle.png) ![a solid cadetblue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-609090-10x25-isosceles-triangle.png) ![a solid slate blue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-6060c0-10x25-isosceles-triangle.png)))
+```
+
 d. Document and write a procedure, `(shapes->solid-isosceles-triangles-2 shapes)`, that takes a doubly nested shape list as a parameter and converts each shape in the list into a solid isosceles triangle of the same widht, height, and color. See part 1 for ideas on how to write such a procedure.
+
+```
+> (shapes->solid-isosceles-triangles-2 (color-variants-2 (color-variants-1 (color-variants-0 (solid-rectangle 10 25 (rgb 128 128 128))))))
+'(((![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-808080-10x25-isosceles-triangle.png) ![a solid rosybrown 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-a07070-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-70a070-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-7070a0-10x25-isosceles-triangle.png)) (![a solid rosybrown 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-a07070-10x25-isosceles-triangle.png) ![a solid indian red 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-c06060-10x25-isosceles-triangle.png) ![a solid dim gray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-909060-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-906090-10x25-isosceles-triangle.png)) (![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-70a070-10x25-isosceles-triangle.png) ![a solid dim gray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-909060-10x25-isosceles-triangle.png) ![a solid medium sea green 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-60c060-10x25-isosceles-triangle.png) ![a solid cadetblue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-609090-10x25-isosceles-triangle.png)) (![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-7070a0-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-906090-10x25-isosceles-triangle.png) ![a solid cadetblue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-609090-10x25-isosceles-triangle.png) ![a solid slate blue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-6060c0-10x25-isosceles-triangle.png))) 
+  ((![a solid rosybrown 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-a07070-10x25-isosceles-triangle.png) ![a solid indian red 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-c06060-10x25-isosceles-triangle.png) ![a solid dim gray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-909060-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-906090-10x25-isosceles-triangle.png)) (![a solid indian red 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-c06060-10x25-isosceles-triangle.png) ![a solid indian red 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-e05050-10x25-isosceles-triangle.png) ![a solid peru 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-b08050-10x25-isosceles-triangle.png) ![a solid maroon 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-b05080-10x25-isosceles-triangle.png)) (![a solid dim gray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-909060-10x25-isosceles-triangle.png) ![a solid peru 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-b08050-10x25-isosceles-triangle.png) ![a solid yellow green 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-80b050-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-808080-10x25-isosceles-triangle.png)) (![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-906090-10x25-isosceles-triangle.png) ![a solid maroon 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-b05080-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-808080-10x25-isosceles-triangle.png) ![a solid slate blue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-8050b0-10x25-isosceles-triangle.png))) 
+  ((![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-70a070-10x25-isosceles-triangle.png) ![a solid dim gray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-909060-10x25-isosceles-triangle.png) ![a solid medium sea green 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-60c060-10x25-isosceles-triangle.png) ![a solid cadetblue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-609090-10x25-isosceles-triangle.png)) (![a solid dim gray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-909060-10x25-isosceles-triangle.png) ![a solid peru 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-b08050-10x25-isosceles-triangle.png) ![a solid yellow green 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-80b050-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-808080-10x25-isosceles-triangle.png)) (![a solid medium sea green 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-60c060-10x25-isosceles-triangle.png) ![a solid yellow green 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-80b050-10x25-isosceles-triangle.png) ![a solid lime green 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-50e050-10x25-isosceles-triangle.png) ![a solid medium sea green 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-50b080-10x25-isosceles-triangle.png)) (![a solid cadetblue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-609090-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-808080-10x25-isosceles-triangle.png) ![a solid medium sea green 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-50b080-10x25-isosceles-triangle.png) ![a solid steel blue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-5080b0-10x25-isosceles-triangle.png)))
+  ((![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-7070a0-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-906090-10x25-isosceles-triangle.png) ![a solid cadetblue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-609090-10x25-isosceles-triangle.png) ![a solid slate blue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-6060c0-10x25-isosceles-triangle.png)) (![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-906090-10x25-isosceles-triangle.png) ![a solid maroon 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-b05080-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-808080-10x25-isosceles-triangle.png) ![a solid slate blue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-8050b0-10x25-isosceles-triangle.png)) (![a solid cadetblue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-609090-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-808080-10x25-isosceles-triangle.png) ![a solid medium sea green 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-50b080-10x25-isosceles-triangle.png) ![a solid steel blue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-5080b0-10x25-isosceles-triangle.png)) (![a solid slate blue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-6060c0-10x25-isosceles-triangle.png) ![a solid slate blue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-8050b0-10x25-isosceles-triangle.png) ![a solid steel blue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-5080b0-10x25-isosceles-triangle.png) ![a solid royalblue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-5050e0-10x25-isosceles-triangle.png))))
+```
+
+Wow! That's a lot of triangles, isn't it? In the next part of the assignment, we'll find ways to combine them into a single image.
 
 ## Part 3: Combining images
 
-We can now build complex nested lists of images.  As you might expect, we'd like to be able to convert these nested lists to a single image.
+As you've just seen, we can now build complex nested lists of images.  As you might expect, we'd like to be able to convert these nested lists to a single image.
 
 a. Document and write a procedure, `(stack images)`, that takes a list of images as a parameter and returns a single image in which each image in the list is placed above the next.  In this case, your input list is not nested; it is the output from a procedure like `shapes->solid-isosceles-triangles-0`.
 
+```
+> (stack (list red-narrow purple-medium blue-wide))
+![a center-aligned stack of images (a solid red 10-by-20 rectangle above a solid purple 20-by-20 rectangle above a solid blue 30-by-20 rectangle)](../images/mps/shape-lists/image009.png)
+> (stack (color-variants-0 (solid-rectangle 15 15 (rgb 128 128 128))))
+![a center-aligned stack of images (a solid slategray 15-by-15 rectangle above a solid rosybrown 15-by-15 rectangle above a solid slategray 15-by-15 rectangle above a solid slategray 15-by-15 rectangle)](../images/mps/shape-lists/image010.png)
+> (stack (shapes->solid-isosceles-triangles-0 (color-variants-0 (solid-rectangle 15 15 (rgb 128 128 128)))))
+![a center-aligned stack of images (a solid slategray 15-by-15 isosceles triangle above a solid rosybrown 15-by-15 isosceles triangle above a solid slategray 15-by-15 isosceles triangle above a solid slategray 15-by-15 isosceles triangle)](../images/mps/shape-lists/image011.png)
+```
+
 b. Document and write a procedure, `(sequence images)`, that takes a list of images as a parameter and returns a single image in which each image in the list is placed next to the subsequent images.  Once again, in this case, your input list is not nested.
+
+```
+> (sequence (list red-narrow purple-medium blue-wide))
+![a center-aligned sequence of images (a solid red 10-by-20 rectangle beside a solid purple 20-by-20 rectangle beside a solid blue 30-by-20 rectangle)](../images/mps/shape-lists/image012.png)
+> (sequence (color-variants-0 (solid-rectangle 15 15 (rgb 128 128 128))))
+![a center-aligned sequence of images (a solid slategray 15-by-15 rectangle beside a solid rosybrown 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle)](../images/mps/shape-lists/image013.png)
+> (sequence (shapes->solid-isosceles-triangles-0 (color-variants-0 (solid-rectangle 15 15 (rgb 128 128 128)))))
+![a center-aligned sequence of images (a solid slategray 15-by-15 isosceles triangle beside a solid rosybrown 15-by-15 isosceles triangle beside a solid slategray 15-by-15 isosceles triangle beside a solid slategray 15-by-15 isosceles triangle)](../images/mps/shape-lists/image014.png)
+```
 
 c. Document and write a procedure, `(stack-then-sequence stuff)`, that takes a slightly nested list of images as a parameter and returns an image in which each sublist is stacked and then the stacks are placed next to each other.  
 
-Note that, as in the previous parts you will likely want to write a helper procedure.  In this case, it should check whether the parameter is a image or not or not.  If it's an image, you can leave it as is.  If it's a list, you probably want to stack it.  After applying that helper to each element of `stuff`, you can put them beside each other.
+```
+> (stack-then-sequence (list (list red-narrow red-medium red-wide)
+                             (list purple-wide purple-medium purple-narrow)
+                             (list blue-narrow blue-medium blue-wide)))
+![a center-aligned sequence of images (a center-aligned stack of images (a solid red 10-by-20 rectangle above a solid red 20-by-20 rectangle above a solid red 30-by-20 rectangle) beside a center-aligned stack of images (a solid purple 30-by-20 rectangle above a solid purple 20-by-20 rectangle above a solid purple 10-by-20 rectangle) beside a center-aligned stack of images (a solid blue 10-by-20 rectangle above a solid blue 20-by-20 rectangle above a solid blue 30-by-20 rectangle))](../images/mps/shape-lists/image015.png)
+> (stack-then-sequence (list red-narrow (list purple-narrow blue-narrow)
+                             red-medium (list blue-medium purple-medium)
+                             red-wide (list purple-wide red-wide)))
+![a center-aligned sequence of images (a solid red 10-by-20 rectangle beside a center-aligned stack of images (a solid purple 10-by-20 rectangle above a solid blue 10-by-20 rectangle) beside a solid red 20-by-20 rectangle beside a center-aligned stack of images (a solid blue 20-by-20 rectangle above a solid purple 20-by-20 rectangle) beside a solid red 30-by-20 rectangle beside a center-aligned stack of images (a solid purple 30-by-20 rectangle above a solid red 30-by-20 rectangle))](../images/mps/shape-lists/image016.png)
+> (stack-then-sequence (color-variants-1 (color-variants-0 (solid-rectangle 30 15 (rgb 128 128 128)))))
+![A four-by-four grid of colors](../images/mps/shape-lists/image017.png)
+> (stack-then-sequence (shapes->solid-isosceles-triangles-1 (color-variants-1 (color-variants-0 (solid-rectangle 30 15 (rgb 128 128 128))))))
+![A four-by-four grid of colored triangles](../images/mps/shape-lists/image018.png)
+```
+
+Note that, as in the previous parts you will likely want to write a helper procedure.  In this case, it should check whether the parameter is a image or not.  If it's an image, you can leave it as is.  If it's a list, you probably want to stack it.  After applying that helper to each element of `stuff`, you can put them beside each other.
 
 d. Write a procedure, `(sequence-then-stack stuff)`, that takes a singly nested list of images as a parameter and returns an image in which each sublist is stacked and then the stacks are placed next to each other.  
 
+```
+> (sequence-then-stack (list (list red-narrow red-medium red-wide)
+                             (list purple-wide purple-medium purple-narrow)
+                             (list blue-narrow blue-medium blue-wide)))
+![A red stripe over a purple stripe over a blue stripe](../images/mps/shape-lists/image019.png)
+> (sequence-then-stack (shapes->solid-isosceles-triangles-1 (list (list red-narrow red-medium red-wide)
+                                                                  (list purple-wide purple-medium purple-narrow)
+                                                                  (list blue-narrow blue-medium blue-wide))))
+![Three red triangles above three purple triangles above three blue triangles](../images/mps/shape-lists/image020.png)
+> (sequence-then-stack (list red-narrow (list purple-narrow blue-narrow)
+                             red-medium (list blue-medium purple-medium)
+                             red-wide (list purple-wide red-wide)))
+![Something that looks vaguely like a skyscraper](../images/mps/shape-lists/image021.png)
+> (sequence-then-stack (color-variants-1 (color-variants-0 (solid-rectangle 30 15 (rgb 128 128 128)))))
+![A grid of colors](../images/mps/shape-lists/image022.png)
+> (sequence-then-stack (shapes->solid-isosceles-triangles-1 (color-variants-1 (color-variants-0 (solid-rectangle 30 15 (rgb 128 128 128))))))
+![A grid of colored triangles](../images/mps/shape-lists/image023.png)
+```
+
+As in the case of `stack-then-sequence`, you'll find a helper procedure useful.
+
 e. Write a procedure, `(sequence-then-stack-then-sequence stuff)`, that takes a doubly-nested list as input.  You should be able to guess what it should do.
 
+```
+>  (sequence-then-stack (list (list red-narrow blue-medium purple-wide)
+                              (list blue-medium purple-wide red-narrow)
+                              (list purple-wide red-narrow blue-medium)))
+![A rectangular shape made up of smaller red, blue, and purple rectangles]((../images/mps/shape-lists/image024.png)
+> (sequence-then-stack (list purple-wide
+                             (list blue-medium red-medium)))
+![A purple triangle above a blue triangle and a red triangle](../images/mps/shape-lists/image025.png)
+> (sequence-then-stack (list red-narrow blue-narrow purple-narrow blue-narrow red-narrow))
+![A narrow bar of red-blue-purple-blue-red](../images/mps/shape-lists/image026.png)
+> (sequence-then-stack-then-sequence (list (list (list red-narrow blue-medium purple-wide)
+                                                 (list blue-medium purple-wide red-narrow)
+                                                 (list purple-wide red-narrow blue-medium))
+                                           (list purple-wide
+                                                 (list blue-medium red-medium))
+                                           (list red-narrow blue-narrow purple-narrow blue-narrow red-narrow)))
+![The three prior images, combined side-by-side](../images/mps/shape-lists/image028.png)
+> (sequence-then-stack-then-sequence (shapes->solid-isosceles-triangles-2 (list (list (list red-narrow blue-medium purple-wide)
+                                                                                      (list blue-medium purple-wide red-narrow)
+                                                                                      (list purple-wide red-narrow blue-medium))
+                                                                                (list purple-wide
+                                                                                      (list blue-medium red-medium))
+                                                                                (list red-narrow blue-narrow purple-narrow blue-narrow red-narrow))))
+![A lot of triangles](../images/mps/shape-lists/image029.png)
+> (sequence-then-stack-then-sequence
+   (shapes->solid-isosceles-triangles-2
+    (color-variants-2
+     (color-variants-1
+      (color-variants-0
+       (solid-rectangle 15 15 (rgb 128 128 128)))))))
+![A colorful grid of triangles](../images/mps/shape-lists/image030.png)
+```
+
+_We've written some fairly wide lines of code. You should avoid such wide linns._
+
 f. Write a procedure, `(stack-then-sequence-then-stack stuff)`, that takeks a doubly-nested list as input.  You should be able to guess what it should do.
+
+```
+>  (stack-then-sequence (list (list red-narrow blue-medium purple-wide)
+                              (list blue-medium purple-wide red-narrow)
+                              (list purple-wide red-narrow blue-medium)))
+![three towers of blocks](../images/mps/shape-lists/image031.png)
+> (stack-then-sequence (list purple-wide
+                             (list blue-medium red-medium)))
+![A purple bar followed by a blue square over a red square](../images/mps/shape-lists/image032.png)
+> (stack-then-sequence (list red-narrow blue-narrow purple-narrow blue-narrow red-narrow))
+![A horizontal red-blue-purple-blue-red bar](../images/mps/shape-lists/image033.png)
+> (stack-then-sequence-then-stack (list (list (list red-narrow blue-medium purple-wide)
+                                              (list blue-medium purple-wide red-narrow)
+                                              (list purple-wide red-narrow blue-medium))
+                                        (list purple-wide
+                                              (list blue-medium red-medium))
+                                        (list red-narrow blue-narrow purple-narrow blue-narrow red-narrow)))
+![The three previous images, stacked on top of each other.]
+(../images/mps/shape-lists/image034.png)
+> (stack-then-sequence-then-stack
+   (shapes->solid-isosceles-triangles-2 (list (list (list red-narrow blue-medium purple-wide)
+                                                    (list blue-medium purple-wide red-narrow)
+                                                    (list purple-wide red-narrow blue-medium))
+                                              (list purple-wide
+                                                    (list blue-medium red-medium))
+                                              (list red-narrow blue-narrow purple-narrow blue-narrow red-narrow))))
+![A whole bunch of triangles](../images/mps/shape-lists/image035.png)
+> (stack-then-sequence-then-stack
+   (shapes->solid-isosceles-triangles-2
+    (color-variants-2
+     (color-variants-1
+      (color-variants-0
+       (solid-rectangle 15 15 (rgb 128 128 128)))))))
+![A four-wide-by-sixteen-tall grid of triangles](../images/mps/shape-lists/image036.png)
+.
+```
 
 ## Part 4: Freestyle
 
