@@ -12,7 +12,7 @@ summary: |
 
 `'(val1 val2 ... valn)` - a list of `n` values.
 
-`'(list val1 val2 ... valn)` - another way that Racket sometimes shows lists.
+`(list val1 val2 ... valn)` - another way that Racket sometimes shows lists.
 
 ### Core list values and operations
 
