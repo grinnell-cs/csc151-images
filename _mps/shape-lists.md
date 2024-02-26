@@ -556,7 +556,7 @@ e. Write a procedure, `(sequence-then-stack-then-sequence stuff)`, that takes a 
 >  (sequence-then-stack (list (list red-narrow blue-medium purple-wide)
                               (list blue-medium purple-wide red-narrow)
                               (list purple-wide red-narrow blue-medium)))
-![A rectangular shape made up of smaller red, blue, and purple rectangles]((../images/mps/shape-lists/image024.png)
+![A rectangular shape made up of smaller red, blue, and purple rectangles](../images/mps/shape-lists/image024.png)
 > (sequence-then-stack (list purple-wide
                              (list blue-medium red-medium)))
 ![A purple triangle above a blue triangle and a red triangle](../images/mps/shape-lists/image025.png)
