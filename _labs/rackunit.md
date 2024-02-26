@@ -133,7 +133,7 @@ c. Once again, make sure the code and tests are in `testing.rkt` and are comment
 
 At this point, you are ready to turn in the lab.  (That doesn't mean that you're done with the lab; just that you've done enough work to turn in.) Take a few minutes to make sure that file has everything.  Then submit the work on Gradescope.
 
-## Exercise 5: Test-driven development
+## Exercise 4: Test-driven development
 
 **Side B** should serve as *driver* for this exercise.
 
