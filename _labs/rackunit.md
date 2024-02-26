@@ -34,7 +34,7 @@ The driver should open up DrRacket, `require` both the `csc151`, `rackunit`, and
 Define a series of tests for this procedure, each of which you write explicitly in the definitions pane.  For example,
 
 ~~~racket
-(test-equal? "A very small range" (range 1) (list 1))
+(test-equal? "A very small range" (range1 1) (list 1))
 ~~~
 
 This is a good practice as you are developing your program so you can quickly know if your code meets the current set of tests.
@@ -133,7 +133,7 @@ c. Once again, make sure the code and tests are in `testing.rkt` and are comment
 
 At this point, you are ready to turn in the lab.  (That doesn't mean that you're done with the lab; just that you've done enough work to turn in.) Take a few minutes to make sure that file has everything.  Then submit the work on Gradescope.
 
-## Exercise 5: Test-driven development
+## Exercise 4: Test-driven development
 
 **Side B** should serve as *driver* for this exercise.
 

@@ -1,5 +1,5 @@
 ---
-title: Composing and decomposiing lists
+title: Composing and decomposing lists
 summary: |
   We continue our exploration of Scheme's *list* structures, focusing
   on lists as ways to collect *heterogeneous* data.  We explore new 
@@ -12,7 +12,7 @@ summary: |
 
 `'(val1 val2 ... valn)` - a list of `n` values.
 
-`'(list val1 val2 ... valn)` - another way that Racket sometimes shows lists.
+`(list val1 val2 ... valn)` - another way that Racket sometimes shows lists.
 
 ### Core list values and operations
 
