@@ -192,6 +192,7 @@
     - page: /readings/hypothesis-driven-debugging.html
   lab:
     - page: /labs/rackunit.html
+  notes: ../eboards/eboard16.html
 
 - topic: Other ways to build lists
   abbrev: building-lists
@@ -202,8 +203,6 @@
     - page: /readings/list-composition.html
   lab:
     - page: /labs/list-composition.html
-  todo:
-    - It's a new lab! Students shouldn't be learning cons, car, and cdr at the same time they are learning recursion.
 
 - topic: Ethical considerations in computing
   abbrev: ethical

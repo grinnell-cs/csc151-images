@@ -13,7 +13,7 @@ is working correctly).
 _Approximate overview_
 
 * Administrative stuff [10 min]
-* Questions [5 min]
+* Questions [25 min]
 * Lab [40 min or so]
 * Turn in lab [5 min]
 
@@ -22,8 +22,8 @@ Administrative stuff
 
 * It appears that I've been forgetting to publish grades on Gradescope.
   I'm working on getting that caught up.
-* For pre-reflections and readings that I had not responded to in a
-  timely fashion, I often just gave you credit.
+    * For pre-reflections and readings that I had not responded to in a
+      timely fashion, I often just gave you credit.
 * Please make sure that the autograder can run on your submissions!
     * For MP3, it was often because you referred to "kitten.jpg" but
       did not include it.
@@ -31,7 +31,7 @@ Administrative stuff
   that MPs will normally take you 4--5 hours. (Unfortunately, there's a
   range of how long people take. In the real world, successful professional
   programmers can have a factor of ten difference in productivity.)
-    * Shoot for M as a starting point!
+    * Shoot for M as a starting point! (Skip the E steps.)
     * Ask questions early.
 
 ### Token activities
@@ -49,14 +49,10 @@ Academic/Scholarly
 
 Cultural
 
-* Friday, 2024-02-23, 4:00--5:00pm, HSSC N1170 (Global Living Room).
-  _Middle of Everywhere._
-* Friday, 2024-02-23, 7:00--9:00pm, Sebring-Lewis.
-  _Squatters on Red Earth_.
-
 Peer
 
-* Saturday night Casino night in Harris
+* Sunday, 2024-02-03, 1--3pm, in JRC 225. 
+  _Fiber Arts Club._
 
 Wellness
 
@@ -73,23 +69,21 @@ Misc
 
 ### Upcoming work
 
-* Friday, 2024-02-23, 11:00pm: Submit the MP3 post-reflection
-    * [_Submit MP3 post-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4087964)
-* Sunday, 2024-02-24, 11:00pm: Submit the MP4 pre-reflection (**moved**)
-    * [_Submit MP4 pre-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4136298/)
-* Sunday, 2024-02-25, 11:00pm: Reading responses
-    * [Documentation](../readings/documenting-your-code)
-    * [Unit testing](../readings/rackunit)
-    * [Hypothesis-driven debugging](../readings/hypothesis-driven-debugging)
-    * [_Submit reading response on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4146408)
-* Sunday, 2024-02-25, 11:00pm, [MP2](../mps/mp2) Redo
-    * [_Submit MP2 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4113572/)
-* Monday, 2024-02-26, 8:30am: Submit today's lab writeup.
-    * [_Submit lab writeup on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4146369)
+* Tuesday, 2024-02-27, 11:00pm: Reading responses
+    * [List composition and decomposition](../readings/list-composition)
+    * [_Submit reading response on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4155337)
+* Wednesday, 2024-02-28, 8:30am: Submit today's lab writeup.
+    * [_Submit lab writeup on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4155334)
     * Preferred: Submit before the end of class today.
 * Wednesday, 2024-02-28, 11:00pm: [MP4](../mps/mp4)
     * _Gradescope forthcoming_.
-    * Reminder: Read the rubric (not yet available) and try to avoid incompletes.
+    * Reminder: Read the rubric and try to avoid incompletes.
+    * Make sure your code works.
+* Friday, 2024-03-01, 11:00pm, MP4 post-reflection
+    * [_Submit post-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4136286)
+* Friday, 2024-03-01
+* Sunday, 2024-03-10, 11:00pm, [MP3](../mps/mp3) Redo
+    * _Gradescope forthcoming_.
 
 Some notes from your instructors
 --------------------------------
@@ -114,7 +108,75 @@ How should we write "add 5 to all"?
 
 ### Lists
 
+Could you explain how this expression works?
+
+```
+(map (o (cut (- <> (char->integer #\0)))
+        char->integer)
+     '(#\0 #\1 #\2 #\3 #\4 #\5 #\6 #\7 #\8 #\9))
+```
+
+How does `reduce` differ from `apply`?
+
+> `reduce` takes a two-parameter procedure and repeatedly applies it to neighboring pairs.
+
+> `apply` applies an n-parameter procedure "all at once".
+
+> For operations that can take two paremeters or many, like `+`, they will behave the same.
+
+For operations that require two parameters, and return a value of the same type, `reduce` is essentiial.
+
+### Documentation
+
+What issues should we pay attention to in documenting `substring`?
+
+```
+;;; (substring str start end) -> string?
+;;;   str : string?
+;;;   start : integer?, a 0-based index (<= 0 start (length str))
+;;;   end : integer?, a 0-based index (<= 0 end (length str))
+;;; Returns the substring of `str` denoted by the start index `start`
+;;; (inclusive) and end index `end` (exclusive).
+```
+
+> Our goal is that the documentation provides enough information
+  that a careful reader can determine the results for any inputs.
+
+> For `substring`, the original documentation left it unclear
+  what happens if `end` is less than or equal to `start`.
+
 ### Testing
+
+When do we write a test procedure?
+
+> We should write tests as we prepare to write any new procedure
+  (and when writing tests does not appear to be too onerous).
+
+What is the difference between writing a test procedure and writing
+a functional procedure?
+
+> I'd say it's a "test expression" rather than a procedure. In one case,
+  you're writing something that checks whether something else works
+  (e.g., by providing sample input and output). In the other, you're
+  writing the algorithm that converts the input to output.
+
+> We do sometimes write a procedure that we use in testing. Sometimes,
+  that's a less efficient but provably correct way of achieving the
+  solution. Sometimes, that's something that helps us decompose the
+  testing process.
+
+Can we look at testing  `bound-grade`?
+
+_Sketch a set of tests for the `bound-grade` procedure, which takes a real
+number as input and outputs_
+
+* _That number, if it is between 0 and 100, inclusive._
+* _Zero, if it is less than 0._
+* _100, if it is greater than 100._
+
+_By "sketch", we mean "list the tests you'd write"._
+
+> TPS!
 
 ### Assorted
 
