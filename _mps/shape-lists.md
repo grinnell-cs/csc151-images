@@ -638,7 +638,7 @@ To earn an E, you will need to write your own variants of the procedures in part
 Grading rubric
 --------------
 
-_Still under development._
+_Still under development, but nearly complete._
 
 ### Redo or above
 
@@ -661,17 +661,17 @@ prior characteristics will get an R.
 
 ```
 [ ] Passes all of the two-star autograder tests.  For example,
-    [ ] Correctly mplements `shape-params?`.
-    [ ] Correctly implements `solid-ellipses-0`.
-    [ ] Correctly implements `solid-ellipses-1`.
-    [ ] Correctly implements `solid-ellipses-2`.
+    [ ] Correctly implements `color-variants-0`.
+    [ ] Correctly implements `color-variants-1`.
+    [ ] Correctly implements `color-variants-1x`.
+    [ ] Correctly implements `color-variants-2`.
+    [ ] Correctly implements `shape->solid-isosceles-triangle`.
+    [ ] Correctly implements `shapes->solid-isosceles-triangles-0`.
+    [ ] Correctly implements `shapes->solid-isosceles-triangles-1`.
     [ ] Correctly implements `stack`.
     [ ] Correctly implements `sequence`.
-    [ ] Correctly implements `stack-then-sequence`.
     [ ] Correctly implements `sequence-then-stack`.
     [ ] Correctly implements `stack-then-sequence`.
-    [ ] Correctly implements `sequence-then-stack-then-sequence`.
-    [ ] Correctly implements `stack-then-sequence-then-stack`.
 [ ] Code is well-formatted with appropriate names and indentation.
 [ ] Code has been reformatted with Ctrl-I before submitting.
 [ ] Code generally follows style guidelines.
@@ -685,24 +685,20 @@ Submissions that lack any of these characteristics but have all of the
 prior characteristics will get an M.
 
 ```
-[ ] Passes all of the three-star autograder tests.  For example,
-    [ ] Correclty implements `color-variants-all`.
-    [ ] Correctly implements `solid-ellipses`.
-    [ ] Correctly implements `solid-right-triangles`.
-    [ ] Correctly implements `boxed-solid-ellpises`.
-    [ ] Correctly implements `outlined-solid-rectangles`.
-    [ ] Correctly implements `stacked-ss`.
-    [ ] Correctly implements `sequenced-ss`.
+[ ] Passes all of the three-star autograder tests. For example,
+    [ ] Correctly implements `shapes->solid-isosceles-triangles-2`.
+    [ ] Correctly implements `sequence-then-stack-then-sequence`.
+    [ ] Correctly implements `stack-then-sequence-then-stack`.
 [ ] Adds a new procedure akin to `color-variants`.  That is, adds a 
     procedure that takes a `shape-params?` as a parameter and creates
     a list of `shape-params?` (or list of lists of ....)`.
-[ ] Adds a new procedure akin to `solid-ellipse`, `solid-right-triangle`, etc.
-    That is, adds a procedure that takes a nested list of `color-params?`
-    as a parameter and creates a list of similar shapes.
-[ ] Adds a new procedure akin to `stacked-ss` or `sequenced-ss` (e.g.,
-    overlaying or combining diagonally).  That is, adds a procedure that
-    takes a nested-shape list as a parameter and builds an image
-    from them (other than by using `stacked-ss` or `sequenced-ss`).
+[ ] Adds a new procedure akin to `shape->solid-isosceles-triangles-1`.
+[ ] Adds a new procedure akin to `stack` or `sequence`. That is,
+    adds a procedure that combines a list of images into a single image.
+    It might combine the images diagonally, or beside but bottom
+    aigned, or overlay them, or ...
+[ ] Adds a new procedure akin to `stack-then-sequence`, that works
+    with a singly nested list.
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.
 [ ] Documentation for all procedures is correct / has the correct form.
