@@ -191,6 +191,7 @@
 
 - topic: Software engineering fundamentals
   abbrev: software-engineering
+  notes: https://docs.google.com/presentation/d/15Ts9MYZUQA-GbBB99FImzsO8xDlQKeRyXXrwX8bcZ5c/edit#slide=id.g2666291cd13_0_234
   summary: |
     We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
   reading:
