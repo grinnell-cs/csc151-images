@@ -23,6 +23,11 @@ You'd think the [syllabus](../syllabus) and [schedule](../schedule) would provid
 [Tokens](tokens)
   : Information on gaining and spending tokens.
 
+<!-- Sam
+[Mastery Grading, Revisited](mastery-grading-revisited)
+  : Yet another explanation of the mastery grading approach.
+-->
+
 ## Other important issues
 
 [Accommodations and adjustments](accommodations)
