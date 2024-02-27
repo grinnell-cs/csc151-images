@@ -305,12 +305,14 @@ First, let's start with a procedure that makes a different set of variants.
 
 a. Document, create at least three tests for, and write a procedure, `(color-variants-0 shape)`, that takes a shape and makes a list of four shapes. (It's fine if you use rectangles for the shapes; they make a good starting point.)
 
-* The first should be the original shape.
-* The second should be a redder version of the original shape.
-* The third should be a greener version of the original shape.
-* The fourth should be a bluer version of the original shape.
+* The first should be a shape that is the same width, height, and color as the original shape. (You can use the same shape, or you can make it a rectangle.)
+* The second should be a shape that is the same width and height as the original shape, but with a redder color. (You can use a rectangle or you can try to maintain the shape.)
+* The third should be a shape that is the same width and height as the original shape, but with a greener color. (You can use a rectangle or you can try to maintain the shape.)
+* The fourth should be a shape that is the same width and height as the original shape, but with a bluer color. (You can use a rectangle or you can try to maintain the shape.)
 
-You should use `rgb-redder`, `rgb-greener`, and `rgb-bluer` to make those variants.
+You should use `rgb-redder`, `rgb-greener`, and `rgb-bluer` to change the colors. 
+
+You should *not* use `pixel-map` in solving this problem.
 
 ```
 > (color-variants-0 (solid-square 20 (rgb 128 128 128)))
