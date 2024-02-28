@@ -305,12 +305,14 @@ First, let's start with a procedure that makes a different set of variants.
 
 a. Document, create at least three tests for, and write a procedure, `(color-variants-0 shape)`, that takes a shape and makes a list of four shapes. (It's fine if you use rectangles for the shapes; they make a good starting point.)
 
-* The first should be the original shape.
-* The second should be a redder version of the original shape.
-* The third should be a greener version of the original shape.
-* The fourth should be a bluer version of the original shape.
+* The first should be a shape that is the same width, height, and color as the original shape. (You can use the same shape, or you can make it a rectangle.)
+* The second should be a shape that is the same width and height as the original shape, but with a redder color. (You can use a rectangle or you can try to maintain the shape.)
+* The third should be a shape that is the same width and height as the original shape, but with a greener color. (You can use a rectangle or you can try to maintain the shape.)
+* The fourth should be a shape that is the same width and height as the original shape, but with a bluer color. (You can use a rectangle or you can try to maintain the shape.)
 
-You should use `rgb-redder`, `rgb-greener`, and `rgb-bluer` to make those variants.
+You should use `rgb-redder`, `rgb-greener`, and `rgb-bluer` to change the colors. 
+
+You should *not* use `pixel-map` in solving this problem.
 
 ```
 > (color-variants-0 (solid-square 20 (rgb 128 128 128)))
@@ -464,7 +466,7 @@ c. Document and write a procedure, `(shapes->solid-isosceles-triangles-1 shapes)
 
 ```
 > (shapes->solid-isosceles-triangles-1 (list red-narrow (list blue-medium purple-medium) red-wide))
-'(![a solid red 10-by-20 isosceles triangle](../images/mps/shape-lists/solid-ff0000-10x20-isosceles-triangle.png) ![a solid blue 20-by-20 isosceles triangle](../images/mps/shape-lists/solid-0000ff-20x20-isosceles-triangle.png) ![a solid purple 20-by-20 isosceles triangle](../images/mps/shape-lists/solid-a020f0-20x20-isosceles-triangle.png) ![a solid red 30-by-20 isosceles triangle](../images/mps/shape-lists/solid-ff0000-30x20-isosceles-triangle.png))
+'(![a solid red 10-by-20 isosceles triangle](../images/mps/shape-lists/solid-ff0000-10x20-isosceles-triangle.png) (![a solid blue 20-by-20 isosceles triangle](../images/mps/shape-lists/solid-0000ff-20x20-isosceles-triangle.png) ![a solid purple 20-by-20 isosceles triangle](../images/mps/shape-lists/solid-a020f0-20x20-isosceles-triangle.png)) ![a solid red 30-by-20 isosceles triangle](../images/mps/shape-lists/solid-ff0000-30x20-isosceles-triangle.png))
 
 > (shapes->solid-isosceles-triangles-1 (color-variants-1 (color-variants-0 (solid-rectangle 10 25 (rgb 128 128 128)))))
 '((![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-808080-10x25-isosceles-triangle.png) ![a solid rosybrown 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-a07070-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-70a070-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-7070a0-10x25-isosceles-triangle.png)) (![a solid rosybrown 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-a07070-10x25-isosceles-triangle.png) ![a solid indian red 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-c06060-10x25-isosceles-triangle.png) ![a solid dim gray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-909060-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-906090-10x25-isosceles-triangle.png)) (![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-70a070-10x25-isosceles-triangle.png) ![a solid dim gray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-909060-10x25-isosceles-triangle.png) ![a solid medium sea green 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-60c060-10x25-isosceles-triangle.png) ![a solid cadetblue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-609090-10x25-isosceles-triangle.png)) (![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-7070a0-10x25-isosceles-triangle.png) ![a solid slategray 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-906090-10x25-isosceles-triangle.png) ![a solid cadetblue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-609090-10x25-isosceles-triangle.png) ![a solid slate blue 10-by-25 isosceles triangle](../images/mps/shape-lists/solid-6060c0-10x25-isosceles-triangle.png)))
