@@ -5,6 +5,16 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-151-01 2024Sp] Whoops! (Tuesday, 2024-02-27)
+
+Dear list makers and manipulators,
+
+Apologies! I forgot to update the date in my "send mail" script, so you likely received email that said "2023Fa" instead of "2024Sp". I apologize for any confusion.
+
+See you Wednesday!
+
+-- SamR
+
 ## [CSC-151-01 2024Sp] Grade Reports Forthoming (Tuesday, 2024-02-27)
 
 Dear Shape Shifters,
