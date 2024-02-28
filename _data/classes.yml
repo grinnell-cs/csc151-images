@@ -203,6 +203,7 @@
 
 - topic: Other ways to build lists
   abbrev: building-lists
+  notes: https://docs.google.com/presentation/d/1fvQsyXLm-_HH3nQ2s3dVkX_SmJz1z2vj_bstzTCVxoA/edit?usp=sharing
   summary: |
     We continue our exploration of lists through some "finer-grained"
     operations.
