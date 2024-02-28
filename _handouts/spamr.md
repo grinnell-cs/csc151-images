@@ -5,6 +5,24 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-151-01 2024Sp] Grade Reports Forthoming (Tuesday, 2024-02-27)
+
+Dear Shape Shifters,
+
+I hope that you are doing well and are making good progress on MP4. Bring questions to class!
+
+In a few minutes, I'll be sending out grade reports. These reports let you see what records I currently have for you in the course.
+
+Note that we have not yet graded the redo for MP2, so your grade on that will likely affect other things. At the point I downloaded grades from Gradescope, not all of you had done the reading for class 17, so some of you have that listed as missing.
+
+Don't worry if you still have a few missing LAs! You'll be able to catch up on SoLA 2.
+
+Don't worry if your mini-projects are mostly R's (or even a few I's). You should be able to get them to M's and E's. Make sure to talk to the evening tutors for help, to ask me questions on Teams, or to sign up for office hours.
+
+Feel free to bring general questions about the grade reports to class tomorrow!
+
+-- SamR
+
 ## [CSC-151-01 2024Sp] Finding Sam today (Thursday) / Office Hours / Mentor Session (Thursday, 2024-02-01)
 
 Dear Talented Tracers,
