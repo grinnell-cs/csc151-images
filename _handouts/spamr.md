@@ -5,6 +5,20 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-151-01 2024Sp] Change in location for the Grinnell Lecture (Thursday, 11am, HSSC auditorium (A2231))
+
+Dear cons-tellation of 151ers,
+
+I hope you feel more in tune with car, cdr, and cons and their effects. We'll return to their use on Monday, when we start on the wonders of recursion.
+
+I have received a notification that the Grinnell Lecture has been moved to the HSSC auditorium (A2231).
+
+I look forward to seeing many of you there.
+
+Regards,
+
+-- SamR
+
 ## [CSC-151-01 2024Sp] Whoops! (Tuesday, 2024-02-27)
 
 Dear list makers and manipulators,
