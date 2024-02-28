@@ -203,6 +203,7 @@
     - page: /readings/list-composition.html
   lab:
     - page: /labs/list-composition.html
+  notes: ../eboards/eboard17.html
 
 - topic: Ethical considerations in computing
   abbrev: ethical
