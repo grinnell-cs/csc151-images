@@ -193,7 +193,7 @@ value?
 > (list? one-two-b)
 ???
 
-> (list? (one-two c)
+> (list? one-two-c)
 ???
 
 Check your answers experimentally.
@@ -209,7 +209,7 @@ each?
 > (reverse one-two-b)
 ???
 
-> (reverse (one-two c)
+> (reverse one-two-c)
 ???
 
 Check your answers experimentally.
