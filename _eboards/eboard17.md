@@ -13,7 +13,7 @@ is working correctly).
 _Approximate overview_
 
 * Administrative stuff [10 min]
-* Abot grade reoprts [10 min]
+* About grade reports [10 min]
 * Questions [15 min]
 * Lab [40 min or so]
 * Turn in lab [5 min]
@@ -28,11 +28,9 @@ Academic/Scholarly
 * Thursday, 2024-02-29, 11:00-noon, JRC 101.
   _Scholars' Convocation: Peter Michael Osera Grinnell Talk_
 * Thursday, 2024-02-29, 7:00pm, Science 3819.
-  _Mentor Session_. 
+  _Mentor Session: SoLA review_. 
 * Tuesday, 2024-03-05, noon, Some PDR.
   _CS Table_.
-* Tuesday, 2024-03-05, 7:00pm, Science 3819.
-  _Mentor Session_.
 
 Cultural
 
@@ -78,7 +76,10 @@ Misc
     * The reading questions are in the reading response form.
     * [_Submit reading response on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4155339)
 * Friday, 2024-03-01, 8:00am (or 8:30), Quiz!
-    * New topic: Lists
+    * New topic: Lists (and the big three)
+       * Use Map
+       * Filter
+       * Reduce
     * Old topic: Tracing
 * Friday, 2024-03-01, 8:30am: Submit today's lab writeup.
     * [_Submit lab writeup on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4154836)
@@ -199,22 +200,84 @@ Metas:      8 / 9
 Missed:     5 (3 reading, 1 lab, 1 meta)
 ```
 
+"What grade am I getting?"
+
+* If you have five or more LAs done, you're probably in good shape,
+  as long as you're feeling more confident about at least two of them.
+  (22/24 for an A).
+* If you have at least one E you're doing fine on MPs. If you're mostly
+  at Ms, you're also doing fine, but you should look for ways to get to
+  Es. Ask questions. If you have a lot of I's (or missings), we should
+  probablyl talk.
+* Be careful on missed things. You get to miss six things. After that,
+  it starts to affect your grade.
+* Tokens not yet computed.
+
 Questions
 ---------
 
 ### Grade reports
 
+What happens with late assignments?
+
+> The wonder of tokens. Up to late deadline is one token.
+
+> First redo on an I MP is a token.
+
+> Second redo on any MP is a token.
+
+> A missed class in which you did not notify me is two tokens. (You do
+  not have to say why you missed class; you must just acknowledge that
+  you missed class.)
+
+Will you provide an opportunity for me to put in more tokens. I've
+turned in everything late.
+
+> Yes. Expect a new form soon.
+
+What about missing reading responses and such?
+
+> You get to miss up to six. After that, it affects your grade.
+
+> You pay a token to turn them in by the late due date.
+
+The following happened in my life: .... Can I have an extension?
+
+> Yes.
+
+Can you choose how your tokens are spent?
+
+> No. Too much overhead.
+
 ### Administrative
+
+Did Sam win all the prizes at Casino Night?
+
+> No.
 
 ### MP4
 
 When do we use testing?
 
-> You use testing on the problems that say "write a test".
+> You use testing on the problems that say "write a test" (or three tests).
 
-How do I create different sets of images with the same procedure (stack)?
+How do I create different sets of images with the same procedure (`stack`)?
 
 > Ideally, by giving it different sets of parameters.
+
+What should `stack` do when given a singleton list?
+
+> For an M: Anything.
+
+> For an E: Give just that image.
+
+What should `stack` do when given an empty list?
+
+> For an M: Anything.
+
+> For an E: Anything.
+
+> For your sense of satisfaction: A 0x0 transparent rectangle.
 
 How complicated does the freestyle need to be?
 
@@ -226,6 +289,41 @@ How complicated does the freestyle need to be?
   to turn each shape in each of those structures into a different shape;
   and another way to combine these shapes in alternating ways).
 
+What is `(list-of (list-of shape?))`?
+
+> It checks to see whether its parameter is a list of lists of shapes.
+
+```
+> (procedure? (list-of (list-of shape?)))
+#t
+> (shape? thing)
+#t
+> ((list-of shape?) thing)
+#f
+> ((list-of shape?) (list thing thing))
+#t
+> ((list-of (list-of shape?)) thing)
+#f
+> ((list-of (list-of shape?)) (list thing thing))
+#f
+> ((list-of (list-of shape?)) (list (list thing thing)))
+#t
+```
+
+> `list-of` is kind of like `cut` in that it builds new procedures. (In
+  this case, predicates.)
+
+Do I need to use `cut` with `reduce`?
+
+> Not always. You just need a two-parameter procedure that you create
+  in many different ways. `cut` is one of them. You could write a 
+  separate procedure. You could use a `lambda` expression. You could
+  use one that already exits.
+
+Can we use helper procedures?
+
+> Definitely! Ideallly, you document them.
+
 ### Lists
 
 Is there a simpler way to do `cadddddddddddr` if the list is super long? I suppose `list-ref` or something else could do the trick, so why is `cadr` important to have?
@@ -235,14 +333,88 @@ Is there a simpler way to do `cadddddddddddr` if the list is super long? I suppo
 > There's also a limit on how many `a`'s and `d`'s you can have in the
   `c*r`.  I think it's about six in DrRacket.
 
-> `cadr` is much shorter than `(list-ref lst 0)`. We can also use it
+> `cadr` is much shorter than `(list-ref lst 1)`. We can also use it
   in composition and `map` and such.
 
 Can you go over `cddr` `caar` `cdar` and `cadr`?
 
 > Sure!
 
-> ...
+> `(cddr x)` is the same as `(cdr (cdr x))`
+
+```
+> (cddr (list 'a 'b 'c 'd 'e))
+'(c d e)
+> (cddr (list 'a))
+. . cddr: contract violation
+  expected: (cons/c any/c pair?)
+  given: '(a)
+```
+
+> `(cadr x)` is the same as `(car (cdr x))` - drop one element, take the
+  first element.
+
+```
+> (cadr (list 'a))
+. . cadr: contract violation
+  expected: (cons/c any/c pair?)
+  given: '(a)
+```
+
+> `(caar x)` is the same as `(car (car x))` - take the first element, then
+  take the first element of that. This is for nested lists, and the first
+  element of the nested list must be a list.
+
+```
+> (caar (list (list 'a 'b) (list 'c 'd)))
+'a
+> (caar (list 'a 'b 'c))
+. . caar: contract violation
+  expected: (cons/c pair? any/c)
+  given: '(a b c)
+```
+
+> `(cdar)` is the same as `(cdr (car x))` - take the first element, then
+  drop the first element from what we just took. Note: The first element
+  of our list must be itself a list (as in the case of `caar`).
+
+```
+> (cdar (list (list 'a 'b) (list 'c 'd)))
+'(b)
+> (cdar (list 'a 'b))
+. . cdar: contract violation
+  expected: (cons/c pair? any/c)
+  given: '(a b)
+> (cadar (list (list 'a 'b) (list 'c 'd)))
+'b
+```
+
+> If you understand the nesting of a particular list, these can be particularly useful.
+
+> You should not need them for MP4.
+
+Can you go over the difference between slightly nested (also singly nested) and doubly nested lists?
+
+> Plain list of shapes contains only shapes.
+
+> `(list shape1 shape2 shape3)`
+
+> A slightly nested list of shapes contains shapes and/or lists of shapes.
+
+> `(list shape1 (list shape2 shape3))`
+
+> A doubly nested list of shapes contains (a) shapes and/or (b) lists of shapes and/or (c) lists of lists of shapes (more or less).
+
+> `(list shape1 (list shape2 (list shape 3)))`
 
 Lab
 ---
+
+Don't worry if you see things like `'(5 . 4)`. That's a signal from DrRacket
+that you've built something that's not quite a list, but that it's still
+wiling to let you work with.
+
+You can still call `car` and `cdr` on these dotted things. **Why?** Because
+the designers of Racket (and Scheme (and Lisp)) decided that you can
+call `cons` on any two values, and you can call `car` and `cdr` on anything
+you've built from `cons`.
