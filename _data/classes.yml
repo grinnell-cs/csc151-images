@@ -215,6 +215,7 @@
   reading:
     - link: ACM Code of Ethics and Professional Conduct
       url: https://www.acm.org/code-of-ethics
+  notes: ../eboards/eboard18.html
 
 - topic: Introduction to list recursion
   abbrev: recursion-intro
