@@ -228,6 +228,7 @@
 
 - topic: Introduction to list recursion
   abbrev: recursion-intro
+  notes: https://docs.google.com/presentation/d/1Qq7U6J4DLiHXg4RfkSd68XWoh1hdOefvMoWrAXufqdA/edit?usp=sharing
   summary: |
     We begin our exploration of *recursion*, the most general form
     of repetition available in Scheme.  You can use recursion to
