@@ -226,6 +226,7 @@
   reading:
     - page: /readings/list-composition.html
     - page: /readings/recursion-basics.html
+  notes: ../eboards/eboard19.html
 
 - topic: Introduction to list recursion, continued
   summary: |
