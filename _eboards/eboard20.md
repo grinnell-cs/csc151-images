@@ -58,7 +58,7 @@ Cultural
 Peer
 
 * Saturday, 2024-03-09, Field House.
-  _Men's Tennis vs. Central._
+  _Men's and Women's Tennis vs. Central._
 * Sunday, 2024-03-10, 1--3pm, in JRC 225. 
   _Fiber Arts Club._ Community. Arts. Music in the background. What could
   be better.
@@ -85,10 +85,11 @@ Misc
 * Wednesday, 2024-03-06, 11:00pm, SoLA 2 due.
     * I'm too lazy to link all of the SoLA 2 problems.
 * Thursday, 2024-03-07, 11:00 pm, More readings
-    * [Thinking recursively](recursion-magic.html)
+    * [Thinking recursively](../readings/recursion-magic)
     * [_Submit reading response on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4200909/)
 * Friday, 2024-03-08, 8:30am, [Lab writeup](../labs/recursion-basics)
     * [_Submit lab writeup on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4200915/)
+    * Try to submit today.
 * Friday, 2024-03-08, 11:00pm, Post-reflection for SoLA 2
     * [_Submit SoLA 2 post-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4166817)
 * Friday, 2024-03-08, 11:00pm, Pre-reflection for MP5
@@ -102,6 +103,11 @@ Misc
 
 About MP5
 ---------
+
+* A bit behind in writing.
+* Described in class.
+* Should be ready by 2:30 p.m. today.
+* (Images coming tomorrow.)
 
 Wrapping up the sorting example
 -------------------------------
@@ -129,6 +135,8 @@ Wrapping up the sorting example
 
 TPS: In your own words, explain what `insert-number` is doing.
 
+Try tracing it by hand.
+
 ```
 ;;; (sort-nums nums) -> (all-of (list-of integer?)  sorted?)
 ;;;   nums : (list-of integer?)
@@ -143,12 +151,21 @@ TPS: In your own words, explain what `insert-number` is doing.
 
 TPS: In your own words, explain what `sort-nums` is doing.
 
+Remember: Think inside-out.
+
 Questions
 ---------
 
 ### Administrative
 
+For SoLA 2, have you posted the grades for the list quiz?
+
+> I think so.
+
 ### Recursion
 
 Lab
 ---
+
+Please finish the lab before Friday's class, either on your own or with 
+your partner.
