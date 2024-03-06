@@ -327,7 +327,7 @@ a. Using these procedures and any others you write, write a procedure, `(shiftin
 
 Provide three images, `uncertain-01.png`, `uncertain-02.png`, and `uncertain-03.png`, that demonstrate the use of your procedure on an image and three strings of your choice. Please make sure to document which strings you used in your code.
 
-To earn an E, you will need to write at least one additional recursive procedure that contributes meaningfully to shifting perspectives.
+To earn an E, you will need to write at least two additional recursive procedures that contribute meaningfully to `shifting-perspectives`.
 
 What to upload
 --------------
@@ -408,8 +408,8 @@ prior characteristics will get an M.
 ```
 [ ] Passes all of the autograder tests labeled "E".
 [ ] Includes a working version of `complex-variants`.
-[ ] `complex-variants` (freestyle) relies on at least one new, useful,
-    recursive procedure
+[ ] `complex-variants` (freestyle) relies on at least two new, useful,
+    recursive procedures.
 [ ] Style is impeccable (or nearly so).
 [ ] Each set of tests includes at least one edge case (e.g., an empty
     list, if appropriate).
