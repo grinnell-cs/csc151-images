@@ -235,6 +235,7 @@
     - page: /readings/recursion-basics.html
   lab:
     - page: /labs/recursion-basics.html
+  notes: ../eboards/eboard20.html
 
 - topic: Recursion practice
   summary: |
