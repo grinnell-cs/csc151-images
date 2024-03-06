@@ -290,7 +290,7 @@ Let's consider a simple example: `(sum (list 5 8 2))`.
     --> (+ 5 (if #f
                   0
                   (+ (car (list 8 2)) (sum (cdr (list 8 2))))))
-    --> (+ 5 (+ car (list 8 2)) (sum (cdr (list 8 2))))
+    --> (+ 5 (+ (car (list 8 2)) (sum (cdr (list 8 2)))))
     --> (+ 5 (+ 8 (sum (cdr (list 8 2)))))
     --> (+ 5 (+ 8 (sum (list 2))))
     ```
