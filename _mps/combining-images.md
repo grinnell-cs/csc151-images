@@ -151,25 +151,215 @@ following procedure.
 
 a. Write at least five tests for, and implement a procedure, `(simple-shape type colornum)`, that takes two digits as parameters and returns the corresponding shape (according to the policies above).
 
-b. Write a procedure, `(simple-shapes digits)`, that takes a list of digits as a parameter and ...
+If you find it difficult to make your own lists of digits,  you may find the following procedure useful.
 
-c. Write a procedure, `(more-shapes digits)`, that ....
+```
+;;; (string->digits str) -> (list-of digit?)
+;;;   string : string?
+;;; Convert a string to a list of digits in a strange but predictable
+;;; way.
+;;;
+;;; Used primarily to build lists of digits for various procedures.
+(define string->digits
+  (lambda (str)
+    (map (o string->number string)
+         (string->list (reduce string-append
+                               (map (o number->string char->integer)
+                                    (string->list str)))))))
+```
 
-## Part 3: Lists of transformations
+```
+> (string->digits "hello world")
+'(1 0 4 1 0 1 1 0 8 1 0 8 1 1 1 3 2 1 1 9 1 1 1 1 1 4 1 0 8 1 0 0)
+> (string->digits "HELLO WORLD")
+'(7 2 6 9 7 6 7 6 7 9 3 2 8 7 7 9 8 2 7 6 6 8)
+```
 
-Rather than making lists of shapes, we can make lists of transformations.
+b. Write tests for and document a procedure, `(simple-shapes digits)`, that takes a list of digits as a parameter and applies `simple-shape` to neighboring pairs of digits to create a list of shapes.  For example, if the first two digits are 3 and 4, the first element of your result should be a blue (4) solid square  (3).  
 
-a. 
+Note that if there is only one digit left in the list, you cannot create a shape, and should return the empty list.
+
+c. The simple shapes are, as the name suggests, fairly simple. Let's expand our shapes a bit, using the digits to indicate the type of shape, the size of the shape, and the color of the shape.
+
+We'll have a few more procedures to help us determine sizes and outline sizes.
+
+```
+;;; (digit->size digit) -> positive-integer?
+;;;   digit : digit?
+;;; Determine a size based on digit.
+(define digit->size
+  (lambda (digit)
+    (+ 20 (* 2 digit))))
+
+;;; (digit->pen-size digit) -> positive-integer?
+;;;   digit : digit?
+;;; Determine a pen-size based on a digit
+(define digit->pen-size
+  (lambda (digit)
+    (+ 1 digit)))
+```
+
+Write at least three tests for and implement a procedure, `(more-shapes digits)`, that takes a list of digits as a parameter and makes shapes as follows.
+
+* If the first digit is 0, it makes a solid circle using the next digit as the size, and the digit after that as the color.
+* If the first digit is 1, it makes a solid square using the next digit as the size and the digit after that as the color.
+* If the first digit is 2, it makes a solid equilateral triangle using the next digit as the size and the digit after that as the color.
+* If the first digit is 3, it makes an outlined circle using the next digit as the size, the digit after that as the color, and the digit after that as the pen size.
+* If the first digit is 4, it makes an outlined square using the next digit as the size, the digit after that as the color, and the digit after that as the pen size.
+* If the first digit is 5, it makes a solid rectangle using the next digit as the width, the digit after that as the height, and the digit after that as the color. 
+* If the first digit is 6, it makes a solid ellipse using the next digit as the width, the digit after that as the height, and the digit after that as the color. 
+* If the first digit is 7, it makes a solid diamond using the next digit as the width, the digit after that as the height, and the digit after that as the color. 
+* If the first digit is 8, it makes an outlined ellipse using the next digit as the width, the digit after that as the height, the digit after that as the color, and the digit after that as the pen size.
+* If the first digit is 9, it makes an outlined rectangle using the next digit as the width, the digit after that as the height, the digit after that as the color, and the digit after that as the pen size.
+
+In all cases, you should recurse on the remaining digits in the list to continue making shapes.
+
+Note: If not enough digits remain in the list, just return the empty list.
+
+## Part 3: Lists of image variants
+
+Rather than making lists of shapes, we can make lists of transformed images.
+
+a. Write a procedure, `(variants img digits)`, that takes an image and a list of digits as parameters, and makes a list of transformed versions of the image using the following policies.
+
+* If the first digit is 0, 1, or 2, use `pixel-map` to average each pixel with a color computed from the next three digits. Multiply each digit by 25 to determine the corresponding red, blue, or green component.
+* If the first digit is 3, make a horizontally flipped version of the image (using `hflip`).
+* If the first digit is 4, make a vertically flipped version of the image (using `vflip`).
+* If the first digit is 5, make a rotated version of the image. Use the next digit to determine what the rotation should be.
+    * 0, 1, 2: 90 degrees
+    * 3, 4, 5, 6: 180 degrees
+    * 7, 8, 9: -90 degrees or 270 degrees
+* If the first digit is 6, horizontally shift by a number computed from the next digit. You can use `(hshift img amt)` to horizontally shift an image.
+* If the first digit is 7, vertically shift by a number computed from the next digit. You can use `(vshift img amt)` to vertically shift an image.
+* If the first digit is 8, scale by a factor computed from the next digit.
+* If the first digit is 9, make a half-size copy aligned according to the next two digits.
+
+For example, if our list starts `'(2 5 0 3 4 ...)`, we should create the first element of our list of variants by averaging each pixel in the original with `(rgb 125 0 75)` and then shove the result on the front of the list we get by recursing on `'(4 ...)`, the `cddddr` of the original list. 
+
+```
+(cons (pixel-map (cut (rgb-average <> (rgb 125 0 75))))
+      (variants img (drop digits 4)))
+```
+
+Similarly, if our list starts with `'(4 5 0 3 4 ...)`, the first element of our result list will be a vertically flipped version of our image. The remainder will be what we get by converting `'(5 0 3 4 ...)`.
+
+Here's the procedure to compute a shift.
+
+```
+;;; (digit->shift digit) -> positive-integer?
+;;;   digit : digit?
+;;; Determine a horizontal or shift based on digit.
+(define digit->shift
+  (lambda (digit)
+    (+ 3 (* (- digit 5) 4))))
+```
+
+Here's the procedure to compute the scale factor.
+
+```
+;;; (digit->scale-factor digit) -> positive-real?
+;;;   digit : digit?
+;;; Determine a scale factor based on the digit.
+(define digit->scale-factor
+  (lambda (digit)
+    (+ 1 (* 1/30 (+ 1 (* (- digit 5) 2))))))
+```
+
+Here's a procedure to set up the half-size copy appropriately.
+
+```
+;;; (half-size img halign valign) -> image?
+;;; Create a half-size version of the image, aligned in the space of
+;;; the image as specified.
+;;;
+;;; * `halign` should be "left", "center", or "right".
+;;; * `valign` should be "top", "center", or "bottom".
+(define half-size
+  (lambda (img)
+    (overlay/align halign valign
+                   (scale img 1/2)
+                   (transparent-rectangle (image-width img) 
+                                          (image-height img)))))
+```
+
+And a pair of procedures to convert a digit to an alignment.
+
+```
+;;; (digit->halignment digit) -> (one-of "left" "center" "right")
+;;;   digit : digit?
+;;; Convert a digit to a horizontal alignment.
+(define digit->halignment
+  (lambda (digit)
+    (list-ref (list "left" "center" "right")
+              (remainder digit 3))))
+
+;;; (digit->valignment digit) -> (one-of "top" "center" "bottom")
+;;;   digit : digit?
+;;; Convert a digit to a vertical alignment.
+(define digit->valignment
+  (lambda (digit)
+    (list-ref (list "left" "center" "right")
+              (remainder digit 3))))
+```
+
+b. _Only necessary for an E._
+
+As you may have noted, our friends in the arts collective likely want to apply multiple transformations to each image. Fortunately, we can use our lists of digits for such purposes, too.
+
+Write at least four tests for and then write a procedure, `(complex-variants img digits)`, that takes an image and a list of digits as parameters, and makes a list of transformed versions of the image using the following policies.
+
+* If the first digit is 0, 1, or 2, you should do one transformation (as in `variants`) based on the following digits. For example, if our list begins `'(2 5 3 0 4 9 6 2 8 ...)`, we'll build the first image in the transformed list by rotating (5) the image by 180 degrees (3). We'll biuld the remaining images by recursing starting with `'(0 4 9 6 2 8 ...)`.
+* If the first digit is 3, 4, or 5, you should do two transformations (as described in `variants`). For example, if our list begins `'(4 5 3 0 4 9 6 2 8 ...)`, we'll build the first image in the transformed list by first rotating (5) the image by 180 degrees (3) and then recoloring (0) the result by averaging it with (rgb 100 225 150) (4 9 6)  We'll build the remaining images by recursing starting with `'(2 8 ...)`.
+* If the first digit is 6, 7, or 8, you should do three transformations (as described in `variants`).
+* If the first digit is 9, you should do four transformations (as described in `variants`.
+
+_Note that _complex-variants_ is only necessary for an E._
 
 ## Part 4: Freestyle
 
-Using these procedures and any others you write, create an interesting image which you should call `freestyle`.
+a. Using these procedures and any others you write, write a procedure, `(shifting-perspectives img str)`, that takes an image and a string as parameters and creates a new image based on the image and digits we get from `(string->digits str)`. For example, you might call `variants` on the appropriate parameters and then use `gridify-hv` to put all those variants into something like a grid.
 
 ```
-(define freestyle (stack-then-sequence-then-stack ...))
+(define shifting-pespectives
+  (lambda (img str)
+    ...))
 ```
 
-To earn an E, you will need to write your own variants of the procedures in parts 1, 2, and 3.
+Provide three images, `uncertain-01.png`, `uncertain-02.png`, and `uncertain-03.png`, that demonstrate the use of your procedure on an image and three strings of your choice. Please make sure to document which strings you used in your code.
+
+To earn an E, you will need to write at least one additional recursive procedure that contributes meaningfully to shifting perspectives.
+
+What to upload
+--------------
+
+Please upload the following.
+
+```
+[ ] The code file, `combining-images.rkt`.
+[ ] The three images you produced.
+    [ ] `uncertain-01.png`.
+    [ ] `uncertain-02.png`.
+    [ ] `uncertain-03.png`.
+[ ] The source image you used to create those three images.
+```
+
+Rememember
+
+```
+[ ] Review the rubric!
+[ ] If you reference files (e.g., images), make sure to have them in the
+    same directory and just use the base file name (e.g., "kitten.jpg").
+[ ] Include any images you reference directly.
+[ ] Avoid including expressions that do computation in `combining-images.rkt`.
+    Your definitions belong in the definitions pane. Your sample expressions
+    belong in the interactions pane (or commented-out in the definitions
+    pane).
+[ ] Make sure your code runs in DrRacaket before submitting.
+[ ] Make sure your code doesn't generate any output when you click Run.
+[ ] Make sure the autograder can run on your code. Ask help if it doesn't.
+[ ] Submit early so that you can correct or ask questions about any issues 
+    identified by the autograder.
+```
 
 Grading rubric
 --------------
@@ -181,8 +371,8 @@ _Still under development, but nearly complete._
 Submissions that lack any of these characteristics will get an I.
 
 ```
-[ ] Passes all of the one-star autograder tests.
-[ ] Includes the specified file, `shape-lists.rkt`.
+[ ] Passes all of the autograder tests labeled "I".
+[ ] Includes the specified file, `combining-images.rkt`.
 [ ] Includes an appropriate header on the file that indicates the
     course, author, etc.
 [ ] Acknowledges appropriately.
@@ -196,24 +386,18 @@ Submissions that lack any of these characteristics but have all of the
 prior characteristics will get an R.
 
 ```
-[ ] Passes all of the two-star autograder tests.  For example,
-    [ ] Correctly implements `color-variants-0`.
-    [ ] Correctly implements `color-variants-1`.
-    [ ] Correctly implements `color-variants-1x`.
-    [ ] Correctly implements `color-variants-2`.
-    [ ] Correctly implements `shape->solid-isosceles-triangle`.
-    [ ] Correctly implements `shapes->solid-isosceles-triangles-0`.
-    [ ] Correctly implements `shapes->solid-isosceles-triangles-1`.
-    [ ] Correctly implements `stack`.
-    [ ] Correctly implements `sequence`.
-    [ ] Correctly implements `sequence-then-stack`.
-    [ ] Correctly implements `stack-then-sequence`.
+[ ] Passes all of the autograder tests labeled "M".
+[ ] Includes the required image files.
+    [ ] The source image
+    [ ] `uncertain-01.png`.
+    [ ] `uncertain-02.png`.
+    [ ] `uncertain-03.png`.
 [ ] Code is well-formatted with appropriate names and indentation.
 [ ] Code has been reformatted with Ctrl-I before submitting.
 [ ] Code generally follows style guidelines.
-[ ] Documentation for all core procedures is correct / has the correct form.
-[ ] Creates an image called `freestyle`.
+[ ] All procedures are documented.
 [ ] Includes all the specified tests.
+    [ ] List forthcoming.
 ```
 
 ### Exemplary / Exceeds expectations
@@ -222,25 +406,14 @@ Submissions that lack any of these characteristics but have all of the
 prior characteristics will get an M.
 
 ```
-[ ] Passes all of the three-star autograder tests. For example,
-    [ ] Correctly implements `shapes->solid-isosceles-triangles-2`.
-    [ ] Correctly implements `sequence-then-stack-then-sequence`.
-    [ ] Correctly implements `stack-then-sequence-then-stack`.
-[ ] Adds a new procedure akin to `color-variants`.  That is, adds a 
-    procedure that takes a `shape-params?` as a parameter and creates
-    a list of `shape-params?` (or list of lists of ....)`.
-[ ] Adds a new procedure akin to `shape->solid-isosceles-triangles-1`.
-[ ] Adds a new procedure akin to `stack` or `sequence`. That is,
-    adds a procedure that combines a list of images into a single image.
-    It might combine the images diagonally, or beside but bottom
-    aigned, or overlay them, or ...
-[ ] Adds a new procedure akin to `stack-then-sequence`, that works
-    with a singly nested list.
+[ ] Passes all of the autograder tests labeled "E".
+[ ] Includes a working version of `complex-variants`.
+[ ] `complex-variants` (freestyle) relies on at least one new, useful,
+    recursive procedure
 [ ] Style is impeccable (or nearly so).
-[ ] Avoids repeated work.
-[ ] Documentation for all procedures is correct / has the correct form.
 [ ] Each set of tests includes at least one edge case (e.g., an empty
     list, if appropriate).
+    [ ] List forthcoming.
 ```
 
 ## Q&A
@@ -250,12 +423,4 @@ prior characteristics will get an M.
 Do we have to write tests for every procedure?
 
 > No. Only those we expicitly ask you to test.
-
-### Miscellaneous
-
-It says we are unlikely to need to use `doubly-nested-shape-list?`. Out of curiosity, what would be an example of a situation where it would be helpful?
-
-> Some of your procedures expect a doubly-nested shape list as a parameter. You might find it useful to verify that the parameter has the correct type.
-
-> I used it in documentation; you might want to, too.
 
