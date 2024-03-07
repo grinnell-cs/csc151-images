@@ -114,9 +114,9 @@ d. Of course, to achieve the collective's goals, you'll also need a way to overl
                       255)))
 ```
 
-e. Write a procedure, `(overlay-pairs images)`, that behaves much like `pair-horizontally` and `pair-vertically`, except that it uses `overlay-alt` instead of `beside` or `above`.
+Write a procedure, `(overlay-pairs images)`, that behaves much like `pair-horizontally` and `pair-vertically`, except that it uses `overlay-alt` instead of `beside` or `above`.
 
-f. Write a procedure, `(overlaid-grids images)`, that behaves much like `gridify-hv` and `grididfy-vh`, except that it pairs horizontally first, then vertically, and then overlays pairs before going back to horizontal, vertical, overlay, etc.
+e. Write a procedure, `(overlaid-grids images)`, that behaves much like `gridify-hv` and `grididfy-vh`, except that it pairs horizontally first, then vertically, and then overlays pairs before going back to horizontal, vertical, overlay, etc.
 
 ## Part 2: Making lists of images
 
@@ -131,7 +131,7 @@ Well, we could treat the first digit in a list as code for what shape we want.  
 * 0, 1, and 2 could represent a solid circle of diameter 30;
 * 3, 4, and 5 could represent a solid square of side-length 30;
 * 6 and 7 could represent a solid diamond of width 30 and height 30; and
-* 8 and 9 could represent a solid-equilateral triangle of edge-length 30.
+* 8 and 9 could represent a solid equilateral triangle of edge-length 30.
 
 The next digit in the list would then represent the color, using the
 following procedure.
@@ -150,6 +150,10 @@ following procedure.
 ```
 
 a. Write at least five tests for, and implement a procedure, `(simple-shape type colornum)`, that takes two digits as parameters and returns the corresponding shape (according to the policies above).
+
+b. Write tests for and document a procedure, `(simple-shapes digits)`, that takes a list of digits as a parameter and applies `simple-shape` to neighboring pairs of digits to create a list of shapes.  For example, if the first two digits are 3 and 4, the first element of your result should be a blue (4) solid square  (3).  
+
+Note that if there is only one digit left in the list, you cannot create a shape, and should return the empty list.
 
 If you find it difficult to make your own lists of digits,  you may find the following procedure useful.
 
@@ -174,10 +178,6 @@ If you find it difficult to make your own lists of digits,  you may find the fol
 > (string->digits "HELLO WORLD")
 '(7 2 6 9 7 6 7 6 7 9 3 2 8 7 7 9 8 2 7 6 6 8)
 ```
-
-b. Write tests for and document a procedure, `(simple-shapes digits)`, that takes a list of digits as a parameter and applies `simple-shape` to neighboring pairs of digits to create a list of shapes.  For example, if the first two digits are 3 and 4, the first element of your result should be a blue (4) solid square  (3).  
-
-Note that if there is only one digit left in the list, you cannot create a shape, and should return the empty list.
 
 c. The simple shapes are, as the name suggests, fairly simple. Let's expand our shapes a bit, using the digits to indicate the type of shape, the size of the shape, and the color of the shape.
 
@@ -311,7 +311,7 @@ Write at least four tests for and then write a procedure, `(complex-variants img
 * If the first digit is 0, 1, or 2, you should do one transformation (as in `variants`) based on the following digits. For example, if our list begins `'(2 5 3 0 4 9 6 2 8 ...)`, we'll build the first image in the transformed list by rotating (5) the image by 180 degrees (3). We'll biuld the remaining images by recursing starting with `'(0 4 9 6 2 8 ...)`.
 * If the first digit is 3, 4, or 5, you should do two transformations (as described in `variants`). For example, if our list begins `'(4 5 3 0 4 9 6 2 8 ...)`, we'll build the first image in the transformed list by first rotating (5) the image by 180 degrees (3) and then recoloring (0) the result by averaging it with (rgb 100 225 150) (4 9 6)  We'll build the remaining images by recursing starting with `'(2 8 ...)`.
 * If the first digit is 6, 7, or 8, you should do three transformations (as described in `variants`).
-* If the first digit is 9, you should do four transformations (as described in `variants`.
+* If the first digit is 9, you should do four transformations (as described in `variants`).
 
 _Note that _complex-variants_ is only necessary for an E._
 
@@ -325,9 +325,9 @@ a. Using these procedures and any others you write, write a procedure, `(shiftin
     ...))
 ```
 
-Provide three images, `uncertain-01.png`, `uncertain-02.png`, and `uncertain-03.png`, that demonstrate the use of your procedure on an image and three strings of your choice. Please make sure to document which strings you used in your code.
-
 To earn an E, you will need to write at least two additional recursive procedures that contribute meaningfully to `shifting-perspectives`.
+
+b. Provide three images, `uncertain-01.png`, `uncertain-02.png`, and `uncertain-03.png`, that demonstrate the use of your procedure on an image and three strings of your choice. Please make sure to document which strings you used in your code.
 
 What to upload
 --------------
