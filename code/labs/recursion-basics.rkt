@@ -197,8 +197,8 @@ a, b, and c from the prior problem.
 ; | Exercise 2a: Deeper Waters |
 ; +----------------------------+
 
-;;; (func-2a x l) -> ??
-;;;   x : any/c
+;;; (func-2a x l) -> ???
+;;;   x : any?
 ;;;   l : list?
 ;;; ??
 (define func-2a
@@ -239,7 +239,7 @@ c. Explanation
 ; +----------------------------+
 
 
-;;; (func-2b l1 l2) ->??
+;;; (func-2b l1 l2) -> ???
 ;;;   l1 : list?
 ;;;   l2 : list?
 ;;; ??
