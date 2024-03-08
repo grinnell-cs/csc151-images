@@ -7,8 +7,7 @@ link: true
 ---
 # {{ page.title }}
 
-**Warning! You are being recorded** (and transcribed) (provided the technology
-is working correctly).
+**Warning! You are being recorded** (and transcribed).
 
 _Approximate overview_
 
@@ -64,6 +63,8 @@ Wellness
   _Yoga in the Museum._
 * Tuesday, 2024-03-12, 4pm, BRAC P103 (Multipurpose Dance Studio):
   _Yoga_.
+* Thursday, 2024-03-14, 7-8:30 pm, Harris Concert Hall.
+  _Grocery Bingo"
 
 Misc
 
@@ -90,18 +91,123 @@ Misc
 * Monday, 2024-03-04, 8:30am [Today's lab](../recursion-practice) due.
     * [_Submit lab writeup on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4211823/)
     * Today you can stop wherever you reach by the end of class.
-* Wednesday, 2024-03-06, 11:00pm, [MP5](../mps/mp5) due.
+* Wednesday, 2024-03-13, 11:00pm, [MP5](../mps/mp5) due.
     * _Gradescope not yet available._
+* Friday, 2024-03-15, 8:30am, Quiz!
+    * Topic: Local Bindings (which we'll cover on Monday)
 
 ### Friday PSA
+
+* You are wonderful people. Please do your best to stay that way, if
+  not for yourself, do it for others.
+* If you alter your brain, do so in moderation. But please don't tell
+  me about.
+* Don't feel pressure to behave as you believe others behave.
+* If you cohabit, consent is essential.
 
 Questions
 ---------
 
 ### Administrative
 
+Aren't readings normally due on Tuesday, Thursday, and Sunday. Today's
+seems to have been set for Friday.
+
+> Whoops. Do it for tonight if you haven't already. Hope that your partner
+  managed to do it.
+
+How should we answer questions?
+
+> A mix of code and English-like stuff.
+
+When is MP4 redo due?
+
+> Sunday, April 7, 2024.
+
 ### Recursion
+
+Can you tell me more about "trust the recursion fairy"?
+
+> If we're doing top down design, we say "I'll need this procedure procedure,
+  so I'll call it here, and then write it later."
+
+> We're doing the same thing with recursion. We're trusting that our
+  future selves will solve the problem (but only on smaller inputs).
+  We can use procedure as a helper (but only on smaller inputs).
+ 
+> smaller means "closer to the base case".
+
+> So our design question is normally "Suppose I can dump of the work on
+  future me; what do have I left to afterwards?"
+
+> E.g., If we are appending two lists, we can assume that future us
+  knows how to append a shorter list to the other list. All we have
+  to do is shorten the list and then repair the result with the
+  element we dropped to shorten the list.
+
+        (define my-append
+          (lambda (lst1 lst2) 
+            (if (null? lst1)
+                lst2
+                (cons 'a (my-append (cdr lst1) lst2)))))
+
+> Thinking about that with a particular example
+
+            (my-append '(a b c) '(d e f))
+        --> (??? (my-append '(b c) '(d e f)))
+        --> (cons 'a '(b c d e f))
+
+> I have `'(b c d e f)`, I want `'(a b c d e f)`, so I need to put
+  `a` on the front.
+
+> Let's try it
+
+        > (my-append '() '(d e f))
+        '(d e f)
+        > (my-append '(a) '(d e f))
+        '(a d e f)
+        > (my-append '(a) '())
+        '(a)
+        > (my-append '() '())
+        '()
+        > (my-append null '(d e f g))
+        '(d e f g)
+
+> Great! Except it fails miserably if the first list contains something
+  other than `'a`.
+
+> Fix!
+
+        (define my-append
+          (lambda (lst1 lst2)
+            (if (null? lst1)
+                lst2
+                (cons (car lst1) (my-append (cdr lst1) lst2)))))
+
+### MP5
+
+When are you going to add pictures?
+
+> Never. But I might make a video tomorrow.
+
+I was still having trouble getting `pixel-map to work. Help!
+
+> Sorry. I wrote bad code. I'll fix it during lab.
 
 Lab
 ---
 
+What is "parameter simplification"?
+
+> Making the parameter smaller for the recursive call. For lists, it's
+  most frequently taking the `cdr` of the list.
+
+Why is the the result of multiplying all the elements in the empty
+list supposed to be 1 rather than 0?
+
+> Custom.
+
+> Also, it's kind of like what we see when we use `(*)`.
+
+        > (*)
+        1
