@@ -6,8 +6,6 @@ summary: |
   values that are only available within a procedure.
 ---
 
-_This reading is now available for public consumption.  Sorry for the delay._
-
 ## Introduction
 
 When writing programs and algorithms, it is useful to *name* values
@@ -709,6 +707,8 @@ first puts `name` into the binding table with a value of *undefined*.
 Then it evaluates the expression.  Then it updates the binding table.
 That may be a strange order, particularly in the middle of the procedure,
 but it tends to be useful at the top level.
+
+There's another reason we don't like local `define` statements; they break our mental model. In our mental model, we can always evaluate by substituting. But that assumes that we always have a single nested expression. The `define` means that we sometimes have multiple expressions that are not nested (the `define` statements and then the following expression). The semantics of that situation is much less clear.
 
 ## Self checks
 
