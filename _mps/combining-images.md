@@ -56,24 +56,7 @@ But what if we want to vary what we're doing, perhaps alternating between puttin
 
 a. Document, write at least three tests for, and write a procedure, `(pair-horizontally images)`, that takes a list of images as a parameter and returns a new list of approximately half the length in which each element is created by putting two elements of the first list next to each other.
 
-[IMAGE FORTHCOMING]
-
-Pretend letters are images in the following.
-
-```
-> (pair-horizontally (list "A" "B" "C" "D"))
-(list "AB" "CD")
-> (pair-horizontally (list "A" "B" "C" "D" "E" "F" "G"))
-(list "AB" "CD" "EF" "G")
-> (pair-horizontally (list)
-'()
-> (pair-horizontally (list "A"))
-"A"
-```
-
 b. Document, write at least three tests for, and write a procedure, `(pair-vertically images)`, that behaves much like `pair-horizontally`, but puts the two images above each other.
-
-[IMAGE FORTHCOMING]
 
 c. Document the following procedures. Also add a note in your code explaining how this works.
 
@@ -237,7 +220,7 @@ a. Write a procedure, `(variants img digits)`, that takes an image and a list of
 For example, if our list starts `'(2 5 0 3 4 ...)`, we should create the first element of our list of variants by averaging each pixel in the original with `(rgb 125 0 75)` and then shove the result on the front of the list we get by recursing on `'(4 ...)`, the `cddddr` of the original list. 
 
 ```
-(cons (pixel-map (cut (rgb-average <> (rgb 125 0 75))))
+(cons (pixel-map (cut (rgb-average <> (rgb 125 0 75))) img)
       (variants img (drop digits 4)))
 ```
 

@@ -1,7 +1,6 @@
 #lang racket
 
 (require csc151)
-(require racket/undefined)
 (require rackunit)
 
 ;; CSC 151 (SEMESTER)
