@@ -245,6 +245,7 @@
     - page: /readings/recursion-magic.html
   lab:
     - page: /labs/recursion-practice.html
+  notes: ../eboards/eboard21.html
 
 - topic: Local bindings
   abbrev: let

@@ -89,7 +89,8 @@ Misc
     * [_Submit reading response on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4200909/)
 * Friday, 2024-03-08, 8:30am, [Lab writeup](../labs/recursion-basics)
     * [_Submit lab writeup on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4200915/)
-    * Try to submit today.
+    * Unfortunately, today's lab is one that you must finish. Either plan
+      to meet with your partner outside of class or plan to do it separately.
 * Friday, 2024-03-08, 11:00pm, Post-reflection for SoLA 2
     * [_Submit SoLA 2 post-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4166817)
 * Friday, 2024-03-08, 11:00pm, Pre-reflection for MP5
