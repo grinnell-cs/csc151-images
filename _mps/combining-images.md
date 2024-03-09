@@ -199,6 +199,8 @@ In all cases, you should recurse on the remaining digits in the list to continue
 
 Note: If not enough digits remain in the list, just return the empty list.
 
+Note: You may want to write a helper procedure, such as `(at-least-n-elements lst n)`, that determines if there are enough elements left in the list. (For an E, you'll need to avoid using `length`.)
+
 ## Part 3: Lists of image variants
 
 Rather than making lists of shapes, we can make lists of transformed images.
@@ -258,7 +260,7 @@ Here's a procedure to set up the half-size copy appropriately.
 ;;; * `halign` should be "left", "center", or "right".
 ;;; * `valign` should be "top", "center", or "bottom".
 (define half-size
-  (lambda (img)
+  (lambda (img halign valign)
     (overlay/align halign valign
                    (scale img 1/2)
                    (transparent-rectangle (image-width img) 
@@ -295,6 +297,8 @@ Write a procedure, `(complex-variants img digits)`, that takes an image and a li
 * If the first digit is 3, 4, or 5, you should do two transformations (as described in `variants`). For example, if our list begins `'(4 5 3 0 4 9 6 2 8 ...)`, we'll build the first image in the transformed list by first rotating (5) the image by 180 degrees (3) and then recoloring (0) the result by averaging it with (rgb 100 225 150) (4 9 6)  We'll build the remaining images by recursing starting with `'(2 8 ...)`.
 * If the first digit is 6, 7, or 8, you should do three transformations (as described in `variants`).
 * If the first digit is 9, you should do four transformations (as described in `variants`).
+
+Note: If there aren't enough digits left in the list to make all the variations, do as many as possible.
 
 _Note that _complex-variants_ is only necessary for an E._
 
@@ -405,6 +409,8 @@ prior characteristics will get an M.
     [ ] 2a. simple-shape
     [ ] 2b. simple-shapes
     [ ] 2c. more-shapes
+[ ] Avoids using `length` in computing whether we have enough elements
+    in a list (e.g., in `more-shapes`, `variants`, and `complex-variants`).
 ```
 
 ## Q&A
@@ -418,6 +424,22 @@ Do we have to write tests for every procedure?
 Should we at least one edge case in each set of tests?
 
 > Preferably. You must have edge cases if you want to earn an E.
+
+### Part 1
+
+### Part 2
+
+I have a very long `cond` statement for `more-shapes`. Do you have a recommendation for how to make my code a bit more concise?
+
+> I'd break the problem up into "shapes that need two values", "shapes that need three values", and "shapes that need four values", writing a procedure for each one.
+
+### Part 3
+
+### Part 4
+
+I have a great idea that requires using two images rather than one. Can I have `shifting-perspectives` use two images?
+
+> You can make an alternate version of `shifting-perspectives` (with a different name) that takes two images as parameters. But you should also have one that takes only one image. At worst, you can have it call your two-image version with two copies of the same image.
 
 ### Miscellaneous
 
