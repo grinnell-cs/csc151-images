@@ -40,6 +40,19 @@
 (define digit?
   (all-of exact-integer? nonnegative? (less-than 10)))
 
+;;; (half-size img halign valign) -> image?
+;;; Create a half-size version of the image, aligned in the space of
+;;; the image as specified.
+;;;
+;;; * `halign` should be "left", "center", or "right".
+;;; * `valign` should be "top", "center", or "bottom".
+(define half-size
+  (lambda (img halign valign)
+    (overlay/align halign valign
+                   (scale img 1/2)
+                   (transparent-rectangle (image-width img)
+                                          (image-height img)))))
+
 ;;; (overlay-alt top-image bottom-image) -> image?
 ;;;   top-image : image?
 ;;;   bottom-image : image?
