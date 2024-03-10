@@ -435,6 +435,10 @@ I have a very long `cond` statement for `more-shapes`. Do you have a recommendat
 
 ### Part 3
 
+Was there an error in `digit->valignment`?
+
+> Yes. It's been fixed.
+
 ### Part 4
 
 I have a great idea that requires using two images rather than one. Can I have `shifting-perspectives` use two images?
@@ -443,3 +447,6 @@ I have a great idea that requires using two images rather than one. Can I have `
 
 ### Miscellaneous
 
+I'm getting an error related to anything with `transparent-rectangle`.
+
+> Sorry about that. We forgot to include it in the code and you were getting an incorrect one.

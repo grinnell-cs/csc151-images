@@ -135,6 +135,14 @@
                                (map (o number->string char->integer)
                                     (string->list str)))))))
 
+;;; (transparent-rectangle width height) -> image?
+;;;   width : non-negative-real?
+;;;   height : non-negative-real?
+;;; Build a transparent rectangle of the given width and height.
+(define transparent-rectangle
+  (lambda (width height)
+    (solid-rectangle width height (rgb 0 0 0 0))))
+
 ; +----------------------------------+-------------------------------
 ; | Provided code: Converting digits |
 ; +----------------------------------+
