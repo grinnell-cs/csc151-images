@@ -283,7 +283,7 @@ And a pair of procedures to convert a digit to an alignment.
 ;;; Convert a digit to a vertical alignment.
 (define digit->valignment
   (lambda (digit)
-    (list-ref (list "left" "center" "right")
+    (list-ref (list ""top "center" "bottom")
               (remainder digit 3))))
 ```
 
