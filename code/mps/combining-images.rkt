@@ -286,7 +286,7 @@ Explanation of gridify code
 ;;; Create a simple shape based on `type` and `colornum`. The color
 ;;; is given by `(digit->color colornum)`. The shape is chosen as follows
 ;;;
-;;; * If `type` is 0, 1, or 2, the shape is a solid dircle of diameter 30.
+;;; * If `type` is 0, 1, or 2, the shape is a solid circle of diameter 30.
 ;;; * If `type` is 3, 4, or 5, the shape is a solid square of side-length 30.
 ;;; * If `type` is 6 or 7, the shape is a solid diamond of width 30 and
 ;;;   height 30.
