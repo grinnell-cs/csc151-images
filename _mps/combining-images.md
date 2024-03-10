@@ -449,4 +449,4 @@ I have a great idea that requires using two images rather than one. Can I have `
 
 I'm getting an error related to anything with `transparent-rectangle`.
 
-> Sorry about that. We forgot to include it in the code and you were getting an incorrect one.
+> Make sure to update your `csc151` library.
