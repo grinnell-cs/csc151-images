@@ -27,6 +27,7 @@ Administrative stuff
     * I hope you have a wonderful break!
 * I posted the 100th assignment to Gradescope last night. (I don't think
   you can see them all.)
+* MP4 returned.
 
 ### Token opportunities
 
@@ -87,7 +88,13 @@ _On April 1, we'll discuss whether the MP5 redo should be due on April 7th or 14
 
 ### Spring Break PSA
 
+* Take care of yourselves.
+
 ### Recursion Video!
+
+* Remember: We're doing things again and again (and again and again).
+* And it's joyful.
+* "Again and Again" by the Birds and the Bees
 
 Questions
 ---------
@@ -98,7 +105,34 @@ When is MP4 redo due?
 
 > Sunday, April 7, 2024.
 
+Can we have more tokens?
+
+> You should be able to submit more on the new tokens page.
+
+What about the old tokens?
+
+> I'll move them over during spring break.
+
+I turned in two tokens under the old system. Where should I start in the
+new system?
+
+> On token three.
+
+How do we tell how many tokens we have?
+
+> After spring break? Sorry.
+
 ### MP5
+
+Do `gridify-hv` and `gridify-vh` work?
+
+> Yes, they should work once you've written your procedures.
+
+Why do I see a dot when I'm making a list of shapes or images (e.g.,
+in `simple-shapes` or `variants`?
+
+> Think about about your base case. Each of these procedures returns
+  a list. Are you returning a list in the base case?
 
 ### Recursion
 
@@ -113,6 +147,64 @@ meaning it would eventually come to a result?
 
 ### Local Bindings
 
+Can we define local helper procedures with `let`?
+
+> Definitely!
+
+> If you want local recursive procedures, you need `letrec`.
+
+### Miscellaneous
+
+Can you describe `ormap`?
+
+> `ormap` takes the for `(ormap pred? lst)`, and it scans the list to find
+  an element for which `pred?` holds. If it finds such an element, it returns
+  true. If it fails to find such an element, it returns false. If it hits
+  an element for which `pred?` generates an error, it throws an errow.
+
+```
+> (ormap odd? (list 1 2 3))
+#t
+> (ormap odd? (list 2 4 6))
+#f
+> (ormap odd? (list 2 4 "three" 6))
+. . odd?: contract violation
+  expected: integer?
+  given: "three"
+```
+
+Where does the `or` come into play?
+
+> Think of it as `(or (pred? (list-ref lst 0)) (pred? (list-ref lst 1)) (pred? (list-ref lst 2)) ...)`
+
+Can you explain why you want us to put `let` statements outside the `lambda`?
+
+> I could, but you'll learn why in lab.
+
+Why do we have `ormap`?
+
+> We have `andmap` and `ormap` because `and` and `or` are not really functions
+(they have a different evaluation order), so they need a special form.
+
 Lab
 ---
+
+For exercise 4, what are you looking for?
+
+```
+(define make-change
+  (lambda (cents)
+    (let* ([quarters (quotient cents 25)]
+           [centsible (- cents (* quarters 25))]
+           [dimes (quotient centsible 10)]
+           [centsless (- centsible (* dimes 10))]
+           ...)
+      (list quarters dimes nickles pennies))))
+```
+
+For exercise 5, can we use the built-in tracer?
+
+> You could try, but I'd prefer that you do things by hand. Even though
+  I wrote the built-in tracer, I'm not completely confident in it.
+
 
