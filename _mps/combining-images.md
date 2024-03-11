@@ -450,3 +450,17 @@ I have a great idea that requires using two images rather than one. Can I have `
 I'm getting an error related to anything with `transparent-rectangle`.
 
 > Make sure to update your `csc151` library.
+
+How do I make a solid diamond?
+
+> `(solid-diamond width height color)`
+
+What exactly is meant by "the digits"?
+
+> A digit is a number between 0 and 9 (a digit of a number). So "the digits"
+  refers to a list of digits, either created manually or with some
+  procedure, such as `string->digits`.
+
+Can you give some examples of each of the procedures?
+
+> You can see some in the video walk-through.
