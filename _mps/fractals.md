@@ -1,6 +1,6 @@
 ---
-title: Mini-Project 5
-xsubtitle: Fractals and other self-similar images
+title: Mini-Project 6
+subtitle: Fractals and other self-similar images
 summary: |
   We explore fractals, images that are similar at different scales, as well
   as other images that can be built from numeric recursion.  Along the way,
@@ -9,9 +9,9 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
-link: false
+link: true
 ---
-# {{ page.title }} : {{ page.subtitle }}
+**Warning**: This mini-project has not yet been revised for Spring 2024.
 
 **Summary**: {{ page.summary }}
 
@@ -23,21 +23,19 @@ In addition to submitting `fractals.rkt`, submit at least one image from your pr
 
 ## Background: Building Sierpinski triangles 
 
-_Expected time: Approximately 15 minutes._
-
 Informally, _fractals_ are images that appear similar at different scales.  Although this mini-project will primarily emphasize fractals made from simple shapes, there are also fractals that are much less regular.  For example, the coastline of almost any country is considered a fractal because coastlines are similarly "jagged" at any scale.
 
 We will explain the self-similarity of regular shapes using one of the most straightforward regular fractals, the _Sierpinski Triangle_.  Here's how you might think of those triangles.
 
 We'll start with a blue, equilateral, triangle with side-length 128.
 
-`(define triangle-128 (triangle 128 "solid" "blue"))`
+`(define triangle-128 (solid-equilateral-triangle 128 "blue"))`
 
 ![A solid blue triangle with side-length 128.](../images/fractals/triangle-128.png)
 
 Let's build another triangle with half that side length.  If you recall your geometry, this triangle will have 1/4 the area of the original triangle.
 
-`(define triangle-64 (triangle 64 "solid" "blue"))`
+`(define triangle-64 (solid-equilateral-triangle 64 "blue"))`
 
 ![A solid blue triangle with side-length 64.](../images/fractals/triangle-64.png)
 
@@ -106,14 +104,12 @@ Somewhere along the way, I think we said that these techniques might help us mak
 
 ## Part one: Fractal triangles
 
-_Approximate time: 45 minutes_
-
 a. Write a procedure, `fractal-triangle`, that makes the basic fractal triangle described above.
 
 ```
 ;;; (fractal-triangle size color n) -> image?
 ;;;   size : positive-real?
-;;;   color : image-color?
+;;;   color : rgb?
 ;;;   n : non-negative integer
 ;;; Make a fractal triangle using `color` as the primary color.
 ```
@@ -123,43 +119,13 @@ b. Write a procedure, `rgb-fractal-triangle`, that makes a fractal triangle in w
 ```
 ;;; (rgb-fractal-triangle size color n) -> image?
 ;;;   size : positive-real?
-;;;   color : color?
+;;;   color : rgb?
 ;;;   n : non-negative integer
-;;; Make a fractal triangle using `color` as the primary color.  In the
-;;; recursive steps, the base color of the top triangle is `(redder color)`,
-;;; the base color of the lower-left triangle is `(greener color)`, and the
-;;; base color of the lower-right triangle is `(bluer color)`.
-```
-
-You should use the following procedures.
-
-```
-;;; (redder color) -> color?
-;;;   color : color?
-;;; Create a potentially redder version of color.
-(define redder
-  (lambda (color)
-    (rgb (+ (color-red color) 32)
-         (- (color-green color) 32)
-         (- (color-blue color) 32))))
-
-;;; (greener color) -> color?
-;;;   color : color?
-;;; Create a potentially greener version of color.
-(define greener
-  (lambda (color)
-    (rgb (- (color-red color) 32)
-         (+ (color-green color) 32)
-         (- (color-blue color) 32))))
-
-;;; (bluer color) -> color?
-;;;   color : color?
-;;; Create a potentially bluer version of color.
-(define bluer
-  (lambda (color)
-    (rgb (- (color-red color) 32)
-         (- (color-green color) 32)
-         (+ (color-blue color) 32))))
+;;; Make a fractal equilateral triangle using `color` as the primary
+;;; color.  In the recursive steps, the base color of the top triangle
+;;; is `(rgb-redder color)`, the base color of the lower-left triangle is
+;;; `(rgb-greener color)`, and the base color of the lower-right triangle
+;;; is `(rgb-bluer color)`.  
 ```
 
 c. As you saw in our examples, once we start changing colors, it can be nice 
@@ -170,13 +136,14 @@ Write a procedure, `(new-rgb-fractal-triangle size color n)`, that does just tha
 ```
 ;;; (new-rgb-fractal-triangle size color n) -> image?
 ;;;   size : positive-real?
-;;;   color : color?
+;;;   color : rgb?
 ;;;   n : non-negative integer
-;;; Make a fractal triangle using `color` as the primary color.  In the
-;;; recursive steps, the base color of the top triangle is `(redder color)`,
-;;; the base color of the lower-left triangle is `(greener color)`, and the
-;;; base color of the lower-right triangle is `(bluer color)`.  The base
-;;; color of the central triangle should be `color`.
+;;; Make a fractal equilateral triangle using `color` as the primary
+;;; color.  In the recursive steps, the base color of the top triangle
+;;; is `(rgb-redder color)`, the base color of the lower-left triangle is
+;;; `(rgb-greener color)`, and the base color of the lower-right triangle
+;;; is `(rgb-bluer color)`.  The base color of the central triangle should
+;;; be `color`.  
 ```
 
 d. Write a procedure, `(fractal-right-triangle height width color n)`, that builds a right triangle using the fractal approach.  
@@ -191,8 +158,6 @@ d. Write a procedure, `(fractal-right-triangle height width color n)`, that buil
 ```
 
 ## Part two: Fractal squares (carpets)
-
-_Approximate time: 60 minutes_
 
 Just as we can think of triangles as being made up of four sub-triangles, and we can use that idea to make fractal triangles, we can break squares up into sub-squares and use those to make fractal squares.  The most common approach is to make a three-by-three grid of squares, building all but the center square recursively.  How do we combine them?  We can make each row with `beside` and then stack the three rows with `above`.  What about the middle square, which we normally leave "blank"?  I find it easiest to specify a color to use for the center.  Here are the first few stages.
 
@@ -474,8 +439,6 @@ You may find the following procedure useful as you experiment.
 ```
 
 ## Part 4: Freestyle
-
-_Approximate time: 30 minutes._
 
 Using variants of the fractal approaches from parts 1 and 2, along with anything else you consider useful, come up with a recursive procedure, `(my-fractal size color n)` that creates a self-similar (or otherwise numerically recursive) image using the starting size, color, and non-negative integer.
 
