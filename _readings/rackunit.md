@@ -230,6 +230,9 @@ and an optional message.
   : Evaluate `expression` and `expected` and then compare them for
   numeric equality (within `epsilon`). If they are equal,
   do nothing. If they are not equal, print an error message. 
+  Note that because real numbers are approximated, the `epsilon` is used
+  to mean "if the difference is less than `epsilon`, treat them as
+  sequal."
 
 `(test-equal? message expression expected)`{:.signature} [*requires `rackunit`*]
   : Evaluate `expression` and `expected` and then compare them for

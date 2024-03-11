@@ -1,7 +1,6 @@
 #lang racket
 
 (require csc151)
-(require 2htdp/image)
 (require rackunit)
 
 ;; CSC 151-NN (TERM)
@@ -68,8 +67,7 @@ d. Before beginning this lab, please update your csc151 library.
 e. The person closer to the board is A.  The person further from the 
    board is B.
 
-f. Make sure that you can load the kitten image.  (We won't be using it
-   explicitly in the lab, but it never hurts to try.)
+f. Make sure that you can load the kitten image.  
 
      > (define kitten (image-load "kitten.jpg"))
      > kitten
@@ -148,13 +146,13 @@ v.
 |#
 
 #|
-b. Check to see if any of them are defined using `(colors-find name)`.
+b. Check to see if any of them are defined using `(find-colors name)`.
 This procedure returns a list of all color names that contain `name`.
 
 For example, if one of my favorite colors is a kind of pink (say,
 hot pink), I might write,
 
-    > (colors-find "pink")
+    > (find-colors "pink")
     '("deeppink" "hotpink" "lightpink" "pink")
 
 There is nothing to submit for this sub-exercise.
@@ -188,9 +186,9 @@ d. Create a palette of these three colors.
 #|
 a. Write a procedure, `(ccc c1 c2 c3)`, that takes three colors as
 parameters and creates an image with three concentric circles, each
-on top of the next.  The largest/bottom circle should be colored
+on top of the next.  The largest/back circle should be colored
 c3 and have radius 30.  The middle circle should be colored c2 and
-have radius 20.  The smallest/top circle should be colored c1 and
+have radius 20.  The smallest/front circle should be colored c1 and
 have radius 10.
 |#
 
@@ -328,7 +326,7 @@ bit for you.)
 b. Verify that it seems to work appropriately by creating a darker
 version of the kitten.
 
-    > (image-map color-darker kitten)
+    > (pixel-map color-darker kitten)
 
 |#
 
@@ -402,6 +400,10 @@ you with this.
 #|
 You can run the following tests on the procedure by removing the comment
 block symbols (#| and |#) around them.
+
+If you haven't encountered testing before, the test-equal? procedures
+either return nothing (if the second and third parameters match) or
+issue an error message (if they do not).
 |#
 
 #|
@@ -426,7 +428,7 @@ block symbols (#| and |#) around them.
 b. Verify that it seems to work appropriately by creating a restricted
 version of the kitten.
 
-    > (image-map color-restrict kitten)
+    > (pixel-map color-restrict kitten)
 
 |#
 
@@ -507,7 +509,7 @@ version of `c` by subtracting 64 from the green and blue components.
 |#
 
 #|
-c. Write a procedure, `(color-rdder-c c)`, that produces a redder
+c. Write a procedure, `(color-redder-c c)`, that produces a redder
 version of `c` by adding 32 to the red component and subtracting 32
 from each of the green and blue components.
 |#
@@ -516,8 +518,8 @@ from each of the green and blue components.
 d. Try each procedure on the kitten to see which version you find
 most successful (or most appropriate).
 
-    > (image-map color-redder-a kitten)
-    > (image-map color-redder-b kitten)
-    > (image-map color-redder-c kitten)
+    > (pixel-map color-redder-a kitten)
+    > (pixel-map color-redder-b kitten)
+    > (pixel-map color-redder-c kitten)
 |#
 

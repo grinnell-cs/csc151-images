@@ -46,7 +46,9 @@ corresponding pairs of elements from the two lists.  You can also use
 
 `(reduce binproc lst)` - reduce a list to a single value
 
-`(sort lst compare?)` - Sort a list. 
+`(sort lst compare?)` - sort a list. 
+
+`(tally predicate? lst)` - count how many values meet the predicate.
 
 ### Other list operations
 

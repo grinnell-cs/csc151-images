@@ -1,8 +1,7 @@
 #lang racket
-(require 2htdp/image)
 (require csc151)
 
-;; CSC 151 (SEMESTER)
+;; CSC 151-NN (SEMESTER)
 ;; Lab: Conditionals
 ;; Authors: YOUR NAMES HERE
 ;; Date: THE DATE HERE
@@ -31,33 +30,33 @@ indicated.
 (define gray2 (rgb 192 192 192))
 (define gray3 (rgb 255 255 255))
 
-;;; (color-brightness c) -> real? (between 0 and 100)
-;;;   c : color?
-;;; Find the approximate perceived brightness of c
+;;; (rgb-brightness c) -> real? (between 0 and 100)
+;;;   c : rgb?
+;;; Find the approximate perceived brightness of c.
 (define rgb-brightness
   (lambda (c)
     (round (* 100/255 
-              (+ (* .30 (color-red c))
-                 (* .59 (color-green c))
-                 (* .11 (color-blue c)))))))
+              (+ (* .30 (rgb-red c))
+                 (* .59 (rgb-green c))
+                 (* .11 (rgb-blue c)))))))
 
-;;; (color-darker-32 c) -> color?
-;;;   c : color?
+;;; (rgb-darker-32 c) -> rgb?
+;;;   c : rgb?
 ;;; Make c darker by subtracting 32 from each component
-(define color-darker
+(define rgb-darker-32
   (lambda (c)
-    (rgb (- (color-red c) 32)
-         (- (color-green c) 32)
-         (- (color-blue c) 32))))
+    (rgb (- (rgb-red c) 32)
+         (- (rgb-green c) 32)
+         (- (rgb-blue c) 32))))
 
-;;; (color-lighter-32 c) -> color?
-;;;   c : color?
+;;; (rgb-lighter-32 c) -> rgb?
+;;;   c : rgb?
 ;;; Make c ligher by adding 32 to each component
-(define color-lighter
+(define rgb-lighter-32
   (lambda (c)
-    (rgb (+ (color-red c) 32)
-         (+ (color-green c) 32)
-         (+ (color-blue c) 32))))
+    (rgb (+ (rgb-red c) 32)
+         (+ (rgb-green c) 32)
+         (+ (rgb-blue c) 32))))
 
 ; +-------------+----------------------------------------------------
 ; | Preparation |
@@ -105,6 +104,15 @@ works as expected.
 a. Write a predicate `(is-even? n)` that takes an integer as input
 and returns true if `n` is even and false otherwise.
 
+    > (is-even? 4)
+    #t
+    > (is-even? 5)
+    #f
+    > (is-even? -11)
+    #f
+    > (is-even? -22)
+    #t
+
 You may not use the built-in `even?` or `odd?` predicates.
 
 You may, however, use the `remainder` procedure you recently learned.
@@ -118,12 +126,30 @@ You may, however, use the `remainder` procedure you recently learned.
 b. In your experiments with `is-even?`, you may have determined that
 `is-even?` reports an error when `n` is not an integer.
 
+    > (is-even? 3.4)
+    Boom!
+    > (is-even? "four")
+    Boom!
+
 Write a predicate, `(is-even-integer? n)`, that returns true when
 `n` is an even integer and false otherwise.  
 
 Your procedure should return false when `n` is a complex number, a
 non-integer real, a string, an image, and, well, anything that's
 not an integer.
+
+    > (is-even-integer? 3.4)
+    #f
+    > (is-even-integer? "four")
+    #f
+    > (is-even-integer? 4)
+    #t
+    > (is-even-integer? 3/2)
+    #f
+    > (is-even-integer? -8)
+    #t
+    > (is-even-integer? 7)
+    #f
 |#
 
 (define is-even-integer?
@@ -131,8 +157,18 @@ not an integer.
     ???))
 
 #|
-c. Write a function (number-not-integer? n) that returns true if `n`
+c. Write a function (number-but-not-integer? n) that returns true if `n`
 is a number that is not an integer and false otherwise.
+
+    > (number-but-not-integer? 3)
+    #f
+    > (number-but-not-integer? 3.4)
+    #t
+    > (number-but-not-integer? 3/2)
+    #t
+    > (number-but-not-integer? "hello")
+    #f
+
 |#
 
 ; TODO: write your function here!
@@ -175,16 +211,20 @@ Write a function, `(employee-id? str)`, that takes a string as input
 and determines whether the string is a valid employee id.  You need
 not check that `str` is a string.
 
-> (employee-id? "123456")
-#t
-> (employee-id? "1")
-#f
-> (employee-id? "000111")
-#t
-> (employee-id? "00011x")
-#f
-> (employee-id? 123456)
-Boom!  Crash!
+    > (employee-id? "123456")
+    #t
+    > (employee-id? "1")
+    #f
+    > (employee-id? "000111")
+    #t
+    > (employee-id? "00011x")
+    #f
+    > (employee-id? 123456)
+    Boom!  Crash!
+    > (employee-id? "123.45")
+    #f
+    > (employee-id? "123/45")
+    #f
 
 Hint: `string->number` may help.  `string-length` may help.  `substring`
 may help.
@@ -216,35 +256,37 @@ Hint: `substring` may help with the additional check.
 ; +----------------------------------+
 
 #|
-At the top of this lab, you will find a procedure, `(color-brightness c)`,
+At the top of this lab, you will find a procedure, `(rgb-brightness c)`,
 gives the approximate perceived brightness of a color as a real number 
 between 0 and 100.
 |#
 
 #|
-a. Write a procedure, `(color-bright? c)`, that takes an RGB color
+a. Write a procedure, `(rgb-bright? c)`, that takes an RGB color
 as a parameter and returns true (#t) if the brightness of c is at
 least 50 and returns false (#f) if the brightness is less than 50.
 |#
 
-;;; (color-bright? c) -> boolean?
-;;;   c : color?
+;;; (rgb-bright? c) -> boolean?
+;;;   c : rgb?
 ;;; Determines if c is bright (brightness at least 50)
-(define color-bright?
+(define rgb-bright?
   (lambda (c)
     ???))
 
 #|
-b. Write a procedure, `(better-color-bright? c)`, that takes an RGB
+b. Write a procedure, `(better-rgb-bright? c)`, that takes an RGB
 color OR the name of a color as a parameter and returns true (#t) if 
 the brightness of c is at least 50 and returns false (#f) if the 
 brightness is less than 50.
+
+You may find the `color-name?` and `color-name->rgb` procedures useful.
 |#
 
-;;; (color-bright? c) -> boolean?
-;;;   c : color? or color-name?
+;;; (better-rgb-bright? c) -> boolean?
+;;;   c : (any-of rgb? color-name?)
 ;;; Determines if c is bright (brightness at least 50)
-(define better-color-bright
+(define better-rgb-bright
   (lambda (c)
     ???))
 
@@ -270,28 +312,28 @@ v.
 ; +-----------------------------------+
 
 #|
-a. Write a procedure, `(color-brighter? c1 c2)`, that takes two RGB
+a. Write a procedure, `(rgb-brighter? c1 c2)`, that takes two RGB
 colors as parameters and determines whether c1 is brighter than c2.
 |#
 
-;;; (color-brighter? c1 c2) -> boolean?
-;;;   c1 : color?
-;;;   c2 : color?
+;;; (rgb-brighter? c1 c2) -> boolean?
+;;;   c1 : rgb?
+;;;   c2 : rgb?
 ;;; Determines if c1 is brighter than c2.
-(define color-brighter?
+(define rgb-brighter?
   (lambda (c1 c2)
     ???))
 
 #|
-b. Write a procedure, `(color-brighter c1 c2)`, that takes wo
-RGB colors as paraemters and returns the brighter of c1 and c2.
+b. Write a procedure, `(rgb-brighter c1 c2)`, that takes two
+RGB colors as parameters and returns the brighter of c1 and c2.
 |#
 
-;;; (color-brighter c1 c2) -> color?
-;;;   c1 : color?
-;;;   c2 : color?
+;;; (rgb-brighter c1 c2) -> rgb?
+;;;   c1 : rgb?
+;;;   c2 : rgb?
 ;;; Find the brighter of c1 and c2.
-(define color-brighter
+(define rgb-brighter
   (lambda (c1 c2)
     ???))
 
@@ -303,15 +345,15 @@ RGB colors as paraemters and returns the brighter of c1 and c2.
 Consider the following procedure.
 |#
 
-;;; (color-something c) -> color?
-;;;   c : color?
+;;; (rgb-something c) -> rgb?
+;;;   c : rgb?
 ;;; ???
-(define color-something
+(define rgb-something
   (lambda (c)
-    ((if (color-bright? c) color-lighter color-darker) c)))
+    ((if (rgb-bright? c) rgb-lighter rgb-darker) c)))
 
 #|
-a. To the best of your ability, explain what `color-something` does.
+a. To the best of your ability, explain what `rgb-something` does.
 You might determine this through experimentation with individual
 colors, by applying it to the kitten image, by reading the code,
 or through other techniques.  Spend no more than two minutes on
@@ -321,7 +363,7 @@ this!
 |#
 
 #|
-b. To the best of your ability, explain *how* `color-something`
+b. To the best of your ability, explain *how* `rgb-something`
 works.  Spend no more than two minutes on this!
 
 <ENTER YOUR EXPLANATION HERE>
@@ -335,7 +377,7 @@ works.  Spend no more than two minutes on this!
 
 #|
 Using `cond` (and not nested `if` expressions), write a procedure,
-`(color-4gray c)`, that converts a color into black, white, or
+`(rgb-4gray c)`, that converts a color into black, white, or
 a shade of gray using the four `gray#` procedures defined above.
 
 * Return `gray0` if the brightness of `c` is less than 25;
@@ -344,15 +386,16 @@ a shade of gray using the four `gray#` procedures defined above.
 * Return `gray3` if the brightness of `c` is at least 75.
 |#
 
-;;; (color->4gray c) -> color?
-;;;   c : color?
+;;; (rgb->4gray c) -> rgb?
+;;;   c : rgb?
 ;;; Convert c to black, white, or a gray.
-(define color-4gray
+(define rgb-4gray
   (lambda (c)
     ???))
 
 #|
-You should also try applying this procedure to the kitten.
+You should also try using `pixel-map` to apply this procedure to the 
+kitten.
 |#
 
 #| AB |#
@@ -368,9 +411,9 @@ a. Ensure that your combined file runs properly.
 b. Rename this file to `conditionals.rkt` (i.e., no -a or -b in the
    name).
 c. Send this completed file to your partner for their records.
-d. Submit this final file to Gradescope.  Make sure, if appropriate,
-   to submit your work as a group submission and include your
-   partner in the submission.
+d. Submit this final file and the kitten image to Gradescope.  Make sure, 
+   if appropriate, to submit your work as a group submission and
+   include your partner in the submission.
 |#
 
 #| AB |#

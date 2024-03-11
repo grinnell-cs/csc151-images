@@ -4,16 +4,16 @@
     - "**Procedural abstraction**. Take a concrete implementation in Racket and create a procedure that generalizes that behavior."
     - "**Tracing**. Trace the execution of a Racket program using a substitutive model of computation.  _This LA may only be completed in class._"
     - "**Primitive types**. Express basic computations over primitive values and their associated standard library functions."
-    - "**Conditionals**. Use Boolean expressions and conditional operations to produce conditional behavior."
     - "**Collaboration**. Explain best practices for solving problems in a collaborative setting."
+    - "**Lambda-free anonymous procedures**. Use `cut` and composition to simplify computations."
 
 - assessment: Learning Assessments, Phase 2 (LAP 2)
   goals:
+    - "**Conditionals**. Use Boolean expressions and conditional operations to produce conditional behavior."
     - "**Documentation**. Document programs according to good software engineering principles."
     - "**Testing**. Test programs according to good software engineering principles."
     - "**Program style**. Write and structure code in ways that make it easier to understand."
     - "**Lists**. Manipulate lists with fundamental higher-order list functions."
-    - "**Lambda-free anonymous procedures**. Use `cut` and composition to simplify computations."
     - "**Ethical considerations**.  Consider implications of the power of computing."
 
 - assessment: Learning Assessments, Phase 3 (LAP 3)

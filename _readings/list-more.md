@@ -5,18 +5,16 @@ summary: |
   other important list processing operations, including `sort`,
   `tally`, `andmap`, and `ormap`.
 prereqs: |
-  [An abbreviated introduction to Racket](../readings/racket-intro).
-  [Data types](../readings/data-types).
+  [An abbreviated introduction to Racket](../readings/intro-scheme).
+  [Data types](../readings/types).
   [Writing your own procedures](../readings/procedures).
-  [Lists and map](../readings/list-map).
+  [Lists and map](../readings/list-basics).
   [Anonymous procedures](../readings/anonymous-procedures).
 ---
 
-_This page is ready for public consumption._
-
 You've already seen a variety of procedures that process lists.  You are likely finding yourself thinking of clever ways to use those procedures.  But you're also finding yourself wondering why other procedures for manipulating lists don't exist.  In a few weeks, you'll have the skills to write your own procedures that process lists item by item (although not to write parallel versions of them).  For now, you'll benefit from having a few more list-processing procedures in your toolkit.  Like many of the other procedures you've seen, most are "higher-order" procedures in that they take other procedures as pameters.
 
-## Putting lists in order
+## Putting the elements of a list in order
 
 Many implementations of Scheme comes with another useful procedure, `(sort lst compare?)`, that puts the elements of a list in an order you specify.  The difficulty, of course, is how to specify the order.  For now, we'll use four basic orderings.
 
@@ -142,7 +140,7 @@ That's right; it doesn't do the short-circuit evaluation strategy that `and` use
 #f
 ```
 
-Okay.  That works.  What else could we do?  Well, we could could rely on the built-in (or at least standard) `(string->number str)` procedure, which returns false if `str` does not represent a number.
+Okay.  That works.  Or mostly works. What else could we do?  Well, we could could rely on the built-in (or at least standard) `(string->number str)` procedure, which returns false if `str` does not represent a number.
 
 ```drracket
 > (string->number "926")

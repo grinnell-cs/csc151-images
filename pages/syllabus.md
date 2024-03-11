@@ -196,7 +196,7 @@ We rely on six kinds of work to assess your mastery of the material.
 
 Mini-projects are graded on an EMRI scale. E is "Excellent or Exemplar". M is "Meets Expectations", the standard grade for a correct assignment. R is "Redo", the grade you'll receive for an assignment that does shows incomplete understanding. And I is "Incomplete", the grade you'll receive for an assignment that is missing key components. These grades will appear as 3, 2, 1, and 0 on Gradescope.
 
-*Learning assessments* (LAs) are designed to demonstrate your mastery of the courses naturally measurable learning goals.  You may only discuss these deliverables with the course staff.  These deliverables are checked for both correctness and appropriate design.  Learning assessments will come in at least two different forms: Weekly in-class quizzes (on Fridays) and regular take-home examinations/SoLAs (distributed on Mondays and due on Wednesdays at {{ site.evening_due_time }}).
++*Learning assessments* (LAs) are designed to demonstrate your mastery of the courses naturally measurable learning goals.  You may only discuss these deliverables with the course staff.  (Since not all students will choose to take LAs at times that the course staff are available, the only questions the course staff are likely to answer are whether there's an error in a problem.)  These deliverables are checked for both correctness and appropriate design.  Learning assessments will come in at least two different forms: Weekly in-class quizzes (on Fridays) and regular take-home examinations/SoLAs (distributed on Mondays and due on Wednesdays at {{ site.evening_due_time }}).
 
 LAs are graded using a Satisficatory (S or 1) or Unsatisfactory (U or 0) scale.
 
@@ -348,7 +348,8 @@ Utilizing discussion with peers to facilitate your learning is a critical skill 
 
 + You are encouraged to seek help and advice from your peers as you work on reading exercises, labs, and mini-projects. You may also consult the course staff as well as other people and external resources.
 + You may only discuss learning assessments and quizzes with the course staff.
-  When completing assessments and quizzes, you may only consult the course website and any additional documentation we provide.  You may not collaborate with peers, consult external resources beyond the ones mentioned above, or share information about these assignments with others.
++ When completing take-home learning assessments, you may only consult the course website, any additional documentation we provide, and your notes. You may not collaborate with peers, consult external resources beyond the ones mentioned above, or share information about these assignments with others.
++ When completing in-class learning assessments (e.g., Friday quizzes), you may rely on on sheet of hand-written notes that you have brought to class.
 + **In all cases, you (or your group in the case of group work) should independently write up your solutions and cite all the resources you used in authoring your work, including other students, your instructor, and our peer educators.**
 
 Keep in mind that *adaptation of pre-existing code* whether it comes from a peer, myself, or the Internet, requires a citation in cases where we allow such adaptation.  Also, whenever you are expected to show your code's output, you are expected to reproduce the output faithfully.  In other words, you should not forge the results of your programs!

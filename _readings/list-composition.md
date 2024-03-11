@@ -1,31 +1,15 @@
 ---
 title: Composing and decomposing lists
 ---
-# {{ page.title }}
-
-*Summary:* We delve more deeply into Scheme's list data type. We consider,
-in particular, how we work with the individual elements of lists and not
-just with the list as a whole.
+*Summary:* We delve more deeply into Scheme's list data type. We consider, in particular, how we work with the individual elements of lists and not just with the list as a whole.
 
 ## Introduction: Representing data
 
-As we've said, computer scientists study both the *algorithms* we write to
-manipulate information and the ways in which we *represent* information.
-We've looked at one way of representing collections so far, lists.
-As we've explored lists, we've focused on lists that contain all the
-same kinds of values, mostly lists of numbers.  We call such lists
-"homogeneous lists".  But lists can contain mixtures of kinds of values.
-We call lists with mixtures of kinds of values "heterogeneous lists".
+As we've said, computer scientists study both the *algorithms* we write to manipulate information and the ways in which we *represent* information.  We've looked at one way of representing collections so far, lists.  As we've explored lists, we've focused on lists that contain all the same kinds of values, such as lists of numbers, lists of colors, or lists of images.  We call such lists "homogeneous lists".  But lists can contain mixtures of kinds of values.  We call lists with mixtures of kinds of values "heterogeneous lists".
 
 ## An Example: UFO sightings
 
-Here's one example of a heterogeneous list.  Consider the list of
-UFO sightings available at <http://www.ufocasebook.com/casefiles.html>.
-For each sighting we have a year, a name, a date (or date-like
-description), a location (mostly a country), a Yes/No for effect,
-media, contact, and abduction.  (You can look at the page for what
-each of those mean.)  We might therefore represent each entry as an
-eight element list.
+Here's one example of a heterogeneous list.  Consider the list of UFO sightings available at <http://www.ufocasebook.com/casefiles.html>.  For each sighting we have a year, a name, a date (or date-like description), a location (mostly a country), a Yes/No for effect, media, contact, and abduction.  (You can look at the page for what each of those mean.)  We might therefore represent each entry as an eight element list.
 
 * Element 0 is the *year*, which we will represent as an integer.
 * Element 1 is the *name*, which we will represent as a string.
@@ -48,13 +32,11 @@ For example, here's what we might see for one entry.
 '(1969 "The Russian Crash - Sverdlovsky" "Mar, 1969" "Russia" #t #t #t #f)
 ```
 
-Why did we start with zero, rather than one?  Because lists, like strings, are "zero indexed".
-The index represents the number of items that come before the element.
+Why did we start with zero, rather than one?  Because lists, like strings, are "zero indexed".  The index represents the number of items that come before the element.
 
 While most of the list procedures we've examined so far---procedures like `reduce`, `map`, and `filter`---work on the list as a whole, if we're using lists for this kind of prupose, we want to work with the individual elements of the list.
 
-How do we extract the different elements from the list, either to display them or compare them?  
-The most straightforward is to use `list-ref`, a two-parameter procedure that takes a list and an index as inputs and returns the item at that index.
+How do we extract the different elements from the list, either to display them or compare them?  The most straightforward is to use `list-ref`, a two-parameter procedure that takes a list and an index as inputs and returns the item at that index.
 
 ```
 > (define sverdlovsky
@@ -85,9 +67,7 @@ Scheme also provides two other operations to extract values from lists: `car` ex
 ## Building lists
 
 We've been building new lists using `list`, `make-list`, or the quote operation.
-But what if we have an existing list and we want to add an element to the front?
-Say, suppose we want to add a unique identifier to each sighting, such as `'ufo023`.
-Scheme provides an operation called `cons` that builds a *new* list by adding a value to the front of the list.
+But what if we have an existing list and we want to add an element to the front?  Say, suppose we want to add a unique identifier to each sighting, such as `'ufo023`.  Scheme provides an operation called `cons` that builds a *new* list by adding a value to the front of the list.
 
 ```
 > (cons 'ufo023 sverdlovsky)
@@ -104,11 +84,13 @@ Scheme provides an operation called `cons` that builds a *new* list by adding a 
 ```
 
 Why is the operation called `cons` instead of `list-prepend` or something similar?
-Well, `cons` is the name John McCarthy, the designer of Lisp, chose about sixty years ago.
+Well, `cons` is the name John McCarthy, the designer of Lisp, chose over sixty years ago.
 "`cons`" is short for *construct*, because `cons` constructs lists.
 (The custom of naming procedures with the basic type they operate on, a dash, and the key operation did not start until a few decades later.)
 The names `car` and `cdr` were chosen for very specific reasons that will not make sense for a few more weeks.
 For now, just accept that you're learning a bit of strange computer-ese.
+
+Some people use `head` and `tail` instead of `car` and `cdr`. We prefer to stick with the traditional nomenclature.
 
 ## Nested lists
 
@@ -127,14 +109,12 @@ How can you get started, given that `cons` expects a list as one of its paramete
 You start with the empty list.
 
 Scheme's name for the empty list is a pair of parentheses with nothing between them: `'()`.
-Most implementations of Scheme permit you to refer to that list as `nil` or `null`.
+Most implementations of Scheme permit you to refer to that list as `null`.
 You can also create it with `(list)`.
 All permit you to describe the empty list by putting a single quote before the pair of parentheses.
 
 ```
 > '()
-'()
-> nil
 '()
 > null
 '()
@@ -142,16 +122,7 @@ All permit you to describe the empty list by putting a single quote before the p
 '()
 ```
 
-You will find that we prefer to use a name for that list. If sample code
-does not work in your version of Scheme, try inserting the following
-definitions.
-
-```
-(define nil '())
-(define null '())
-```
-
-Note that by using `cons` and `nil`, we can build up a list of any length by starting with the empty list and repeatedly prepending a value.
+Note that by using `cons` and `null`, we can build up a list of any length by starting with the empty list and repeatedly prepending a value.
 
 ```
 > (define singleton (cons "Russia" null))
@@ -263,6 +234,36 @@ If the value does not appear in the list, `indexes-of` returns the empty list.
 '()
 ```
 
+### `drop` and `take`: Extracting sublists
+
+The `(drop lst n)` procedure removes ("drops") the first `n` elements of `lst`.
+
+```
+> (drop (list "a" "b" "c" "d" "e") 3)
+'("d" "e")
+> (drop (list "a" "b" "c" "d" "e") 2)
+'("c" "d" "e")
+> (drop (list "a" "b" "c" "d" "e") 5)
+'()
+```
+
+In contrast, the `(take lst n)` procedure takes the first `n` elements of `lst`, dropping all remaining elements.
+
+```
+> (take (list "a" "b" "c" "d" "e") 1)
+'("a")
+> (take (list "a" "b" "c" "d" "e") 2)
+'("a" "b")
+> (take (list "a" "b" "c" "d" "e") 3)
+'("a" "b" "c")
+> (take (list "a" "b" "c" "d" "e") 4)
+'("a" "b" "c" "d")
+> (take (list "a" "b" "c" "d" "e") 6)
+. . take: contract violation
+  expected: a list with at least 6 elements
+  given: '("a" "b" "c" "d" "e")
+```
+
 ### `cadr` and company: Combining `car` and `cdr`
 
 To reduce the amount of typing necessary for the programmer, many
@@ -287,53 +288,61 @@ of the car of a list (applicable only to nested lists).
 '("green" "blue" "indigo" "violet")
 ```
 
+In working with the `c*r` procedures, we find it easiest to read them from right to left (as if often the case in Scheme) and to treat `d` as "drop" and `a` as "access". So, for example `cdddr` means "drop three elements" and `cadddr` means drp three elements and then access the first element".
+
 ## Summary of new list procedures
 
 `null` *Standard list constant.*
 :   The empty list.
 
-`(cons value lst)`{:.signature} *Standard List Procedure.*
+`(cons value lst)`{:.signature} *Standard list procedure.*
 :   Create a new list by prepending *`value`* to the front of *`lst`*.
 
-`(cdr lst)`{:.signature} *Standard List Procedure.*
+`(cdr lst)`{:.signature} *Standard list procedure.*
 :   Get a list the same as *`lst`* but without the first element.
 
-`(car lst)`{:.signature} *Standard List Procedure.*
+`(car lst)`{:.signature} *Standard list procedure.*
 :   Get the first element of *`lst`*.
 
 `(null? lst)`{:.signature} *Standard list predicate.*
 :   Checks if *`lst`* is the empty list.
 
-`(list-ref lst n)`{:.signature} *Standard List Procedure.*
+`(list-ref lst n)`{:.signature} *Standard list procedure.*
 :   Get the *`n`*th element of *`lst`*. Note that elements are numbered starting at 0.
 
-`(length lst)`{:.signature} *Standard List Procedure.*
+`(length lst)`{:.signature} *Standard list procedure.*
 :   Return the number of elements of list *`lst`*.
 
-`(append lst_0 lst_1 ... lst_n)`{:.signature} *Standard List Procedure.*
+`(append lst_0 lst_1 ... lst_n)`{:.signature} *Standard list procedure.*
 :   Create a new list by concatenating the elements of *`lst_0`*, *`lst_1`*, ... *`lst_n`*.
 
-`(index-of lst val)`{:.signature} *Stanrdard List Procedure.*
+`(index-of lst val)`{:.signature} *Standard list procedure.*
 :   Find the index of `val` in `lst`.  If `val` does not appear in `lst`, returns false (`#f`).
 
-`(indexes-of lst val)`{:.signature} *Stanrdard List Procedure.*
+`(indexes-of lst val)`{:.signature} *Standard list procedure.*
 :   Find all the indices of `val` in `lst`.  If `val` does not appear in `lst`, returns the empty list.
 
-`(caar lst)`{:.signature} *Standard List Procedure.*
+`(drop lst n)`{:.signature} *Standard list procedure.*
+: Remove the first `n` elements of `lst`.
+
+`(take lst n)`{:.signature} *Standard list procedure.*
+: Grab the first `n` elements of `lst`.
+
+`(caar lst)`{:.signature} *Standard list procedure.*
 :   If *`lst`*'s first element is a list, gets the first element of that first element, the the `car` of the `car` of *`lst`*. If *`lst`* is not a list, or its first element is not a list, reports an error.
 
-`(cadr lst)`{:.signature} *Standard List Procedure.*
+`(cadr lst)`{:.signature} *Standard list procedure.*
 :   Get the second element of *`lst`*, the `car` of the `cdr` of *`lst`*
 
-`(cddr lst)`{:.signature} *Standard List Procedure.*
+`(cddr lst)`{:.signature} *Standard list procedure.*
 :   Get all but the first two elements of *`lst`*, the `cdr` of the `cdr` of *`lst`*
 
-`(caddr lst)`{:.signature} *Standard List Procedure.*
+`(caddr lst)`{:.signature} *Standard list procedure.*
 :   Get the third element of *`lst`*, the `car` of the `cdr` of the `cdr` of *`lst`*.
 
 ## Self Checks
 
-### Check 1: List procedures
+### Check 1: List procedures (‡)
 
 Predict the results of evaluating the following expressions.
 

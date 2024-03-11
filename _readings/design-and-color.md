@@ -51,8 +51,6 @@ These principles serve a reference point for an informed exploration of color. W
 
 [Color Matters](https://www.colormatters.com/color-and-design/basic-color-theory) has useful illustrations of some of these principles and color schemes.  The [Palleton Color Scheme Designers](https://paletton.com) makes it very easy to experiment with creating color palettes incorporating several color schemes.
 
-<section id="design-and-color-self-checks"><title>Self Checks</title>
-
 Self Checks
 -----------
 

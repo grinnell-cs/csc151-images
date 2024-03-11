@@ -9,6 +9,7 @@ You begin the course with **3 tokens**, and you may
 
 + _**Late reading**_: Use **1 token** to turn in any reading problem up to 48 hours late.
 + _**Late lab writeup**_: Use **1 token** to turn in any lab writeup problem up to 48 hours late.
+* _**Late metacognitive reflection**_: Use **1 token** to turn in any metacognitive reflection up to 48 hours late.
 + _**Late mini-project**_: Use **1 token** to turn in a mini-project up to 48 hours late.
 + _**Incomplete mini-project**_: Use **1 token** to turn in the first redo of a mini-project for which you received an I.  (Mini-projects that receive an R or an M the first time through get a free redo.)
 + _**Late redo**_: Use **1 token** to turn in a redo of a mini-project up to 48 hours late.

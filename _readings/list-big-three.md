@@ -5,14 +5,12 @@ summary: |
   "the big three" list processing operations: `map`, `filter`, and
   `reduce`.
 prereqs: |
-  [An abbreviated introduction to Racket](../readings/racket-intro).
-  [Data types](../readings/data-types).
+  [An abbreviated introduction to Scheme](../readings/intro-scheme).
+  [Data types](../readings/types).
   [Writing your own procedures](../readings/procedures).
-  [Lists and map](../readings/list-map).
+  [Lists and map](../readings/list-basics).
   [Anonymous procedures](../readings/anonymous-procedures).
 ---
-
-_This page is now ready for public consumption.._
 
 We've started to see some significant power in using two "higher order" list operations, `map` and `apply`.  These are called "higher order" procedures because they take procedures as inputs.
 
@@ -93,7 +91,7 @@ Of course, we could also combine the values in other ways.
 * We combine the "a b" and the "c d" with a space, yielding `"a b c d"`.
   We are now down to one value.
 
-Fortunately, we end up with the same value either way.
+Fortunately, we end up with the same value either way. That's because our procedure is _associative_. (More on that later.)
 
 So we can now go back to our original problem: Creating a new string with reversed versions of all the original words.
 
@@ -112,6 +110,8 @@ We can, of course, use `reduce` in many other ways.  To find the largest value i
 > (reduce max (list 3 1 5 10 3 2))
 10
 ```
+
+To find the smallest, we reduce with `min`.
 
 ```drracket
 > (reduce min (list 3 1 5 10 3 2))

@@ -70,6 +70,15 @@ a number of such predicates.
 * `boolean?` tests whether its argument is a Boolean value.
 * `list?` tests whether its argument is a list.
 
+The `csc151` library provides many others. Here are a few.
+
+* `rgb?` tests whether its argument is an RGB color.
+* `color-name?` tests whether its argument is a color name.
+* `color?` tests whether its argument is one of the various representations
+  of colors we use.
+* `image?` tests whether its argument is an image.
+* `polygon?` tests whether an image is a polygon.
+
 ### Equality predicates
 
 Scheme provides a variety of predicates for testing whether two values
@@ -90,12 +99,7 @@ can be understood to be the same.
 *  `=` tests whether its arguments, which must all be numbers, are 
   numerically equal; 5 and 5.0 are numerically equal for this purpose.
 
-*For this class, you are not required to understand the difference
-between the `eq?` and `eqv?` procedures. In particular, you need not
-plan to use the `eqv?` procedure. At least for the first half of the
-semester, you also need not understand the difference between the `eq?`
-and `equal?` procedures. Feel free to use `equal?` almost exclusively,
-except when dealing with numbers, in which case you should use `=`.*
+*For this class, you are not required to understand the difference between the `eq?`, `eqv?`, and `equal?` procedures. In particular, you need not plan to use the `eqv?` procedure. At least for the first half of the semester, you also need not understand the difference between the `eq?` and `equal?` procedures. Feel free to use `equal?` almost exclusively, except when dealing with numbers, in which case you should use `=`.*
 
 ### Numeric predicates
 
@@ -252,7 +256,7 @@ fails, and `new-even?` returns false. If `and` were a procedure, we
 would still evaluate the `(even? ...)`{:.signature}, and that test would
 generate an error, since `even?` can only be called on integers.
 
-## Another Detour: Separating the world into false and "truish" (everything not false)
+## Another detour: Separating the world into false and "truish" (everything not false)
 
 Although many computer scientists, philosophers, and mathematicians prefer
 the purity of dividing the world into "false" and "true", Scheme supports
@@ -283,13 +287,11 @@ predicate that determines whether its input, a real number, is between
     (<= 0 val 100)))
 ```
 
-<!--
 Note that we might might also write
 
 ```
 (define valid-grade? (cut (<= 0 <> 100)))
 ```
--->
 
 We can also write our own comparators.  For example, here's a somewhat
 pointless comparator that orders words based on their second letter.
@@ -306,6 +308,7 @@ pointless comparator that orders words based on their second letter.
                (string-ref str2 1))))
 ```
 
+<!--
 Let's see how sorting with this comparator differs from sorting with
 a more traditional comparator.
 
@@ -337,6 +340,7 @@ a more traditional comparator.
   "twas"
   "gyre")
 ```
+-->
 
 ## Mental models: Tracing `and` and `or`
 
@@ -572,7 +576,7 @@ is strictly less than the length of `str2`.
 #f
 > (shorter? "ab" "ba")
 #f
-> (shorter "" "abc")
+> (shorter? "" "abc")
 #t
 ```
 

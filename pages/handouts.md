@@ -25,6 +25,11 @@ You'd think the [syllabus](../syllabus) and [schedule](../schedule) would provid
 [Tokens](tokens)
   : Information on gaining and spending tokens.
 
+<!-- Sam
+[Mastery Grading, Revisited](mastery-grading-revisited)
+  : Yet another explanation of the mastery grading approach.
+-->
+
 ## Other important issues
 
 <!-- Sam
@@ -67,6 +72,9 @@ You'd think the [syllabus](../syllabus) and [schedule](../schedule) would provid
 
 [SamR's Style Guide for Racket](style-guide)
   : Opinions and expectations on what your code should look like.
+
+[Tracing procedure calls](tracing-procedure-calls)
+  : An example that explains some issues related to the tracing of procedure calls, intended for students who have difficulty with the first or second tracing LA.
 
 [Tracing `alphabetically-first`](tracing-alphabetically-first)
   : An exploration of some definitions of a recursive procedure.

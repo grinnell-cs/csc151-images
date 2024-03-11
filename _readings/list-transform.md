@@ -2,7 +2,6 @@
 title: Transforming lists
 summary: |
   We investigate a particular form of decomposition relevant in computing in which transformations over a collection of values are really transformations of the individual elements of the collection.
-
 prereqs: |
   [List Basics]({{ "/readings/data-types.html" | relative-url }}).
 preimg: true
@@ -12,21 +11,21 @@ Imagine representing your five favorite colors as a list.  That's fairly straigh
 
 ```
 > (define faves 
-    (list (color 128 0 128) (color 255 0 255) (color 255 0 128)
-          (color 128 0 255) (color 192 0 192)))
+    (list (rgb 128 0 128) (rgb 255 0 255) (rgb 255 0 128)
+          (rgb 128 0 255) (rgb 192 0 192)))
 ```
 
 Now, imagine deciding that you want to make all of them slightly darker.  As we've done when working with images, we can decompose this into the simpler problem of making one color darker.  Here's one possibility.
 
 ```
-;;; (color-darker c) -> color?
+;;; (rgb-darker c) -> color?
 ;;;   c : color?
 ;;; Create a slightly darker version of c.
-(define color-darker
+(define rgb-darker
   (lambda (c)
-    (rgb (- (color-red c) 32)
-         (- (color-green c) 32)
-         (- (color-blue c) 32))))
+    (rgb (- (rgb-red c) 32)
+         (- (rgb-green c) 32)
+         (- (rgb-blue c) 32))))
 ```
 
 We can now make any color darker.  However, how do we do this for a *collection* of colors, a collection we've represented as a list?
@@ -37,29 +36,26 @@ We can do so manually.
 
 ```
 > (define darker-faves
-    (list (color-darker (color 128 0 128)) (color-darker (color 255 0 255))
-          (color-darker (color 255 0 128)) (color-darker (color 128 0 255))
-          (color-darker (color 192 0 192))))
-> darker-faves
-(list (color 96 0 96 255) (color 223 0 223 255) (color 223 0 96 255) 
-      (color 96 0 223 255) (color 160 0 160 255))
+    (list (rgb-darker (rgb 128 0 128)) (rgb-darker (rgb 255 0 255))
+          (rgb-darker (rgb 255 0 128)) (rgb-darker (rgb 128 0 255))
+          (rgb-darker (rgb 192 0 192))))
 ```
 
-However, it's a lot of work to type `color-darker` that many times.  What if we had dozens of colors in our list?  Would we really want to keep typing `color-darker`?  And what are the odds that we'd make a mistake with parentheses somewhere along the way?  There must be a better option.
+However, it's a lot of work to type `rgb-darker` that many times.  What if we had dozens of colors in our list?  Would we really want to keep typing `rgb-darker`?  And what are the odds that we'd make a mistake with parentheses somewhere along the way?  There must be a better option.
 
 In Scheme, we realize the behavior of *lifting a function to a list of values* with the `map` function:
 
 ```
-> (map color-darker faves)
-(list (color 96 0 96 255) (color 223 0 223 255) (color 223 0 96 255) 
-      (color 96 0 223 255) (color 160 0 160 255))
+> (define darker-faves (map rgb-darker faves))
+> (map rgb->string darker-faves)
+'("96/0/96" "223/0/223" "223/0/96" "96/0/223" "160/0/160")
 ```
 
 Note that the `map` procedure does not affect the original list.
 
 ```
-> faves
-(list (color 128 0 128 255) (color 255 0 255 255) (color 255 0 128 255) (color 128 0 255 255) (color 192 0 192 255))
+> (map rgb->string faves)
+'("128/0/128" "255/0/255" "255/0/128" "128/0/255" "192/0/192")
 ```
 
 ## The `map` procedure
@@ -73,7 +69,7 @@ Note that the `map` procedure does not affect the original list.
     * Takes as an input an element of the list.
     * Produces as an output the result of transforming that element.
 
-    In our above example, `compute-cola-salary` is a function that transforms an old salary into a new, adjusted salary.
+    In our above example, `rgb-darker` is a function that transforms an color into a new, adjusted color.
 
 * The second argument is a list that contains the elements that we wish to transform.
 
@@ -83,37 +79,37 @@ Any transformation over colors can be passed to our call to `map` with `faves`. 
 > (define maximize-red
     (lambda (c)
       (rgb 255
-           (color-green c)
-           (color-blue c))))
+           (rgb-green c)
+           (rgb-blue c))))
 
-> (map maximize-red faves)
-(list (color 255 0 128 255) (color 255 0 255 255) (color 255 0 128 255) (color 255 0 255 255) (color 255 0 192 255))
+> (map rgb->string (map maximize-red faves))
+'("255/0/128" "255/0/255" "255/0/128" "255/0/255" "255/0/192")
 ```
 
-We might also deck how many of the colors are bright.
+We might also check how many of the colors are bright.
 
 ```
-;;; (color-brightness c) -> real? (between 0 and 100)
+;;; (rgb-brightness c) -> real? (between 0 and 100)
 ;;;   c : color?
 ;;; Find the approximate perceived brightness of c
-(define color-brightness
+(define rgb-brightness
   (lambda (c)
     (round (* 100/255 
-              (+ (* .30 (color-red c))
-                 (* .59 (color-green c))
-                 (* .11 (color-blue c)))))))
+              (+ (* .30 (rgb-red c))
+                 (* .59 (rgb-green c))
+                 (* .11 (rgb-blue c)))))))
 
-;;; (color-bright? c) -> boolean?
+;;; (rgb-bright? c) -> boolean?
 ;;;   c : color?
 ;;; Determine if c is "bright" (with a perceived brightness of at
 ;;; least 50).
-(define color-bright?
+(define rgb-bright?
   (lambda (c)
-    (>= (color-brightness c) 50)))
+    (>= (rgb-brightness c) 50)))
 ```
 
 ```
-> (map color-bright? faves)
+> (map rgb-bright? faves)
 '(#f #f #f #f #f)
 ```
 
@@ -132,7 +128,7 @@ Using decomposition, we might recognize this image as a bunch of green circles o
 ```
 (define green-circle
   (lambda (radius) 
-    (circle radius "solid" "green")))
+    (solid-circle radius "green")))
 ```
 
 And we can use `green-circle` to better capture the structure of the image in code:
@@ -227,7 +223,7 @@ So let's summarize the image code we've written:
 ```
 (define green-circle
   (lambda (radius) 
-    (circle radius 'solid "green")))
+    (solid-circle radius "green")))
 
 (define circles
   (map green-circle (list 20 40 60 40 20)))
@@ -264,11 +260,55 @@ What if we wanted circles of sizes 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, an
 
 This is the power of decomposition (and lists) in action!  In particular, if we use appropriate *abstractions*, we can create highly reusable code that both captures our intent but can be used in other contexts with minimal modification.
 
+### Detour: Rethinking `many-green-circles` with `cut` and composition
+
+Let's reconsider what we've just written.
+
+```
+> (define green-circle
+    (lambda (radius) 
+      (solid-circle radius "green")))
+
+> (define times5
+    (lambda (val)
+      (* 5 val)))
+
+> (define many-green-circles
+    (apply beside (map green-circle (map times5 (range 1 13)))))
+```
+
+If you've learned how to `cut` procedures, you know we could write something even more concise. In particular, we could get rid of the definition of `times5` and then replace its use by a cut expression.
+
+```
+> (define many-green-circles
+    (apply beside (map green-circle (map (cut (* 5 <>)) (range 1 13))))))
+```
+
+We could even do the same with the `green-circle` part.
+
+```
+> (define many-green-circles
+    (apply beside
+           (map (cut (solid-circle <> "green"))
+                (map (cut (* 5 <>))
+                     (range 1 13)))))
+```
+
+And if we use function composition, we can even avoid calling `map` twice.
+
+```
+> (define many-green-circles
+    (apply beside
+           (map (o (cut (solid-circle <> "green"))
+                   (cut (* 5 <>)))
+                (range 1 13))))
+```
+
+Is this still decomposed? Yes! We've broken up the problem into parts; we've just avoided naming the individual parts.
+
 ## Thinking with types
 
-As you've likely discovered already, it is important that we use the correct types when
-we run our procedures.  With both `map` and `apply`, we have to think a bit more deeply
-about types.
+As you've likely discovered already, it is important that we use the correct types when we run our procedures.  With both `map` and `apply`, we have to think a bit more deeply about types.
 
 What are the types of the inputs to `map`?
 
@@ -280,12 +320,9 @@ Hopefully, you said something like
 
 > `map` takes two inputs.  The first is a procedure.  The second is a list of values.
 
-But there's more to it than that.  There's a relationship between the procedure and
-the list of values.  In particular, *the procedure much be applicable to each value
-in the list*.  Let's consider two simple examples.
+But there's more to it than that.  There's a relationship between the procedure and the list of values.  In particular, *the procedure much be applicable to each value in the list*.  Let's consider two simple examples.
 
-You may remember that `sqr` computes the square of a number and `string-upcase` converts
-a string to upper case.  
+You may remember that `sqr` computes the square of a number and `string-upcase` converts a string to upper case.  
 
 ```
 > (sqr 5)
@@ -294,8 +331,7 @@ a string to upper case.
 "QUIET"
 ```
 
-If we're using `map`, we should use `sqr` with lists of numbers and `string-upcase` with
-lists of numbers.
+If we're using `map`, we should use `sqr` with lists of numbers and `string-upcase` with lists of strings.
 
 ```
 > (range 2 6)
@@ -321,13 +357,9 @@ But what happens if we don't match types?  Let's see.
   given: 2
 ```
 
-You'll note that we get errors.  Are they the errors you expected?  It might be
-nicer if DrRacket more explicitly told us that the elements of the list were not 
-the correct types for the procedure.  But it's done that in its own way.
+You'll note that we get errors.  Are they the errors you expected?  It might be nicer if DrRacket more explicitly told us that the elements of the list were not the correct types for the procedure.  But it's done that in its own way.
 
-What if we do something even stranger, such as writing something other than a
-procedure in the procedure position, or something other than a list in the
-list position?  Let's try.
+What if we do something even stranger, such as writing something other than a procedure in the procedure position, or something other than a list in the list position?  Let's try.
 
 ```
 > (map 5 (list 1 2 3))
@@ -340,12 +372,9 @@ list position?  Let's try.
   given: 5
 ```
 
-It's good to see that these error messages are clear.  Let's do our best to remember
-those so that when we see them, we know what's gone wrong.
+It's good to see that these error messages are clear.  Let's do our best to remember those so that when we see them, we know what's gone wrong.
 
-Next, let's move on to `apply`.  Like `map`, `apply` takes a procedure and a list
-as parameters.  While `map` applies the procedure element by element, `apply`
-applies the procedure to the elements _en masse_, as it were.
+Next, let's move on to `apply`.  Like `map`, `apply` takes a procedure and a list as parameters.  While `map` applies the procedure element by element, `apply` applies the procedure to the elements _en masse_, as it were.
 
 ```
 > (apply * (list 2 3 4))
@@ -404,20 +433,16 @@ Once again, we should see what happens if we give incorrect types.
   other arguments...:
 ```
 
-We will need to practice reading error messages like those.  But each is saying, in
-essence, "you got the types wrong".
+We will need to practice reading error messages like those. But each is saying, in essence, "you got the types wrong". When you get such error messages, reflect on what type issues you might have.
 
 ## Extending `map`
 
-We've explored `map` with one-parameter procedures and a single list.  But `map` can
-also use multi-parameter procedures and multiple lists.  In that case, it takes
-corresponding elements of each list.  Let's explore a quick example, which we may
-return to in the lab.
+We've explored `map` with one-parameter procedures and a single list.  But `map` can also use multi-parameter procedures and multiple lists.  In that case, it takes corresponding elements of each list.  Let's explore a quick example, which we may return to in the lab.
 
 ```
 > (define sized-circle
     (lambda (radius)
-      (circle radius 255 "blue")))
+      (solid-circle radius "blue")))
 > (range 10 30 5)
 '(10 15 20 25)
 > (map sized-circle (range 10 30 5))
@@ -425,7 +450,7 @@ return to in the lab.
 
 > (define shaded-circle
     (lambda (shade)
-      (circle 20 shade "blue")))
+      (solid-circle 20 (rgb 0 0 255 shade))))
 > (range 50 251 50)
 '(50 100 150 200 250)
 > (map shaded-circle (range 50 251 50))
@@ -433,7 +458,7 @@ return to in the lab.
 
 > (define blue-circle
     (lambda (radius shade)
-      (circle radius shade "blue")))
+      (solid-circle radius (rgb 0 0 255 shade))))
 > (map blue-circle (range 10 31 5) (range 50 251 50))
 ; Output to left reader's imagination or experimentation
 ```
@@ -464,18 +489,11 @@ Yeah, that last one isn't all that helpful.
 
 ## Mental models: Tracing `map` and `apply`
 
-As we've seen, it's useful to be able to trace our Racket code by hand to consider
-what the Racket evaluator is doing (or at least what we think it's doing) and, therefore,
-why we get the results or errors that we do.  And you already know many aspects of
-the mental model for doing so, particularly the rule that you evaluate arguments
-before applying a procedure and that you use substitution for user-defined procedures.
+As we've seen, it's useful to be able to trace our Racket code by hand to consider what the Racket evaluator is doing (or at least what we think it's doing) and, therefore, why we get the results or errors that we do.  And you already know many aspects of the mental model for doing so, particularly the rule that you evaluate arguments before applying a procedure and that you use substitution for user-defined procedures.
 
-For `map`, we use the rule "Replace `(map PROC (list VAL0 VAL1 ...))` with 
-`(list (PROC VAL0) (PROC VAL1) ...)`."  (There's a similar rule for the multi-parameter
-`map`.
+For `map`, we use the rule "Replace `(map PROC (list VAL0 VAL1 ...))` with `(list (PROC VAL0) (PROC VAL1) ...)`."  (There's a similar rule for the multi-parameter `map`.
 
-For `apply`, we use the rule "Replace `(apply PROC (list VAL0 VAL1 ...))` with
-`(PROC VAL0 VAL1 ...)`.
+For `apply`, we use the rule "Replace `(apply PROC (list VAL0 VAL1 ...))` with `(PROC VAL0 VAL1 ...)`.
 
 So let's try an example.
 
@@ -487,16 +505,18 @@ So let's try an example.
 ;     (apply + (map dub (range 3 8 2)))
 ; --> (apply + (map dub (list 3 5 7)))
 ; --> (apply + (list (dub 3) (dub 5) (dub 7)))
+; --> (apply + (list (* 2 3) (dub 5) (dub 7)))
 ; --> (apply + (list 6 (dub 5) (dub 7)))
+; --> (apply + (list 6 (* 2 5) (dub 7)))
 ; --> (apply + (list 6 10 (dub 7)))
+; --> (apply + (list 6 10 (* 2 7)))
 ; --> (apply + (list 6 10 14))
 ; --> (+ 6 10 14)
 ; --> 30
 
 ```
 
-Note that when we're working with lists, it's helpful to explicitly write `(list ...)`, which
-reminds us that we're dealing with a list and not an expression to further evaluate.
+Note that when we're working with lists, it's helpful to explicitly write `(list ...)`, which reminds us that we're dealing with a list and not an expression to further evaluate.
 
 Here's an example with the multi-list `map`.
 
@@ -511,9 +531,7 @@ Here's an example with the multi-list `map`.
 ; --> 231
 ```
 
-While we'll rarely write out all of these steps, it helps to keep them in mind as
-we think about what `map` and `apply` are doing.  And we will, on occasion, pull
-out a piece of paper (or an electronic document) to think through part of the
+While we'll rarely write out all of these steps, it helps to keep them in mind as we think about what `map` and `apply` are doing.  And we will, on occasion, pull out a piece of paper, a whiteboard, or an electronic document to think through part of the
 steps of an evaluation.
 
 ## Self-checks
@@ -530,37 +548,38 @@ Now use `decrement` and `map` to write an expression that `decrements` the conte
 
 ### Self-check 2 (Colorful circles) (‡)
 
-Here's a function, `(outlined-circle color)`, that makes a circle of radius 20 of the appropriate color with a black outline.
+Here's a function, `(thickly-outlined-circle color)`, that makes a circle of diameter 20 of the appropriate color with a thick black outline.
 
 ```
-;;; (outlined-circle color) -> image?
+;;; (thickly-outlined-circle color) -> image?
 ;;;   color : color?
-;;; Make an outlined circle of the specified color.
-(define outlined-circle
+;;; Make a thickly outlined circle of the specified color.
+(define thickly-outlined-circle
   (lambda (color)
-    (overlay (circle 20 "outline" "black")
-             (circle 20 "solid" color))))
+    (overlay (outlined-circle 20 "black" 5)
+             (solid-circle 20 color))))
 ```
 
-Here's the `color-darker` function we used above.
+Here's the `rgb-darker` function we used above.
 
 ```
-;;; (color-darker c) -> color?
-;;;   c : color?
+;;; (rgb-darker c) -> color?
+;;;   c : rgb?
 ;;; Create a slightly darker version of c.
-(define color-darker
+(define rgb-darker
   (lambda (c)
-    (rgb (- (color-red c) 32)
-         (- (color-green c) 32)
-         (- (color-blue c) 32))))
+    (rgb (- (rgb-red c) 32)
+         (- (rgb-green c) 32)
+         (- (rgb-blue c) 32))))
 ```
 
 a. Using `apply` and `map`, make a picture of seven outlined circles in the rainbow colors (`"red"`, `"orange"`, `"yellow"`, `"green"`, `"blue"`, `"indigo"`, and `violet`) in a row.
 
-![Seven outlined circles in the rainbow colors.]({{ "/images/rainbow-circles.png" | relative_url }})
+![Seven outlined circles in the rainbow colors.]({{ "/images/thickly-outlined-rainbow-circles.png" | relative_url }})
 
-b. Using `apply` and `map`, make a picture of seven outlined circles in darker versions of the rainbow colors.  Note that you'll need to convert the color names to RGB colors with `color-name->rgb` and then make the darker with two calls to `color-darker`.
+b. Using `apply` and `map`, make a picture of seven outlined circles in darker versions of the rainbow colors (using two calls to `rgb-darker`).  Note that you'll need to convert the color names to RGB colors with `color-name->rgb` and then make them darker with two calls to `rgb-darker`.
 
-![Seven outlined circles in slightly darker versions of the rainbow colors.]({{ "/images/darker-rainbow-circles.png" | relative_url }})
+![Seven outlined circles in slightly darker versions of the rainbow colors.]({{ "/images/thickly-outlined-darker-rainbow-circles.png" | relative_url }})
 
-Note: You should need four calls to `map`.
+Note: You might need three or four calls to `map` (or a particularly good composition of functions).
+

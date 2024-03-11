@@ -3,7 +3,6 @@
   summary: |
     We begin the class by exploring the definition of computer
     science and by trying to write some basic algorithms.
-  notes: /eboards/eboard01.html
 
 - topic: Getting started with Scheme
   abbrev: racket-tech
@@ -69,10 +68,20 @@
     - page: /readings/strings.html
     - page: /readings/symbols.html
   lab:
-    - page: /labs/basic-types.html
+    - page: /labs/numbers.html
   todo:
     - Consider adding symbols to the lab.
     - Consider which types reading to use (or combine them).
+    - Might do some cleanup; we split numbers and strings in 2024Sp
+
+- topic: Characters and strings
+  abbrev: strings
+  summary: |
+    We explore the ways in which we represent text in Scheme,
+    including both strings and the characters we use to build
+    strings.
+  lab:
+    - page: /labs/strings.html
 
 - topic: RGB colors
   abbrev: rgb-colors
@@ -82,18 +91,10 @@
     - page: /readings/design-and-color.html
     - page: /readings/rgb-colors.html
   lab:
-    - page: /labs/rgb-colors
+    - page: /labs/rgb-colors.html
   todo:
     - Make sure this works with the new model.
-
-- topic: Transforming colors
-  abbrev: transforming-rgb
-  summary: |
-    We consider additional mechanisms for working with RGB colors.
-  reading:
-    - page: /readings/transforming-rgb.html
-  lab:
-    - page: /labs/transforming-rgb.html
+    - Combine the labs
 
 - topic: Pair programming
   abbrev: pair-programming
@@ -104,6 +105,8 @@
       resource: /files/PairProgramming.pdf
     - title: Coping with Hitchhikers and Couch Potatoes on Teams (from B. Oakley et. al (2004).  Turning Student Groups into Effective Teams.  <em>Journal of Student-Centered Learning</em> 2 (1).)
       resource: /files/OakleyHitchhikers2004.pdf
+    - title: Diverse Teams Feel Less Comfortable -- and That's Why They Perform Better
+      resource: /files/DiverseTeams2016.pdf
   lab:
     - (TBA)
 
@@ -113,6 +116,7 @@
     We expand our understanding of RGB transformations to image transformations.
   reading:
     - page: /readings/anonymous-procedures.html
+    - page: /readings/transforming-rgb.html
     - page: /readings/transforming-images.html
   lab:
     - page: /labs/transforming-images.html
@@ -136,27 +140,10 @@
   summary: |
     We pause to catch up on a variety of topics.
 
-- topic: Images as collections of shapes
-  abbrev: drawings
+- topic: Another pause for breath
+  abbrev: pause-week-5
   summary: |
-    We return to our first model of images to explore a few more mechanisms for working with with such images and to compare models.
-  reading:
-    - page: /readings/drawings-as-values.html
-  lab:
-    - page: /labs/drawings-as-values.html
-  todo:
-    - We did not have this topic last semester.
-
-- topic: Software engineering fundamentals
-  abbrev: software-engineering
-  summary: |
-    We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
-  reading:
-    - page: /readings/documenting-your-code.html
-    - page: /readings/rackunit.html
-    - page: /readings/hypothesis-driven-debugging.html
-  lab:
-    - page: /labs/rackunit.html
+    We continue to catch up on topics.
 
 - topic: Lists
   abbrev: lists
@@ -187,6 +174,17 @@
   todo:
     - Incorporate sort and tally.
     - Consider incorporating the old /labs/drawing-lists.html
+
+- topic: Software engineering fundamentals
+  abbrev: software-engineering
+  summary: |
+    We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
+  reading:
+    - page: /readings/documenting-your-code.html
+    - page: /readings/rackunit.html
+    - page: /readings/hypothesis-driven-debugging.html
+  lab:
+    - page: /labs/rackunit.html
 
 - topic: Other ways to build lists
   abbrev: building-lists
@@ -259,6 +257,11 @@
   lab:
     - page: /labs/numeric-recursion.html
 
+- topic: Pause for breath
+  abbrev: pause
+  summary: |
+    We pause to explore and revisit ideas associated with recursion.
+
 - topic: Randomness
   abbrev: randomness
   summary: |
@@ -268,15 +271,6 @@
     - page: /readings/randomness.html
   lab:
     - page: /labs/exploring-randomness.html
-
-- topic: Images as functions
-  abbrev: image-compute
-  summary: |
-    We conside ways to treat images as functions from positions to colors.
-  reading:
-    - page: /readings/image-compute.html
-  lab:
-    - page: /labs/image-compute.html
 
 - topic: Pairs
   abbrev: pairs
