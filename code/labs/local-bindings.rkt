@@ -111,7 +111,7 @@ predict the result.  Finally, check your answer experimentally.
 ; +--------------------------------+
 
 #|
-Bindings happen behind the scenes. It may, however, be useful to see what bindings DrRacket is doing. The csc151 package includes a set of operations for viewing what happens when you do a binding: `verbose-define`, `verbose-let`, and `verbose-let*`. Since you will rarely need these procedures, we don’t include them in the primary csc151 package. Hence, you need to require them separately.
+Bindings happen behind the scenes. It may, however, be useful to see what bindings DrRacket is doing. The csc151 package includes a set of operations for viewing what happens when you do a binding: `verbose-define`, `verbose-let`, and `verbose-let*`. Since you will rarely need these procedures, we don't include them in the primary csc151 package. Hence, you need to require them separately.
 
 Add the following line to your definitions pane.
 
@@ -202,6 +202,19 @@ five pennies to make thirty cents.
 In your spare time (not now), consider how you might handle issues 
 like that.  (If you continue with the CS major, you'll learn an
 algorithm in either CSC 207 or CSC 301.)
+|#
+
+#|
+Here's some starter code, in case you consider it useful.
+
+(define make-change
+  (lambda (cents)
+    (let* ([quarters (quotient cents 25)]
+           [centsible (- cents (* quarters 25))]
+           [dimes (quotient centsible 10)]
+           [centsless (- centsible (* dimes 10))]
+           ...)
+      (list quarters dimes nickles pennies))))
 |#
 
 ; +-----------------------------+------------------------------------
