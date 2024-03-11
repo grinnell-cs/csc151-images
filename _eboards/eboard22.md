@@ -19,6 +19,8 @@ _Approximate overview_
 Administrative stuff
 --------------------
 
+* Greetings on the celebration of the revealing of the Quran
+* Welcome to our prospective student!
 * I hope you are doing okay with the time change.
 * For reasons I will discuss, I will not be in class on Wednesday or
   Friday. You will have guest teachers both days.
@@ -51,7 +53,7 @@ Wellness
 * Tuesday, 2024-03-12, 4pm, BRAC P103 (Multipurpose Dance Studio):
   _Yoga_.
 * Thursday, 2024-03-14, 7-8:30 pm, Harris Concert Hall.
-  _Grocery Bingo"
+  _Grocery Bingo_
 
 Misc
 
@@ -59,7 +61,7 @@ Misc
 
 ### Upcoming work
 
-* Tuesday, 2024-03-12, 11:00 pm, More readings
+* Tuesday, 2024-03-12, 11:00 pm, Reading
     * [Numeric recursion](../readings/numeric-recursion)
     * [_Submit reading response on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4217685/)
 * Wednesday, 2024-03-13, 8:30am, [Lab writeup](../labs/local-bindings)
@@ -70,15 +72,22 @@ Misc
 * Friday, 2024-03-15, 8:30am, Quiz!
     * Topic: Local Bindings (which we'll cover today)
 * Friday, 2024-03-15, 8:30am, [Wednesday's lab](../labs/numeric-recursion)
-    * [_Submit lab writeup on Gradescope_](...)
-* Friday, 2024-03-15, 11:00pm, Post-Reflection on [MP5](../mps/mp05)
+    * [_Submit lab writeup on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4218845/)
+* Friday, 2024-03-15, 11:00pm, [MP5](../mps/mp05) post-reflection
     * [_Submit post-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4200918)
-* Monday, 2024-04-01, 11:00pm, Pre-Reflection on [MP6](../mps/mp06)
+* Sunday, 2024-03-31, 11:00pm, Reading
+    * [Randomness and simulation](../readings/randomness)
+    * [_Submit randomness reading response on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4218849/)
+* Monday, 2024-04-01, 11:00pm, [MP6](../mps/mp06) pre-reflection
     * [_Submit MP6 pre-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4217838/)
 * Sunday, 2024-04-07, 11:00pm, [MP4](../mps/mp04) Redo
     * [_Submit MP4 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4217681)
 
+_On April 1, we'll discuss whether the MP5 redo should be due on April 7th or 14th._
+
 ### Spring Break PSA
+
+### Recursion Video!
 
 Questions
 ---------
