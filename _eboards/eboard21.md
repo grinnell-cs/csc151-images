@@ -64,7 +64,7 @@ Wellness
 * Tuesday, 2024-03-12, 4pm, BRAC P103 (Multipurpose Dance Studio):
   _Yoga_.
 * Thursday, 2024-03-14, 7-8:30 pm, Harris Concert Hall.
-  _Grocery Bingo"
+  _Grocery Bingo_
 
 Misc
 
