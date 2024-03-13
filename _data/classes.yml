@@ -258,6 +258,7 @@
 
 - topic: Local bindings
   abbrev: let
+  notes: https://docs.google.com/presentation/d/1fk3Pa6qqCCG_TbxndFmhmqGW0FSdq-L0PgJRLzpKlr4/edit?usp=sharing
   summary: |
     We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
   reading:
