@@ -268,6 +268,7 @@
     - page: /readings/numeric-recursion.html
   lab:
     - page: /labs/numeric-recursion.html
+  notes: ../eboards/eboard23.html
 
 - topic: Pause for breath
   abbrev: pause
