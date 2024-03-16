@@ -39,7 +39,7 @@ Let's build another triangle with half that side length.  If you recall your geo
 
 ![A solid blue triangle with side-length 64.](../images/fractals/triangle-64.png)
 
-We can get a similar triangle to the original one (but with a "hole" in the middle) by appropriately stacking three of those triangles.
+We can get a similar triangle to the original one (but with a "hole" in the middle) by appropriately combining three of those triangles, two side by side and then one over them.
 
 `(above triangle-64 (beside triangle-64 triangle-64))`
 
@@ -107,43 +107,44 @@ Somewhere along the way, I think we said that these techniques might help us mak
 a. Write a procedure, `fractal-triangle`, that makes the basic fractal triangle described above.
 
 ```
-;;; (fractal-triangle size color n) -> image?
-;;;   size : positive-real?
+;;; (fractal-triangle side color n) -> image?
+;;;   side : positive-real?
 ;;;   color : rgb?
 ;;;   n : non-negative integer
-;;; Make a fractal triangle using `color` as the primary color.
+;;; Make a fractal triangle of the given side length using `color` as 
+;;; the primary color.
 ```
 
 b. Write a procedure, `rgb-fractal-triangle`, that makes a fractal triangle in which the top triangle is "redder" than the basic color, the lower-left triangle is "greener" than the basic color, and the lower-right triangle is "bluer" than the basic color.
 
 ```
-;;; (rgb-fractal-triangle size color n) -> image?
-;;;   size : positive-real?
+;;; (rgb-fractal-triangle side color n) -> image?
+;;;   side : positive-real?
 ;;;   color : rgb?
 ;;;   n : non-negative integer
-;;; Make a fractal equilateral triangle using `color` as the primary
-;;; color.  In the recursive steps, the base color of the top triangle
-;;; is `(rgb-redder color)`, the base color of the lower-left triangle is
-;;; `(rgb-greener color)`, and the base color of the lower-right triangle
-;;; is `(rgb-bluer color)`.  
+;;; Make a fractal equilateral triangle of the given side length using
+;;; `color` as the primary color.  In the recursive steps, the base
+;;; color of the top triangle is `(rgb-redder color)`, the base color
+;;; of the lower-left triangle is `(rgb-greener color)`, and the base
+;;; color of the lower-right triangle is `(rgb-bluer color)`.  
 ```
 
 c. As you saw in our examples, once we start changing colors, it can be nice 
 to "fill in" the center triangle with the original color.  You will find it easiest to do so by overlaying the fractal triangle on a same-size triangle in the original color.
 
-Write a procedure, `(new-rgb-fractal-triangle size color n)`, that does just that.
+Write a procedure, `(new-rgb-fractal-triangle side color n)`, that does just that.
 
 ```
-;;; (new-rgb-fractal-triangle size color n) -> image?
-;;;   size : positive-real?
+;;; (new-rgb-fractal-triangle side color n) -> image?
+;;;   side : positive-real?
 ;;;   color : rgb?
 ;;;   n : non-negative integer
-;;; Make a fractal equilateral triangle using `color` as the primary
-;;; color.  In the recursive steps, the base color of the top triangle
-;;; is `(rgb-redder color)`, the base color of the lower-left triangle is
-;;; `(rgb-greener color)`, and the base color of the lower-right triangle
-;;; is `(rgb-bluer color)`.  The base color of the central triangle should
-;;; be `color`.  
+;;; Make a fractal equilateral triangle of the given side length using
+;;; `color` as the primary color.  In the recursive steps, the base
+;;; color of the top triangle is `(rgb-redder color)`, the base color
+;;; of the lower-left triangle is `(rgb-greener color)`, and the base
+;;; color of the lower-right triangle is `(rgb-bluer color)`.  The base
+;;; color of the central triangle should be `color`.  
 ```
 
 d. Write a procedure, `(fractal-right-triangle height width color n)`, that builds a right triangle using the fractal approach.  
@@ -152,12 +153,10 @@ d. Write a procedure, `(fractal-right-triangle height width color n)`, that buil
 ;;; (fractal-right-triangle height width color n) -> image?
 ;;;   height : positive-real?
 ;;;   width : positive-real?
-;;;   color : image-color?
+;;;   color : color?
 ;;;   n : non-negative integer
 ;;; Make a fractal right triangle using `color` as the primary color.
 ```
-
-_Note: Sam may have to change this._
 
 ## Part two: Fractal squares (carpets)
 
@@ -172,16 +171,15 @@ No, the limit of this is not a "Sierpinski square".  However, it is normally ref
 ```
 ;;; (carpet-a size color-x color-y n) -> image?
 ;;;   size : positive real?
-;;;   color-x : image-color?
-;;;   color-y : image-color?
+;;;   color-x : color?
+;;;   color-y : color?
 ;;;   n : non-negative integere
 ;;; Create a `size`-by-`size` image of the standard fractal carpet with
 ;;; `n` levels of recursion, using `color-x` as the "primary" color and
 ;;; `color-y` as the center color.  
 ```
 
-b. Of course, there's no reason we have to recurse on those particular eight squares.
-We could, for example, use only six.  Here's one such pattern.
+b. Of course, there's no reason we have to recurse on those particular eight squares.  We could, for example, use only six.  Here's one such pattern.
 
 ![Five red-and-black square carpets.](../images/fractals/carpet-b-examples.png)
 
@@ -192,8 +190,8 @@ _Here and elsewhere, we are seeing some strange artifacts from how DrRacket deal
 ```
 ;;; (carpet-b size color-x color-y n) -> image?
 ;;;   size : positive real?
-;;;   color-x : image-color?
-;;;   color-y : image-color?
+;;;   color-x : color?
+;;;   color-y : color?
 ;;;   n : non-negative integer.
 ;;; Create a `size`-by-`size` image of a fractal carpet with `n` levels
 ;;; of recursion, using `color-x` as the "primary" color and `color-y`
@@ -217,8 +215,8 @@ the primary and secondary colors.  Here are the first few versions with that mod
 ```
 ;;; (carpet-c size color-x color-y n) -> image?
 ;;;   size : positive real?
-;;;   color-x : image-color?
-;;;   color-y : image-color?
+;;;   color-x : color?
+;;;   color-y : color?
 ;;;   n : non-negative integer.
 ;;; Create a `size`-by-`size` image of a fractal carpet with `n` levels
 ;;; of recursion, using `color-x` as the "primary" color and `color-y`
@@ -241,8 +239,8 @@ d. Just as we can recurse on the secondary squares, we can choose not to recurse
 ```
 ;;; (carpet-d size color-x color-y n) -> image?
 ;;;   size : positive real?
-;;;   color-x : image-color?
-;;;   color-y : image-color?
+;;;   color-x : color?
+;;;   color-y : color?
 ;;;   n : non-negative integer.
 ;;; Create a `size`-by-`size` image of a fractal carpet with `n` levels
 ;;; of recursion, using `color-x` as the "primary" color and `color-y`
@@ -266,10 +264,10 @@ _This procedure is only required for an E._
 
 ```
 ;;; (carpet pattern size color-x color-y n) -> image?
-;;;   pattern ; string? (length 9, only composed of x, X, y, and Y)
+;;;   pattern ; string? (length 9, composed only of x, X, y, and Y)
 ;;;   size : positive real?
-;;;   color-x : image-color?
-;;;   color-y : image-color?
+;;;   color-x : color?
+;;;   color-y : color?
 ;;;   n : non-negative integer.
 ;;; Create a `size`-by-`size` image of a fractal carpet with `n` levels
 ;;; of recursion, using `color-x` as the "primary" color and `color-y`
@@ -407,6 +405,11 @@ You will likely find the following procedure helpful.
 (define lighter-16 (rgb-transformer (cut (+ <> 16))))
 ```
 
+In writing this procedure, you will likely need to employ a variant of the strategy we suggested in part a.
+
+* If `side` is ten or less, make a square of the appropriate side length and color, outlined in black.
+* Otherwise, make a spiral square with using side length `(* side ratio)`, rotate it by `angle` degrees, and then overlay it on a square of the appropriate side length and color, outlined in black.
+
 e. Are there other things we might change or generalize?  Since we may want to change how we transform colors, we can add a color transformer to the mix.  Here are some examples.  In each case, we start with a medium gray, `(rgb 128 128 128)`.  In the first and second, we cyclically add 64 to each component.  In the third, we make it lighter by 16 at each step.  In the fourth, we make it redder by 16.  In the fifth, we make it bluer.  
 
 ![A sequence of images of groups of squares.  In the first, there is a spiral of many squares, with each subsequent square rotated by 15 degrees clockwise and slightly smaller.  In the first and second groups, we weem to rotate betwen medium gray, light gray, black, and darker gray.  The third group is much like the second, although the squares get lighter rather than cycoing between colors.  In the fourth, each square is a bit redder.  And in the fifth, each is a bit bluer.](../images/fractals/smaller-transformed-spiral-squares.png)
@@ -444,10 +447,10 @@ You may find the following procedure useful as you experiment.
 
 Using variants of the fractal approaches from parts 1 and 2, along with anything else you consider useful, come up with a recursive procedure, `(my-fractal size color n)` that creates a self-similar (or otherwise numerically recursive) image using the starting size, color, and non-negative integer.
 
-Use your procedure to create one image that you'd like to share.  Save it as `my-image.png`.  Your command will look something like the following.
+Use your procedure to create three images that you'd like to share.  Save them as `my-image-01.png`, `my-image-02.png`, and `my-image-03.png`.  Your commands will look something like the following.
 
 ```
-> (image-save (my-fractal 128 (rgb 255 0 255) 8) "my-image.png")
+> (image-save (my-fractal 128 (rgb 255 0 255) 8) "my-image-01.png")
 ```
 
 Include a comment in your code file that explains how you generated
@@ -463,14 +466,17 @@ Grading rubric
 Submissions that lack any of these characteristics will get an I.
 
 ```
-[ ] Passes all of the one-star autograder tests.
+[ ] Passes all of the "R" autograder tests.
 [ ] Includes the specified file, `fractals.rkt`.
 [ ] Includes an appropriate header on the file that indicates the
     course, author, etc.
 [ ] Acknowledges appropriately.
 [ ] Code runs in DrRacket.
 [ ] `my-fractal` creates an image when given appropriate parameters.
-[ ] Includes `my-image.png`, which seems to be generated by `my-fractal`..
+    (Note that for an R, you need not make a fractal.)
+[ ] Includes `my-image-01.png`, which seems to be generated by `my-fractal`.
+[ ] Includes `my-image-02.png`, which seems to be generated by `my-fractal`.
+[ ] Includes `my-image-03.png`, which seems to be generated by `my-fractal`.
 ```
 
 ### Meets expectations or above
@@ -479,7 +485,7 @@ Submissions that lack any of these characteristics but have all of the
 prior characteristics will get an R.
 
 ```
-[ ] Passes all of the two-star autograder tests.
+[ ] Passes all of the "M" autograder tests.
 [ ] Used the starter code.  (Identifiable by the section separators
     and such.)
 [ ] Code is well-formatted with appropriate names and indentation.
@@ -497,7 +503,7 @@ Submissions that lack any of these characteristics but have all of the
 prior characteristics will get an M.
 
 ```
-[ ] Passes all of the three-star autograder tests.
+[ ] Passes all of the E star autograder tests.
 [ ] Includes a working version of `carpet` (2e).
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.  In particular, avoids identical recursive calls.
