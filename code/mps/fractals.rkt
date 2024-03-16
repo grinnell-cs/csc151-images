@@ -50,13 +50,13 @@
 (define cyclically-add-64
   (rgb-transformer (lambda (c) (remainder (+ c 64) 256))))
 
-;;; (right-triangle width height color [description]) -> image?
+;;; (solid-right-triangle width height color [description]) -> image?
 ;;;   width : positive-real?
 ;;;   height : positive-real?
 ;;;   color : color?
 ;;;   description : string?
 ;;; Make a right triangle of the given width, height, and color.
-(define right-triangle
+(define solid-right-triangle
   (lambda (width height color [description #f])
     (solid-polygon (list (pt 0 0) (pt width height) (pt 0 height))
                    color
