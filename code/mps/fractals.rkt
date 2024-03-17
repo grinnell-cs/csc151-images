@@ -50,17 +50,26 @@
 (define cyclically-add-64
   (rgb-transformer (lambda (c) (remainder (+ c 64) 256))))
 
-;;; (right-triangle width height color [description]) -> image?
+;;; (solid-right-triangle width height color [description]) -> image?
 ;;;   width : positive-real?
 ;;;   height : positive-real?
 ;;;   color : color?
 ;;;   description : string?
 ;;; Make a right triangle of the given width, height, and color.
-(define right-triangle
+(define solid-right-triangle
   (lambda (width height color [description #f])
     (solid-polygon (list (pt 0 0) (pt width height) (pt 0 height))
                    color
                    description)))
+
+;;; (thinly-outlined-square size color) -> image?
+;;;   size : non-negative-integer?
+;;;   color : color?
+;;; Create square of the given color with a thin black outline.
+(define thinly-outlined-square
+  (lambda (size color)
+    (overlay (outlined-square (- size 2) "black" 1)
+             (solid-square size color))))
 
 ; +---------------------------+--------------------------------------
 ; | Part 1: Fractal triangles |
