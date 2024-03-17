@@ -62,6 +62,15 @@
                    color
                    description)))
 
+;;; (thinly-outlined-square size color) -> image?
+;;;   size : non-negative-integer?
+;;;   color : color?
+;;; Create square of the given color with a thin black outline.
+(define thinly-outlined-square
+  (lambda (size color)
+    (overlay (outlined-square (- size 2) "black" 1)
+             (solid-square size color))))
+
 ; +---------------------------+--------------------------------------
 ; | Part 1: Fractal triangles |
 ; +---------------------------+

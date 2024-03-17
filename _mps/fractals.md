@@ -115,6 +115,8 @@ a. Write a procedure, `fractal-triangle`, that makes the basic fractal triangle 
 ;;; the primary color.
 ```
 
+**Warning**: Because shapes generally can't have fractional width or height, you may find that `fractal-triangle` produces triangles that are slightly bigger than expected. Such a result is acceptable. You'll notice all of our tests use a size that's a power of two to address such issues.
+
 b. Write a procedure, `rgb-fractal-triangle`, that makes a fractal triangle in which the top triangle is "redder" than the basic color, the lower-left triangle is "greener" than the basic color, and the lower-right triangle is "bluer" than the basic color.
 
 ```
@@ -308,6 +310,19 @@ Here's a sequence of the first few spirals, using a base color of green and an a
 ;;; color.  The bottom square is in the normal orientation.  The one on 
 ;;; top of that is rotated by `angle` degrees.  The one on top of that is
 ;;; rotated by an additional `angle` degrees.  And so on and so forth.
+```
+
+You can use `thinly-outlined-square` to make each outlined square.
+
+```
+;;; (thinly-outlined-square size color) -> image?
+;;;   size : non-negative-integer?
+;;;   color : color?
+;;; Create an onlined square.
+(define thinly-outlined-square
+  (lambda (size color)
+    (overlay (outlined-square (- size 2) "black" 1)
+             (solid-square size color))))
 ```
 
 b. Let's do something similar, changing the color a little bit each time.  Let's make it a bit darker, adding 32.
