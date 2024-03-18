@@ -4,7 +4,7 @@
 
 ;;; fractals.rkt
 ;;;   A variety of fractals and other shapes, created for MP6 in
-;;;   CSC-151-01 2023Fa.
+;;;   CSC-151 2024Sp
 ;;;
 ;;; Author: Your Name Here
 ;;; Date submitted: YYYY-MM-DD
@@ -50,33 +50,56 @@
 (define cyclically-add-64
   (rgb-transformer (lambda (c) (remainder (+ c 64) 256))))
 
+;;; (solid-right-triangle width height color [description]) -> image?
+;;;   width : positive-real?
+;;;   height : positive-real?
+;;;   color : color?
+;;;   description : string?
+;;; Make a right triangle of the given width, height, and color.
+(define solid-right-triangle
+  (lambda (width height color [description #f])
+    (solid-polygon (list (pt 0 0) (pt width height) (pt 0 height))
+                   color
+                   description)))
+
+;;; (thinly-outlined-square size color) -> image?
+;;;   size : non-negative-integer?
+;;;   color : color?
+;;; Create square of the given color with a thin black outline.
+(define thinly-outlined-square
+  (lambda (size color)
+    (overlay (outlined-square (- size 2) "black" 1)
+             (solid-square size color))))
+
 ; +---------------------------+--------------------------------------
 ; | Part 1: Fractal triangles |
 ; +---------------------------+
 
-;;; (fractal-triangle size color n) -> image?
-;;;   size : positive-real?
+;;; (fractal-triangle side color n) -> image?
+;;;   side : positive-real?
 ;;;   color : rgb?
 ;;;   n : non-negative integer
-;;; Make a fractal triangle using `color` as the primary color.
+;;; Make a fractal triangle of the given side length using `color` 
+;;; as the primary color.
 (define fractal-triangle
-  (lambda (size color n)
+  (lambda (side color n)
     ???)) 
 
-;;; (rgb-fractal-triangle size color n) -> image?
-;;;   size : positive-real?
+;;; (rgb-fractal-triangle side color n) -> image?
+;;;   side : positive-real?
 ;;;   color : rgb?
 ;;;   n : non-negative integer
-;;; Make a fractal triangle using `color` as the primary color.  In the
-;;; recursive steps, the base color of the top triangle is `(redder color)`,
-;;; the base color of the lower-left triangle is `(greener color)`, and the
-;;; base color of the lower-right triangle is `(bluer color)`.
+;;; Make a fractal equilateral triangle of the given side length using
+;;; `color` as the primary color.  In the recursive steps, the base
+;;; color of the top triangle is `(rgb-redder color)`, the base color
+;;; of the lower-left triangle is `(rgb-greener color)`, and the base
+;;; color of the lower-right triangle is `(rgb-bluer color)`.  
 (define rgb-fractal-triangle
-  (lambda (size color n)
+  (lambda (side color n)
     ???))
 
-;;; (new-rgb-fractal-triangle size color n) -> image?
-;;;   size : positive-real?
+;;; (new-rgb-fractal-triangle side color n) -> image?
+;;;   side : positive-real?
 ;;;   color : rgb?
 ;;;   n : non-negative integer
 ;;; Make a fractal triangle using `color` as the primary color.  In the
@@ -85,7 +108,7 @@
 ;;; base color of the lower-right triangle is `(bluer color)`.  The base
 ;;; color of the central triangle should be `color`.
 (define new-rgb-fractal-triangle
-  (lambda (size color n)
+  (lambda (side color n)
     ???))
 
 ;;; (fractal-right-triangle height width color n) -> image?
@@ -172,7 +195,7 @@
     ???))
 
 ;;; (carpet pattern size color-x color-y n) -> image?
-;;;   pattern ; string? (length 9, only composed of x, X, y, and Y)
+;;;   pattern ; string? (length 9, composed only of x, X, y, and Y)
 ;;;   size : positive real?
 ;;;   color-x : color?
 ;;;   color-y : color?
