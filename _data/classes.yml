@@ -274,6 +274,7 @@
   abbrev: pause
   summary: |
     We pause to explore and revisit ideas associated with recursion.
+  notes: ../eboards/eboard24.html
 
 - topic: Randomness
   abbrev: randomness
