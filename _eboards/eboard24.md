@@ -47,7 +47,7 @@ Misc
 * Thursday, 2024-04-04, 11:00pm, [MP6](../mps/mp06)
     * [_Submit MP6 on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4217671/)
 * Friday, 2024-04-05, 8:30am, Quiz
-    * Topic: Randomness
+    * Topic: Pairs and pair structures (Wednesday after break)
     * Makeup for tracing available
 * Friday, 2024-04-05, 11:00pm, [MP6](../mps/mp06) post-reflection
     * [_Submit MP6 post-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4217839)
