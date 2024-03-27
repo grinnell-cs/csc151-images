@@ -25,6 +25,9 @@ You'd think the [syllabus](../syllabus) and [schedule](../schedule) would provid
 [Tokens](tokens)
   : Information on gaining and spending tokens.
 
+[Progress Tracking Worksheet](https://docs.google.com/spreadsheets/d/1eLPgJ4DQqx9TMtx81qTI0JhXCGl_VsDPQFpfcK5_bBk/edit#gid=1408994778)
+  : Spreadsheet you can fill out to track your progress toward desired course grade and figure out which LAs to attempt in each SoLA.
+
 <!-- Sam
 [Mastery Grading, Revisited](mastery-grading-revisited)
   : Yet another explanation of the mastery grading approach.
