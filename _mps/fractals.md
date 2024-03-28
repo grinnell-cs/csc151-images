@@ -11,8 +11,6 @@ collaboration: |
   receive help from anyone, make sure to cite them in your responses. 
 link: true
 ---
-**Warning**: This mini-project has not yet been revised for Spring 2024.
-
 **Summary**: {{ page.summary }}
 
 **Starter code**: [`fractals.rkt`](../code/mps/fractals.rkt).
