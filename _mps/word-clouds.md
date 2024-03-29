@@ -1,0 +1,146 @@
+---
+title: Mini-Project 8
+subtitle: Word clouds and other analysis tools
+summary: |
+  In this project, you will build "word clouds" of the most common
+  words in texts.
+collaboration: |
+  Each student should submit their own responses to this project. You may
+  consult other students in the class as you develop your solution.  If you
+  receive help from anyone, make sure to cite them in your responses. 
+link: false
+notes: |  
+  Make sure to require that they use hash tables to count.
+  Make sure to require that they test it on a reasonably large file.
+  Consider ways to autograde.
+---
+As you may know, a "word cloud" (also ["tag cloud"](https://en.wikipedia.org/wiki/Tag_cloud)) is a visual representation of the most common words in a text (usually ignoring "common words", such as "a", "an", and "the").  The words are grouped in an approximately oval shape, with the dize of a word representing the approximate frequency in which the word appears in the text.
+
+Some analysts promote word clouds because they provide a visually stimulating way to get an overview of the topics in a text.  Others note that word clouds may promote inappropriate conclusions, since we tend to assume nearby words are related, but most word-cloud algorithms do not use proximity in the text to compute proximity in the image.
+
+Your assignment is to write a procedure, `(word-cloud filename)`, that builds a word cloud for the given file.  That is, it takes a filename (a string) as input, reads all the words from the file and computes their frequences (hint: hash tables), generates an appropriate-sized word image for each of the top 50, and puts them together into a single image.
+
+I strongly recommend that you decompose the problem into smaller pieces.
+
+Note that the `(file->words filename)` procedure (in the CSC-151 library) will give you a list of all the words in a file (as strings).
+
+You can earn an M if you use a straightforward algorithm to put them together into a single image, such as stacking the words on top of each other.  (No, that's not much of a cloud.)  To earn an E, you will need to develop a more sophisticated algorithm.
+
+Save your code in the file `word-cloud.rkt`.  Also include a file, `sample.png`, that shows a particularly successful cloud you generated.  Make sure to include a comment in `word-cloud.rkt` that explains how you generated that cloud (e.g., the source text).
+
+Grading rubric
+--------------
+
+_This rubric is still in draft form._
+
+### Redo or above
+
+Submissions that lack any of these characteristics will get an I.
+
+```
+[ ] Passes all of the one-star autograder tests.
+[ ] Includes the specified file, `word-cloud.rkt`.
+[ ] Includes an appropriate header on the file that indicates the
+    course, author, etc.
+[ ] Acknowledges appropriately.
+[ ] Code runs in DrRacket.
+[ ] The procedure `word-cloud` takes a filename as input and generates
+    an image.
+[ ] Includes the file `sample.png`.
+```
+
+### Meets expectations or above
+
+Submissions that lack any of these characteristics but have all of the
+prior characteristics will get an R.
+
+```
+[ ] Passes all of the two-star autograder tests.
+[ ] Code is well-formatted with appropriate names and indentation.
+[ ] Code has been reformatted with Ctrl-I before submitting.
+[ ] Code generally follows style guidelines.
+[ ] All procedures are documented in the correct form.
+[ ] `word-cloud` has been appropriatelly decomposed into at least three 
+    subprocedures.
+[ ] Explains how `sample.png` was generated.
+```
+
+### Exemplary / Exceeds expectations
+
+Submissions that lack any of these characteristics but have all of the
+prior characteristics will get an M.
+
+```
+[ ] Passes all of the three-star autograder tests.
+[ ] Style is impeccable (or nearly so).
+[ ] Avoids repeated work.  In particular, avoids identical recursive calls.
+[ ] Uses a non-trivial algorithm to build the cloud _and_ explains how
+    the algorithm works.
+[ ] Removes the most common words in English (e.g., "The", "A").
+[ ] Ensures that various capitalized versions of the same word are treated
+    as identical (e.g., "ahoy", "Ahoy", "AHOY").
+[ ] Builds the frequency table in a sensible way (e.g., using a hash
+    table).
+[ ] Can handle files with thousands of words in a reasonable timeframe.
+```
+
+### Extra praise
+
+These additional characteristics won't affect your grade, but may be worth considering.
+
+```
+[ ] Handles files with fewer than 50 unique words.
+[ ] Uses color or typeface to indicate some additional characteristic
+    of the word.  (Should be explained in the documentation.)
+```
+
+Questions and answers
+---------------------
+
+I'm not sure how to make text.
+
+> The [documentation for the `text-font` procedure](https://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._text%2Ffont%29%29) should help.
+
+I'm struggling with an algorithm to build the word cloud.
+
+> You could look for some of the ones on the Interweb.
+
+> You could think about building smaller blocks and putting them together
+  (perhaps arranging them by size in a hash table).
+
+> You might explore what you can do with scenes and [the `place-image` procedure](https://docs.racket-lang.org/teachpack/2htdpimage.html#%28def._%28%28lib._2htdp%2Fimage..rkt%29._place-image%29%29).
+
+I'd like a sample file for testing.
+
+> How about the text of this assignment?
+
+> You can find lots of public domain texts at [Project Gutenberg](https://www.gutenberg.org).
+
+What does "explain how the algorithm works" mean? In the documentation? As a comment?
+
+> As a comment in the documentation.  You can put it before the `word-cloud` procedure (or one of its helpers).  You can put it at the top of the file.  I'd prefer the latter.
+
+Can we use any filename?
+
+> Your procedure should work as long as it's a valid filename for a file containing text.
+
+Can we use any file?
+
+> I'd prefer that your content is not in bad taste.  And no slurs allowed.
+
+Is there a cadr equivalent for hash tables? A way to compare two elements of a hash table within a recursive function, such as when implementing min or max?
+
+> There is not a `cadr` equivalent for hash taables.  There's not even a `car`.
+
+> However, you can get a list of all the keys or a list of all the key/value
+  pairs.
+
+> I'd also suggest that you review [the lab on hash tables](../code/labs/hash-tables.rkt).
+
+The rubric makes it sound like recursion is required.  Where?
+
+> That part of the rubric comes from the previous assignment.  But I
+  assume you'll need to recurse over a list of words or a list of the
+  images you've built from those words.
+
+
