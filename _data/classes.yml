@@ -272,6 +272,16 @@
   lab:
     - page: /labs/exploring-randomness.html
 
+- topic: Pairs
+  abbrev: pairs
+  summary: |
+    We explore pairs, the basic building blocks of lists, and consider
+    other, non-list structures one might build from pairs.
+  reading:
+    - page: /readings/pairs.html
+  lab:
+    - page: /labs/pairs.html
+
 - topic: Vectors
   abbrev: vectors
   summary: |
@@ -288,16 +298,6 @@
     We continue to explore vectors.
   lab:
     - page: /labs/vectors-continued.html
-
-- topic: Pairs
-  abbrev: pairs
-  summary: |
-    We explore pairs, the basic building blocks of lists, and consider
-    other, non-list structures one might build from pairs.
-  reading:
-    - page: /readings/pairs.html
-  lab:
-    - page: /labs/pairs.html
 
 - topic: Dictionaries and hash tables
   abbrev: dictionaries
