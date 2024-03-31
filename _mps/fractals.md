@@ -11,8 +11,6 @@ collaboration: |
   receive help from anyone, make sure to cite them in your responses. 
 link: true
 ---
-**Warning**: This mini-project has not yet been revised for Spring 2024.
-
 **Summary**: {{ page.summary }}
 
 **Starter code**: [`fractals.rkt`](../code/mps/fractals.rkt).
@@ -287,7 +285,7 @@ _This procedure is only required for an E._
 ;;;      6 7 8
 ```
 
-## Part 3: Spiraling shapes
+## Part three: Spiraling shapes
 
 Let's move on to some fun with rotation.  These images are not quite fractals, but they give you some more experience with numeric recursion.
 
@@ -458,7 +456,7 @@ You may find the following procedure useful as you experiment.
   (rgb-transformer (lambda (c) (remainder (+ c 64) 256))))
 ```
 
-## Part 4: Freestyle
+## Part four: Freestyle
 
 Using variants of the fractal approaches from parts 1 and 2, along with anything else you consider useful, come up with a recursive procedure, `(my-fractal size color n)` that creates a self-similar (or otherwise numerically recursive) image using the starting size, color, and non-negative integer.
 
@@ -529,5 +527,44 @@ prior characteristics will get an M.
 
 ## Q&A
 
-_Forthcoming._
+### General
 
+How do we do recursion without a list? What is the base case if we do not have a limit for the number of elements?
+
+> If we're doing recursion with numbers (as is appropriate on this assignment), we usually stop when we reach some target number (or target range of numbers). For example, we'll usually stop the fractals when `n` is 0. If we don't have an `n`, we'll stop when some other numeric parameter ges small enough, such as when `side` is less than 10. For the recursive case, we make the number closer to the target (e.g., subtracting 1, multiplying by a fraction less than 1).
+
+I think one of my fractal procedures is correct, but it's failing the tests. What's wrong?
+
+> Unfortunately, the "does this look right" procedure is imperfect. Check with your instructor to see if you missed something.
+
+What is the difference between explicit & implicit recursion? 
+
+> Explicit recursion is when a procedure calls itself. Implicit recursion happens when a procedure calls a recursive procedure or when a procedure calls another procedure that then calls the first procedure.
+
+What would be considered an identical recursive call?
+
+> For example, to make a fractal triangle of side length `s`, you need to make three fractal triangles of side length `s`/2. If you wrote something like
+
+```
+(above (fractal-triangle (/ side 2) color (- n 1))
+       (beside (fractal-triangle (/ side 2) color (- n 1))
+               (fractal-triangle (/ side 2) color (- n 1))))
+```
+
+> You have three identical recursive calls.
+
+How would you avoid identical recursive calls?
+
+> You avoid it by using `let` or a helper procedure.
+
+### Part one: Fractal triangles
+
+### Part two: Fractal squares (carpets)
+
+Would `let` be useful for naming X, x, Y, and y in the carpet procedures and if so, would we use `let` before or after `lambda`.
+
+> Yes, `let` will be very useful. Since what you get from the `let` will vary, it will need to be after the `lambda`. Since you only want to recurse when the base case test fails, the `let` will also have to be after the base case test.
+
+### Part three: Spiraling shapes
+
+### Part four: Freestyle

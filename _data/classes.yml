@@ -292,7 +292,7 @@
   reading:
     - page: /readings/randomness.html
   lab:
-    - page: /labs/exploring-randomness.html
+    - page: /labs/random-language.html
 
 - topic: Pairs
   abbrev: pairs
