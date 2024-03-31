@@ -21,6 +21,11 @@ Administrative stuff
 
 * Welcome back from break!
 * I think the day and the topic match well.
+* I chatted with some colleagues at a conference during break, and they
+  suggested that one benefit to the ACM Code of Ethics is that if you
+  are fired for trying to follow it (e.g., refusing to do something
+  unethical), you are more likely to prevail in court, because US courts
+  tend to pay attention to such codes.
 
 ### Token opportunities
 
@@ -111,18 +116,77 @@ Questions
 
 ### Administrative
 
-### MP5
+### Local bindings
 
-### Recursion
+```
+;;; (v2c-ratio str) -> rational?
+;;;   str : string
+;;; Determine the ratio of vowels to consonants in str
+(define v2c-ratio
+  (lambda (str)
+    (/ (tally vowel? (string->list str))
+       (tally consonant? (string->list str)))))
+```
+
+How would a helper procedure avoid redundant work?
+
+```
+(define v2c-ratio
+  (lambda (str)
+    (v2c-ratio/helper (string->list str))))
+
+(define vtc-ratio/helper
+  (lambda (chars)
+    (/ (tally vowel? chars)
+       (tally consonant? chars))))
+```
+
+### Randomness
+
+How does Racket choose a "random" number?
+
+> https://docs.racket-lang.org/reference/generic-numbers.html#%28def._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._random%29%29
+
+> "The random number generator uses L’Ecuyer’s MRG32k3a algorithm
+  [L'Ecuyer02] that has a state space of practically 192 bits."
+
+> Pierre L’Ecuyer, Richard Simard, E. Jack Chen, and W. David Kelton,
+  "An Object-Oriented Random-Number Package With Many Long Streams
+  and Substreams," _Operations Research_, 50(6), 2002.
+  <https://www.iro.umontreal.ca/~lecuyer/myftp/papers/streams00.pdf>
+
+> I'll let you read the rest.
+
+Why did random with no parameter give us a decimal number?
+
+> The designers chose to make it behave that way. You will always
+  get a number between 0 (inclusive) and 1 (exclusive) when you call
+  `random` with no parameters.
+
+Are there other procedures that take no parameters (at least some of the 
+time)?
+
+> We've seen that `(+)` returns 0 and `(*)` returns 1. We'll also
+  start writing some of our own (primarily ones that end up using
+  some form of `random`).
+
+### MP6
+
+_I observed that on the MP5 post-reflections, many people said that they
+wished they had asked questions earlier. Can we try to generate a few
+questions to help people who haven't started yet or who are just starting?_
 
 ### Miscellaneous
 
-MP5 Discussion
---------------
+Can we talk more about `(ormap <procedure> <list>)`?
 
-_There is no record of the MP5 discussion._
+> Sure. As you may recall, `(or exp1 exp2 ... expn)` evaluates each
+  expression in turn, stopping when it hits a truish value, which it
+  then returns. If it runs out of values, it returns false.
 
-Recursion Q&A
--------------
+> Similarly, `(ormap pred? (list v1 v2 ... vn))` applies `pred?` to
+  each of `v1`, `v2`, ... in turn, stopping when it returns a truish
+  value. If it reaches the end of the list, it returns false.
 
-_There is no record of the recursion Q&A._
+Lab
+---
