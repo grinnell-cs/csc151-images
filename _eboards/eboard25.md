@@ -94,6 +94,18 @@ Misc
 * Sunday, 2024-04-14, 11:00pm, [MP5](../mps/mp05) Redo
     * [_Submit MP5 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4248212)
 
+Notes on recent quizzes
+-----------------------
+
+Quiz 7 was taken directly from the list recursion lab. Remember to
+review the labs as you study.
+
+For quiz 8, many of you got partway there, but not all the way.
+Your goal is *no* repeated code (or as little as possible). I was
+a bit generous in grading because I know quizzes can be stressful
+(and it was just before break).
+
+
 Questions
 ---------
 
