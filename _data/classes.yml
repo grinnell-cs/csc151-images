@@ -284,8 +284,7 @@
   reading:
     - page: /readings/randomness.html
   lab:
-    - page: /labs/exploring-randomness.html
-  notes: ../eboards/eboard25.html
+    - page: /labs/random-language.html
 
 - topic: Pairs
   abbrev: pairs
