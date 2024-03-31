@@ -5,6 +5,24 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-151-01 2024Sp] Grade reports and more (Sunday, 2024-03-31)
+
+Dear Breakers of Springs,
+
+I hope you are well and that you are excited about returning to classes.
+
+Our graders are still working on MP5 and recent MP redos. They hope to have them done soon.
+
+I've caught up on the LAs, readings, and metacognitive reflections. You should be able to find helpful (or at least sarcastic) comments on them on Gradescope as well as answers to most questions.
+
+I'll be sending out your latest grade reports in a few minutes. Let me know if you have questions.
+
+Don't forget to do the reading on randomness (due tonight) and the pre-reflection for MP6 (due Monday night)!
+
+Regards,
+
+-- SamR
+
 ## [CSC-151-01 2024Sp] Change in location for the Grinnell Lecture (Thursday, 11am, HSSC auditorium (A2231))
 
 Dear cons-tellation of 151ers,
