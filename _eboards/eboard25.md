@@ -12,8 +12,9 @@ link: true
 _Approximate overview_
 
 * Administrative stuff [10 min]
+* Notes on recent quizzes [10 min]
 * Questions [10 min]
-* Lab [55 min]
+* Lab [45 min]
 * Turn in lab [5 min]
 
 Administrative stuff
@@ -26,6 +27,14 @@ Administrative stuff
   are fired for trying to follow it (e.g., refusing to do something
   unethical), you are more likely to prevail in court, because US courts
   tend to pay attention to such codes.
+* I brought back some conference swag from the 2024 SIGCSE Technical
+  Symposium on Computer Science Education. You can each have one
+  octocat sticker, one notebook, and one or both of the disability
+  stickers.
+* I distributed grade reports last night. If you are at under 60% of
+  LAs, I'll be turning in an Academic Alert today. 
+    * I have confidence that you'll catch up, but I think Academic
+      Advising should know when people are struggling a bit.
 
 ### Token opportunities
 
@@ -110,11 +119,16 @@ Your goal is *no* repeated code (or as little as possible). I was
 a bit generous in grading because I know quizzes can be stressful
 (and it was just before break).
 
+I'll go over quiz 8, but not on the eboard. Take notes.
 
 Questions
 ---------
 
 ### Administrative
+
+Have you finished tallying tokens?
+
+> No.
 
 ### Local bindings
 
