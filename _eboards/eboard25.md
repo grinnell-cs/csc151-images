@@ -7,7 +7,8 @@ link: true
 ---
 # {{ page.title }}
 
-**Warning! You are being recorded** (and transcribed).
+**Warning! You are being recorded** (and transcribed). (Provided Otter.ai
+is working today. It says I have a slow network connection.)
 
 _Approximate overview_
 
@@ -21,7 +22,8 @@ Administrative stuff
 --------------------
 
 * Welcome back from break!
-* I think the day and the topic match well.
+    * You've come back from around the world. Consider masking.
+* Happy April Fool's day. I think the day and the topic match well.
 * I chatted with some colleagues at a conference during break, and they
   suggested that one benefit to the ACM Code of Ethics is that if you
   are fired for trying to follow it (e.g., refusing to do something
@@ -35,6 +37,7 @@ Administrative stuff
   LAs, I'll be turning in an Academic Alert today. 
     * I have confidence that you'll catch up, but I think Academic
       Advising should know when people are struggling a bit.
+* Iowa or LSU?
 
 ### Token opportunities
 
@@ -80,7 +83,7 @@ Misc
 
 * Wednesday, 2024-04-03, 11:45am, JCC Lower-Level Conf. Room.
   _CLS Lunch and Learn with Sam Naikhara '19_.
-* Wednesday, 2024-04-03, 4pm, Some room.
+* Wednesday, 2024-04-03, 4pm, Science 3821.
   _CS Extras: Study abroad at AIT Budapest_.
 
 ### Other good things (no tokens)
@@ -92,7 +95,7 @@ Misc
 * Tuesday, 2024-04-02, 11:00pm, [Pairs reading](../readings/pairs)
     * [_Submit reading reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4248425/)
 * Wednesday, 2024-04-03, 8:30am, [Lab writeup](../labs/...)
-    * [_Submit today's lab on Gradescope_](...)
+    * [_Submit today's lab on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4301476)
     * Preferred: Finish it during class
 * Thursday, 2024-04-04, 11:00pm, [MP6](../mps/mp06)
     * [_Submit MP6 on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4217671/)
@@ -105,6 +108,7 @@ Misc
     * [_Submit SoLA 3 pre-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4248181)
 * Sunday, 2024-04-07, 11:00pm, [MP4](../mps/mp04) Redo
     * [_Submit MP4 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4217681)
+* Monday, 2024-04-08, 4:00pm, [SoLA 3](../las/) distributed
 * Sunday, 2024-04-14, 11:00pm, [MP5](../mps/mp05) Redo
     * [_Submit MP5 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4248212)
 
@@ -120,6 +124,11 @@ a bit generous in grading because I know quizzes can be stressful
 (and it was just before break).
 
 I'll go over quiz 8, but not on the eboard. Take notes.
+
+Note: We use local bindings for (at least) two reasons:
+
+* They can make our code more efficient.
+* They can make our code more readable.
 
 Questions
 ---------
@@ -149,7 +158,7 @@ How would a helper procedure avoid redundant work?
   (lambda (str)
     (v2c-ratio/helper (string->list str))))
 
-(define vtc-ratio/helper
+(define v2c-ratio/helper
   (lambda (chars)
     (/ (tally vowel? chars)
        (tally consonant? chars))))
@@ -190,6 +199,77 @@ _I observed that on the MP5 post-reflections, many people said that they
 wished they had asked questions earlier. Can we try to generate a few
 questions to help people who haven't started yet or who are just starting?_
 
+What basic shapes are there other than triangles, squares, and rectangles?
+
+> Hexagons? Circles? Ellipses? Pentagons? Stars? Something else you design?
+
+How do we reach a base case in the first one? (The basic Sierpinski triangle.)
+
+> We should subtract one from `n` until we reach zero.
+
+```
+(define st
+  (lambda (side color n)
+    (if (zero? n)
+        (equilateral-triangle side color)
+        ...)))
+```
+
+> We saw in the notes on the MP that we want to try to avoid repeated code,
+  which shows a recursive call.
+
+How do I avoid identical recursive calls?
+
+> Let's start with the following.
+
+```
+(above (fractal-triangle (/ side 2) color (- n 1))
+       (beside (fractal-triangle (/ side 2) color (- n 1))
+               (fractal-triangle (/ side 2) color (- n 1))))
+```
+
+> I can rewrite that as
+
+```
+(let ([smaller-triangle (fractal-triangle (/ side 2) color (- n 1)))
+  (above smaller-triangle
+         (beside smaller-triangle
+                 smaller-triangle)))
+```
+
+> Note that you have to do that *within* the `if`.
+
+When we generalize procedures, can we define the previous procedures in terms of the generalized procedure?
+
+> Sure.
+
+> Most of you would benefit from writing the individual ones first to
+  better understand the recursion.
+
+Why do you recurse forever if you put the `let` in the wrong place?
+
+```
+(define fractal-triangle
+  (lambda (side color n)
+    (let ([smaller-triangle (fractal-triangle (/ side 2) color (- n 1))])
+       (if (<= n 0)
+           (solid-equilateral-triangle side color)
+           (above smaller-triangle
+                  (beside smaller-triangle
+                          smaller-triangle))))))
+```
+
+> Suppose we call `(fractal-triangle 128 "blue" 1)`
+
+> The `let` is evaluated first
+
+```
+    (fractal-triangle 128 "blue" 1)
+--> (let ([smaller-triangle (fractal-triangle 64 "blue 0)]) ...)
+--> (let ([smaller-triangle (let ([smaller-triangle (fractal-triangle 32 "blue" -1)]) ...)]) ...)
+--> (let ([smaller-triangle (let ([smaller-triangle (let ([smaller-triangle (fractal-triangle 16 "blue" -2)]) ...)]) ...) ...)
+```
+
 ### Miscellaneous
 
 Can we talk more about `(ormap <procedure> <list>)`?
@@ -202,5 +282,71 @@ Can we talk more about `(ormap <procedure> <list>)`?
   each of `v1`, `v2`, ... in turn, stopping when it returns a truish
   value. If it reaches the end of the list, it returns false.
 
+> For example, if we want to check if some element of a list is a number,
+  we could use `(ormap number? lst)`.
+
+```
+> (ormap number? (list "a" "b" "c" 23 "d"))
+#t
+> (ormap number? (list "a" "b" "c" "d"))
+#f
+> (ormap exact? (list "a" "b" 23 "c" "d"))
+. . exact?: contract violation
+  expected: number?
+  given: "a"
+```
+
+> There's also an `andmap`.
+
+Why can't you apply `exact?` to a string? After all, you can apply `number?`.
+
+> The designers chose to make it behave that way. 
+
+> `number?` is intended to say "given any kind of type of input, decide
+  if it's a number."
+
+> `exact?` is intended to say "given any kind of number, decide if its
+  an exact number."
+
+> Similarly, `odd?` only works for integers.
+
+> You can achieve what you want by writing your own function.
+
+```
+> (define exact-number?
+    (lambda (x)
+      (and (number? x) (exact? x))))
+> (exact-number? "a")
+#f
+> (exact-number? 23)
+#t
+```
+
+> I *think* `all-of` may also work.
+
+```
+> (define en? (all-of number? exact?))
+> (en? "a")
+#f
+> (en? 23)
+#t
+```
+
 Lab
 ---
+
+The LA on randomness assumes that you've done exercises 1--5 and
+understood the implications and how to address them.
+
+Problem 5's theme songs are "Proud Mary" by Ike and Tina Turner and
+"Rawhide" as performed by the Blues Brothers.
+
+Yes, it's weird that we have to do `(lambda () ...)` for things like
+`pair-a-dice`. But it means that we have a procedure (that may run
+differently each time) rather than a named value (that always has the
+same value).
+
+Isn't `pair-a-dice` a great name for a procedure?
+
+Grab a sticker (optional), grab a booklet (optional), have a nice
+day! (also optional, but preferable)
