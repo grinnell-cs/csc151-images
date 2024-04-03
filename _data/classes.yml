@@ -286,6 +286,7 @@
 
 - topic: Randomness
   abbrev: randomness
+  notes: https://docs.google.com/presentation/d/1Dy5P63CDZPfWaZzJ8tO2vT2pki7FQKM0F9oULjA0Ep8/edit?usp=sharing
   summary: |
     We consider Scheme's `random` procedure and how one might use
     that procedure in generating images.
