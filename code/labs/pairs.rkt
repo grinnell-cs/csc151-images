@@ -74,13 +74,13 @@ b. Compare your answers to reach consensus.
 c. Count the number of cons cells (pairs) in each.
 
 d. Using `count-pairs`, determine how many cons cells (pairs) are
-in each.  If the numbers differ, use `tree->code` to explore the code
-used to build each.
+in each.  If the numbers differ, use `struct->code` to explore the
+code used to build each.
 
 There is nothing to submit for this problem, but make sure you 
 understand the results.
 
-Feel free to ask the lab staff to review your results.
+Please ask the lab staff to review your results.
 |#
 
 #| A |#
