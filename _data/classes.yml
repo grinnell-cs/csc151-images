@@ -287,7 +287,7 @@
     - page: /labs/random-language.html
   notes: ../eboards/eboard25.html
 
-- topic: Pairs
+- topic: Pairs and pair structures
   abbrev: pairs
   summary: |
     We explore pairs, the basic building blocks of lists, and consider
@@ -296,6 +296,7 @@
     - page: /readings/pairs.html
   lab:
     - page: /labs/pairs.html
+  notes: ../eboards/eboard25.html
 
 - topic: Vectors
   abbrev: vectors
