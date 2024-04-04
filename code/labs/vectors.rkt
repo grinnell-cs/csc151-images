@@ -229,16 +229,14 @@ j. What have you taken from these experiments?
 <TODO: ENTER AN ANSWER HERE>
 |#
 
-#| B |#
+#| A |#
 
 ; +-----------------------------------+------------------------------
 ; | Exercise 3: Vector-based palettes |
 ; +-----------------------------------+
 
-#| A |#
-
 #|
-It is possible to represent a collection of colors (a “palette”)
+It is possible to represent a collection of colors (a "palette")
 as a vector. Why would we do so? Well, once we’ve chosen a palette,
 we can represent an image as a collection of indices into that
 palette. Such a representation is typically much more compact than
@@ -248,10 +246,25 @@ For example, here is a palette that represents the colors in the
 rainbow.
 |#
 
+; rainbow-palette : (vector-of rgb?)
 (define rainbow-palette
   (list->vector
-   (map color-name->color
+   (map color-name->rgb
         (list "red" "orange" "yellow" "green" "blue" "indigo" "violet"))))
+
+#|
+Write a procedure, `(palette? val)`, that determines if `val` is
+a palette (a nonempty vector of RGB colors).
+|#
+
+;;; (palette? val) -> boolean?
+;;;   val : any?
+;;; Determine if `val` is a nonempty vector of RGB colors.
+(define palette?
+  (lambda (val)
+    ???))
+
+#| B |#
 
 ; +---------------------------------------------+--------------------
 ; | Exercise 4: Darkening vector-based palettes |
@@ -270,30 +283,31 @@ Note that you will not build a new vector. Rather, you will replace each color i
 #| A |#
 
 ; +---------------------------------+--------------------------------
-; | Exercise 4: The brightest color |
+; | Exercise 5: The brightest color |
 ; +---------------------------------+
 
 #|
-Write a procedure, (palette-brightest palette), that takes one argument,
+Write a procedure, `(palette-brightest palette)`, that takes one argument,
 a vector of colors, and returns the brightest color in that vector.
 You can assume that every position in the vector contains a color.
 
-You will need the definitions of color-brightness and color-brighter-of-two.
+You will likely need the following definitions of `color-brightness`
+and `color-brighter-of-two`.
 |#
 
 ;;; (color-brightness color) -> integer?
-;;;   color : color?
+;;;   color : rgb?
 ;;; Compute the brightness of a color on a 0 .. 100 range.
 (define color-brightness
   (lambda (color)
-    (round (* 100 (/ (+ (* 30/100 (color-red color))
-                        (* 59/100 (color-green color))
-                        (* 11/100 (color-blue color)))
+    (round (* 100 (/ (+ (* 30/100 (rgb-red color))
+                        (* 59/100 (rgb-green color))
+                        (* 11/100 (rgb-blue color)))
                       255)))))
 
 ;;; (color-brighter-of-two color1 color2) -> color?
-;;;    color1 : color?
-;;;    color2 : color?
+;;;    color1 : rgb?
+;;;    color2 : rgb?
 ;;; Find the brighter of two colors.
 (define color-brighter-of-two
   (lambda (color1 color2)
@@ -301,15 +315,29 @@ You will need the definitions of color-brightness and color-brighter-of-two.
         color1
         color2)))
 
-#| A |#
-
-; +----------------------------+-------------------------------------
-; | Exercise 5: Using palettes |
-; +----------------------------+
-
+;;; (palette-brightest palette) -> rgb?
+;;;   palette : (all-of (vector-of rgb?) nonempty?)
+;;; Find the brightest color in `palette`. If multiple colors have
+;;; the same brightness (and it's the largest brightness), can return
+;;; any of them.
+(define palette-brightest
+  (lambda (palette)
+    ???))
 
 #| B |#
 
+; +-------------------------------+----------------------------------
+; | Exercise 6: Testing your code |
+; +-------------------------------+
+
+#|
+Write five or more tests for `palette-brightest`, including at
+least two edge cases.
+|#
+
+; "Normal" cases
+
+; Edge cases
 
 #| AB |#
 
@@ -326,8 +354,8 @@ Yup, it's that time.  You should know the drill.
 ; +---------------------------+
 
 #|
-If you find that you have extra time, you might try the following
-exercise.
+If you find that you have extra time, you might try one or more 
+of the following exercises.
 |#
 
 ; +---------------------------+--------------------------------------
@@ -406,7 +434,7 @@ as `(cond [TEST EXP1 EXP2 ...])`.
       ???)))
 
 ; +--------------------------------------+---------------------------
-; | Extra 1: Tallying letters, revisited |
+; | Extra 2: Tallying letters, revisited |
 ; +--------------------------------------+
 
 #|
