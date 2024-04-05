@@ -15,8 +15,8 @@
 ; +---------------+
 
 ;;; (count-pairs struct) -> integer?
-;;;   struct: pair-struct?
-;;; Counts the number of pairs that appear in tree.
+;;;   struct : pair-struct?
+;;; Counts the number of pairs that appear in `struct`.
 (define count-pairs
   (lambda (struct)
     (if (pair? struct)
@@ -24,6 +24,20 @@
            (count-pairs (car struct))
            (count-pairs (cdr struct)))
         0)))
+
+;;; (count-nulls struct) -> integer?
+;;;   struct : pair-struct?
+;;; Count the number of nulls that appear in `struct`.
+(define count-nulls
+  (lambda (struct)
+    (cond
+      [(null? struct)
+       1]
+      [(pair? struct)
+       (+ (count-nulls (car struct))
+          (count-nulls (cdr struct)))]
+      [else
+       0])))
 
 ;;; (struct->code struct) -> list?
 ;;;   struct : pair-structure?

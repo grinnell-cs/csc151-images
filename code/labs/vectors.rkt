@@ -14,6 +14,56 @@
 ; | Provided code |
 ; +---------------+
 
+;;; (random-list-elt lst) -> any/c?
+;;;   lst : list?
+;;; Randomly select an element from the list.
+(define random-list-elt
+  (lambda (lst)
+    (list-ref lst (random (length lst)))))
+
+;;; (random-vector-elt vec) -> any/c?
+;;;   vec : vector?
+;;; Randomly select an element from the vector.
+(define random-vector-elt
+  (lambda (vec)
+    (vector-ref vec (random (vector-length vec)))))
+
+;;; (random-nums len max) -> listof integer?
+;;;    len : non-negative-integer?
+;;;    max : positive-integer?
+;;; Make a list of length `len`, containing unpredictable numbers
+;;; from the range [0..max).
+(define random-nums
+  (lambda (len max)
+    (letrec ([helper
+              (lambda (len so-far)
+                (if (zero? len)
+                    so-far
+                    (helper (- len 1) (cons (random max) so-far))))])
+      (helper len '()))))
+
+;;; (ref-experiment collection rounds) -> void?
+;;;   collection : (vectorof integer?) or (listof integer?)
+;;;   rounds : natural?
+;;; Look for integers selected randomly from the range between
+;;; 0 and the length of collection.
+;;;
+;;; Returns nothing.  Used mostly for timing purposes.
+(define ref-experiment
+  (lambda (collection rounds)
+    (let* ([ref (if (vector? collection)
+                    vector-ref
+                    list-ref)]
+           [len (if (vector? collection)
+                    (vector-length collection)
+                    (length collection))])
+      (letrec ([kernel
+                 (lambda (n)
+                   (when (> n 0)
+                     (ref collection (random len))
+                     (kernel (- n 1))))])
+        (kernel rounds)))))
+
 ;;; (number-vector-increment-at! vec index) -> (void)
 ;;;   vec : vectorof number?
 ;;;   index : integer?
@@ -121,8 +171,12 @@ well `list-ref` works on a long list.
     (define size 10000)
     (define rounds 50000)
     (define list-of-values (range size))
-    (define list-result 
-      (time (map (section list-ref list-of-values <>) list-of-values)))
+    (define list-of-probes (random-nums rounds size))
+    (define list-result
+      (time (map (cut (list-ref list-of-values <>)) list-of-probes)))
+
+Note that `time` reports on how long something takes.
+
 |#
 
 #|
@@ -171,7 +225,7 @@ e. Here's a followup experiment for vectors.
 
     (define vector-of-values (list->vector list-of-values))
     (define vector-result 
-      (time (map (section vector-ref vector-of-values <>) list-of-values)))
+      (time (map (cut (vector-ref vector-of-values <>)) list-of-values)))
 
 Will `vector-result` be the same as `list-result`?  Why or why not?
 
@@ -187,7 +241,7 @@ f. Check your answer experimentally
 #|
 g. Without changing `size`, find a value of `rounds` that makes
 the computation of `vector-result` take about 50 milliseconds 
-(anywhere between 30 and 80 should be fine.  
+(anywhere between 30 and 800 should be fine).  
 
 **Make sure that you do not recompute list-result**.  
 
@@ -196,7 +250,7 @@ the computation of `vector-result` take about 50 milliseconds
     (define list-of-values (range size))
     (define vector-of-values (list->vector list-of-values))
     (define vector-result 
-      (time (map (section vector-ref vector-of-values <>) list-of-values)))
+      (time (map (section vector-ref vector-of-values <>) list-of-probes)))
 |#
 
 #|
@@ -229,16 +283,14 @@ j. What have you taken from these experiments?
 <TODO: ENTER AN ANSWER HERE>
 |#
 
-#| B |#
+#| A |#
 
 ; +-----------------------------------+------------------------------
 ; | Exercise 3: Vector-based palettes |
 ; +-----------------------------------+
 
-#| A |#
-
 #|
-It is possible to represent a collection of colors (a “palette”)
+It is possible to represent a collection of colors (a "palette")
 as a vector. Why would we do so? Well, once we’ve chosen a palette,
 we can represent an image as a collection of indices into that
 palette. Such a representation is typically much more compact than
@@ -248,19 +300,40 @@ For example, here is a palette that represents the colors in the
 rainbow.
 |#
 
+; rainbow-palette : (vector-of rgb?)
 (define rainbow-palette
   (list->vector
-   (map color-name->color
+   (map color-name->rgb
         (list "red" "orange" "yellow" "green" "blue" "indigo" "violet"))))
+
+#|
+Write a procedure, `(palette? val)`, that determines if `val` is
+a palette (a nonempty vector of RGB colors).
+|#
+
+;;; (palette? val) -> boolean?
+;;;   val : any?
+;;; Determine if `val` is a nonempty vector of RGB colors.
+(define palette?
+  (lambda (val)
+    ???))
+
+#| B |#
 
 ; +---------------------------------------------+--------------------
 ; | Exercise 4: Darkening vector-based palettes |
 ; +---------------------------------------------+
 
 #|
-Write a procedure, (palette-darker! palette), that, given a vector of integer-encoded RGB colors, makes each color in the palette slightly darker (i.e., using color-darker).
+Write a procedure, (palette-darker! palette), that, given a vector
+of integer-encoded RGB colors, makes each color in the palette
+slightly darker (i.e., using color-darker).
 
-Note that you will not build a new vector. Rather, you will replace each color in the existing vector by the darker version. You may use the recursion pattern(s) from the reading and number-vector-divide! as a starting point. If you do, be sure to cite your sources appropriately.
+Note that you will not build a new vector. Rather, you will replace
+each color in the existing vector by the darker version. You may
+use the recursion pattern(s) from the reading and number-vector-scale!
+as a starting point. If you do, be sure to cite your sources
+appropriately.
 |#
 
 (define palette-darker!
@@ -270,30 +343,31 @@ Note that you will not build a new vector. Rather, you will replace each color i
 #| A |#
 
 ; +---------------------------------+--------------------------------
-; | Exercise 4: The brightest color |
+; | Exercise 5: The brightest color |
 ; +---------------------------------+
 
 #|
-Write a procedure, (palette-brightest palette), that takes one argument,
+Write a procedure, `(palette-brightest palette)`, that takes one argument,
 a vector of colors, and returns the brightest color in that vector.
 You can assume that every position in the vector contains a color.
 
-You will need the definitions of color-brightness and color-brighter-of-two.
+You will likely need the following definitions of `color-brightness`
+and `color-brighter-of-two`.
 |#
 
 ;;; (color-brightness color) -> integer?
-;;;   color : color?
+;;;   color : rgb?
 ;;; Compute the brightness of a color on a 0 .. 100 range.
 (define color-brightness
   (lambda (color)
-    (round (* 100 (/ (+ (* 30/100 (color-red color))
-                        (* 59/100 (color-green color))
-                        (* 11/100 (color-blue color)))
+    (round (* 100 (/ (+ (* 30/100 (rgb-red color))
+                        (* 59/100 (rgb-green color))
+                        (* 11/100 (rgb-blue color)))
                       255)))))
 
 ;;; (color-brighter-of-two color1 color2) -> color?
-;;;    color1 : color?
-;;;    color2 : color?
+;;;    color1 : rgb?
+;;;    color2 : rgb?
 ;;; Find the brighter of two colors.
 (define color-brighter-of-two
   (lambda (color1 color2)
@@ -301,15 +375,29 @@ You will need the definitions of color-brightness and color-brighter-of-two.
         color1
         color2)))
 
-#| A |#
-
-; +----------------------------+-------------------------------------
-; | Exercise 5: Using palettes |
-; +----------------------------+
-
+;;; (palette-brightest palette) -> rgb?
+;;;   palette : (all-of (vector-of rgb?) nonempty?)
+;;; Find the brightest color in `palette`. If multiple colors have
+;;; the same brightness (and it's the largest brightness), can return
+;;; any of them.
+(define palette-brightest
+  (lambda (palette)
+    ???))
 
 #| B |#
 
+; +-------------------------------+----------------------------------
+; | Exercise 6: Testing your code |
+; +-------------------------------+
+
+#|
+Write five or more tests for `palette-brightest`, including at
+least two edge cases.
+|#
+
+; "Normal" cases
+
+; Edge cases
 
 #| AB |#
 
@@ -326,8 +414,8 @@ Yup, it's that time.  You should know the drill.
 ; +---------------------------+
 
 #|
-If you find that you have extra time, you might try the following
-exercise.
+If you find that you have extra time, you might try one or more 
+of the following exercises.
 |#
 
 ; +---------------------------+--------------------------------------
@@ -406,7 +494,7 @@ as `(cond [TEST EXP1 EXP2 ...])`.
       ???)))
 
 ; +--------------------------------------+---------------------------
-; | Extra 1: Tallying letters, revisited |
+; | Extra 2: Tallying letters, revisited |
 ; +--------------------------------------+
 
 #|
