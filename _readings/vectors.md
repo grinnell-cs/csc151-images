@@ -242,7 +242,7 @@ Vectors introduced into a Scheme program by means of the
 mesh-and-parentheses notation are supposed to be "immutable":
 applying `vector-set!` to such a vector is an error, and the contents
 of such vectors are therefore constant. (*Warning!* Some implementations
-of Scheme, including the ones we use, don't enforce this rule.)
+of Scheme, including the ones we use in some semesters, don't enforce this rule.)
 
 ### `vector->list` and `list->vector`
 
