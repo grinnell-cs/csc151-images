@@ -15,7 +15,7 @@ _Approximate overview_
 * Administrative stuff [10 min]
 * A note from last class [5 min]
 * Questions [10 min]
-* Lab [55 min]
+* Lab [35 min]
 * Turn in lab [5 min]
 
 Administrative stuff
@@ -26,11 +26,15 @@ Administrative stuff
 * Today is the last day to withdraw from classes. Please chat with me
   if you are questioning whether or not you will pass the course.
 * As you preregister for next semester, please consider taking CSC-161.
+  (You might also consider MAT/CSC-208, but space is limited.)
+* MP5 returned.
 
 ### Token opportunities
 
 Academic/Scholarly
 
+* Tuesday, 2024-04-09, noon, some PDR
+  _CS Table (topic TBD)_.
 * Thursday, 2024-04-11, 4pm, HSSC 1231 (the Kernel).
   _CS Poster Session_.
 * Thursday, 2024-04-11, 7pm, the normal place
@@ -44,6 +48,8 @@ Cultural
   residence hall on South Campus). 
   _Holi_.
   Beware, your clothes will get stained.
+* Saturday, 2024-04-06, 7:00-8:00pm, Global Living Room.
+  _Eid extravaganza_.
 * Sunday, 2024-04-07, 1:00-4:30pm, Harris.
   _Purim Carnival_.
 * Sunday, 2024-04-07, 2:00-3:30pm, Sebring-Lewis.
@@ -83,6 +89,8 @@ Misc
 
 * Monday, 2024-04-08, 1:00--3:00pm (approx), where appropriate.
   _Watch the eclipse (but don't stare at the sun)_.
+    * Eclipse glasses being given away at Burling (we think) and
+      by the Physics SEPC (we know).
 
 ### Other good things (no tokens)
 
@@ -111,6 +119,12 @@ Misc
 
 ### Friday PSA
 
+* You are awesome, people (or at least whatever I am) care about you.
+  You therefore have a responsibility to take care of yourselves.
+* Moderation.
+* If you consume alcohol, watch your container.
+* Consent is essential (but insufficient).
+
 Notes from last lab
 -------------------
 
@@ -130,6 +144,21 @@ Here's what most of you wrote for `listp?`
        #f])))
 ```
 
+```
+(define listp?
+  (lambda (thing)
+    (cond
+      [(null? thing)
+       #t]
+      [(and (pair? thing) (listp? (cdr thing)))
+       #t]
+      [else
+       #f])))
+```
+
+Statement: `thing` is a list if either (a) thing is null or (b) thing is a pair whose cdr is a list.
+
+
 Here's what a more experienced Schemer might write.
 
 ```
@@ -143,6 +172,13 @@ Here's what a more experienced Schemer might write.
 ### Building arbitrary `caaddaadddr` procedures
 
 Idea: 
+
+* If we treat the middle letters as a string,
+* We know how to turn a string into a list of letters. (`string->list`)
+* We could map over that list to get a list of procedures.
+  `'(car car cdr cdr car car cdr cdr cdr)`.
+* We can compose all of those together.
+* And we end up with aprocedure that does `caaddaaddr`.
 
 ```
 ;;; (c_r str) -> procedure?
@@ -159,6 +195,8 @@ Idea:
 (define caddddddr (c_r "adddddd"))
 ```
 
+No, you do not need to understand that completely.
+
 Questions
 ---------
 
@@ -174,10 +212,55 @@ Can we get second redos for MPs 2 and 3?
 
 When will our graders catch up?
 
-> Soon.
+> Soon. By the end of this weekend.
 
 ### Vectors
+
+Could you explain what a numeric vector is?
+
+> Lists and vectors are normally heterogeneous: They can contain multiple
+  types of elements.  E.g, `(list "a" 'a 23)` or `(vector "eh" 'b 23)`.
+
+> Lists and vectors can also be homogeneous: They can contain only one
+  type of element. E.g., `(list "a" "b" "c")` or `(vector 'a 'b 'c)`
+  or (vector 1 2 3)`.
+
+> When we have a homogeneous list or vector, we might use an adjective
+  like "numeric" to describe it. So a "numeric vector" is a vector that
+  contains only numbers. 
+
+> We are sometimes too casual with language, so you may find that I use
+  "numeric vector" for "vector of only integers".
+
+> We often use numeric vectors as examples for vector recursion because
+  it's easiest to see us changing numbers.
+
+> We will use the term "palette" for a vector of RGB colors.
+
+Can we look at the last procedure in the reading? `vector-set!`
+
+> Unlike lists, which are fixed, vectors are mutable (but not at 
+  Prof. Xavier's academy), which means that we can change them.
+
+```
+> tuff
+'#("tee" "you" "eff" "eff")
+> (vector-set! tuff 1 "ewe")
+> tuff
+'#("tee" "ewe" "eff" "eff")
+```
 
 Lab
 ---
 
+Note: `(section list-ref list-of-values <>)` is a different way to
+write `(cut (list-ref list-of-values <>))`.
+
+Note: `time` reports on how long something takes.
+
+Note: `"; SAM SAID TO SKIP EXERCISE 2!"`
+
+Note: By `number-vector-divide!`, we mean `number-vector-scale!`.
+
+IMPORTANT: We will resume this lab on Monday! Plan to be in the same place
+with the same partners!
