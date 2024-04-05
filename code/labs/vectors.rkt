@@ -14,6 +14,56 @@
 ; | Provided code |
 ; +---------------+
 
+;;; (random-list-elt lst) -> any/c?
+;;;   lst : list?
+;;; Randomly select an element from the list.
+(define random-list-elt
+  (lambda (lst)
+    (list-ref lst (random (length lst)))))
+
+;;; (random-vector-elt vec) -> any/c?
+;;;   vec : vector?
+;;; Randomly select an element from the vector.
+(define random-vector-elt
+  (lambda (vec)
+    (vector-ref vec (random (vector-length vec)))))
+
+;;; (random-nums len max) -> listof integer?
+;;;    len : non-negative-integer?
+;;;    max : positive-integer?
+;;; Make a list of length `len`, containing unpredictable numbers
+;;; from the range [0..max).
+(define random-nums
+  (lambda (len max)
+    (letrec ([helper
+              (lambda (len so-far)
+                (if (zero? len)
+                    so-far
+                    (helper (- len 1) (cons (random max) so-far))))])
+      (helper len '()))))
+
+;;; (ref-experiment collection rounds) -> void?
+;;;   collection : (vectorof integer?) or (listof integer?)
+;;;   rounds : natural?
+;;; Look for integers selected randomly from the range between
+;;; 0 and the length of collection.
+;;;
+;;; Returns nothing.  Used mostly for timing purposes.
+(define ref-experiment
+  (lambda (collection rounds)
+    (let* ([ref (if (vector? collection)
+                    vector-ref
+                    list-ref)]
+           [len (if (vector? collection)
+                    (vector-length collection)
+                    (length collection))])
+      (letrec ([kernel
+                 (lambda (n)
+                   (when (> n 0)
+                     (ref collection (random len))
+                     (kernel (- n 1))))])
+        (kernel rounds)))))
+
 ;;; (number-vector-increment-at! vec index) -> (void)
 ;;;   vec : vectorof number?
 ;;;   index : integer?
@@ -121,8 +171,12 @@ well `list-ref` works on a long list.
     (define size 10000)
     (define rounds 50000)
     (define list-of-values (range size))
-    (define list-result 
-      (time (map (section list-ref list-of-values <>) list-of-values)))
+    (define list-of-probes (random-nums rounds size))
+    (define list-result
+      (time (map (cut (list-ref list-of-values <>)) list-of-probes)))
+
+Note that `time` reports on how long something takes.
+
 |#
 
 #|
@@ -171,7 +225,7 @@ e. Here's a followup experiment for vectors.
 
     (define vector-of-values (list->vector list-of-values))
     (define vector-result 
-      (time (map (section vector-ref vector-of-values <>) list-of-values)))
+      (time (map (cut (vector-ref vector-of-values <>)) list-of-values)))
 
 Will `vector-result` be the same as `list-result`?  Why or why not?
 
@@ -187,7 +241,7 @@ f. Check your answer experimentally
 #|
 g. Without changing `size`, find a value of `rounds` that makes
 the computation of `vector-result` take about 50 milliseconds 
-(anywhere between 30 and 80 should be fine.  
+(anywhere between 30 and 800 should be fine).  
 
 **Make sure that you do not recompute list-result**.  
 
@@ -196,7 +250,7 @@ the computation of `vector-result` take about 50 milliseconds
     (define list-of-values (range size))
     (define vector-of-values (list->vector list-of-values))
     (define vector-result 
-      (time (map (section vector-ref vector-of-values <>) list-of-values)))
+      (time (map (section vector-ref vector-of-values <>) list-of-probes)))
 |#
 
 #|
@@ -271,9 +325,15 @@ a palette (a nonempty vector of RGB colors).
 ; +---------------------------------------------+
 
 #|
-Write a procedure, (palette-darker! palette), that, given a vector of integer-encoded RGB colors, makes each color in the palette slightly darker (i.e., using color-darker).
+Write a procedure, (palette-darker! palette), that, given a vector
+of integer-encoded RGB colors, makes each color in the palette
+slightly darker (i.e., using color-darker).
 
-Note that you will not build a new vector. Rather, you will replace each color in the existing vector by the darker version. You may use the recursion pattern(s) from the reading and number-vector-divide! as a starting point. If you do, be sure to cite your sources appropriately.
+Note that you will not build a new vector. Rather, you will replace
+each color in the existing vector by the darker version. You may
+use the recursion pattern(s) from the reading and number-vector-scale!
+as a starting point. If you do, be sure to cite your sources
+appropriately.
 |#
 
 (define palette-darker!
