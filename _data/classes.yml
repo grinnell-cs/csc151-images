@@ -296,7 +296,7 @@
     - page: /readings/pairs.html
   lab:
     - page: /labs/pairs.html
-  notes: ../eboards/eboard25.html
+  notes: ../eboards/eboard26.html
 
 - topic: Vectors
   abbrev: vectors
@@ -307,6 +307,7 @@
     - page: /readings/vectors.html
   lab:
     - page: /labs/vectors.html
+  notes: ../eboards/eboard27.html
 
 - topic: Vectors, continued
   abbrev: vectors

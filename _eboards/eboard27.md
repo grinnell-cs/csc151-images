@@ -31,6 +31,11 @@ Administrative stuff
 
 Academic/Scholarly
 
+* Thursday, 2024-04-11, 4pm, HSSC 1231 (the Kernel).
+  _CS Poster Session_.
+* Thursday, 2024-04-11, 7pm, the normal place
+  _Mentor Session_.
+
 Cultural
 
 * Friday, 2024-04-05, 4pm, Global Living Room in HSSC.
@@ -39,8 +44,29 @@ Cultural
   residence hall on South Campus). 
   _Holi_.
   Beware, your clothes will get stained.
+* Sunday, 2024-04-07, 1:00-4:30pm, Harris.
+  _Purim Carnival_.
+* Sunday, 2024-04-07, 2:00-3:30pm, Sebring-Lewis.
+  _Eugene Gaub Recital_.
+* Thursday, 2024-04-11, 4:15-5:30pm, HSSC S1325
+  _Writers@Grinnell_.
+* Thursday, 2024-04-11, 8:00-9:30pm, JRC 101
+  _Writers@Grinnell_.
+* Friday, 2024-04-12, 4:00-5:00pm, HSSC N1170
+  _Middle of Everywhere_.
 
 Peer
+
+* Saturday, 2024-04-06, 9am--noon, Field House (?)
+  _Men's Tennis vs. Illinois College_.
+* Saturday, 2024-04-06, noon-3pm, Pioneer Park
+  _Baseball vs. Lawrence_.
+* Saturday, 2024-04-06, 2:30-5:30pm, Pioneer Park
+  _Baseball vs. Lawrence, the sequel_.
+* Saturday, 2024-04-06, 3pm--6pm, Field House (?)
+  _Men's Tennis vs. Monmouth_.
+* Sunday, 2024-04-07, 1:00-3:00pm, JRC 225
+  _Fiber Arts Club_
 
 Wellness
 
@@ -50,8 +76,13 @@ Wellness
   _Yoga in the Museum._
 * Tuesday, 2024-04-09, 4pm, BRAC P103 (Multipurpose Dance Studio):
   _Yoga_.
+* Friday, 2024-04-12, 3:00--5:00pm, JRC Courtyard
+  _Get Nostalgic_.
 
 Misc
+
+* Monday, 2024-04-08, 1:00--3:00pm (approx), where appropriate.
+  _Watch the eclipse (but don't stare at the sun)_.
 
 ### Other good things (no tokens)
 
@@ -63,15 +94,22 @@ Misc
     * [_Submit SoLA 3 pre-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4248181)
 * Sunday, 2024-04-07, 11:00pm, [MP4](../mps/mp04) Redo
     * [_Submit MP4 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4217681)
-* Sunday, 2024-04-07, 11:00pm, [New vectors reading](../readings/vectors)
-    * [_Submit reading reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4312955)
-* Monday, 2024-04-08, 8:30am, [Lab writeup](../labs/pairs)
+* Sunday, 2024-04-07, 11:00pm, No reding.
+* Monday, 2024-04-08, 8:30am, [Lab writeup](../labs/vectors)
     * [_Submit today's lab on Gradescope_](...)
-    * Preferred: Finish it during class
+    * Preferred: Finish it during class today
 * Monday, 2024-04-08, 4:00pm, [SoLA 3](../las/) distributed
 * Wednesday, 2024-04-10, 11:00pm, [SoLA 3](../las/) due
 * Sunday, 2024-04-14, 11:00pm, [MP5](../mps/mp05) Redo
     * [_Submit MP5 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4248212)
+* Sunday, 2024-04-14, 11:00pm, [MP1](../mps/mp01) Third Redo
+    * [_Submit MP1 redo on Gradescope_]()
+* Sunday, 2024-04-14, 11:00pm, [MP2](../mps/mp02) Second Redo
+    * [_Submit MP2 redo on Gradescope_]()
+* Sunday, 2024-04-14, 11:00pm, [MP3](../mps/mp03) Second Redo
+    * [_Submit MP3 redo on Gradescope_]()
+
+### Friday PSA
 
 Notes from last lab
 -------------------
@@ -121,13 +159,22 @@ Idea:
 (define caddddddr (c_r "adddddd"))
 ```
 
-Some notes on vectors
----------------------
-
 Questions
 ---------
 
 ### Administrative
+
+Can we get a third redo for MP 1?
+
+> Sure.
+
+Can we get second redos for MPs 2 and 3?
+
+> Sure.
+
+When will our graders catch up?
+
+> Soon.
 
 ### Vectors
 
