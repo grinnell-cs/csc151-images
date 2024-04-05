@@ -103,19 +103,19 @@ Misc
 * Sunday, 2024-04-07, 11:00pm, [MP4](../mps/mp04) Redo
     * [_Submit MP4 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4217681)
 * Sunday, 2024-04-07, 11:00pm, No reding.
-* Monday, 2024-04-08, 8:30am, [Lab writeup](../labs/vectors)
-    * [_Submit today's lab on Gradescope_](...)
-    * Preferred: Finish it during class today
 * Monday, 2024-04-08, 4:00pm, [SoLA 3](../las/) distributed
+* Wednesday, 2024-04-08, 8:30am, [Lab writeup](../labs/vectors)
+    * [_Submit today's lab on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4323174)
+    * Preferred: Finish it during class Monday
 * Wednesday, 2024-04-10, 11:00pm, [SoLA 3](../las/) due
 * Sunday, 2024-04-14, 11:00pm, [MP5](../mps/mp05) Redo
     * [_Submit MP5 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4248212)
-* Sunday, 2024-04-14, 11:00pm, [MP1](../mps/mp01) Third Redo
-    * [_Submit MP1 redo on Gradescope_]()
 * Sunday, 2024-04-14, 11:00pm, [MP2](../mps/mp02) Second Redo
-    * [_Submit MP2 redo on Gradescope_]()
+    * [_Submit MP2 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4323413)
 * Sunday, 2024-04-14, 11:00pm, [MP3](../mps/mp03) Second Redo
-    * [_Submit MP3 redo on Gradescope_]()
+    * [_Submit MP3 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4323418)
+* Sunday, 2024-04-14, 11:00pm, [MP1](../mps/mp01) Third Redo
+    * [_Submit MP1 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4323410/)
 
 ### Friday PSA
 
