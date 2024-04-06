@@ -122,7 +122,7 @@ them into a vector, which it returns.
 ```
 > (vector "alpha" "beta" "gamma")
 '#("alpha" "beta" "gamma")
-'> (vector)  ; the empty vector -- no elements!
+> (vector)  ; the empty vector -- no elements!
 #()
 > (define beta 2)
 > (vector "alpha" beta (list "gamma" 3) (vector "delta" 4) (vector "epsilon"))
