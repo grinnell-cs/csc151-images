@@ -225,7 +225,7 @@ e. Here's a followup experiment for vectors.
 
     (define vector-of-values (list->vector list-of-values))
     (define vector-result 
-      (time (map (cut (vector-ref vector-of-values <>)) list-of-values)))
+      (time (map (cut (vector-ref vector-of-values <>)) list-of-probes)))
 
 Will `vector-result` be the same as `list-result`?  Why or why not?
 
@@ -247,10 +247,11 @@ the computation of `vector-result` take about 50 milliseconds
 
     (define size 10000)
     (define rounds 2000000)
+    (define list-of-probes (random-nums rounds size))
     (define list-of-values (range size))
     (define vector-of-values (list->vector list-of-values))
     (define vector-result 
-      (time (map (section vector-ref vector-of-values <>) list-of-probes)))
+      (time (map (cut (vector-ref vector-of-values <>)) list-of-probes)))
 |#
 
 #|

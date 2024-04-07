@@ -122,7 +122,7 @@ them into a vector, which it returns.
 ```
 > (vector "alpha" "beta" "gamma")
 '#("alpha" "beta" "gamma")
-'> (vector)  ; the empty vector -- no elements!
+> (vector)  ; the empty vector -- no elements!
 #()
 > (define beta 2)
 > (vector "alpha" beta (list "gamma" 3) (vector "delta" 4) (vector "epsilon"))
@@ -242,7 +242,7 @@ Vectors introduced into a Scheme program by means of the
 mesh-and-parentheses notation are supposed to be "immutable":
 applying `vector-set!` to such a vector is an error, and the contents
 of such vectors are therefore constant. (*Warning!* Some implementations
-of Scheme, including the ones we use, don't enforce this rule.)
+of Scheme, including the ones we use in some semesters, don't enforce this rule.)
 
 ### `vector->list` and `list->vector`
 
@@ -657,16 +657,19 @@ And, as before, we can count down, rather than up.
 ### Check 1: Creating simple vectors (‡)
 
 a. Create and define a vector literal, `tn1`, that denotes a vector
-containing just the two elements 3.14159 and 2.71828. How does
+containing just the two elements `7` and `11`. How does
 DrRacket display the value of this vector?
 
 b. Create and define a vector, `tn2,` that contains the same two
-values by using the `vector` procedure.  How does DrRacket display 
-the value of this vector?
+values (that is, `7` and `11`) by using the `vector` procedure.
+How does DrRacket display the value of this vector?
 
-c. Create and define a vector, `tn3`, that contains the same two values 
-by using the `make-vector` and `vector-set!` procedures.  How does
-DrRacket display the value of this vector?
+c. Create and define a vector, `tn3`, that contains the same two
+values (that is, 7 and 11) by using the `make-vector` and
+`vector-set!` procedures.  How does DrRacket display the value of
+this vector?
+
+Note: You cannot use `(define tn3 (vector-set! (make-vector 2 11) 0 7))` to solve this problem. (We'll let you figure out why not.)
 
 d. Determine which of those vectors you can change with `vector-set!`.
 
@@ -674,10 +677,10 @@ d. Determine which of those vectors you can change with `vector-set!`.
 
 a. Make a copy of `number-vector-increment-at!` from above.
 
-b. Try using `number-vector-increment-at!` on a vector from the previous check.
+b. Try using `number-vector-increment-at!` on a vector of two numbers.
 
 ```
-> (define v1 (vector 3.14159 2.71828))
+> (define v1 (vector 7 11))
 > (number-vector-increment-at! v1 1)
 > v1
 ```
@@ -685,18 +688,19 @@ b. Try using `number-vector-increment-at!` on a vector from the previous check.
 c. Use `number-vector-increment-all!` on the vector to verify it behaves as intended.
 
 ```
-> (define v2 (make-vector 2 3.14159))
-> (vector-set! v2 12.71828))
+> (define v2 (make-vector 2 11))
+> (vector-set! v2 0 7)
 > (number-vector-increment-all! v2)
 > v2
 ```
 
-d. Checks 2.b and 2.c relied on the vectors you created in 1.b and 1.c,
-respectively. What do you suppose would happen if we tried these
-operations on the vector you created in check 1.a?
+d. Checks 2.b and 2.c relied on the vectors similar to those you
+created in 1.b and 1.c, respectively. What do you suppose would
+happen if we tried these operations on the vector you created in
+check 1.a?
 
 ```
-> (number-vector-increment-at! '#(3.14159 2.71828) 1)
+> (number-vector-increment-at! '#(7 11) 1)
 ```
 
 e. Verify your prediction. Why do you think this happens?
