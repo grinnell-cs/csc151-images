@@ -183,33 +183,8 @@ If you find that you have time left at the end of lab, consider
 doing one or more of the following problems.
 |#
 
-; +----------------------------+-------------------------------------
-; | Extra 1: Adding to vectors |
-; +----------------------------+
-
-#|
-Write a procedure, `(vector-cons val vec)`, that builds a new vector
-by adding `val` to the front of `vec`.
-
-   > (define nums (vector 4 3 8))
-   > nums
-   '#(4 3 8)
-   > (define morenums (vector-cons 6 nums))
-   > morenums
-   '#(6 4 3 8)
-
-|#
-
-;;; (vector-cons val vec) -> vector?
-;;;   val : any?
-;;;   vec : vector?
-;;; Add val to the front of `vec`, thereby creating a new vector..
-(define vector-cons
-  (lambda (val vec)
-    ???))
-
 ; +---------------------------+--------------------------------------
-; | Extra 2: Rotating vectors |
+; | Extra 1: Rotating vectors |
 ; +---------------------------+
 
 #|
@@ -236,7 +211,7 @@ in position 1, and so on and so forth.
     ???))
 
 ; +--------------------------------------+---------------------------
-; | Extra 3: Rotating vectors, revisited |
+; | Extra 2: Rotating vectors, revisited |
 ; +--------------------------------------+
 
 #|
@@ -254,7 +229,7 @@ Please do not use repeated calls to `vector-rotate-1!`.
     ???))
 
 ; +--------------------------------+---------------------------------
-; | Extra 4: Patterns of recursion |
+; | Extra 3: Patterns of recursion |
 ; +--------------------------------+
 
 #|
