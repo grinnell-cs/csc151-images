@@ -13,18 +13,21 @@ link: true
 
 _Approximate overview_
 
-* Administrative stuff [10 min]
-* Notes from last class [10 min]
+* Administrative stuff [5 min]
+* Notes from Friday's quiz [5 min]
+* Notes from last class [15 min]
 * Questions [5 min]
-* Labs [45 min]
+* Labs [40 min]
 * Turn in labs [5 min]
 
 Administrative stuff
 --------------------
 
 * As you preregister for next semester, please consider taking CSC-161.
-  (You might also consider MAT/CSC-208, but space is limited.)
-
+  (You might also consider MAT/CSC-208, but space is currently limited.)
+* Since our graders don't have a new MP to grade, if you get redos in
+  early, they might get them graded more quickly.
+  
 ### Token opportunities
 
 Academic/Scholarly
@@ -86,8 +89,8 @@ Misc
         * Testing
         * Ethical Considerations
     * Phase 3
-        * List recursion
-        * Local bindings
+        * List recursion (quizzed)
+        * Local bindings (quizzed)
         * Numeric recursion
         * Vectors
         * Randomness
@@ -102,7 +105,7 @@ Misc
 * Wednesday, 2024-04-10, 8:30am, MP7 assigned
 * Wednesday, 2024-04-10, 11:00pm, [SoLA 3](../las/) due
 * Friday, 2024-04-12, 8:00am, Quizzes
-    * Dictionaries (new)
+    * Dictionaries (new, covered Wednesday)
     * Diagramming structures (old)
     * Tracing (old)
 * Friday, 2024-04-12, 11:00pm, [SoLA 3](../las/) post-reflection
@@ -118,6 +121,16 @@ Misc
 * Sunday, 2024-04-14, 11:00pm, [MP1](../mps/mp01) Third Redo
     * [_Submit MP1 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4323410/)
 
+Notes from quiz
+---------------
+
+Reminders:
+
+* A list with `n` elements has `n` pairs ("cons cells").
+* A call to `cons` creates one pair ("cons cell").
+* Each box in a pair can hold one thing (a null or an arrow).
+* Arrows point to values (either another pair or a more basic value).
+
 Notes from last lab
 -------------------
 
@@ -130,6 +143,10 @@ What are vectors?
 Why do we use them instead of lists?
 
 Why use lists when we have vectors?
+
+What does typical "extract data" recursion over a vector look like?
+
+What does typical "change data" recursion over a vector look like?
 
 ### `palette?`
 
@@ -169,7 +186,7 @@ The "obvious" solution: Vector recursion.
     ???))
 ```
 
-A common solution: Convert it to a vector
+A common solution: Convert it to a list and use our list knowledge.
 
 ```
 (define all-rgb?
@@ -184,7 +201,7 @@ A surprising solution: Think about type predicates.
   ???)
 ```
 
-Rethinking `palette`?
+Rethinking `palette?`
 
 ```
 (define palette?
