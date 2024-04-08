@@ -315,6 +315,7 @@
     We continue to explore vectors.
   lab:
     - page: /labs/vectors-continued.html
+  notes: ../eboards/eboard28.html
 
 - topic: Dictionaries and hash tables
   abbrev: dictionaries

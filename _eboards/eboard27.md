@@ -102,7 +102,7 @@ Misc
     * [_Submit SoLA 3 pre-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4248181)
 * Sunday, 2024-04-07, 11:00pm, [MP4](../mps/mp04) Redo
     * [_Submit MP4 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4217681)
-* Sunday, 2024-04-07, 11:00pm, No reding.
+* Sunday, 2024-04-07, 11:00pm, No reading.
 * Monday, 2024-04-08, 4:00pm, [SoLA 3](../las/) distributed
 * Wednesday, 2024-04-08, 8:30am, [Lab writeup](../labs/vectors)
     * [_Submit today's lab on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4323174)
