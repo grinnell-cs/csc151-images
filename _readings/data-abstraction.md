@@ -408,6 +408,35 @@ knowing that.)  You are now experiencing the ideas of "*data abstaction*";
 we can use a representation of data without knowing the underlying
 representation.
 
+
+## What is actually the best way to represent a name? (Social implications of storing people's names as data)
+
+You've seen that if we choose 5 parts of a name (prefix, given, middle, family, and suffix) then we could represent any name that may contain those 5 parts using various different underlying representations: list, hash table, etc.
+
+But, are those 5 parts -- prefix, given, middle, family, and suffix -- the best way to represent a name?
+
+How would we represent the name of Dr. Manuel A. Pérez Quiñones, a Puerto Rican American Computer Science profressor? (Here is [an article that Dr. Pérez Quiñones wrote about his name](https://webpages.charlotte.edu/mperez19/twolastnames.html)!) 
+
+- **prefix:** Dr.
+- **given:** Manuel
+- **middle:** A.
+- **family:** Pérez
+- ?? **family 2:** Quiñones ??
+- **suffix:** #f
+
+As you can see, the 5 parts chosen earlier do not quite fit Dr. Pérez's name. Quiñones is his maternal family name, not a suffix, but our data structure only has room for one family name. Maybe we could use the suffix place for his second family name. But what if we tried to represent somebody who had 2 family names AND a suffix?
+
+In his [article](https://webpages.charlotte.edu/mperez19/twolastnames.html), Dr. Pérez Quiñones describes how his struggles in dealing with computer records systems led him to artificially hyphenate his two family names into one: Pérez-Quiñones. Should he have to do that?
+
+Because of the vast diversity of people and cultures in the world, it is incredibly complicated to come up with a set of name parts that accurately represent every name. For any representaiton, we need to make assumptions about the names. We can almost always find a counterexample where reality defies the assumption. Check out this list of [Falsehoods Programmers Believe About Names](https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/)!
+
+The only way to avoid making assumptions is to not store any data.
+
+The take-away message here is that **almost all data is an approximation of reality**, and whenever we work with data structures, we have to keep that in mind.
+
+This discussion might have raised more questions than it answered, as is the case with most discussions about the social implications of computing. As computer scientists, it is important for us to constantly confront social issues around computing that don't have a clear answer!
+
+
 ## Self-Checks
 
 ### Self-check 1: Printing names (‡)
@@ -432,3 +461,12 @@ components separated by vertical bars.  For example,
 how you would write procedures like `name-given` and `name-family`
 that extract the various parts of the name.  You might, for example,
 use `string-split`.
+
+
+### Self-check 3: A better choice of name parts
+
+Take 2 minutes to peruse the [Falsehoods Programmers Believe About Names](https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/). 
+
+a. Propose a new choice of name parts that differs from the parts we used in the examples above (prefix, given, middle, family, suffix).
+
+b. Name one advantage and one disadvantage of your proposal.
