@@ -27,7 +27,8 @@ Administrative stuff
   (You might also consider MAT/CSC-208, but space is currently limited.)
 * Since our graders don't have a new MP to grade, if you get redos in
   early, they might get them graded more quickly.
-  
+* Enjoy the SoLA eek lips!
+
 ### Token opportunities
 
 Academic/Scholarly
@@ -36,6 +37,8 @@ Academic/Scholarly
   _Just Talk: A Trans-Related Conversation on Legislation and the Law_.
 * Tuesday, 2024-04-09, noon, some PDR
   _CS Table (topic TBD)_.
+* Thursday, 2024-04-09, 7pm, the normal place
+  _Mentor Session: Diagramming structures_.
 * Thursday, 2024-04-11, 4pm, HSSC 1231 (the Kernel).
   _CS Poster Session_.
 * Thursday, 2024-04-11, 7pm, the normal place
@@ -124,12 +127,59 @@ Misc
 Notes from quiz
 ---------------
 
-Reminders:
+### Why study diagrams?
+
+We want you to diagram structures so that you have a good mental model.
+
+* It helps you understand when/why things go wrong.
+* It helps you understand the cost of things.
+* It's pretty.
+* It helps you understand lists better, since pairs implement lists.
+
+### Reminders:
 
 * A list with `n` elements has `n` pairs ("cons cells").
 * A call to `cons` creates one pair ("cons cell").
 * Each box in a pair can hold one thing (a null or an arrow).
 * Arrows point to values (either another pair or a more basic value).
+
+### Questions
+
+Why do we only draw one pair for a cons?
+
+> Because `cons` is designed to create only one pair.
+
+How should we differentiate pairs ("cons cells") from lists?
+
+> Lists are built from pairs. So, in some sense, they are very similar.
+
+> A nonempty list is a sequence of pairs (following the arrows from the second 
+  box) that ends in null.
+
+> Pairs are the "behind the scenes" stuff that happens every time you
+  create a list, even though you don't explicitly build the pairs.
+
+> Lists can also be `null`. Pairs are always pairs.
+
+When do we see dots?
+
+> When we have the last pair in a sequence and its second element (the
+  `cdr`) is neither null nor another pair. 
+
+> I think of the dot as "damn, I was expecting a null here. I better tell
+  the user that it's something else."
+
+When does `cons` create that dot?
+
+> When the second element (the `cdr`) is neither a pair nor null.
+
+Why does it behave that way?
+
+> Because the designers chose to make it behave that way.
+
+What happens if we do `(cons 'a)`?
+
+> `cons` expects two parameters. You'll get a "missing parameter" message.
 
 Notes from last lab
 -------------------
@@ -140,13 +190,146 @@ _It's TPS time!_
 
 What are vectors?
 
+> Similar to lists, except that (a) faster to find elements quickly and
+  (b) you can change elements in a vector.
+
+> For (b) To "change" a list, you must actually build a new list.
+
+> For (a) To find the element `i` of a list, you must call `cdr` approximately
+  `i` times. [Slow, varying]
+
+> For (a) TO find element `i` of a vector, you must just do a mathematical
+  computation. [Almost instantaneous, uniform]
+  
 Why do we use them instead of lists?
+
+> For the reasons above: We have something we want to change. We care
+  about accessing elements at various positions, rather than just 
+  sequentially.
 
 Why use lists when we have vectors?
 
+> Because we can do cool things like `map` and `reduce` and `filter`.
+
+> Mutation is dangerous. It's harder to verify code with mutable structures.
+
 What does typical "extract data" recursion over a vector look like?
 
+```
+(define vector-sum
+  (lambda (vec)
+    ???))
+```
+
+> Recursion: We're going to recurse over positions in the vector, stopping
+when appropriate. (Either last to first or first to last.)
+
+> We almost always need a helper procedure that recurses over the position.
+
+```
+(define vector-sum
+  (lambda (vec)
+    (vector-sum/helper vec 0)))
+
+(define vector-sum/helper
+  (lambda (vec pos)
+    (if (>= pos (vector-length vec))
+        BASE-CASE
+        (COMBINE (vector-ref vec pos)
+                 (vector-sum/helper vec (+ pos 1))))))
+```
+
+```
+;;; (vector-sum/helper vec pos) -> number?
+;;;   vec : (vector-of number?)
+;;;   pos : nonnegative-integer?
+;;; Sum all of the values at positions ranging from `pos` to the 
+;;; end of `vec`.
+(define vector-sum/helper
+  (lambda (vec pos)
+    (if (>= pos (vector-length vec))
+        0
+        (+ (vector-ref vec pos)
+           (vector-sum/helper vec (+ pos 1))))))
+```
+
 What does typical "change data" recursion over a vector look like?
+
+```
+;;; (my-vector-fill! vec val)
+;;;   vec : vector?
+;;;   val : any?
+;;; Fill the vector with only `val`.
+(define my-vector-fill!
+  (lambda (vec val)
+    ??? 
+```
+
+> We need a base case, which is .... (a) if the vector has the right form
+  (which is hard to check).
+
+> If the vector is empty, we're probably done. (We can't shrink vectors,
+  so it will be difficult to get closer to that.)
+
+> Once again, we should create a helper procedure that tracks the position.
+
+```
+;;; (my-vector-fill! vec val)
+;;;   vec : vector?
+;;;   val : any?
+;;; Fill the vector with only `val`.
+(define my-vector-fill!
+  (lambda (vec val)
+    (my-vector-fill!/helper vec val 0)))
+
+;;; (my-vector-fill!/helper vec val pos)
+;;;   vec : vector?
+;;;   val : any?
+;;;   pos : (all-of nonnegative-integer? (at-most (vector-length vec)))
+;;; Fill the slots in positions `pos` through the end of `vec` with
+;;; `val`.
+(define my-vector-fill!/helper
+  (lambda (vec val pos)
+    BASE-CASE-TEST
+    BASE-CASE
+    RECURSIVE-CASE))
+```
+
+```
+(define my-vector-fill!/helper
+  (lambda (vec val pos)
+    (cond
+      [(>= pos (vector-length vec))
+       vec]
+      [else
+       (vector-set! vec pos val)
+       (my-vector-fill!/helper vec val (+ pos 1))])))
+```
+
+Why did we use `cond` instead of `if`?
+
+> Because we wanted *two* things in the consequent, not just one.
+
+Can we return "nothing" (void) if we reach the base case?
+
+```
+(define my-vector-fill!/helper
+  (lambda (vec val pos)
+    (cond
+      [(< pos (vector-length vec))
+       (vector-set! vec pos val)
+       (my-vector-fill!/helper vec val (+ pos 1))])))
+```
+
+Note: `when` is designed specifically for this situation.
+
+```
+(define my-vector-fill!/helper
+  (lambda (vec val pos)
+    (when (pos (vector-length vec))
+       (vector-set! vec pos val)
+       (my-vector-fill!/helper vec val (+ pos 1)))))
+```
 
 ### `palette?`
 
@@ -183,7 +366,11 @@ The "obvious" solution: Vector recursion.
 
 (define all-rgb?/helper
   (lambda (vec pos)
-    ???))
+    (if (>= pos (vector-length vec))
+        #t
+        (if (rgb? (vector-ref vec pos))
+            (all-rgb?/helper vec (+ pos 1))
+            #f))))
 ```
 
 A common solution: Convert it to a list and use our list knowledge.
@@ -191,14 +378,14 @@ A common solution: Convert it to a list and use our list knowledge.
 ```
 (define all-rgb?
   (lambda (vec)
-    (??? (vector->list vec))))
+    (andmap rgb? (vector->list vec))))
 ```
 
 A surprising solution: Think about type predicates.
 
 ```
 (define all-rgb?
-  ???)
+  (vector-of rgb?))
 ```
 
 Rethinking `palette?`
@@ -221,11 +408,46 @@ over the weekend.
 ### Vectors
 
 
-Lab
----
+Labs
+----
 
 You have two labs to do. Finish Friday's lab (more or less) and do
 today's lab (more or less).
 
 Friday's lab: At this point, you should do only exercises 4 and 5.
+
+### Friday, Exercise 4
+
+```
+Write a procedure, (palette-darker! palette), that, given a vector
+of integer-encoded RGB colors, makes each color in the palette
+slightly darker (i.e., using rgb-darker).
+```
+
+In looking for patterns, consider `number-vector-scale!` (rather than
+`number-vector-divide!`) or our model of changing vectors from above.
+
+### Friday, Exercise 5
+
+```
+;;; (palette-brightest palette) -> rgb?
+;;;   palette : (all-of (vector-of rgb?) nonempty?)
+;;; Find the brightest color in `palette`. If multiple colors have
+;;; the same brightness (and it's the largest brightness), can return
+;;; any of them.
+```
+
+### Wrapping up
+
+Friday's lab: `; SAM SAID WE ONLY NEEDED TO DO 1, 4, and 5!`
+
+or
+
+Friday's lab: `; SAM SAID WE COULD STOP HERE`
+
+Monday's lab: `; SAM SAID WE COULD STOP HERE!`
+
+or
+
+Monday's lab: `; SAM SAID WE SHOULD GET CREDIT EVEN THOUGH WE DIDN'T HAVE TIME TO START THIS LAB`
 
