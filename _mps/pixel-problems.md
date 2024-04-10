@@ -328,6 +328,8 @@ Interesting. Perhaps you can find better approaches in the freestyle.
 Part three: Modifying images, revisited
 ---------------------------------------
 
+_You can do either part three or part four for an M. You must do **both** part three and part four for an E._
+
 Of course, one can also use other kinds of context to affect pixels. For example, one might enhance the colors in an image by increasing their distance from the surrounding colors or blur the image by averaging it with the surrounding pixels.
 
 a. Document and write a procedure, `(neighboring-pixels pixels width height col row)`, that grabs the pixels around the specified position (including the pixel at the position). Note that your procedure will normally return nine colors, but will return fewer when its at the borders of the image. (E.g., at position (0,0), there are no pixels in the row above or column to the left, so you'll only return four colors.)
@@ -510,6 +512,8 @@ Not quite what I expected, but interesting nonetheless.
 
 Part four: Steganography
 ------------------------
+
+_You can do either part three or part four for an M. You must do **both** part three and part four for an E._
 
 _Steganography_ is a technique for hiding information within a larger corpus.  For example, some people conceal messages in letters by using, say, each fifth letter in the original message to represent a new message.  (I'm not talented enough to give an example.)
 
@@ -813,7 +817,8 @@ Note: You should save your file as `pixel-problems.rkt`.
 Submissions that lack any of these characteristics will get an I.
 
 ```
-[ ] Passes all of the R autograder tests.
+[ ] Passes all of the R autograder tests for parts one and two.
+[ ] Passes all of the R autograder tests for either part three or part four.
 [ ] Includes the specified file, `pixel-problems.rkt`.
 [ ] Includes an appropriate header on the file that indicates the
     course, author, etc.
@@ -830,7 +835,8 @@ Submissions that lack any of these characteristics but have all of the
 prior characteristics will get an R.
 
 ```
-[ ] Passes all of the M autograder tests.
+[ ] Passes all of the M autograder tests for parts one and two.
+[ ] Passes all of the M autograder tests for either part three or part four.
 [ ] Code is well-formatted with appropriate names and indentation.
 [ ] Code has been reformatted with Ctrl-I before submitting.
 [ ] Code generally follows style guidelines.
@@ -847,6 +853,7 @@ prior characteristics will get an M.
 
 ```
 [ ] Passes all of the E autograder tests.
+[ ] Does both part three and part four.
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.  In particular, avoids identical recursive calls.
 [ ] Documentation for all procedures (including helper procedures) is 
