@@ -246,24 +246,29 @@ experiments is to look at what `more-sidekicks` looks like.
 <TODO: Enter the experiments from the interactions pane>
 |#
 
+#| 
+For the rest of this exercise, we'll continue to use the `sidekicks`
+hash from Exercise 2.
+|#
+
 #|
 b. Although we cannot use `hash-set!` and `hash-remove!` with immutable
 hash tables, there are related procedures, called `hash-set` and 
 `hash-remove`, that we can use.  For example,
 
-    > (hash-set more-sidekicks "Strong Bad" "Homestar Runner")
+    > (hash-set sidekicks "Strong Bad" "Homestar Runner")
     ?
-    > (hash-ref more-sidekicks "Strong Bad")
+    > (hash-ref sidekicks "Strong Bad")
     ?
-    > (hash-remove more-sidekicks "Strong Bad")
+    > (hash-remove sidekicks "Strong Bad")
     ?
-    > (hash-ref more-sidekicks "Strong Bad")
+    > (hash-ref sidekicks "Strong Bad")
     ?
-    > more-sidekicks
+    > sidekicks
     ?
 
 What do you expect these two procedures to do?  What do you expect
-the value of `more-sidekicks` to be when we're done?
+the value of `sidekicks` to be when we're done?
 
 <TODO: Enter your answers here>
 
@@ -275,11 +280,11 @@ Check your answer experimentally.
 #|
 c. What do you expect as the final result of the second of the
 following two expressions?  (You should assume that both expressions
-are evaluated and that `more-sidekicks` is defined as in the previous
+are evaluated and that `sidekicks` is defined as in the previous
 exercise.)
 
-    > (hash-set more-sidekicks "Scooby Doo" "Shaggy")
-    > (hash-ref more-sidekicks "Scooby Doo")
+    > (hash-set sidekicks "Scooby Doo" "Shaggy")
+    > (hash-ref sidekicks "Scooby Doo")
 
 <TODO: Enter your answer here>
 
@@ -291,7 +296,7 @@ Check your answer experimentally.
 #|
 d. What do you expect as the result of the following expression?
 
-    > (hash-ref (hash-set more-sidekicks "Scooby Doo" "Shaggy")
+    > (hash-ref (hash-set sidekicks "Scooby Doo" "Shaggy")
                 "Scooby Doo")
 
 <TODO: Enter your answer here>
@@ -306,8 +311,8 @@ Check your answer experimentally.
 e. What do you expect as the final result of the second of the
 following two expressions?
 
-    > (hash-remove more-sidekicks "Strong Bad")
-    > (hash-ref more-sidekicks "Strong Bad")
+    > (hash-remove sidekicks "Strong Bad")
+    > (hash-ref sidekicks "Strong Bad")
 
 <TODO: Enter your answer here>
 
@@ -319,7 +324,7 @@ Check your answer experimentally.
 #|
 f. What do you expect as the result of the following expression?
 
-    > (hash-ref (hash-remove more-sidekicks "Strong Bad") "Strong Bad")
+    > (hash-ref (hash-remove sidekicks "Strong Bad") "Strong Bad")
 
 <TODO: Enter your answer here>
 
