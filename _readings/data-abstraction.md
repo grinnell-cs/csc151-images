@@ -432,7 +432,7 @@ Because of the vast diversity of people and cultures in the world, it is incredi
 
 The only way to avoid making assumptions is to not store any data.
 
-The take-away message here is that **almost all data is an approximation of reality**, and whenever we work with data structures, we have to keep that in mind.
+The take-away message here is that **almost all data is an approximation of reality**, and whenever we work with data structures, we have to keep that in mind. However, this fact should not stop us from continually improving our data structures to be more inclusive.
 
 This discussion might have raised more questions than it answered, as is the case with most discussions about the social implications of computing. As computer scientists, it is important for us to constantly confront social issues around computing that don't have a clear answer!
 
