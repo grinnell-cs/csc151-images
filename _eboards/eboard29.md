@@ -117,6 +117,17 @@ list in scheme?
 > In general, hash tables are much faster than searching a list of
   key/value pairs.
 
+Why a hash table? Why not just a very large excel spreadsheet or something 
+similar?
+
+> Because we want to process information quickly within the application. 
+  Communicating with an external application, such as Excel, will be 
+  expensive.
+
+> Note that we can save an Excel table as a `.csv` file and then load
+  it into a hash table, and we can save a hash table as a `.csv` file
+  and load it into Excel.
+
 ### Adminsitrivia
 
 ### Registration
