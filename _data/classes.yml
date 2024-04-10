@@ -345,7 +345,13 @@
     - page: /readings/data-abstraction.html
   lab:
     - page: /labs/data-abstraction.html
-  
+
+- topic: Pause for breath
+  abbrev: pause-post-sola3
+  summary: |
+    We pause to reflect on recent topics, particularly the transition
+    from pure functional programming to imperative programming.
+
 - topic: Higher-order recursive design
   abbrev: higher-order-recursive-design
   summary: |
@@ -381,6 +387,13 @@
   lab:
     - page: /labs/searching.html
 
+- topic: Project kickoff
+  abbrev: final-project
+  summary: |
+    We introduce the final project for the semester.
+  reading:
+    - page: /mps/mp09.html
+
 - topic: Trees
   abbrev: trees
   summary: |
@@ -394,13 +407,6 @@
   todo:
     - Don't forget to add code to draw a tree
 
-- topic: Project kickoff
-  abbrev: final-project
-  summary: |
-    We introduce the final project for the semester.
-  reading:
-    - page: /mps/mp09.html
-
 - topic: Tree recursion
   abbrev: tree-recursion
   summary: |
@@ -411,11 +417,6 @@
     - page: /readings/binary-search-trees.html
   lab:
     - page: /labs/tree-recursion.html
-
-- topic: Project work day
-  abbrev: project-work-day-1
-  summary: |
-    We provide class time for students to work on their projects.
 
 - topic: Sorting out sorting
   abbrev: sorting
