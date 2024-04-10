@@ -8,7 +8,7 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
-link: false
+link: true
 preimg: true
 mathjax: true
 ---
@@ -875,7 +875,7 @@ I don't see newlines in my strings.
 
 > Newlines show up as `\n` in strings.
 
-What charaacters should I use for 30 and 31?
+What characters should I use for 30 and 31?
 
 > For 30, use underscore, `#\_`. For 31, use asterisk, `#\*`.
 
