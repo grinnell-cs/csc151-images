@@ -327,6 +327,7 @@
 
 - topic: Dictionaries and hash tables
   abbrev: dictionaries
+  notes: https://docs.google.com/presentation/d/1W0QaBb-IWBk7FtNCXpvor9f2BdGMO0udepQqoL1flrk/edit#slide=id.g2666291cd13_0_234
   summary: |
     We consider structures that allow us to store information for
     quick retrieval.
