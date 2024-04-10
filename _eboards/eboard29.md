@@ -12,8 +12,8 @@ link: true
 _Approximate overview_
 
 * Administrative stuff [5 min]
-* Questions [5 min]
-* Lab [65 min]
+* Questions [15 min]
+* Lab [55 min]
 * Turn in labs [5 min]
 
 Administrative stuff
@@ -29,7 +29,7 @@ Academic/Scholarly
 
 * Thursday, 2024-04-11, 4pm, HSSC 1231 (the Kernel).
   _CS Poster Session_.
-* Thursday, 2024-04-11, 7pm, the normal place
+* Thursday, 2024-04-11, 7pm, Science 3819
   _Mentor Session_.
 * Tuesday, 2024-04-16, noon, some PDR
   _CS Table (topic TBD)_.
@@ -58,9 +58,6 @@ Wellness
 
 Misc
 
-* Saturday, 2024-04-13, 8:30--11:00pm, Harris.
-  _Drag_.
-
 ### Other good things (no tokens)
 
 ### Upcoming work
@@ -88,13 +85,27 @@ Misc
     * [_Submit MP3 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4323418)
 * Sunday, 2024-04-14, 11:00pm, [MP1](../mps/mp01) Third Redo
     * [_Submit MP1 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4323410/)
+* Don't forget to submit the `CHANGES.rkt` file (summarizes your changes).
+
+### MP7
+
+* Vectors! Yay!
+* In particular, how you think about an image as a vector of RGB colors.
+* Note: The pixel at (c,r) in an image would be at `(+ c (* r w))` in 
+  the vector.
+* Part one: 
+    * `(set-column! pixels width height c color)`
+    * `(set-row! pixels width height r color)`.
+    * etc.
+* [Listen to the recording.]
 
 Questions
 ---------
 
 ### Dictionaries / Maps / Hash Tables
 
-Is there any way to make tables with more than one value for each key? Reading hints at it but doesn't share how.
+Is there any way to make tables with more than one value for each
+key? Reading hints at it but doesn't share how.
 
 > You could associate a list, vector, or hash table with each key.
 
@@ -128,8 +139,82 @@ similar?
   it into a hash table, and we can save a hash table as a `.csv` file
   and load it into Excel.
 
-### Adminsitrivia
+### Administrative
+
+Can we please start the lab?
+
+> Yes.
 
 ### Registration
 
+### MP7
+
+What's an alpha channel?
+
+> How transparent or opaque the color/pixel is. (0 is "completely transparent"
+  255 is "completely opaque").
+
+This looks like so much fun. You must really care about us to give us such a
+great assignment!
+
+> Yes.
+
+If you cared about us, you'd give us less work.
+
+> Really? I think you have that backwards. In any case, you now only need
+  to do one of Part Three or Part Four for an M.
+
+Lab!
+----
+
+Yay! We get almost 45 minutes to do the lab.
+
+### Questions
+
+Why is it called a hash table?
+
+> The term "hash" generally means "to chop up and mix together". In
+  the CS world, a "hash function" converts a value to an integer in
+  such a way that (a) the same value always hashes to the same integer
+  and (b) different values are unlikely to hash to the same integer.
+
+> Hash tables use hash functions and the remainder function to convert 
+  keys to indices in a (hidden) vector.
+
+Is there a difference between `hash-set!` (with an exclamation point)
+and `hash-set` (no exclamation point)?
+
+> Yes. `hash-set!` changes a *mutable* hash table, either adding a key/value
+  pair or replacing a key/value pair.
+
+> In contrast, `hash-set` takes an *immutable* hash table as an input
+  and creates a new immutable hash table (either adding a key/value pair or 
+  replacing a key/value pair).
+
+> Note: Building a new hash table is expensive!
+
+> Note: Since `hash-set` and `hash-remove` create new hash tables, they
+  do not change the original hash table. It's like if we had
+  define a color, `fave`, and wrote `(rgb-darker fave)`: We get
+  a new color, but `fave` is still the same.
+
+> In general, procedures that end with a bang (!) change their parameter
+  (or something) and those that don't end with a bang don't.
+
+Why do you say "bang" instead of "exclamation mark"?
+
+> Syllables. One vs. five.
+
+What will Friday's quiz look like?
+
+> That's a great question.
+
+> Here's our sample problem: 
+  <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/las/dictionaries.html>
+
+> I like exercises 6 and 7 on this lab.
+
+You know the drill
+
+`; MADDY SAID THAT I CAN STOP HERE. SAM AGREES.`
 
