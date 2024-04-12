@@ -338,6 +338,7 @@
     - page: /readings/data-abstraction.html
   lab:
     - page: /labs/data-abstraction.html
+  notes: ../eboards/eboard30.html
 
 - topic: Pause for breath
   abbrev: pause-post-sola3
