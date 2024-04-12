@@ -338,6 +338,7 @@
 
 - topic: Data abstraction
   abbrev: data-abstraction
+  notes: https://docs.google.com/presentation/d/1KhLNTeWaLW1mgt5Xm0wdbzB5cW4sPVLSObFPiqtQzjs/edit#slide=id.g26e731c7f63_0_4
   summary: |
     We build upon the structures we have encountered so far to design
     our own types and reflect on mechanisms for separating the
