@@ -865,14 +865,33 @@ prior characteristics will get an M.
 Questions
 ---------
 
+### Part one: Setting rows and columns
+
+### Part two: Modifying images
+
+### Part three: Modifying images, revisited
+
+How many pixels should `neighboring-pixels` return?
+
+> In most cases, nine (eight surrounding positions plus the central one).
+
+> At the corners, only four.
+
+> Along edges (but not at corners), six.
+
 When I'm writing `blur`, what should I do to ensure that I don't use the new color at the spots above me and to my left?
 
 > Put the result into a new vector.
 
-What helpers might I write for `blur`?
+When I'm sharpening an image, what should I use as the `base` color?
 
-> I would write `(vector-get-pixel pixels width height col row)` and
-  `(vector-set-pixel! pixels width height col row color)`.
+> The average of the surrounding pixels.
+
+When computing that average, should I include the central pixel?
+
+> Yes.
+
+### Part four: Steganography
 
 Do we represent newlines with `#\newline`?
 

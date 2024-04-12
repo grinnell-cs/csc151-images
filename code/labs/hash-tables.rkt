@@ -246,6 +246,11 @@ experiments is to look at what `more-sidekicks` looks like.
 <TODO: Enter the experiments from the interactions pane>
 |#
 
+#| 
+For the rest of this exercise, we'll continue to use the `sidekicks`
+hash from Exercise 2.
+|#
+
 #|
 b. Although we cannot use `hash-set!` and `hash-remove!` with immutable
 hash tables, there are related procedures, called `hash-set` and 
