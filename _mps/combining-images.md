@@ -433,6 +433,10 @@ I have a very long `cond` statement for `more-shapes`. Do you have a recommendat
 
 > I'd break the problem up into "shapes that need two values", "shapes that need three values", and "shapes that need four values", writing a procedure for each one.
 
+What width and height should I use for, say, rectangles and ellipses?
+
+> You should use `digit->size` of the appropriate list entry to convert numbers to widths and heights.
+
 ### Part 3
 
 Was there an error in `digit->valignment`?
