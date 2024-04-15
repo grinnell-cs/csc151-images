@@ -340,11 +340,13 @@
     - page: /labs/data-abstraction.html
   notes: ../eboards/eboard30.html
 
-- topic: Pause for breath
-  abbrev: pause-post-sola3
+- topic: Data abstraction, continued
+  abbrev: data-abstraction
   summary: |
-    We pause to reflect on recent topics, particularly the transition
-    from pure functional programming to imperative programming.
+    We continue our exploration of data abstraction.
+  lab:
+    - page: /labs/data-abstraction.html
+  notes: ../eboards/eboard31.html
 
 - topic: Higher-order recursive design
   abbrev: higher-order-recursive-design
