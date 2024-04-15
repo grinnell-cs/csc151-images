@@ -350,6 +350,7 @@
 
 - topic: Pause for breath
   abbrev: pause-post-sola3
+  notes: https://docs.google.com/presentation/d/1S3c30E7Dm5e5m-CtKQwymCP64_k-sr8alItGpUcD9b0/edit?usp=sharing
   summary: |
     We pause to reflect on recent topics, particularly the transition
     from pure functional programming to imperative programming.
