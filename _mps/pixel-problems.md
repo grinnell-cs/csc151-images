@@ -177,11 +177,11 @@ a. Write the following procedure:
 Here's a quick experiment you might try with the procedure.
 
 ```
-> (define pixels (bitmap->vector (image->bitmap (solid-rectangle 4 6 "blue"))))
+> (define pixels (image->pixels (solid-rectangle 4 6 "blue")))
 > (set-row! pixels 4 6 1 (rgb 255 255 255))
-> (scale 10 (bitmap->image (vector->bitmap pixels 4 6)))
+> (scale (pixels->image pixels 4 6 "a blue rectangle with one white row") 10)
 > (set-row! pixels 4 6 2 (rgb 0 0 0))
-> (scale 10 (bitmap->image (vector->bitmap pixels 4 6)))
+> (scale (pixels->image pixels 4 6 "a blue rectangle with one white row and one black row") 10)
 ```
 
 _Hint_: Write a helper procedure that recurses over the column.
@@ -220,11 +220,11 @@ c. Write the following procedure.
 Here's a quick experiment you might try with the procedure.
 
 ```
-> (define pixels (bitmap->vector (image->bitmap (solid-rectangle 4 6 "blue"))))
+> (define pixels (image->pixels (solid-rectangle 4 6 "blue")))
 > (set-column! pixels 4 6 1 (rgb 255 255 255))
-> (scale 10 (bitmap->image (vector->bitmap pixels 4 6)))
+> (scale (pixels->image pixels 4 6 "a blue rectangle with one white column") 10)
 > (set-column! pixels 4 6 2 (rgb 0 0 0))
-> (scale 10 (bitmap->image (vector->bitmap pixels 4 6)))
+> (scale (pixels->image pixels 4 6 "a blue rectangle with one white column and one black column") 10)
 ```
 
 _Hint_: Write a helper procedure that recurses over the row.
@@ -852,8 +852,9 @@ Submissions that lack any of these characteristics but have all of the
 prior characteristics will get an M.
 
 ```
+[ ] Passes all of the M autograder tests for both part three and part four.
 [ ] Passes all of the E autograder tests.
-[ ] Does both part three and part four.
+[ ] Includes solutions for both part three and part four.
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.  In particular, avoids identical recursive calls.
 [ ] Documentation for all procedures (including helper procedures) is 
@@ -864,6 +865,28 @@ prior characteristics will get an M.
 
 Questions
 ---------
+
+### General
+
+Does the position in the vector depend on not only the row and column in the imae, but also the number of rows and columns?
+
+> Yes, the position in the vector is determined by the row, the column, and how many rows and columns there are in the image. (We use "width" for the number of columns and "height" for the number of rows.)
+
+> Well, it doesn't strictly depend on the number of rows. The formula is `(+ column (* row width))`.
+
+I'm worried because we haven't done much with vectors.
+
+> The mini-project is intended to give you more experience with vectors.
+
+It looks like we carry around three related values: `pixels` (a vector), `width` (a positive integer), and `height` (also a positive integer). Are `width` and `height` inclusive or exclusive?
+
+> The width is the number of columns. The height is the number of rows. Since we start columns and rows at 0, both `width` and `height` are exclusive. That is, columns run from 0 (inclusive) to `width` (exclusive) and rows run from 0 (inclusive) to `height` (exclusive).
+
+How should we interpret the way a vector of colors creates a bitmap image?
+
+> We actually need more than just a vector of colors. We also need to know how many columns and rows the image has.
+
+> Think about chopping the vector into individual rows (given the width/the number of columns). We then stack those on top of each other.
 
 ### Part one: Setting rows and columns
 
@@ -890,6 +913,14 @@ When I'm sharpening an image, what should I use as the `base` color?
 When computing that average, should I include the central pixel?
 
 > Yes.
+
+How do I make sure that I only grab 4 or 6 pixels if I'm grabbing the pixels around one on the edge or corner?
+
+> If the column is 0, you shouldn't grab anything to the left. If the column is `(- width 1)`, you shouldn't grab anything from the right.
+
+> If the row is 0, you shouldn't grab anything from above. If the row is `(- height 1)`, you shouldn't grab anything from below.
+
+> I ended up with a bunch of `if` statements.
 
 ### Part four: Steganography
 
