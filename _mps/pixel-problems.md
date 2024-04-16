@@ -177,11 +177,11 @@ a. Write the following procedure:
 Here's a quick experiment you might try with the procedure.
 
 ```
-> (define pixels (bitmap->vector (image->bitmap (solid-rectangle 4 6 "blue"))))
+> (define pixels (image->pixels (solid-rectangle 4 6 "blue")))
 > (set-row! pixels 4 6 1 (rgb 255 255 255))
-> (scale 10 (bitmap->image (vector->bitmap pixels 4 6)))
+> (scale (pixels->image pixels 4 6 "a blue rectangle with one white row") 10)
 > (set-row! pixels 4 6 2 (rgb 0 0 0))
-> (scale 10 (bitmap->image (vector->bitmap pixels 4 6)))
+> (scale (pixels->image pixels 4 6 "a blue rectangle with one white row and one black row") 10)
 ```
 
 _Hint_: Write a helper procedure that recurses over the column.
@@ -220,11 +220,11 @@ c. Write the following procedure.
 Here's a quick experiment you might try with the procedure.
 
 ```
-> (define pixels (bitmap->vector (image->bitmap (solid-rectangle 4 6 "blue"))))
+> (define pixels (image->pixels (solid-rectangle 4 6 "blue")))
 > (set-column! pixels 4 6 1 (rgb 255 255 255))
-> (scale 10 (bitmap->image (vector->bitmap pixels 4 6)))
+> (scale (pixels->image pixels 4 6 "a blue rectangle with one white column") 10)
 > (set-column! pixels 4 6 2 (rgb 0 0 0))
-> (scale 10 (bitmap->image (vector->bitmap pixels 4 6)))
+> (scale (pixels->image pixels 4 6 "a blue rectangle with one white column and one black column") 10)
 ```
 
 _Hint_: Write a helper procedure that recurses over the row.
