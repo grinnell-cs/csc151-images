@@ -357,6 +357,7 @@
     - page: /readings/higher-order-recursive-design.html
   lab:
     - page: /labs/higher-order-recursion.html
+  notes: ../eboards/eboard32.html
 
 - topic: Tail recursion
   abbrev: tail-recursion
