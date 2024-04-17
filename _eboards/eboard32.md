@@ -22,7 +22,7 @@ Administrative stuff
 * Happy 2^5 class!
 * Passing along a great idea from a student: When taking a SoLA, make
   sure to have DrRacket open with the code related to the topic.
-* Make sure to update your csc151 library for the next mini-project.
+* Make sure to update your `csc151` library for the next mini-project.
 
 ### Token opportunities
 
@@ -102,7 +102,7 @@ NO! You do not get tokens for Wonderland Harris.
     * [_Submit MP7 on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4348423)
     * Autograder should be ready tonight.
 * Thursday, 2024-04-18, 11:00pm, [Reading on tail recursion](../readings/tail-recursion)
-    * [_Submit reading on Gradescope_](???)
+    * [_Submit reading on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4371691)
 * Friday, 2024-04-19, 8:00am, Quizzes
     * Data abstraction (new).
     * Diagramming structures.
@@ -110,12 +110,14 @@ NO! You do not get tokens for Wonderland Harris.
 * Friday, 2024-04-19, 11:00pm, Post-reflection on [MP7](../mps/mp07)
     * [_Submit MP7 post-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4330330)
 * Friday, 2024-04-19, 11:00pm, Pre-reflection for [MP8](../mps/mp08)
-    * [_Submit MP8 pre-reflection on Gradescope_](???)
+    * [_Submit MP8 pre-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4371687)
 * Sunday, 2024-04-21, 11:00pm, Redo for [MP6](../mps/mp06)
     * [_Submit MP6 redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4348422)
 * Wednesday, 2024-04-24, 11:00pm, [MP8](../mps/mp08)
-    * [_Submit MP8 on Gradescope_](...)
+    * [_Submit MP8 on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4371686)
     * Autograder not yet completely functional.
+* Sunday, 2024-04-28, 11:00pm, Second Redo for [MP4](../mps/mp04)
+    * [_Submit MP4 second redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4367977)
 
 ### Mini-Project 8: Word clouds 
 
