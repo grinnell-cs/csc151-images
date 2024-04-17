@@ -714,15 +714,10 @@ a. You may note that `encode-letter` requires a helper procedure, `letter->numbe
 0
 > (letter->number #\space)
 28
-> (letter->number #\period)
-. read-syntax: bad character constant `#\period`
 > (letter->number #\.)
 27
 > (letter->number #\?)
 31
-> (lettter->number #\!)
-. . lettter->number: undefined;
- cannot reference an identifier before its definition
 > (letter->number #\!)
 31
 ```
