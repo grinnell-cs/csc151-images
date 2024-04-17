@@ -12,6 +12,8 @@ link: true
 _Approximate overview_
 
 * Administrative stuff [10 min]
+* About MP8 [5 min]
+* About reading responses [5 min]
 * Questions [5 min]
 * Lab [55 min]
 * Turn in lab [5 min]
@@ -23,6 +25,11 @@ Administrative stuff
 * Passing along a great idea from a student: When taking a SoLA, make
   sure to have DrRacket open with the code related to the topic.
 * Make sure to update your `csc151` library for the next mini-project.
+* Don't forget tomorrow's Scholars' Convocation!
+* Please fill in the mentor/tutor evaluation! (See email.)
+* Grade reports coming tonght!
+* I think I've caught up on all the Teams questions (except one
+  on MP5). Let me know if you have any outstanding.
 
 ### Token opportunities
 
@@ -119,9 +126,26 @@ NO! You do not get tokens for Wonderland Harris.
 * Sunday, 2024-04-28, 11:00pm, Second Redo for [MP4](../mps/mp04)
     * [_Submit MP4 second redo on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4367977)
 
-### Mini-Project 8: Word clouds 
+Mini-Project 8: Word clouds 
+----------------------------
 
 Your last individual mini-project! (Next up is a multi-week group mini-project.)
+
+Reading responses on `filter`
+-----------------------------
+
+Most of you got this, or got something close. There are comments on Gradescope.
+
+I will not go over the answer in class. Your first task on the lab is to
+go over it with your partner. If you can't figure it out together, check
+with Maddy or me.
+
+Some of you seem overly enamored of the `pos` parameter from vectors and 
+have forgotten the techniques of list recursion. **Please avoid recursive
+procedures that repeatedly use `list-ref`.** It's expensive. (So if you
+wrote `filter` using a position, rewrite without it.)
+
+### Why Sam objects (Looking ahead to next week)
 
 Questions
 ---------
@@ -132,11 +156,13 @@ Are we permitted to use a page of notes on quizzes?
 
 > Of course.
 
-Will we get SoLA 3 back soon?
+Can we bring one page of notes for each quiz?
 
-> Yes. 
+> I suppose so.
 
 ### SoLA 7
+
+### Higher-order programming
 
 ### Misc
 
