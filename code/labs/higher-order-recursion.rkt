@@ -126,9 +126,12 @@ satisfies `pred?`. If no element of `lst` satisfies `pred?`, then
 your procedure can crash and burn, or return a bad value, or whatever
 you'd like.
 
-You will likely need a helper that keeps track of the position in the
+You may want to use a helper that keeps track of the position in the
 list. (But please cdr through the list as you go, using that index only
 for the result. Avoid `list-ref`!)
+
+Alternately, you can use direct recursion and skip the helper procedure.
+Hint: if X is element 10 of `(cdr lst)`, then it's element 11 of `lst`.
 |#
 
 ;;; (index-of-matching lst pred?) -> integer?
@@ -241,10 +244,12 @@ element of the list.
 
 Note that the relative order of the elements of the lists should be
 preserved.
+
+Please do not use `filter` to write `partition`.
 |#
 
-;;; (partition pred? lst) -> listof list?
-;;;   pred? : predicate (can be applied to all elements of lst
+;;; (partition pred? lst) -> (list-of list?)
+;;;   pred? : predicate? (can be applied to all elements of lst)
 ;;;   lst : list?
 ;;; Partitions `lst` into those values for which `pred?` holds and
 ;;; those for which it does not hold.
@@ -305,6 +310,8 @@ the following problems.
 #|
 Write a procedure, `(tally lst pred?)`, that counts the number of
 values in `lst` for which the predicate holds.
+
+Please don't use `filter` to write `tally`.
 |#
 
 ;;; (tally lst pred?) -> integer?
