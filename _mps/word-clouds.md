@@ -181,6 +181,8 @@ I'm struggling with an algorithm to build the word cloud.
 
 > You might explore with how you place images on each other.
 
+> For M, you can just stack the words on top of each other.
+
 I'd like a sample file for testing.
 
 > How about the text of this assignment?
@@ -197,11 +199,11 @@ Can we use any filename?
 
 Can we use any file?
 
-> I'd prefer that your content is not in bad taste.  And no slurs allowed.
+> We'd prefer that your content is not in bad taste.  And no slurs allowed.
 
 Is there a cadr equivalent for hash tables? A way to compare two elements of a hash table within a recursive function, such as when implementing min or max?
 
-> There is not a `cadr` equivalent for hash taables.  There's not even a `car`.
+> There is not a `cadr` equivalent for hash tables.  There's not even a `car`.
 
 > However, you can get a list of all the keys or a list of all the key/value
   pairs.

@@ -88,12 +88,15 @@ Try to do so by figuring it out together, rather than relying on
 your notes.
 |#
 
-(define map
+(define my-map
   (lambda (fun lst)
     ???))
 
 ; (reduce-right op '(v1 v2 ... vn))
 ;   -> (op v1 (op v2 (op .... (op vn-1 vn))))
+; For example,
+; (reduce-right + '(1 2 3 4 5))
+;   -> (+ 1 (+ 2 (+ 3 (+ 4 5))))
 (define reduce-right
   (lambda (op lst)
     ???))
@@ -122,6 +125,13 @@ list, `lst`, and a predicate (unary function that produces a boolean),
 satisfies `pred?`. If no element of `lst` satisfies `pred?`, then
 your procedure can crash and burn, or return a bad value, or whatever
 you'd like.
+
+You may want to use a helper that keeps track of the position in the
+list. (But please cdr through the list as you go, using that index only
+for the result. Avoid `list-ref`!)
+
+Alternately, you can use direct recursion and skip the helper procedure.
+Hint: if X is element 10 of `(cdr lst)`, then it's element 11 of `lst`.
 |#
 
 ;;; (index-of-matching lst pred?) -> integer?
@@ -234,10 +244,12 @@ element of the list.
 
 Note that the relative order of the elements of the lists should be
 preserved.
+
+Please do not use `filter` to write `partition`.
 |#
 
-;;; (partition pred? lst) -> listof list?
-;;;   pred? : predicate (can be applied to all elements of lst
+;;; (partition pred? lst) -> (list-of list?)
+;;;   pred? : predicate? (can be applied to all elements of lst)
 ;;;   lst : list?
 ;;; Partitions `lst` into those values for which `pred?` holds and
 ;;; those for which it does not hold.
@@ -298,6 +310,8 @@ the following problems.
 #|
 Write a procedure, `(tally lst pred?)`, that counts the number of
 values in `lst` for which the predicate holds.
+
+Please don't use `filter` to write `tally`.
 |#
 
 ;;; (tally lst pred?) -> integer?
