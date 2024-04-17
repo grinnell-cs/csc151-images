@@ -1,7 +1,6 @@
 #lang racket
 
 (require csc151)
-(require racket/match)
 (require rackunit)
 
 ;; CSC 151-NN (SEMESTER)
@@ -85,17 +84,19 @@ c. Verify that right section works as expected.
 You've just written `filter`.  Complete the definitions of the
 remaining two elements of the big three: `map` and `reduce`.
 
-*Try to do so from memory rather than copying from the reading or
-your notes.*
+Try to do so by figuring it out together, rather than relying on
+your notes.
 |#
 
 (define map
-  ???)
+  (lambda (fun lst)
+    ???))
 
 ; (reduce-right op '(v1 v2 ... vn))
 ;   -> (op v1 (op v2 (op .... (op vn-1 vn))))
 (define reduce-right
-  ???)
+  (lambda (op lst)
+    ???))
 
 #| B |#
 
