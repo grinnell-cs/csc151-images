@@ -1,7 +1,6 @@
 #lang racket
 
 (require csc151)
-(require racket/match)
 (require rackunit)
 
 ;; CSC 151-NN (Semester)
@@ -113,7 +112,7 @@ TODO: Paste your examples from the interactions pane here.
 ; +--------------------------------+
 
 #| 
-a. Trace at a high level a call to 
+a. Trace (at a high level) the following call.
 
   (longest-string '("a" "bc" "def" "gh" "i" "jklmn"))
 
@@ -160,7 +159,7 @@ values) and returns a count of the number of symbols in the list.
                 (+ 1 (tally-symbols (cdr lst)))
                 (tally-symbols (cdr lst))))))
 
-We will be rewriting `tally-symbols` using helper recursion.  The
+We will be rewriting `tally-symbols` using tail recursion.  The
 helper procedure will likely have two parameters: a count of all
 the symbols you've seen so far and a list of all the values you
 have left to look at.
@@ -183,9 +182,9 @@ expect to see at every step evaluating the helper on the list
 |#
 
 #|
-b. Using the ideas you gained in those steps, implement `tally-symbols`
-using a recursive helper.  You'll need to fill in the missing parts of 
-the procedure below.
+b. Using the ideas you gained in those steps, implement this new
+`tally-symbols` using a tail-recursive helper.  You'll need to fill
+in the missing parts of the procedures below.
 |#
 
 (define tally-symbols/helper
