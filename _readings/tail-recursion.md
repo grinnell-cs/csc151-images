@@ -290,7 +290,7 @@ Now that we've introduced the notion of an accumulator parameter, you might noti
   (lambda (l1 l2)
     (if (null? l1)
         l2
-        (append-tail (cdr l2) (cons (car l1) l2)))))
+        (append-tail (cdr l1) (cons (car l1) l2)))))
 ```
 
 `append-tail` is tail-recursive because the recursive case returns the result of `append` directly now, instead of consing an element onto that result before returning.  However, how does this version of the function behave?
