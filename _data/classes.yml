@@ -368,6 +368,7 @@
 
 - topic: Tail recursion
   abbrev: tail-recursion
+  notes: https://docs.google.com/presentation/d/1VdNGnm7CYg3EQMYFTHdsetERVHGaYyF1DQZPLvQkxL4/edit?usp=sharing
   summary: |
     We continue to stretch our brains with recursive thinking.  In 
     particular, We consider tail recursion, an advanced version of 
