@@ -357,6 +357,7 @@
 
 - topic: Higher-order recursive design
   abbrev: higher-order-recursive-design
+  notes: https://docs.google.com/presentation/d/1OQ_dv0M5KXALibooUSi2xPP7hV1v74oJZTc98NHalqA/edit#slide=id.g2666291cd13_0_234
   summary: |
     We explore patterns of recursion in the design of programs,
     particularly with regards to higher-order procedures.
