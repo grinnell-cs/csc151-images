@@ -370,6 +370,7 @@
     - page: /readings/list-recursion-revisited.html
   lab:
     - page: /labs/tail-recursion.html
+  notes: ../eboards/eboard33.html
 
 - topic: Complexity analysis and binary search
   abbrev: search
