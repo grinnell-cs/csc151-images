@@ -1,6 +1,6 @@
 ---
-title: "EBoard 32: Higher-order procedures"
-number: 32
+title: "EBoard 33: Tail recursion"
+number: 33
 section: eboards
 held: 2024-04-19
 link: true
@@ -29,6 +29,8 @@ Academic/Scholarly
 * Tuesday, 2024-04-23, noon, some PDR.
   _CS Table (topic TBD)_.
 * Tuesday, 2024-04-23, 7pm, Science 3819.
+  _Mentor Session_.
+* Tuesday, 2024-04-25, 7pm, Science 3819.
   _Mentor Session_.
 
 Cultural
@@ -76,10 +78,6 @@ Misc
 
 ### Upcoming work
 
-* Friday, 2024-04-19, 8:00am, Quizzes
-    * Data abstraction (new).
-    * Diagramming structures.
-    * Tracing.
 * Friday, 2024-04-19, 11:00pm, Post-reflection on [MP7](../mps/mp07)
     * [_Submit MP7 post-reflection on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4330330)
 * Friday, 2024-04-19, 11:00pm, Pre-reflection for [MP8](../mps/mp08)
@@ -91,7 +89,7 @@ Misc
     * [_Submit readings on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4382543)
 * Monday, 2024-04-22, 8:30am, [Lab on tail recursion](../labs/tail-recursion)
     * [_Submit lab on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4382544)
-    * Please try to submit by the end of lab.
+    * Please try to submit by the end of class.
 * Wednesday, 2024-04-24, 11:00pm, [MP8](../mps/mp08)
     * [_Submit MP8 on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4371686)
     * Autograder not yet completely functional.
@@ -103,6 +101,14 @@ Misc
 
 ### Friday PSA
 
+* It's Friday.
+* There are many great things to do this weekend!
+* Most can easily be enjoyed without altering yourself.
+* Be good about Alice.
+* Please take care of yourselves.
+* Please take care of others.
+* Consent is essential.
+
 Questions
 ---------
 
@@ -110,9 +116,14 @@ Questions
 
 Do we have to be in a group for Project 9?
 
-> No.
+> No. The amount of work expected on the final project is proportional (more
+  or less) to the number of people in the group.
 
-### SoLA 8
+> We'll talk more about that on Wednesda.
+
+### MP 8
+
+### SoLA 4
 
 ### Tail recursion
 
@@ -127,8 +138,79 @@ Is there a situation where you could have multiple accumulator variables?
 > Certainly. The split procedure that you worked on in the last lab
   is one such example.
 
+What is `letrec`?
+
+> `letrec` is just like `let`, but is necessary when you define
+  recursive procedures.
+
+> As you may recall, `(let ([name exp]) ...)`, evaluates `exp` and
+  then binds it to `name`. For a recursive procedure, `exp` will
+  include `name`. But `name` may not be bound yet. `letrec` does
+  something a bit more complicated to accommodate this situation.
+
+> Sam's stupid demo.
+
+```
+(define fun
+  (lambda (x)
+    "happy happy joy joy"))
+
+(define hssc
+  (lambda (x)
+    (let ([fun (lambda (x)
+                 (if (zero? x)
+                     "done"
+                     (string-append "something " (fun (- x 1)))))])
+      (fun x))))
+
+(define husk
+  (lambda (x)
+    (letrec ([fun (lambda (x)
+                    (if (zero? x)
+                      "done"
+                      (string-append "something " (fun (- x 1)))))])
+      (fun x))))
+```
+
+> [Sam told an amazing shaggy dog story leading up to "unbounded fun.]
+
+When using a tail-recursive kernel with an extra `so-far` parameter,
+can you make decisions on how you change `so-far` at each step?
+
+> Certainly. You can do whatever you want within the recursive call
+  (as long as you avoid infinite recursion).
+
 ### Misc
 
 Lab!
 ----
+
+### Exercise 3
+
+Which of the following do you prefer (for the original)?
+
+```
+(define tally-symbols
+  (lambda (lst)
+    (if (null? lst)
+        0
+        (if (symbol? (car lst))
+            (+ 1 (tally-symbols (cdr lst)))
+            (tally-symbols (cdr lst))))))
+```
+
+or
+
+```
+(define tally-symbols
+  (lambda (lst)
+    (cond
+      [(null? lst)
+       0]
+      [(symbol? (car lst))
+       (+ 1 (tally-symbols (cdr lst)))]
+      [else
+       (tally-symbols (cdr lst))])))
+```
+
 
