@@ -181,7 +181,7 @@ I'm struggling with an algorithm to build the word cloud.
 
 > You might explore with how you place images on each other.
 
-> For M, you can just stack the words on top of each other.
+> For **M**, you can just stack the words on top of each other.
 
 I'd like a sample file for testing.
 
@@ -218,4 +218,28 @@ The rubric makes it sound like recursion is required.  Where?
 
 Can I see some examples?
 
-> We're working on some good examples.
+> We're working on some examples.
+
+How should we combine the word images into a single image?
+
+> That's part of your goal to figure out. There are a variety of strategies. You could use beside and above repeatedly. You could create a large image and place the words in different ways on the image. You could try to combine similar-size words together into groups, and then combine those groups. The options are (nearly) endless.
+
+How might I include randomness in my `word-cloud` procedure?
+
+> It depends a lot on how you decide to implement the procedure. If you are gradually building an image, you can randomly choose which word to add next. You can also randomize the color or font of the image you use for a word when you make that image.
+
+Are we supposed to build `sample.png` by hand?
+
+> Definitely not. You should use something like `(image-save (word-cloud "file.txt") "sample.png")`.
+
+Does the text need to be English?
+
+> We're not sure how `file->words` does with non-European text. You can try.
+
+Are any resources off limits for finding a word-cloud algorithm?
+
+> You may not use ChatGPT, Microsoft Copilot, or anything similar.
+
+> You may not refer to solutions students have written in the past.
+
+> You must cite any resources you use (other than this page).
