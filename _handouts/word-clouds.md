@@ -2,7 +2,9 @@
 title: Decomposing `word-cloud`
 section: handouts
 ---
-In [mini-project 8](../mps/mp08), you are asked to write a procedure, `(word-cloud fname)` that takes a file name as input and produces a word cloud for the image. One of your tasks for the project is to consider how you might decmopose the problem. Here are a few ideas.
+# {{ page.title }}
+
+In [mini-project 8](../mps/mp08), you are asked to write a procedure, `(word-cloud fname)` that takes a file name as input and produces a word cloud for the image. One of your tasks for the project is to consider how you might decmopose the problem. Here are some of the ideas you provided.
 
 _Answers have been edited for clarity._
 
