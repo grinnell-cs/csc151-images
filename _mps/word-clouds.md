@@ -99,6 +99,51 @@ Not all combinations work. For example, bold script and script seem to be the sa
 
 You may want to spend a bit of time playing with combinations to get fonts that you find appropriate. Or you can stick to the default font.
 
+Examples
+--------
+
+Here are the results of one version of `word-cloud` working on a few of the files used by the autograder.
+
+Using the file [`words-csc151.txt`](../files/word-clouds/words-csc151.txt), which contains words relevant to CSC-151.
+
+![A word cloud of words related to CSC-151](../images/mps/word-clouds/spiral-cloud-csc151.png)
+
+Using the file [`words-scaling.txt`](../files/word-clouds/words-scaling.txt), which is used for scaling tests.
+
+![A word cloud of words that contain "scale", along with some numbers](../images/mps/word-clouds/spiral-cloud-scaling.png)
+
+Using the file [`words-few.txt`](../files/word-clouds/words-few.txt), which is used for tests of files with a few words.
+
+![A word cloud of about thirteen numbers (as words)](../images/mps/word-clouds/spiral-cloud-few.png)
+
+And here are the same three files versions using a simpler "randomly place above and beside" (more or less).
+
+`words-csc151.txt`
+
+![A word cloud of words related to csc-151. This appears less cloud like and more gridded; some words are rotated.](../images/mps/word-clouds/combine-cloud-csc151.png)
+
+`words-scaling.txt`
+
+![A word cloud of words that contain "scale", along with some numbers. Once again, this appears less cloud-like and more grid-like than the prior one.](../images/mps/word-clouds/combine-cloud-scaling.png)
+
+`words-few.txt`
+
+![A word cloud of about fourteen numbers (as words). Once again, more grid-like.](../images/mps/word-clouds/combine-cloud-few.png)
+
+And here's what we might get for the basic M-level cloud, just a stack of words.
+
+`words-csc151.txt`
+
+![A stack of words related to CSC-151](../images/mps/word-clouds/stack-cloud-csc151.png)
+
+`words-few.txt`
+
+![A stack of about fourteen numbers as words ("zero" through "thirteen").](../images/mps/word-clouds/stack-cloud-few.png)
+
+Here are the CSC-151 words, one last time, in a randomized stack. _Even though this stack is a bit more "interesting" than the ordered stack, it would still be considered an M-level solution._
+
+![A stack of words related to CSC-151](../images/mps/word-clouds/random-stack-cloud-csc151.png)
+
 Grading rubric
 --------------
 
@@ -149,6 +194,7 @@ prior characteristics will get an M.
 [ ] Uses a non-trivial algorithm to build the cloud _and_ explains how
     the algorithm works.
 [ ] Removes the most common words in English (e.g., "The", "A").
+[ ] Handles texts with fewer than 50 different words (after filtering).
 [ ] Ensures that various capitalized versions of the same word are treated
     as identical (e.g., "ahoy", "Ahoy", "AHOY").
 [ ] Can handle files with thousands of words in a reasonable timeframe.
@@ -216,10 +262,6 @@ The rubric makes it sound like recursion is required.  Where?
   assume you'll need to recurse over a list of words or a list of the
   images you've built from those words.
 
-Can I see some examples?
-
-> We're working on some examples.
-
 How should we combine the word images into a single image?
 
 > That's part of your goal to figure out. There are a variety of strategies. You could use beside and above repeatedly. You could create a large image and place the words in different ways on the image. You could try to combine similar-size words together into groups, and then combine those groups. The options are (nearly) endless.
@@ -243,3 +285,16 @@ Are any resources off limits for finding a word-cloud algorithm?
 > You may not refer to solutions students have written in the past.
 
 > You must cite any resources you use (other than this page).
+
+Do you recommend that we choose sizes based on the most frequent or least frequent of the top fifty words?
+
+> I'd suggest that you use a size of about 8 or 10 for the least frequent. You could also use a size of 128 or 256 for the most frequent. Note that sizes greater than 255 are dropped to 255.
+
+Is it okay if our scaling isn't perfect?
+
+> Yes. But make sure that you scale with the square root of the frequency,
+  not with the frequency itself.
+
+Can I see the text files used for testing?
+
+> Sure. Check [in this folder](../files/word-clouds).
