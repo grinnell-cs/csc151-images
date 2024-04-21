@@ -17,7 +17,7 @@ link: true
 
 Please save your code for this assignment as [`fractals.rkt`](../code/mps/fractals.rkt).  
 
-In addition to submitting `fractals.rkt`, submit at least one image from your procedure in part 4, named `my-image.png`.
+In addition to submitting `fractals.rkt`, submit at least three image from your procedure in part 4, named `my-image-01.png`, `my-image-02.png`, and `my-image-03.png`.
 
 ## Background: Building Sierpinski triangles 
 
@@ -506,8 +506,8 @@ prior characteristics will get an R.
 [ ] Code generally follows style guidelines.
 [ ] `my-fractal` involves explicit or implicit recursion other than
     from invoking procedures in parts 1--3.
-[ ] Explains how `my-image` was created (that is, the parameters
-    to `my-fractal`).
+[ ] Explains how each of the `my-image` images was created (that is, 
+    the parameters to `my-fractal`).
 ```
 
 ### Exemplary / Exceeds expectations
