@@ -104,9 +104,9 @@ Examples
 
 Here are the results of one version of `word-cloud` working on a few of the files used by the autograder.
 
-Using the file [`words-sam.txt`](../files/word-clouds/words-sam.txt), which contains words that contain "sam":
+Using the file [`words-csc151.txt`](../files/word-clouds/words-csc151.txt), which contains words relevant to CSC-151.
 
-![A word cloud of words that contain "sam"](../images/mps/word-clouds/spiral-cloud-sam.png)
+![A word cloud of words related to CSC-151](../images/mps/word-clouds/spiral-cloud-csc151.png)
 
 Using the file [`words-scaling.txt`](../files/word-clouds/words-scaling.txt), which is used for scaling tests.
 
@@ -118,9 +118,9 @@ Using the file [`words-few.txt`](../files/word-clouds/words-few.txt), which is u
 
 And here are the same three files versions using a simpler "randomly place above and beside" (more or less).
 
-`words-sam.txt`
+`words-csc151.txt`
 
-![A word cloud of words that contain "sam". This appears less cloud like and more gridded; some words are rotated.](../images/mps/word-clouds/combine-cloud-sam.png)
+![A word cloud of words related to csc-151. This appears less cloud like and more gridded; some words are rotated.](../images/mps/word-clouds/combine-cloud-csc151.png)
 
 `words-scaling.txt`
 
@@ -128,7 +128,21 @@ And here are the same three files versions using a simpler "randomly place above
 
 `words-few.txt`
 
-![A word cloud of about thirteen numbers (as words). Once again, more grid-like.](../images/mps/word-clouds/combine-cloud-few.png)
+![A word cloud of about fourteen numbers (as words). Once again, more grid-like.](../images/mps/word-clouds/combine-cloud-few.png)
+
+And here's what we might get for the basic M-level cloud, just a stack of words.
+
+`words-csc151.txt`
+
+![A stack of words related to CSC-151](../images/mps/word-clouds/stack-cloud-csc151.png)
+
+`words-few.txt`
+
+![A stack of about fourteen numbers as words ("zero" through "thirteen").](../images/mps/word-clouds/stack-cloud-few.png)
+
+Here are the CSC-151 words, one last time, in a randomized stack. _Even though this stack is a bit more "interesting" than the ordered stack, it would still be considered an M-level solution._
+
+![A stack of words related to CSC-151](../images/mps/word-clouds/random-stack-cloud-csc151.png)
 
 Grading rubric
 --------------
