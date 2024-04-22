@@ -3,7 +3,61 @@ title: Spam from Sam
 ---
 # {{ page.title }}
 
-_Here you will find most of the email that I sent out this semester._
+_Here you will find much of the email that I sent out this semester. Messages that went out on Gradescope are not generally included._
+
+## [CSC-151-01 2024Sp] Mentor/Tutor Evaluations + Quizzes + More (Monday, 2024-04-22)
+
+Dear Word Hashers,
+
+1. I had promised you a token if at least 63% of you filled in the mentor/tutor evaluations. We are currently slightly under 50%. If you have not done so already, please fill out the mentor/tutor evaluation asap.
+
+_URL elided._
+
+2. I've added a few more token submission slots on Gradescope. Let me know if you need more.
+
+3. Friday's quizzes are now available on Gradescope.
+
+4. The Hilma Af Klint Catalogue Raisonné and two other books are now in our classroom. Please do not remove them from the classroom.
+
+Have a great day!
+
+-- SamR
+
+## [CSC-151-01 2024Sp] Word clouds! (Saturday, 2024-04-20)
+
+Dear future makers of cloud-like constructions,
+
+I hope you are having a wonderful weekend and that you were able to enjoy some of today's events in the too-cold weather.
+
+Thanks for your (mostly) thoughtful responses on the pre-reflection for MP8. I've added some short comments to your reflections, which Gradescope will now tell you about.
+
+> View your graded work.
+
+> Link not working? Please see our Why can't I see my grades? FAQ article for further information.
+
+> If you have never logged in to this site before, you can set your password. The login for your Gradescope account is username@grinnell.edu. (If you have any problems accessing the site, please contact help@gradescope.com.)
+
+Wasn't that fascinating? I know that the links had me breathless.
+
+In any case, I appreciate your comments.
+
+I'll note that I would have preferred more of you to give the name, parameters, and purpose of each procedure you were suggesting in your decomposition. Certainly, I find it easier to decompose if I can just refer to these procedures. "I'll just call `file->hash` here", or something like that.
+
+I've added the new questions to the end of the mini-project.
+
+I've also gathered most of your suggestions into a document.
+
+<https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/handouts/word-clouds>
+
+Since not all of you were equally successful in decomposing the problem, I think you'll benefit from seeing some of your classmates' ideas. Don't feel obligated to use them all! There are different approaches embedded in the answers.
+
+What else? Oh! I think of this project as having three central topics: hash tables, decomposition, and practice with open-ended projects. Of course, you'll also have the opportunity to practice many other skills, such as recursion and (potentially) the use of randomness.
+
+I think that's it for now. I should be on Teams on Sunday if you find that you have questions.
+
+Regards,
+
+-- SamR
 
 ## [CSC-151-01 2024Sp] Grade reports and more (Sunday, 2024-03-31)
 
