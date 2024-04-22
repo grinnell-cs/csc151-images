@@ -84,6 +84,98 @@ Misc
 A bit about binary search
 -------------------------
 
+Big picture: We want to find something in a collection of things.
+
+* We are fortunate that the things are "in order" (numeric order, alphabetical,
+  height, ...)
+* Rather than looking at them one by one or randomly, we can use a more
+  systematic approach that ends up being faster.
+
+Systematic approach
+
+* If you have nothing left, give up!
+* Otherwise, look in the middle.
+    * If we're lucky, the thing we're searching for is in the middle. Stop
+    * Otherwise,
+        * If the thing we're searching for is less than the middle, throw
+          away the bigger stuff (middle and beyond) and try again
+        * If the thing we're searching for is bigger than the middle, throw
+          away the smaller stuff (middle and bleow) and try again.
+
+Is this more efficient than just starting at the beginning and looking
+at each element in turn?
+
+* Let's say we had 1000 things to look for.
+* One step to get to 500
+* One step to get to 250
+* One step to get to 125
+* One step to get to 62
+* One step to get to 31
+* One step to get to 15
+* One step to get to 7
+* One step to get to 3
+* One step to get to 1
+* One step to get to 0
+
+What if we had 2000?
+
+* One step to get to 1000
+* Ten steps to get to 0
+
+Doubling the input only added one step.
+
+By "fancy math", if we had 1000000 things to look through, we can search
+in only 20 steps!
+
+On the computer ...
+
+* Assume the elements are in a vector.
+* Rather than making new vectors (slow), we're going to keep track of the
+  range of elements of interest.
+    * As computer scientists, we like to represent ranges as lower-bound
+      (inclusive) and upper-bound (exclusive).
+* Algorithm is:
+    * Average lower-bound and upper-bound. That gives us the middle.
+    * Look at the middle.
+    * If the middle is "just right", stop.
+    * If the middle is too large, we want to throw away the upper half.
+      We can set the upper-bound to the middle. (The middle is
+      excluded)
+    * If the middle is too small, we want to throw away the lower half
+      We can set the lower-bound to middle+1.
+
+### Questions
+
+Why did we set the upper-bound to middle, but the lower-bound to
+middle+1?
+
+> The upper-bound is *exclusive*. Setting the upper-bound to middle
+  says "look from lower-bound to middle-1 (inclusive)"
+
+> The lower-bound in *inclusive*. If we set lower-bound to middle, there's
+  a chance we'll look at the middle again. So we set it to middle+1
+
+> Here's what that's dangerous. Suppose we set lower-bound to middle instead
+  of middle+1. We'll look for F in [A,C,E,G]
+
+> Initially, lower is 0 upper is 4
+
+> We look in the middle (2). That's E. F comes after E.
+
+> So, lower is 2 (in the bad approach), upper is still 4
+
+> We look in the middle (3). That's G. F comes before G. We set upper to (3).
+
+> So, lower is 2, upper is 3.
+
+> Middle is 2. That's E. F comes after E. Set lower to middle. 
+
+> So, lower is 2, upper is 3.
+
+> Middle is 2. That's E. F comes after E. Set lower to middle. 
+
+> Whoops! We'll recurse forever.
+
 Questions
 ---------
 
@@ -97,15 +189,16 @@ Could you go over the double-dagger problems?
   always takes the same time, whethere it's followed by one element
   or a thousand elements.
 
-> `cddr`
+> `cddr` - **constant** time. We follow two arrows, rather than one,
+  but it doesn't matter how many things come after.
 
-> `list-ref`
+> `list-ref` - **linear** - the more elements we have to cdr through, the longer it takes.
 
-> `vector-ref`
+> `vector-ref` - **constant** (Sam said that it is).  Basically, we can quickly compute where something is in the vector.
 
-> `map`
+> `map` - **linear** because we have to do something to each element in the vector.
 
-> `range`
+> `range` - **linear** in the result because we have to build all of the pairs in the result.
 
 ### Searching
 
@@ -115,6 +208,20 @@ Could you go over d and e?
 
 ### MP 8
 
+One of the autograder tests says "The hash table should refresh after
+each image". What does that mean?
+
+> Let's say I call `(word-cloud "words-csc151.txt")`.
+
+> Then I call `(word-cloud "jane-eyre.txt")`.
+
+> The word cloud I get for the second should not include things like 
+  "recursion", since Bronte only knew about iteration (or at least
+  "recursion" doesn't appear in _Jane Eyre_.
+
+> Make sure that your `file->hash` (or whatever you call it) procedure 
+  builds a new hash table.
+
 ### SoLA 4
 
 ### Misc
@@ -122,3 +229,24 @@ Could you go over d and e?
 Lab!
 ----
 
+For the initial problem, what should I use for `get-key`?
+
+> The vector seems to be arranged by given name. Each entry in the
+  vector is a student. Hence, you should find a way to extract the 
+  given name from from a student.
+
+> **DO NOT use `vector-ref`**
+
+For the initial problem, what should I use for `less-equal?`?
+
+> The names are strings. You need a procedure that you can use
+  to compare strings. There are a few procedures that you can use
+  to compare strings.
+
+> Web search "Racket compare strings"
+
+> <https://docs.racket-lang.org/reference/strings.html#%28part._.String_.Comparisons%29>
+
+Why is `alphabetically-first-1` so slow on backwards lists?
+
+> ...
