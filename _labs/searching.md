@@ -19,4 +19,4 @@ You should feel free to quickly experiment with any new procedures, but we'll al
 ## Acknowledgements
 
 This lab was created in Fall 2020 as a hybrid of a wide variety of prior labs.
-This lab was revised in Fall 2021 to make it a bit shorter.
+This lab was revised in Fall 2021 to make it a bit shorter. It's probably been revised slightly since.
