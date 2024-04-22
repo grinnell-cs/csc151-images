@@ -1,11 +1,11 @@
 #lang racket
 
 (require csc151)
-(require 2htdp/image)
 (require rackunit)
 
 ;;; image-series.rkt
-;;;   The final project for CSC-151-01 2023Fa
+;;;   An exploration of TITLE by Hilma Af Klint
+;;;   A final project for CSC-151-NN 2024Sp
 ;;;
 ;;; Authors:
 ;;;   Person One
@@ -16,7 +16,7 @@
 ;;;
 ;;; Acknowledgements
 ;;; 
-;;; * The project template comes from SamR.
+;;; * The project template comes from SamR and Leah.
 
 ; +----------+-------------------------------------------------------
 ; | Time log |
@@ -51,7 +51,7 @@ What are two instances of recursion in your program?
 
 ???
 
-Describe a piece of code that you are particularly of.
+Describe a piece of code that you are particularly proud of.
 
 ???
 
