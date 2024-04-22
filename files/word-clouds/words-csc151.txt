@@ -1,0 +1,38 @@
+csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151 csc151
+functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional functional 
+programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming programming 
+recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion recursion
+hash hash hash has hash has
+car car car car car car car car
+cdr cdr cdr cdr cdr cdr
+cadr cadr cadr cadr
+cons cons cons cons cons cons cons
+integer integer integer integer integer
+real real real
+predicate predicate
+lambda lambda lambda lambda lambda lambda
+conditional
+documentation
+testing testing testing testing testing testing testing testing testing testing
+style
+list list list list list list list list list list list list
+pair pair pair pair
+ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics ethics 
+vector vector vector
+structures
+random
+dictionary
+tree
+max
+min
+foo foo foo
+efficiency
+local
+name
+symbol
+string
+shape
+solid-rectangle solid-rectangle
+la la la la la la la la la la la la la
+color color color
+blue blue blue blue blue
