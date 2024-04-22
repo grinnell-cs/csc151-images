@@ -298,3 +298,9 @@ Is it okay if our scaling isn't perfect?
 Can I see the text files used for testing?
 
 > Sure. Check [in this folder](../files/word-clouds).
+
+I want to use a Microsoft Word .docx file. Is that permissible?
+
+> `file->words` only accepts plain text files.
+
+> In Word, use "File -> Save As..." and then select "Plain Text (.txt)".
