@@ -381,6 +381,7 @@
 
 - topic: Complexity analysis and binary search
   abbrev: search
+  notes: https://docs.google.com/presentation/d/1ao56EpZb_u_af6Xp-HKCqhBKncDaqroHmMsWh77oIuA/edit?usp=sharing
   summary: |
     We explore techniques for analyzing the number of calls made
     in evaluating procedures, particularly recursive procedures.
