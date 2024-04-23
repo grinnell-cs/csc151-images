@@ -22,8 +22,8 @@ the way the algorithm works? A more readable algorithm is also easier
 to correct if we ever notice an error or to modify if we want to expand
 its capabilities.
 
-However, most programmers care as much or more about *efficiency*
-- how many computing resources does the algorithm use? (Pointy-haired
+However, most programmers care as much or more about *efficiency* - how
+many computing resources does the algorithm use? (Pointy-haired
 bosses care even more about such things.) Resources include memory
 and processing time. Most analyses of efficiency focus on running
 time, the amount of time the program takes to run.  Running time,
@@ -260,25 +260,6 @@ First, we'll annotate the procedures to display each call.
       (kernel lst null))))
 ```
 
-(define list-reverse-1
-  (lambda (lst)
-    (match lst
-      ['() 
-       null]
-      [(cons head tail) 
-       (list-append (list-reverse-1 tail) (list head))])))
-
-(define list-reverse-2
-  (lambda (lst)
-    (letrec ([helper
-              (lambda (so-far remaining)
-                (match remaining
-                  ['() 
-                   so-far]
-                  [(cons head  tail) 
-                   (helper (cons head so-far) tail)]))])
-      (helper null lst))))
-```
 
 We'll start by reversing a list of length five.
 
