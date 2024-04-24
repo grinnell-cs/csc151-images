@@ -47,7 +47,7 @@ Write a procedure, `(image-series n width height)`, that takes three non-negativ
 You should find ways to use the following in your project.
 
 * At least two of the ways we have of thinking about images: shapes, manipulating bitmaps by position, and manipulating bitmaps by using surrounding pixels.
-* At least two forms of recursion (list, numeric, vector, hash, tree, ...).
+* At least two useful recursive procedures. (You can use any kind of recursion: list, numeric, vector, hash, tree, ...).
 
 Additional requirements
 -----------------------
