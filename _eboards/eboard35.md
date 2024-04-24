@@ -115,12 +115,61 @@ See [the instructions](../mps/mp09) for more details.
 Questions and Clarifications
 ----------------------------
 
+How do variants help us understand the initial image? It was written
+matter-of-factly, however I am still confused on how that is analysis.
+
+> Hypothetically, as you build variations, you'll come to better understand
+  the design choices the artist made. Do other other pairings of colors
+  seem less compelling, too relaxing, ...? In some sense, we're 
+  generating something like the artist's sketchbook for the piece.
+
+Does working individually (stated at the beginning of the MP) mean
+that we can't work with people outside of our group, or does that
+mean we can't work directly with our team members?
+
+> Working individually means that you choose to form a team of one.
+
+> You can always talk to others.
+
+I would like to see examples of the final images. Also how different
+should the images be? especially if we need 1000 of them, should
+the changes between one and another be super noticeable or can they
+be more discrete?
+
+> You can decide how different the images will be. They should be
+  different enough that you'll learn something from the differences.
+
+How would you split up the work?
+
+> I'd suggest that you work as a team to decide upon the "big picture"
+  of the project and how to decompose it. If you've decomposed well,
+  you could have individuals or pairs work on each part. 
+
+> However, I'll note that the best teams seemed to work together
+  most of the time.
+
+How should the in-class presentation be different from the coding
+and documentation portion?
+
+> Your professor is the audience from the coding and documentation.
+  Your classmates (and any visitors) are the audience for the presentation.
+  In the presentation, make sure to demo your images and something
+  cool about your code.
+
+Should the time log be in a separate file or just somewhere with
+the rest of the code?
+
+> There's a space in the code for the time log.
+
 Project skills
 --------------
 
 _TPS: What are some characteristics you'd like to be on the team_
 
 ### Expected of all group members
+
+* Kind and positive.
+* Timely and responsible.
 
 ### Individual skills
 
