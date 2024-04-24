@@ -36,7 +36,7 @@ Academic/Scholarly
 * Thursday, 2024-04-25, 4pm, HSSC N3118.
   _“Beyond Grey Expectations: Seeing Chekhov in Color” by Anna Ivanov_.
 * Thursday, 2024-04-25, 7pm, Science 3819.
-  _Mentor Session_.
+  _Mentor Session_. Binary search and project help.
 * Tuesday, 2024-04-30, noon, some PDR.
   _CS Table (topic TBD)_.
 * Tuesday, 2024-04-30, 7pm, Science 3819.
@@ -53,15 +53,25 @@ Cultural
 
 Peer
 
+* Wednesday, 2024-04-24, 11:30--1:00pm, JRC 101.
+  _Catalyst Fair & Celebration_.
 * Wednesday, 2024-04-24, 7:30--8:30pm, Bucksbaum.
   _Cornelia Di Gioia Presentation with GSO_.
+* Saturday, 2024-04-27, 12:00--4:00pm, Kington Plaza.
+  _Spring Fest_.
+* Saturday, 2024-04-27, 6:30--??:??, Harris.
+  _Cultural Evening_.
+* Thursday, 2024-05-02, 6:00--??:??, Central Park.
+  _Peter and the Starcatchers_. Really awesome.
+* Saturday, 2024-05-04, 2:00--??:??, Central Park.
+  _Peter and the Starcatchers_. Wicked neat.
+* Saturday, 2024-05-05, 2:00--??:??, Central Park.
+  _Peter and the Starcatchers_. Wicked awesome.
 
 Wellness
 
 Misc
 
-* Wednesday, 2024-04-24, 11:30--1:00pm, JRC 101.
-  _Catalyst Fair & Celebration_.
 * Wednesday, 2024-04-24, 4:00--5:00pm, JCC Lower-Level Conference Room.
   _Leveraging LinkedIn_.
 * Friday, 2024-04-26, 8:30--11:00pm, Harris Concert Hall.
@@ -92,6 +102,39 @@ Misc
 * Sunday, 2024-05-12, 11:00pm, Nth Redo for a few things
 * Friday, 2024-05-17, 5:00pm, Ultimate Redo for everything
 
+Questions
+---------
+
+### Administrative
+
+### MP8 
+
+The autograder sizing test doesn't seem to work for me.
+
+> Sam will try to remember to look at your code.
+
+> The test is pretty lenient.
+
+When should we use `sort`?
+
+> First you would associate count of appearances with the size (hash)
+
+> Then you might change those to frequencies.
+
+> Then you should sort according to frequencies or counts.
+
+> Then you can use `take` (or a variant thereof) to get the top fifty.
+
+> ...
+
+What should our "smarter `take`" look like?
+
+> You could write it from scratch (which I'd prefer). Two base cases:
+  The list is empty, n is zero.
+
+> You could write a conditional that looks at the length vs `n` and
+  if it the length is < n, returns the list o/w calls take.
+
 About the project
 -----------------
 
@@ -113,6 +156,8 @@ positional computation, neighbor computation.
 Use recursion at least twice.
 
 See [the instructions](../mps/mp09) for more details.
+
+We will have food for the presentation. Fresh fruit.
 
 Questions and Clarifications
 ----------------------------
@@ -177,6 +222,32 @@ How can we start to think about making 1000 variants of an image?
 
 > I'll try to quickly talk through an example.
 
+How can we work on the same Racket file from different computers at
+the same time?
+
+> That's one reason we decompose.
+
+> You could learn to use GitHub.
+
+> You could sign up for a shared online coding platform. Repl.it is
+  reasonable.
+
+> Mostly work together?
+
+> Know how you're communicating and communicate clearly.
+
+> You might use a Teams channel.
+
+Will you add curves to the CSC-151 library?
+
+> I can add almost anything that's in the 2htdp library, it will just
+  take time.
+
+> I'll try to get curves working in some form by this Friday.
+
+Can you help us make gradients?
+
+> Sure.
 
 Project skills
 --------------
@@ -189,20 +260,36 @@ _TPS: What are some characteristics you'd like to be on the team_
 * Timely and responsible.
 * Carry their share of the project. Be clear about what they can and
   cannot do.
-* Communicative.
+* Communicative. [+1]
+* Listening skills. 
 
 ### Individual skills
+
+* We'd like a "manager" to keep us on task and to arrange everything.
+* We'd like someone who can help us write useful recursive procedures. [+1]
+* We'd like someone who can design presentations (and maybe do most of
+  the presentation)
+* We'd like someone who can Use Math for the mathy parts of the activity.
+* We'd like someone who "thinks differently"
+* We'd like someone with artistic skills or knowledge
+* We'd like someone who can document, test, and style code.
+* We'd like someone who knows the range of class material.
+* We'd like someone confident with the pixel operations.
+
+### Other issues
+
+* Similar work habits. (Sam says "too bad, so sad")
 
 Group formation
 ---------------
 
 Please grab the cards that represent your skills.
 
-* White:
-* Red:
-* Yellow:
-* Green: 
-* Blue:
+* White: Recursion
+* Red: Document/Test/Style
+* Yellow: Presentation Designer/lead
+* Green: Pixels
+* Blue: Manager
 
 Try to form a group with all five cards (or at least four).
 
