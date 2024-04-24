@@ -81,7 +81,7 @@ Toby    2024-04-29 09:00-10:00  60 min  Helped Taylor debug concentric-circles
 
 ### Learning summary
 
-Each group member should individually reflect on what they learned in the project.  You might consider what you learned about the work you are studying, programming, teamwork, yourself, etc.  You will enter this reflection in the MP9 post assessment.
+Each group member should individually reflect on what they learned in the project.  You might consider what you learned about the work you are studying, programming, teamwork, yourself, etc.  You will enter this reflection in the MP9 post-reflection.
 
 What to submit
 --------------
@@ -97,6 +97,23 @@ What to submit
 **Four images (at least 600x500, no more than 3000x2000)**. Please name them `Team01.png`, `Team02.png`, `Team03.png`, and `Team04.png`, substituting the name of your team.
 
 **Learning summary** (submitted separately and individually). In two or three paragraphs, summarize what you learned from doing this project.  You will enter this on the post-assessment.
+
+Setting project goals
+---------------------
+
+As you might expect, it's important that you have working code for this assignment. Hence, we recommend that you build your project gradually. It is not essential that you capture every aspect of the image (e.g., brush strokes, careful blends, even some of the lines).
+
+Start with what people in industry call a "minimum viable product". You should focus on the central design components and make sure that you have a way of varying the image appropriately.
+
+Once you've completed that part, start adding additional aspects. Perhaps you've noticed an interesting blend in one part. Perhaps there's a curve you want to add.
+
+Only if there is time will you try to capture every aspect of the image.
+
+Note that you should make many of these decisions in advance, as you decompose the problem. 
+
+* _What should be the core of our project?_
+* can we add once we've completed that part?
+* If everything goes perfectly and we still have time, what else might we add?
 
 Rubric
 ------
@@ -133,6 +150,11 @@ _There are no redos available for this project._
 [ ] Almost no inefficient or otherwise bad code
 [ ] A well-organized code file
 ```
+
+Examples
+--------
+
+_Forthcoming._
 
 Questions and answers
 ---------------------
