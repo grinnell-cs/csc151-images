@@ -63,8 +63,8 @@ Misc
 
 * Tuesday, 2024-04-23, 11:00pm, Read the instructions for [(Mini-)Project 9](../mps/mp09)
     * [_Submit reading response on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4392317)
-* Wednesday, 2024-04-42, 8:30am, [Lab on searching and algorithm analysis](../labs/searching)
-    * [_Submit lab on Gradescope_](...)
+* Wednesday, 2024-04-24, 8:30am, [Lab on searching and algorithm analysis](../labs/searching)
+    * [_Submit lab on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4392314)
     * Please try to submit by the end of class.
 * Wednesday, 2024-04-24, 11:00pm, [MP8](../mps/mp08)
     * [_Submit MP8 on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4371686)
