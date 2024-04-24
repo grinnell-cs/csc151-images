@@ -5,8 +5,6 @@ summary: |
   We explore trees briefly because they beautifully generalize the recursive definition of lists we have used extensively so far and as a functional language, Racket is particular adapt at handling this common form of data.
 ---
 
-_This reading was redeveloped for Fall 2020 and then again for Fall 2021._
-
 ## Lists as sequential structures
 
 Recall that a list is defined recursively as a finite set of cases:
@@ -686,8 +684,8 @@ However, you should study these implementations because they are excellent examp
 
 ### Check 1: Another example of a tree (‡)
 
-{:type="a"}
-a.  Come up with another example of a hierarchical structure that we could represent using trees.
+a. Come up with another example of a hierarchical structure that we could represent using trees.
     Describe the parent-child relationships in this example.
-b.  Use `binary-tree` and `empty-tree` to give a concrete example of your structure in Racket.
+
+b. Use `binary-tree` and `empty-tree` to give a concrete example of your structure in Racket.
     Make sure your example involves a few levels so that you get practice writing our tree values.  (You don't have to write working code; just practice doing it.)
