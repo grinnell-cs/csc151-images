@@ -5,6 +5,10 @@ summary: |
   At this point in your career, you've learned a variety of techniques
   for writing algorithms and for working with images. This project
   provides an opportunity for you to push yourself in new directions.
+collaboration: |
+  Each group should submit their responses to this project together. You may
+  consult other students in the class as you develop your solution.  If you
+  receive help or advice from anyone, make sure to cite them in your responses.
 link: true
 ---
 The starter code for this project is [image-series.rkt](../code/mps/image-series.rkt).
