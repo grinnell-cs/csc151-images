@@ -22,6 +22,8 @@ Administrative stuff
 --------------------
 
 * Good luck to any tennis players heading off to the tournament on Friday.
+* Apologies if today is a bit disjoint; the fire alarm interfered with
+  class prep.
 
 ### Token opportunities
 
@@ -93,7 +95,7 @@ Misc
 About the project
 -----------------
 
-Group project (size 1--4).  We'll talk about group formation last. 
+Group project (size 1--4).  We'll talk about group formation later. 
 
 Liberal arts project.  Use your programming and image-making skills
 to help you better understand art.
@@ -148,6 +150,12 @@ How would you split up the work?
 > However, I'll note that the best teams seemed to work together
   most of the time.
 
+Perhaps whether it would be beneficial to each person to work on
+their design after the group brainstorms the general idea or if all
+members should work on each image together.
+
+> I'd suggest working together on overall design.
+
 How should the in-class presentation be different from the coding
 and documentation portion?
 
@@ -161,6 +169,15 @@ the rest of the code?
 
 > There's a space in the code for the time log.
 
+Could you provide some examples?
+
+> I'll try to get an example ready by Friday.
+
+How can we start to think about making 1000 variants of an image?
+
+> I'll try to quickly talk through an example.
+
+
 Project skills
 --------------
 
@@ -170,6 +187,9 @@ _TPS: What are some characteristics you'd like to be on the team_
 
 * Kind and positive.
 * Timely and responsible.
+* Carry their share of the project. Be clear about what they can and
+  cannot do.
+* Communicative.
 
 ### Individual skills
 
