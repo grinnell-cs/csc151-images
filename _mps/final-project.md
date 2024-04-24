@@ -36,14 +36,14 @@ Our computational image-making skills are not yet at the level that we can use t
 
 This semester, will apply the "code as analysis" technique to the works of Hilma af Klint.  As Wikipedia tells us, "Hilma af Klint was a Swedish artist and mystic whose paintings are considered among the first abstract works known in Western art history. A considerable body of her work predates the first purely abstract compositions by Kandinsky, Malevich and Mondrian."
 
-Identify an image by Hilma af Kling that you would like to use as a starting point. (We have placed a copy of her _Catalogue Raisonné_ in the classroom for you to browse. You can also find many of her images online.) Your goal will be to write a procedure that can generate a variety of variants of the image. In part, your goal is to be able to make individualized versions of the image. In part, your goal is to be able to better understand the underlying design ideas in the image.
+Identify an image by Hilma af Klint that you would like to use as a starting point. (We have placed a copy of her _Catalogue Raisonné_ in the classroom for you to browse. You can also find many of her images online.) Your goal will be to write a procedure that can generate a variety of variants of the image. In part, your goal is to be able to make individualized versions of the image. In part, your goal is to be able to better understand the underlying design ideas in the image.
 
 Write a procedure, `(image-series n width height)`, that takes three non-negative integers as input and generates a `width`-by-`height` image that is similar to but different from your source image. Different values of `n` should give observably different images. The same `n`/`width`/`height` triplet should always give the same image; do not use randomness. You should support values of `n` between 0 and 999, inclusive. (You may also support other values of `n`.) You should support aspect ratios between 1:2 and 2:1.
 
 You should find ways to use the following in your project.
 
 * At least two of the ways we have of thinking about images: shapes, manipulating bitmaps by position, and manipulating bitmaps by using surrounding pixels.
-* At least two kinds of recursion.
+* At least two forms of recursion (list, numeric, vector, hash, tree, ...).
 
 Additional requirements
 -----------------------
@@ -108,7 +108,7 @@ _There are no redos available for this project._
     [ ] `image-series.rkt`
     [ ] The original images
     [ ] The sketch or sketches
-    [ ] A powerpoint
+    [ ] A PowerPoint deck
 [ ] Project runs and produces different images for different values of `n`
 [ ] Includes design description
 [ ] Time log appears reasonable
