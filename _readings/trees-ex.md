@@ -5,8 +5,6 @@ summary: |
   We explore trees briefly because they beautifully generalize the recursive definition of lists we have used extensively so far and as a functional language, Racket is particular adapt at handling this common form of data.
 ---
 
-_This reading was redeveloped for Fall 2020 and then again for Fall 2021._
-
 ## Lists as sequential structures
 
 Recall that a list is defined recursively as a finite set of cases:
@@ -285,13 +283,15 @@ Next, let's write some definitions to capture our notion of an empty tree, the b
 We defined an empty tree to simply be `null`.
 So it is tempting to use `null` and `null?` as our empty tree value and test for whether we have an empty tree.
 However, even though a tree is really a list behind the scenes, we want to avoid thinking about these implementation details when writing tree code.
-Therefore, we'll define `empty-tree` and `empty-tree?` to be aliases for `null` and `null?` which hides the fact that we implement trees as lists.
+Therefore, we'll define `empty-tree` to be an alias for a procedure that creates `null` and `empty-tree?` as `null?` which hides the fact that we implement trees as lists.
 
 {% capture code %}
 ~~~racket
-;;; empty-tree : tree?
-;;; An alias for the empty binary tree.
-(define empty-tree null)
+;;; (empty-tree) : tree?
+;;; Create the empty binary tree.
+(define empty-tree 
+  (lambda ()
+    null))
 
 ;;; (empty-tree? t) -> boolean?
 ;;;   t : value
@@ -312,44 +312,22 @@ Consider how the definitions `empty-tree` and `empty-tree?` definitions above mi
 
 {% capture code %}
 ~~~racket
-;;; empty-tree -> tree?
-;;; An alias for the empty binary tree.
-(define empty-tree 'O)
+;;; (empty-tree) -> tree?
+;;; Create the empty binary tree.
+(define empty-tree 
+  (lambda ()
+    'O))
 
 ;;; (empty-tree? val) -> boolean?
 ;;;   val : value?
 ;;; Returns true iff is t is an empty binary tree.
 (define empty-tree? 
   (lambda (val)
-    (eq? val empty-tree)))
+    (eq? val (empty-tree))))
 ~~~
 {% endcapture %}
 
 {% include toggle-field.html id="toggle-empty-tree-alt" button="Alternate Empty Trees" text=code %}
-
-### One more alternate
-
-Because `null` is a value, rather than a procedure, we've also made `empty-tree` a value. 
-However, there can be some good reasons to stick with only procedures, even for our simplest values.
-So we can rewrite `empty-tree` as a procedure.
-
-```
-(define empty-tree
-  (lambda ()
-    null))
-(define empty-tree? null?)
-```
-
-If we decide to represent the empty tree as something other than else, we'll also need to rewrite `empty-tree?`
-
-```
-(define empty-tree
-  (lambda ()
-    (string->symbol "\u25EC")))
-
-(define empty-tree?
-  (section eq? (empty-tree) <>))
-```
 
 ### Creating binary trees
 
@@ -529,7 +507,7 @@ We can write a more elegant definition of our management tree using our tree cre
 (define management-tree
   (binary-tree
     "Board"
-    empty-tree
+    (empty-tree)
     (binary-tree
       "CEO"
       (binary-tree
@@ -538,7 +516,7 @@ We can write a more elegant definition of our management tree using our tree cre
         (leaf "Tester"))
       (binary-tree
         "Head of Legal"
-        empty-tree
+        (empty-tree)
         (leaf "Lawyer")))))
 ~~~
 
@@ -686,8 +664,8 @@ However, you should study these implementations because they are excellent examp
 
 ### Check 1: Another example of a tree (‡)
 
-{:type="a"}
-a.  Come up with another example of a hierarchical structure that we could represent using trees.
+a. Come up with another example of a hierarchical structure that we could represent using trees.
     Describe the parent-child relationships in this example.
-b.  Use `binary-tree` and `empty-tree` to give a concrete example of your structure in Racket.
+
+b. Use `binary-tree` and `empty-tree` to give a concrete example of your structure in Racket.
     Make sure your example involves a few levels so that you get practice writing our tree values.  (You don't have to write working code; just practice doing it.)

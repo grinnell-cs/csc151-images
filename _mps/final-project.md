@@ -5,6 +5,10 @@ summary: |
   At this point in your career, you've learned a variety of techniques
   for writing algorithms and for working with images. This project
   provides an opportunity for you to push yourself in new directions.
+collaboration: |
+  Each group should submit their responses to this project together. You may
+  consult other students in the class as you develop your solution.  If you
+  receive help or advice from anyone, make sure to cite them in your responses.
 link: true
 ---
 The starter code for this project is [image-series.rkt](../code/mps/image-series.rkt).
@@ -36,14 +40,14 @@ Our computational image-making skills are not yet at the level that we can use t
 
 This semester, will apply the "code as analysis" technique to the works of Hilma af Klint.  As Wikipedia tells us, "Hilma af Klint was a Swedish artist and mystic whose paintings are considered among the first abstract works known in Western art history. A considerable body of her work predates the first purely abstract compositions by Kandinsky, Malevich and Mondrian."
 
-Identify an image by Hilma af Kling that you would like to use as a starting point. (We have placed a copy of her _Catalogue Raisonné_ in the classroom for you to browse. You can also find many of her images online.) Your goal will be to write a procedure that can generate a variety of variants of the image. In part, your goal is to be able to make individualized versions of the image. In part, your goal is to be able to better understand the underlying design ideas in the image.
+Identify an image by Hilma af Klint that you would like to use as a starting point. (We have placed a copy of her _Catalogue Raisonné_ in the classroom for you to browse. You can also find many of her images online.) Your goal will be to write a procedure that can generate a variety of variants of the image. In part, your goal is to be able to make individualized versions of the image. In part, your goal is to be able to better understand the underlying design ideas in the image.
 
 Write a procedure, `(image-series n width height)`, that takes three non-negative integers as input and generates a `width`-by-`height` image that is similar to but different from your source image. Different values of `n` should give observably different images. The same `n`/`width`/`height` triplet should always give the same image; do not use randomness. You should support values of `n` between 0 and 999, inclusive. (You may also support other values of `n`.) You should support aspect ratios between 1:2 and 2:1.
 
 You should find ways to use the following in your project.
 
 * At least two of the ways we have of thinking about images: shapes, manipulating bitmaps by position, and manipulating bitmaps by using surrounding pixels.
-* At least two kinds of recursion.
+* At least two useful recursive procedures. (You can use any kind of recursion: list, numeric, vector, hash, tree, ...).
 
 Additional requirements
 -----------------------
@@ -77,7 +81,7 @@ Toby    2024-04-29 09:00-10:00  60 min  Helped Taylor debug concentric-circles
 
 ### Learning summary
 
-Each group member should individually reflect on what they learned in the project.  You might consider what you learned about the work you are studying, programming, teamwork, yourself, etc.  You will enter this reflection in the MP9 post assessment.
+Each group member should individually reflect on what they learned in the project.  You might consider what you learned about the work you are studying, programming, teamwork, yourself, etc.  You will enter this reflection in the MP9 post-reflection.
 
 What to submit
 --------------
@@ -94,6 +98,23 @@ What to submit
 
 **Learning summary** (submitted separately and individually). In two or three paragraphs, summarize what you learned from doing this project.  You will enter this on the post-assessment.
 
+Setting project goals
+---------------------
+
+As you might expect, it's important that you have working code for this assignment. Hence, we recommend that you build your project gradually. It is not essential that you capture every aspect of the image (e.g., brush strokes, careful blends, even some of the lines).
+
+Start with what people in industry call a "minimum viable product". You should focus on the central design components and make sure that you have a way of varying the image appropriately.
+
+Once you've completed that part, start adding additional aspects. Perhaps you've noticed an interesting blend in one part. Perhaps there's a curve you want to add.
+
+Only if there is time will you try to capture every aspect of the image.
+
+Note that you should make many of these decisions in advance, as you decompose the problem. 
+
+* _What should be the core of our project?_
+* can we add once we've completed that part?
+* If everything goes perfectly and we still have time, what else might we add?
+
 Rubric
 ------
 
@@ -108,7 +129,7 @@ _There are no redos available for this project._
     [ ] `image-series.rkt`
     [ ] The original images
     [ ] The sketch or sketches
-    [ ] A powerpoint
+    [ ] A PowerPoint deck
 [ ] Project runs and produces different images for different values of `n`
 [ ] Includes design description
 [ ] Time log appears reasonable
@@ -129,6 +150,11 @@ _There are no redos available for this project._
 [ ] Almost no inefficient or otherwise bad code
 [ ] A well-organized code file
 ```
+
+Examples
+--------
+
+_Forthcoming._
 
 Questions and answers
 ---------------------

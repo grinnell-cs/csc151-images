@@ -140,8 +140,8 @@ group's writeup.
 *projects* may be individual or group assignments.  For either kind,
 you should feel free to ask for help from almost anyone (me, the
 class mentor, another student, a TC, a friend).  If I give an
-individual homework, I expect each individual to write up his or
-her answers individually (no copying!).  However, you may certainly
+individual homework, I expect each individual to write up their
+answers individually (no copying!).  However, you may certainly
 ask a colleague to proofread or comment on your answers, provided
 you acknowledge that person.  If I give collaborative homework,
 each group of students should write and turn in its own single set
@@ -174,12 +174,15 @@ notes to the exam.
 Citing program code
 -------------------
 
-Note that computer programming shares with normal writing a need to
-cite work taken from elsewhere.  It is certainly acceptable practice
-to borrow other code for your assignments.  However, you must cite any
-code that you use from elsewhere, including your own code.  You are
-also responsible for the quality of code you submit and you should
-note that there's a lot of mediocre code on the Web.
+Note that computer programming shares with normal writing a need
+to cite work taken from elsewhere. It is certainly acceptable
+practice to borrow code you find in textbooks or on the web for
+your assignments.  However, you must cite any code that you use
+from elsewhere, including your own code. You are also responsible
+for the quality of code you submit and you should note that there's
+a lot of mediocre code on the Web. In no circumstances should you
+copy a classmate's solution nor should you base your own answers on
+code a classmate has written.
 
 *Each piece of code you take from elsewhere must include a
 comment that points me to the original work*, even if you
@@ -229,10 +232,10 @@ were available at the specified location.
 Here is a sample citation for my academic integrity policy, using a slight
 variant of the APA format.
 
-> Rebelsky, Samuel (2022).  Academic Integrity .  Grinnell College
+> Rebelsky, Samuel (2024).  Academic Integrity .  Grinnell College
 Department of Computer Science.  Available at {{ site.url |
-append: '/handouts/academic-integrity' }} (Last modified 3 January
-2022; Visited 3 January 2022).
+append: '/handouts/academic-integrity' }} (Last modified 23 April
+2024; Visited 23 January 2024).
 
 Once again, although I prefer careful citations, I will accept anything
 that shows that you've made an appropriate effort to acknowledge any

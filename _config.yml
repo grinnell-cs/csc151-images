@@ -116,7 +116,8 @@ defaults:
       layout: assigned
       collaboration: |
         You must work individually on this assignment.
-        You may only discuss this assignment with the course staff.
+        You may discuss this assignment with anyone, provided you
+        cite them appropriately.
 
   - scope:
       path: ""
@@ -125,9 +126,6 @@ defaults:
       link: true
       section: Lab
       layout: assigned
-      no-due-message: |
-        Lab writeups are always due by Sunday 5:00 PM central the week they are assigned.
-        However as a general rule, try to complete labs *the day that they are assigned*, so that you do not fall behind!
 
   - scope:
       path: ""
