@@ -283,13 +283,15 @@ Next, let's write some definitions to capture our notion of an empty tree, the b
 We defined an empty tree to simply be `null`.
 So it is tempting to use `null` and `null?` as our empty tree value and test for whether we have an empty tree.
 However, even though a tree is really a list behind the scenes, we want to avoid thinking about these implementation details when writing tree code.
-Therefore, we'll define `empty-tree` and `empty-tree?` to be aliases for `null` and `null?` which hides the fact that we implement trees as lists.
+Therefore, we'll define `empty-tree` to be an alias for a procedure that creates `null` and `empty-tree?` as `null?` which hides the fact that we implement trees as lists.
 
 {% capture code %}
 ~~~racket
-;;; empty-tree : tree?
-;;; An alias for the empty binary tree.
-(define empty-tree null)
+;;; (empty-tree) : tree?
+;;; Create the empty binary tree.
+(define empty-tree 
+  (lambda ()
+    null))
 
 ;;; (empty-tree? t) -> boolean?
 ;;;   t : value
@@ -310,44 +312,22 @@ Consider how the definitions `empty-tree` and `empty-tree?` definitions above mi
 
 {% capture code %}
 ~~~racket
-;;; empty-tree -> tree?
-;;; An alias for the empty binary tree.
-(define empty-tree 'O)
+;;; (empty-tree) -> tree?
+;;; Create the empty binary tree.
+(define empty-tree 
+  (lambda ()
+    'O))
 
 ;;; (empty-tree? val) -> boolean?
 ;;;   val : value?
 ;;; Returns true iff is t is an empty binary tree.
 (define empty-tree? 
   (lambda (val)
-    (eq? val empty-tree)))
+    (eq? val (empty-tree))))
 ~~~
 {% endcapture %}
 
 {% include toggle-field.html id="toggle-empty-tree-alt" button="Alternate Empty Trees" text=code %}
-
-### One more alternate
-
-Because `null` is a value, rather than a procedure, we've also made `empty-tree` a value. 
-However, there can be some good reasons to stick with only procedures, even for our simplest values.
-So we can rewrite `empty-tree` as a procedure.
-
-```
-(define empty-tree
-  (lambda ()
-    null))
-(define empty-tree? null?)
-```
-
-If we decide to represent the empty tree as something other than else, we'll also need to rewrite `empty-tree?`
-
-```
-(define empty-tree
-  (lambda ()
-    (string->symbol "\u25EC")))
-
-(define empty-tree?
-  (section eq? (empty-tree) <>))
-```
 
 ### Creating binary trees
 
@@ -527,7 +507,7 @@ We can write a more elegant definition of our management tree using our tree cre
 (define management-tree
   (binary-tree
     "Board"
-    empty-tree
+    (empty-tree)
     (binary-tree
       "CEO"
       (binary-tree
@@ -536,7 +516,7 @@ We can write a more elegant definition of our management tree using our tree cre
         (leaf "Tester"))
       (binary-tree
         "Head of Legal"
-        empty-tree
+        (empty-tree)
         (leaf "Lawyer")))))
 ~~~
 
