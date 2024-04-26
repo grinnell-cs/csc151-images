@@ -403,6 +403,7 @@
 
 - topic: Trees
   abbrev: trees
+  notes: https://docs.google.com/presentation/d/17BKVLcWRh6ul4yW9aNeysvfoDZdA_BBlcWCkErtMJ_w/edit?usp=sharing
   summary: |
     We consider a common hierarchial mechanism for structuring data
     and how to realize it in Scheme.
