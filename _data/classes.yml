@@ -406,6 +406,7 @@
     - page: /labs/binary-trees.html
   todo:
     - Don't forget to add code to draw a tree
+  notes: ../eboards/eboard35.html
 
 - topic: Tree recursion
   abbrev: tree-recursion
