@@ -2,7 +2,6 @@
 
 (require csc151)
 (require csc151/binary-trees-from-lists)
-(require racket/match)
 (require rackunit)
 
 ;; CSC-151-NN (SEMESTER)
