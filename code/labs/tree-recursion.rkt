@@ -2,7 +2,6 @@
 
 (require csc151)
 (require csc151/binary-trees-from-lists)
-(require racket/match)
 (require rackunit)
 
 ;; CSC-151-NN (SEMESTER)
@@ -244,7 +243,7 @@ finds the largest value in a tree of real numbers.
              (binary-tree-largest/bad (bt/r tree))))))
 
 #|
-As we observed in the reading, we encouter a problem when
+As we observed in the reading, we encounter a problem when
 one, but not both, of a node's children are empty trees.
 
 Rewrite `binary-tree-largest` to address that issue.
@@ -515,7 +514,7 @@ b. The following code converts the vector from the prior exercise
 to a tree.  Sketch the tree here using whatever technique you'd
 like (e.g., ASCII art, indented racket code, etc.).
 
-[TODO: Enter  your sketch.]
+<TODO: Enter  your sketch.>
 
 |#
 
@@ -623,9 +622,18 @@ Check your answer experimentally.
 |#
 
 #|
-c. If your experimental results did not match your predicted results, explain why.
+c. If your experimental results did not match your predicted results, 
+explain why.
 
 <TODO: Enter your answer here>
+|#
+
+; +------------------+-----------------------------------------------
+; | Submit your work |
+; +------------------+
+
+#|
+Yes, it's that time again. Please submit your work on Gradescope.
 |#
 
 ; +---------------------------+--------------------------------------
