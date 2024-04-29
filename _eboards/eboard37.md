@@ -18,6 +18,18 @@ _Approximate overview_
 Administrative stuff
 --------------------
 
+* My glasses broke over the weekend. I'll likely have even more difficulty
+  than normal identifying you.
+
+### The wonders of English.
+
+We considered my favorite "stupid valid English sentence" in my other
+class on Friday. I thought I'd share it with you.
+
+> Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo Buffalo buffalo buffalo.
+
+Wasn't that amazing? You can read about it [on my 'blog](https://rebelsky.cs.grinnell.edu/musings/buffalo-2024-04-28).
+
 ### Token opportunities
 
 Academic/Scholarly
@@ -33,8 +45,9 @@ Academic/Scholarly
 
 Cultural
 
-* Most days, 2024-04-xx, 11am-6pm, Grinnell College Museum of Art.
-  _BAX 2024_.
+* Most days, 2024-04-xx and 2024-05-xx, 11am-6pm, 
+  Grinnell College Museum of Art.
+  _BAX 2024_. Shouldn't it be BAE?
 * Friday, 2024-05-03, 4:00--5:00pm, HSSC N1170.
   _Middle of Everywhere_.
 
@@ -53,11 +66,14 @@ Wellness
   _Therapy Dogs_.
 * Sunday, 2024-05-05, 10:00am--6:00pm, Mac Field.
   _Bubble Soccer_. (It takes almost as long as cricket!)
+* Friday, 2024-05-10, 5:00pm--??:??pm, Merrill Park West.
+  _CS Picnic!_ Survey forthcoming.
 
 Misc
 
 * Monday, 2024-04-29, 4:00--5:00pm, HSSC A1231 (Kernel).
-  _Quality Initiative Update: What We've Learned By Mapping the Advising Ecosystem._
+  _Quality Initiative Update: What We've Learned By Mapping the 
+   Advising Ecosystem._
 * Thursday, 2024-05-02, 4:15--5:30pm, Burling 1st.
   _Conversation with Kathryn Mohrman '67._
 * Saturday, 2024-05-04 (aka "Star Wars Day"), 10:00am--11:00pm, Central Campus.
@@ -82,7 +98,7 @@ Misc
 
 * Tuesday, 2024-04-30, **No reading**
 * Wednesday, 2024-05-01, Today's [Lab on tree recursion](../labs/tree-recursion)
-    * [_Submit tree recursion lab on Gradescope_](...)
+    * [_Submit tree recursion lab on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4423663)
     * Lab should be finished in class.
 * Thursday, 2024-05-03, **No reading**
 * Friday, 2024-05-03, 8:00am, Quizzes
@@ -123,11 +139,17 @@ Questions
 
 ### Administrative
 
-Will you ever tell us our tokens.
+Will you ever tell us our tokens?
 
 > Probably not. Assume you have enough.
 
 ### MP9
+
+### BSTs
+
+Can you go over the examples from the reading?
+
+> Sure.
 
 ### Misc
 
