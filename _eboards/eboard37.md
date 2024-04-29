@@ -20,8 +20,13 @@ Administrative stuff
 
 * My glasses broke over the weekend. I'll likely have even more difficulty
   than normal identifying you.
+* I will be working from home tomorrow. I'll do my best to respond to
+  questions on email and Teams. All office hours will be on Teams.
+* The CS picnic is coming up. Make sure to sign up.
+* MP8 has now been returned. The redo is due at the end of week 12.
+  (If you turn it in earlier, the graders might be able to get to it.)
 
-### The wonders of English.
+### The wonders of English
 
 We considered my favorite "stupid valid English sentence" in my other
 class on Friday. I thought I'd share it with you.
@@ -141,9 +146,13 @@ Questions
 
 Will you ever tell us our tokens?
 
-> Probably not. Assume you have enough.
+> Probably not. You can assume you have enough.
 
 ### MP9
+
+Could you teach us how to do blends?
+
+> I'll send out something tomorrow.
 
 ### BSTs
 
