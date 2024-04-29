@@ -18,13 +18,16 @@ _Approximate overview_
 Administrative stuff
 --------------------
 
+**Why is it so hard to show up to the first class of the day on time?**
+
 * My glasses broke over the weekend. I'll likely have even more difficulty
   than normal identifying you.
 * I will be working from home tomorrow. I'll do my best to respond to
   questions on email and Teams. All office hours will be on Teams.
 * The CS picnic is coming up. Make sure to sign up.
-* MP8 has now been returned. The redo is due at the end of week 12.
+* MP8 has now been returned. The redo is due at the end of week 14.
   (If you turn it in earlier, the graders might be able to get to it.)
+* Congrats to Men's Tennis on a successful weekend.
 
 ### The wonders of English
 
@@ -128,8 +131,9 @@ Misc
     * _Lab not yet available._
     * Lab should be finished in class.
     * **Our final lab.**
-* Wednesday, 2024-05-08, 8:00am, Presentations from [MP9](../mps/mp09)
+* Wednesday, 2024-05-08, 8:30am, Presentations from [MP9](../mps/mp09)
     * _Nothing to submit._
+    * Sam wll bring fresh fruit.
 * Wednesday, 2024-05-8, 11:00pm, [SoLA 4](../las) due.
     * _Submit individual LAs on Gradescope_.
 * Sunday, 2024-05-12, 11:00pm, Redo for [MP8](../mps/mp08)
@@ -162,5 +166,48 @@ Can you go over the examples from the reading?
 
 ### Misc
 
+Can we start lab now?
+
+> Sure.
+
 Lab
 ---
+
+### Random tree shapes
+
+Sam's analysis for how many random trees of size 5 there are.
+
+* **Size 0**: We can only have **one** tree of size 0.
+* **Size 1**: We can only have **one** tree of size 1.
+* **Size 2**: We can have **two** trees of size 2: The one in which the
+  left subtree is nonempty and the one in which the right subtree is
+  nonempty.
+* **Size 3**: Things start to get complicated here. We could have two
+  values on the left (2 versions), we could have two values on the right
+  (2 versions), or we could have one value on each side (1 version).
+  That gives us **five** trees of size 3.
+* **Size 4**: Things get even more complicated here. We could have three
+  values on the left (5 versions) and zero on the right (1 version). We could 
+  have two values on the left (2 versions) and one on the right (1 version).
+  We could have one value on the left (1 version) and two on the right
+  (2 versions). And we could have zero values on the left (1 version) and
+  three values on the right (5 versions). 5 + 2 + 2 + 5 = **fourteen**
+  different trees of size 4.
+* **Size 5**: Things are complicated enough that I'm switching to a bulleted
+  list.
+    * Four on the left (14 versions), zero on the right (1 version): 14 versions.
+    * Three on the left (5 versions), one on the right (1 version): 5 versions
+    * Two on the left (2 versions), two on the right (2 versions): 4 versions
+    * One on the left (1 version), three on the right (5 versions): 5 versions
+    * Zero on the left (1 version), four on the right (14 versions): 14 versions
+    * If I count right, that gives us **forty-two** different trees of size 5.
+    * Life, the universe, and everything!
+
+### Searching trees
+
+What procedures did we see to search trees?
+
+> `bst-find`
+
+> `binary-tree-contains?`
+
