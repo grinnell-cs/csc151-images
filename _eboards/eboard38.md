@@ -17,7 +17,7 @@ _Approximate overview_
 * Background: Algorithmic growth
 * The problem of sorting
 * Algorithm design time
-* Turning design into code
+* Turning design into code (if time)
 
 Administrative stuff
 --------------------
@@ -46,6 +46,16 @@ Cultural
 
 Peer
 
+* Thursday, 2024-05-02 6:00pm, Probably Roberts (or downtown if no rain).
+  _Peter and the Starcatchers_.
+* Friday, 2024-05-03 2:00pm, Probably downtown (or in Roberts if rain)
+  _Peter and the Starcatchers_.
+* Saturday , 2024-05-04 2:00pm, Probably downtown (or Roberts if rain).
+  _Peter and the Starwarscatchers_.
+* Saturday, 2024-05-04 (aka "Chamber Ensemble Day"), 11am, Sebring Lewis.
+  _Chamber Ensemble vs. the music of um._
+* Saturday, 2024-05-04 (aka "Star Wars Day"), 10:00am--11:00pm, Central Campus.
+  _The Grinnellian._ Your peer sings at 2:45pm.
 * Saturday, 2024-05-04 (aka "Star Wars Day"), noon--3:00pm, Pioneer Park.
   _Baseball vs. Illinois_.
 * Saturday, 2024-05-04 (aka "Star Wars Day"), 2:30--5:30pm, Pioneer Park.
@@ -64,8 +74,6 @@ Misc
 
 * Thursday, 2024-05-02, 4:15--5:30pm, Burling 1st.
   _Conversation with Kathryn Mohrman '67._
-* Saturday, 2024-05-04 (aka "Star Wars Day"), 10:00am--11:00pm, Central Campus.
-  _The Grinnellian._
 
 ### Other good things (no tokens)
 
@@ -141,6 +149,18 @@ Can I photocopy a page of the magic notebook?
 
 > No. That destroys the magic.
 
+### Redos
+
+If I have a really small thing that will get me from M to E, can I talk
+about it with Sam rather than submitting a redo?
+
+> Sure. Set up an appointment.
+
+Is the MP8 redo autograder broken?
+
+> I don't know. Teams message me and I'll check. If I don't respond
+  within twelve hours, feel free to teams message me again.
+
 ### MP9
 
 ### Misc
@@ -148,16 +168,160 @@ Can I photocopy a page of the magic notebook?
 A reminder: Computer science
 ----------------------------
 
+Computer science is having the computer do things. [No]
+
+Computer science is kind of like writing directions. The PB&J was
+an example.
+
+Computer science is the study of algorithms (directions) and data
+structures (ways to organize information).
+
+Computer scientists often start with specific problems and then generalize
+(or look for classes of problems to solve).
+
+Today's class of problem: Sorting. Given a collection of comparable elements,
+put them in order (from smallest to largest or from largest to smallest).
+
+E.g., 
+
+* Put all the books in a library in order by first author name.
+* Put all the teams in a league in order by their records.
+
+Computer scientists don't just study algorithms, they also analyze them:
+
+* Correctness (does it terminate, can we ensure that it always gives
+  the right answer)
+* Efficiency (how fast will it be on different sizes/types of inputs;
+  how much "memory" or other computer resources will it use)
+* Social impact.
+
 Algorithmic growth
 ------------------
 
+Useful to think about what happens when you double the size of the
+input.
+
+* Constant time: It stays the same when you double the input.
+* Logarithmic: It goes up by one (or some constant) when you double the
+  input.
+* Linear: Doubles when you double the input.
+* Quadratic: Quadruples when you double the input. 1 -> 4 -> 16 -> 256 -> 65K or so.
+
 The problem of sorting
 ----------------------
+
+Today's class of problem: Sorting. Given a collection of comparable elements,
+put them in order (from smallest to largest or from largest to smallest).
+
+* We can sort elements in a list or vector.
 
 Algorithm design time
 ---------------------
 
 _TPS: Design a sorting algorithm that we will enact._
 
+Inputs: A list or vector of values + a way to compare any two values
+
+Output: The same group of values, now in order. (for lists, we'll output
+a new list; for vectors, we'll change them in place)
+
+### Designs
+
+* Lists (make a new list) or arrays (sort in place) or either
+* Divide in half or something else
+
+### Algorithm zero:
+
+* Shuffle the elements
+* Check if they are sorted
+* If so, stop
+* If not, try again
+
+### Algorithm one: Insertion sort
+
+* Compare the first two elements. 
+   * If they are in the right order, put them in a new list as is.
+   * If not, create a new list, flipping the two elements
+* Compare the third element to the largest. Either put at the end
+  or find the right place in the list and put it there.
+* Similar for the next one.
+
+Key idea: Repeatedly insert elements into "the right place" in a new list.
+
+### Algorithm two: Bubble sort
+
+Sorting in vectors.
+
+* Swap neighboring elements if they are out of order.
+* Determine if they are in order.
+* If not, go back and try again.
+
+Analysis of termination and correctness: In each round, things get closer 
+to where they belong. Eventually they have to end up where they belong.
+
+* President Obama: "I think the bubble sort would be the wrong way to go."
+* Class Mentor: Bubble is canonically slow.
+
+### Algorithm three: Quicksort
+
+A recursive list sorting algorithm.  Requires finding average of the
+elements. 
+
+* Find the average. (median would be better)
+* Split the list into halves based on the average.
+* Sort each list
+
+A variant was designed by C.A.R. "Tony" Hoare who clearly liked marketing,
+because he called it Quicksort. It appears that picking a random element
+is almost as good as using the median.
+
+### Algorithm four: Merge sort
+
+* If there is only one element, it's sorted.
+* If there are two elements, sort the obvious way
+* Otherwise
+   * Split in half. 
+   * Sort each half. 
+   * Put them back together.
+
 Turning algorithms into code
 ----------------------------
+
+_TPS: Document_
+
+```
+;;; (sort lst less-than?) -> list?
+;;;   lst : list? (homogeneous)
+;;;   less-than? : binary predicate?
+;;; Sort the elements in `lst` to create a new list in which
+;;; each element is `less-than?` the next element.
+;;;
+;;; Note: `less-than?` must be applicable to any two elements in the list.
+;;;
+;;; Note: `less-than?` must be transitive. If `(less-than? a b)` and
+;;; `(less-than? b c)`, we can conclude that `(less-than? a c)`.
+;;;
+;;; Note: If `less-than` is strict (no equality), the list should
+;;; not have duplicate elements.
+```
+
+```
+;;; (sort! vec less-than?) -> void?
+;;;   vec : vector? 
+;;;   less-than? : binary predicate?
+;;; Rearrange the elements in `vec` so that each element is
+;;; `less-than?` the next element.
+;;;
+;;; Note: `less-than?` must be applicable to any two elements in the list.
+;;;
+;;; Note: `less-than?` must be transitive. If `(less-than? a b)` and
+;;; `(less-than? b c)`, we can conclude that `(less-than? a c)`.
+```
+
+_TPS: Implement_
+
+```
+(define sort 
+  (lambda (___ ___)
+    ___))
+```
