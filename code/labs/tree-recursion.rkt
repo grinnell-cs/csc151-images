@@ -503,11 +503,11 @@ expect to look at when searching for an element not in the vector?
 
 #|
 a. The reading and lab provide two different procedures for searching
-trees.  What are they?  How are they similar?  How are they different?
+trees, `binary-tree-contains?` and `bst-find`.  How are they similar?
+How are they different?
 
 <TODO: Enter your answer here.>
 |#
-
 
 #|
 b. The following code converts the vector from the prior exercise
