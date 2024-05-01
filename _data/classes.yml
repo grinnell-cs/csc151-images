@@ -424,6 +424,7 @@
   abbrev: sorting
   summary: |
     We dive into an important problem: Arranging the values in a list or vector.
+  notes: ../eboards/eboard38.html
 
 - topic: Project work day
   abbrev: project-work-day-2
