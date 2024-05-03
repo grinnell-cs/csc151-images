@@ -1,5 +1,5 @@
 ---
-title: "EBoard 38: Project work day"
+title: "EBoard 39: Project work day"
 number: 39
 section: eboards
 held: 2024-05-03
@@ -16,6 +16,13 @@ _Approximate overview_
 * Questions
 * Work time
 
+Quiz
+----
+
+The thing at the top of the tree is `binary-tree-top`, but I'll accept
+`binary-tree-value` or `binary-tree-root` or `the-value-right-here` or
+anything similar.
+
 Administrative stuff
 --------------------
 
@@ -24,7 +31,7 @@ Administrative stuff
 Academic/Scholarly
 
 * Tuesday, 2024-05-07, noon, some PDR.
-  _CS Table (topic TBD)_.
+  _CS Table: CS humor_
 * Thursday, 2024-05-09, 7pm, Science 3819.
   _Mentor Session_. Final mentor session! (Or we might have one more
   review session for SoLA 5.)
@@ -35,14 +42,14 @@ Cultural
   Grinnell College Museum of Art.
   _BAX 2024_. Shouldn't it be BAE?
 * Friday, 2024-05-03, 4:00--5:00pm, HSSC N1170.
-  _Middle of Everywhere_.
+  _Middle of Everywhere_. (Lebanon)
 
 Peer
 
-* Friday, 2024-05-03 2:00pm, Probably downtown (or in Roberts if rain)
-  _Peter and the Starcatchers_.
 * Saturday , 2024-05-04 2:00pm, Probably downtown (or Roberts if rain).
   _Peter and the Starwarscatchers_.
+* Sunday, 2024-05-05 2:00pm, Probably downtown (or in Roberts if rain)
+  _Peter and the Starcatchers_.
 * Saturday, 2024-05-04 (aka "Chamber Ensemble Day"), 11am, Sebring Lewis.
   _Chamber Ensemble vs. the music of um._
 * Saturday, 2024-05-04 (aka "Star Wars Day"), 10:00am--11:00pm, Central Campus.
@@ -53,11 +60,13 @@ Peer
   _Baseball vs. Illinois_.
 * Saturday, 2024-05-05, 11:00am--2:00pm, Pioneer Park.
   _Baseball vs. Illinois_. (It takes a lot of games to play a whole state.)
+* Tuesday, 2024-05-07, Percussion Ensemble
+* Wednesday, 2024-05-08, Harp Recital
 
 Wellness
 
-* Sunday, 2024-05-05, 10:00am--6:00pm, Mac Field.
-  _Bubble Soccer_. (It takes almost as long as cricket!)
+* Sunday, 2024-05-05, 3:00pm--5:00pm, Behind the Forum.
+  _Bubble Soccer_. 
 * Friday, 2024-05-10, 5:00pm--??:??pm, Merrill Park West.
   _CS Picnic!_ 
 
@@ -120,6 +129,10 @@ Misc
 
 ### Friday PSA
 
+* Please take of yourselves.
+* Moderation in everything.
+* Consent is essential.
+
 Questions
 ---------
 
@@ -129,7 +142,19 @@ I have to miss next Friday's quiz. Can I make it up?
 
 > There are no quizzes next Friday.
 
+What about tree recursion?
+
+> SoLA 4, SoLA 5
+
+What about binary search?
+
+> SoLA 4, SoLA 5
+
 ### Redos
+
+When will the MP6 redo be graded?
+
+> I'm not sure, but I'll move the second redo.
 
 ### MP9
 
@@ -140,3 +165,18 @@ Work time
 
 Come grab Maddy or Sam if you want help. Otherwise, we'll do our best to
 stay out of your way.
+
+How can we use recursion?
+
+> You will likely want to use recursion when dealing with neighboring
+  pixels or positions.
+
+> In some circumstances, you might achieve blurs or other effects through
+  recursion. (Repeatedly shrinking a pixel-based image and then enlarging
+  it could cause blurring.)
+
+Do we have to generate something identical to the original image?
+
+> No. But it would be nice if you got close.
+
+
