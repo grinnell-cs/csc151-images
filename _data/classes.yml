@@ -428,6 +428,7 @@
 
 - topic: Sorting out sorting
   abbrev: sorting
+  notes: https://docs.google.com/presentation/d/1RXnxY_3cZr45ylbjSEDq-NDMIn26Vcrpz0LMFt2-6Mw/edit#slide=id.g26f391d5175_0_0
   summary: |
     We dive into an important problem: Arranging the values in a list or vector.
 
