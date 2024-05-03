@@ -89,6 +89,9 @@ Misc
 
 ### Other good things (no tokens)
 
+Note: Softball seems to have moved their games. Or I was very confused
+when I put this together. Please check the calendar.
+
 * Saturday, 2024-05-04 (aka "Star Wars Day"), 1:00--3:00pm, Softball Complex.
   _Softball vs. Lawrence_.
 * Saturday, 2024-05-04 (aka "Star Wars Day"), 3:00--5:00pm, Softball Complex.
@@ -113,6 +116,8 @@ Misc
     * New topic: Tree recursion
     * Old topic: Binary search (most likely tracing)
     * Old topic: Diagramming structures (last chance)
+* Friday, 2024-05-03, 11:00pm, Pre-reflection for [SoLA 4](../las)
+    * [_Submit pre-reflection on gradescope_](https://www.gradescope.com/courses/690100/assignments/4447415)
 * Sunday, 2024-05-05, 11:00pm, [MP9](../mps/mp09)
     * [_Submit MP9 on Gradescope_](https://www.gradescope.com/courses/690100/assignments/4402651)
 * Sunday, 2024-05-05, 11:00pm, Second redo of [MP5](../mps/mp05)
