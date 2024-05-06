@@ -311,7 +311,7 @@ documentation to the procedure.
 (define insertion-sort-experiment
   (lambda (ints)
     (counter-reset-all! COUNT)
-    (let ([result (insertion-sort-experiment ints)])
+    (let ([result (insertion-sort-integers ints)])
       (display-counter COUNT)
       result)))
 
