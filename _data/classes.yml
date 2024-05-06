@@ -440,6 +440,7 @@
     - page: /readings/sorting.html
   lab:
     - page: /labs/sorting.html
+  notes: ../eboards/eboard40.html
 
 - topic: Project presentations
   abbrev: presentations
