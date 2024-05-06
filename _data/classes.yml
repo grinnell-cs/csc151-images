@@ -440,6 +440,7 @@
 
 - topic: "Case study: Sorting"
   abbrev: sorting-lab
+  notes: https://docs.google.com/presentation/d/1YouhGWI4wqSpi1PLNHAwLiI-TWeh-gnbkB1ReWD136o/edit#slide=id.g2666291cd13_0_234
   summary: |
     We ground our exploration of sorting in some details.
   reading:
