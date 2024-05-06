@@ -5,7 +5,6 @@ summary: |
   vector in order, using a binary comparison operation to determine the
   ordering of pairs of elements.
 ---
-**This reading has been rewritten for Fall Term Two 2020.**
 
 The problem of sorting
 ----------------------
