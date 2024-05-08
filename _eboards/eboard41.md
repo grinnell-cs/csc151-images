@@ -7,20 +7,21 @@ link: true
 ---
 # {{ page.title }}
 
-**Warning! You are being recorded** (and transcribed). 
+**Warning! You are NOT being recorded** (nor transcribed). 
 
 _Approximate overview_
 
 * Administrative stuff
 * Questions
-* Lab
+* A few minutes for groups to get their acts together
+* Presentations
 
 Administrative stuff
 --------------------
 
 * Please make sure to show up to class on Friday. 
     * If you will not be here on Friday, please let me know immediately
-      and plan to stay for the last fiew minutes of class.
+      and plan to stay for the last few minutes of class.
 * I am probably holding office hours from home tomorrow.
 
 ### Token opportunities
@@ -29,6 +30,7 @@ Academic/Scholarly
 
 * Sunday, 2024-05-09, time TBA, location TBA.
   _Mentor Session_. Final mentor session! (Review for SoLA 5)
+  Queue and Eh.
 
 Cultural
 
@@ -40,7 +42,7 @@ Cultural
 
 Peer
 
-* Wednesday, 2024-05-08, Harp Recital
+* Wednesday, 2024-05-08, Harp Recital 3:30--4:10pm in Museum of Art.
 
 Wellness
 
@@ -76,8 +78,11 @@ Will we fail if we don't show up on Friday?
 
 ### Misc
 
+Pause to get ready
+------------------
+
 Presentations
--------------
+t------------
 
 1. Lemonade
 
