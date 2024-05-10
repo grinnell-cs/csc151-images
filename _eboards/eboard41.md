@@ -82,7 +82,7 @@ Pause to get ready
 ------------------
 
 Presentations
-t------------
+------------
 
 1. Lemonade
 
