@@ -451,6 +451,7 @@
   abbrev: wrapup
   summary: |
     We conclude the course.
+  notes: ../eboards/eboard42.html
 
 - topic: All outstanding mini-project redos and learning assessments due by 5pm
   abbrev: end-of-semester
