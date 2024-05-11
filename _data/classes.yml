@@ -450,10 +450,12 @@
 
 - topic: Project presentations
   abbrev: presentations
+  notes: https://docs.google.com/presentation/d/1sVsk9-uSewd2y79mFMpUoKFEzhsVREveIIjnCGzDLqU/edit#slide=id.g2666291cd13_0_234
   summary: Students present their projects
 
 - topic: Wrapup
   abbrev: wrapup
+  notes: https://docs.google.com/presentation/d/1IsIsUFnmZdhDNztjduttjx23_9gd79BELsGIKbOeQtE/edit#slide=id.g2666291cd13_0_234
   summary: |
     We conclude the course.
 
