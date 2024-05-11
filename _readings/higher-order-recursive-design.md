@@ -66,6 +66,7 @@ Let's try writing out the `inc-list-1` and `list-zero?` functions using recursio
     (if (null? lst)
         null
         (cons (zero? (car lst)) (list-zero? (cdr lst))))))
+~~~
 {% endcapture %}
 
 {% include toggle-field.html id="toggle-map-aux" button="Specialized mapping functions" text=code %}
