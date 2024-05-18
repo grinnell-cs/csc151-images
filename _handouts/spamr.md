@@ -5,6 +5,56 @@ title: Spam from Sam
 
 _Here you will find much of the email that I sent out this semester. Messages that went out on Gradescope are not generally included._
 
+## [CSC-151-01 2024Sp] Grades posted (Saturday, 2024-05-18)
+
+Dear Post-Functional Students,
+
+This message is likely your last CSC-151-affiliated Spam from Sam.
+
+I hope that your semesters wrapped up well. And I definitely enjoyed having you in class.
+
+With a bit of assistance from our awesome graders, I was able to wrap up the grading for our class relatively promptly. (I graded about half the outstanding MPs and all of the LAs.) You should have received an email message from me with your grade. All your individual grades are on Gradescope.
+
+As always, let me know if you have questions or concerns.
+
+Have a wonderful summer! I look forward to seeing many of you on Noyce 3rd in the fall.
+
+Regards
+
+-- SamR
+
+## [CSC-151-01 2024Sp] Update (Sunday, 2024-05-12)
+
+Dear HAKers,
+
+I hope that you are well and that you are getting some time to relax this weekend.
+
+My life has gotten a bit more complicated, and I don't have as much time for grading as I'd expected/planned. Since you generally did an awesome job with your presentations and projects, I'm assuming that everyone earned an E, and have marked  you as such. You certainly deserve some commentary on your great work, and I'll try to get to that, but I thought you should have grades in place before I posted the SoLA on Monday afternoon.
+
+I do not expect to be on campus this week and my schedule is going to be highly unpredictable, so I will not be scheduling meetings. Asynchronous conversations on Teams are probably the best way to go.
+
+Regards,
+
+-- SamR
+
+p.s. "HAK" = "Hilma Af Klint", just in case you hadn't figured it out.
+
+## [CSC-151-01 2024Sp] SoLA 4 graded (+ some MP redos) (Friday, 2024-05-10)
+
+Dear Assessed Learners,
+
+I hope you are having a pleasant weekend. I have finished grading SoLA 4. And our graders have finished grading last weekend's MP redos. You should be able to find your graded work on Gradescope.
+
+Please look over things and consider what you'd like Maddy to cover on Sunday. It's clear that they should talk about the randomness LA, the running time LA, and the data abstraction LA. But I'm sure they will cover other things, too.
+
+On a separate note: Some of you have discovered a different way to write procedures. Instead of `(define proc (lambda (params) body)))`, you can write `(define (proc params) body)`. YOU MAY NOT USE THIS ALTERNATE FORM!
+
+I think that's it. I should be getting you MP9 and your current grade reports by Sunday.
+
+Take care and be well.
+
+-- SamR
+
 ## [CSC-151-01 2024Sp] Mentor/Tutor Evaluations + Quizzes + More (Monday, 2024-04-22)
 
 Dear Word Hashers,
