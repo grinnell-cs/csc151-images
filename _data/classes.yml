@@ -15,10 +15,9 @@
     - page: /readings/mathlan.html
     - page: /readings/algorithm-building-blocks.html
     - page: /readings/scamper.html
-    - page: /readings/intro-scheme.html
   lab:
     - page: /labs/mathlan.html
-    - page: /labs/racket-intro-mathlan.html
+    - page: /labs/scamper-intro.html
 
 - topic: Algorithmic decomposition
   abbrev: decomposition
