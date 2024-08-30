@@ -5,12 +5,12 @@ title: CSC 151
 
 # baseurl is used for redirects on the same server.
 # url is the full path name
-baseurl: /teaching/2024S/CSC_151_02
-url: https://perlmutter.cs.grinnell.edu/teaching/2024S/CSC_151_02/
+baseurl: /teaching/2024F/CSC_151_03
+url: https://perlmutter.cs.grinnell.edu/teaching/2024F/CSC_151_03/
 
 # deploy settings
 deploy_ssh: reclaim
-deploy_dir: ~/public_html//teaching/2024S/CSC_151_02/
+deploy_dir: ~/public_html//teaching/2024F/CSC_151_03/
 
 # Are we online?  If not, we're in person.  (Some of the lab instructions are
 # affected by this choice.)
