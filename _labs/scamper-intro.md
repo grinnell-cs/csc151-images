@@ -4,6 +4,7 @@ summary: |
   In this laboratory, you will begin to type Scamper expressions.
   Scamper is the language in which we will express many of our algorithms this semester.
   Scamper is a particular implementation of Scheme (which varies a bit from the Scheme standard).
+link: false
 ---
 
 ## Introduction

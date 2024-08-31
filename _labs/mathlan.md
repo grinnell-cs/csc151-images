@@ -3,6 +3,7 @@ title: Getting started with GNU/Linux
 summary: |
   This laboratory reviews some mechanics related to the use of the Computer
   Science GNU/Linux Network for CSC 151.
+link: false
 ---
 
 ## Introduction
