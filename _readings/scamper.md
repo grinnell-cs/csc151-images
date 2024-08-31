@@ -85,10 +85,9 @@ We can find out how many words there are once we've split it apart.
 </pre>
 
 This operation returned a _list_, an ordered collection of values.
-Note that, like expressions, lists are surrounded by parentheses.
-Scheme distinguishes lists, which should not be evaluated, from
-expressions, which should be evaluated, by including a tick mark,
-`'`, before the parenthesis in most lists.
+In line with the parenthesized nature of the language, list values
+have the form `(list ...)` where the values of the list appear,
+in order, separated by spaces.
 
 Once we have a list of words, we can find out how long each word is.
 
@@ -99,7 +98,7 @@ Once we have a list of words, we can find out how long each word is.
 
 ## Computing with images
 
-You've already seen a few of Scheme's basic types. Racket supports
+You've already seen a few of Scheme's basic types. Scamper supports
 numbers, strings (text), and lists of values.  Of course, these are
 not the only types it supports.  Some additional types are available
 through separate libraries.  For example, it is comparatively
@@ -138,7 +137,7 @@ Racket is a _dialect_ of Scheme.
 That is, it is a language derived from Scheme that shares many of the same language constructs and libraries, but also improves on the language in various ways.
 
 In the past, CSC 151 has used Racket as it is a modern, full-featured take on Scheme.
-However, in order to support the music theme of the course, we developed our own implementation of Scheme, _Scamper_.
+However, in order to support the themes of the course, we developed our own implementation of Scheme, _Scamper_.
 In many ways, Scamper draws on modern Racket-isms, but it isn't truly a descendent of Racket as it tries to retain the simplicity of Scheme and thus doesn't adhere precisely to Racket's language standard.
 
 For our intents and purposes as beginning programmers, Scheme, Racket, and Scamper, are all interchangeable names describing the same "functional language with parentheses" that we use in this course.

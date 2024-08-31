@@ -122,10 +122,6 @@ your faculty member, will have access to your password.
 In this course, you will be using a variety of programs. There are three
 that we consider particularly important.
 
-* _Visual Studio Code_ is a program development environment that supports the
-  Scamper programming language, which we use in this course.  Scamper
-  is a variant of Scheme, which is itself a variant of Lisp, one of 
-  the first computer languages.
 *  _Firefox_ is the preferred Web browser in this course.  You should be 
   able to access Firefox through the icon in the taskbar that shows a 
   small red animal holding a sphere.
