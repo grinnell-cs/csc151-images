@@ -12,6 +12,9 @@ url: https://perlmutter.cs.grinnell.edu/teaching/2024F/CSC_151_03/
 deploy_ssh: reclaim
 deploy_dir: ~/public_html//teaching/2024F/CSC_151_03/
 
+# Is the site under construction?
+construction: true
+
 # Are we online?  If not, we're in person.  (Some of the lab instructions are
 # affected by this choice.)
 online: false
