@@ -9,7 +9,7 @@
 #SEMESTER=2024Sp
 #COURSE=CSC151
 #SITE=public_html/Courses/$COURSE/$SEMESTER/
-SITE=public_html/teaching/2024S/CSC_151_02/
+SITE=public_html/teaching/2024F/CSC_151_03/
 REMOTE=reclaim
 
 # Feedback
