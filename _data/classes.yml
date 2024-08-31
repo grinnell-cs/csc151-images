@@ -5,6 +5,8 @@
     science and by trying to write some basic algorithms.
   notes: https://docs.google.com/presentation/d/1NFvjcsHVXWey40Hzf7kjICw3G_YD6jLTOXPQDfXhC4Q/edit?usp=sharing
 
+# TODO: need to change day 1 labs/readings to Scamper versions
+
 - topic: Getting started with Scheme
   abbrev: racket-tech
   notes: https://docs.google.com/presentation/d/1YVqSv6N4IrdBx8zJV_PfH9QKdKhGmba09nrH_vJYIfI/edit#slide=id.g2666291cd13_0_239
@@ -14,11 +16,10 @@
   reading:
     - page: /readings/mathlan.html
     - page: /readings/algorithm-building-blocks.html
-    - page: /readings/drracket.html
-    - page: /readings/intro-scheme.html
+    - page: /readings/scamper.html
   lab:
     - page: /labs/mathlan.html
-    - page: /labs/racket-intro-mathlan.html
+    - page: /labs/scamper-intro.html
 
 - topic: Computation via expressions
   abbrev: expressions
@@ -60,6 +61,20 @@
   lab:
     - page: /labs/procedures.html
 
+- topic: Computation via expressions
+  abbrev: expressions
+  summary: |
+    We look at the fundamental building block of computation in functional
+    programming languages, the expression, and build an appropriate model of
+    how expressions "compute".
+  reading:
+    - page: /readings/computation-via-expressions.html
+  lab:
+    - page: /labs/mental-models-of-computation.html
+    - page: /readings/mental-models.html
+
+# Collapsed the string lab into here... but maybe too much?
+
 - topic: Expressions and types
   abbrev: exprs-and-types
   notes: https://docs.google.com/presentation/d/1xD07fpSXtivHyKcMkwq-RB7pivrsYkZCviK8k2z8fe0/edit#slide=id.g2666291cd13_0_234
@@ -75,20 +90,23 @@
     - page: /readings/symbols.html
   lab:
     - page: /labs/numbers.html
+    - page: /labs/strings.html
   todo:
     - Consider adding symbols to the lab.
     - Consider which types reading to use (or combine them).
     - Might do some cleanup; we split numbers and strings in 2024Sp
 
-- topic: Characters and strings
-  abbrev: strings
-  notes: https://docs.google.com/presentation/d/11n3YjGa_ZLVm1_m3m2TdD0cFb6G-R5iYoRf1HiyKcQM/edit#slide=id.g2666291cd13_0_234
+- topic: Booleans, predicates, and conditionals
+  abbrev: booleans
   summary: |
-    We explore the ways in which we represent text in Scheme,
-    including both strings and the characters we use to build
-    strings.
+    We consider how one writes procedures that make decisions.
+  reading:
+    - page: /readings/booleans.html
+    - page: /readings/conditionals.html
   lab:
-    - page: /labs/strings.html
+    - page: /labs/conditionals.html
+  todo:
+    - Last semester, we needed two days for this. I'm inserting a pause for breath
 
 
 - topic: RGB colors
@@ -105,6 +123,19 @@
     - Make sure this works with the new model.
     - Combine the labs
 
+- topic: Transforming images
+  abbrev: transforming-images
+  summary: |
+    We expand our understanding of RGB transformations to image transformations.
+  reading:
+    - page: /readings/anonymous-procedures.html
+    - page: /readings/transforming-rgb.html
+    - page: /readings/transforming-images.html
+  lab:
+    - page: /labs/transforming-images.html
+  todo:
+    - Incorporate anonymous procedures. (At least that's the plan.)
+
 - topic: Pair programming
   abbrev: pair-programming
   notes: https://docs.google.com/presentation/d/1XCCWKQpxNy3ZD-9NhZbIYhfLFPoiViL9AmuCiG60UYU/edit#slide=id.g2666291cd13_0_234
@@ -120,42 +151,30 @@
   lab:
     - (TBA)
 
-- topic: Transforming images
-  abbrev: transforming-images
-  notes: https://docs.google.com/presentation/d/1edaoW8ZbtbIJrrjnbV6PL7cdLHkBSOJUxsj3DOX9UvA/edit#slide=id.g268c5b2609f_0_62
+- topic: Local bindings
+  abbrev: let
   summary: |
-    We expand our understanding of RGB transformations to image transformations.
+    We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
   reading:
-    - page: /readings/anonymous-procedures.html
-    - page: /readings/transforming-rgb.html
-    - page: /readings/transforming-images.html
+    - page: /readings/local-bindings.html
   lab:
-    - page: /labs/transforming-images.html
-  todo:
-    - Incorporate anonymous procedures. (At least that's the plan.)
+    - page: /labs/local-bindings.html
 
-- topic: Booleans, predicates, and conditionals
-  abbrev: booleans
+- topic: Software engineering fundamentals
+  abbrev: software-engineering
   summary: |
-    We consider how one writes procedures that make decisions.
+    We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
   reading:
-    - page: /readings/booleans.html
-    - page: /readings/conditionals.html
+    - page: /readings/documenting-your-code.html
+    - page: /readings/rackunit.html
+    - page: /readings/hypothesis-driven-debugging.html
   lab:
-    - page: /labs/conditionals.html
-  todo:
-    - Last semester, we needed two days for this. I'm inserting a pause for breath
+    - page: /labs/rackunit.html
 
-- topic: Pause for Breath
-  abbrev: pause-01
+- topic: "Exam #1"
+  abbrev: exam-1
   summary: |
-    We pause to catch up on a variety of topics.
-
-- topic: Another pause for breath
-  abbrev: pause-week-5
-  notes:  https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/eboards/eboard13b
-  summary: |
-    We continue to catch up on topics.
+    The first core examination.
 
 - topic: Lists
   abbrev: lists
@@ -189,42 +208,18 @@
     - Incorporate sort and tally.
     - Consider incorporating the old /labs/drawing-lists.html
 
-- topic: Software engineering fundamentals
-  abbrev: software-engineering
-  notes: https://docs.google.com/presentation/d/15Ts9MYZUQA-GbBB99FImzsO8xDlQKeRyXXrwX8bcZ5c/edit#slide=id.g2666291cd13_0_234
+- topic: Higher-order Functions
+  abbrev: higher-order-functions
   summary: |
-    We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
-  reading:
-    - page: /readings/documenting-your-code.html
-    - page: /readings/rackunit.html
-    - page: /readings/hypothesis-driven-debugging.html
-  lab:
-    - page: /labs/rackunit.html
+    We examine how treating functions as values can simplify out code,
+    especially when employing the "big three" list procedures.
 
-- topic: Other ways to build lists
-  abbrev: building-lists
-  notes: https://docs.google.com/presentation/d/1fvQsyXLm-_HH3nQ2s3dVkX_SmJz1z2vj_bstzTCVxoA/edit?usp=sharing
+- topic: Recursive decomposition
+  abbrev: recursive-decomposition
   summary: |
     We continue our exploration of lists through some "finer-grained"
-    operations.
-  reading:
-    - page: /readings/list-composition.html
-  lab:
-    - page: /labs/list-composition.html
-  todo:
-    - It's a new lab! Students shouldn't be learning cons, car, and cdr at the same time they are learning recursion.
-
-- topic: Ethical considerations in computing
-  abbrev: ethical
-  notes: https://docs.google.com/presentation/d/1ODl8uvkJtHae5SvXbsn-4QvfJFBGiuYR8uQ265yjESo/edit#slide=id.g2666291cd13_0_234
-  summary: |
-    Now that we've spent some time exploring various issues in computing,
-    we take a step back and consider problems of ethical computing
-    with seasoned programmer-eyes. As newly-informed citizens, what
-    must we be aware of with respect to ethics in computing?
-  reading:
-    - link: ACM Code of Ethics and Professional Conduct
-      url: https://www.acm.org/code-of-ethics
+    operations and how they allow us to think of lists in a "recursive"
+    manner.
 
 - topic: Introduction to list recursion
   abbrev: recursion-intro
@@ -237,34 +232,20 @@
     - page: /readings/list-composition.html
     - page: /readings/recursion-basics.html
 
-- topic: Introduction to list recursion, continued
-  notes: https://docs.google.com/presentation/d/1tbaqyDsXhP_PaBNNsSULf6g2b9NU3wf_nuCDP2aLCWU/edit?usp=drive_link
+- topic: Recursion over lists
   summary: |
     We continue our introductory exploration of recursion in Scheme.
   reading:
     - page: /readings/recursion-basics.html
+    - page: /readings/recursion-magic.html
   lab:
     - page: /labs/recursion-basics.html
 
-- topic: Recursion practice
-  notes: https://docs.google.com/presentation/d/1v5d3ijPRgpPwfYK6tO5uznOr3a3aWYVOnSjQIhjfO7c/edit?usp=drive_link
+- topic: List motions and unit testing
   summary: |
-    We continue to continue our introductory exploration of recursion
-    in Racket.
-  reading:
-    - page: /readings/recursion-magic.html
-  lab:
-    - page: /labs/recursion-practice.html
-
-- topic: Local bindings
-  abbrev: let
-  notes: https://docs.google.com/presentation/d/1fk3Pa6qqCCG_TbxndFmhmqGW0FSdq-L0PgJRLzpKlr4/edit?usp=sharing
-  summary: |
-    We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
-  reading:
-    - page: /readings/local-bindings.html
-  lab:
-    - page: /labs/local-bindings.html
+    We begin to categorize the different kinds of recursive "motions"
+    over lists we have explored thus far. We also talk how we can
+    better test the functions that we write.
 
 - topic: Recursion over numbers
   abbrev: number-recursion
@@ -279,92 +260,11 @@
   lab:
     - page: /labs/numeric-recursion.html
 
-- topic: Pause for breath
-  abbrev: pause
+- topic: Recursive design
+  abbrev: recursive-design
   summary: |
-    We pause to explore and revisit ideas associated with recursion.
-
-- topic: Randomness
-  abbrev: randomness
-  notes: https://docs.google.com/presentation/d/1Dy5P63CDZPfWaZzJ8tO2vT2pki7FQKM0F9oULjA0Ep8/edit?usp=sharing
-  summary: |
-    We consider Scheme's `random` procedure and how one might use
-    that procedure in generating images.
-  reading:
-    - page: /readings/randomness.html
-  lab:
-    - page: /labs/random-language.html
-
-- topic: Pairs
-  abbrev: pairs
-  notes: https://docs.google.com/presentation/d/19hGHe_ACbR-1ZlqlnzTmhU-Cb5r-Jo1WtChnwYZNS-I/edit?usp=drive_link
-  summary: |
-    We explore pairs, the basic building blocks of lists, and consider
-    other, non-list structures one might build from pairs.
-  reading:
-    - page: /readings/pairs.html
-  lab:
-    - page: /labs/pairs.html
-
-- topic: Vectors
-  abbrev: vectors
-  notes: https://docs.google.com/presentation/d/1Cu6J0fRExknfMCsbhK-acyxAXHOP6sC14l3MPnc_7f0/edit#slide=id.g2666291cd13_0_234
-  summary: |
-    We explore vectors, an alternative to lists for storing data.
-    We consider how data are stored in memory.
-  reading:
-    - page: /readings/vectors.html
-  lab:
-    - page: /labs/vectors.html
-
-- topic: Vectors, continued
-  abbrev: vectors
-  notes: https://docs.google.com/presentation/d/1UADMp08Oal-tZlM-uwPMCahadg4C9r6JSu5Zh7eJows/edit#slide=id.g2666291cd13_0_234
-  summary: |
-    We continue to explore vectors.
-  lab:
-    - page: /labs/vectors-continued.html
-
-- topic: Dictionaries and hash tables
-  abbrev: dictionaries
-  notes: https://docs.google.com/presentation/d/1W0QaBb-IWBk7FtNCXpvor9f2BdGMO0udepQqoL1flrk/edit#slide=id.g2666291cd13_0_234
-  summary: |
-    We consider structures that allow us to store information for
-    quick retrieval.
-  reading:
-    - page: /readings/hash-tables.html
-  lab:
-    - page: /labs/hash-tables.html
-
-- topic: Data abstraction
-  abbrev: data-abstraction
-  notes: https://docs.google.com/presentation/d/1KhLNTeWaLW1mgt5Xm0wdbzB5cW4sPVLSObFPiqtQzjs/edit#slide=id.g26e731c7f63_0_4
-  summary: |
-    We build upon the structures we have encountered so far to design
-    our own types and reflect on mechanisms for separating the
-    interface to a type from the implementation of the type.
-  reading: 
-    - page: /readings/data-abstraction.html
-  lab:
-    - page: /labs/data-abstraction.html
-
-- topic: Pause for breath
-  abbrev: pause-post-sola3
-  notes: https://docs.google.com/presentation/d/1S3c30E7Dm5e5m-CtKQwymCP64_k-sr8alItGpUcD9b0/edit?usp=sharing
-  summary: |
-    We pause to reflect on recent topics, particularly the transition
-    from pure functional programming to imperative programming.
-
-- topic: Higher-order recursive design
-  abbrev: higher-order-recursive-design
-  notes: https://docs.google.com/presentation/d/1OQ_dv0M5KXALibooUSi2xPP7hV1v74oJZTc98NHalqA/edit#slide=id.g2666291cd13_0_234
-  summary: |
-    We explore patterns of recursion in the design of programs,
-    particularly with regards to higher-order procedures.
-  reading:
-    - page: /readings/higher-order-recursive-design.html
-  lab:
-    - page: /labs/higher-order-recursion.html
+    We consider how we might recognize and utilize recursive
+    decomposition in structures other than lists and numbers.
 
 - topic: Tail recursion
   abbrev: tail-recursion
@@ -379,9 +279,70 @@
   lab:
     - page: /labs/tail-recursion.html
 
-- topic: Complexity analysis and binary search
-  abbrev: search
-  notes: https://docs.google.com/presentation/d/1ao56EpZb_u_af6Xp-HKCqhBKncDaqroHmMsWh77oIuA/edit?usp=sharing
+- topic: Designing Higher-order functions
+  abbrev: designing-higher-order-functions
+  summary: |
+    We now consider how to design functions that utilize higher-order
+    functions as inputs.
+
+- topic: "Exam #2"
+  abbrev: exam-2
+  summary: |
+    The second core examination.
+
+- topic: Structures
+  abbrev: structs
+  summary: |
+    We consider the `struct`, a way to define new types in Scheme.
+
+# TODO: need to change this to be about dictionaries rather than hash tables
+
+- topic: Dictionaries and hash tables
+  abbrev: dictionaries
+  summary: |
+    We consider structures that allow us to store information for
+    quick retrieval.
+  reading:
+    - page: /readings/hash-tables.html
+  lab:
+    - page: /labs/hash-tables.html
+
+- topic: Data modeling
+  abbrev: data-modeling
+  summary: |
+    We consider how we might use an assortment of data structures to
+    model real-world phenomena.
+
+- topic: TBD theme topic
+
+- topic: TBD theme topic
+
+- topic: Project kick-off
+  abbrev: project-kickoff
+  summary: |
+    We introduce the final project and form teams.
+
+- topic: Vectors
+  abbrev: vectors
+  summary: |
+    We explore vectors, an alternative to lists for storing data.
+    We consider how data are stored in memory.
+  reading:
+    - page: /readings/vectors.html
+  lab:
+    - page: /labs/vectors.html
+
+- topic: Sequencing and effects
+  abbrev: sequencing-and-effects
+  summary: |
+    We continue to explore vectors and other effectful computation,
+    acknowledging the trade-offs in program understanding when using
+    such constructs.
+  lab:
+    - page: /labs/vectors-continued.html
+
+- topic: Counting operations
+  abbrev: counting-operations
   summary: |
     We explore techniques for analyzing the number of calls made
     in evaluating procedures, particularly recursive procedures.
@@ -393,13 +354,7 @@
   lab:
     - page: /labs/searching.html
 
-- topic: Project kickoff
-  abbrev: final-project
-  notes: https://docs.google.com/presentation/d/1qjepuxti5DF_CD8F1kkwHwBH6C7gFQtbDgDa9sErKCE/edit?usp=sharing
-  summary: |
-    We introduce the final project for the semester.
-  reading:
-    - page: /mps/mp09.html
+- topic: Project work day
 
 - topic: Trees
   abbrev: trees
@@ -426,17 +381,10 @@
   lab:
     - page: /labs/tree-recursion.html
 
-- topic: Sorting out sorting
-  abbrev: sorting
-  notes: https://docs.google.com/presentation/d/1RXnxY_3cZr45ylbjSEDq-NDMIn26Vcrpz0LMFt2-6Mw/edit#slide=id.g26f391d5175_0_0
+- topic: "Exam #3"
+  abbrev: exam-3
   summary: |
-    We dive into an important problem: Arranging the values in a list or vector.
-
-- topic: Project work day
-  abbrev: project-work-day-2
-  notes: https://docs.google.com/presentation/d/1VhQQnU_VmeETioNkkxRj-yDWkm8CIL8YFeTxJvpPZIk/edit?usp=sharing
-  summary: |
-    We provide class time for students to their projects.
+    The third core examination.
 
 - topic: "Case study: Sorting"
   abbrev: sorting-lab
@@ -458,26 +406,4 @@
   notes: https://docs.google.com/presentation/d/1IsIsUFnmZdhDNztjduttjx23_9gd79BELsGIKbOeQtE/edit#slide=id.g2666291cd13_0_234
   summary: |
     We conclude the course.
-
-- topic: All outstanding mini-project redos and learning assessments due by 5pm
-  abbrev: end-of-semester
-  summary: |
-    The College requires that all work be submitted by 5pm.  The 
-    only work I will accept at this point will be redos of mini-projects
-    and learning assessments from SoLA 5.
-
-- topic: Turtle graphics
-  abbrev: turtle
-  summary: |  
-    We consider "turtle graphics", a model of image making originally
-    popularized by the Logo programming language.  We also review
-    issues of side effects and program state.
-  reading:
-    - page: /readings/side-effects-reviewed.html
-    - page: /readings/turtle-graphics.html
-  lab:
-    - page: /labs/turtle-graphics.html
-  todo:
-    - All new! (or all revised from a few years ago)
-    - Will we ever find time to include this in the new version of the course?
 
