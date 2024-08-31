@@ -8,6 +8,9 @@ title: CSC 151-XX (Spring 2024)
 baseurl: /Courses/CSC151/2024Sp
 url: https://USERNAME.cs.grinnell.edu/Courses/CSC151/2024Sp/
 
+# Is the site under construction?
+construction: true
+
 # Are we online?  If not, we're in person.  (Some of the lab instructions are
 # affected by this choice.)
 online: false
