@@ -2,9 +2,9 @@
 https://prismjs.com/download.html#themes=prism&languages=markup+racket+scheme */
 code[class*=language-],
 pre[class*=language-] {
-  color: #000;
+  /* color: #000; */
   background: 0 0;
-  text-shadow: 0 1px #fff;
+  /* text-shadow: 0 1px #fff; */
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 1em;
   text-align: left;
