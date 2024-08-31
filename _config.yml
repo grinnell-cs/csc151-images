@@ -15,6 +15,11 @@ deploy_dir: ~/public_html//teaching/2024F/CSC_151_03/
 # Is the site under construction?
 construction: true
 
+# Customize which is the landing page for the site
+# Fail. Templating in index.html doesn't work!
+# I think index.html is outide the boostrap environment.
+# home: syllabus
+
 # Are we online?  If not, we're in person.  (Some of the lab instructions are
 # affected by this choice.)
 online: false
