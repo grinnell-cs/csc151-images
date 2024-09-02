@@ -6,15 +6,14 @@ preimg: true
 mathjax: true
 ---
 
-_As a reminder, I encourage you not to read this passively; instead, enter the code interactively as you cover it in your reading.
-This will not only help you get used to typing out Racket code but also encourage you to play around and experiment with the language._
-
----
-
-As we learned in [a recent reading]({{ "/readings/algorithm-building-blocks.html" | relative_url }}), an algorithm is a step-by-step procedure for solving a problem.  These problems vary in scope from simple one-off tasks to complicated, generalized tasks that form the core of large, complex systems.  For example, consider the problem of going through a web page and finding the links it contains.  It turns out that a web page is plain text in a format known as *hypertext markup language* (HTML), so we can search the web page source file for occurrences of the text `<a href="...">...</a>` which correspond to links.  For example, the beginning of this paragraph is rendered with the following HTML:
+As we learned in [a previous reading]({{ "/readings/algorithm-building-blocks.html" | relative_url }}), an algorithm is a step-by-step procedure for solving a problem.
+These problems vary in scope from simple one-off tasks to complicated, generalized tasks that form the core of large, complex systems.
+For example, consider the problem of going through a web page and finding the links it contains.
+It turns out that a web page is plain text in a format known as *hypertext markup language* (HTML), so we can search the web page source file for occurrences of the text `<a href="...">...</a>` which correspond to links.
+For example, the beginning of this paragraph is rendered with the following HTML:
 
 ~~~html
-<p>As we learned in <a href="/csc151/readings/algorithm-building-blocks.html">yesterday’s reading</a>, an algorithm is a step-by-step procedure for solving a problem.
+<p>As we learned in <a href="/csc151/readings/algorithm-building-blocks.html">a previous reading</a>, an algorithm is a step-by-step procedure for solving a problem.
 These problems vary in scope from simple one-off tasks to complicated, generalized tasks that form the core of large, complex systems.
 For example, consider the problem of going through a web page and finding the links it contains.
 It turns out that a web page is plain text in a format known as hypertext markup language (HTML), so we can search the web page source for for occurrences of the text <code class="language-drracket highlighter-rouge"><span class="nv">&lt;a</span> <span class="nv">href=</span><span class="s">"..."</span><span class="nv">&gt;&lt;/a&gt;</span></code> which correspond to links.
@@ -22,7 +21,7 @@ For example, the beginning of this paragraph is rendered with the following HTML
 ~~~
 
 The paragraph contains one link corresponding to the text `yesterday's reading`.
-We will eventually learn how to do this in Racket, but even though we can't write a program to do this yet, we can imagine that with proper library support that this is a simple task.
+We will eventually learn how to do operations like this in Scheme, but even though we can't write a program to do this yet, we can imagine that with proper library support that this is a simple task.
 
 In contrast, the task of scraping web pages for links forms the basis of the algorithms that search engines use to rank webpages.
 For example, Google's famous [PageRank](https://en.wikipedia.org/wiki/PageRank) algorithm ranks the relevance of a webpage by the number of webpages that link to it.
@@ -38,47 +37,64 @@ As such, we introduce this concept in this first week of the course to start get
 
 > The problem that I am trying to solve can be decomposed into these smaller problems...
 
-## Visual decomposition with pictures
+## Visual Decomposition with Pictures
 
-While we haven't seen much of the Racket programming language yet, we know enough to introduce the basics of algorithmic decomposition with the image-making procedures.
+While we haven't seen much of the Scheme programming language yet, we know enough to introduce the basics of algorithmic decomposition with the `image` library introduced in yesterday's reading.
+As a reminder, I encourage you not to read this passively; instead, enter the code interactively as you cover it in your reading.
+This will not only help you get used to typing out Scheme code but also encourage you to play around and experiment with the language.
 
-From last class period's class, recall that we must include a `require` command in our definitions so that Racket knows we're using the appropriate library.
-
-~~~racket
-#lang racket
-
-(require csc151)
-~~~
-
-After pressing **Run**, the interactions pane will now be ready for us to use functions from the `image` library.
-
-Our [initial reading on the Racket language]({{ "/readings/intro-scheme.html" | relative_url }}) introduced us to functions for drawing circles and rectangles:
+From last class period's class, recall that we must include a `import` statement in our program so that Scheme knows we're using the `image` library.
 
 ~~~racket
-> (outlined-circle 98 "blue" 1)
-![An outline of a blue circle.]({{ "/images/decomposition-circle-example.png" | relative_url }})
-> (solid-rectangle 75 50 "red")
-![A solid red rectangle.]({{ "/images/decomposition-rectangle-example.png" | relative_url }})
+(import image)
 ~~~
 
-It also introduced functions that permit us to place images above and beside each other.
+Our [initial reading on the Scheme language]({{ "/readings/scamper.html" | relative_url }}) introduce us to functions for drawing circles and rectangles:
 
-~~~racket
-> (above (outlined-circle 70 "blue" 1)
-         (outlined-circle 70 "red" 1))
-![Outlines of a blue and red circle stacked on top of each other.]({{ "/images/decomposition-above-example.png" | relative_url }})
-> (beside (solid-rectangle 50 50 "blue")
-          (solid-rectangle 50 50 "red"))
-![A solid blue and red rectangle side-by-side.]({{ "/images/decomposition-beside-example.png" | relative_url }})
-~~~
+<pre class="scamper-output output-prog">
+(import image)
+
+(circle 50 "outline" "blue")
+(rectangle 75 50 "solid" "red")
+</pre>
+
+As well as functions that allow us to place images above and beside each other.
+
+<pre class="scamper-output output-prog">
+(import image)
+
+(above (circle 35 "outline" "blue")
+       (circle 35 "outline" "red"))
+(beside (rectangle 50 50 "solid" "blue")
+        (rectangle 50 50 "solid" "red"))
+</pre>
 
 Let's consider the problem of drawing the following more complex figure:
 
+<pre class="scamper-output language-racket">
+(import image)
+
+(define top-row
+  (beside (circle 50 "outline" "red")
+          (circle 75 "solid" "blue")))
+
+(define bottom-row
+  (beside (circle 75 "outline" "blue")
+          (circle 50 "solid" "red")))
+
+(define circles
+  (above top-row bottom-row))
+
+circles
+</pre>
+
+<!--
 ![Four circles in a grid.
   The top-left circle is a small red outline.
   The top-right circle is large, blue, and filled-in.
   The bottom-left circle is a large blue outline.
   The bottom-right circle is small, red, and filled-in]({{ "/images/decomposition-circles-overall.png" | relative_url }})
+-->
 
 How might we approach this problem?
 We might start trying to cobble together random combinations of the functions we've seen so far, and we might stumble on a program that works.
@@ -116,98 +132,136 @@ In a bottom-up style, we first implement the individual of pieces of the program
 In a top-down style of design, we first *partially* implement the complete program and then implement the individual pieces.
 We'll illustrate both styles of design below.
 
-## Bottom-up design
+## Bottom-up Design
 
 Let's begin with the top row.
 We'll define `top-row` to be the top row of circles using the `circle` and `beside` functions.
-Note that this `define` command should go into the *definitions pane* below your `require` command rather than in the interactions pane:
+Note that this `define` command should go into your program below your `import` statement rather than in the explorations window:
 
-~~~racket
+<pre class="scamper-output output-prog">
+(import image)
+
 (define top-row
-  (beside (outlined-circle 100 "red" 1)
-          (solid-circle 150 "blue")))
-~~~
+  (beside (circle 50 "outline" "red")
+          (circle 75 "solid" "blue")))
+</pre>
 
-After clicking **Run** to re-load these definitions, we can now go to the interactions pane and test our code.
-The practical effect of the `define` command is to make `top-row` an *alias* for the image, so we can simply type in `top-row` directly in the interactions pane to check our work:
+We can now go to the explorations window and test our code.
+The practical effect of the `define` command is to make `top-row` an *alias* for the image, so we can simply type in `top-row` as an additional statement in the explorations window to check our work:
 
-~~~racket
-> top-row
-![The top row of the overall image: a small, red circle outline followed by a large, blue filled-in circle.]({{ "/images/decomposition-top-row.png" | relative_url }})
-~~~
+<pre class="scamper-output output-prog">
+(import image)
 
-Next, we'll define `bottom-row` to be the bottom row of circles in the definitions pane.
+(define top-row
+  (beside (circle 50 "outline" "red")
+          (circle 75 "solid" "blue")))
 
-~~~racket
+top-row
+</pre>
+
+Next, we'll define `bottom-row` to be the bottom row of circles.
+
+<pre class="scamper-output output-prog">
+(import image)
+
 (define bottom-row
-  (beside (outlined-circle 150 "blue" 1)
-          (solid-circle 100 "red")))
-~~~~
+  (beside (circle 75 "outline" "blue")
+          (circle 50 "solid" "red")))
+</pre>
 
-And we'll check our work in the interactions pane.
+And we'll check our work in the explorations window:
 
-~~~racket
-> bottom-row
-![The bottom row of the overall image: a large, blue circle outline followed by a small, red filled-in circle.]({{ "/images/decomposition-bottom-row.png" | relative_url }})
-~~~
+<pre class="scamper-output output-prog">
+(import image)
+
+(define bottom-row
+  (beside (circle 75 "outline" "blue")
+          (circle 50 "solid" "red")))
+
+bottom-row
+</pre>
 
 Finally, let's put it all together.
-As we discussed, the overall picture is obtained by stacking the `top-row` with the `bottom-row` which we can do with the `above` function:
+As we discussed, the overall picture is obtained by stacking the `top-row` with the `bottom-row` which we can do with the `above` function.
+We can then check that `circles` is the image that we wanted in explorations window.
+(Make sure that you re-run the explorations window to update it with updates to your program!)
 
-~~~racket
+<pre class="scamper-output output-prog">
+(import image)
+
+(define top-row
+  (beside (circle 50 "outline" "red")
+          (circle 75 "solid" "blue")))
+
+(define bottom-row
+  (beside (circle 75 "outline" "blue")
+          (circle 50 "solid" "red")))
+
 (define circles
   (above top-row bottom-row))
-~~~
 
-We can check that `circles` is the image that we wanted in the interactions pane.
-(Remember to re-**Run** your program in DrRacket so that `circles` has been defined!)
+circles
+</pre>
 
-~~~racket
-> circles
-![Four circles in a grid. The top-left circle is a small red outline. The top-right circle is large, blue, and filled-in. The bottom-left circle is a large blue outline. The bottom-right circle is small, red, and filled-in]({{ "/images/decomposition-circles-overall.png" | relative_url }})
-~~~
-
-## Top-down design
+## Top-Down Design
 
 With top-down design, rather than starting with `top-row` and `bottom-row`, we start with the overall program `circles`.
 We have identified that `circles` is a stack of two rows of images, so we know that the definition of `circles` will involve `above`.
 However, we have not defined `top-row` and `bottom-row` yet---what do we fill in for the arguments to `above`?
 
-The `csc151` library defines a special value `???` which represents an undefined value in the program.
-`???` acts as a syntactically valid *placeholder*, reminding us that we should replace `???` with an eventual implementation.
+Scamper defines a special value `{??}` which represents an undefined value in the program.
+`{??}` acts as a syntactically valid *placeholder*, reminding us that we should replace `{??}` with an eventual implementation.
 
 Let's do that for `top-row` first.
 
-~~~racket
+<pre class="scamper-output output-prog">
 (define top-row
-  ???)
-~~~
+  {??})
+</pre>
 
 Note that we can use our hole value as a placeholder to be able to write out the syntax of a define correctly and ensure that we get it right.
-Of course, when we run this code, we the `Hole encountered!  Fill me in!` error, but we at least know that we have all the keywords and parentheses in the right place.
+Of course, when we run this code, we the `Hole encountered! Fill me in!` error, but we at least know that we have all the keywords and parentheses in the right place.
 
 Once we define `top-row` as before:
 
-~~~racket
-  (beside (outlined-circle 100 "red" 1)
-          (solid-circle 150 "blue")))
-~~~
+<pre class="scamper-output output-prog">
+(import image)
+
+(define top-row (beside (circle 50 "outline" "red")
+                (circle 75 "solid" "blue")))
+</pre>
 
 We can now fill in the corresponding hole in `circles`:
 
-~~~racket
+<pre class="scamper-output output-prog">
+(import image)
+
+(define top-row (beside (circle 50 "outline" "red")
+                (circle 75 "solid" "blue")))
+
 (define circles
-  (above top-row ???))
-~~~
+  (above top-row {??}))
+</pre>
 
 Finally, we can define `bottom-row` just like before and then complete the definition of `circles`:
 
-~~~racket
+<pre class="scamper-output output-prog">
+(import image)
+
+(define top-row (beside (circle 50 "outline" "red")
+                (circle 75 "solid" "blue")))
+
+(define bottom-row
+  (beside (circle 75 "outline" "blue")
+          (circle 50 "solid" "red")))
+
 (define circles
   (above top-row bottom-row))
-~~~
 
-## Top-down vs. bottom-up design
+circles
+</pre>
+
+## Top-down vs. Bottom-up Design
 
 You might wonder which sort of design---top-down or bottom-up---to use when writing your programs.
 The short answer is that *it depends* on the kind of problem you are tackling and your own personal preference.
@@ -216,27 +270,25 @@ In other cases, you might not see the pieces and want to essentially outline how
 In this case, you can use top-down design to write this outline and then fill it in incrementally.
 Either strategy is valid---be willing to experiment early on with both styles to discover your preferences and be flexible in how you design your code!
 
-## Decomposition in code
+## Decomposition In Code
 
 Finally, let's look at the big picture.
 Take a look at the complete program that we wrote in the definitions pane:
 
-~~~racket
-#lang racket
-
-(require csc151)
+<pre class="scamper-output output-prog">
+(import image)
 
 (define top-row
-  (beside (outlined-circle 100 "red" 1)
-          (solid-circle 150 "blue")))
+  (beside (circle 50 "outline" "red")
+          (circle 75 "solid" "blue")))
 
 (define bottom-row
-  (beside (outlined-circle 150 "blue" 1)
-          (solid-circle 100 "red")))
+  (beside (circle 75 "outline" "blue")
+          (circle 50 "solid" "red")))
 
 (define circles
   (above top-row bottom-row))
-~~~
+</pre>
 
 Note how our decomposition strategy has been *enshrined in the code*.
 That is, our approach to solving the problem of drawing the grid of circles is evident in the code:
@@ -248,23 +300,23 @@ By employing algorithmic decomposition in our problem solving and programming, w
 As we move forward in the course, *always* approach problems with decomposition in mind even if they are easy to solve at first.
 Honing this skill early on in your programming journey will prepare you well for the complex problems will encounter later in the semester!
 
-## Self checks
+## Self Checks
 
 ### Check 1: Readability (‡)
 
 Here is an alternative version of the code to produce the image of this reading.
 
 ~~~racket
-#lang racket
+(import image)
 
 (define circles
-  (above (beside (outlined-circle 100 "red" 1)
-                 (solid-circle 150 "blue"))
-         (beside (outlined-circle 150 "blue" 1)
-                 (solid-circle 100 "red"))))
+  (above (beside (circle 50 "outline" "red")
+                 (circle 75 "solid" "blue"))
+         (beside (circle 75 "outline" "blue")
+                 (circle 50 "solid" "red"))))
 ~~~
 
-Paste this code into the definitions pane in a fresh DrRacket tab and verify that `circles` produces the same image as before.
+Paste this code into a fresh `.scm` source file and verify that `circles` produces the same image as before.
 
 Compare and contrast the final version of the code the reading with this version.
 Answer each of the following questions in a few sentences each.
@@ -276,7 +328,7 @@ Answer each of the following questions in a few sentences each.
 +   Which version allows you to better predict the results *without* running the program?
     Why?
 
-### Check 2: Alternative decomposition (‡)
+### Check 2: Alternative Decomposition (‡)
 
 There are many ways to decompose a problem, many of which are equivalent, but many produce subtlety different solutions.
 The decomposition we chose in the reading was one where we recognized the image was *two rows stacked on top of each other*.
