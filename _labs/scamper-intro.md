@@ -11,15 +11,16 @@ link: false
 
 Many of the fundamental ideas of computer science are best learned by reading, writing, and executing small computer programs that illustrate those ideas.
 One of our most important tools for this course, therefore, is a *program-development environment*, a computer program designed specifically to make it easier to read, write, and execute other computer programs.
-In this class, we will often use a program development environment named Visual Studio Code along with the programming language [Scamper](https://github.com/slag-plt/scamper), a dialect of a language called [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)), which is itself a dialect of a language called [Lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)).
+The [Scamper](https://github.com/slag-plt/scamper) language that we use in the course is _also_ an in-browser integrated development environment (IDE for short).
+Scamper is a dialect of a language called [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)), which is itself a dialect of a language called [Lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)).
 Although Scamper is a dialect of Scheme, we will often refer to our language of choice as either "Scamper" or "Scheme."
-(And you may hear us also refer to the language as "Racket" which is a more full-featured dialect of Scheme that was used in previous version of the course!)
+(And you may hear us also mistakenly refer to the language as "Racket" which is a more full-featured dialect of Scheme that was used in previous version of the course!)
 
-In this lab, we explore the Scamper language and the Visual Studio Code program development environment.
+In this lab, we explore the Scamper language and its associated program development environment.
 
 ## Preparation
 
-Scamper is available online and works on any machine with access to a modern web browser (_i.e._, Chrome, Firefox, Edge, or Safari):
+Scamper is available online and works on any machine with access to a modern web browser (_i.e._, Chrome, Firefox, Safari, or Edge):
 
 + <https://scamper.cs.grinnell.edu>
 
@@ -50,71 +51,63 @@ You should designate one of the two of you "A" and one of you as "B".  Each prob
 You should plan to spend about five minutes on each exercise, perhaps a little less.
 If you begin to exceed this estimated time for an exercise, grab your instructor or class mentor and ask for help.
 
-In this lab, you will eventually work in a Scamper source file that you create and save called `shapes.scm`.
-You will build that file starting with exercise 7.
+In this lab, you will work in a Scamper source file that you create and save called `shapes.scm`.
 When turning in your work for this lab, you only need to turn in one copy of this file to Gradescope.
 However, you should make sure to include both your name and your partner's name in the Gradescope submission!
 
-### Exercise 1: Discovering Scamper's interactions pane
+### Exercise 1: Writing Scamper code
 
 **Driver: A**
 
-As you may remember from [the reading on VSCode]({{ "/readings/vscode.html" | relative_url }}), the Scamper extension has a program exploration window for interactively executing program snippets.
-Just as in the reading, we'll begin by using the program exploration window.
+In Scamper, programs exist as text written in a source file, _i.e._, a program.
+The Scamper IDE let's you create and manage source files entirely within the web browser.
+As we shall see by the end of this lab, these files are separate from the files on your computer and must be downloaded to be submitted to Gradescope, sent to your partner, _etc._
 
-As described in the reading:
++   Navigate to the Scamper IDE: <https://scamper.cs.grinnell.edu>
++   Click on "Create a new program" to create a new source file and name it `shapes.scm`.
+    `.scm` is the filename extension traditionally associated with Scheme program files.
 
-+   Make a `csc151` directory in your MathLAN home directory that will contain your work for the course
-+   Open that directory in VSCode.
-+   Make a new file called `shapes.scm` in that directory.
+This will open up the Scamper editor pointed at your new file `shapes.scm`.
 
-From there, let's avoid entering text into the file and just open the explorations panel immediately (the bug icon in the top-right of the editor panel).
-
-let's try a few examples in the exploration panel.
-Type each of the following code snippets into the "Additional Statements" textbox at the bottom of the panel.
-Remember that in these code listings:
-
-+  The line starting with a `>` symbol is the code snippet.
-+  The following line without a `>` symbol is the output of that code snippet.
-
+Next, let's write a few examples in our new source file.
+Type each of the following code snippets, called _expressions_, into `shapes.scm`.
+After you type each expression, run your program by clicking on the run button (▶) in the toolbar.
 See if you get the same values as us!
 
-(_Note_: make sure to _type_ these snippets into the Additional Statements textbox rather than copy-paste them in.
+(_Note_: make sure to _type_ these snippets rather than copy-pasting them in.
 It is important to get a programming language, literally speaking, _in_ you fingertips rather than just in your head!)
 
-```drracket
-> (sqrt 144)
-12
-> (+ 3 4)
-7
-> (+ 3 (* 4 5))
-23
-> (* (+ 3 4) 5)
-35
-> (string-append "Hello" " " "World!")
-"Hello World!"
-> (string-split "Twas brillig and the slithy toves" " ")
-'("Twas" "brillig" "and" "the" "slithy" "toves")
-> (length (string-split "Twas brillig and the slithy toves" " "))
-6
-```
+<pre class="scamper-output output-prog">
+(sqrt 144)
+
+(+ 3 4)
+
+(+ 3 (* 4 5))
+
+(* (+ 3 4) 5)
+
+(string-append "Hello" " " "World!")
+
+(string-split "Twas brillig and the slithy toves" " ")
+
+(length (string-split "Twas brillig and the slithy toves" " "))
+</pre>
 
 Of course, one should not just thoughtlessly type expressions and see what value they get.
-Particularly as you learn Scheme, it is worthwhile to think a bit about the expressions and the values you expect.
+Particularly as you learn Scamper, it is worthwhile to think a bit about the expressions and the values you expect.
 The self-check in the reading asked you to predict some values.
 Determine whether your prediction matches what Scamper computes.
 
-```
-> (* (+ 4 2) 2)
-?
-> (- 1 (/ 1 2))
-?
-> (string-length "Snicker snack")
-?
-> (string-split "Snicker snack" "ck")
-?
-> (circle 10 "solid" "teal")
-?
+```racket
+(* (+ 4 2) 2)
+
+(- 1 (/ 1 2))
+
+(string-length "Snicker snack")
+
+(string-split "Snicker snack" "ck")
+
+(circle 50 "solid" "teal")
 ```
 
 If you get an unexpected error message in one or more cases, that may be part of the intent of this exercise!
@@ -126,29 +119,29 @@ Feel free to go on to the next exercise, but if you are confused by any of the o
 
 As you may have noted, you get an error when you try to make a circle.
 
-```
-> (circle 10 "solid" "teal")
-:1:0: Scope error:
-    Variable circle is not defined
-
-
-    In program: circle 
-```
+<pre class="scamper-output output-prog">
+(circle 50 "solid" "teal")
+</pre>
 
 Why do you get an error?
 Because the `circle` procedure is not immediately available in Scheme!
 Some library functions are automatically included in every program.
 The set of these functions is typically called the language's _prelude_ or _standard library_.
 Instead, `circle` and other image-drawing functions are part of the `image` library.
-We need to tell Scheme that we would like to *include* this module with a `import` statement.
+We need to tell Scamper that we would like to *include* this module with a `import` statement.
 At the top of your `shapes.scm` file, add the following line:
 
 ```
 (import image)
 ```
 
-Click the bug button and try making the circle again.
+Click the run button and try making the circle again.
 If you get an error message still make sure to ask for help!
+
+Note in the examples below, we'll include this `import` statement in each code snippet.
+This is because each code snippet on this page is treated as an individual program by the Scamper runtime.
+So we need to duplicate the `import` statement for each snippet.
+In contrast, you are writing all of your work within a single file, `shapes.scm`, so you only need to include the `import` statement once at the top of the file.
 
 ### Exercise 3: Experimenting with images
 
@@ -156,20 +149,23 @@ If you get an error message still make sure to ask for help!
 
 Now that we've told Scheme to load the image library, let's
 check the image examples from [the reading]({{ "/readings/scamper.html" | relative_url}}).
-Enter each of the following in the interactions pane and ensure that you get the expected output.
+Enter each of the following expressions into the bottom of your `shapes.scm` file.
+After entering each expression, rerun your program and observe that your output matches what you see in this writeup.
 
-```drracket
-> (above (circle 40 "outline" "blue")
-         (circle 60 "outline" "red"))
-?
-> (beside (circle 40 "solid" "blue")
-          (circle 40 "outline" "blue"))
-?
-> (above (rectangle 60 40 "solid" "red")
-         (beside (rectangle 60 40 "solid" "blue")
-                 (rectangle 60 40 "solid" "black")))
-?
-```
+<pre class="scamper-output output-prog">
+; Remember: this import statement only needs to appear once at the top of the file!
+(import image)
+
+(above (circle 40 "outline" "blue")
+       (circle 60 "outline" "red"))
+
+(beside (circle 40 "solid" "blue")
+        (circle 40 "outline" "blue"))
+
+(above (rectangle 60 40 "solid" "red")
+       (beside (rectangle 60 40 "solid" "blue")
+               (rectangle 60 40 "solid" "black")))
+</pre>
 
 Why did we have you check these examples, given that they already appear in the reading?
 For a few reasons:
@@ -201,8 +197,8 @@ Let's start with a relatively simple example.
 Suppose we ask you to ask Scamper to compute the square root of 137641.
 You should be able to do so by entering an appropriate Scheme expression:
 
-```
-> (sqrt 137641)
+```racket
+(sqrt 137641)
 ```
 
 Scamper will give you an answer.
@@ -211,36 +207,33 @@ What if you don't trust Scamper's multiplication procedure?
 
 Discuss this question with your partner and come up with common definition of how to test your answer in this context.
 Once you have a common definition, check your answer with a member of the course staff.
+(_Note_: for this exercise, you do not need to write anything in your file!)
 
 ### Exercise 5: Writing Scheme source code
 
 **Driver: B**
 
-(*Note*: In the labs and reading, code intended to be entered in the exploration panel will generally be written with greater-than sign prompts (`>`).
-If you don't see such prompts and we don't tell you otherwise, assume that code belongs in the source file you are currently editing.)
-
-As you may recall from the reading, we enter program text into a source file via the Visual Studio Code editor, like a word processor.
-Instead of processing what you type line by line, as in the exploration panel, Scamper will execute the contents of the current file when you to click Run button, _i.e._, the green arrow in the upper-right corner.
-If you never click on that button, your program is never executed!
-
-Let's try using the definitions pane instead.
+So far, we have written singular expressions into our source file, each of which produce a single output.
+More generally, our programs contain a collection of _definitions_ that can be used in a top-down fashion.
+In other words, earlier definitions can be used in later definitions.
 
 {:type="a"}
-1.  Enter the following definitions from the reading in that pane.
+1.  Enter the following definitions from the reading into your program:
 
-    ```drracket
+    ```racket
     (define trial01 11.2)
     (define trial02 12.5)
     (define trialO3 8.5)
     (define trial04 10.6)
     ```
 
-2.  Open the exploration panel and try computing the average of the four trials as an additional statement.
+2.  Now, let's use these definitions in an expression.
+    Add the following expression to your program.
     What do you think will happen?
     Try to predict the result before hitting <kbd>Enter</kbd>!
 
-    ```
-    > (* 1/4 (+ trial01 trial02 trial03 trial04))
+    ```racket
+    (* 0.25 (+ trial01 trial02 trialO3 trial04))
     ```
 
 3.  It is likely that you got an error message.
@@ -256,13 +249,13 @@ Let's try using the definitions pane instead.
 
 9.  Observe that you've copied code from elsewhere!
     That means that you have a responsibility to insert a _comment_ that cites the original authors.
-    A comment is a part of a Scheme program that has no effect on the execution of the program.
-    We use comments in programs to *explain* our code or *document* different aspects of it, an important part of the software engineering process that we will discuss in more detail later in the semester.
+    A comment is a part of a program that has no effect on the execution of the program.
+    We use comments in programs to _explain_ our code or _document_ different aspects of it, an important part of the software engineering process that we will discuss in more detail later in the semester.
 
-    In Scheme, comments start with a semicolon and extend to the end the line.
+    In Scheme (and Scamper, too), comments start with a semicolon and extend to the end the line.
     Here's one possible citation.
 
-    ```
+    ```racket
     ; From the CSC 151 course materials:
     ;   _URL_.
     ```
@@ -280,21 +273,21 @@ If you are expected to provide a full citation, you can go back later and add it
 
 Let's try another definition. Define `name` as your name in quotation marks. For example,
 
-```
+<pre class="scamper-output output-prog">
 (define name "Student")
-```
+</pre>
 
 (Replace `Student` with your own name for the proper effect.)
-Click **Run** and then find the value of the following expression using the interactions pane.
+Enter the expression below in your file and run your program to determine what this expression does with your name.
 
-```
-> (string-append "Hello " name)
+```racket
+(string-append "Hello " name)
 ```
 
 Next, find the number of characters in the string with the following expression.
 
 ```
-> (string-length name)
+(string-length name)
 ```
 
 Note how this definition acts as shorthand: where ever `name` appears in the code, the string `"Student"` is substituted instead.
@@ -309,7 +302,7 @@ We'll discuss these definitions---which define *variables*---in detail in a subs
 
 2.  In `shapes.scm`, write definitions for `blue-circle`, a solid circle of radius 40, `red-square`, a solid red square of edge-length 80, and `black-rectangle`, an outlined black rectangle of width 120 and height 40.
 
-    ```
+    ```racket
     (import image)
     ; shapes.scm
     ; A file from the first lab for CSC-151-NN SEMESTER
@@ -320,13 +313,13 @@ We'll discuss these definitions---which define *variables*---in detail in a subs
     ;   Any help you got
 
     (define blue-circle
-      ???)
+      ??)
 
     (define red-square
-      ???)
+      ??)
 
     (define black-rectangle
-      ???)
+      ??)
     ```
 
 3.  Run the program and verify the output is what you expect.
@@ -335,26 +328,25 @@ We'll discuss these definitions---which define *variables*---in detail in a subs
 4.  You may recall that we can combine images with `above` and `beside`.
     Predict the output of each of the following.
 
-    ```drracket
-    > (beside blue-circle red-square)
-    ?
-    > (beside red-square blue-circle)
-    ?
-    > (beside blue-circle blue-circle)
-    ?
-    > (beside blue-circle red-square blue-circle red-square blue-circle)
-    ?
-    > (beside red-square black-rectangle)
-    ?
-    > (above blue-circle black-rectangle)
-    ?
-    > (beside red-square (above black-rectangle black-rectangle) red-square)
-    ?
-    > (above black-rectangle (beside red-square blue-circle))
-    ?
+    ```racket
+    (beside blue-circle red-square)
+    
+    (beside red-square blue-circle)
+    
+    (beside blue-circle blue-circle)
+    
+    (beside blue-circle red-square blue-circle red-square blue-circle)
+    
+    (beside red-square black-rectangle)
+    
+    (above blue-circle black-rectangle)
+    
+    (beside red-square (above black-rectangle black-rectangle) red-square)
+    
+    (above black-rectangle (beside red-square blue-circle))
     ```
 
-    After you have made your predictions, try out each line in the explorations panel.
+    After you have made your predictions, add each line to your program and observe the results.
     Were you correct in your predictions?
     If not, try to identify the cause of your mistake.
     Ask your partner questions or ask the instructor!
@@ -364,20 +356,19 @@ We'll discuss these definitions---which define *variables*---in detail in a subs
 **Driver: A**
 
 Define a simple image (which you define as `image` using `define`) by combining those three basic shapes with `above` and `beside`.
+Feel free to experiment and have fun with it!
 
-### Exercise 9: Saving to files
+### Exercise 9: Exporting files
 
 **Driver: B**
 
-Let's make sure that you can save and restore the work you do in the definitions pane.
-The source and destination names are displayed as _paths_ below, but Visual Studio Code uses a file browser to help you choose a file to load or save.
-Remember that the `~` character is shorthand for your home directory, which you can access by clicking the _Home_ button on the left of the file browser VSCode shows when you are saving or loading files.
+Let's make sure that you can save your work and export your program to turn in, share with your partner, _etc._
+Clicking the "Scamper" link in the top-left corner of the Scamper IDE will send you back to your list of files.
+From this list, you can save your program as a file on disk by hovering over the `shapes.scm` file and clicking on the download icon (the left-most icon).
 
-+   Save your file with the name `shapes.scm` in a folder of your choice (_e.g._, a folder you've created for this course).
-+   Quit VSCode
-+   Restart VSCode
-+   Open `shapes.scm` in your work folder.
-+   In the exploration panel, enter this expression to verify that everything is working `(above black-rectangle (beside red-square blue-circle))`.
+By default, this file is saved to the Downloads folder of your home directory.
+Use Linux's file explorer to navigate to this file and verify that it has been downloaded.
+At the end of this lab, you should donwload your completed file and email it to your partner, so they have a copy of your work.
 
 ### Exercise 10: Other notations
 
@@ -440,22 +431,19 @@ However, you can also name the results of expressions.
 
 ### Notes on Exercise 10: Other notations
 
-```
-> (2 + 3)
-Error! application: not a procedure;
-Error! expected a procedure that can be applied to arguments
-Error!   given: 2
-Error!   arguments...:
-```
+When entering an arithmetic expression in the "natural way," _i.e._, `(2 + 3)`, Scamper reports the following error:
 
-When Scamper sees the left parenthesis at the beginning of the expression `(2 + 3)`, it expects the expression to be a procedure call, and it expects the procedure to be identified right after the left parenthesis. But `2` does not identify a procedure; it stands for a number. (A "procedure application" is the same thing as a procedure call.)
+<pre class="scamper-output output-prog">
+(2 + 3)
+</pre>
 
-```
-> 7 * 9
-7
-#<procedure:*>
-9
-```
+When Scamper sees the left parenthesis at the beginning of the expression `(2 + 3)`, it expects the expression to be a procedure call, and it expects the procedure to be identified right after the left parenthesis. But `2` does not identify a procedure; it stands for a number. (A "procedure application" is the same thing as a procedure call.) Instead, Scamper tries to interprets the `2` as a variable, but a number cannot be a variable!
+
+Parentheses in Scamper (and Scheme) are surprisingly important! Observe the following code snippet, `7 * 9`, similar to the snippet above but without parentheses. 
+
+<pre class="scamper-output output-prog">
+7 * 9
+</pre>
 
 In the absence of parentheses, the Scamper sees `7 * 9` as
 three separate and unrelated expressions -- the numeral `7`; `*`, a name
@@ -464,20 +452,17 @@ interprets each of these as a command to evaluate an expression:
 "Compute the value of the numeral `7`! Find out what the name `*`
 stands for! Compute the value of the numeral `9`!" So it performs the
 first of these commands and displays `7`; then it carries out the second
-command, reporting that `*` is the name of the primitive procedure `*`;
+command, reporting that `*` is a function;
 and finally it carries out the third command and displays the result,
 `9`. This behavior is confusing, but it's strictly logical if you look
 at it from the computer's point of view (remembering, of course, that
 the computer has absolutely no common sense).
 
-```
-> sqrt(49)
-#<procedure:sqrt>
-Error! application: not a procedure;
-Error! expected a procedure that can be applied to arguments
-Error!   given: 49
-Error!   arguments...: [none]```
-```
+For example, consider how you might call the `sqrt` function in other languages, `sqrt(49)`:
+
+<pre class="scamper-output output-prog">
+sqrt(49)
+</pre>
 
 As in the preceding case, Scamper sees `sqrt(49)` as two separate
 commands: `sqrt` means "Find out what `sqrt` is!" and `(49)` means
