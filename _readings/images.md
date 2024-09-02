@@ -1,11 +1,11 @@
 ---
-title: Simple images in Racket
+title: Simple images in Scamper
 subject: |
-  We consider some basic mechanisms for dealing with images in DrRacket.
+  We consider some basic mechanisms for dealing with images in Scamper.
 prereqs: |
-  [An abbreviated introduction to Racket]({{ "/readings/intro-scamper.html" | relative_url }}).
+  [An abbreviated introduction to Scamper]({{ "/readings/intro-scamper.html" | relative_url }}).
 disclaimer: |
-  This section discusses Racket procedures for creating images.  It
+  This section discusses Scamper procedures for creating images.  It
   will likely be less accessible or inaccessible to students with
   limited vision.  We apologize for these deficiencies and, upon
   request, will provide alternative exercises for those who cannot
