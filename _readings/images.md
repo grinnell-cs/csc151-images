@@ -3,7 +3,7 @@ title: Simple images in Racket
 subject: |
   We consider some basic mechanisms for dealing with images in DrRacket.
 prereqs: |
-  [An abbreviated introduction to Racket]({{ "/readings/intro-scheme.html" | relative_url }}).
+  [An abbreviated introduction to Racket]({{ "/readings/intro-scamper.html" | relative_url }}).
 disclaimer: |
   This section discusses Racket procedures for creating images.  It
   will likely be less accessible or inaccessible to students with
@@ -33,7 +33,7 @@ What is the _purpose_ of the type?
   : To allow people to make interesting images.  
 
 How do you _express_ values in this type?
-  : We've seen a few ways, including the `solid-circle` and `solid-rectangle` procedures.  There are more.  
+  : We've seen a few ways, including the `circle` and `rectangle` procedures.  There are more.  
 
 How does DrRacket _display_ values?
   : As the "expected" images.  
@@ -44,77 +44,57 @@ What _procedures_ are available?
 There's also one other question to ask for this type, since it's not a standard type: 
 
 How does one _gain access to_ the type?  
-  : The answer is straightforward: You add the following line to the top of your
-definitions pane.
+  : The answer is straightforward: You add the following line to the top of your program:
 
-```drracket
-(require csc151)
+```racket
+(import image)
 ```
 
 ## Basic shapes
 
 You've already seen a few procedures for creating basic shapes:
 
-* `(solid-circle diameter color)` creates a solid circle,
-* `(outlined-circle diameter color pen-width)` creates the outline of a circle,
-* `(solid-rectangle width height color)` creates a solid rectangle, and
-* `(outlined-rectangle width height color pen-width)` creates the outline of a rectangle. 
+* `(circle raidus fill color)` creates a circle with the specified `radius`.
+* `(rectangle width height fill color)` creates a rectangle with the specified `width` and `height`.
 
-```drracket
-> (outlined-circle 40 "red" 1)
-![A white circle outlined by a thin red line.  The circle has a diameter of 40.](../images/image-reading/outlined-1-red-circle-40.png)
-> (solid-rectangle 40 25 "blue")
-![A solid blue rectangle, 40 units wide and 25 units high.  It is approximately the same width as the previous circle.](../images/image-reading/solid-blue-40x25-rectangle.png)
-```
+The `fill` argument to both shape procedures determines whether the shape is filled in.
+Passing `"solid"` creates a solid (filled in) shape and `"outline"` creates an outlined (not filled in) shape.
 
-As you have likely seen, we can choose the width of an outline.
+The `color` argument specifies the color of the shape, _e.g._, `"red"` or `"cyan"`.
+You can use any of the named colors supported by most browsers; see this [w3schools.com list](https://www.w3schools.com/colors/colors_names.asp) to see which named colors are available.
 
-```drracket
-> (outlined-circle 40 "red" 5)
-![an outlined red circle with diameter 40 and a width-5 outline](../images/image-reading/outlined-5-red-circle-40.png)
-> (outlined-circle 40 "red" 10)
-![an outlined red circle with diameter 40 and a width-10 outline](../images/image-reading/outlined-10-red-circle-40.png)
-> (outlined-circle 40 "red" 15)
-![an outlined red circle with diameter 40 and a width-15 outline](../images/image-reading/outlined-15-red-circle-40.png)
-```
+<pre class="scamper-output output-prog">
+(import image)
 
-As the examples suggest, the diameter given is of the inner circle.
+(circle 100 "outline" "red")
 
-There are also ellipses, diamonds, squares, equilateral triangles, isosceles triangles, and even generalized polygons, each in a solid and an outlined form.
+(rectangle 100 75 "solid" "blue")
+</pre>
 
-```drracket
-> (solid-ellipse 40 30 "purple")
-![a solid purple 40-by-30 ellipse](../images/image-reading/solid-purple-ellipse-40x30.png)
-> (outlined-diamond 40 30 "green" 5)
-![an outlined green 40-by-30 diamond](../images/image-reading/outlined-green-5-40x30-diamond.png)
-> (solid-square 50 "orange")
-![a solid orange square with side length 50](../images/image-reading/solid-orange-square-50.png)
-> (outlined-equilateral-triangle 50 "turquoise" 10)
-![an outlined turquoise equilateral-triangle with edge-length 50](../images/image-reading/outlined-turquoise-10-50-equilateral-triangle.png)
-> (solid-isosceles-triangle 100 20 "pink")
-![a solid pink 100-by-20 isosceles triangle](../images/image-reading/solid-pink-100x20-isosceles-triangle.png)
-```
+In addition, you can draw ellipses, squares, and generalized polygons:
 
-Polygons are a bit more complicated. We won't discuss all the details yet, but a few examples might be of interest. Note that `(pt x y)` creates an x/y point on an upside-down coordinate system.
+<pre class="scamper-output output-prog">
+(import image)
 
-```drracket
-> (solid-polygon (list (pt 0 0) (pt 100 20) (pt 30 50)) "blue")
-![a solid blue polygon built from the points (list (pt 0 0) (pt 100 20) (pt 30 50))](../images/image-reading/solid-blue-polygon-001.png)
-> (solid-polygon (list (pt 0 0) (pt 100 20) (pt 50 50) (pt 100 70) (pt 0 100))
-                 "red")
-![a solid red polygon built from the points (list (pt 0 0) (pt 100 20) (pt 50 50) (pt 100 70) (pt 0 100))](../images/image-reading/solid-red-polygon-001.png)
-```
+(ellipse 80 60 "solid" "purple")
 
-The designers of our image library decided that the shape is more important than the position. Hence, even if all the points have a positive x value, it still ends up at the left margin.  (You'll find something similar for y values.)
+(square 100 "solid" "orange")
 
-```drracket
-> (solid-polygon (list (pt 50 0) (pt 150 20) (pt 80 50)) "blue")
-![a solid blue polygon built from the points (list (pt 50 0) (pt 150 20) (pt 80 50))](../images/image-reading/solid-blue-polygon-003.png)
-> (solid-polygon (list (pt 0 -20) (pt 100 0) (pt 30 30)) "blue")
-![a solid blue polygon built from the points (list (pt 0 -20) (pt 100 0) (pt 30 30))](../images/image-reading/solid-blue-polygon-005.png)
-```
+(ellipse 50 100 "outline" "green")
+</pre>
 
-You can (eventually) find information on more ways to make images in the [CSC-151 library reference](https://rebelsky.cs.grinnell.edu/Courses/CSC151/reference/). (If you want others, and ask Prof. Rebelsky nicely, he might implement them.)
+Polygons are created via the `path` function. They are a bit more complicated. We won't discuss all the details yet, but a few examples might be of interest. Note that `(pair x y)` creates an x/y point on an upside-down coordinate system.
+
+<pre class="scamper-output output-prog">
+(import image)
+
+(path 100 50 (list (pair 0 0) (pair 100 20) (pair 30 50)) "solid" "blue")
+
+(path 100 100 (list (pair 0 0) (pair 100 20) (pair 50 50) (pair 100 70) (pair 0 100) (pair 0 0))
+              "outline" "red")
+</pre>
+
+You can (eventually) find information on more ways to make images in the [Scamper library reference](https://scamper.cs.grinnell.edu/docs/index.html).
 
 ## Combining images
 
@@ -132,26 +112,27 @@ images.
   top, then the next one, and so on and so forth.  Images are aligned
   according to their centers.
 
-```drracket
-> (define small-gray (solid-circle 20 "gray"))
-> (define medium-red (solid-circle 30 "red"))
-> (define large-black (solid-circle 40 "black"))
-> (beside small-gray medium-red large-black)
-![Three circles in a row of increasing size.  The first is gray, the second is red, the third is black.]({{ "/images/image-reading-08.png" | relative_url }})
-> (above small-gray medium-red large-black)
-![Three circles in a snowman-like stack, with the smallest circle at the top of the stack.  The top circle is gray, the middle is red, the bottom is black.](../images/image-reading-09.png)
-> (overlay small-gray medium-red large-black)
-![A "bullseye" of sorts, gray in the center, then red, then black.]({{ "/images/image-reading-10.png" | relative_url }})
-```
+<pre class="scamper-output output-prog">
+(import image)
+(define small-gray (circle 20 "solid" "gray"))
+(define medium-red (circle 30 "solid" "red"))
+(define large-black (circle 40 "solid" "black"))
+(beside small-gray medium-red large-black)
+(above small-gray medium-red large-black)
+(overlay small-gray medium-red large-black)
+</pre>
 
 When overlaying images, order matters. The first is on top of the second, the second is on top of the third, and so on and so forth.
 
-```drracket
-> (overlay large-black medium-red small-gray)
-![A large black circle.]({{ "/images/image-reading-11.png" | relative_url }})
-```
+<pre class="scamper-output output-prog">
+(import image)
+(define small-gray (circle 20 "solid" "gray"))
+(define medium-red (circle 30 "solid" "red"))
+(define large-black (circle 40 "solid" "black"))
+(overlay large-black medium-red small-gray)
+</pre>
 
-What if we don't want things aligned on centers?  The Racket iamge library provides alternatives to these three that provide a bit more control.
+What if we don't want things aligned on centers?  The Scamper image library provides alternatives to these three that provide a bit more control.
 
 * `(beside/align alignment i1 i2 ...)` allows you to align
   side-by-side images at the top or bottom (using `"top"` and
@@ -163,29 +144,21 @@ What if we don't want things aligned on centers?  The Racket iamge library provi
 * `(overlay/align halign valign i1 i2 ...)` allows you to
   align overlaid images.
 
-```drracket
-> (define small-gray (solid-circle 20 "gray"))
-> (define medium-red (solid-circle 30 "red"))
-> (define large-black (solid-circle 40 "black"))
-> (beside/align "top" small-gray medium-red large-black)
-![A sequence of three circles in increasing size: gray, then red, then black.  The top edges of the circles are aligned.]({{ "/images/image-reading-12.png" | relative_url }})
-> (beside/align "bottom" small-gray medium-red large-black)
-![A sequence of three circles in increasing size: gray, then red, then black.  The bottom edges of the circles are aligned.]({{ "/images/image-reading-13.png" | relative_url }})
-> (above/align "left" small-gray medium-red large-black)
-![A stack of three circles in increasing size: gray, then red, then black.  The left edges of the circles are aligned.]({{ "/images/image-reading-14.png" | relative_url }})
-> (above/align "right" small-gray medium-red large-black)
-![A stack of three circles in incrasing size: gray, then red, then black.  The right edges of the ricles are aligned.]({{ "/images/image-reading-15.png" | relative_url }})
-> (overlay/align "left" "top" small-gray medium-red large-black)
-![Three circles, or at least the impression of three circles.  A small gray circle is completely visible.  The gray circle obscures the top-left portion of a larger red circle.  That red circle obscures the top-left portion of a black circle.]({{ "/images/image-reading-16.png" | relative_url }})
-> (overlay/align "left" "center" small-gray medium-red large-black)
-![Three circles, or at least the impression thereof.  A small gray circle is cimplegely visible.  It obscures the left portion of a larger red circle, which obscures the left portion of larger black circle.]({{ "/images/image-reading-17.png" | relative_url }})
-> (overlay/align "left" "bottom" small-gray medium-red large-black)
-![Three circles, or at least the impression of three circles.  A small gray circle is completely visible.  The gray circle obscures the bottom-left portion of a larger red circle.  That red circle obscures the bottom-left portion of a black circle.]({{ "/images/image-reading-18.png" | relative_url }})
-> (overlay/align "right" "top" small-gray medium-red large-black)
-![Three circles, or at least the impression of three circles.  A small gray circle is completely visible.  The gray circle obscures the top-right portion of a larger red circle.  That red circle obscures the top-right portion of a black circle.]({{ "/images/image-reading-19.png" | relative_url }})
-> (overlay/align "right" "top" large-black medium-red small-gray)
-![A large black circle.  A small sliver of red is at the top right, and a sliver of grey is after that.]({{ "/images/image-reading-20.png" | relative_url }})
-```
+<pre class="scamper-output output-prog">
+(import image)
+(define small-gray (circle 20 "solid" "gray"))
+(define medium-red (circle 30 "solid" "red"))
+(define large-black (circle 40 "solid" "black"))
+(beside/align "top" small-gray medium-red large-black)
+(beside/align "bottom" small-gray medium-red large-black)
+(above/align "left" small-gray medium-red large-black)
+(above/align "right" small-gray medium-red large-black)
+(overlay/align "left" "top" small-gray medium-red large-black)
+(overlay/align "left" "center" small-gray medium-red large-black)
+(overlay/align "left" "bottom" small-gray medium-red large-black)
+(overlay/align "right" "top" small-gray medium-red large-black)
+(overlay/align "right" "top" large-black medium-red small-gray)
+</pre>
 
 As the overlay examples suggest, the alignment is based on the "bounding box" of each image, the smallest rectangle that encloses the image.
 
@@ -236,42 +209,42 @@ the eye distinguish all of them? Not necessarily. Nonetheless, it is
 useful to know that this variety is available, and many eyes can make
 very fine distinctions between nearby colors.
 
-In DrRacket's image model, you can use the `rgb` procedure to create RGB colors.  `(rgb 0 255 0)` makes a bright green, `(rgb 0 128 128)` makes a blue-green color, and `(rgb 64 0 64)` makes a relatively dark purple.
+In Scamper's image model, you can use the `color` procedure to create RGB colors.  `(color 0 255 0 1)` makes a bright green, `(color 0 128 128 1)` makes a blue-green color, and `(color 64 0 64 1)` makes a relatively dark purple.
 
-```drracket
-> (beside (solid-circle 40 (rgb 0 255 0))
-          (solid-circle 40 (rgb 0 128 128))
-          (solid-circle 40 (rgb64 0 64)))
-![Three circles in a row.  The first is a bright green circle.  The second is a dull teal-ish color.  The third is a very dark purple.]({{ "/images/image-reading-07.png" | relative_url }})
-```
+The `color` procedure also takes a fourth parameter, which is often called the "alpha" value, and which you can think of as the _opacity_ of the color. A color with an opacity of `0` is transparent; a color with an opacity of `1` obscures anything below it. Less opaque colors also appear lighter.
 
-The `rgb` procedure has an _optional_ fourth parameter, which is often called the "alpha" value, and which you can think of as the _opacity_ of the color. A color with an opacity of 0 is transparent; a color with an opacity of 255 obscures anything below it. Less opaque colors also appear lighter.
+<pre class="scamper-output output-prog">
+(import image)
+(beside (circle 40 "solid" (color 0 255 0 1))
+        (circle 40 "solid" (color 0 128 128 0.25))
+        (circle 40 "solid" (color 64 0 64 0.75)))
+</pre>
 
-```drracket
-> (beside
-    (solid-rectangle 25 40 (rgb 0 0 255 255))
-    (solid-rectangle 25 40 (rgb 0 0 255 191))
-    (solid-rectangle 25 40 (rgb 0 0 255 127))
-    (solid-rectangle 25 40 (rgb 0 0 255 63)))
-![A sequence of four blue rectangles, each of which appears slightly paler than the previous one.]({{ "/images/image-reading-03.png" | relative_url }})
-```
+<pre class="scamper-output output-prog">
+(import image)
+(beside
+  (rectangle 25 40 "solid" (color 0 0 255 1))
+  (rectangle 25 40 "solid" (color 0 0 255 0.75))
+  (rectangle 25 40 "solid" (color 0 0 255 0.50))
+  (rectangle 25 40 "solid" (color 0 0 255 0.25)))
+</pre>
 
 Opacity will be especially important as we start to overlay shapes.
 
-```drracket
-> (define circles
-    (beside
-      (solid-circle 20 (rgb 255 0 0 255))
-      (solid-circle 20 (rgb 255 0 0 191))
-      (solid-circle 20 (rgb 255 0 0 127))
-      (solid-circle 20 (rgb 255 0 0 63))))
-> (above
-    (overlay circles (solid-rectangle 60 20 (rgb 0 0 255 255)))
-    (overlay circles (solid-rectangle 60 20 (rgb 0 0 255 191)))
-    (overlay circles (solid-rectangle 60 20 (rgb 0 0 255 127)))
-    (overlay circles (solid-rectangle 60 20 (rgb 0 0 255  63))))
-![A complex picture consisting of sixteen red circles in a four-by-four grid overlaid on four blue rectangles.  The red circles fade from left to right and the blue rectangles fade from top to bottom.  The lighter red circles blend with the blue rectangles.]({{ "/images/image-reading-04.png" | relative_url }})
-```
+<pre class="scamper-output output-prog">
+(import image)
+(define circles 
+  (beside
+    (circle 50 "solid" (color 255 0 0 1))
+    (circle 50 "solid" (color 255 0 0 0.75))
+    (circle 50 "solid" (color 255 0 0 0.50))
+    (circle 50 "solid" (color 255 0 0 0.25))))
+(above
+  (overlay circles (rectangle 60 20 "solid" (color 0 0 255 1)))
+  (overlay circles (rectangle 60 20 "solid" (color 0 0 255 0.75)))
+  (overlay circles (rectangle 60 20 "solid" (color 0 0 255 0.50)))
+  (overlay circles (rectangle 60 20 "solid" (color 0 0 255 0.25))))
+</pre>
 
 ## Self Checks
 

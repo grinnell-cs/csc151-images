@@ -4,8 +4,6 @@
     We begin the class by exploring the definition of computer
     science and by trying to write some basic algorithms.
 
-# TODO: need to change day 1 labs/readings to Scamper versions
-
 - topic: Getting started with Scheme
   abbrev: racket-tech
   summary: |
@@ -19,18 +17,18 @@
     - page: /labs/mathlan.html
     - page: /labs/scamper-intro.html
 
-# - topic: Algorithmic decomposition
-#   abbrev: decomposition
-#   summary: |
-#     We consider a key technique in algorithmic thinking, how one “decomposes” a
-#     more complex problem or algorithm into simpler ones.
-#   reading:
-#     - page: /readings/images.html
-#     - page: /readings/decomposition.html
-#   lab:
-#     - page: /labs/decomposition.html
-#   todo:
-#     - Check the images reading to make sure it works with the new model.
+- topic: Algorithmic decomposition
+  abbrev: decomposition
+  summary: |
+    We consider a key technique in algorithmic thinking, how one “decomposes” a
+    more complex problem or algorithm into simpler ones.
+  reading:
+    - page: /readings/images.html
+    - page: /readings/decomposition.html
+# lab:
+#   - page: /labs/decomposition.html
+  todo:
+    - Check the images reading to make sure it works with the new model.
 
 # - topic: Reading and writing procedures
 #   abbrev: procedures
