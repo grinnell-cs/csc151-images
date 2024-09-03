@@ -1,13 +1,13 @@
 - topic: An introduction to algorithms
   abbrev: intro
+  slides_link: https://docs.google.com/presentation/d/1vgHy9Y12PzUug5FMtLUQKgInhV8UykYBsT1-EzPUNdc/edit#slide=id.g2666291cd13_0_234
   summary: |
     We begin the class by exploring the definition of computer
     science and by trying to write some basic algorithms.
-  notes: https://docs.google.com/presentation/d/1NFvjcsHVXWey40Hzf7kjICw3G_YD6jLTOXPQDfXhC4Q/edit?usp=sharing
 
 - topic: Getting started with Scheme
   abbrev: racket-tech
-  notes: https://docs.google.com/presentation/d/1YVqSv6N4IrdBx8zJV_PfH9QKdKhGmba09nrH_vJYIfI/edit#slide=id.g2666291cd13_0_239
+  slides_link: https://docs.google.com/presentation/d/16pNsjHrUEDAFd1Aphf_YZ7u1_eu9mdfcK-eeNeEWAo0/edit#slide=id.g2666291cd13_0_239
   summary: |
     We consider Scheme, the programming language we will use
     throughout the course.
