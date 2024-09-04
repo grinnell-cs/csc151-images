@@ -27,8 +27,8 @@
   reading:
     - page: /readings/images.html
     - page: /readings/decomposition.html
-  lab: Decomposition
-#   - page: /labs/decomposition.html
+  lab:
+    - page: /labs/decomposition.html
   todo:
     - Check the images reading to make sure it works with the new model.
 
