@@ -32,17 +32,17 @@
   todo:
     - Check the images reading to make sure it works with the new model.
 
-# - topic: Reading and writing procedures
-#   abbrev: procedures
-#   summary: |
-#     We consider ways to write your own procedures and why you might do so.
-#     We also explore how one interprets the algorithms others write.
-#     And we develop some mental models for what happens when we run
-#     Scheme/Racket programs.
-#   reading:
-#     - page: /readings/procedures.html
-#   lab:
-#     - page: /labs/procedures.html
+- topic: Reading and writing procedures
+  abbrev: procedures
+  summary: |
+    We consider ways to write your own procedures and why you might do so.
+    We also explore how one interprets the algorithms others write.
+    And we develop some mental models for what happens when we run
+    Scheme/Racket programs.
+  reading:
+    - page: /readings/procedures.html
+  lab:
+    - page: /labs/procedures.html
 
 # - topic: Computation via expressions
 #   abbrev: expressions
