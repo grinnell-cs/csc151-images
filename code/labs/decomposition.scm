@@ -93,7 +93,7 @@
 ; * `(color r g b a)` produces a string suitable for passing as a color
 ;   to any one of the drawing functions. The arguments are numbers
 ;   specifying a color in rgba form.
-; * `(overlay/offset img1 dx dy img2)` places the images `img1` and
+; * `(overlay/offset dx dy img1 img2)` places the images `img1` and
 ;   `img2`, on top of each other but with img2 offset by `dx` and `dy`
 ;   pixels relative to `img1.
 
