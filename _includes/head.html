@@ -5,10 +5,10 @@
   
   <title>{{ site.title }} - {{ page.title }}</title>
     
-  <link rel="stylesheet" href="../assets/css/theme-{{ site.color }}.css">
-  <link rel="stylesheet" href="../assets/css/syntax-drracket.css">
-  <link rel="stylesheet" href="../assets/css/syntax-shell.css">
-  <link rel="stylesheet" href="../assets/css/syntax-xml.css">
+  <link rel="stylesheet" href="{{ '/assets/css/theme-' | append: site.color | append: '.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/syntax-drracket.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/syntax-shell.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/syntax-xml.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/prism.css' | relative_url }}">
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
