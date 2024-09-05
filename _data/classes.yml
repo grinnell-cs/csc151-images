@@ -21,6 +21,7 @@
 
 - topic: Algorithmic decomposition
   abbrev: decomposition
+  slides_link: https://docs.google.com/presentation/d/1uREDJaU-TdvPnr-ldXLELQSNw2XAcDVfjU2vqjv1G9A/edit#slide=id.g2666291cd13_0_234
   summary: |
     We consider a key technique in algorithmic thinking, how one “decomposes” a
     more complex problem or algorithm into simpler ones.
