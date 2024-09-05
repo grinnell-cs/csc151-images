@@ -10,16 +10,13 @@
   assigned:
     - page: /mps/mp01.html
 
-- date: 2024-01-26
+- date: 2024-09-06
   due:
-    - MP 1 Pre-reflection
-    - Quiz 1
+    - Pre-reflection for Take-home assessment 1
 
-- date: 2024-01-31
+- date: 2024-09-09
   due:
     - page: /mps/mp01.html
-  assigned:
-    - page: /mps/mp02.html
 
 - date: 2024-02-02
   due:
