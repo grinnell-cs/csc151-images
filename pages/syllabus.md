@@ -181,11 +181,11 @@ Post-reflections
 Major letter grades for the course are determined by _tiers_, a collection of required grades from your demonstration exercises and core exams. You will receive the grade corresponding to the tier for which you meet _all_ of the requirements. For example, if you qualify for the A tier in one category and the C tier in another category, then you qualify for the C tier overall as you only meet the requirements for a C among all the categories.
 
 {: .table}
-| Tier  | Demonstration Exercises (9)                    | Core (16)          | Project (1) |
+| Tier  | Demonstration Exercises (8)                    | Core (16)          | Project (1) |
 | ----- | ---------------------------------------------- | ------------------ | ----------- |
-| **C** | No **N**s, at most 2 **R**s, at least 3 **E**s | At least 10 **S**s | **R**       |
-| **B** | No **N**s, at most 1 **R**, at least 5 **E**s  | At least 12 **S**s | **M**       |
-| **A** | No **N**s or **R**s, at least 7 **E**s         | At least 14 **S**s | **E**       |
+| **C** | No **N**s, at most 2 **R**s, at least 2 **E**s | At least 10 **S**s | **R**       |
+| **B** | No **N**s, at most 1 **R**, at least 6 **E**s  | At least 12 **S**s | **M**       |
+| **A** | No **N**s or **R**s, at least 8 **E**s         | At least 14 **S**s | **E**       |
 
 - **D**: two of the requirements of a C are met.
 - **F**: zero or one of the requirements of a C are met.
