@@ -3,24 +3,104 @@ title: Functional Problem Solving
 permalink: /syllabus
 ---
 
-# CSC 151 (Functional Problem Solving, Fall 2024)
+# CSC-151-03 (Functional Problem Solving, Fall 2024)
 
 ## About
 
-* Instructors: Peter-Michael Osera (sections 01 and 02), Leah Perlmutter (section 03)
-* Class Meeting Location and Times: Noyce 3813
-    - Section 01: 8:30–9:50 AM CT
-    - Section 02: 10:00–11:20 AM CT
-    - Section 03: 2:30–3:50 PM CT
-* Instructor Office Hours
-    - Peter-Michael Osera: Noyce 2811, by appointment: <https://osera.cs.grinnell.edu>
-    - Leah Perlmutter: Noyce 3811, by appointment: <https://calendly.com/leahperl  >
-* Mentors: Jacob Bell (section 01), Owen Block (section 02), Tiffany Yan (section 03)
-* Mentor sessions: TBD  
-* Evening Tutors: Caelan Bratland, Ethan Hughes, Ishita Sarraf, Boston Gunderson, Dieu Anh Trinh, Alma Ordaz, Charles Wade, Tiffany Tang, Avaash Bhattarai  
-* Evening Tutor Sessions: TBD
+<dl class="dl-horizontal">
+  <dt>Instructor</dt>
+  <dd>
+    <p><a href="{{ site.instructor_homepage }}">{{ site.instructor }}</a></p>
+  </dd>
+
+  <dt>Class Meeting Times</dt>
+  <dd>
+    <ul class="list-unstyled">
+      {% for item in site.meeting_times %}
+        <li>{{ item | markdownify | remove: "<p>" | remove: "</p>" }}</li>
+      {% endfor %}
+    </ul>
+  </dd>
+
+  <dt>Instructor Office Hours</dt>
+  <dd>
+    <ul class="list-unstyled">
+      {% for item in site.office_hours %}
+        <li>{{ item | markdownify | remove: "<p>" | remove: "</p>" }}</li>
+      {% endfor %}
+    </ul>
+  </dd>
+
+  {% if site.review_sessions %}
+    <dt>Review Sessions</dt>
+    <dd>
+      <ul class="list-unstyled">
+        {% for session in site.review_sessions %}
+          <li>{{ session }}</li>
+        {% endfor %}
+      </ul>
+    </dd>
+  {% endif %}
+
+  {% if site.textbook %}
+    <dt>Textbook</dt>
+    <dd>
+      {{ site.textbook | markdownify | remove: "<p>" | remove: "</p>" }}
+    </dd>
+  {% endif %}
+
+  {% if site.mentor %}
+    <dt>Class Mentor</dt>
+    <dd>{{ site.mentor }}</dd>
+  {% endif %}
+
+  {% if site.mentors %}
+    <dt>Mentors</dt>
+    <dd>
+      <ul class="list-unstyled">
+        {% for mentor in site.mentors %}
+          <li>{{ mentor }}</li>
+        {% endfor %}
+      </ul>
+    </dd>
+  {% endif %}
+
+  {% if site.mentor_sessions %}
+    <dt>Mentor Sessions</dt>
+    <dd>
+      <ul class="list-unstyled">
+        {% for session in site.mentor_sessions %}
+          <li>{{ session | markdownify | remove: "<p>" | remove: "</p>" }}</li>
+        {% endfor %}
+      </ul>
+    </dd>
+  {% endif %}
+
+  {% if site.tutors %}
+    <dt>CS Tutors</dt>
+    <dd>
+      <ul class="list-unstyled">
+        {% for tutor in site.tutors %}
+          <li>{{ tutor }}</li>
+        {% endfor %}
+      </ul>
+    </dd>
+  {% endif %}
+
+  {% if site.tutor_sessions %}
+    <dt>Evening Tutor Sessions</dt>
+    <dd>
+      <ul class="list-unstyled">
+        {% for time in site.tutor_sessions %}
+          <li>{{ time }}</li>
+        {% endfor %}
+      </ul>
+    </dd>
+  {% endif %}
+</dl>
 
 Welcome to CSC 151! In this class, you will learn computer programming using the Scamper programming language. You do not need any prior knowledge of computer science or programming. Section 03 will focus on image making and manipulation.
+
 
 ## Learning Objectives
 
@@ -65,7 +145,7 @@ Getting in touch with your instructor
 Gradescope
 : You will submit assignments via gradescope. Please confirm that you have been added to this class on gradescope.
 
-## Class related meetings and help resources
+## Class meetings and help resources
 
 Class meetings
 : Most days of class are lab days. Your instructor will make announcements and might briefly present concepts. Most of the time, you will collaborate with your lab team on programming practice problems. 
@@ -77,7 +157,7 @@ Mentor sessions
 : 3 times per week, a peer educator will hold a supplementary session where they might offer a review of concepts from class or practice problems. You should show up at the start of the session and stay until the end.
 
 Informal time
-: You are encouraged to come to our classroom to study and work at any time that the room is not reserved for class or a meeting. This is an opportunity to studycollaborate with peers and form community.
+: You are encouraged to come to our classroom to study and work at any time that the room is not reserved for class or a meeting. This is an opportunity to study with peers and form community.
 
 Office hours
 : Your instructor will hold office hours each week. This time is for you to meet with your instructor and talk about any course related matter that you like\!
@@ -96,7 +176,7 @@ Reading responses
 Labs
 : During each class meeting, you will work with a partner to complete programming exercises to practice the concepts from the readings
 
-Take-Home Assessments Homeworks
+Take-Home Assessments
 : About once per week you will complete an individual programming assignment where you apply and extend concepts from readings and labs. No programming assignment on midterm exam weeks.
 
 Final project
@@ -109,79 +189,93 @@ Exams
 : 4 times during the semester, you will complete an individual midterm exam in class on paper, lasting the entire class period (time extended according to any accommodations)
 
 Pre-reflections
-: Before each take-home assessment homework and each exam, you will answer some reflection questions to help you prepare and feel confident to dive in. 
+: Before each take-home assessment and each exam, you will answer some reflection questions to help you prepare and feel confident to dive in. 
 
 Post-reflections
-: After each take-home assessment homework and each exam, you will answer some reflection questions to help you understand what went well and what went poorly.
+: After each take-home assessment and each exam, you will answer some reflection questions to help you understand what went well and what went poorly.
 
 ## Collaboration and Resources
 
-* Outlook  
-    * Do collaborate in your learning  
-    * Collaborate in ways that support rather than undermining your learning  
-        * We'll talk about this throughout the semester!
-    * On individual assignments  
-        * Don't do somebody else's work for them or let them do yours  
-    * Don't turn in the same or highly similar work  
-* Deliverables  
-    * Reading responses  
-        * Encouraged to work with others to understand the readings  
-        * Write your own answers to the reading response questions  
-        * You can get help from others but make sure you are able to explain your answers yourself  
-    * Labs  
-        * Typically completed in teams of 2  
-        * Both partners should contribute equally to all parts of the lab  
-        * You may ask other teams for help  
-        * Make sure every team member can explain your team's answers  
-    * Take-home Assessments Homeworks  
-        * Individually completed  
-        * As help resources, us only what you find on the course website  
-        * You may get help from course staff, including evening tutors, mentors and instructors  
-        * You may not discuss the assessment or get help from peers, inside or outside the class  
-        * You can get help from others but make sure you are able to explain your answers yourself  
-    * Quizzes  
-        * Completed individually in class  
-        * No form of collaboration is permitted  
-    * Exams  
-        * Completed individually in class  
-        * No form of collaboration is permitted
-    * Final project
-        * Completed in groups of 3–4
-        * All members should contribute equally to the project
-        * You may ask others for help
+Computer science is collaborative, and we encourage much collaboration in your learning. However some of your course work is intended to assess individual knowledge and must be completed individually. When you do collaborate, make sure to collaborate in ways that support, rather than undermine, your learning.
+
+Here are the collaboration policies for each type of coursework:
+
+Reading responses
+: 
+- You are encouraged to work with others to understand the readings
+- Write your own answers to the reading response 
+- You may get help from course staff and peers 
+- Make sure you are able to explain all submitted answers yourself
+
+Labs
+: 
+- Typically completed in teams of 2 (might be a team of 1 or 3 under certain circumstances)
+- All team members should contribute equally to all parts of the lab
+- You may get help from course staff and peers outside your team
+- Make sure every team member can explain your team's answers
+
+Take-home Assessments
+: 
+- Completed individually
+- As help resources, you may use **only**:
+  - the course website
+  - your own class notes (those you have written yourself)
+  - your own lab solutions (written by you and your lab partners)
+- You may get help from course staff, including evening tutors, mentors and instructors
+- You may **not** discuss the assessment with or get help from peers, inside or outside the class
+ 
+Quizzes and Exams
+: 
+- Completed individually in class
+- No form of collaboration is permitted
+
+Final project
+: 
+- Completed in groups of 3–4
+- All members should contribute equally to the project
+- You may get help from course staff and peers outside your team
 
 ## Grading
 
-### Deliverables
+Here is the grading policy for each type of coursework:
 
-* Reading responses  
-    * Graded **S/N** based on whether you answered the assigned questions with a good faith effort  
-    * **S** = satisfactory, **N** = Not satisfactory  
-* Labs  
-    * Graded **S/N** based on whether you answered the assigned questions with a good faith effort  
-    * **S** = satisfactory, **N** = Not satisfactory  
-* Take-home Assessments and the Final Project
-    * Graded **EMRN** based on correctness and following instructions  
-        * **E** = Exceeds expectations  
-        * **M** = Meets expectations  
-        * **R** = Needs revision  
-        * **N** = Not complete (did not make a good faith effort)  
-    * Criteria for each letter grade are given on the homework instructions for each assessment.
-* Learning Objectives (Quizzes and Exams)  
-    * You will demonstrate your mastery of each Learning Objecive (LO) in assessments (quizzes or exams).   
-    * Each quiz gives you an opportunity to demonstrate mastery of one LO.  
-    * Each exam gives you an opportunity to demonstrate mastery of every LO that has been covered in class up until the date of the exam. There will be one exam problem for each LO.  
-    * Each LO is graded **S/N**
-        * **S** = Satisfactory (demonstrated mastery)  
-        * **N** = Not Yet Satisfactory (did not yet demonstrate mastery)  
-    * Once you have demonstrated mastery of a certain LO, you do not need to be assessed on that LO again. That is, you can skip exam problems about LOs you have already mastered.
+Reading responses 
+: 
+- Graded **S/N** based on whether you answered the assigned questions with a good faith effort  
+- **S** = Satisfactory
+- **N** = Not satisfactory  
+
+Labs
+: 
+- Graded **S/N** based on whether you answered the assigned questions with a good faith effort  
+- **S** = Satisfactory
+- **N** = Not satisfactory  
+
+Take-Home Assessments and the Final Project
+: 
+- Graded **EMRN** based on correctness and following instructions  
+  * **E** = Exceeds expectations  
+  * **M** = Meets expectations  
+  * **R** = Needs revision  
+  * **N** = Not complete (did not make a good faith effort)  
+- Criteria for each letter grade are given on the homework instructions for each assessment.
+
+Learning Objectives (Quizzes and Exams)
+: 
+* You will demonstrate your mastery of each Learning Objecive (LO) in assessments (quizzes or exams).   
+* Each quiz gives you an opportunity to demonstrate mastery of **one** LO.  
+* Each exam gives you an opportunity to demonstrate mastery of **every** LO that has been covered in class up until the date of the exam. There will be one exam problem for each LO.  
+* Each LO is graded **S/N**
+  * **S** = Satisfactory (demonstrated mastery)  
+  * **N** = Not _Yet_ Satisfactory (did not yet demonstrate mastery)  
+* Once you have demonstrated mastery of a certain LO, you do not need to be assessed on that LO again. That is, you can skip exam problems about LOs you have already mastered.
 
 ### Final grade
 
 Major letter grades for the course are determined by _tiers_, a collection of required grades from your demonstration exercises and core exams. You will receive the grade corresponding to the tier for which you meet _all_ of the requirements. For example, if you qualify for the A tier in one category and the C tier in another category, then you qualify for the C tier overall as you only meet the requirements for a C among all the categories.
 
 {: .table}
-| Tier  | Demonstration Exercises (8)                    | Core (16)          | Project (1) |
+| Tier  | Take-Home Assessments (8 total)    | Learning Objectives (16 total)  | Project (1) |
 | ----- | ---------------------------------------------- | ------------------ | ----------- |
 | **C** | No **N**s, at most 2 **R**s, at least 2 **E**s | At least 10 **S**s | **R**       |
 | **B** | No **N**s, at most 1 **R**, at least 6 **E**s  | At least 12 **S**s | **M**       |
@@ -199,20 +293,23 @@ To earn a plus/minus grade, you must have completed one tier’s requirements an
 
 Be aware that if you are at an A tier for one deliverable category but at a C tier for another, then you fully qualify for the C tier and partially meet the requirements of the B tier and thus would be considered for plus/minus grades in the B/C range.
 
-**Timely Work**
+**Reading responses, labs, and reflections**
 
-You may miss turning in **at most six** timely work deliverables (reading questions, labs, pre- and post-reflections) without penalty. After the first six deliverables, your overall letter grade will lower by **one-third of a letter grade** (_i.e._, A becomes A-, B- becomes a C+, C becomes a D) for **every two additional deliverables you miss**. The following table summarizes this policy for concrete numbers of missed timely work deliverables through 12, although the policy extends to any number of missed assignments.
+- You may earn an N  **at most six** timely work deliverables (reading responses, labs, and reflections) without penalty. Note that unsubmitted work earns an N.
+- After the first six deliverables, your overall letter grade will lower by **one-third of a letter grade** (_i.e._, A becomes A-, B- becomes a C+, C becomes a D) for **every two additional deliverables you miss**. 
+
+The following table summarizes this policy for concrete numbers of deliverables through 12, although the policy extends to any number of deliverables.
 
 {: .table}
-| Missed timely work   	| Letter adjustment |
+| Ns earned on timely work| Letter adjustment |
 | --------------------- | ----------------- |
-| 0–6 deliverables      | -0	              | 
+| 0–6 deliverables      | -0	            | 
 | 7 deliverables        | -1/3	            | 
 | 8 deliverables        | -1/3	            | 
 | 9 deliverables        | -2/3	            | 
 | 10 deliverables       | -2/3	            | 
-| 11 deliverables       | -1	              | 
-| 12 deliverables       | -1	              |
+| 11 deliverables       | -1	            | 
+| 12 deliverables       | -1	            |
 
 ### Deadlines and Late Days
 
@@ -234,22 +331,32 @@ Reflections
 
 * Late days are a currency that you can spend to turn in assignments late.
 * You start the semester with **10 late days**.  
-* You are responsible for keeping track of your own late days.  
 * You may spend late days on reading responses, labs, pre-reflections, post-reflections, take-home assessments, and take-home assessment revisions.  
 * You may spend one late day to submit any of the named assignments up to 24 hours late.  
 * You may spend up to two late days on any given assignment, for a maximum lateness of 48 hours on that assignment.
+* You are responsible for keeping track of your own late days.  
 
 ### Redo and Revision Opportunities
 
-* Learning Objectives (Quizzes and Exams)  
+We offer redo and revision opportunities because we believe that your final grade should reflect what you know at the end of the semester rather than mistakes made along the way. 
+
+Here are redo/revision policies for each type of coursework:
+
+Learning Objectives (Quizzes and Exams)
+: 
     * When you earn an N on an LO, you can attempt to demonstrate mastery on that LO again on every following exam.  
     * The final exam allows you to redo past LOs but does not introduce new LOs, ensuring that you get a minimum of 2 tries to earn an S on every LO.  
-* Take-Home Assessments
+
+Take-Home Assessments
+: 
     * You may revise and resubmit take-home assessments after receiving feedback.  
         * You may submit up to **2 revision assessments** per week.
     * When revised work is graded, the new grade, if higher, replaces the old grade. Submitting revised work cannot lower your grade.  
-    * To be eligible for resubmission, you must have completed the assessment homework in good faith on your first attempt, earning at least an N. Redo opportunities _cannot_ be used as a way to skip take-home assessments and do them later.
-* Reading responses, labs, and reflections are graded based on good faith engagement with the assigned questions and cannot be revised for credit.
+    * To be eligible for resubmission, you must have completed the assessment homework in good faith on your first attempt, earning at least an R. Redo opportunities _cannot_ be used as a way to skip take-home assessments and do them later.
+
+Reading responses, labs, and reflections
+: 
+These are graded based on good faith engagement with the assigned questions and cannot be revised for credit.
 
 ## Attendance
 
@@ -259,7 +366,7 @@ We expect you to attend class every day because collaborative learning is such a
 
 Please stay home when you are sick. Wait to come back to class until you truly feel well enough to learn. Each day that you will miss class due to illness, contact your instructor before class (or as soon as possible).
 
-When coming back to class, wear a mask until there is no more than a normal concern of contagion. Protecting the people around you from your illness is a matter of professionalism and personal respect.
+When coming back to class, wear a mask until there is no more than a usual concern of contagion. Protecting the people around you from your illness is a matter of professionalism and personal respect.
 
 ### Late Work due to Illness and Time Away
 
