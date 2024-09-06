@@ -11,16 +11,21 @@
   title: "Mentors"
   description: We have 3 wonderful mentors working with CSC 151 this semester. One mentor helps out in class during each section. All mentors will hold mentor sessions for students from all sections.
   contents: 
-      - name: Owen Block
-        pronouns: He/Him
-        section: "02"
-        photo: /images/staff/owen.jpg
-        bio: I am a second year from Buffalo, New York, and am one of the class mentors for CS-151 this semester. I am a prospective Computer Science and Philosophy double major and also a member of the Cross Country and Track and Field Teams here at Grinnell. When I am not studying or running I attend Contra Dance and Swing Dance club as well as Chess and Board Game club. I look forward to working and learning alongside you.
-      - name: Jake Bell
-        pronouns: He/Him
-        section: "01"
-        photo: /images/staff/jake.jpg
-        bio: Hello! My name is Jake, I am a second-year student, and I intend on majoring in Computer Science. I come from a really small town in Texas, and I somehow ended up in a small town in Iowa. At Grinnell, I love throwing things for our Track and Field team and hanging out with friends. When I took 151 last year, it was my first time ever coding in my life! If I can do it, you can surely do it to! I love to help so don't be afraid to reach out to me! I look forward to our semester together!
+    - name: Tiffany
+      pronouns: she/her
+      section: "01"
+      photo: /images/staff/tiffanyY.png
+      bio: Hi everyone! My name is Tiffany and I am a 2nd year computer science major. I am super excited to be mentoring CSC151 this semester so please feel free to contact me with any questions you may have! 
+    - name: Owen Block
+      pronouns: He/Him
+      section: "02"
+      photo: /images/staff/owen.jpg
+      bio: I am a second year from Buffalo, New York, and am one of the class mentors for CS-151 this semester. I am a prospective Computer Science and Philosophy double major and also a member of the Cross Country and Track and Field Teams here at Grinnell. When I am not studying or running I attend Contra Dance and Swing Dance club as well as Chess and Board Game club. I look forward to working and learning alongside you.
+    - name: Jake Bell
+      pronouns: He/Him
+      section: "01"
+      photo: /images/staff/jake.jpg
+      bio: Hello! My name is Jake, I am a second-year student, and I intend on majoring in Computer Science. I come from a really small town in Texas, and I somehow ended up in a small town in Iowa. At Grinnell, I love throwing things for our Track and Field team and hanging out with friends. When I took 151 last year, it was my first time ever coding in my life! If I can do it, you can surely do it to! I love to help so don't be afraid to reach out to me! I look forward to our semester together!
   
 - tutors:
   title: "Tutors"
