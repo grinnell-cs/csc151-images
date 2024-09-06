@@ -1,0 +1,37 @@
+
+- instructors:
+  title: "Instructor"
+  contents:
+      - name: Instructor
+        pronouns: they/them
+        photo: /images/staff/instructor.jpg
+        bio: instructor bio
+
+- mentors:
+  title: "Mentors"
+  description: We have 3 wonderful mentors working with CSC 151 this semester. One mentor helps out in class during each section. All mentors will hold mentor sessions for students from all sections.
+  contents: 
+      - name: Owen Block
+        pronouns: He/Him
+        section: "02"
+        photo: /images/staff/owen.jpg
+        bio: I am a second year from Buffalo, New York, and am one of the class mentors for CS-151 this semester. I am a prospective Computer Science and Philosophy double major and also a member of the Cross Country and Track and Field Teams here at Grinnell. When I am not studying or running I attend Contra Dance and Swing Dance club as well as Chess and Board Game club. I look forward to working and learning alongside you.
+      - name: Jake Bell
+        pronouns: He/Him
+        section: "01"
+        photo: /images/staff/jake.jpg
+        bio: Hello! My name is Jake, I am a second-year student, and I intend on majoring in Computer Science. I come from a really small town in Texas, and I somehow ended up in a small town in Iowa. At Grinnell, I love throwing things for our Track and Field team and hanging out with friends. When I took 151 last year, it was my first time ever coding in my life! If I can do it, you can surely do it to! I love to help so don't be afraid to reach out to me! I look forward to our semester together!
+  
+- tutors:
+  title: "Tutors"
+  description: We have 9 amazing evening tutors in the department this semester. During their evening lab hours, they are eager to help you with your learning and your homework. They also help students taking CSC 161 and CSC 207.
+
+  contents: 
+      - name: Tang Yixuan (Tiffany)
+        pronouns: she/her/hers
+        photo: /images/staff/tiffanyT.jpg
+        bio: Hey Folks! I am Yixuan from China, a second-year student. I am very honored to be your evening tutor this semester. My intended major is double Math and CS. I hope that I can offer you guys inspirations that encourage you all to create your own lightbulb moments! Hope you all have fun in CS.
+      - name: Ishita Sarraf
+        pronouns: She/her
+        photo: /images/staff/ishita.jpg
+        bio: Hi everyone!! My name is Ishita. I am a fourth year Computer Science major with a concentration in Statistics from Kolkata, India. I am excited to meet you all for evening tutor sessions, you can find me on Mondays and Tuesdays (7-8:30 pm) in Noyce 3813. Feel free to drop by to say hi, ask questions regarding assignments, or Grinnell in general. I am the treasurer for the Women and Gender Minorities in Computing student organisation and we will be hosting fun events! Get in touch if you want to join the organisation. I have also done off-campus study in London and can answer questions related to those as well! Looking forward to meeting you all!
