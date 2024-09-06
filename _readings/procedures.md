@@ -1,6 +1,13 @@
+---
+title: Writing your own procedures
+summary: |
+  We explore why and how to define your own procedures in Scheme.
+preimg: true
+---
+
 # Writing your own procedures
 
-In today's ready, we explore why and how to define your own procedures in Scheme.
+In today's reading, we explore why and how to define your own procedures in Scheme.
 
 ## Introduction
 
