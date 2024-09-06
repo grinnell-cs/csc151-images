@@ -1,6 +1,6 @@
 ---
 title: Staff
-permalink: /staff
+permalink: /staff/
 ---
     
 ## Staff
