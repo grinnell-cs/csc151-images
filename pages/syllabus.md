@@ -1,6 +1,6 @@
 ---
 title: Functional Problem Solving
-permalink: /syllabus
+permalink: /syllabus/
 ---
 
 # CSC-151-03 (Functional Problem Solving, Fall 2024)
