@@ -35,15 +35,15 @@ instructor_title: Professor Perlmutter
 instructor_homepage: https://perlmutter.cs.grinnell.edu/home/
 instructor_email: perlmutter@grinnell.edu
 
+office_hours:
+  - "Noyce 3811, by appointment: [https://calendly.com/leahperl](https://calendly.com/leahperl)"
+
 meeting_times: |
   MWF 2:30&ndash;3:50 PM CT in Science 3813
 
 meeting_start_time: 2:30 PM
 
-evening_due_time: 11:00 PM
-
-office_hours:
-  - "Noyce 3811, by appointment: [https://calendly.com/leahperl](https://calendly.com/leahperl)"
+evening_due_time: 10:00 PM
 
 mentors: 
   - Jacob Bell (Secion 1)
@@ -57,7 +57,14 @@ tutors:
   - Caelan Bratland, Ethan Hughes, Ishita Sarraf, Boston Gunderson, Dieu Anh Trinh, Alma Ordaz, Charles Wade, Tiffany Tang, Avaash Bhattarai
 
 tutor_sessions:
-  - Sundays, 3&ndash;5 PM; Sundays through Thursdays, 7&ndash;10 PM in Science 3813 and 3815
+  - Sunday, 3&ndash;5 PM, 7&ndash;10 PM
+  - Monday 7&ndash;10 PM
+  - Tuesday 7&ndash;10 PM
+  - Wednesday 7&ndash;10 PM
+  - Thursday 7&ndash;10 PM
+
+tutor_location:
+  - Noyce 3813
 
 all_work_deadline:  5:00 PM on Friday, 20 Dec 2024
 # final_exam_time: TBD

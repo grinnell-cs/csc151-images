@@ -2,7 +2,12 @@
 title: Writing your own procedures
 summary: |
   We explore why and how to define your own procedures in Scheme.
+preimg: true
 ---
+
+# Writing your own procedures
+
+In today's reading, we explore why and how to define your own procedures in Scheme.
 
 ## Introduction
 
@@ -27,11 +32,11 @@ consider an example.
 <pre class="scamper-output output-prog">
 (import image)
 
-(square 10 "solid" "red")
-(square 5 "solid" "blue")
-(above (square 12 "solid" "red")
-       (beside (square 8 "solid" "blue")
-               (square 8 "solid" "purple")))
+(square 50 "solid" "red")
+(square 25 "solid" "blue")
+(above (square 60 "solid" "red")
+       (beside (square 40 "solid" "blue")
+               (square 40 "solid" "purple")))
 </pre>
 
 As you may recall, the `image` library already defines a `square` procedure, so it's unlikely to be a good idea for us to define our own `square` procedure, whether for numbers or images.
@@ -50,9 +55,8 @@ As you may recall, we typically think of a procedure as having three main aspect
 
 Here is the general form of procedure definitions in Scheme, at least as we will use them in this class.
 Scheme does not require the indentation, but it makes it much easier to read and we will require it in this course.
-Conveniently, if you put things on separate lines and hit Ctrl-I, Scheme will reindent correctly.
 
-```drracket
+```racket
 (define <identifier>
   (lambda (<parameters>)
     <expression>))
@@ -81,12 +85,9 @@ Let's look at a simple example, that of squaring a number.
 
 Mentally, most Scheme programmers read this as something like
 
-> `square-number` names a procedure that takes one input, `x`, and computes
-its result by multiplying `x` by itself.
+> `square-number` names a procedure that takes one input, `x`, and computes its result by multiplying `x` by itself.
 
-While you will normally define procedures in the definitions pane, you
-can also create them in the interactions pane.  Let's see how this
-procedure works.
+Let's also look at some examples of using our new procedure.
 
 <pre class="scamper-output output-prog">
 (define square-number
@@ -98,15 +99,16 @@ procedure works.
 square-number
 </pre>
 
-You may note in the last line that when we asked Scamper for the "value" of `square-number`, it told us that it's a procedure named `square-number`.
+You may note in the last line that when we asked Scamper for the "value" of `square-number`, it told us that it's a function.
 Compare that to other values we might define.
 
 <pre class="scamper-output output-prog">
+(import image)
 (define x 5)
 x
 (define phrase "All mimsy were the borogoves")
 phrase
-(define red-square (rectangle 15 15 "solid" "red"))
+(define red-square (rectangle 75 75 "solid" "red"))
 red-square
 (define multiply * )
 multiply
@@ -137,7 +139,7 @@ It does the multiplication to arrive at a result of `16`.
 We might show the steps as follows, with the `-->` symbol representing
 the conversion that happens at each step.
 
-```drracket
+```racket
     (square-number (square-number 2))
 --> (square-number (* 2 2))
 --> (square-number 4)
@@ -157,18 +159,21 @@ If we want a procedure to make squares, we'll just call the `rectangle` procedur
     (rectangle side side "solid" color)))
 </pre>
 
-What happens if we call `color-square` on inputs of `10` and `"red"`?
-Scheme substitutes `10` for `side` and `"red"` for color, giving us `(rectangle 10 10 "solid" "red")`.  
-And, as we saw in the examples above, that's a red square of side-length 10.
+What happens if we call `color-square` on inputs of `50` and `"red"`?
+Scheme substitutes `50` for `side` and `"red"` for color, giving us `(rectangle 50 50 "solid" "red")`.  
+And, as we saw in the examples above, that's a red square of side-length 50.
 
-```
-    (color-square 10 "red")
---> (rectangle 10 10 "solid" "red")
-![A red square of side-length 10.]({{ "/images/procedures-01.png" | relative_url }})
-```
+<pre class="scamper-output output-prog">
+(import image)
 
-Another example
----------------
+(define color-square
+  (lambda (side color)
+    (rectangle side side "solid" color)))
+
+(color-square 50 "red")
+</pre>
+
+## Another example
 
 The square is a relatively simple example.  Consider, for example, the
 following definition of a simple drawing of a house.
@@ -189,15 +194,6 @@ We could copy and paste the code.
 However, if we changed our mind about how to structure our houses, we'd then have to update every copy.
 We'd be better off writing a procedure that takes the size and color
 as parameters.
-
-```drracket
-> (house 50 "black")
-![A simple picture of a house.  The house is black with a red triangular roof, a brown door in the center, and a yellow doorknob.]({{ "/images/procedures-04.png" | relative_url }})
-> (house 30 "blue")
-![A smaller picture of a house, which is blue.]({{ "/images/procedures-05.png" | relative_url }})
-> (beside (house 30 "blue") (house 30 "green") (house 30 "yellow"))
-![Three houses, side by side.  The first is blue.  The second is green.  The third is yellow.]({{ "/images/procedures-06.png" | relative_url }})
-```
 
 How would we write `house`?
 That's a question for another day.
@@ -320,7 +316,7 @@ We'll return to the concepts in a week or two.
 Write a procedure, `(subtract2 val)`, that takes a number as input and
 subtracts 2 from that number.
 
-```drracket
+```racket
 > (subtract2 5)
 3
 > (subtract2 3.25)

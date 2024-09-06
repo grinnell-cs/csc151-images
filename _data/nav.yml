@@ -1,9 +1,9 @@
-#- title: Syllabus
-#  path: /syllabus/
+# - title: Syllabus
+#   path: /syllabus/
+# - title: Staff
+#   path: /staff/
 - title: Schedule
   path: /schedule/
-#- title: LAs
-#  path: /las/
 #- title: MPs
 #  path: /mps/
 #- title: Handouts
