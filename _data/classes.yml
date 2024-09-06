@@ -45,17 +45,17 @@
   lab:
     - page: /labs/procedures.html
 
-# - topic: Computation via expressions
-#   abbrev: expressions
-#   summary: |
-#     We look at the fundamental building block of computation in functional
-#     programming languages, the expression, and build an appropriate model of
-#     how expressions "compute".
-#   reading:
-#     - page: /readings/computation-via-expressions.html
-#   lab:
-#     - page: /labs/mental-models-of-computation.html
-#     - page: /readings/mental-models.html
+- topic: Computation via expressions
+  abbrev: expressions
+  summary: |
+    We look at the fundamental building block of computation in functional
+    programming languages, the expression, and build an appropriate model of
+    how expressions "compute".
+  reading:
+    - page: /readings/computation-via-expressions.html
+  lab:
+    - page: /labs/mental-models-of-computation.html
+
 # # Collapsed the string lab into here... but maybe too much?
 
 # - topic: Expressions and types
