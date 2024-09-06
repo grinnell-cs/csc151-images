@@ -2,10 +2,10 @@
 - instructors:
   title: "Instructor"
   contents:
-      - name: Instructor
-        pronouns: they/them
-        photo: /images/staff/instructor.jpg
-        bio: instructor bio
+      - name: Leah Perlmutter
+        pronouns: she/her
+        photo: /images/staff/leah.jpg
+        bio: This is my second year teaching at Grinnell and my second time teaching CSC 151. I grew up in Ohio, and studied computer ccience at Colby College in Maine. The first time I ever took a CS class was my second semester of college. After graduation, I moved to Seattle, Washington where I worked at software companies Amazon and EnergySavvy for three years, then earned my PhD from the University of Washington. My PhD dissertation is about student sense of belonging in college computer science. When I'm not teaching, I enjoy indoor climbing, gravel biking, and spending time with my husband John and cat Mocha.
 
 - mentors:
   title: "Mentors"
