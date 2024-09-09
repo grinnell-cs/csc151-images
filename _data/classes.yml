@@ -50,11 +50,15 @@
   summary: |
     We look at the fundamental building block of computation in functional
     programming languages, the expression, and build an appropriate model of
-    how expressions "compute".
+    how expressions "compute". 
+
+    NOTE: We forgot to post the second reading, "Mental models of computation," on time. You do not need to include it in your reading response, but we recommend that you read through it carefully on your own as mental models is an essential topic for the course.
   reading:
     - page: /readings/computation-via-expressions.html
+    - page: /readings/mental-models.html
   lab:
     - page: /labs/mental-models-of-computation.html
+
 
 # # Collapsed the string lab into here... but maybe too much?
 
