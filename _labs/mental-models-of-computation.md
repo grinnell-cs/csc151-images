@@ -16,7 +16,7 @@ Other labs, such as this one, you will do some/most of your work on paper and su
 
 Whether electronic or paper, labs are due before the next class.  You can use a token to submit a lab late, but it must be in before before the subsequent class.
 
-While we would prefer that you finish the lab with your partner, if you decide to finish th elab separately, you may do so.  Please make sure to cite your partner when submitting the lab.
+While we would prefer that you finish the lab with your partner, if you decide to finish the lab separately, you may do so.  Please make sure to cite your partner when submitting the lab.
 
 In most labs, we will have distinguished driver/navigator roles where:
 
@@ -30,19 +30,9 @@ Each exercise will designate person A or person B to be the driver.  Person A sh
 
 a. Introduce yourself to your partner.
 
-b. Grab a piece of paper from the back of of the room.  If you don't have your own pen, feel free to grab a pen, too.
+b. Grab a piece of paper from the back of the room.  If you don't have your own pen, feel free to grab a pen, too.
 
-c. One partner should log in to the computer and start DrRacket.
-
-d. Update the CSC151 library using the following steps.
-
-* Go to `File` → `Package Manager...` in the menu.
-* Enter the following URL into the "Package Source" textbox: <https://github.com/grinnell-cs/csc151.git#main>
-* If you see "Install", click that button.
-* If you see "Update", click that button.
-* Wait for the package to install or update.  You can tell that it's done when 
-  the "Close" button becomes available.
-* Click the "Close" button.
+c. One partner should log in to the computer and start Scamper along with these instructions.
 
 ## Exercises
 
@@ -50,7 +40,7 @@ d. Update the CSC151 library using the following steps.
 
 Consider the following Scheme expression.
 
-```
+```racket
 (* (+ 1 2) (- (* 3 4) (* 2 (+ 1 1 1))))
 ```
 
@@ -58,33 +48,12 @@ a. Write down a step-by-step evaluation of this expression (we call
 this a _trace_ or _evaluation trace_).  If you're not sure what
 we're asking for, grab one of the course staff (professor or mentors).
 
-b. The `csc151` library has a simple tool that permits you to trace some
-kinds of code.  (It's new for 2023Fa, so there may be bugs.)  Let's try
-it.  In DrRacket, 
-
-i. Add `(require csc151/trace)` to the definitions pane.
-
-ii. Click "Run"
-
-iii. In the interactions pane, type
-
-```
-> (trace (* (+ 1 2) (- (* 3 4) (* 2 (+ 1 1 1)))))
-```
-
-You should see something like
-
-```
-Use (step) to step through the trace.
-
-    (*
-      (+ 1 2)
-      (- (* 3 4) (* 2 (+ 1 1 1))))
-```
-
-iv. As the instructions suggest, you can use `(step)` to step through the trace.
-Try doing so.
-
+b. Scamper's stepping tool allows you to trace the execution of a
+program using our mental model of computation. Try it out by entering
+the program into Scamper, running the stepping tool (the "path" button
+to the right of the "play" button used to run a program), and comparing
+your results to the stepper.
+ 
 ### Exercise 2: From Math to Scheme (alternating drivers)
 
 **For this exercise, alternate drivers between each expression.**
@@ -95,15 +64,13 @@ Consider the following arithmetic expressions.
 1.  $$3 * (4 - \frac{1}{7})$$. (Driver A)
 2.  $$1 + (-2 + (3 + (4 + -5)))$$. (Driver B)
 
-(Recall that the function `(expt a b)` computes $$a^b$$.)
-
 For each of these arithmetic expressions.
 
 a. Translate the expression into an equivalent Scheme expression.
 
 b. Give the step-by-step evaluation of that Scheme expression to a final value.
 
-c. Check your work by entering in DrRacket.
+c. Check your work with Scamper's stepping tool.
 
 ### Exercise 3: Parts of Expressions
 
@@ -122,7 +89,7 @@ For each of the following expressions, identify:
 + All of the strings of the overall expression.
 
 In addition to this information, try to "read" the expression and in a sentence, describe what you believe the expression evaluates to.
-Check your work in DrRacket.
+Check your work in Scamper:
 
 ```racket
 ; (a) (Driver B)
@@ -137,7 +104,7 @@ Check your work in DrRacket.
 (+ 32 (* 8 60) (* (/ 1 2) 4 (expt 60 2)))
 ```
 
-```
+```racket
 ; (c) (Driver B)
 (odd? (length (string-split "4,9,10,11,2,3" ",")))
 ```
@@ -178,7 +145,7 @@ For example, perhaps we can get the same effect as the code above by _inlining_ 
 ```
 
 {:type="i"}
-1.  Try this example out in DrRacket.
+1.  Try this example out in Scheme.
     What is the output that you receive or what errors are produced if the code is invalid?
 2.  Develop _two_ other examples of trying to use `define` as an expression, similar to the give example case.  (You should write these down on the piece of paper.)
     For inspiration, try replacing a value in an expression you've written already with `(define x <value>)`.
@@ -187,7 +154,7 @@ For example, perhaps we can get the same effect as the code above by _inlining_ 
 
 ### Exercise 5: The syntax of `define` (Driver B)
 
-From the previous exercise , you should have concluded that `define` is _not_ an expression!
+From the previous exercise, you should have concluded that `define` is _not_ an expression!
 We certainly do not seem to be able to put a `define` form anywhere an expression is expected.
 Consequently, we must ask ourselves: what syntactic category is a `define` and how does it relate to expressions?
 
@@ -227,7 +194,7 @@ However, subtleties may arise in this execution model that we should consider.
 For each of the following programs:
 
 * Write down how you expect the following programs evaluate, step-by-step.
-* Test your answers in DrRacket.
+* Test your answers in Scamper.
 * In a sentence or two, describe how the program executes and why the program ultimately behaves in the way that it does.
 
 Note that some of these programs produce errors; that is intentional!

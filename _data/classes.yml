@@ -51,8 +51,8 @@
   reading:
     - page: /readings/computation-via-expressions.html
   lab:
-    # - page: /labs/mental-models-of-computation.html
-    # - page: /readings/mental-models.html
+    - page: /labs/mental-models-of-computation.html
+    - page: /readings/mental-models.html
 
 # # Collapsed the string lab into here... but maybe too much?
 
