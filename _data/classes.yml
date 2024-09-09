@@ -67,24 +67,24 @@
     - page: /readings/strings.html
     # - page: /readings/symbols.html
   lab:
-    - page: /labs/numbers.html
-    - page: /labs/strings.html
+    # - page: /labs/numbers.html
+    # - page: /labs/strings.html
   todo:
     - Consider adding symbols to the lab.
     - Consider which types reading to use (or combine them).
     - Might do some cleanup; we split numbers and strings in 2024Sp
 
-# - topic: Booleans, predicates, and conditionals
-#   abbrev: booleans
-#   summary: |
-#     We consider how one writes procedures that make decisions.
-#   reading:
-#     - page: /readings/booleans.html
-#     - page: /readings/conditionals.html
-#   lab:
-#     - page: /labs/conditionals.html
-#   todo:
-#     - Last semester, we needed two days for this. I'm inserting a pause for breath
+- topic: Booleans, predicates, and conditionals
+  abbrev: booleans
+  summary: |
+    We consider how one writes procedures that make decisions.
+  reading:
+    - page: /readings/booleans.html
+    - page: /readings/conditionals.html
+  lab:
+    # - page: /labs/conditionals.html
+  todo:
+    - Last semester, we needed two days for this. I'm inserting a pause for breath
 
 # - topic: RGB colors
 #   abbrev: rgb-colors

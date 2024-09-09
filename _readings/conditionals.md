@@ -38,7 +38,7 @@ if expression typically has three components:
 It selects one or the other of these expressions, depending on the outcome of the guard.
 The general form is
 
-```drracket
+```racket
 (if <expr1> <expr2> <expr3>)
 ```
 
@@ -46,12 +46,12 @@ Where the guard, if-branch, and else-branch correspond to `<expr1>`, `<expr2>`, 
 
 We will return to the particular details in a moment.
 For now, let us consider the conditional we might write for the procedure to determine whether a location is in the North or South of the US.
-(We would not normally include comments; the code should be self explanatory.)
+(We would not normally include comments; the code should be self-explanatory.)
 
-```drracket
+```racket
 (if (>= latitude 39.72) ; If the latitude is at least 39.72
     "North"             ; Classify it as North
-    "South")            ; Otherwise, classify it as S"South"
+    "South")            ; Otherwise, classify it as "South"
 ```
 
 To turn this expression into a procedure, we need to add the `define`
@@ -106,9 +106,7 @@ If we had, instead evaluated the condition to `#t`, then we would have substitut
 How do conditional work with our mental model of computation?
 At a high-level, a conditional proceeds as follows:
 
-1. We first evaluate the guard to a value.
-   That value must be a "truish" value although for practical purposes, you should only provide guards whose expressions produce genuine booleans.
-   (Recall that a truish value from [the boolean reading]({{ "/readings/boolean.html" | relative_url }}) is any value such that `#f` is considered "false" and anything *not* `#f` is considered "true").
+1. We first evaluate the guard to a value and that value must be of boolean type.
 2. If the guard evaluates to true, then we substitute the if-branch for the overall conditional and continue evaluation.
    Otherwise, the guard must have evaluated to false.
    We then substitute the else-branch for the overall conditional and continue evaluation.
@@ -180,13 +178,13 @@ We can see this works with our mental model of evaluation, *e.g.*, if `n = 0`:
 --> (if #t
         "zero"
         "higher")
-    ; The guard is truish; use the consequent
+    ; The guard is true; use the consequent
 --> "zero"
 ~~~
 
 While nesting `if`-expressions in this matter works, it is far from convenient.
-As you have experienced, writing nested expressions in Racket can be tedious and error-prone because of the need to correctly match and nest parentheses.
-Because of this, Racket provides an alternative to the `if`-expression, the `cond`-expression, that captures this pattern more concisely.
+As you have experienced, writing nested expressions in Scheme can be tedious and error-prone because of the need to correctly match and nest parentheses.
+Because of this, Scheme provides an alternative to the `if`-expression, the `cond`-expression, that captures this pattern more concisely.
 
 ```
 (cond
@@ -202,15 +200,14 @@ Because of this, Racket provides an alternative to the `if`-expression, the `con
 (Note that like `if`, `cond` is also a keyword.
 Recall that keywords differ from procedures in that the order of evaluation of the parameters may differ.)
 
-The first expression within a `cond` clause is a guard, similar to
-the condition in an `if` expression. When the value of such a guard is
-found to be `#f`, the subexpression that follows the guard is ignored
-and Scheme proceeds to the guard at the beginning of the next `cond`
-clause. But when a guard is evaluated and the value turns out to be true,
-or even "truish" (that is, anything other than `#f`), the consequent
-for that guard is evaluated and its value is the value of the whole cond
-expression. Only one guard/consequent clause is used: subsequent `cond`
-clauses are completely ignored.
+The first expression within a `cond` clause is a guard, similar to the
+condition in an `if` expression. When the value of such a guard is found to be
+`#f`, the subexpression that follows the guard is ignored and Scheme proceeds
+to the guard at the beginning of the next `cond` clause. But when a guard is
+evaluated and the value turns out to be true, the consequent for that guard is
+evaluated and its value is the value of the whole cond expression. Only one
+guard/consequent clause is used: subsequent `cond` clauses are completely
+ignored.
 
 In other words, when Scheme encounters a `cond` expression, it works its
 way through the `cond` clauses, evaluating the guard at the beginning of
@@ -231,7 +228,7 @@ following `else` are evaluated, and the value of the last one is the
 value of the whole `cond` expression.
 
 For example, here is a `cond` expression that attempts to figure out
-what the type of `datum` is and gives back a symbol that represents
+what the type of `datum` is and gives back a string that represents
 that type.
 
 ```
@@ -239,124 +236,60 @@ that type.
   (lambda (datum)
     (cond
       [(number? datum) 
-       'number]
+       "number"]
       [(string? datum)
-       'string]
-      [(symbol? datum)
-       'symbol]
+       "string"]
       [else
-       'some-other-type])))
+       "some-other-type"])))
 ```
 
-The expression has four `cond` clauses. In the first, the guard is
-`(number? datum)`.  If `datum` is a number, the expression produces
-the symbol `'number`.  If not, we proceed on to the second `cond` clause.
-Its guard is `(string? datum)`.  If datum is a string, the expression
-produces the symbol `'string` and nothing else.  As you might guess,
-the third `cond` clause checks if `datum` is a symbol, and, if so,
-produces the value `'symbol`.  Finally, if none of those cases hold,
-the `else` clause produces the value `'some-other-type`.
+The expression has four `cond` clauses. In the first, the guard is `(number?
+datum)`.  If `datum` is a number, the expression produces the string
+`"number"`.  If not, we proceed on to the second `cond` clause. Its guard is
+`(string? datum)`.  If datum is a string, the expression produces the string
+`"string"` and nothing else.  Finally, if none of those cases hold, the `else`
+clause produces the value `"some-other-type"`.
 
 In our mental model of computation, `cond` behaves identically to the nested `if`-expression we originally designed.
 We evaluate each of the conditions in top-down order until we arrive at a condition that evaluates to `#t`.
 The entire `cond` then evaluates to the consequent associated with that guard.
-For example, let's call `type-of` on a symbol and see what we get:
+For example, let's call `type-of` on a string and see what we get:
 
 ~~~racket
-    (type-of 'my-symbol)
+    (type-of "my-symbol")
 --> (cond 
-      [(number? 'my-symbol)
-       'number]
-      [(string? 'my-symbol)
-       'string]
-      [(symbol? 'my-symbol)
-       'symbol]
+      [(number? "my-symbol")
+       "number"]
+      [(string? "my-symbol")
+       "string"]
       [else
-       'some-other-type])
+       "some-other-type"]
     ; Evaluate the first guard
 --> (cond 
       [#f
-       'number]
-      [(string? 'my-symbol)
-       'string]
-      [(symbol? 'my-symbol)
-       'symbol]
+       "number"]
+      [(string? "my-symbol")
+       "string"]
       [else
-       'some-other-type])
+       "some-other-type"]
     ; The first guard is false; drop the first clause
 --> (cond 
-      [(string? 'my-symbol)
-       'string]
-      [(symbol? 'my-symbol)
-       'symbol]
+      [(string? "my-symbol")
+       "string"]
       [else
-       'some-other-type])
-    ; Evaluate the first guard
---> (cond 
-      [#f
-       'string]
-      [(symbol? 'my-symbol)
-       'symbol]
-      [else
-       'some-other-type])
-    ; The first guard is false; drop the first clause
---> (cond 
-      [(symbol? 'my-symbol)
-       'symbol]
-      [else
-       'some-other-type])
-    ; Evaluate the first guard
+       "some-other-type"]
+    ; Evaluate the second guard
 --> (cond 
       [#t
-       'symbol]
+       "string"]
       [else
-       'some-other-type])
-    ; The guard holds (is truish); use the consequent
---> 'symbol
+       "some-other-type"]
+    ; The first guard is true; evaluate to its body
+--> "string"
 ~~~
 
 In our mental model, we can imagine "peeling" away the conditionals one at a time in a top-bottom fashion until we arrive at a true one.
 If all of them evaluate to `#f` then the `else` clause fires.
-
-Next consider the following similar expression to the one above.
-
-```
-(define numeric-type
-  (lambda (num)
-    (cond
-      [(real? num)
-       'real]
-      [(exact? num)
-       'exact]
-      [(integer? num)
-       'integer]
-      [else
-       'something-else])))
-```
-
-Suppose the input is `5`, which is an exact integer, and therefore also
-a real.  Which output will we get?  Let's see.
-
-```
-> (numeric-type 5)
-'real
-> (numeric-type 'a)
-. . exact?: contract violation
-  expected: number?
-  given: 'a
-> (numeric-type 3+4.0i)
-'something-else
-```
-
-You'll note that we have to supply a number because `exact?` expects a
-number and we run that guard in the second case.  Can we get a result
-of `integer`?  Probably not, because every integer is real.  Can we get
-a result of `exact`?  Probably.  We just need an exact complex number.
-
-```
-> (numeric-type 3+4i)
-'exact
-```
 
 ### A caution: Watch your parens!
 
@@ -367,7 +300,7 @@ followed by its parameters). Instead, they serve only to group things. In
 this case, the parentheses group the guard and consequents for each
 `cond` clause. The square brackets are just a notational convenience;
 parenthesis will work just as well, and you'll see a lot of Scheme code
-that uses parentheses rather than square brackets. Racket, like most
+that uses parentheses rather than square brackets. Scheme, like most
 modern Scheme implementations, allows both because the square brackets
 add a bit of clarity.
 
@@ -376,12 +309,6 @@ you've used the right number of parentheses and square brackets. Each
 clause has its own open and close square brackets (or open and close
 parenthesis). Typically, the guard has parentheses, unless it's the
 `else` clause. Make sure to include both sets.
-
-Remember that DrRacket's "reindent" feature (<kbd>Ctrl</kbd>-<kbd>I</kbd>)
-helps you see if you've matched your parenthesis correctly.  If the
-indentation looks correct, the parentheses are likely correct.  If
-the indentation does not look correct, you should have a clue about
-missing parentheses.
 
 ## Expressing conditional computation with `and` and `or`
 
@@ -419,7 +346,8 @@ the following `cond` expression.
    #f]
   [(not exp1) 
    #f]
-  ...  [(not expn) #f] [else expn]) ```
+  ...  [(not expn) #f] [else expn]) 
+```
 
 Most beginning programmers find the `cond` versions much more
 understandable, but some advanced Scheme programmers use the `and`
@@ -429,12 +357,12 @@ equivalents for both `or` and `and` are quite repetitious.
 ## Reference
 
 `(if <expr1> <expr2> <expr3>)`{:.signature} *Standard keyword.*
-:   Evaluate *`<expr1>`*. If its value is truish (that is, anything but false), substitute and evaluate *`<expr2>`* and return its value. If the value of the condition is false (\#f), substitute and evaluate *`<expr3>`*.
+:   Evaluate *`<expr1>`*. If its value is true, substitute and evaluate *`<expr2>`* and return its value. If the value of the condition is false (\#f), substitute and evaluate *`<expr3>`*.
 
 `(cond [guard-1 consequents-1] [guard-2 consequents-2] ... [guard-n consequents-n] [else alternative])`{:.signature} *Standard keyword.*
-  : Evaluate each guard in turn until one is truish. It then evaluates the
+  : Evaluate each guard in turn until one is true. It then evaluates the
     corresponding sequence of consequent expressions and returns the value
-    of the last consequent. If none of the guards is truish, evaluates the
+    of the last consequent. If none of the guards is true, evaluates the
     alternative and returns its value.
 
 `(and <expr1> ... <exprk>)`{:.signature} *Standard keyword.*
@@ -442,8 +370,8 @@ equivalents for both `or` and `and` are quite repetitious.
     return false. Otherwise, return the value of the last expression.
 
 `(or <expr1> ... <exprk>)`{:.signature} *Standard keyword.*
-  : Evaluate each expression in turn. If any of those values is truish, 
-    return the first truish value. Otherwise, return false.
+  : Evaluate each expression in turn. If any of those values is true, 
+    return the first true value. Otherwise, return false.
 
 ## Self checks
 
@@ -463,4 +391,3 @@ symbol `neither` otherwise.
 a. Why might you choose `if` rather then `cond`?
 
 b. Why might you choose `cond` rather than `if`?
-
