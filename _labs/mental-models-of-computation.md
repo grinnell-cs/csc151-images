@@ -2,7 +2,6 @@
 title: Mental models of Scheme programs
 summary: |
   In this laboratory, we will further develop our mental model of computation of Scheme programs by considering how `define` statements introduce identifiers into our programs.
-link: false
 ---
 
 In the reading, we developed an initial mental model of computation for Scheme programs by examining how expressions compute.
