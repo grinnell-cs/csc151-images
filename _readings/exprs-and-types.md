@@ -1,33 +1,35 @@
 ---
 title: Expressions and types
 summary: |
-  We have learned that a Racket program consists of a collection of expressions, program fragments that evaluate to values.
-  In this reading, we focus on the different kinds of *primitive values* that we can manipulate in our Racket programs.
+  We have learned that a Scheme program consists of a collection of expressions, program fragments that evaluate to values.
+  In this reading, we focus on the different kinds of *primitive values* that we can manipulate in our Scheme programs.
 preimg: true
 ---
 
-From our discussion of [mental models of computation]({{ "/readings/mental-models.html" | relative_url }}), we know that Racket programs are composed primarily of *expressions*, program fragments that evaluate to values.
+From our discussion of [mental models of computation]({{ "/readings/mental-models.html" | relative_url }}), we know that Scheme programs are composed primarily of *expressions*, program fragments that evaluate to values.
 What are the different kinds of values that expressions can evaluate to?
-In other words, what kinds of *data* can our Racket programs manipulate?
+In other words, what kinds of *data* can our Scheme programs manipulate?
 We've seen some examples already, *e.g.*,
 
 +   Numbers:
-    ~~~racket
-    > (* 3 (- 1 5) (+ 2 4))
-    -72
-    ~~~
+
+    <pre class="scamper-output output-prog">
+    (* 3 (- 1 5) (+ 2 4))
+    <pre>
 
 +   Strings:
-    ~~~racket
-    > (string-append "hello" "world!")
-    "helloworld!"
-    ~~~
+
+    <pre class="scamper-output output-prog">
+    (string-append "hello" "world!")
+    </pre>
 
 +   Images:
-    ~~~racket
-    > (beside (solid-circle 100 "blue") (solid-square 25 "red"))
-    ![A large blue circle to the left of a small red square]({{ "/images/circle-square.png" | relative_url }})
-    ~~~
+
+    <pre class="scamper-output output-prog">
+    (import image)
+
+    (beside (circle 50 "solid" "blue") (square 25 "solid" "red"))
+    </pre>
 
 But are there others?
 What are the different categories of data we might operate over and how are they organized?
@@ -63,27 +65,27 @@ Another term for primitive data are *atomic* data because they cannot be broken 
 
 We intuitively recognize that these values:
 
-~~~racket
-> 3
-> 0
-> -1
-> 47
-~~~
+<pre class="scamper-output">
+3
+0
+-1
+47
+</pre>
 
 Are different from these values:
 
-~~~racket
-> "hello!"
-> "csc151"
-> "world"
-> "47"
-~~~
+<pre class="scamper-output">
+"hello!"
+"csc151"
+"world"
+"47"
+</pre>
 
 The primitive versus compound distinction allows us to categorize groups of data based on their "atomicity."
 However, within these buckets are different categories of data.
 We call such a category a *type*.
 For example, the first set of values are all *numbers* whereas the second set of values are all *strings*.
-We say that each of the values are *instances* of these types, *e.g.*, `3` is an instance of the number type or `3` *has type* number.
+We say that each of the values are *instances* of these types, *e.g.*, `3` is an *instance of* the *number* type or `3` *has type* number.
 
 **Types of expressions**
 
@@ -102,28 +104,18 @@ We know this because `(+ 1 1) --> 2` and `2` is a number.
 When we perform operations over data, *e.g.*, addition through the `+` function, we must provide values of the appropriate type.
 Here, `+` expects to be given at least one argument, all of which must be numbers:
 
-~~~racket
-> +
-#<procedure:+>
-> (+ 1 3 5 7 9)
-25
-> (+ 42)
-42
-~~~
+<pre class="scamper-output output-prog">
+(+ 1 3 5 7 9)
+</pre>
 
 When a function is provided values of an appropriate type, a *type error* occurs when trying to run that function on those values.
 For example:
 
-~~~racket
-> (+ 1 "hello")
-+: contract violation
-  expected: number?
-  given: "hello"
-  argument position: 2nd
-  other arguments...:
-~~~
+<pre class="scamper-output output-prog">
+(+ 1 "hello")
+</pre>
 
-Racket realizes these type errors as *contract violations* when trying to execute the function.
+Scheme realizes these type errors as *contract violations* when trying to execute the function.
 Intuitively, we can think of `+` as specifying the following contract:
 
 > If you provide me with values that are *all* numbers, I will give you back a number that is the sum of those input numbers.
@@ -135,17 +127,18 @@ For function types, the types of the inputs and outputs don't have to be the sam
 
 +   `(string-length "hello world")` evaluates to `11`.
     The type of the input to `string-length` is a string and the output is a number (exact integer).
-+   `(substring "hello world" 2 5)` evaluates to "llo"---`substring` returns the portion of the string starting with the character at the index (inclusive) denoted by the first argument and ends with the character at the index (exclusive) denoted by the last argument. 
++   `(substring "hello world" 2 5)` evaluates to `"llo"`---`substring` returns the portion of the string starting with the character at the index (inclusive) denoted by the first argument and ends with the character at the index (exclusive) denoted by the last argument. 
     `substring` takes a string and two numbers as input and produces a string as output.
     (*Note*: the indices of a string start at 0, so `l` is indeed the character at index 2!)
 
 As you have likely noticed, keeping the type of a function in mind is *really important* for debugging your code.
 For example, consider the following erroneous call to `circle`:
 
-~~~racket
-> (circle "red" "solid" 500)
-.../lang/prim.rkt:24:44: circle: expects a non negative real number as first argument, given "red"
-~~~
+<pre class="scamper-output output-prog">
+(import image)
+
+(circle "red" "solid" 500)
+</pre>
 
 If we recall that the type of circle is:
 
@@ -160,13 +153,12 @@ Whenever you write code, try to keep in mind:
 
 This mentality will bring you one step closer towards truly writing code in an intentional, purposeful fashion and not simply throwing random stuff at the wall and seeing if it works!
 
-## Primitive data in Racket
+## Primitive data in Scheme
 
-The remainder of today's readings are broken up into readings for three of the major primitive types we see in Racket:
+The remainder of today's readings are broken up into readings for two of the major primitive types we see in Scheme:
 
 + [Numbers]({{ "/readings/numbers.html" | relative_url }})
 + [Characters and Strings]({{ "/readings/strings.html" | relative_url }})
-+ [Symbols]({{ "/readings/symbols.html" | relative_url }})
 
 For each of these primitives, we introduce the following concepts:
 
@@ -176,7 +168,7 @@ For each of these primitives, we introduce the following concepts:
 
 You do not have to memorize all of this information in one go as it is a lot of stuff!
 Instead, you should look initially to get the *big picture*: what broad sorts of operations are possible with each type of data and what can I expect to do?
-From there, you can always refer back to these readings and the [Racket referenece](https://docs.racket-lang.org/reference/index.html) to find particular functions to achieve the effect you are looking for.
+From there, you can always refer back to these readings and Scamper reference found in VSCode to find particular functions to achieve the effect you are looking for.
 
 ## Self-checks
 
@@ -184,4 +176,4 @@ The readings on primitive data have a number of self-checks.
 Please complete the following self-checks for your reading question set for this collection:
 
 + (‡) [Numbers]({{ "/readings/numbers.html" | relative_url }}): Check 1 (Exploring exponentiation)
-+ (‡) [Strings and Collating Sequences]({{ "/readings/strings.html" | relative_url }}): Check 2 (Collating sequences)
++ (‡) [Collating Sequences]({{ "/readings/strings.html" | relative_url }}): Check 2 (Collating sequences)

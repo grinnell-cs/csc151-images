@@ -60,39 +60,37 @@
     - page: /labs/mental-models-of-computation.html
 
 
-# # Collapsed the string lab into here... but maybe too much?
+- topic: Expressions and types
+  abbrev: exprs-and-types
+  summary: |
+    We explore many of the basic types of values in Scheme, the
+    capabilities Scheme provides for working with those types, and
+    how one builds more complex expressions.  We also continue 
+    building our mental model.
+  reading:
+    - page: /readings/exprs-and-types.html
+    - page: /readings/numbers.html
+    - page: /readings/strings.html
+    # - page: /readings/symbols.html
+  lab:
+    # - page: /labs/numbers.html
+    # - page: /labs/strings.html
+  todo:
+    - Consider adding symbols to the lab.
+    - Consider which types reading to use (or combine them).
+    - Might do some cleanup; we split numbers and strings in 2024Sp
 
-# - topic: Expressions and types
-#   abbrev: exprs-and-types
-#   summary: |
-#     We explore many of the basic types of values in Scheme, the
-#     capabilities Scheme provides for working with those types, and
-#     how one builds more complex expressions.  We also continue 
-#     building our mental model.
-#   reading:
-#     - page: /readings/exprs-and-types.html
-#     - page: /readings/numbers.html
-#     - page: /readings/strings.html
-#     - page: /readings/symbols.html
-#   lab:
-#     - page: /labs/numbers.html
-#     - page: /labs/strings.html
-#   todo:
-#     - Consider adding symbols to the lab.
-#     - Consider which types reading to use (or combine them).
-#     - Might do some cleanup; we split numbers and strings in 2024Sp
-
-# - topic: Booleans, predicates, and conditionals
-#   abbrev: booleans
-#   summary: |
-#     We consider how one writes procedures that make decisions.
-#   reading:
-#     - page: /readings/booleans.html
-#     - page: /readings/conditionals.html
-#   lab:
-#     - page: /labs/conditionals.html
-#   todo:
-#     - Last semester, we needed two days for this. I'm inserting a pause for breath
+- topic: Booleans, predicates, and conditionals
+  abbrev: booleans
+  summary: |
+    We consider how one writes procedures that make decisions.
+  reading:
+    - page: /readings/booleans.html
+    - page: /readings/conditionals.html
+  lab:
+    # - page: /labs/conditionals.html
+  todo:
+    - Last semester, we needed two days for this. I'm inserting a pause for breath
 
 # - topic: RGB colors
 #   abbrev: rgb-colors

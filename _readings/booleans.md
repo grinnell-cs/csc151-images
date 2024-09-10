@@ -53,9 +53,9 @@ odd. The names of most Scheme predicates end with question marks, and
 Grinnell's computer scientists recommend this useful convention, even
 though it is not required by the rules of the programming language.
 
-Scheme provides a wide variety of basic predicates and the `csc151`
-package adds a few more. We will consider a few right now, but learn
-more as the course progresses.
+Scheme provides a wide variety of basic predicates and Scamper adds a
+few more. We will consider a few right now, but learn more as the course
+progresses.
 
 ### Type predicates
 
@@ -64,42 +64,26 @@ a number of such predicates.
 
 * `number?` tests whether its argument is a number.
 * `integer?` tests whether its argument is an integer.
-* `real?` tests whether its argument is a real number.
 * `string?` tests whether its argument is a string.
 * `procedure?` tests whether its argument is a procedure.
 * `boolean?` tests whether its argument is a Boolean value.
 * `list?` tests whether its argument is a list.
 
-The `csc151` library provides many others. Here are a few.
-
-* `rgb?` tests whether its argument is an RGB color.
-* `color-name?` tests whether its argument is a color name.
-* `color?` tests whether its argument is one of the various representations
-  of colors we use.
-* `image?` tests whether its argument is an image.
-* `polygon?` tests whether an image is a polygon.
-
 ### Equality predicates
 
-Scheme provides a variety of predicates for testing whether two values
+Scamper provides a predicate, `equal?` for testing whether two values
 can be understood to be the same.
 
-* `eq?` tests whether its two arguments are identical, in the very
-  narrow sense of occupying the same storage location in the computer's
-  memory. In practice, this is useful information only if at least one
-  argument is known to be a symbol, a Boolean value, or an integer.
-* `eqv?` tests whether its two arguments "should normally be regarded as 
-  the same object" (as the language standard declares). Note, however,
-  that two lists of values can have the same elements without being
-  "regarded as the same object". Also note that in Scheme's view the
-  number 5, which is "exact", is not necessarily the same object as the
-  number 5.0, which might be an approximation.
-* `equal?` tests whether its two arguments are the same or, in the case 
+* `equal?` tests whether its two arguments are the same or, in the case
   of lists, whether they have the same contents.
-*  `=` tests whether its arguments, which must all be numbers, are 
-  numerically equal; 5 and 5.0 are numerically equal for this purpose.
 
-*For this class, you are not required to understand the difference between the `eq?`, `eqv?`, and `equal?` procedures. In particular, you need not plan to use the `eqv?` procedure. At least for the first half of the semester, you also need not understand the difference between the `eq?` and `equal?` procedures. Feel free to use `equal?` almost exclusively, except when dealing with numbers, in which case you should use `=`.*
+`equal?` works on any pair of values, even though they have different types. Of
+course, we expect that if two values have different types, they should not be
+equal. We commonly compare numbers for equality enough, that it is worthwhile
+to have a version of `equal?` that only works on numbers.
+
+*  `=` tests whether its arguments, which must all be numbers, are
+  numerically equal; 5 and 5.0 are numerically equal for this purpose.
 
 ### Numeric predicates
 
@@ -111,8 +95,6 @@ already explored.
 * `zero?` tests whether its argument, which must be a number, is equal to zero.
 * `positive?` tests whether its argument, which must be a real number, is positive.
 * `negative?` tests whether its argument, which must be a real number, is negative.
-* `exact?` tests whether its argument, which must be a number, is represented exactly.
-* `inexact?` tests whether its argument, which must be a number, is not represented exactly.
 
 ## Comparators
 
@@ -156,22 +138,15 @@ Here are some of the more common ones.
 * `char-ci>=?` tests whether its arguments, which must all be characters,
   are in descending alphabetical order, ignoring case.
 
-```
-> (char<? #\a #\a)
-#f
-> (char<=? #\a #\a)
-#t
-> (char<? #\a #\b)
-#t
-> (char<? #\a #\B)
-#f
-> (char-ci<? #\a #\B)
-#t
-> (char<=? #\a #\A)
-#f
-> (char-ci<=? #\a #\A)
-#t
-```
+<pre class="scamper-output output-prog">
+(char<? #\a #\a)
+(char<=? #\a #\a)
+(char<? #\a #\b)
+(char<? #\a #\b)
+(char-ci<? #\a #\b)
+(char<=? #\a #\a)
+(char-ci<=? #\a #\a)
+</pre>
 
 * `string<?` tests whether its arguments, which must all be strings,
   are in strictly ascending alphabetical order.
@@ -196,11 +171,13 @@ Not all the procedures we use to work with Boolean values are strictly
 predicates. Another useful Boolean procedure is `not`, which takes
 one argument and returns `#t` if the argument is `#f` and `#f` if the
 argument is anything else. For example, one can test whether `picture`
-is not an image with
+is not an image with:
 
-```
-> (not (image? picture))
-```
+<pre class="scamper-output output-prog">
+(import image)
+(define picture (square 100 "solid" "black"))
+(not (image? picture))
+</pre>
 
 If Scheme says that the value of this expression is `#t`, then `picture`
 is not an image.
@@ -213,22 +190,15 @@ false if any value is false, the *or* of a collection of Boolean values
 is true if any of the values is true and false if all the values are
 false. For example,
 
-```racket
-> (and #t #t #t)
-#t
-> (and (< 1 2) (< 2 3))
-#t
-> (and (odd? 1) (odd? 3) (odd? 5) (odd? 6))
-#f
-> (and)
-#t
-> (or (odd? 1) (odd? 3) (odd? 5) (odd? 6))
-#t
-> (or (even? 1) (even? 3) (even? 4) (even? 5))
-#t
-> (or)
-#f
-```
+<pre class="scamper-output output-prog">
+(and #t #t #t)
+(and (< 1 2) (< 2 3))
+(and (odd? 1) (odd? 3) (odd? 5) (odd? 6))
+(and)
+(or (odd? 1) (odd? 3) (odd? 5) (odd? 6))
+(or (even? 1) (even? 3) (even? 4) (even? 5))
+(or)
+</pre>
 
 ## Detour: Keywords vs. procedures
 
@@ -244,11 +214,11 @@ If `and` and `or` were procedures, we could not guarantee their control
 behavior. We'd also get some ugly errors. For example, consider the
 extended version of the `even?` predicate below:
 
-```
+<pre class="scamper-output output-prog">
 (define new-even?
   (lambda (val)
     (and (integer? val) (even? val))))
-```
+</pre>
 
 Suppose `new-even?` is called with 2.3 as a parameter. In the keyword
 implementation of `and`, the first test, `(integer? ...)`{:.signature},
@@ -256,47 +226,22 @@ fails, and `new-even?` returns false. If `and` were a procedure, we
 would still evaluate the `(even? ...)`{:.signature}, and that test would
 generate an error, since `even?` can only be called on integers.
 
-## Another detour: Separating the world into false and "truish" (everything not false)
-
-Although many computer scientists, philosophers, and mathematicians prefer
-the purity of dividing the world into "false" and "true", Scheme supports
-a somewhat more general separation. In Scheme, anything that is not false
-is considered "truish". Hence, you can use expressions that return values
-other than Boolean values wherever a truth value is expected. For example,
-
-```
-> (and #t 1)
-1
-> (or 3 #t #t)
-3
-> (not 1)
-#f
-> (not (not 1))
-#t
-```
-
 ## Writing our own predicates and comparators
 
 We can, of course, write our own predicates.  For example, here is a
 predicate that determines whether its input, a real number, is between
 0 and 100, inclusive.
 
-```
+<pre class="scamper-output output-prog">
 (define valid-grade?
   (lambda (val)
     (<= 0 val 100)))
-```
-
-Note that we might might also write
-
-```
-(define valid-grade? (cut (<= 0 <> 100)))
-```
+</pre>
 
 We can also write our own comparators.  For example, here's a somewhat
 pointless comparator that orders words based on their second letter.
 
-```
+<pre class="scamper-output output-prog">
 ;;; (second-letter<? str1 str2) -> boolean?
 ;;;   str1 : string?
 ;;;   str2 : string?
@@ -306,45 +251,11 @@ pointless comparator that orders words based on their second letter.
   (lambda (str1 str2)
     (char-ci<? (string-ref str1 1) 
                (string-ref str2 1))))
-```
-
-<!--
-Let's see how sorting with this comparator differs from sorting with
-a more traditional comparator.
-
-```
-> (define start-of-jabberwocky
-    (list "twas" "brillig" "and" "the" "slithy" "toves" "did" "gyre" "and" 
-          "gimble" "in" "the" "wabe" "all" "mimsy" "were" "the" 
-          "borogoves" "and" "the" "mome" "raths" "outgrabe"))
-> (sort start-of-jabberwocky string<?)
-'("all"
-  "and"
-  "and"
-  "and"
-  "borogoves"
-  "brillig"
-  "did"
-  "gimble"
-  ...
-  "twas"
-  "wabe"
-  "were")
-> (sort start-of-jabberwocky second-letter<?)
-'("wabe"
-  "raths"
-  "were"
-  "the"
-  ...
-  "outgrabe"
-  "twas"
-  "gyre")
-```
--->
+</pre>
 
 ## Mental models: Tracing `and` and `or`
 
-As you may recall, it is useful to have a mental model for how things work in Racket.  
+As you may recall, it is useful to have a mental model for how things work in Scheme.  
 Our traditional model is that we evaluate the parameters to a procedure and then apply the procedure.  
 However, `and` and `or` behave a bit differently.  
 
@@ -355,7 +266,7 @@ Note that we do *not* necessarily evaluate all of its parameters.
 * Rule A2: If `and` has exactly one parameter, evaluate that parameter and replace the and expression by the value of the parameter.
 * Rule A3: If `and` has more than one parameter, evaluate the first parameter.
     * Rule A3a: If the evaluated parameter is false, replace the whole and expression by false (`#f`).
-    * Rule A3b: If the evaluated parameter is truish, remove the first parameter to `and` and continue.
+    * Rule A3b: If the evaluated parameter is true, remove the first parameter to `and` and continue.
 
 Let's look at a simple but silly example.
 
@@ -415,139 +326,26 @@ procedure, such as `list`.
 --> BOOM!  Can't divide 4 by zero.
 ```
 
-Let's see the difference in DrRacket.
+Let's see the difference in Scamper.
 
-```
-> (and (not (zero? 2)) (/ 4 2))
-2
-> (list (not (zero? 2)) (/ 4 2))
-'(#t 2)
-> (and (not (zero? 0)) (/ 4 0))
-#f
-> (list (not (zero? 0)) (/ 4 0))
-. . /: division by zero
-```
+<div class="scamper-output output-prog">
+(and (not (zero? 2)) (/ 4 2))
+(list (not (zero? 2)) (/ 4 2))
+(and (not (zero? 0)) (/ 4 0))
+(list (not (zero? 0)) (/ 4 0))
+</div>
 
-We'll find other uses for this behavior.
+Why do we receive a `BOOM!` in Scamper?
+This is because, like the not-a-number value `NaN` discussed in the [numbers](./numbers.html) reading, dividing by zero results in the `Infinity` value.
+Effectively, this might as well be an error because we can't do anything meaningful with `Infinity`!
 
-What about `or`?  Here are the rules for or expressions.
+Now, what about `or`?  Here are the rules for or expressions.
 
 * Rule O1: If `or` has no parameters, replace `(or)` with `#f`
 * Rule O2: If `or` has exactly one parameter, evaluate that parameter and replace the and expression by the value of the parameter.
 * Rule O3: If `or` has more than one parameter, evaluate the first parameter.
     * Rule O3a: If the evaluated parameter is false, remove the first parameter and continue.
-    * Rule O3b: If the evaluated parameter is truish, replace the or expression by the first parameter.
-
-## `and` and `or` as control structures
-
-We've seen how `and` and `or` can be used to combine tests. But `and`
-and `or` can be used for so much more. In fact, they can be used as
-control structures.
-
-In an `and`-expression, the expressions that follow the keyword `and`
-are evaluated in succession until one is found to have the value `#f`
-(in which case the rest of the expressions are skipped and the `#f`
-becomes the value of the entire `and`-expression). If, after evaluating
-all of the expressions, none is found to be `#f` then the value of the
-last expression becomes the value of the entire `and` expression. This
-evaluation strategy gives the programmer a way to combine several tests
-into one that will succeed only if all of its parts succeed.
-
-This strategy also gives the programmer a way to avoid meaningless
-tests. For example, we should not make the comparison `(<
-...)`{:.signature} unless we are sure that both `a` and `b` are numbers.
-
-In an `or` expression, the expressions that follow the keyword `or`
-are evaluated in succession until one is found to have a value other
-than`#f`, in which case the rest of the expressions are skipped and
-this value becomes the value of the entire `or`-expression. If all of
-the expressions have been evaluated and all have the value `#f`, then
-the value of the `or`-expression is `#f`. This gives the programmer a
-way to combine several tests into one that will succeed if *any* of its
-parts succeeds.
-
-In these cases, `and` returns the last parameter it encounters (or false,
-if it encounters a false value) while `or` returns the first non-false
-value it encounters. For example,
-
-```
-> (and 1 2 3)
-3
-> (define x 'two)
-> (define y 3)
-> (+ x y)
-+: expects type <number> as 1st argument, given: two; other arguments were: 3
-> (and (number? x) (number? y) (+ x y))
-#f
-> (define x 2)
-> (and (number? x) (number? y) (+ x y))
-5
-> (or 1 2 3)
-1
-> (or 1 #f 3)
-1
-> (or #f 2 3)
-2
-> (or #f #f 3)
-3
-```
-
-We can use the ideas above to make an addition procedure that returns
-`#f` if either parameter is not a number. We might say that such a
-procedure is a bit safer than the normal addition procedure.
-
-```
-;;; (safe-add x y) -> number?
-;;;   x : number? [verified]
-;;;   y : number? [verified]
-;;; Add x and y, returning #f is either is not a number.
-(define safe-add
-  (lambda (x y)
-    (and (number? x) (number? y) (+ x y))))
-```
-
-Let's compare this version to the standard addition procedure, `+`.
-
-```
-> (+ 2 3)
-5
-> (safe-add 2 3)
-5
-> (+ 2 'three)
-Error: +: argument 2 must be: number
-> (safe-add 2 'three)
-#f
-```
-
-If we'd prefer to return 0, rather than `#f`, we could add an `or` clause.
-
-```
-;;; (safer-add x y) -> number?
-;;;   x : number? [verified]
-;;;   y : number? [verified]
-;;; Add x and y, returning 0 if either is not a number.
-(define safer-add
-  (lambda (x y)
-    (or (and (number? x) (number? y) (+ x y))
-        0)))
-```
-
-In most cases, `safer-add` acts much like `safe-add`. However, when we use the result of the two procedures as an argument to another procedure, we get a little bit further through the calculation.
-
-```
-> (* 4 (+ 2 3))
-20
-> (* 4 (safer-add 2 3))
-20
-> (* 4 (+ 2 'three))
-Error: +: argument 2 must be: number
-> (* 4 (safe-add 2 'three))
-Error: *: argument 2 must be: number
-> (* 4 (safer-add 2 'three))
-0
-```
-
-Different situations will call for different choices between those strategies.
+    * Rule O3b: If the evaluated parameter is true, replace the or expression by the first parameter.
 
 ## Self checks
 
