@@ -4,6 +4,7 @@ summary: |
   We continue to explore some of the basic types that many 
   implementations of Scheme, including Racket, support.  Today,
   we focus on characters and strings.
+link: false
 ---
 
 ## Useful functions and notation

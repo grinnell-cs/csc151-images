@@ -2,6 +2,7 @@
 title: Numbers
 summary: |
   We explore the numeric types that Racket supports.
+link: false
 ---
 
 ## Useful functions and notation

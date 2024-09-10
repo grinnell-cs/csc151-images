@@ -9,6 +9,7 @@ notes: |
   This lab is long.  It requires two days of class.  It requires two
   days of classes even after Sam shortening.
   We might want to add a tracing problem that doesn't use #t and #f.
+link: false
 ---
 We may have reached the point in which you need fewer instructions.  So
 let's give it a try.
