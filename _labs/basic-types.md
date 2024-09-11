@@ -2,18 +2,14 @@
 title: Basic types
 summary: |
   We explore some of the basic types that many implementations
-  of Scheme, including Racket, support.  These include a variety 
+  of Scheme, including Scheme, support.  These include a variety 
   of numeric types, characters, strings, and symbols. 
-notes: |
-  In fifty minutes, most students only got through the numeric
-  problems.  This may need to be split.  (I allowed students
-  to stop early.)
 ---
 
 ## Useful functions and notation
 
-In the reading, we introduced a score of new functions for processing the basic types of Racket.
-Think of them as an *essential vocabulary* for expressing basic computation in Racket, similar to the new vocabulary you might encounter when learning a foreign language.
+In the reading, we introduced a score of new functions for processing the basic types of Scheme.
+Think of them as an *essential vocabulary* for expressing basic computation in Scheme, similar to the new vocabulary you might encounter when learning a foreign language.
 However, unlike a foreign language, there isn't an expectation that you get a deck of flash cards and memorize these function names.
 Instead, the expectation is that you will eventually memorize these functions by *consistently building programs* that use these functions, *i.e.*, practice.
 
@@ -26,11 +22,9 @@ Feel free to note the location of these sections and use them to quickly look up
 Basic numeric operations: `+`, `-`, `*`, `/`, `quotient`, `remainder`,
 `expt`.
 
-Numeric conversion: `exact->inexact`, `inexact->exact`, `floor`,
-`ceiling`, `round`, `truncate`.
+Numeric conversion: `floor`, `ceiling`, `round`, `truncate`.
 
-Numeric type predicates: `exact?`, `inexact?`, `integer?`, `real?`,
-`rational?`, `complex?`
+Numeric type predicates: `number?`, `integer?`.
 
 ### Characters
 
@@ -58,41 +52,22 @@ String constructors: `make-string`, `string`, `string-append`
 
 String extractors: `string-ref`, `substring`
 
-String conversion: `number->string`, `string->number`, `symbol->string`,
-`string->number`
+String conversion: `number->string`, `string->number`, `string->number`
 
 String analysis: `string-length`
 
 String comparison: `string<?`, `string<=?`, `string=?`, `string>=?`, `string>?`, `string-ci<?`, `string-ci<=?`, `string-ci=?`, `string-ci>=?`, `string-ci>?`
 
-### Lists
-
-Constant notation: `'(val val val)`
-
-List operations: `take`, `drop`, `list-ref`, `length`
-
 ## The lab
 
-{% if site.online %}
-Your team should decide who will take the A-side and B-sides of the lab.
-Each member should download the appropriate code:
-
-+ [basic-types-a.rkt]({{ "/code/labs/basic-types-a.rkt" | relative_url }})
-+ [basic-types-b.rkt]({{ "/code/labs/basic-types-b.rkt" | relative_url }})
-
-**After you've downloaded the code, follow the instructions in your respective files!**
-
-When you are done, combine the files, rename the result to `basic-types.rkt`, and upload the completed lab to Gradescope.
-{% else %}
 The first person at the computer is the A-side.  The second person is the B-side.
 Download the appropriate code.
 
-+ [basic-types.rkt]({{ "/code/labs/basic-types.rkt" | relative_url }})
++ [basic-types.scm]({{ "/code/labs/basic-types.scm" | relative_url }})
 
 **After you've downloaded the code, follow the instructions in the file.**
 
-When you are done, upload your `basic-types.rkt` file to Gradescope.
-{% endif %}
+When you are done, upload your `basic-types.scm` file to Gradescope.
 
 ## Notes
 
@@ -134,14 +109,6 @@ So, how do `truncate` and `floor` differ? As the previous paragraph implies, *th
 Why does Scheme include so many ways to convert reals to integers? Because experience suggests that if you leave any of them out, some programmer will need that precise conversion.
 
 [Return to the problem](#anchor-real2int)
-
-### Notes on Exploring rational numbers {#anchor-rationals-notes}
-
-The underlying Scheme implementation seems to represent the fractional part of many numbers as the ratio of some number and 4503599627370496, which happens to be 2<sup>52</sup>. (Most computers like powers of 2.) By using a large denominator, it helps ensure that representations are as accurate as possible.
-
-If you are energetic, you might scour the Web to find out why they use an exponent of 52.
-
-[Return to the problem](#anchor-rationals).
 
 ## Acknowledgements
 

@@ -67,8 +67,8 @@
     - page: /readings/strings.html
     # - page: /readings/symbols.html
   lab:
-    # - page: /labs/numbers.html
-    # - page: /labs/strings.html
+    - page: /labs/basic-types.html
+
   todo:
     - Consider adding symbols to the lab.
     - Consider which types reading to use (or combine them).
