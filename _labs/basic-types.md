@@ -3,7 +3,7 @@ title: Basic types
 summary: |
   We explore some of the basic types that many implementations
   of Scheme, including Scheme, support.  These include a variety 
-  of numeric types, characters, strings, and symbols. 
+  of numeric types, characters, and strings.
 ---
 
 ## Useful functions and notation
