@@ -47,6 +47,7 @@
 
 - topic: Computation via expressions
   abbrev: expressions
+  slides_link: https://docs.google.com/presentation/d/1MH0d29iokwQ5RIGNT2oqT5pGiIkXYs00JWCdZZg7-s8/edit#slide=id.g2666291cd13_0_234
   summary: |
     We look at the fundamental building block of computation in functional
     programming languages, the expression, and build an appropriate model of
@@ -62,6 +63,7 @@
 
 - topic: Expressions and types
   abbrev: exprs-and-types
+  slides_link: https://docs.google.com/presentation/d/1rm4fCfh6RlVIq38ky5MUgvXu-_DUriAhZUudAgV5nVk/edit#slide=id.g2666291cd13_0_234
   summary: |
     We explore many of the basic types of values in Scheme, the
     capabilities Scheme provides for working with those types, and
