@@ -18,15 +18,13 @@
   due:
     - page: /mps/mp01.html
 
-- date: 2024-02-02
+- date: 2024-09-11
   due:
-    - MP 1 Post-reflection
-    - MP 2 Pre-reflection
-    - Quiz 2
+    - Post-reflection for Take-home assessment 1
 
-- date: 2024-02-07
+- date: 2024-09-13
   due:
-    - page: /mps/mp02.html
+    - Quiz 1
 
 - date: 2024-02-09
   due:
