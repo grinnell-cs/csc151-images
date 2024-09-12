@@ -82,7 +82,7 @@
     - page: /readings/booleans.html
     - page: /readings/conditionals.html
   lab:
-    # - page: /labs/conditionals.html
+    - page: /labs/conditionals.html
   todo:
     - Last semester, we needed two days for this. I'm inserting a pause for breath
 
