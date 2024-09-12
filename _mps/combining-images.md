@@ -1,5 +1,5 @@
 ---
-title: Mini-Project 5
+title: Take-home assessment 5
 subtitle: Combining images
 summary: |
   In this assignment, we will consider ways to build more complex
@@ -10,7 +10,7 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
-link: true
+link: false
 preimg: true
 ---
 Please start with the [template code](../code/mps/combining-images.rkt).

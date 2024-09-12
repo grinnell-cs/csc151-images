@@ -1,5 +1,5 @@
 ---
-title: Mini-Project 4
+title: Take-home assessment 4
 subtitle: Exploring lists of shapes (and lists of lists of shapes)
 summary: |
   As the subtitle suggests, in this assignment we will consider
@@ -10,7 +10,7 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
-link: true
+link: false
 preimg: true
 ---
 Please start with the [template code](../code/mps/shape-lists.rkt).

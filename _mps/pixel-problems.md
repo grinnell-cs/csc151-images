@@ -1,5 +1,5 @@
 ---
-title: Mini-Project 7
+title: Take-home assessment 7
 subtitle: Pixel problems
 summary: |
   We consider a variety of mechanisms for manipulating images according
@@ -8,7 +8,7 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
-link: true
+link: false
 preimg: true
 mathjax: true
 ---

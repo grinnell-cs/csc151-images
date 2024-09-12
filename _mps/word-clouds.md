@@ -1,5 +1,5 @@
 ---
-title: Mini-Project 8
+title: Take-home assessment 8
 subtitle: Word clouds and other analysis tools
 summary: |
   In this project, you will build "word clouds" of the most common
@@ -9,7 +9,7 @@ collaboration: |
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
 preimg: true
-link: true
+link: false
 notes: |  
   Consider ways to autograde.
 ---
