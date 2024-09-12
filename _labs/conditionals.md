@@ -2,8 +2,8 @@
 title: Booleans values, predicates, and conditionals
 summary: |
   In this lab, you will have the opportunity to explore the use of
-  predicates as well as Scheme's three primary conditional control
-  operations, `if`, `when`, and `cond`.
+  predicates as well as Scheme's primary conditional control
+  operations, `if` and `cond`.
 preimg: true
 notes: |
   This lab is long.  It probably requires two days of class.  Perhaps
