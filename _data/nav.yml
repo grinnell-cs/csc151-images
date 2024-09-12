@@ -4,6 +4,8 @@
 #   path: /staff/
 - title: Schedule
   path: /schedule/
+- title: Resources
+  path: /resources/
 - title: Teams
   url: https://teams.microsoft.com/l/team/19%3ANorXK2CA3eLKNzRZv-Jw3ZdUaO1RJHoK0iputdVVWp81%40thread.tacv2/conversations?groupId=67744b06-2537-47c0-b9b0-dd733faf9db1&tenantId=524f9e3e-faca-4f64-b3ec-adb2baee8807
 - title: Gradescope
