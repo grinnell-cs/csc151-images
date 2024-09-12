@@ -372,7 +372,9 @@ When coming back to class, wear a mask until there is no more than a usual conce
 
 You are responsible for checking the course website to see what is assigned while you are out and for completing all assigned work.
 
-The late day and redo policies are designed to offer flexibility so that late work resulting from one or two minor to moderate illnesses or unforseen circumstances will not lower your grade in the class. If you find yourself needing to take lots of time away, please talk to your instructor about getting additional late days or increasing the number of late days you can spend on a given assignment.
+For any labs you missed, you must complete the lab on your own and submit it on gradescope by the lab deadline (see above section about deadlines). If you do not finish the lab after 90 minutes of focused work, you may make a comment saying that is how far you got in 90 minutes and submit what you have completed for credit.
+
+The late day and redo policies are designed to offer flexibility so that late work resulting from one or two minor to moderate illnesses or unforseen circumstances will not lower your grade in the class. If you find yourself needing to take lots of time away, please talk to your instructor (before the deadline of the work in question) about getting additional late days or increasing the number of late days you can spend on a given assignment.
 
 ## Access Needs
 
