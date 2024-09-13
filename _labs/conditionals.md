@@ -9,7 +9,6 @@ notes: |
   This lab is long.  It probably requires two days of class.  Perhaps
     we should leave the ZoB stuff for another day.
   We might want to add a tracing problem that doesn't use #t and #f.
-link: false
 ---
 We may have reached the point in which you need fewer instructions.  So
 let's give it a try.
