@@ -94,6 +94,17 @@
   todo:
     - Last semester, we needed two days for this. I'm inserting a pause for breath
 
+- topic: Software engineering fundamentals
+  abbrev: software-engineering
+  summary: |
+    We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
+  reading:
+    - page: /readings/documenting-your-code.html
+    - page: /readings/unit-testing.html
+    - page: /readings/hypothesis-driven-debugging.html
+  lab:
+    - page: /labs/documentation-and-testing.html
+
 # - topic: RGB colors
 #   abbrev: rgb-colors
 #   summary: |
@@ -142,17 +153,6 @@
 #     - page: /readings/local-bindings.html
 #   lab:
 #     - page: /labs/local-bindings.html
-
-# - topic: Software engineering fundamentals
-#   abbrev: software-engineering
-#   summary: |
-#     We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
-#   reading:
-#     - page: /readings/documenting-your-code.html
-#     - page: /readings/rackunit.html
-#     - page: /readings/hypothesis-driven-debugging.html
-#   lab:
-#     - page: /labs/rackunit.html
 
 # - topic: "Exam #1"
 #   abbrev: exam-1
