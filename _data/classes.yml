@@ -84,6 +84,7 @@
 
 - topic: Booleans, predicates, and conditionals
   abbrev: booleans
+  slides_link: https://docs.google.com/presentation/d/1Q7lZqOF0Cy-PUduYR51wgE4WofYSAg7WFcYjnH9W6Oo/edit#slide=id.g2666291cd13_0_234
   summary: |
     We consider how one writes procedures that make decisions.
   reading:
