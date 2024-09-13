@@ -16,7 +16,7 @@ Even if our code's *intent is correct, we will have difficulty determining that 
 This is why we emphasize the idea of *making our code mirror our intent* in this course.
 We heavily prefer realizing our solution to a problem directly as language constructs in our code to make it painfully evident that our translation from algorithm-to-program is correct.
 
-While functional languages like Racket make such translation easier, it is not always obvious from our code what our intent is, even with good structure and names.
+While functional languages like Scheme make such translation easier, it is not always obvious from our code what our intent is, even with good structure and names.
 A great example of this is the humble `substring` function from the standard library:
 
 ~~~racket
@@ -40,15 +40,15 @@ This implies that the indices are 0-based (since we specified the fourth charact
 Having to execute our function to figure out what it does is not ideal.
 What if the function we're considering takes a long time to execute?
 What if the function is deeply nested inside of our system and, thus, difficult to execute on its own?
-What if the function's behavior is so convoluted we don't even what we could pass to the function to experiment?
+What if the function's behavior is so convoluted we don't even know what we could pass to the function to experiment?
 
 Perhaps we could look at the source code of the function and gain some insights.
 In some cases, this will work.
 However, we do not always have the source code available to us.
-For example, there is not an easy way to jump from Racket's API documentation to the source code it is documenting.
+For example, there is not an easy way to jump from Scamper's API documentation to the source code it is documenting.
 Additionally, some functions, even when well-written, do not convey all these details.
 For example, here is the best implementation of `substring` I can come up with.
-(*Note*: We would have shown you the actual implementation of `substring` for Racket, but it is in the C programming language!)
+(*Note*: We would have shown you the actual implementation of `substring` for Scamper, but it is in another programming language!)
 
 ~~~racket
 (define substring
@@ -84,18 +84,9 @@ Practically speaking, they form the bulk of the code documentation that we write
 ## The Anatomy of a Function Documentation Comment
 
 Many programming languages provide special support for documenting functions, including a special syntax for specifying parameters and what the function returns.
-These languages then provide tools that extract these doc comments and create *API documentation*, *e.g.*, the reference pages you've read for Racket's API:
-
-+ [Pairs and Lists (The Racket Reference)](https://docs.racket-lang.org/reference/pairs.html)
-
+These languages then provide tools that extract these doc comments and create *API documentation*, *e.g.*, the reference pages for Scamper's API found in "Docs" link found in the Scamper menu bar are mined directly from the Scamper source code!
 Even though these doc comments' practical effect is their extraction from code, it is useful to keep them in code so that we are reminded to update the documentation whenever we change the behavior of the function.
-
-Racket's system for writing documentation is called [Scribble](https://docs.racket-lang.org/scribble/index.html).
-Scribble showcases one of Racket's powers: because of Racket's expressiveness, Scribble is a library or *domain-specific language* constructed in Racket.
-In other words, you can write Racket documentation with Racket code!
-
-Unfortunately, this has the side effect of being somewhat complicated to use as it is meant for documenting *modules* of code in the context of large programs rather than the smaller single-file programs we write in this course.
-So rather than introducing this library in all of its glory, we instead present a simplified set of *conventions* for writing doc comments in the style of Scribble's output.
+Scamper does not yet have this functionality, so we instead present a simplified set of *conventions* for writing doc comments in the output of Scamper's documentation.
 
 The doc comment for `substring` can be broken up into three parts.
 Note that throughout, we use triple semicolons (`;;;`) to encase our doc comments to make them stand out from other comments we might write.
@@ -145,10 +136,9 @@ We could consider introducing a *more specific* predicate and use that instead:
 However, this quickly leads to a rabbit hole of making up tons of new predicates all over the place!
 Rather than this, we'll favor using the type predicates defined in the standard library for our basic types:
 
-+   `number?` and its associated predicates for [different types of numbers](https://docs.racket-lang.org/reference/number-types.html).
++   `number?` and `integer?`
 +   `string?`
 +   `boolean?`
-+   `symbol?`
 +   `list?`
 +   `procedure?`
 
@@ -166,7 +156,7 @@ To make this explicit, we can describe this in the parameters list:
 ~~~
 
 Here, the constraint can be expressed as inequalities on `start` and `end`, namely that `0 ≤ start ≤ (length str)` (and similarly for `end`).
-In the comment, we express this with a equivalent Racket expression (`<= 0 start (length str)`).
+In the comment, we express this with a equivalent Scheme expression (`<= 0 start (length str)`).
 But writing this in traditional mathematical notation is also fine:
 
 ~~~racket
@@ -182,7 +172,7 @@ It is also reasonable to push this information into the description, *e.g.*,
 ;;; 0 <= start <= (length str) and that 0 <= end <= (length str).
 ~~~
 
-As a rule of thumb, if a constraint only involves one parameter and it is short to express (either with a Racket expression, mathematical formula, or phrase), place it with the parameter list.
+As a rule of thumb, if a constraint only involves one parameter and it is short to express (either with a Scheme expression, mathematical formula, or phrase), place it with the parameter list.
 If the constraint involves the interaction of multiple parameters or is complicated, place it in the description where there is more prose.
 
 However, it is important that these preconditions are captured *somewhere* in our doc comment rather than worrying about where.
