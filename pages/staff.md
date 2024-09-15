@@ -2,7 +2,7 @@
 title: Staff
 permalink: /staff
 ---
-    
+<!-- see also: _data/staff.yml and images/staff/ -->
     
 ## Staff
 
