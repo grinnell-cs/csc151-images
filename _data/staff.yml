@@ -29,8 +29,7 @@
   
 - tutors:
   title: "Tutors"
-  description: We have 9 amazing evening tutors in the department this semester. During their evening lab hours, they are eager to help you with your learning and your homework. They also help students taking CSC 161 and CSC 207.
-
+  description: We have 9 amazing evening tutors in the department this semester. During their evening lab hours, they are eager to help you with your learning and your homework. They also help students taking CSC 161 and CSC 207. Some of your tutors opted to introduce themselves here.
   contents: 
       - name: Tang Yixuan (Tiffany)
         pronouns: she/her/hers
@@ -40,3 +39,7 @@
         pronouns: She/her
         photo: /images/staff/ishita.jpg
         bio: Hi everyone!! My name is Ishita. I am a fourth year Computer Science major with a concentration in Statistics from Kolkata, India. I am excited to meet you all for evening tutor sessions, you can find me on Mondays and Tuesdays (7-8:30 pm) in Noyce 3813. Feel free to drop by to say hi, ask questions regarding assignments, or Grinnell in general. I am the treasurer for the Women and Gender Minorities in Computing student organisation and we will be hosting fun events! Get in touch if you want to join the organisation. I have also done off-campus study in London and can answer questions related to those as well! Looking forward to meeting you all!
+      - name: Avaash Bhattarai
+        pronouns: he/him
+        photo: /images/staff/avaash.jpg
+        bio: Hey everyone! I am Avaash, a third year CS and Math major, and I am so excited to tutor for your CS class this semester. I fell in love with functional programming when I took 151, and I hope to help you see the beauty in it too! I will be in 3813 Tuesdays and Thursdays 7-8:30pm to help with anything as you work through the material. Please don’t hesitate to stop by!!
