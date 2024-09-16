@@ -156,50 +156,7 @@
 ; we may not have introduced or used yet; that is fine! The purpose of this
 ; exercise is to get us to think about the _contract_ of these functions rather
 ; than how they work precisely.
-
-;;; TODO: add a doc comment for func-1 here
-(define func-1
-  (lambda (n r e g b)
-    (if (zero? n)
-        (triangle 0 "outline" "black")
-        (overlay (triangle (* n r) "outline" (color e g b 1))
-                 (func-1 (- n 1) r e g b)))))
-
-; TODO: add func-1 test cases here:
-(description "func-1 tests")
-
-;;; TODO: add a doc comment for func-2 here
-(define func-2
-  (lambda (s n)
-    (string-append (substring s n (string-length s))
-                   (substring s 0 n))))
-
-; TODO: add func-2 test cases here:
-(description "func-2 tests")
-
-;;; TODO: add a doc comment for func-3 here
-(define func-3
-  (lambda (s k)
-    (string-map (lambda (c)
-                  (if (char-numeric? c) k c))
-                s)))
-
-; TODO: add func-3 test cases here:
-(description "func-3 tests")
-
-;;; TODO: add a doc comment for func-4 here
-(define func-4
-  (lambda (l)
-    (if (< (length l) 2)
-        l
-        (let ([h1 (car l)]
-              [h2 (car (cdr l))]
-              [t (cdr (cdr l))])
-          (cons h2 (cons h1 (func-4 t)))))))
-
-; TODO: add func-4 test cases here:
-(description "func-4 tests")
-
+;
 ; For each function:
 ;
 ; (a) Explore how the function works by writing down 3--5 test cases
@@ -211,6 +168,56 @@
 ;     signature describing any preconditions on the function's parameters
 ;     (e.g., their types) as well as postconditions on the output of
 ;     the function.
+
+;;; TODO: add a doc comment for func-1 here
+(define func-1
+  (lambda (s n)
+    (string-append (substring s n (string-length s))
+                   (substring s 0 n))))
+
+; TODO: add func-1 test cases here:
+(description "func-2 tests")
+
+;;; TODO: add a doc comment for func-2 here
+(define func-2
+  (lambda (s k)
+    (string-map (lambda (c)
+                  (if (char-numeric? c) k c))
+                s)))
+
+; TODO: add func-2 test cases here:
+(description "func-2 tests")
+
+;;; TODO: add a doc comment for func-3 here
+(define func-3
+  (lambda (l)
+    (if (< (length l) 2)
+        l
+        (let ([h1 (car l)]
+              [h2 (car (cdr l))]
+              [t (cdr (cdr l))])
+          (cons h2 (cons h1 (func-4 t)))))))
+
+; TODO: add func-3 test cases here:
+(description "func-3 tests")
+
+;;; TODO: add a doc comment for func-4 here
+(define func-1
+  (lambda (n r e g b)
+    (if (zero? n)
+        (triangle 0 "outline" "black")
+        (overlay (triangle (* n r) "outline" (color e g b 1))
+                 (func-1 (- n 1) r e g b)))))
+
+; TODO: add func-4 test cases here
+; NOTE: We don't have a way to test for equality of images!
+;       Because of this, the best we can do is simply print the output
+;       and _observe_ that the output is what we expect it to be,
+;       visually. The lesson here is that some data types can be
+;       resistant to nice, automated testing functions like test-case.
+;       Nevertheless, we still need to go through the business of
+;       testing our code, even if it is difficult to do so!
+(description "func-4 tests")
 
 (problem "Extra Problem: Test-driven Development")
 
