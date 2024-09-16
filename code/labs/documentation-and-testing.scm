@@ -6,10 +6,13 @@
 ;;   ACKNOWLEDGEMENTS HERE
 
 (import image)
+(import lab)
 (import music)
+(import test)
 
-"Problem 1: Roundtable"
-"====================="
+(title "Documentation and Testing")
+
+(problem "Problem 1: Roundtable")
 
 ; (A side drives)
 
@@ -25,7 +28,8 @@
 
 ; We have given you one test case to get started.
 
-(test-case "A very small range" equal? (list 1) (range1 1))
+(test-case "A very small range" equal? (list 1)
+  (lambda () (range1 1)))
 
 ; TODO: write your additional tests here
 
@@ -38,8 +42,7 @@
 ; that you have reasonably validated the function’s behavior. Make sure that
 ; the procedure passes all the tests that you write!
 
-"Problem 2: Positive and Negative Cases"
-"======================================"
+(problem "Problem 2: Positive and Negative Cases")
 
 ; (B side drives)
 
@@ -71,8 +74,7 @@
 
 ; TODO: write your tests here
 
-"Problem 3: Types and Corners"
-"============================"
+(problem "Problem 3: Types and Corners")
 
 ; Another way to organize our tests is by exploring the range of possible 
 ; inputs. If the type of the input admits a finite set of values, we ought to 
@@ -145,8 +147,7 @@
 
 ; TODO: write your tests here
 
-"Problem 4: What's up Doc?"
-"========================="
+(problem "Problem 4: What's up Doc?")
 
 ; (A and B sides switch driver-navigator roles for each function.)
 
@@ -165,7 +166,7 @@
                  (func-1 (- n 1) r e g b)))))
 
 ; TODO: add func-1 test cases here:
-"----- func-1 tests -----"
+(description "func-1 tests")
 
 ;;; TODO: add a doc comment for func-2 here
 (define func-2
@@ -174,7 +175,7 @@
                    (substring s 0 n))))
 
 ; TODO: add func-2 test cases here:
-"----- func-2 tests -----"
+(description "func-2 tests")
 
 ;;; TODO: add a doc comment for func-3 here
 (define func-3
@@ -184,7 +185,7 @@
                 s)))
 
 ; TODO: add func-3 test cases here:
-"----- func-3 tests -----"
+(description "func-3 tests")
 
 ;;; TODO: add a doc comment for func-4 here
 (define func-4
@@ -197,7 +198,7 @@
           (cons h2 (cons h1 (func-4 t)))))))
 
 ; TODO: add func-4 test cases here:
-"----- func-4 tests -----"
+(description "func-4 tests")
 
 ; For each function:
 ;
@@ -211,8 +212,7 @@
 ;     (e.g., their types) as well as postconditions on the output of
 ;     the function.
 
-"Extra Problem: Test-driven Development"
-"======================================="
+(problem "Extra Problem: Test-driven Development")
 
 ; (You do not need to complete this part of the lab, but it is good practice!)
 
