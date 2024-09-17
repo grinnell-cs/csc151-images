@@ -97,18 +97,18 @@
   lab:
     - page: /labs/documentation-and-testing.html
 
-# - topic: RGB colors
-#   abbrev: rgb-colors
-#   summary: |
-#     We explore one of the basic color models used by computers.
-#   reading:
-#     - page: /readings/design-and-color.html
-#     - page: /readings/rgb-colors.html
-#   lab:
-#     - page: /labs/rgb-colors.html
-#   todo:
-#     - Make sure this works with the new model.
-#     - Combine the labs
+- topic: RGB colors
+  abbrev: rgb-colors
+  summary: |
+    We explore one of the basic color models used by computers.
+  reading:
+    - page: /readings/design-and-color.html
+    - page: /readings/rgb-colors.html
+  lab:
+    - page: /labs/rgb-colors.html
+  todo:
+    - Make sure this works with the new model.
+    - Combine the labs
 
 # - topic: Transforming images
 #   abbrev: transforming-images
