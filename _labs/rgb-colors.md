@@ -13,9 +13,6 @@ Basic color procedures
 * `(rgb-red c)` - extract the red component of an rgb color.
 * `(rgb-green c)` - extract the green component of an rgb color.
 * `(rgb-blue c)` - extract the blue component of an rgb color.
-* `(color-red c)` - extract the red component of a color.
-* `(color-green c)` - extract the green component of a color.
-* `(color-blue c)` - extract the blue component of a color.
 
 Working with color names
 
@@ -25,14 +22,14 @@ Working with color names
 
 Working with images
 
-* `(image-load name)` - load an image.
+* `(with-image-file func)` - load an image from disk and call the given function it.
 * `(pixel-map color-transformation image)` 
 
 The lab
 -------
 
-* Use the file [rgb-colors.rkt](../code/labs/rgb-colors.rkt)
-* You should also download a copy of [the kitten image](../images/kitten.jpg) to your desktop.
+* Use the file [rgb-colors.scm](../code/labs/rgb-colors.scm)
+* You should also download a copy of [the kitten image](../images/kitten.jpg) to your desktop. Other images work, too!
 
 Acknowledgements
 ----------------
