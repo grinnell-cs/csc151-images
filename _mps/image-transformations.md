@@ -6,19 +6,13 @@ summary: |
   color transformations.  It will give you the opportunity to practice
   with conditionals and color representations, including the 
   hue-saturation-value color representation.
-collaboration: |
-  Each student should submit their own responses to this project. You may
-  consult other students in the class as you develop your solution.  If you
-  receive help from anyone, make sure to cite them in your responses. 
 link: true
 preimg: true
 ---
-You will create only one file for this mini-project, `image-transformations.rkt`. You should begin your project with [this starter code](../code/mps/image-transformations.rkt).
-
+You will create only one file for this mini-project, `image-transformations.scm`. You should begin your project with [this starter code](../code/mps/image-transformations.scm).
 You will submit both that file and some images you create in part three.
 
-Background
-----------
+## Background
 
 If you've played with an image-editing application like Photoshop, you've likely discovered that such applications provide a wide variety of mechanisms for transforming images. In this assignment, you will build your own versions of some image transformation. While we cannot reasonably explore how to build all such mechanisms, we will consider three kinds of mechanisms in this assignment.
 
@@ -32,8 +26,7 @@ In part three, we will begin to explore more complex transformations that consid
 
 In part three, you will design your own transformations.
 
-Part one: Transforming images by transforming RGB colors
---------------------------------------------------------
+## Part one: Transforming images by transforming RGB colors
 
 As you may recall, we can build a variety of image transformations by using the following model.
 
@@ -90,7 +83,7 @@ We can also build `swap-red-blue` by plugging the `lambda` part of `rgb-swap-rb`
                img)))
 ```
 
-In a few cases, we can use composition to write the color transformations that are applied to each pixel. For example, the following procedure decreases the green component of eachp ixel in an image.
+In a few cases, we can use composition to write the color transformations that are applied to each pixel. For example, the following procedure decreases the green component of each pixel in an image.
 
 ```
 ;;; (decrease-green img) -> image?
@@ -107,7 +100,7 @@ Here's the effect on the kitten.
 
 ![The kitten, once again. This time, the fur is a bit redder and the green rug looks much bluer.](../images/transforming-images/kitten-decrease-green.jpg)
 
-We can also use the `cut` operation along with some multi-parameter RGB operations to achieve some transformations. For example, here's one that sets the green component of an image to the maximum value.
+We can also use the `section` operation along with some multi-parameter RGB operations to achieve some transformations. For example, here's one that sets the green component of an image to the maximum value.
 
 ```
 ;;; (maximize-green img) -> image?
@@ -116,7 +109,7 @@ We can also use the `cut` operation along with some multi-parameter RGB operatio
 ;;; to the maximum value.
 (define maximize-green
   (lambda (img)
-    (pixel-map (cut (rgb-add (rgb 0 255 0) <>)) img)))
+    (pixel-map (section rgb-add (rgb 0 255 0) _) img)))
 ```
 
 And here's the effect on our kitten.
@@ -127,7 +120,7 @@ Perhaps that wasn't the best transformation to use.
 
 These few procedures give you a sample of the kinds of "basic" RGB transformations we might do.  Of course, we will normally do somewhat more complex transformations than these. Nonetheless, they serve as a starting point for thinking about transformations.
 
-## 1a. Extreme components
+### 1a. Extreme components
 
 Write a procedure, `(rgb-extreme color)`, that takes one parameter, an RGB color, and turns each component to 255 if it is at least 128 and to 0 if it is less than 128.
 
@@ -207,7 +200,7 @@ Note: While you can use some ideas from the prior problem, the process you used 
 
 As you have seen, when we apply the typical color transformation, such as `rgb-darker` or `rgb-redder`, we eventually reach a limit of 0 or 255. But we can get some interesting effects by "wrapping around" at the end. For example, here's the output from a function that adds 90 to a number, wrapping when we go beyond 255.
 
-```
+```scheme
 > (cyclic-add-90 75)
 165 ; 75 + 90 = 165
 > (cyclic-add-90 165)
@@ -235,7 +228,7 @@ As you might expect, cyclic-add-90 can be written in a variety of ways, combinin
 Here's another.
 
 ```
-(define cyclic-add-90 (o (cut (remainder <> 256)) (cut (+ <> 90))))
+(define cyclic-add-90 (o (section remainder _ 256) (section + _ 90)))
 ```
 
 Write a procedure, `(rgb-cyclic-add c1 c2)`, that takes two RGB colors as input and produces a new color formed by the cyclic addition of the corresponding components of the two colors.
@@ -248,9 +241,9 @@ Write a procedure, `(rgb-cyclic-add c1 c2)`, that takes two RGB colors as input 
 ```
 
 ```
-> (pixel-map (cut (rgb-cyclic-add (rgb 192 192 192) <>)) kitten)
-![A strange variant of our kitten. The kitten is darker, but its eyes are strange colors and the carpet is now black and red.](../images/transforming-images/kitten-cyclic-add-192.jpg)
+> (pixel-map (section rgb-cyclic-add (rgb 192 192 192) _) kitten)
 ```
+![A strange variant of our kitten. The kitten is darker, but its eyes are strange colors and the carpet is now black and red.](../images/transforming-images/kitten-cyclic-add-192.jpg)
 
 ### 1f. Cycling through colors, revisited
 
@@ -264,13 +257,19 @@ Write a procedure, `(rgb-cyclic-subtract c1 c2)`, that behaves much like `rgb-su
 ```
 
 ```
-> (pixel-map (cut (rgb-cyclic-subtract <> (rgb 32 32 32))) kitten)
-![The kitten, looking a bit darker, with some ragged edges to the left and its eyes terrifyingly black.](../images/transforming-images/kitten-cyclic-subtract-32.jpg)
-> (pixel-map (cut (rgb-cyclic-subtract <> (rgb 128 128 128))) kitten)
-![The kitten, I suppose. The carpet is now a very pale green. Most of the kitten seems inverted into shades of grey. The cat is green and blue for some unknown reason.](../images/transforming-images/kitten-cyclic-subtract-128.jpg)
-> (pixel-map (cut (rgb-cyclic-add <> (rgb 128 128 128))) kitten)
-![The same image as the immediate previous one.](../images/transforming-images/kitten-cyclic-add-128.jpg)
+> (pixel-map (section rgb-cyclic-subtract _ (rgb 32 32 32)) kitten)
 ```
+![The kitten, looking a bit darker, with some ragged edges to the left and its eyes terrifyingly black.](../images/transforming-images/kitten-cyclic-subtract-32.jpg)
+
+```
+> (pixel-map (section rgb-cyclic-subtract _ (rgb 128 128 128)) kitten)
+```
+![The kitten, I suppose. The carpet is now a very pale green. Most of the kitten seems inverted into shades of grey. The cat is green and blue for some unknown reason.](../images/transforming-images/kitten-cyclic-subtract-128.jpg)
+
+```
+> (pixel-map (section rgb-cyclic-add _ (rgb 128 128 128)) kitten)
+```
+![The same image as the immediate previous one.](../images/transforming-images/kitten-cyclic-add-128.jpg)
 
 ### 1g. Gamma correction
 
@@ -303,13 +302,25 @@ ii. Write a procedure, (gamma-correct-color c gamma)`, that gamma corrects `c` b
 
 ```
 > (rgb 128 0 0)
+```
 ![a swatch of approximately darkred](../images/colors/rgb-128-000-000-255.png)
+
+```
 > (gamma-correct-color (rgb 128 0 0) 1/2)
+```
 ![a darker swatch of approximately darkred](../images/colors/rgb-181-000-000-255.png)
+
+```
 > (rgb->string (gamma-correct-color (rgb 128 0 0) 1/2))
 "181/0/0"
+```
+
+```
 > (gamma-correct-color (rgb 128 0 0) 3)
+```
 ![a swatch of approximately black](../images/colors/rgb-032-000-000-255.png)
+
+```
 > (rgb->string (gamma-correct-color (rgb 128 0 0) 3))
 "32/0/0"
 ```
@@ -318,18 +329,17 @@ iii. Write a procedure, `(gamma-correct-two img)`, that darkens the image by gam
 
 ```
 > (gamma-correct-two kitten)
-![a darker version of our kitten image](../images/transforming-images/kitten-gamma-two.jpg)
 ```
+![a darker version of our kitten image](../images/transforming-images/kitten-gamma-two.jpg)
 
 iv. Write a procedure, `(gamma-correct-half img)`, that lightens the image by gamma-correcting each pixel with a gamma of 1/2.
 
 ```
 > (gamma-correct-half kitten)
-![a lighter version of our kitten image](../images/transforming-images/kitten-gamma-half.jpg)
 ```
+![a lighter version of our kitten image](../images/transforming-images/kitten-gamma-half.jpg)
 
-Part two: HSV colors and HSV-based transformations
---------------------------------------------------
+## Part two: HSV colors and HSV-based transformations
 
 As we learned in [the reading on design and color](../readings/design-and-color-reading.html), RGB is not the only way to represent colors on the computer.  For example, we might represent a color in terms of hue, saturation, and value.  _Hue_ represents the pure color (e.g., red, blue, yellow, or a combination of these). _Saturation_ represents the "colorfulness" of the hue in the color. For instance, a completely saturated color would be a pure hue (like red), while a less saturated color might appear just as bright but somewhat faded (perhaps rose or pink). Finally, _Value_ represents the brightness or darkness of the color.
 
@@ -339,7 +349,7 @@ As shown below, hue is represented as an angle, or a point on a circle. Thus, th
 
 [A reference page on HSV](https://education.siggraph.org/static/HyperGraph/color/colorhs.htm) suggests that you can also think of _value_ as how much black pigment you've mixed with the primary color pigment. When the value is 100, all of the pigment is the color and there's no black pigment. When the value is 0, there's no color pigment and much white pigment as possible. That page also suggests that you can also think of _saturation_ as how much white pigment we've added. When the saturation is 100, we have all color pigment and no white pigment. When the saturation is 0, we have no color pigment and all white pigment. 
 
-There's a process by which we can convert an RGB color into an HSV color and an HSV color to an RGB color. Fortunately, you don't need to translate that process into Scheme; we've provided it as part of the `csc151` library. You can use both `(rgb->hsv rgb-color)` and `(hsv->rgb hsv-color)`. There's also an `(hsv hue saturation value)` procedure.
+There's a process by which we can convert an RGB color into an HSV color and an HSV color to an RGB color. Fortunately, you don't need to translate that process into Scheme; we've provided it as part of the `image` library. You can use both `(rgb->hsv rgb-color)` and `(hsv->rgb hsv-color)`. There's also a `(hsv hue saturation value)` procedure.
 
 Let's explore them a bit.
 
@@ -347,11 +357,20 @@ We'll start with the three primaries.
 
 ```
 > (hsv 0 100 100)
+```
 ![a swatch of red](../images/colors/rgb-255-000-000-255.png)
+
+```
 > (hsv 120 100 100)
+```
 ![a swatch of green](../images/colors/rgb-000-255-000-255.png)
+
+```
 > (hsv 240 100 100)
+```
 ![a swatch of blue](../images/colors/rgb-000-000-255-255.png)
+
+```
 > (rgb->string (hsv->rgb (hsv 0 100 100)))
 "255/0/0"
 > (rgb->string (hsv->rgb (hsv 120 100 100)))
@@ -364,13 +383,25 @@ Now let's try a few pure colors in-between them.
 
 ```
 > (hsv 60 100 100)
+```
 ![a swatch of yellow](../images/colors/rgb-255-255-000-255.png)
+
+```
 > (hsv 300 100 100)
+```
 ![a swatch of fuchsia](../images/colors/rgb-255-000-255-255.png)
+
+```
 > (hsv 270 100 100)
+```
 ![a swatch of approximately purple](../images/colors/rgb-128-000-255-255.png)
+
+```
 > (hsv 330 100 100)
+```
 ![a swatch of approximately deeppink](../images/colors/rgb-255-000-128-255.png)
+
+```
 > (rgb->string (hsv->rgb (hsv 60 100 100)))
 "255/255/0"
 > (rgb->string (hsv->rgb (hsv 300 100 100)))
@@ -385,15 +416,30 @@ What happens if we change the saturation of pure red?
 
 ```
 > (hsv 0 100 100)
+```
 ![a swatch of red](../images/colors/rgb-255-000-000-255.png)
+
+```
 > (hsv 0 75 100)
+```
 ![a swatch of approximately tomato](../images/colors/rgb-255-064-064-255.png)
+
+```
 > (hsv 0 50 100)
+```
 ![a swatch of approximately salmon](../images/colors/rgb-255-128-128-255.png)
+
+```
 > (hsv 0 25 100)
+```
 ![a swatch of approximately lightpink](../images/colors/rgb-255-191-191-255.png)
+
+```
 > (hsv 0 0 100)
+```
 ![a swatch of white](../images/colors/rgb-255-255-255-255.png)
+
+```
 > (rgb->string (hsv->rgb (hsv 0 100 100)))
 "255/0/0"
 > (rgb->string (hsv->rgb (hsv 0 75 100)))
@@ -410,15 +456,30 @@ How about changing the value?
 
 ```
 > (hsv 0 100 100)
+```
 ![a swatch of red](../images/colors/rgb-255-000-000-255.png)
+
+```
 > (hsv 0 100 75)
+```
 ![a swatch of approximately firebrick](../images/colors/rgb-191-000-000-255.png)
+
+```
 > (hsv 0 100 50)
+```
 ![a swatch of approximately darkred](../images/colors/rgb-128-000-000-255.png)
+
+```
 > (hsv 0 100 25)
+```
 ![a swatch of approximately black](../images/colors/rgb-064-000-000-255.png)
+
+```
 > (hsv 0 100 0)
+```
 ![a swatch of black](../images/colors/rgb-000-000-000-255.png)
+
+```
 > (rgb->string (hsv->rgb (hsv 0 100 100)))
 "255/0/0"
 > (rgb->string (hsv->rgb (hsv 0 100 75)))
@@ -431,7 +492,7 @@ How about changing the value?
 "0/0/0"
 ```
 
-If we're going in the other direction, we can determine the hue, saturation, and value by using the `hsv-hue`, `hsv-saturation`, and `hsv-value` procedures. (There's also an `hsv-alpha`, but we won't be using it at the moment.)
+If we're going in the other direction, we can determine the hue, saturation, and value by using the `hsv-hue`, `hsv-saturation`, and `hsv-value` procedures. (There's also a `hsv-alpha`, but we won't be using it at the moment.)
 
 ```
 > (hsv-hue (rgb->hsv (rgb 128 16 255)))
@@ -454,14 +515,23 @@ When we're exploring `hsv` colors, we won't learn much about colors by using jus
 
 ```
 > (rgb 128 16 255)
-![a swatch of approximately purple](../images/colors/rgb-128-016-255-255.png)
-> (rgb->hsv (rgb 128 16 255))
-![a swatch of approximately purple](../images/colors/rgb-127-015-255-255.png)
-> (hsv 100 50 75)
-![a swatch of approximately darkseagreen](../images/colors/rgb-128-191-096-255.png)
-> (hsv->rgb (hsv 100 50 75))
-![a swatch of approximately darkseagreen](../images/colors/rgb-128-191-096-255.png)
 ```
+![a swatch of approximately purple](../images/colors/rgb-128-016-255-255.png)
+
+```
+> (rgb->hsv (rgb 128 16 255))
+```
+![a swatch of approximately purple](../images/colors/rgb-127-015-255-255.png)
+
+```
+> (hsv 100 50 75)
+```
+![a swatch of approximately darkseagreen](../images/colors/rgb-128-191-096-255.png)
+
+```
+> (hsv->rgb (hsv 100 50 75))
+```
+![a swatch of approximately darkseagreen](../images/colors/rgb-128-191-096-255.png)
 
 In the examples above, we used the `rgb->string` procedure to quickly give ourselves the red, green, and blue components.
 
@@ -491,10 +561,13 @@ Note: You can use `string-split` to break the string apart and `list-ref` to get
 
 ```
 > (string->hsv "0-100-100")
-![a swatch of red](../images/colors/rgb-255-000-000-255.png)
-> (string->hsv "310-50-100")
-![a swatch of approximately violet](../images/colors/rgb-255-128-234-255.png)
 ```
+![a swatch of red](../images/colors/rgb-255-000-000-255.png)
+
+```
+> (string->hsv "310-50-100")
+```
+![a swatch of approximately violet](../images/colors/rgb-255-128-234-255.png)
 
 ### 2c. Saturating colors
 
@@ -504,8 +577,8 @@ Write a procedure, `(saturate img)`, that creates a new version of `img` by sett
 
 ```
 > (saturate kitten)
-![Our kitten. Most of the white areas are now blue. Orange areas are much more orange.](../images/transforming-images/kitten-saturated.jpg)
 ```
+![Our kitten. Most of the white areas are now blue. Orange areas are much more orange.](../images/transforming-images/kitten-saturated.jpg)
 
 ### 2d. Rotating hues
 
@@ -513,12 +586,18 @@ Document and write a procedure `(rotate-hue image angle)` that takes an image as
 
 ```
 > (rotate-hue kitten 100)
-![A greener version of our kitten](../images/transforming-images/kitten-rotated-hue-100.jpg)
-> (rotate-hue kitten 50)
-![A yellower version of our kitten](../images/transforming-images/kitten-rotated-hue-50.jpg)
-> (rotate-hue kitten 300)
-![A pinker version of our kitten](../images/transforming-images/kitten-rotated-hue-300.jpg)
 ```
+![A greener version of our kitten](../images/transforming-images/kitten-rotated-hue-100.jpg)
+
+```
+> (rotate-hue kitten 50)
+```
+![A yellower version of our kitten](../images/transforming-images/kitten-rotated-hue-50.jpg)
+
+```
+> (rotate-hue kitten 300)
+```
+![A pinker version of our kitten](../images/transforming-images/kitten-rotated-hue-300.jpg)
 
 Note: If the rotated angle is greater than 360 or less than 0, be sure to wrap around properly (e.g., using `remainder`) to get the correct hue angle.
 
@@ -528,13 +607,15 @@ Document and write a procedure, `(set-hue img new-hue)`, that takes an  image an
 
 ```
 > (set-hue kitten 0)
-![A red version of our kitten and cat. The rug is also reddish.](../images/transforming-images/kitten-hue-0.jpg)
-> (set-hue kitten 180)
-![A teal version of our kitten and cat. The rug is also teal.](../images/transforming-images/kitten-hue-180.jpg)
 ```
+![A red version of our kitten and cat. The rug is also reddish.](../images/transforming-images/kitten-hue-0.jpg)
 
-Part three: Freestyle
----------------------
+```
+> (set-hue kitten 180)
+```
+![A teal version of our kitten and cat. The rug is also teal.](../images/transforming-images/kitten-hue-180.jpg)
+
+## Part three: Freestyle
 
 a. Document and write a procedure, `(my-rgb-transformation img value)`, that transforms `img` using `value` and the RGB components of the image.
 
@@ -545,13 +626,11 @@ c. Document and write a procedure, `(my-hsv-transformation img value)`, that tra
 d. Using your procedure, create three images---`kitten-hsv-transformed-01.jpg`, `kitten-hsv-transformed-02.jpg`, and `kitten-hsv-transformed-03.jpg`---that demonstrate how your procedure affects our kitten image. In a comment, indicate how
 you created each image.
 
-What to submit
---------------
+## What to submit
 
-Submit `image-transformations.rkt` and your six `jpg` files on Gradescope.
+Submit `image-transformations.scm` and your six `jpg` files on Gradescope.
 
-Grading rubric
---------------
+## Grading rubric
 
 ### Redo or above
 
@@ -559,11 +638,11 @@ Submissions that lack any of these characteristics will get an I.
 
 ```
 [ ] Passes all of the one-star autograder tests.
-[ ] Includes the specified file, `image-transformations.rkt`.
+[ ] Includes the specified file, `image-transformations.scm`.
 [ ] Includes an appropriate header on the file that indicates the
     course, author, etc.
 [ ] Acknowledges appropriately.
-[ ] Code runs in DrRacket.
+[ ] Code runs in Scamper.
 [ ] The question marks in the documentation have been filled in.
 ```
 
@@ -590,11 +669,10 @@ prior characteristics will get an M.
 [ ] Passes all of the three-star autograder tests.
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.
-[ ] Uses `cut` and composition when appropriate.
+[ ] Uses `section` and composition when appropriate.
 ```
 
-Q&A
----
+## Q&A
 
 For certain parts of the mini-project such as 1c-flattening, are we allowed to create a color procedure and then use that to apply to the entire image or are we supposed to only make an image transformation by itself?
 
@@ -602,15 +680,15 @@ For certain parts of the mini-project such as 1c-flattening, are we allowed to c
 
 > But please document them.
 
-Can you explain when it is appropriate to use `cut` and composition?
+Can you explain when it is appropriate to use `section` and composition?
 
-> You should use `cut` primarily when you're defining a one-parameter procedure by filling in one or more parameters of another procedure.
+> You should use `section` primarily when you're defining a one-parameter procedure by filling in one or more parameters of another procedure.
 
 > You should use composition primarily when you're defining a one-parameter procedure that only applies a sequence of one parameter procedures.
 
 > You also use cut and composition when you have a procedure---like `pixel-map` or `map`---that applies a procedure (often of the prior form) to a large number of values.
 
-> In each of these cases, `cut` and composition make your code more concise. You should not use `cut` or composition when it makes your code longer.
+> In each of these cases, `section` and composition make your code more concise. You should not use `section` or composition when it makes your code longer.
 
 > One place your instructors used composition in solving this assignment was when they needed to convert an RGB color to an HSV color, manipulate the HSV values, and then convert back to an RGB color.
 

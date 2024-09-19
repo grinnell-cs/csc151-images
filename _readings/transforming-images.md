@@ -17,16 +17,38 @@ Using `pixel-map` and the color transformations we learned in [the previous read
 
 Let's consider a few examples. We'll start with this public domain image of a kitten, which we will refer to as `kitten`.
 
-![a cute kitten](../images/kitten.jpg)
+This image can be loaded via the `with-image-from-url` function.
+`(with-image-from-url url fn)` takes two arguments:
 
-Here are two variants of the image.
++   The _uniform resource locator_, _i.e._, URL, of an image.
+    URLs are used to specify the location of a file on the internet.
++   A callback function `fn` that takes the image Scamper loads from the URL as input.
+    The output of `fn` is then rendered to the output pane.
 
-```
-> (pixel-map rgb-redder kitten)
+The URL of the `kitten` image is:
+
++   <https://scamper.cs.grinnell.edu/images/kitten.jpg>
+
+(_Note_: For security reasons related to running within a web browser, Scamper currently cannot load images not found on `scamper.cs.grinnell.edu`!)
+
+For example, here are two uses of the function.
+The first use simply outputs the image unmodified.
+The second applies a transformation via `pixel-map`.
+
+~~~
+(with-image-from-url "https://scamper.cs.grinnell.edu/images/kitten.jpg"
+  (lambda (img)
+    img))
+~~~
+![a picture of a kitten](../images/kitten.jpg)
+
+~~~
+(with-image-from-url "https://scamper.cs.grinnell.edu/images/kitten.jpg"
+  (lambda (img)
+    (pixel-map rgb-redder img)))
+~~~
 ![a version of the prior image in which everything looks a bit redder](../images/kitten-redder.jpg)
-> (pixel-map rgb-darker kitten)
-![a version of the kitten image in which everything looks a bit darker](../images/kitten-darker.jpg)
-```
+
 
 ## Composing transformations
 
@@ -61,29 +83,22 @@ But even that is a bit verbose. Do we really want to name `rgb-fun` when we only
 Let's try this on our kitten.
 
 ```
-> (pixel-map (o rgb-darker rgb-redder) kitten)
-![a version of the kitten image in that is both redder and darker](../images/kitten-redder-darker.jpg)
+(with-image-from-url "https://scamper.cs.grinnell.edu/images/kitten.jpg"
+  (lambda (img)
+    (pixel-map (o rgb-darker rgb-redder) kitten)))
 ```
+![a version of the kitten image in that is both redder and darker](../images/kitten-redder-darker.jpg)
 
 What's the difference between this instruction and the nested calls to `pixel-map`? In effect, we've changed the way you sequence operations. That is, rather than having to write multiple instructions, in sequence, to get something done, we can instead insert information about the sequencing into a single instruction. By using composition, along with nesting, we can then express our algorithms more concisely and often more clearly. It is also likely to be a bit more efficient, since we make one new image, rather than two.
 
 ## Detour: Saving images
 
-It's useful to be able to load images so that we can manipulate them.  It's even more useful to be able to save images that we've created.  The procedure `(image-save image filename)` saves an image to a specified file. You should provide the full path name to the file, surrounding it by double-quotation marks. For example, you might use something like `"/home/student/images/masterpiece.png"`. The suffix you give to the file name determines the type of file that is saved - jpg, gif, png, and so forth.
 
-Here's a simple sequence of operations to make and save a strange version of our kitten.
 
-```
-> (define pic (image-load "/home/rebelsky/Desktop/kitten.jpg"))
-> pic
-> (define strange (pixel-map pic (compose rgb-complement rgb-rotate)))
-> strange
-> (image-save strange "/home/student/Desktop/strange-kitten.png")
-```
+It's useful to be able to load images so that we can manipulate them.  It's even more useful to be able to save images that we've created. Luckily, since Scamper operates in the browser, the images we see in the output are genuine images that we simply download!
+To download an image that you create, right-click on the image and select "Save image as..." (or the equivalent in your browser).
 
-Note that you can use `image-save` with any image we make, whether it's created with `image-load`, `pixel-map`, the varous drawing tools, or any of the other image-making and image-modifying commands we will learn.
-
-## Mapping binary color procedures with `cut`
+## Mapping binary color procedures with `section`
 
 So far, so good. We know how to load images with `image-load`. We know how to make new versions of existing images using `pixel-map`. We know how to save the result using `image-save`. Are we missing anything?
 
@@ -92,21 +107,19 @@ It turns out that we're missing a few things. Right now, the only way we can mak
 It doesn't make sense to write `(rgb-subtract pic (rgb 0 0 255))`, since `picture` is not an RGB color. Hopefully, we'll get an error message if we try.
 
 ```
-> (define pic (image-load "/home/rebelsky/Desktop/kitten.jpg"))
-> (rgb-subtract pic (rgb 0 0 255))
-> (rgb-subtract pic (rgb 0 0 255))
-. . rgb-subtract: expects rgb? for parameter 1 (c1), received #(struct:object:image% ... ...)
+> (with-image-from-url "https://scamper.cs.grinnell.edu/images/kitten.jpg"
+  (lambda (img)
+    (rgb-subtract img (rgb 0 0 255))))
+Runtime error [10:5-10:36]: (rgb-subtract) expected an RGB value, received object
 ```
 
-It also doesn't make sense to use `rgb-subtract` as the first parameter to `pixel-map`, as in `(pixel-map rgb-subtract pic)`, because we don't have a place to specify the color we are subtracting. Once again, the Scheme interpreter should issue an error message.
+It also doesn't make sense to use `rgb-subtract` as the first parameter to `pixel-map`, as in `(pixel-map rgb-subtract pic)`, because we don't have a place to specify the color we are subtracting. Once again, Scamper should issue an error message.
 
 ```
-> (define pic (image-load "/home/rebelsky/Desktop/kitten.jpg"))
-> (pixel-map rgb-subtract pic)
-. . rgb-subtract: arity mismatch;
- the expected number of arguments does not match the given number
-  expected: 2
-  given: 1
+> (with-image-from-url "https://scamper.cs.grinnell.edu/images/kitten.jpg"
+  (lambda (img)
+    (pixel-map rgb-subtract img))
+Runtime error [8:5-8:32]: (pixel-map) wrong number of arguments to rgb-subtract provided. Expected 2, received 1.
 ```
 
 Not the most helpful error message, but an error message nonetheless.
@@ -114,45 +127,49 @@ Not the most helpful error message, but an error message nonetheless.
 We might be tempted to write something like `(pixel-map pic (rgb-subtract (rgb 0 0 255))`. However, that will also cause problems, since it looks like we are calling `rgb-subtract` on a single value, and not the two values it is supposed to take.
 
 ```
-> (pixel-map (rgb-subtract (rgb 0 0 255)) pic)
-. . rgb-subtract: arity mismatch;
- the expected number of arguments does not match the given number
-  expected: 2
-  given: 1
+> (with-image-from-url "https://scamper.cs.grinnell.edu/images/kitten.jpg"
+  (lambda (img)
+    (pixel-map (rgb-subtract (rgb 0 0 255)) img)))
+Runtime error [8:16-8:43]: (rgb-subtract) wrong number of arguments to rgb-subtract provided. Expected 2, received 1.
 ```
 
 It's probably good that we get an error message here, since it's not clear whether `(rgb 0 0 255)` is supposed to be the first or second parameter to `rgb-subtract`---are we subtracting `(rgb 0 0 255)` from each color, or are we subtracting each color from `(rgb 0 0 255)`?
 
-To handle situations like this, the `csc151` library includes a special procedure, `cut`, that lets you fill in some parameters to a function. It takes the form `(cut (procedure param-info ...))`. When we want to fill in a particular parameter, we write the value we want.  When we want to leave a parameter blank, we write the special symbol `<>`. For example, here's a function that subtracts the blue component from every color.
+To handle situations like this, scamper includes a special form, `section`, that lets you fill in some parameters to a function. It takes the form `(section procedure arg1 arg2 ...))`. In other words the syntax is like a function call `(procedure arg1 arg2 ...)` except with `section` at the front!
+
+When we want to fill in a particular parameter, we write the value we want.  When we want to leave a parameter blank, we write the special symbol `_`. For example, here's a function that subtracts the blue component from every color.
 
 ```
-> (define rgb-subtract-blue (cut (rgb-subtract <> (rgb 0 0 255))))
-> (pixel-map rgb-subtract-blue pic))
-![the kidden image, in shades of yellow and green](../images/kitten-no-blue.jpg)
+(define rgb-subtract-blue (section rgb-subtract _ (rgb 0 0 255)))
+
+(with-image-from-url "https://scamper.cs.grinnell.edu/images/kitten.jpg"
+  (lambda (img)
+    (pixel-map rgb-subtract-blue img)))
 ```
+![The kitten image, in shades of yellow and green](../images/kitten-no-blue.jpg)
 
 If, instead, we want to subtract the current color from white (which is how we computed the pseudo-complement), we can swap the place that we put the special symbol.
 
 ```
-> (define rgb-sub-from-white (section rgb-subtract (rgb 255 255 255) <>))
-> (pixel-map rgb-sub-from-white pic)
-![the kidden image, with colors inverted](../images/kitten-negative.jpg)
+(define rgb-subtract-from-white (section rgb-subtract (rgb 255 255 255) _))
+
+(with-image-from-url "https://scamper.cs.grinnell.edu/images/kitten.jpg"
+  (lambda (img)
+    (pixel-map rgb-subtract-from-white img)))
 ```
+![The kitten image, with colors inverted](../images/kitten-negative.jpg)
 
 As in the case of unary functions created with `compose`, we don't have to name the function we create. Here's an instruction that will make a somewhat bluer version of the kitten.
 
 ```
-> (pixel-map (section rgb-average (rgb 0 0 255) <>) pic)
-![a much bluer version of the kitten image](../images/kitten-much-bluer.jpg)
+(with-image-from-url "https://scamper.cs.grinnell.edu/images/kitten.jpg"
+  (lambda (img)
+    (pixel-map (section rgb-average (rgb 0 0 255) _)
+               img)))
 ```
+![a much bluer version of the kitten image](../images/kitten-much-bluer.jpg)
 
 ## Self checks
-
-### Brief preparation 
-
-a. If you have not already done so, update your `csc151` library.
-
-b. Load the kitten image from the reading.
 
 ### Check 1: Fade to grey
 
