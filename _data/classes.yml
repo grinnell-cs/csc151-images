@@ -110,18 +110,18 @@
     - Make sure this works with the new model.
     - Combine the labs
 
-# - topic: Transforming images
-#   abbrev: transforming-images
-#   summary: |
-#     We expand our understanding of RGB transformations to image transformations.
-#   reading:
-#     - page: /readings/anonymous-procedures.html
-#     - page: /readings/transforming-rgb.html
-#     - page: /readings/transforming-images.html
-#   lab:
-#     - page: /labs/transforming-images.html
-#   todo:
-#     - Incorporate anonymous procedures. (At least that's the plan.)
+- topic: Transforming images
+  abbrev: transforming-images
+  summary: |
+    We expand our understanding of RGB transformations to image transformations.
+  reading:
+    - page: /readings/anonymous-procedures.html
+    - page: /readings/transforming-rgb.html
+    - page: /readings/transforming-images.html
+  lab:
+    - page: /labs/transforming-images.html
+  todo:
+    - Incorporate anonymous procedures. (At least that's the plan.)
 
 # - topic: Pair programming
 #   abbrev: pair-programming
