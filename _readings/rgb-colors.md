@@ -276,9 +276,9 @@ How?  The algorithm should be fairly straightforward.
 ;;; Compute the pseudo-complement of a color
 (define color-pseudo-complement
   (lambda (c)
-    (rgb (- 255 (color-red c))
-         (- 255 (color-green c))
-         (- 255 (color-blue c)))))
+    (rgb (- 255 (rgb-red c))
+         (- 255 (rgb-green c))
+         (- 255 (rgb-blue c)))))
 ```
 
 Let's give it a try.
