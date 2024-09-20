@@ -110,6 +110,7 @@
 
 - topic: RGB colors
   abbrev: rgb-colors
+  slides_link: https://docs.google.com/presentation/d/1hmDJH5S_0PwXn9TKz2v5bFkHGA3t1X9kmDH9Kp5wc4U/edit#slide=id.g2666291cd13_0_234
   summary: |
     We explore one of the basic color models used by computers.
   reading:
