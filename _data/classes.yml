@@ -135,6 +135,15 @@
   todo:
     - Incorporate anonymous procedures. (At least that's the plan.)
 
+- topic: Local bindings
+  abbrev: let
+  summary: |
+    We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
+  reading:
+    - page: /readings/local-bindings.html
+  lab:
+    - page: /labs/local-bindings.html
+
 # - topic: Pair programming
 #   abbrev: pair-programming
 #   summary: |
@@ -148,15 +157,6 @@
 #       resource: /files/DiverseTeams2016.pdf
 #   lab:
 #     - (TBA)
-
-# - topic: Local bindings
-#   abbrev: let
-#   summary: |
-#     We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
-#   reading:
-#     - page: /readings/local-bindings.html
-#   lab:
-#     - page: /labs/local-bindings.html
 
 # - topic: "Exam #1"
 #   abbrev: exam-1

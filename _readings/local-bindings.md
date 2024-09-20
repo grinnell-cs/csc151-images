@@ -39,9 +39,34 @@ parameters. We will consider such names in this reading.
 You will find that there are many times when you are designing algorithms
 that you end up telling the computer to do the same thing again and
 again and again.  For example, here's a bit of code that determines
-the ratio of vowels to consonants.
+the ratio of vowels to consonants and let's see how well it works.
 
-```drracket
+~~~racket
+;;; (tally f l) -> number?
+;;;   f : function?, a predicate over elements of l
+;;;   l : list?
+;;; Returns the number of occurrences that f returns
+;;; #t for each element of the list.
+(define tally
+  (lambda (f l)
+    (if (null? l)
+        0
+        (+ (if (f (car l))
+               1
+               0)
+           (tally f (cdr l))))))
+
+;;; (vowel? ch) -> boolean?
+;;;   ch : char?
+;;; Determine whether ch is a vowel.
+(define tally
+  (lambda (f l)
+    (match f
+      [null 0]
+      [(cons head tail)
+       (if (f head)
+           (+ 1 (tally tail))
+           (tally tail))])))
 ;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
@@ -67,21 +92,20 @@ the ratio of vowels to consonants.
   (lambda (str)
     (/ (tally vowel? (string->list str))
        (tally consonant? (string->list str)))))
-```
 
-Let's see how well it works.
-
-```drracket
 > (v2c-ratio "Hello")
-2/3
+0.3333333333333
+
 > (v2c-ratio "Aaargh!")
 1
+
 > (v2c-ratio "aeiouxy")
-2 1/2
+2.5
+
 > (v2c-ratio "a")
-. . /: division by zero
-> ; Whoops!
-```
+Error: divide by zero
+; Whoops!
+~~~
 
 'Eh.  It's good enough for now.
 
@@ -118,7 +142,7 @@ _Yes, you can fill in the annoying delay now._
 Here's one approach: We can decompose the task into two tasks.  We'll
 write one procedure that determines if a character is a lowercase vowel.
 
-```drracket
+~~~racket
 ;;; (lower-case-vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a lowercase vowel.
@@ -129,19 +153,19 @@ write one procedure that determines if a character is a lowercase vowel.
         (char=? ch #\i)
         (char=? ch #\o)
         (char=? ch #\u))))
-```
+~~~
 
 That seems straightforward enough, doesn't it?  Our `vowel?` procedure
 can then call that other procedure using a letter converted to lowercase.
 
-```drracket
-;;; (vowel? ch) -> boolean?
+~~~racket
+l? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
 (define vowel?
   (lambda (ch)
     (lower-case-vowel? (char-downcase ch))))
-```
+~~~
 
 About as easy to read as before.  A little more typing on our part.
 And we've saved some computation.  In fact, this kind of decomposition
@@ -151,12 +175,12 @@ that do a sequence of steps by using one procedure for each step.
 In fact, now that we've phrased it as a sequence of steps, we can
 take advantage of composition.
 
-```drracket
-;;; (vowel? ch) -> boolean?
+~~~racket
+l? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
 (define vowel? (o lower-case-vowel? char-downcase))
-```
+~~~
 
 _Detour:_ Why are we repeating the documentation each time we show
 you a new imlementation of the `vowel?` predicate?  Mostly to
@@ -179,15 +203,12 @@ more *binding expressions* of the form `(name value)`.
 That precise definition may have been a bit confusing, so here's the
 general form of a `let` expression
 
-```drracket
+```racket
 (let ([name1 exp1]
       [name2 exp2]
       ...
       [namen expn])
-  body1
-  body2
-  ...
-  bodym)
+     body
 ```
 
 As shorthand, we call each of the name-expression pairs of a
@@ -212,7 +233,7 @@ looks up the binding in the table.
 Here's one way to write `vowel?` with `let` and
 without helpers.
 
-```drracket
+~~~racket
 ;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
@@ -224,7 +245,7 @@ without helpers.
           (char=? lc #\i)
           (char=? lc #\o)
           (char=? lc #\u)))))
-```
+~~~
 
 *Important!*  Note that even though binding lists and binding
 specifications start with parentheses, they are *not* procedure
@@ -251,14 +272,12 @@ essentially *everywhere* in your program. In contrast, values named by
 `let` are available only within the let expression. (In case you were
 wondering, the term scope has nothing to do with the mouthwash.)
 
-In addition, local variables (given by `let`) and global variables
-(given by our standard use of `define`) affect previous uses of the
-name differently (or at least appear to). When we do a new top-level
-`define` (Racket only allows that in the interactions pane), we
-permanently replace the old value associated with the name. That
-value is no longer accessible. In contrast, when we use `let` to
-override the value associated with a name, as soon as the `let`
-binding is finished, the previous association is restored.
+In addition, local variables (given by `let`) and global variables (given by our
+standard use of `define`) affect previous uses of the name differently (or at
+least appear to). When we do a new top-level `define`, we permanently replace
+the old value associated with the name. That value is no longer accessible. In
+contrast, when we use `let` to override the value associated with a name, as
+soon as the `let` binding is finished, the previous association is restored.
 
 Finally, there's a benefit to using `let` instead of `define` according to
 the principle of information hiding. Evidence suggests that programs
@@ -282,7 +301,7 @@ For example, consider the following expression:
   (+ x y z))
 ~~~
 
-We think about evaluating that in multiple stages.
+We think about evaluating a `let`-expression in multiple stages.
 
 1.  First, we evaluate the expression of each binding of the `let` to values.
 2.  We then (a) substitute the resulting value for the binder's corresponding variable everywhere that variable occurs in the *body of the `let`* and (b) substitute the body of the `let` for the overall `let`-expression.
@@ -329,10 +348,11 @@ Note that we only substitute for the variable as it appears *in the body of the 
 We do not substitute for the variable if it occurs outside of the body!
 For example, if we nest a `let`-binding in larger computation:
 
-```racket
-(+ (let ([x 1]) (* x 5))
+~~~racket
+(+ (let ([x 1])
+        (* x 5))
    (- x 1))
-```
+~~~
 
 There are two occurrences of `x` here:
 
@@ -350,23 +370,24 @@ want to name three different things: the total (the sum of the values),
 the count (the number of values), the mean (the average of the values). We
 can nest one `let`-expression inside another to name both things.
 
-```drracket
-> (let ([total (reduce + values)]
-        [count (length values)])
-    (let ([mean (/ total count)])
-      (* mean mean)))
-```
+~~~racket
+(let ([total (reduce + values)]
+      [count (length values)])
+     (let ([mean (/ total count)])
+          (* mean mean)))
+~~~
 
 One might be tempted to try to combine the binding lists for the nested
 `let`-expressions, thus:
 
-```drracket
+
+~~~racket
 ; Combining the binding lists doesn't work!
-> (let ([total (reduce + values)]
-        [count (length values)]
-        [mean (/ total count)])
+(let ([total (reduce + values)]
+      [count (length values)]
+      [mean (/ total count)])
     (* mean mean))
-```
+~~~
 
 This approach won't work. (Try it and see!). It's important to
 understand why not. The problem is as follows.  Within one binding list,
@@ -385,13 +406,13 @@ order of events: If one writes `let*` rather than `let`, each binding
 specification in the binding list is completely processed before the
 next one is taken up:
 
-```drracket
+~~~racket
 ; Using let* instead of let works!
-> (let* ([total (reduce + values)]
-         [count (length values)]
-         [mean (/ total count)])
-    (* mean mean))
-```
+(let* ([total (reduce + values)]
+       [count (length values)]
+       [mean (/ total count)])
+      (* mean mean))
+~~~
 
 The star in the keyword `let*` has nothing to do with multiplication. Just
 think of it as an oddly shaped letter. It means do things in sequence,
@@ -439,9 +460,9 @@ Here is a simple `let*` expression and how it evaluates step-by-step in this mod
 ## Positioning `let` relative to `lambda`
 
 In the examples above, we've tended to do the naming within the body of
-the procedure. That is, we write
+the procedure. That is, we write:
 
-```drracket
+```racket
 (define proc
   (lambda (params)
     (let (...)
@@ -449,7 +470,7 @@ the procedure. That is, we write
 ```
 
 However, Scheme also lets us choose an alternate ordering. We can instead
-put the `let` before (outside of) the `lambda`.
+put the `let` before (_i.e._, outside of) the `lambda`.
 
 ```drracket
 (define proc
@@ -460,18 +481,18 @@ put the `let` before (outside of) the `lambda`.
 
 Why would we ever choose to do so? Let us consider an example. Suppose
 that we regularly need to convert years to seconds. (About a decade
-ago, SamR said, "When you have sons between the ages of 5 and 12,
+ago, Prof. Rebelsky said, "When you have sons between the ages of 5 and 12,
 you'll understand.")  You might begin with
 
-```drracket
+~~~racket
 (define years-to-seconds
   (lambda (years)
     (* years 365.24 24 60 60)))
-```
+~~~
 
 This produce does correctly compute the desired result. However, it is a bit hard to read. For clarity, you might want to name some of the values.
 
-```drracket
+~~~racket
 (define years-to-seconds
   (lambda (years)
     (let* ([days-per-year 365.24]
@@ -481,36 +502,35 @@ This produce does correctly compute the desired result. However, it is a bit har
            [seconds-per-year (* days-per-year hours-per-day
                                 minutes-per-hour seconds-per-minute)])
       (* years seconds-per-year))))
-```
 
-```drracket
 > (years-to-seconds 10)
 315567360.0
-```
+~~~
 
 We have clarified the code, although we have also lengthened it a
 bit. However, as we noted before, a second goal of naming is to avoid
-recomputation of values. Unfortunately, even though the number of seconds
+re-computation of values. Unfortunately, even though the number of seconds
 per year never changes, we compute it *every* time that someone calls
-`years-to-seconds`. How can we avoid this recomputation? One strategy
+`years-to-seconds`. How can we avoid this re-computation? One strategy
 is to move the bindings to `define` statements.
 
-```drracket
+~~~racket
 (define days-per-year 365.24)
 (define hours-per-day 24)
 (define minutes-per-hour 60)
 (define seconds-per-minute 60)
 (define seconds-per-year 
   (* days-per-year hours-per-day minutes-per-hour seconds-per-minute))
+
 (define years-to-seconds
   (lambda (years)
     (* years seconds-per-year)))
-```
+~~~
 
 However, such a strategy is a bit dangerous. After all, there is nothing
 to prevent someone else from changing the values here.
 
-```drracket
+```racket
 (define days-per-year 360) ; Some strange calendar, perhaps in Indiana.
 ...
 > (years-to-seconds 10)
@@ -521,7 +541,7 @@ What we'd like to do is to declare the values once, but keep them local
 to `years-to-seconds`. The strategy is to move the `let` outside the
 `lambda`.
 
-```drracket
+~~~racket
 (define years-to-seconds
   (let* ([days-per-year 365.24]
          [hours-per-day 24]
@@ -529,24 +549,22 @@ to `years-to-seconds`. The strategy is to move the `let` outside the
          [seconds-per-minute 60]
          [seconds-per-year (* days-per-year hours-per-day
                               minutes-per-hour seconds-per-minute)])
-    (lambda (years)
-      (* years seconds-per-year))))
-```
+        (lambda (years)
+          (* years seconds-per-year))))
 
-```drracket
 > (years-to-seconds 10)
 315567360.0
-```
+~~~
 
 As you will see in the lab, it is possible to empirically verify that
 the bindings occur only once in this case, and each time the procedure
 is called in the prior case.
 
 One moral of this story is *whenever possible, move your bindings
-outside the `lambda`*.   Let's return to the `vowel?`
+outside the `lambda`!.   Let's return to the `vowel?`
 procedure we wrote above.
 
-```drracket
+~~~racket
 ;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
@@ -558,13 +576,14 @@ procedure we wrote above.
           (char=? lc #\i)
           (char=? lc #\o)
           (char=? lc #\u)))))
-```
+~~~
 
 That code is still somewhat repetitious.  After all, we're doing the
-same thing for each of each of the cases: comparing.  We can take
-advantage of our friends `any` and `cut` to help out.
+same thing for each of the cases: comparing.  For starters, we can
+use lists and their associated functions to reduce the clutter of
+the 5-way `or` call.
 
-```drracket
+~~~racket
 ;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
@@ -572,45 +591,70 @@ advantage of our friends `any` and `cut` to help out.
   (lambda (ch)
     (let ([lc (char-downcase ch)]
           [vowels (string->list "aeiou")])
-      (ormap (cut (char=? lc <>)) vowels))))
-```
+      (apply (lambda (b1 b2) (or b1 b2))
+             (map (section char=? lc _) vowels)))))
 
-But that definition requires DrRacket to build the list every time
+> (vowel? #\t)
+#f
+> (vowel? #\e)
+#t
+> (vowel? #\0)
+#f
+~~~
+
+But that definition requires Scheme to build the list every time
 we call the `vowel?` procedure.  It may not
 matter if we do that once, or twice, or even a hundred times.  But
-when we're tallying a list of 42,000 elements (e.g., comparing vowels
+when we're tallying a list of 42,000 elements, e.g., comparing vowels
 to consonants in _The Wizard of Oz_, that's a lot of
 extra work.  Hence, we might more sensibly write the following.
 
-```drracket
+~~~racket
 ;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
 (define vowel?
-  (let ([vowels (string->list "aeiou")])
-    (lambda (ch)
-      (let ([lc (char-downcase ch)])
-        (ormap (cut (char=? lc <>)) vowels)))))
-```
+  (let ([vowels (string->list "aeious")])
+       (lambda (ch)
+         (let ([lc (char-downcase ch)])
+              (apply (lambda (b1 b2) (or b1 b2))
+                (map (section char=? lc _) vowels))))))
+
+
+> (vowel? #\t)
+#f
+> (vowel? #\e)
+#t
+> (vowel? #\0)
+#f
+~~~
 
 Unfortunately, it is not always possible to move the bindings outside of
 the `lambda`. In particular, if your let-bindings use parameters, then you
 need to keep them within the body of the lambda. 
 
-```drracket
+~~~racket
 ;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
-(define vowel-INCORRECT?
-  (let ([vowels (string->list "aeiou")]
+(define vowel?
+  (let ([vowels (string->list "aeious")]
         [lc (char-downcase ch)])
-    (lambda (ch)
-      (ormap (cut (char=? lc <>)) vowels))))
-```
+       (lambda (ch)
+         (apply (lambda (b1 b2) (or b1 b2))
+                (map (section char=? lc _) vowels)))))
+
+> (vowel? #\t)
+Error: undefined identifier 'ch'!
+> (vowel? #\e)
+Error: undefined identifier 'ch'!
+> (vowel? #\0)
+Error: undefined identifier 'ch'!
+~~~
 
 If you try to run this, it will complain that it doesn't know what `ch`
 is.  (Or, worse yet, it will use some other `ch` that bears no relation
-to the input to the procedure.
+to the input to the procedure).
 
 ## Local procedures
 
@@ -623,12 +667,12 @@ Yes, one can use a `let`- or `let*`-expression to create a local name
 for a procedure. And we name procedures locally for the same reason that
 we name values, because it speeds and clarifies the code.
 
-```drracket
+~~~racket
 (define hypotenuse-of-right-triangle
   (let ([square (lambda (n) (* n n))])
     (lambda (first-leg second-leg)
       (sqrt (+ (square first-leg) (square second-leg))))))
-```
+~~~
 
 Regardless of whether `square` is also defined outside this definition
 (e.g., as a procedure that draws squares), the local binding gives
@@ -640,12 +684,12 @@ locally. We can define it before the lambda (as above) or after the lambda
 (as below). In the first case, the definition is done only once. In the
 second case, it is done *every time* the procedure is executed.
 
-```drracket
+~~~racket
 (define hypotenuse-of-right-triangle
   (lambda (first-leg second-leg)
     (let ([square (lambda (n) (* n n))])
       (sqrt (+ (square first-leg) (square second-leg))))))
-```
+~~~
 
 So, which we should you do it? If the helper procedure you're defining
 uses any of the parameters of the main procedure, it needs to come after
@@ -653,62 +697,6 @@ the `lambda`. Otherwise, it is generally a better idea to do it before
 the lambda. As you practice more with `let`, you'll find times that each
 choice is appropriate.  It may be difficult at first, but it will become
 clearer as time goes on.
-
-## Nested `define` Statements
-
-Although most versions of Scheme frown upon using `define` for local
-bindings, DrRacket also lets you create local bindings by nesting
-`define` statements within each other. We recommend that you limit
-your use of `define` to top-level definitions, using just `let` and
-`let*` for internal definitions. While you can use one `define` within
-another, the semantics are a bit complicated, and such use can lead
-to unexpected results and therefore confusion. (We also find internal
-`define` statements inelegant; others may feel differently.)
-
-Here's a simple example of why we suggest that you use `let` rather
-than `define`.  Suppose that you've decided to increment one of the
-parameters and would like to use the same name to refer to that parameter.
-You know that Scheme does not let you easily change the value bound
-to a name.  However, it does allow you to rebind the name.  You might
-try the following.  
-
-```drracket
-(define sample-w/let
-  (lambda (x)
-    (let ([x (+ x 1)])
-      (list x x x))))
-
-(define sample-w/define
-  (lambda (x)
-    (define x (+ x 1))
-    (list x x x)))
-```
-
-What happens if we use these two definitions?  Let's start with `let`.
-
-```drracket
-> (sample-w/let 41)
-'(42 42 42)
-```
-
-That works fine.  What about the one that uses `define`?
-
-```drracket
-> (sample-w/define 41)
-. . x: undefined;
- cannot use before initialization
-```
-
-My, that's strange.  Isn't `x` defined through the `lambda`?  It turns out
-that while `x` *is* defined by the `lambda`, the evaluate of `define`
-is such that it binds the name before it evaluates the expression.
-That is, in evaluating `(define name exp)`, the Racket interpreter
-first puts `name` into the binding table with a value of *undefined*.
-Then it evaluates the expression.  Then it updates the binding table.
-That may be a strange order, particularly in the middle of the procedure,
-but it tends to be useful at the top level.
-
-There's another reason we don't like local `define` statements; they break our mental model. In our mental model, we can always evaluate by substituting. But that assumes that we always have a single nested expression. The `define` means that we sometimes have multiple expressions that are not nested (the `define` statements and then the following expression). The semantics of that situation is much less clear.
 
 ## Self checks
 
@@ -721,7 +709,7 @@ explain how it arrived at its answers.
 {:type="a"}
 a.
 
-```drracket
+```scheme
 (let ([tone "fa"]
       [call-me "al"])
   (string-append call-me tone "l" tone))
@@ -729,7 +717,7 @@ a.
 
 b.
 
-```drracket
+```scheme
 (let ([total (+ 8 3 4 2 7)])
   (let ([mean (/ total 5)])
     (* mean mean)))
@@ -737,7 +725,7 @@ b.
 
 c.
 
-```drracket
+```scheme
 (let* ([total (+ 8 3 4 2 7)]
        [mean (/ total 5)])
    (* mean mean))
@@ -745,7 +733,7 @@ c.
 
 d.
 
-```drracket
+```scheme
 (let ([total (+ 8 3 4 2 7)]
       [mean (/ total 5)])
    (* mean mean))
@@ -753,7 +741,7 @@ d.
 
 e.
 
-```drracket
+```scheme
 (let ([inches-per-foot 12.0]
       [feet-per-mile 5280])
   (let ([inches-per-mile (* inches-per-foot feet-per-mile)])
@@ -776,8 +764,7 @@ redundant call to `string->list`.
 b. Rewrite `v2c-ratio` using `let` to avoid the redundant call
 to `string->list`..
 
-Questions and Answers
----------------------
+## Questions and Answers
 
 Why do we care about avoiding the redundant call to `string->list`?
 
@@ -791,9 +778,16 @@ What do you mean by "helper procedure"?
 
 Why would we want to use `let` instead of `let*`?
 
-> `let` permits simultaneous evaluation, which can be more efficient.
-
-> Also, we may want to use the original value associated with a name.
-
-> However, I'll note that at least one of the instructors in the
-  department thinks that we should only use `let*`.
+> In any programming language, we want to reduce the number of identifiers
+> in scope at any given time. This is especially true in functional
+> programming where we write many small functions that perform highly
+> targeted tasks. In that sense, we should use `let` over `let*`
+> whenever possible to minimize the number of in-scope identifiers.
+>
+> Also, keeping mind with the theme of "making our code read like the
+> algorithm in our head," `let` and `let*` signal two different ideas.
+> `let` signals the idea that the identifiers bound are _independent_
+> of each other and `let*` signals that the identifiers are
+> _dependent_ in a top-down fashion. From a design perspective, we
+> choose either `let` or `let*` based on the independence/dependence
+> criterion.

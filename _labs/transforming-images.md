@@ -5,8 +5,7 @@ summary: |
   of anonymous procedures.
 ---
 
-Procedures to remember
-----------------------
+## Procedures to remember
 
 Basic color procedures
 
@@ -15,9 +14,6 @@ Basic color procedures
 * `(rgb-red c)` - extract the red component of an rgb color.
 * `(rgb-green c)` - extract the green component of an rgb color.
 * `(rgb-blue c)` - extract the blue component of an rgb color.
-* `(color-red c)` - extract the red component of a color.
-* `(color-green c)` - extract the green component of a color.
-* `(color-blue c)` - extract the blue component of a color.
 
 Transforming colors
 
@@ -45,26 +41,23 @@ Working with color names
 * `(find-colors name)` - find all the colors that include name.
 
 Working with images
-
-* `(image-load filename)` - load an image.
+* `(with-image-file fn)` - loads an image, calling `fn` with the image as input.
+* `(with-image-from-url url fn)` - loads an image from `url`, calling `fn` on the image as input.
 * `(pixel-map color-transformation image)`  - apply a color transformation to each pixel in an image.
 * `(image-save img filename) - save an image to a file.
 
 Working with procedures
 
-* `(cut (expression-with-diamonds))` - Build a new procedure that takes one parameter for each diamond in `expression-with-diamonds`.
-* `(o fun1 fun2 fun3 ... funn)` - Build a new procedure that applies `funn` then ... then `fun3` then `fun2` then `fun1` to its parameter.
+* `(section (expression-with-underscores))` - Build a new procedure that takes one parameter for each underscore in `expression-with-underscores`.
+* `(o fun1 fun2 fun3 ... funk)` - Build a new procedure that applies `funk` then ... then `fun3` then `fun2` then `fun1` to its parameter.
 
-The lab
--------
+## The lab
 
-* Use the file [transforming-images.rkt](../code/labs/transforming-images.rkt).
-* You should also download a copy of [the kitten image](../images/kitten.jpg) to the same folder as your Racket file.
-* Find one other image you like, such as your campus directory picture (or President Harris' directory picture, or your instructor's directory picture) and save it to the same folder.
+* Use the file [transforming-images.scm](../code/labs/transforming-images.scm).
+* Find an image you like, such as your campus directory picture (or President Harris' directory picture, or your instructor's directory picture) and save it to your desktop.
 
-Acknowledgements
-----------------
+##  Acknowledgements
 
 The kitten image was downloaded from <http://public-photo.net/displayimage-2485.html>.  Unfortunately, the site behind that URL has disappeared.  Nonetheless, the kitten image lives on.
 
-This lab was newly written for 2024Sp, based on [a lab from 2017Sp](https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CSC151/2017S/labs/transforming-images-early-lab.html).
+This lab was originally written in 2024Sp, based on [a lab from 2017Sp](https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CSC151/2017S/labs/transforming-images-early-lab.html).
