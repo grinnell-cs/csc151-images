@@ -124,6 +124,7 @@
 
 - topic: Transforming images
   abbrev: transforming-images
+  slides_link: https://docs.google.com/presentation/d/14z5lw6-BlXNzWF_5TAFsvDib7i8W61cGYqcgq-VtRyY/edit#slide=id.g2666291cd13_0_234
   summary: |
     We expand our understanding of RGB transformations to image transformations.
   reading:
