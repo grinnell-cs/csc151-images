@@ -112,14 +112,16 @@ This course covers 18 learning objectives (LOs).
     - **Tracing.** Trace the execution of a Racket program using a substitutive model of computation.   
     - **Primitive types**. Express basic computations over primitive values and their associated standard library functions.   
     - **Conditionals**. Use Boolean expressions and conditional operations to produce conditional behavior.   
-    - **Lists**. Manipulate lists with fundamental higher-order list functions.   
+    - **Testing**. Test programs according to good software engineering principles.   
+    - **Documentation**. Document programs according to good software engineering principles.   
+
 * Unit 2 (Weeks 5–8)   
     - **Local bindings**. Refactor redundancy and add clarity in computations with let-bindings.   
-    - **Documentation**. Document programs according to good software engineering principles.   
-    - **Testing**. Test programs according to good software engineering principles.   
+    - **Lists**. Manipulate lists with fundamental higher-order list functions.   
     - **List recursion**. Design and write recursive functions over lists.   
     - **Numeric recursion**. Design and write recursive functions over the natural numbers.   
     - **Higher-order programming**. Write procedures that take procedures as parameters and return procedures as results.   
+
 * Unit 3 (Weeks 9–13)   
     - **Lambda-free anonymous procedures**. Use section and composition to simplify computations.   
     - **Dictionaries**. Design and write functions that use dictionaries.   
