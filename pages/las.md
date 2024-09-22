@@ -18,13 +18,13 @@ Unit 1
 * [Tracing](../las/tracing.html)
 * [Primitive types](../las/primitive-types.html)
 * [Conditionals](../las/conditionals.html)
-* [Lists](../las/lists.html)
+* [Testing](../las/testing.html)
+* [Documentation](../las/documentation.html)
 
 Unit 2
 : 
 * [Local bindings](../las/local-bindings.html)
-* [Documentation](../las/documentation.html)
-* [Testing](../las/testing.html)
+* [Lists](../las/lists.html)
 * [List recursion](../las/list-recursion.html)
 * [Numeric recursion](../las/numeric-recursion.html)
 * [Higher-order programming](../las/write-hop.html)
