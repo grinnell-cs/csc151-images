@@ -22,7 +22,7 @@ The other person is Side B.
 
 Download the code from
 
-* [local-bindings.rkt]({{ "/code/labs/local-bindings.rkt" | relative_url }})
+* [local-bindings.scm]({{ "/code/labs/local-bindings.scm" | relative_url }})
 
 and follow the instructions.
 
