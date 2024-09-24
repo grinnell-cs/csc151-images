@@ -138,6 +138,7 @@
 
 - topic: Local bindings
   abbrev: let
+  slides_link: https://docs.google.com/presentation/d/1oaiPhaRLYkWpaGFWhZ9E2x5kNHuXVZLw5YfKF_22sVU/edit#slide=id.g2666291cd13_0_234
   summary: |
     We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
   reading:
@@ -145,19 +146,17 @@
   lab:
     - page: /labs/local-bindings.html
 
-# - topic: Pair programming
-#   abbrev: pair-programming
-#   summary: |
-#     We explore the whys and hows of working with others.  
-#   reading:
-#     - title: How Pair Programming Really Works (Wray)
-#       resource: /files/PairProgramming.pdf
-#     - title: Coping with Hitchhikers and Couch Potatoes on Teams (from B. Oakley et. al (2004).  Turning Student Groups into Effective Teams.  <em>Journal of Student-Centered Learning</em> 2 (1).)
-#       resource: /files/OakleyHitchhikers2004.pdf
-#     - title: Diverse Teams Feel Less Comfortable -- and That's Why They Perform Better
-#       resource: /files/DiverseTeams2016.pdf
-#   lab:
-#     - (TBA)
+- topic: Pair programming
+  abbrev: pair-programming
+  summary: |
+    We explore the whys and hows of working with others.
+  reading:
+    - title: Diverse Teams Feel Less Comfortable -- and That's Why They Perform Better
+      resource: /files/DiverseTeams2016.pdf
+    - title: How Pair Programming Really Works (Wray)
+      resource: /files/PairProgramming.pdf
+  lab:
+    - (TBA)
 
 # - topic: "Exam #1"
 #   abbrev: exam-1
