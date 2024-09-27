@@ -164,19 +164,19 @@
   summary: |
     The first core examination.
 
-# - topic: Lists
-#   abbrev: lists
-#   summary: |
-#     We return to Scheme's *list* data structure and some ways to
-#     use lists to work with collections of data.
-#   reading:
-#     - page: /readings/list-basics.html
-#     - page: /readings/list-transform.html
-#   lab:
-#     - page: /labs/list-basics.html
-#   todo:
-#     - Do we also include `car`, `cdr`, and `cons` here?  Do we
-#      perhaps include a separate day?
+- topic: Lists
+  abbrev: lists
+  summary: |
+    We return to Scheme's *list* data structure and some ways to
+    use lists to work with collections of data.
+  reading:
+    - page: /readings/list-basics.html
+    - page: /readings/list-transform-generic.html
+  lab:
+    - page: /labs/list-basics.html
+  todo:
+    - Do we also include `car`, `cdr`, and `cons` here?  Do we
+     perhaps include a separate day?
 
 # - topic: Processing lists
 #   abbrev: processing-lists
