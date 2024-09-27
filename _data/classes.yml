@@ -148,6 +148,7 @@
 
 - topic: Pair programming
   abbrev: pair-programming
+  slides_link: https://docs.google.com/presentation/d/1g2vaMSROaolcP6LVQbdtRx7B0A_Z4oK6xkwASwYNTwA/edit#slide=id.g2666291cd13_0_234
   summary: |
     We explore the whys and hows of working with others.
   reading:
@@ -158,10 +159,10 @@
   lab:
     - (TBA)
 
-# - topic: "Exam #1"
-#   abbrev: exam-1
-#   summary: |
-#     The first core examination.
+- topic: "Exam #1"
+  abbrev: exam-1
+  summary: |
+    The first core examination.
 
 # - topic: Lists
 #   abbrev: lists
