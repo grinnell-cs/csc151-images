@@ -132,38 +132,38 @@
   lab:
     - page: /labs/local-bindings.html
 
-# - topic: Pair programming
-#   abbrev: pair-programming
-#   summary: |
-#     We explore the whys and hows of working with others.  
-#   reading:
-#     - title: How Pair Programming Really Works (Wray)
-#       resource: /files/PairProgramming.pdf
-#     - title: Coping with Hitchhikers and Couch Potatoes on Teams (from B. Oakley et. al (2004).  Turning Student Groups into Effective Teams.  <em>Journal of Student-Centered Learning</em> 2 (1).)
-#       resource: /files/OakleyHitchhikers2004.pdf
-#     - title: Diverse Teams Feel Less Comfortable -- and That's Why They Perform Better
-#       resource: /files/DiverseTeams2016.pdf
-#   lab:
-#     - (TBA)
+- topic: Pair programming
+  abbrev: pair-programming
+  summary: |
+    We explore the whys and hows of working with others.  
+  reading:
+    - title: How Pair Programming Really Works (Wray)
+      resource: /files/PairProgramming.pdf
+    - title: Coping with Hitchhikers and Couch Potatoes on Teams (from B. Oakley et. al (2004).  Turning Student Groups into Effective Teams.  <em>Journal of Student-Centered Learning</em> 2 (1).)
+      resource: /files/OakleyHitchhikers2004.pdf
+    - title: Diverse Teams Feel Less Comfortable -- and That's Why They Perform Better
+      resource: /files/DiverseTeams2016.pdf
+  lab:
+    - (TBA)
 
-# - topic: "Exam #1"
-#   abbrev: exam-1
-#   summary: |
-#     The first core examination.
+- topic: "Exam #1"
+  abbrev: exam-1
+  summary: |
+    The first core examination.
 
-# - topic: Lists
-#   abbrev: lists
-#   summary: |
-#     We return to Scheme's *list* data structure and some ways to
-#     use lists to work with collections of data.
-#   reading:
-#     - page: /readings/list-basics.html
-#     - page: /readings/list-transform.html
-#   lab:
-#     - page: /labs/list-basics.html
-#   todo:
-#     - Do we also include `car`, `cdr`, and `cons` here?  Do we
-#      perhaps include a separate day?
+- topic: Lists
+  abbrev: lists
+  summary: |
+    We return to Scheme's *list* data structure and some ways to
+    use lists to work with collections of data.
+  reading:
+    - page: /readings/list-basics.html
+    - page: /readings/list-transform-generic.html
+  lab:
+    - page: /labs/list-basics.html
+  todo:
+    - Do we also include `car`, `cdr`, and `cons` here?  Do we
+     perhaps include a separate day?
 
 # - topic: Processing lists
 #   abbrev: processing-lists
