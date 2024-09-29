@@ -63,7 +63,7 @@ Passing `"solid"` creates a solid (filled in) shape and `"outline"` creates an o
 The `color` argument specifies the color of the shape, _e.g._, `"red"` or `"cyan"`.
 You can use any of the named colors supported by most browsers; see this [w3schools.com list](https://www.w3schools.com/colors/colors_names.asp) to see which named colors are available.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (circle 100 "outline" "red")
@@ -73,7 +73,7 @@ You can use any of the named colors supported by most browsers; see this [w3scho
 
 In addition, you can draw ellipses, squares, and generalized polygons:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (ellipse 80 60 "solid" "purple")
@@ -85,7 +85,7 @@ In addition, you can draw ellipses, squares, and generalized polygons:
 
 Polygons are created via the `path` function. They are a bit more complicated. We won't discuss all the details yet, but a few examples might be of interest. Note that `(pair x y)` creates an x/y point on an upside-down coordinate system.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (path 100 50 (list (pair 0 0) (pair 100 20) (pair 30 50)) "solid" "blue")
@@ -112,7 +112,7 @@ images.
   top, then the next one, and so on and so forth.  Images are aligned
   according to their centers.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 (define small-gray (circle 20 "solid" "gray"))
 (define medium-red (circle 30 "solid" "red"))
@@ -124,7 +124,7 @@ images.
 
 When overlaying images, order matters. The first is on top of the second, the second is on top of the third, and so on and so forth.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 (define small-gray (circle 20 "solid" "gray"))
 (define medium-red (circle 30 "solid" "red"))
@@ -144,7 +144,7 @@ What if we don't want things aligned on centers?  The Scamper image library prov
 * `(overlay/align halign valign i1 i2 ...)` allows you to
   align overlaid images.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 (define small-gray (circle 20 "solid" "gray"))
 (define medium-red (circle 30 "solid" "red"))
@@ -213,14 +213,14 @@ In Scamper's image model, you can use the `color` procedure to create RGB colors
 
 The `color` procedure also takes a fourth parameter, which is often called the "alpha" value, and which you can think of as the _opacity_ of the color. A color with an opacity of `0` is transparent; a color with an opacity of `1` obscures anything below it. Less opaque colors also appear lighter.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 (beside (circle 40 "solid" (color 0 255 0 1))
         (circle 40 "solid" (color 0 128 128 0.25))
         (circle 40 "solid" (color 64 0 64 0.75)))
 </pre>
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 (beside
   (rectangle 25 40 "solid" (color 0 0 255 1))
@@ -231,7 +231,7 @@ The `color` procedure also takes a fourth parameter, which is often called the "
 
 Opacity will be especially important as we start to overlay shapes.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 (define circles 
   (beside

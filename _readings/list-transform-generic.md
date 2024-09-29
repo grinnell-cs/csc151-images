@@ -8,7 +8,7 @@ preimg: true
 
 Imagine representing the collection of yearly salaries found at a startup using a simple list, for example:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define salaries (list 100000 100000 50000 75000 500000))
 </pre>
 
@@ -17,13 +17,13 @@ We might decompose this problem into the problem of computing *one* person's upd
 Let's take the first person whom makes `100000` (units deliberately unspecified) as an example.
 The Social Security COLA for 2020 was [%1.6](https://www.ssa.gov/OACT/COLA/colasummary.html), so we can calculate the updated salary using arithmetic:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (+ 100000 (* 100000 0.016))
 </pre>
 
 And we can abstract this into a function that computes the updated salary when given a salary:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 ;;; (compute-cola-salary salary) -> number?
 ;;;   salary : number?, non-negative
 ;;; Returns the given salary, updated for cost-of-living.
@@ -43,7 +43,7 @@ We say that we want to *lift* the function `compute-cola-salary` from operating 
 
 In Scheme, we realize the behavior of *lifting a function to a list of values* with the `map` function:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define salaries (list 100000 100000 50000 75000 500000))
 
 (define compute-cola-salary
@@ -77,7 +77,7 @@ Let's break down how you use `map`.
 
 Any transformation function over salaries can be passed in to our call to `map`, for example, the startup might have [gone public](https://www.investopedia.com/ask/answers/what-does-going-public-mean/) so everyone gets their salary doubled:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define salaries (list 100000 100000 50000 75000 500000))
 
 (define double-salary
@@ -89,7 +89,7 @@ Any transformation function over salaries can be passed in to our call to `map`,
 
 The startup might have hit a downturn and needs to reduce their salaries:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define salaries (list 100000 100000 50000 75000 500000))
 
 (define downsize
@@ -101,7 +101,7 @@ The startup might have hit a downturn and needs to reduce their salaries:
 
 Or worse yet, the downturn might be so bad that the startup needs to do the right thing and let go of its higher-earning employees to stay under budget:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define salaries (list 100000 100000 50000 75000 500000))
 
 (define should-keep
@@ -121,7 +121,7 @@ As long as we can recognize the "collection" being transformed in our problem, w
 
 As an example, consider the following code that draws a collection of green circles beside each other:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define green-circle
@@ -151,7 +151,7 @@ The _size_ is therefore the element we are transforming!
 We're transforming a size into a circle by way of the `green-circle` function.
 We can then transform a _collection of sizes_ into a _collection of circles_ by lifting `green-circle` using `map`:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define green-circle
@@ -172,7 +172,7 @@ This is a *list* of green circles of different sizes (note the `(list ... )` sur
 As with the original version of the code, we need to use `beside` to combine the circles.
 However, if we simply pass this expression to `beside`, we get an error:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define green-circle
@@ -198,7 +198,7 @@ Ultimately, we have to, somehow, pass in each image in the list `circles` to eac
 How do we do this?
 It turns out we have to employ an additional standard library function of Scheme to do this, `apply`.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define green-circle
@@ -218,19 +218,19 @@ More generally, `apply` is a helpful standard library function when working with
 
 As a simpler example of `apply`, consider the simple `(+)` function which can take any number of arguments:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (+ 1 2 3 4 5)
 </pre>
 
 While `(+)` takes any number of arguments, it cannot take a *single list* as an argument:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (+ (list 1 2 3 4 5))
 </pre>
 
 To pass this list of numbers to `(+)`, we can use the `apply` function:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (apply + (list 1 2 3 4 5))
 </pre>
 
@@ -238,7 +238,7 @@ To pass this list of numbers to `(+)`, we can use the `apply` function:
 
 So let's summarize the image code we've written:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define green-circle
@@ -261,7 +261,7 @@ As a final note, I'll mention that it is more flexible, too.
 For example, there's nothing special about the fact that we wanted the circles besides each other.
 The following modified code leverages our abstractions to get a different effect with minimal effort:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define green-circle
@@ -300,7 +300,7 @@ in the list*.  Let's consider two simple examples.
 You may remember that `square` computes the square of a number and `string-upcase` converts
 a string to upper case.  
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (square 5)
 (string-upcase "quiet")
 </pre>
@@ -308,7 +308,7 @@ a string to upper case.
 If we're using `map`, we should use `square` with lists of numbers and `string-upcase` with
 lists of numbers.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (range 6)
 (map square (range 6))
 (string-split "please be quiet not loud" " ")
@@ -317,7 +317,7 @@ lists of numbers.
 
 But what happens if we don't match types?  Let's see.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (map square (string-split "please be quite not loud" " "))
 (map string-upcase (range 6))
 </pre>
@@ -330,7 +330,7 @@ What if we do something even stranger, such as writing something other than a
 procedure in the procedure position, or something other than a list in the
 list position?  Let's try.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (map 5 (list 1 2 3))
 (map square 5)
 </pre>
@@ -342,14 +342,14 @@ Next, let's move on to `apply`.  Like `map`, `apply` takes a procedure and a lis
 as parameters.  While `map` applies the procedure element by element, `apply`
 applies the procedure to the elements _en masse_, as it were.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (apply * (list 2 3 4))
 (apply string-append (list "this" "and" "that"))
 </pre>
 
 Once again, we should see what happens if we give incorrect types.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (apply * (list 2 3 4))
 (apply string-append (list "this" "and" "that"))
 (apply * (list "this" "and" "that"))

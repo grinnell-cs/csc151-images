@@ -76,7 +76,7 @@ See if you get the same values as us!
 (_Note_: make sure to _type_ these snippets rather than copy-pasting them in.
 It is important to get a programming language, literally speaking, _in_ you fingertips rather than just in your head!)
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (sqrt 144)
 
 (+ 3 4)
@@ -118,7 +118,7 @@ Feel free to go on to the next exercise, but if you are confused by any of the o
 
 As you may have noted, you get an error when you try to make a circle.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (circle 50 "solid" "teal")
 </pre>
 
@@ -151,7 +151,7 @@ check the image examples from [the reading]({{ "/readings/scamper.html" | relati
 Enter each of the following expressions into the bottom of your `shapes.scm` file.
 After entering each expression, rerun your program and observe that your output matches what you see in this writeup.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 ; Remember: this import statement only needs to appear once at the top of the file!
 (import image)
 
@@ -272,7 +272,7 @@ If you are expected to provide a full citation, you can go back later and add it
 
 Let's try another definition. Define `name` as your name in quotation marks. For example,
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define name "Student")
 </pre>
 
@@ -432,7 +432,7 @@ However, you can also name the results of expressions.
 
 When entering an arithmetic expression in the "natural way," _i.e._, `(2 + 3)`, Scamper reports the following error:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (2 + 3)
 </pre>
 
@@ -440,7 +440,7 @@ When Scamper sees the left parenthesis at the beginning of the expression `(2 + 
 
 Parentheses in Scamper (and Scheme) are surprisingly important! Observe the following code snippet, `7 * 9`, similar to the snippet above but without parentheses. 
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 7 * 9
 </pre>
 
@@ -459,7 +459,7 @@ the computer has absolutely no common sense).
 
 For example, consider how you might call the `sqrt` function in other languages, `sqrt(49)`:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 sqrt(49)
 </pre>
 

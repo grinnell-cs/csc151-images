@@ -206,7 +206,9 @@ We can use our tools, namely the stepper, and intuition to diagnose errors, even
 
 However the function does not work as expected:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
+(import test)
+
 (define make-change
   (lambda (n)
     (let* ([quarters (quotient n 25)]
@@ -218,7 +220,7 @@ However the function does not work as expected:
       (list quarters dimes nickels cents))))
 
 (test-case "change example"
-  equal? (list 5 0 0 4) (make-change 129))
+  equal? (list 5 0 0 4) (lambda () (make-change 129)))
 </pre>
 
 Go through each step of the hypothesis debugging process to discover, diagnose, and ultimately fix the problem.

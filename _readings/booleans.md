@@ -138,7 +138,7 @@ Here are some of the more common ones.
 * `char-ci>=?` tests whether its arguments, which must all be characters,
   are in descending alphabetical order, ignoring case.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (char<? #\a #\a)
 (char<=? #\a #\a)
 (char<? #\a #\b)
@@ -173,7 +173,7 @@ one argument and returns `#t` if the argument is `#f` and `#f` if the
 argument is anything else. For example, one can test whether `picture`
 is not an image with:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 (define picture (square 100 "solid" "black"))
 (not (image? picture))
@@ -190,7 +190,7 @@ false if any value is false, the *or* of a collection of Boolean values
 is true if any of the values is true and false if all the values are
 false. For example,
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (and #t #t #t)
 (and (< 1 2) (< 2 3))
 (and (odd? 1) (odd? 3) (odd? 5) (odd? 6))
@@ -214,7 +214,7 @@ If `and` and `or` were procedures, we could not guarantee their control
 behavior. We'd also get some ugly errors. For example, consider the
 extended version of the `even?` predicate below:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define new-even?
   (lambda (val)
     (and (integer? val) (even? val))))
@@ -232,7 +232,7 @@ We can, of course, write our own predicates.  For example, here is a
 predicate that determines whether its input, a real number, is between
 0 and 100, inclusive.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define valid-grade?
   (lambda (val)
     (<= 0 val 100)))
@@ -241,7 +241,7 @@ predicate that determines whether its input, a real number, is between
 We can also write our own comparators.  For example, here's a somewhat
 pointless comparator that orders words based on their second letter.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 ;;; (second-letter<? str1 str2) -> boolean?
 ;;;   str1 : string?
 ;;;   str2 : string?

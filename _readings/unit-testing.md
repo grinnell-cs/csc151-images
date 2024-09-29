@@ -81,7 +81,7 @@ We haven't discussed this yet, so don't worry about _how_ we implemented
 `remove-negatives`.
 Focus on _how_ it behaves instead!)
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define remove-negatives
   (lambda (l) (filter (lambda (n) (>= n 0)) l)))
 
@@ -108,7 +108,7 @@ useful to have the computer do the comparison for you. For example, we might
 write a procedure, `check`, that checks to make sure that two expressions are
 equal. We can then use this procedure for the tests above, as follows:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define remove-negatives
   (lambda (l) (filter (lambda (n) (>= n 0)) l)))
 
@@ -151,7 +151,7 @@ it seems a bit excessive to print OK every time. Finally, we get neither
 In fact, if an error occurs in the middle of a group of tests, the whole
 thing may come to a screeching halt.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define remove-negatives
   (lambda (l) (filter (lambda (n) (>= n 0)) l)))
 
@@ -211,7 +211,7 @@ We provide an additional statement forms that allows you to write unit
 tests for your code:
 
 ~~~racket
-(test-case <description> <equality-test> <expected> <actual>)
+(test-case <description> <equality-test> <expected> <fn>)
 ~~~
 
 Note that while this form look like a function call, because it is a statement,
@@ -228,15 +228,21 @@ Each of the four "arguments" to `test-case` are expressions as follows:
     This will often be the `equal?` function.
 +   `<expected>` an expression that evaluates to the expected value for
     this test case.
-+   `<actual>` is the expression that we actually want to test.
++   `<fn>` is a zero-argument function that executes the code that we want to test. The result is function is tested for equality with the expected value.
 
 Here is an example of simple use of `test-case`: one where the test passes and
 another when the test fails:
 
-<pre class="scamper-output output-prog">
-(test-case "simple test case that passes" equal? 1 1)
+<pre class="scamper source">
+(import test)
 
-(test-case "simple test case that fails" equal? 1 0)
+(test-case "simple test case that passes"
+  equal? 1
+  (lambda () 1))
+
+(test-case "simple test case that fails"
+  equal? 1
+  (lambda () 0))
 </pre>
 
 
@@ -260,36 +266,56 @@ For example, here are some examples of using `test-case` and `=-eps`. Note how
 when the test succeeds, the output is a note that the test succeeded. When the
 test fails, you get feedback about why that was the case!
 
-<pre class="scamper-output output-prog">
-(test-case "exact equality of 4" (=-eps 0) 4 4)
-(test-case "two times two is exactly four" (=-eps 0) 4 (* 2 2))
-(test-case "sqrt 2 squared, approximately" (=-eps 0.00001) 2 (* (sqrt 2) (sqrt 2)))
-(test-case "sqrt 2 squared, exactly" (=-eps 0) 2 (* (sqrt 2) (sqrt 2)))
+<pre class="scamper source">
+(import test)
+
+(test-case "exact equality of 4"
+  (=-eps 0) 4
+  (lambda () 4))
+
+(test-case "two times two is exactly four"
+  (=-eps 0) 4
+  (lambda () (* 2 2)))
+
+(test-case "sqrt 2 squared, approximately"
+  (=-eps 0.00001) 2
+  (lambda () (* (sqrt 2) (sqrt 2))))
+
+(test-case "sqrt 2 squared, exactly"
+  (=-eps 0) 2
+  (lambda () (* (sqrt 2) (sqrt 2))))
 </pre>
 
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
+(import test)
+
 (define remove-negatives
   (lambda (l) (filter (lambda (n) (>= n 0)) l)))
 
-(test-case "empty list" equal?
-  (remove-negatives (list))
-  (list))
-(test-case "singleton list, no negatives" equal?
-  (remove-negatives (list 3))
-  (list 3))
-(test-case "multiple elements, no negatives" equal?
-  (remove-negatives (list 3 7 11))
-  (list 3 7 11))
-(test-case "negative at front of list" equal?
-  (remove-negatives (list -1 3 7 11))
-  (list 3 7 11))
-(test-case "mixed list" equal?
-  (remove-negatives (list -1 3 -2 7 -3 11))
-  (list 3 7 11))
-(test-case "all negative" equal?
-  (remove-negatives (list -1 -2 -3))
-  (list))
+(test-case "empty list"
+  equal? null
+  (lambda () (remove-negatives null)))
+
+(test-case "singleton list, no negatives"
+  equal? (list 3)
+  (lambda () (remove-negatives (list 3))))
+
+(test-case "multiple elements, no negatives"
+  equal? (list 3 7 11)
+  (lambda () (remove-negatives (list 3 7 11))))
+
+(test-case "negative at front of list"
+  equal? (list 3 7 11)
+  (lambda () (remove-negatives (list -1 3 7 11))))
+
+(test-case "mixed list"
+  equal? (list 3 7 11)
+  (lambda () (remove-negatives (list -1 3 -2 7 -3 11))))
+
+(test-case "all negative"
+  equal? null
+  (lambda () (remove-negatives (list -1 -2 -3))))
 </pre>
 
 ## When to write tests

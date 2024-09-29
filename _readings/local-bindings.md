@@ -41,7 +41,7 @@ that you end up telling the computer to do the same thing again and
 again and again.  For example, here's a bit of code that determines
 the ratio of vowels to consonants and let's see how well it works.
 
-~~~racket
+<pre class="scamper source">
 ;;; (tally f l) -> number?
 ;;;   f : function?, a predicate over elements of l
 ;;;   l : list?
@@ -56,17 +56,6 @@ the ratio of vowels to consonants and let's see how well it works.
                0)
            (tally f (cdr l))))))
 
-;;; (vowel? ch) -> boolean?
-;;;   ch : char?
-;;; Determine whether ch is a vowel.
-(define tally
-  (lambda (f l)
-    (match f
-      [null 0]
-      [(cons head tail)
-       (if (f head)
-           (+ 1 (tally tail))
-           (tally tail))])))
 ;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
@@ -93,19 +82,12 @@ the ratio of vowels to consonants and let's see how well it works.
     (/ (tally vowel? (string->list str))
        (tally consonant? (string->list str)))))
 
-> (v2c-ratio "Hello")
-0.3333333333333
-
-> (v2c-ratio "Aaargh!")
-1
-
-> (v2c-ratio "aeiouxy")
-2.5
-
-> (v2c-ratio "a")
-Error: divide by zero
+(v2c-ratio "Hello")
+(v2c-ratio "Aaargh!")
+(v2c-ratio "aeiouxy")
 ; Whoops!
-~~~
+(v2c-ratio "a")  
+</pre>
 
 'Eh.  It's good enough for now.
 
@@ -142,7 +124,7 @@ _Yes, you can fill in the annoying delay now._
 Here's one approach: We can decompose the task into two tasks.  We'll
 write one procedure that determines if a character is a lowercase vowel.
 
-~~~racket
+<pre class="scamper source-only">
 ;;; (lower-case-vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a lowercase vowel.
@@ -153,19 +135,19 @@ write one procedure that determines if a character is a lowercase vowel.
         (char=? ch #\i)
         (char=? ch #\o)
         (char=? ch #\u))))
-~~~
+</pre>
 
 That seems straightforward enough, doesn't it?  Our `vowel?` procedure
 can then call that other procedure using a letter converted to lowercase.
 
-~~~racket
-l? ch) -> boolean?
+<pre class="scamper source-only">
+;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
 (define vowel?
   (lambda (ch)
     (lower-case-vowel? (char-downcase ch))))
-~~~
+</pre>
 
 About as easy to read as before.  A little more typing on our part.
 And we've saved some computation.  In fact, this kind of decomposition
@@ -175,12 +157,12 @@ that do a sequence of steps by using one procedure for each step.
 In fact, now that we've phrased it as a sequence of steps, we can
 take advantage of composition.
 
-~~~racket
-l? ch) -> boolean?
+<pre class="scamper source">
+;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
 (define vowel? (o lower-case-vowel? char-downcase))
-~~~
+</pre>
 
 _Detour:_ Why are we repeating the documentation each time we show
 you a new imlementation of the `vowel?` predicate?  Mostly to
@@ -233,7 +215,7 @@ looks up the binding in the table.
 Here's one way to write `vowel?` with `let` and
 without helpers.
 
-~~~racket
+<pre class="scamper source">
 ;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
@@ -245,7 +227,7 @@ without helpers.
           (char=? lc #\i)
           (char=? lc #\o)
           (char=? lc #\u)))))
-~~~
+</pre>
 
 *Important!*  Note that even though binding lists and binding
 specifications start with parentheses, they are *not* procedure
@@ -294,12 +276,12 @@ discussion of the ordering of `let` and `lambda` below.
 Now that we've discussed how `let` works at a high-level, let's consider how `let` behaves precisely within the context of our mental model of computation.
 For example, consider the following expression:
 
-~~~racket
+<pre class="scamper source">
 (let ([x (+ 1 1)]
       [y (* 2 3)]
       [z (- 8 5)])
   (+ x y z))
-~~~
+</pre>
 
 We think about evaluating a `let`-expression in multiple stages.
 
@@ -438,7 +420,7 @@ In contrast to `let`:
 
 Here is a simple `let*` expression and how it evaluates step-by-step in this model:
 
-```racket
+~~~racket
     (let* ([x 5]
            [y (* x 2)]
            [z (+ x y)])
@@ -455,7 +437,7 @@ Here is a simple `let*` expression and how it evaluates step-by-step in this mod
       (+ 5 10 z))
 --> (+ 5 10 15))
 --> 30
-```
+~~~
 
 ## Positioning `let` relative to `lambda`
 
@@ -492,7 +474,7 @@ you'll understand.")  You might begin with
 
 This produce does correctly compute the desired result. However, it is a bit hard to read. For clarity, you might want to name some of the values.
 
-~~~racket
+<pre class="scamper source">
 (define years-to-seconds
   (lambda (years)
     (let* ([days-per-year 365.24]
@@ -503,9 +485,8 @@ This produce does correctly compute the desired result. However, it is a bit har
                                 minutes-per-hour seconds-per-minute)])
       (* years seconds-per-year))))
 
-> (years-to-seconds 10)
-315567360.0
-~~~
+(display (years-to-seconds 10))
+</pre>
 
 We have clarified the code, although we have also lengthened it a
 bit. However, as we noted before, a second goal of naming is to avoid
@@ -541,7 +522,7 @@ What we'd like to do is to declare the values once, but keep them local
 to `years-to-seconds`. The strategy is to move the `let` outside the
 `lambda`.
 
-~~~racket
+<pre class="scamper source">
 (define years-to-seconds
   (let* ([days-per-year 365.24]
          [hours-per-day 24]
@@ -552,9 +533,8 @@ to `years-to-seconds`. The strategy is to move the `let` outside the
         (lambda (years)
           (* years seconds-per-year))))
 
-> (years-to-seconds 10)
-315567360.0
-~~~
+(years-to-seconds 10)
+</pre>
 
 As you will see in the lab, it is possible to empirically verify that
 the bindings occur only once in this case, and each time the procedure
@@ -564,7 +544,7 @@ One moral of this story is *whenever possible, move your bindings
 outside the `lambda`!.   Let's return to the `vowel?`
 procedure we wrote above.
 
-~~~racket
+<pre class="scamper source-only">
 ;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
@@ -576,14 +556,14 @@ procedure we wrote above.
           (char=? lc #\i)
           (char=? lc #\o)
           (char=? lc #\u)))))
-~~~
+</pre>
 
 That code is still somewhat repetitious.  After all, we're doing the
 same thing for each of the cases: comparing.  For starters, we can
 use lists and their associated functions to reduce the clutter of
 the 5-way `or` call.
 
-~~~racket
+<pre class="scamper source">
 ;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
@@ -594,13 +574,10 @@ the 5-way `or` call.
       (apply (lambda (b1 b2) (or b1 b2))
              (map (section char=? lc _) vowels)))))
 
-> (vowel? #\t)
-#f
-> (vowel? #\e)
-#t
-> (vowel? #\0)
-#f
-~~~
+(vowel? #\t)
+(vowel? #\e)
+(vowel? #\0)
+</pre>
 
 But that definition requires Scheme to build the list every time
 we call the `vowel?` procedure.  It may not
@@ -609,7 +586,7 @@ when we're tallying a list of 42,000 elements, e.g., comparing vowels
 to consonants in _The Wizard of Oz_, that's a lot of
 extra work.  Hence, we might more sensibly write the following.
 
-~~~racket
+<pre class="scamper source">
 ;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
@@ -621,19 +598,16 @@ extra work.  Hence, we might more sensibly write the following.
                 (map (section char=? lc _) vowels))))))
 
 
-> (vowel? #\t)
-#f
-> (vowel? #\e)
-#t
-> (vowel? #\0)
-#f
-~~~
+(vowel? #\t)
+(vowel? #\e)
+(vowel? #\0)
+</pre>
 
 Unfortunately, it is not always possible to move the bindings outside of
 the `lambda`. In particular, if your let-bindings use parameters, then you
 need to keep them within the body of the lambda. 
 
-~~~racket
+<pre class="scamper source">
 ;;; (vowel? ch) -> boolean?
 ;;;   ch : char?
 ;;; Determine whether ch is a vowel.
@@ -644,13 +618,10 @@ need to keep them within the body of the lambda.
          (apply (lambda (b1 b2) (or b1 b2))
                 (map (section char=? lc _) vowels)))))
 
-> (vowel? #\t)
-Error: undefined identifier 'ch'!
-> (vowel? #\e)
-Error: undefined identifier 'ch'!
-> (vowel? #\0)
-Error: undefined identifier 'ch'!
-~~~
+(vowel? #\t)
+(vowel? #\e)
+(vowel? #\0)
+</pre>
 
 If you try to run this, it will complain that it doesn't know what `ch`
 is.  (Or, worse yet, it will use some other `ch` that bears no relation
@@ -667,12 +638,12 @@ Yes, one can use a `let`- or `let*`-expression to create a local name
 for a procedure. And we name procedures locally for the same reason that
 we name values, because it speeds and clarifies the code.
 
-~~~racket
+<pre class="scamper source-only">
 (define hypotenuse-of-right-triangle
   (let ([square (lambda (n) (* n n))])
     (lambda (first-leg second-leg)
       (sqrt (+ (square first-leg) (square second-leg))))))
-~~~
+</pre>
 
 Regardless of whether `square` is also defined outside this definition
 (e.g., as a procedure that draws squares), the local binding gives
@@ -684,12 +655,12 @@ locally. We can define it before the lambda (as above) or after the lambda
 (as below). In the first case, the definition is done only once. In the
 second case, it is done *every time* the procedure is executed.
 
-~~~racket
+<pre class="scamper source-only">
 (define hypotenuse-of-right-triangle
   (lambda (first-leg second-leg)
     (let ([square (lambda (n) (* n n))])
       (sqrt (+ (square first-leg) (square second-leg))))))
-~~~
+</pre>
 
 So, which we should you do it? If the helper procedure you're defining
 uses any of the parameters of the main procedure, it needs to come after

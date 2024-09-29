@@ -17,7 +17,7 @@ That is, a subroutine is just an algorithm that has been named and "parameterize
 
 For example, we might want to define a procedure, `square`, that takes as input a number and computes the square of that number.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (square 5)
 (square 1.5)
 (square 0.333)
@@ -29,7 +29,7 @@ As you may have noted, `square` can have multiple meanings.  If
 we're making drawings, it could also mean "make a square".  Let's
 consider an example.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (square 50 "solid" "red")
@@ -77,7 +77,7 @@ Finally, the `<expr>` is a Scheme expression that is the computation that the fu
 
 Let's look at a simple example, that of squaring a number.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define square-number
   (lambda (x)
     (* x x)))
@@ -89,7 +89,7 @@ Mentally, most Scheme programmers read this as something like
 
 Let's also look at some examples of using our new procedure.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define square-number
     (lambda (x)
       (* x x)))
@@ -102,7 +102,7 @@ square-number
 You may note in the last line that when we asked Scamper for the "value" of `square-number`, it told us that it's a function.
 Compare that to other values we might define.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 (define x 5)
 x
@@ -151,7 +151,7 @@ What about the colored squares?
 
 If we want a procedure to make squares, we'll just call the `rectangle` procedure, using the same value for the width and height.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define color-square
@@ -163,7 +163,7 @@ What happens if we call `color-square` on inputs of `50` and `"red"`?
 Scheme substitutes `50` for `side` and `"red"` for color, giving us `(rectangle 50 50 "solid" "red")`.  
 And, as we saw in the examples above, that's a red square of side-length 50.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define color-square
@@ -178,7 +178,7 @@ And, as we saw in the examples above, that's a red square of side-length 50.
 The square is a relatively simple example.  Consider, for example, the
 following definition of a simple drawing of a house.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (overlay/align "middle" "bottom"
@@ -203,7 +203,7 @@ For now, let's consider a simpler version, one that does not include the door.
 Remember: Decomposition is your friend!
 If we did not care about resizing the house, we might just write an expression like the following.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (above (triangle 50 "solid" "red")
@@ -215,7 +215,7 @@ Let's say that the size corresponds to the side-length of the triangle (or the h
 We will replace each `50` by `size` and replace `40` by `(* 4/5 size)`.
 Let's see how that works.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define simple-house

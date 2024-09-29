@@ -64,7 +64,7 @@ because we have to store these infinite values using a finite amount of space.
 When Scamper displays a number that is a floating point value, it includes
 a decimal point, an exponential component in the result, or both.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (sqrt 2)
 (expt 3.0 100)
 </pre>
@@ -74,7 +74,7 @@ represent precisely as a finite decimal number.  That means that
 Scamper approximates it.  And, because it's approximated, our
 calculations using that result will also be approximate.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (* (sqrt 2) (sqrt 2))
 </pre>
 
@@ -86,7 +86,7 @@ produce numbers that are bigger than the maximum size of an integer in Scamper.
 In those cases, Scamper will automatically move to a floating-point
 representation which is approximate.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (+ 1 1)
 (/ 10 2)
 (* 426198421879421897412 4782147894721489712)
@@ -97,7 +97,7 @@ want a precise integer value, you do not include a decimal point or the
 exponent.  When you want a floating-point number, you include the dot and/or
 exponent.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 -3
 0.5
 (+ 1 1e-7)
@@ -118,7 +118,7 @@ of its inputs are integers. Note that Scamper will gladly give an integral
 result if it can deduce that one of the arguments is actually integral, even
 when written as a floating-point number.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (+ 2 3 4)
 (+ 2 3.0 4)
 (+ 2 1e-3 5)
@@ -144,7 +144,7 @@ potentially, some left over (the remainder). For example, if you have
 to divide eleven jelly beans among four people, each person will get two
 (the quotient) and you'll have three left over (the remainder).
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (quotient 11 4)
 (remainder 11 4)
 (quotient 15 5)
@@ -153,7 +153,7 @@ to divide eleven jelly beans among four people, each person will get two
 
 We also get sensible results when mixing floating-point and integer values.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (quotient 5.5 2)
 (remainder 5.5 4)
 </pre>
@@ -165,7 +165,7 @@ using `(sqrt x)` and to compute "x to the n" using `(expt x n)`.  When given
 integer inputs, both return inexact results.  Both will provide floating-point
 results if the output demands it or if the inputs are floating-point numbers.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (sqrt 4)
 (sqrt 4.0)
 (sqrt 2)
@@ -176,7 +176,7 @@ results if the output demands it or if the inputs are floating-point numbers.
 What happens when we take the square root of a negative number? Recall that
 the result is a _complex number_, a number with the imaginary number $$i$$.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (sqrt -2)
 </pre>
 
@@ -193,7 +193,7 @@ number only when all of the arguments are exact.  As you might expect,
 the value produced will be an integer only when it meets the criterion
 of being largest or smallest.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (max 1 2 3)
 (max 3 1 2)
 (max 2 1 3)
@@ -209,7 +209,7 @@ integers.  `(round` `num)` rounds to the nearest integer.
 `(truncate` `num)` throws away the fractional part, effectively rounding
 toward zero.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (round 3.2)
 (round 3.8)
 (floor 3.8)
