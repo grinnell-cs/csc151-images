@@ -352,9 +352,11 @@ Learning Objectives (Quizzes and Exams)
 Take-Home Assessments
 : 
     * You may revise and resubmit take-home assessments after receiving feedback.  
-        * You may submit up to **2 revision assessments** per week.
+        * You may submit up to **2 revision assessments** in each weeklong revision period.
+        * Revision periods are shown in the revision form below.
     * When revised work is graded, the new grade, if higher, replaces the old grade. Submitting revised work cannot lower your grade.  
     * To be eligible for resubmission, you must have completed the assessment homework in good faith on your first attempt, earning at least an R. Redo opportunities _cannot_ be used as a way to skip take-home assessments and do them later.
+    * Resubmit an assessment by filling out the [**Take-Home Assessment Revision Request Form**](https://tinyurl.com/151-24au-revise) and resubmitting your work on gradescope. The form also clarifies some nuances of the revision policy.
 
 Reading responses, labs, and reflections
 : 
