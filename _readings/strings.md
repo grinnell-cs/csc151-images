@@ -142,7 +142,7 @@ alphabets.  By making this procedure built-in, the designers of Scheme
 have encouraged programmers to rely on a correct (and, presumably,
 efficient) implementation.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (char<=? #\a #\n #\z)
 (char-lower-case? #\n)
 (char<=? #\a #\N #\z)
@@ -155,7 +155,7 @@ Note that all of these predicates assume that their parameter is a
 character. Hence, if you don't know the type of a parameter, you will
 need to first ensure that it is a character. For example,
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (char-lower-case? #\a)
 (char-lower-case? #\5)
 (char-lower-case? 23)
@@ -219,7 +219,7 @@ character. Its first argument indicates how long the string should be, and
 the second argument specifies which character it should be made of. For
 instance, the following code constructs and returns the string `"aaaaa"`.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (make-string 5 #\a)
 </pre>
 
@@ -236,7 +236,7 @@ procedure converts a list of characters into a string. It is invalid
 to call `list->string` on a non-list or on a list that contains values
 other than characters.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (string->list "Hello")
 (list->string (list #\a #\b #\c))
 </pre>
@@ -283,14 +283,14 @@ The `(string-append str1  str2  ... strn)`{:.signature} procedure
 takes any number of strings as arguments and returns a string formed by
 concatenating those arguments.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (string-append "al" "fal" "fa")
 </pre>
 
 The `(number->string num)`{:.signature} procedure takes any Scheme number
 as its argument and returns a string that denotes the number.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (number->string 23)
 (number->string 1.2)
 (number->string pi)
@@ -303,7 +303,7 @@ corresponding number. On some implementations of Scheme, when you give
 (which represents "no" or "false"). You are then responsible
 for checking the result.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (string->number "23")
 (string->number "1.2")
 (string->number "0.000000000000000000000000001")
@@ -316,7 +316,7 @@ for checking the result.
 The `string-upcase` and `string-downcase` procedures convert all of
 the letters in the string to uppercase or lowercase..
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (string-upcase "aLpHaBeTiCAL")
 (string-downcase "aLpHaBeTiCAL")
 </pre>

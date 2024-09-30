@@ -223,17 +223,13 @@ If the function's caller does not fulfill these preconditions, then like in real
 It might throw an error, or it might return garbage entirely unrelated to the intended result.
 For example:
 
-~~~racket
-> (substring 24710 0 3)
-. . string-ref: contract violation
-  expected: string?
-  given: 24710
-  argument position: 1st
-  other arguments...:
-~~~
+<pre class="scamper source">
+(substring 24710 0 3)
+</pre>
 
-If our `substring` implementation gets a number as the first argument, it happily continues to process it.
-However, when we try to call `string-ref` on the number, we get a type error at that point in execution.
+Luckily, in Scamper, the `substring` function _checks its contract_ before proceeding execution.
+But somtimes, such contract checks are infeasible or impossible to implement!
+So we should be ready to encounter errors that aren't quite informative, or worse yet, _silent errors_ where a non-sensible value is produced and is only caught in later code!
 
 In summary, preconditions and postconditions give us a quick and easy way to understand a function's behavior.
 In the coming days, we'll see that they also give us a hook for *reasoning* about our code, especially if we encounter a *bug* in our implementations!

@@ -13,19 +13,19 @@ We've seen some examples already, *e.g.*,
 
 +   Numbers:
 
-    <pre class="scamper-output output-prog">
+    <pre class="scamper source">
     (* 3 (- 1 5) (+ 2 4))
     <pre>
 
 +   Strings:
 
-    <pre class="scamper-output output-prog">
+    <pre class="scamper source">
     (string-append "hello" "world!")
     </pre>
 
 +   Images:
 
-    <pre class="scamper-output output-prog">
+    <pre class="scamper source">
     (import image)
 
     (beside (circle 50 "solid" "blue") (square 25 "solid" "red"))
@@ -104,14 +104,14 @@ We know this because `(+ 1 1) --> 2` and `2` is a number.
 When we perform operations over data, *e.g.*, addition through the `+` function, we must provide values of the appropriate type.
 Here, `+` expects to be given at least one argument, all of which must be numbers:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (+ 1 3 5 7 9)
 </pre>
 
 When a function is provided values of an appropriate type, a *type error* occurs when trying to run that function on those values.
 For example:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (+ 1 "hello")
 </pre>
 
@@ -134,7 +134,7 @@ For function types, the types of the inputs and outputs don't have to be the sam
 As you have likely noticed, keeping the type of a function in mind is *really important* for debugging your code.
 For example, consider the following erroneous call to `circle`:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (circle "red" "solid" 500)

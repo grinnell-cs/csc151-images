@@ -25,7 +25,7 @@ procedures. To define a procedure, you use a form like the following.
 If we wanted to define a procedure, `add`, that adds two values, we
 might write something like the following.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define add
   (lambda (x y)
     (+ x y)))
@@ -35,7 +35,7 @@ However, you've already seen another way to define a procedure.  Instead
 of the `lambda` expression, you can use `define` to give another name
 to a procedure that already exists.  For example,
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define add +)
 </pre>
 
@@ -45,9 +45,9 @@ the first case, it's a lambda expression.  In the second, it's an
 existing procedure.  Perhaps that's not surprising.  We can also define
 numeric values using expressions or constants.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define x (+ 1 5))
-(define x 6)
+(define y 6)
 </pre>
 
 The Lisp family of languages (including Scheme) set
@@ -73,7 +73,7 @@ represents a function that first applies \\( g \\) and then \\( f \\).  That is,
 In scamper, we use the `compose` function to represent function composition.
 Let's start by composing a few procedures with themselves.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (square 3)
 
 (define quad (compose square square))
@@ -92,7 +92,7 @@ Let's start by composing a few procedures with themselves.
 Scamper also provides a synonym function for `compose`, `o` (lower-case 'o'), that is slightly more evocative of the mathematical definition of composition.
 For example, we can rewrite the definition of `quad` above using `o` as follows:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define quad (o square square))
 </pre>
 
@@ -104,7 +104,7 @@ parameter and then adds another one.
 
 What happens if we compose two different procedures?  Let's check.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define add1
   (lambda (n) (+ n 1)))
 
@@ -123,7 +123,7 @@ and then squares its result, and `f2` squares is parameter and then adds 1.
 If we wanted to make it perfectly clear what we want each procedure
 to do, we could name them as follows.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define add1
   (lambda (n) (+ n 1)))
 
@@ -139,7 +139,7 @@ to do, we could name them as follows.
 You can also compose more than two procedures.  For example, we might
 write the following silly procedure.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define add1
   (lambda (n) (+ n 1)))
 
@@ -152,7 +152,7 @@ was.  But reversing a string is a straightforward operation: Convert
 to a list, reverse the list, convert back to a string.  So I
 can just write,
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define string-reverse (o list->string reverse string->list))
 
 (string-reverse "hello world!")
@@ -164,7 +164,7 @@ can just write,
 This is useful when we want to `define` a new function or pass a function to a higher-order function such as `map`.
 However, if we wish to invoke the resulting function directly, we still need to call it.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 ((compose square square square) 2)
 </pre>
 
@@ -176,7 +176,7 @@ We might find this syntax somewhat unwieldy for two reasons:
 The pipe function `|>` (a pipe `|` followed by a greater-than symbol `>`) is useful when we need to chain function calls together, _i.e._, send the inputs of one function into the next, sequentially, and we only to do it once.
 For example, here is how we might express the triple `square` computation using pipe:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (|> 2 square square square)
 </pre>
 
@@ -184,7 +184,7 @@ Note that the argument to the function chain comes first and the functions of th
 Implicit in this example is the fact that pipe processes its arguments in the left-to-right direction which is likely more intuitive to read.
 To unveil this, here is a use of pipe over two operations where the order matters:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define add1
   (lambda (n) (+ n 1)))
 
@@ -203,7 +203,7 @@ We say that we are _partially applying_ the `(+)` function, providing only one o
 
 In standard Scheme syntax, to achieve this effect, we must write out a `lambda` expression that immediately invokes the desired function, filling in values for some of the arguments and passing through the parameters of the `lambda` for the remainder.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define add1
   (lambda (n) (+ n 1)))
 </pre>
@@ -212,7 +212,7 @@ This occurs often enough that it is useful to have more concise syntax for writi
 Scamper provides such a construct: the _section expression_.
 For example, we can define `add1` with `section` as follows:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define add1
   (section + _ 1))
 </pre>
@@ -222,7 +222,7 @@ Each hole in a `section` expression turns into a _unique parameter_ in the resul
 
 As another example, we can use `section` to concisely write a pair of functions that prepends and appends an exclamation mark to a string:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define prepend-bang
   (section string-append "!" _))
 
@@ -231,7 +231,7 @@ As another example, we can use `section` to concisely write a pair of functions 
 
 (prepend-bang "hello")
 
-(append-band "hello")
+(append-bang "hello")
 </pre>
 
 In general, a `section` expression `(section e1 ... ek)` turns into a lambda whose body is a function application `(lambda (...) (e1 ... ek))`.

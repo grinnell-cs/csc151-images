@@ -51,7 +51,7 @@ From last class period's class, recall that we must include a `import` statement
 
 Our [initial reading on the Scheme language]({{ "/readings/scamper.html" | relative_url }}) introduce us to functions for drawing circles and rectangles:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (circle 50 "outline" "blue")
@@ -60,7 +60,7 @@ Our [initial reading on the Scheme language]({{ "/readings/scamper.html" | relat
 
 As well as functions that allow us to place images above and beside each other.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (above (circle 35 "outline" "blue")
@@ -138,7 +138,7 @@ Let's begin with the top row.
 We'll define `top-row` to be the top row of circles using the `circle` and `beside` functions.
 Note that this `define` command should go into your program below your `import` statement rather than in the explorations window:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define top-row
@@ -149,7 +149,7 @@ Note that this `define` command should go into your program below your `import` 
 We can now go to the explorations window and test our code.
 The practical effect of the `define` command is to make `top-row` an *alias* for the image, so we can simply type in `top-row` as an additional statement in the explorations window to check our work:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define top-row
@@ -161,7 +161,7 @@ top-row
 
 Next, we'll define `bottom-row` to be the bottom row of circles.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define bottom-row
@@ -171,7 +171,7 @@ Next, we'll define `bottom-row` to be the bottom row of circles.
 
 And we'll check our work in the explorations window:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define bottom-row
@@ -186,7 +186,7 @@ As we discussed, the overall picture is obtained by stacking the `top-row` with 
 We can then check that `circles` is the image that we wanted in explorations window.
 (Make sure that you re-run the explorations window to update it with updates to your program!)
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define top-row
@@ -214,7 +214,7 @@ Scamper defines a special value `{??}` which represents an undefined value in th
 
 Let's do that for `top-row` first.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define top-row
   {??})
 </pre>
@@ -224,7 +224,7 @@ Of course, when we run this code, we the `Hole encountered! Fill me in!` error, 
 
 Once we define `top-row` as before:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define top-row (beside (circle 50 "outline" "red")
@@ -233,7 +233,7 @@ Once we define `top-row` as before:
 
 We can now fill in the corresponding hole in `circles`:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define top-row (beside (circle 50 "outline" "red")
@@ -245,7 +245,7 @@ We can now fill in the corresponding hole in `circles`:
 
 Finally, we can define `bottom-row` just like before and then complete the definition of `circles`:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define top-row (beside (circle 50 "outline" "red")
@@ -275,7 +275,7 @@ Either strategy is valid---be willing to experiment early on with both styles to
 Finally, let's look at the big picture.
 Take a look at the complete program that we wrote in the definitions pane:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (define top-row

@@ -41,17 +41,16 @@ What does a list value look like?
 We have already seen several examples of lists as the result of functions from the standard library.
 For example, `string->list` produces a list of characters from a string:
 
-~~~racket
+<pre class="scamper source">
 (string->list "hello world!")
-> (list #\h #\e #\l #\l #\o #\space #\w #\o #\r #\l #\d #\!)
-~~~
+</pre>
 
 Observe the result of this function call.
 In Scamper, we display a list as a _finished call_ to the `list` function.
 Each of the arguments are the values stored in that list.
 We can observe this distinction in the following example:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (list (+ 1 1) (string-length "hello world!") 32)
 </pre>
 
@@ -74,7 +73,7 @@ ways to create lists.  One common way to create lists is with the
 `(list exp0 exp1 ...)` procedure, which evaluates all of its
 parameters and creates a list from those parameters.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (list 2 3 5 7)
 (list "two" "three" "five" "seven")
 (list 1 (+ 2 3) 4)
@@ -88,7 +87,7 @@ If you need a list of identical values for some reason, you can use the
 number of copies of a value to make in the list and the particular value
 to copy.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (make-list 5 "hello")
 (make-list 2 4)
 (make-list 4 2)
@@ -97,7 +96,7 @@ to copy.
 Because we often find that we need a sequence of numbers, Scheme
 includes a procedure called `(range n)` that takes an integer `n` as input produces a list numbers from `0` up to `n`, exclusive.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (range 7)
 (range 4)
 </pre>
@@ -106,7 +105,7 @@ Additionally, `range` can take two, or even three arguments so that you can furt
 
 With two arguments, `(range n m)` produces a list in the range `n` to `m`, exclusive.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (range 3 10)
 (range -11 2)
 </pre>
@@ -114,7 +113,7 @@ With two arguments, `(range n m)` produces a list in the range `n` to `m`, exclu
 With three arguments, `(range n m k)` will create a list of number from `n` to `m`, exclusive, but step by `k`.
 This allows us to specify ranges that go backwards rather than forwards!
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (range 1 10 2)
 (range 13 -5 -3)
 </pre>
@@ -122,7 +121,7 @@ This allows us to specify ranges that go backwards rather than forwards!
 Note that the three argument form of `range` is the most general form, and we can view the two-argument and one-argument forms as _special cases_ of the general form.
 For example, the following `range` calls are equivalent:
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (range 10)
 (range 0 10 1)
 </pre>
@@ -132,7 +131,7 @@ For example, the following `range` calls are equivalent:
 Perhaps the simplest list operation is `(length lst)`, which gives you
 the number of elements in the list.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (length (list))
 (length (list 3 4 5))
 (length (string-split "he took his vorpal sword in hand" " "))
@@ -143,7 +142,7 @@ You can also extract an element of a list using the
 element is the number of values that appear before that element; hence,
 the initial element of a list is element 0, not element 1.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define observation (list "Computers" "are" "sentient" "and" "Malicious"))
 observation
 (list-ref observation 0)
@@ -157,7 +156,7 @@ The `(index-of val lst)` procedure serves as something like the
 opposite of `list-ref`: Given a list and an element, it returns the
 position (index) of the first instance of that element.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define lead-in (list "a" "one" "and" "a" "two" "and" "a" "..."))
 (index-of lead-in "one")
 (index-of lead-in "and")
@@ -167,7 +166,7 @@ position (index) of the first instance of that element.
 The `(reverse lst)` procedure creates a new list that consists of the
 same elements as `lst`, but in the opposite order.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (reverse (range 10))
 (reverse (list "a" "b" "c" "d" "e"))
 </pre>
@@ -176,7 +175,7 @@ The `(append lst1 lst2)` procedure creates a new list that consists
 of all the elements of the first list followed by the elements of the
 second list.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (append (range 5) (range 5))
 (append (make-list 3 "hello") (make-list 4 "echo"))
 </pre>
@@ -185,7 +184,7 @@ The `(list-take lst n)` procedure builds a new list that consists
 of the first `n` elements of `lst` and the `(list-drop lst n)`
 procedure builds a list by removing the first `n` elements of `lst`.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (define some-ia-counties
   (list "Adair" "Adams" "Alamakee" "Appanoose" "Audobon"))
 (list-take some-ia-counties 3)

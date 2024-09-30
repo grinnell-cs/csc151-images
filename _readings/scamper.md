@@ -27,7 +27,7 @@ parenthesis, the name of the procedure, the arguments separated by
 spaces, and a close parenthesis.  For example, here's how you add 2 and
 3.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (+ 2 3)
 </pre>
 
@@ -39,7 +39,7 @@ interpret it differently.  On the other hand, we have to explicitly
 state the order, writing either `(+ 2 (* 3 5))` or
 `(* (+ 2 3) 5)`, using `*` as the multiplication symbol.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (+ 2 (* 3 5))
 
 (* (+ 2 3) 5)
@@ -68,19 +68,19 @@ Here are some examples of computations with involve text.
 
 We can find the length of a string.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (string-length "Jabberwocky")
 </pre>
 
 We can break a string apart into a list of strings.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (string-split "Twas brillig and the slithy toves" " ")
 </pre>
 
 We can find out how many words there are once we've split it apart.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (length (string-split "Twas brillig and the slithy toves" " "))
 </pre>
 
@@ -91,7 +91,7 @@ in order, separated by spaces.
 
 Once we have a list of words, we can find out how long each word is.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (map string-length
      (string-split "Twas brillig and the slithy toves" " "))
 </pre>
@@ -105,7 +105,7 @@ through separate libraries.  For example, it is comparatively
 straightforward to get Scheme to draw simple shapes if you
 add `(import image)` to the top of your program.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 
 (circle 60 "outline" "blue")
@@ -115,7 +115,7 @@ add `(import image)` to the top of your program.
 
 We can also combine shapes by putting them above or beside each other.
 
-<pre class="scamper-output output-prog">
+<pre class="scamper source">
 (import image)
 (above (circle 40 "outline" "blue")
        (circle 60 "outline" "red"))
