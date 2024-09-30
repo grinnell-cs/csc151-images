@@ -137,7 +137,7 @@
 
 (test-case "(char->digit #\\9)"
   equal? 9
-  (lambda () (char->digit \#9)))
+  (lambda () (char->digit #\9)))
 
 (description "string->digits")
 
@@ -254,16 +254,15 @@
 
 (test-case "(string->integer \"123\")"
   equal? 123
-  (string->integer "123"))
+  (lambda () (string->integer "123")))
 
 (test-case "(string->integer \"42\")"
   equal? 42
-  (string->integer "42"))
+  (lambda () (string->integer "42")))
 
 (test-case "(string->integer \"2342341211231667\")"
   equal? 2342341211231667
-  (string->integer "2342341211231667"))
-
+  (lambda () (string->integer "2342341211231667")))
 
 ;;; (Partner A now drives!)
 
