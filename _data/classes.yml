@@ -178,28 +178,24 @@
     - Do we also include `car`, `cdr`, and `cons` here?  Do we
      perhaps include a separate day?
 
-# - topic: Processing lists
-#   abbrev: processing-lists
-#   summary: |
-#     We explore ways to use lists to work with collections of drawings 
-#     using "the big three" list procedures: `map`, `reduce`, and `filter`.
-#     We also consider other ways of processing lists, particularly how
-#     we sort lists and tally individual values in lists.
-#   reading:
-#     - page: /readings/list-big-three.html
-#     - page: /readings/list-more.html
-#   lab:
-#     - page: /labs/lists-more.html
-#   todo:
-#     - Incorporate sort and tally.
-#     - Consider incorporating the old /labs/drawing-lists.html
+- topic: Processing lists
+  abbrev: processing-lists
+  summary: |
+    We explore ways to use lists to work with collections of drawings 
+    using "the big three" list procedures: `map`, `reduce`, and `filter`.
+  reading:
+    - page: /readings/list-big-three.html
+  lab:
+    - page: /labs/lists-more.html
+  todo:
+    - Incorporate sort and tally.
+    - Consider incorporating the old /labs/drawing-lists.html
 
-
-# - topic: Higher-order Functions
-#   abbrev: higher-order-functions
-#   summary: |
-#     We examine how treating functions as values can simplify out code,
-#     especially when employing the "big three" list procedures.
+- topic: Higher-order Functions
+  abbrev: higher-order-functions
+  summary: |
+    We examine how treating functions as values can simplify out code,
+    especially when employing the "big three" list procedures.
 
 # - topic: Recursive decomposition
 #   abbrev: recursive-decomposition

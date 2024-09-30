@@ -152,7 +152,7 @@ observation
 (list-ref observation 5)
 </pre>
 
-The `(index-of val lst)` procedure serves as something like the
+The `(index-of lst val)` procedure serves as something like the
 opposite of `list-ref`: Given a list and an element, it returns the
 position (index) of the first instance of that element.
 
