@@ -67,8 +67,8 @@
   0)
 
 (test-case "Adjusting the list"
-  equal? ex-1-list-adjusted
-  (lambda () (list 30 30 28 10 26 25 25 23 15 6 27 26)))
+  equal? (list 30 30 28 10 26 25 25 23 15 6 27 26)
+  (lambda () ex-1-list-adjusted))
 
 (problem "b. ex-1-list-filtered")
 
@@ -78,8 +78,8 @@
   0)
 
 (test-case "ex-1-list-filtered"
-  equal? ex-1-list-filtered
-  (lambda () (list 25 25 23 21 20 20 18 22 21)))
+  equal? (list 25 25 23 21 20 20 18 22 21)
+  (lambda () ex-1-list-filtered))
 
 (problem "c. ex-1-list-average")
 
@@ -90,8 +90,8 @@
   0)
 
 (test-case "ex-1-list-average"
-  equal? ex-1-list-average
-  (lambda () (/ 211 12)))
+  equal? (/ 211 12)
+  (lambda () ex-1-list-average))
 
 (problem "d. Counts the odd values")
 
@@ -100,8 +100,12 @@
   0)
 
 (test-case "ex-1-odd-count"
-  equal? ex-1-odd-count
-  (lambda () 7))
+  equal? 7
+  (lambda () ex-1-odd-count))
+
+; For e. and f., you'll need a function that sorts. There is one in
+; the standard library! Check out the documentation to see how to
+; use it!
 
 (problem "e. Puts them in inceasing order, from smallest to largest")
 
@@ -110,8 +114,8 @@
   0)
 
 (test-case "ex-1-increasing"
-  equal? ex-1-increasing
-  (lambda () (list 1 5 10 18 20 20 21 21 22 23 25 25)))
+  equal? (list 1 5 10 18 20 20 21 21 22 23 25 25)
+  (lambda () ex-1-increasing))
 
 (problem "f. Puts them in decreasing order, from largest to smallest")
 
@@ -120,8 +124,8 @@
   0)
 
 (test-case "ex-1-decreasing"
-  equal? ex-1-decreasing
-  (lambda () (list 25 25 23 22 21 21 20 20 18 10 5 1)))
+  equal? (list 25 25 23 22 21 21 20 20 18 10 5 1)
+  (lambda () ex-1-decreasing))
 
 ; -------------------------------------------------------------------
 
@@ -154,8 +158,8 @@
   0)
 
 (test-case "numbers-plus-5-b"
-  equal? numbers-plus-five-b
-  (list 8 6 9 6 10 14 7 11))
+  equal? (list 8 6 9 6 10 14 7 11)
+  (lambda () numbers-plus-five-b))
 
 (problem "numbers-plus-five without section")
 
@@ -172,12 +176,12 @@
   0)
 
 (test-case "numbers-plus-5-c1"
-  equal? numbers-plus-five-c1
-  (lambda () (list 8 6 9 6 10 14 7 11)))
+  equal? (list 8 6 9 6 10 14 7 11)
+  (lambda () numbers-plus-five-c1))
 
 (test-case "numbers-plus-5-c2"
-  equal? numbers-plus-five-c2
-  (lambda () (list 8 6 9 6 10 14 7 11)))
+  equal? (list 8 6 9 6 10 14 7 11)
+  (lambda () numbers-plus-five-c2))
 
 (problem "Preferences...")
 
@@ -211,8 +215,8 @@
   0)
 
 (test-case "Titlecasing elements"
-  equal? ex-3-title-case
-  (lambda () (list "Someone" "Suggests" "That" "Something" "May" "Be" "Smart" "&" "Snarky")))
+  equal? (list "Someone" "Suggests" "That" "Something" "May" "Be" "Smart" "&" "Snarky")
+  (lambda () ex-3-title-case))
 
 (problem "b. ex-3-s-words")
 
@@ -223,8 +227,8 @@
   0)
 
 (test-case "Selecting s words"
-  equal? ex-3-s-words
-  (lambda () (list "someone" "suggests" "something" "smart" "snarky")))
+  equal? (list "someone" "suggests" "something" "smart" "snarky")
+  (lambda () ex-3-s-words))
 
 (problem "c. ex-3-smushed")
 
@@ -235,8 +239,8 @@
   0)
 
 (test-case "smushed together"
-  equal? ex-3-smushed
-  (lambda () "someonesuggeststhatsomethingmaybesmart&snarky"))
+  equal? "someonesuggeststhatsomethingmaybesmart&snarky"
+  (lambda () ex-3-smushed))
 
 (problem "d. ex-3-spaced")
 
@@ -247,8 +251,8 @@
   0)
 
 (test-case "spaced out"
-  equal? ex-3-spaced
-  (lambda () "someone suggests that something may be smart & snarky"))
+  equal? "someone suggests that something may be smart & snarky"
+  (lambda () ex-3-spaced))
 
 (problem "e. ex-3-short-count")
 
@@ -259,8 +263,8 @@
   0)
 
 (test-case "short count"
-  equal? ex-3-short-count
-  (lambda () 4))
+  equal? 4
+  (lambda () ex-3-short-count))
 
 (problem "f. ex-3-alphabetical")
 
@@ -271,9 +275,9 @@
   0)
 
 (test-case "alphabetical"
-  equal? ex-3-alphabetical
-  (lambda () (list "&" "be" "may" "smart" "snarky" "someone" "something" "suggests" "that")))
-
+  equal? (list "&" "be" "may" "smart" "snarky" "someone" "something" "suggests" "that")
+  (lambda () ex-3-alphabetical))
+  
 (problem "g. ex-3-by-size")
 
 ; Puts them in order from shortest to longest. Note that you may want to
@@ -284,8 +288,8 @@
   0)
 
 (test-case "by size"
-  equal? ex-3-by-size
-  (lambda () (list "&" "be" "may" "that" "smart" "snarky" "someone" "suggests" "something")))
+  equal? (list "&" "be" "may" "that" "smart" "snarky" "someone" "suggests" "something")
+  (lambda () ex-3-by-size))
 
 ; -------------------------------------------------------------------
 
