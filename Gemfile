@@ -12,7 +12,8 @@ source "https://rubygems.org"
 # 3.8.5 is bonked in a way that affects me https://github.com/jekyll/jekyll/issues/7380.
 # ... but 4.0 seems to have fixed it!
 
-gem "jekyll", "~> 4.2.0"
+# gem "jekyll", "~> 4.2.0"
+gem "jekyll", "~> 4.3.3"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.0"

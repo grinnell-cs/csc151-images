@@ -10,7 +10,7 @@ summary: |
 
 ### Standard list notation
 
-`'(val1 val2 ... valn)` - a list of `n` values.
+`(list val1 val2 ... valn)` - a list of `n` values.
 
 ### Creating lists
 
@@ -46,9 +46,7 @@ corresponding pairs of elements from the two lists.  You can also use
 
 `(reduce binproc lst)` - reduce a list to a single value
 
-`(sort lst compare?)` - sort a list. 
-
-`(tally predicate? lst)` - count how many values meet the predicate.
+`(sort lst less-than?)` - sort a list. 
 
 ### Other list operations
 
@@ -72,41 +70,28 @@ lists start with element 0.)
 turns out the position is how many values need to be dropped
 from `lst` to reach `val`.)
 
-`(indexes-of lst val)` - Find all the indices of the value in the list.
-
 ### Fun higher-order procedures
 
 `(lambda (params) body)` - a procedure in the standard form.  When applied to some values (arguments), substitutes the arguments for the parameters in the body and evaluates the new expression.  For example, `(lambda (x) (+ x 5))` adds 5 to `x`.
 
 `(o f1 f2 f3 ... fn)` - creates a procedure that takes one value and applies `fn` to that value, then `fn-1` to that result, ... then ` `f3` to that result, then `f2` to that result, and finally `f1` to the result, returning the output of f1.  For example, `(o add1 square)` is a procedure that squares its parameter and then adds 1.
 
-`(cut expression)` - creates a procedure that takes one parameter for each "hole" `<>`.  For example, `(cut (* <> 5))` is a procedure that divides its parameter by 5.
+`(section expression)` - creates a procedure that takes one parameter for each "hole" `_`.  For example, `(section (* _ 5))` is a procedure that divides its parameter by 5.
 
 ## Preparation
 
 a. If you have not done so already, you may want to open a
-separate tab or window in your browser for the varous readings.
+separate tab or window in your browser for the various readings.
 
 b. Introduce yourself to your partner.  Describe your strengths and
 approaches to work.
 
 c. Review the double-dagger problems with your partner.
 
-{% if site.online %}
-d. Decide who will do the Side A problems and who will do the Side B problems.
-Then load the two halves of the lab.
-
-* [lists-more-a.rkt](../code/labs/lists-more-a.rkt)
-* [lists-more-b.rkt](../code/labs/lists-more-b.rkt)
-
-e. Get started!
-{% else %}
 d. The person closer to the board is Side A.  The other is Side B.
 
 e. Load the lab.
 
-* [lists-more.rkt](../code/labs/lists-more.rkt)
+* [lists-more.scm](../code/labs/lists-more.scm)
 
 f. Get started.
-
-{% endif %}
