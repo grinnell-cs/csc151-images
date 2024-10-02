@@ -135,9 +135,8 @@ defaults:
       link: false
       layout: assigned
       collaboration: |
-        You must work individually on this assignment.
-        You may discuss this assignment with anyone, provided you
-        cite them appropriately.
+        You must work _individually_ on this assignment.
+        You may only consult members of the course staff for help.
 
   - scope:
       path: ""
