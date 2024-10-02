@@ -166,6 +166,7 @@
 
 - topic: Lists
   abbrev: lists
+  slides_link: https://docs.google.com/presentation/d/1uJFmfIwFAy1tg3MjWo7tTkkCaVyXRsjW3HhizsXLGYg/edit#slide=id.g2666291cd13_0_234
   summary: |
     We return to Scheme's *list* data structure and some ways to
     use lists to work with collections of data.
