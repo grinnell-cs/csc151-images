@@ -6,22 +6,22 @@ summary: |
   techniques for building complex images based on lists of shapes.
   Along the way, we will explore uses of "the big three" list
   procedures.
-collaboration: |
-  Each student should submit their own responses to this project. You may
-  consult other students in the class as you develop your solution.  If you
-  receive help from anyone, make sure to cite them in your responses. 
 link: false
 preimg: true
 ---
-Please start with the [template code](../code/mps/shape-lists.rkt).
+Please start with the [template code](../code/mps/shape-lists.scm).
 
-Please save all of your work as `shape-lists.rkt`.
+Please save all of your work as `shape-lists.scm`.
 
 ## Introduction
 
 By this point, you've considered a variety of procedures for making and manipulating some basic shapes, such as circles and squares (or, more generally, ellipses and rectangles). As you may have discovered, we can use the characteristics of one shape to make another shape.
 
-Suppose we start with a few rectangles. We've tried to name them in such a way that describes their general characteristics.
+Suppose we start with a few rectangles. We've tried to name them in such a way that describes their general characteristics. Note that the functions below use a number of additional functions from the `image` library:
+
++   `(solid-rectangle width height color)` creates a solid rectangle of the given parameters.
++   `(solid-ellipse width height color)` creates a solid ellipse of the given parameters.
++   `(image-recolor img color)` returns a new image that is `img` but with the given `color`.
 
 ```
 (define red-narrow
@@ -76,21 +76,31 @@ Using `map`, we can quickly make lists of shapes and convert them.
 We can even make somewhat slightly more complex shapes using that information.
 
 ```
-(define thickly-outlined-ellipse
+;;; (thinly-outlined-ellipse width height color) -> ellipse?
+;;;   width : positive-real?
+;;;   height : positive-real?
+;;;   color : color?
+;;; Convert `shape` to an ellipse of the given width and height that is
+;;; then outlined with a thick black line.
+(define thinly-outlined-ellipse
   (lambda (width height color)
-    (overlay (outlined-ellipse width height "black" 10)
+    (overlay (outlined-ellipse width height "black")
              (solid-ellipse width height color))))
 
-(define shape->thickly-outlined-ellipse
+;;; (shape->thinly-outlined-ellipse shape) -> ellipse?
+;;;   shape : shape?
+;;; Convert `shape` to an ellipse of the same width, height, and color
+;;; that is then outlined in a thick black line.
+(define shape->thinly-outlined-ellipse
   (lambda (shape)
-    (thickly-outlined-ellipse (image-width shape)
-                              (image-height shape)
-                              (image-color shape))))
+    (thinly-outlined-ellipse (image-width shape)
+                             (image-height shape)
+                             (image-color shape))))
 ```
 
 ```
-> (apply beside (map shape->thickly-outlined-ellipse narrow-shapes))
-![three thickly-outlined narrow ellipses in a row](../images/mps/shape-lists/image002.png)
+> (apply beside (map shape->thinly-outlined-ellipse narrow-shapes))
+![three thinly-outlined narrow ellipses in a row](../images/mps/shape-lists/image002-thin.png)
 ```
 
 To make this a bit easier, we're going to write another helper procedure, `shape-params`, which grabs the width, height, and color from an image and puts them in a list.
@@ -107,7 +117,7 @@ To make this a bit easier, we're going to write another helper procedure, `shape
 What does that let us do? Well, here's one example.
 
 ```
-(define something (o (cut (apply solid-isosceles-triangle <>)) shape-params))
+(define something (o (section apply solid-isosceles-triangle _) shape-params))
 ```
 
 Can you tell what that does, as strange as it is?
@@ -116,7 +126,7 @@ Try it out.
 
 ```
 > (map something (list purple-narrow purple-medium purple-wide))
-intentionally left for you to try
+; intentionally left for you to try!
 ```
 
 Of course, rather than creating lists like these on our own, we can write procedures that do so.  Here's one that takes a shape and creates five variants of varying widths and "shades". 
@@ -143,11 +153,11 @@ Of course, rather than creating lists like these on our own, we can write proced
 ;;; `color`. See `five-variants` for the details.
 (define five-variants/helper
   (lambda (width height color)
-    (list (solid-rectangle (* 1/3 width) height (rgb-darker (rgb-darker color)))
-          (solid-rectangle (* 2/3 width) height (rgb-darker color))
+    (list (solid-rectangle (* (/ 1 3) width) height (rgb-darker (rgb-darker color)))
+          (solid-rectangle (* (/ 2 3) width) height (rgb-darker color))
           (solid-rectangle width height color)
-          (solid-rectangle (* 4/3 width) height (rgb-lighter color))
-          (solid-rectangle (* 5/3 width) height (rgb-lighter (rgb-lighter color))))))
+          (solid-rectangle (* (/ 4 3) width) height (rgb-lighter color))
+          (solid-rectangle (* (/ 5 3) width) height (rgb-lighter (rgb-lighter color))))))
 ```
 
 We can quickly make lists of variants.
@@ -187,113 +197,71 @@ Unfortunately, we can't convert those to images quite as easily.
 
 Our goal in this assignment is to write procedures that will help us deal with these nested (perhaps deeply nested) lists of shapes.
 
-### Detour: Tests and testing
+### A note on testing images
 
-Up until this point, we have asked you to experiment with the functions that you write in the interactions window to check for correctness.  This has the upside of being fast, but if you change your code, you need manually type in all those tests again which is tedious (which in turn makes it less likely you'll recheck the correctness of your code).  A better solution is to *codify* your tests in your code so that you can rerun the tests at will.
+In a previous reading, we introduced the `test` library of Scamper which exposed a function `test-case` that you can use to write test cases.
 
-During our unit on software engineering fundamentals, we'll introduce you to a library, `rackunit`, that makes test authoring and execution a breeze.  For now, we'll look at two basic RackUnit procedures
+<pre class="scamper source">
+(import test)
 
-When we are developing predicates (procedures that return a Boolean) value, Racket (RackUnit) provides an important procedure to help us make that list of inputs/outputs and automatically check it for us: `(test-equal? DESCRIPTION EXP EXPECTED)`, which evaluates `EXP`, compares it to `EXPECTED`, and prints an error message only if it fails.
+(test-case "is 1+1 = 2?"
+  equal? 2
+  (lambda () (+ 1 1)))
+</pre>
 
-For example,
+Up until this point, we've written unit tests over basic types. However, what about images which are decidedly more complicated than mere numbers, strings, and booleans?
+It turns out that `test-case` can work to a degree as-is,
+but we run into issues quickly:
 
-```
-> (test-equal? "the square root of 3 squared is 3" (sqrt (sqr 3)) 3)
-> (test-equal? "the square root of 4 squared is 4" (sqrt (sqr 4)) 4)
-> (test-equal? "the square root of 100 squared is 100" (sqrt (sqr 100)) 100)
-> (test-equal? "the square of the square root of 100 is 100" (sqr (sqrt 100)) 100)
-> (test-equal? "the square of the square root of 4 is 4" (sqr (sqrt 4)) 4)
-> (test-equal? "the square of the square root of 3 is 3" (sqr (sqrt 3)) 3)
---------------------
-the square of the square root of 3 is 3
-. FAILURE
-name:       check-equal?
-location:   31-interactions from an unsaved editor:22:2
-actual:     2.9999999999999996
-expected:   3
---------------------
-```
+<pre class="scamper source">
+(import image)
+(import test)
 
-As this suggests, if the test succeeds, you get no output.  However, if the test fails, you get a helpful FAILURE message.  (Please don't feel like a failure for getting such messages.  All of us get them from time to time.)
+(test-case "are two rectangles equal?"
+  equal? (rectangle 100 200 "solid" "red")
+  (lambda ()
+    (solid-rectangle (+ 50 50) (* 2 100) (rgb 255 0 0))))
 
-While we cannot normally use `test-equal?` to compare images, we can use it to cmpare characteristics of those images.  For example, consider the following procedure that is supposed to make a snowman of a certain height.
+(test-case "are these two rectangles equal?"
+  equal? (solid-rectangle 100 50 "red")
+  (lambda ()
+    (beside (solid-rectangle 50 50 "red")
+            (solid-rectangle 50 50 "red"))))
+</pre>
 
-```
-(define my-snowman
-  (lambda (height)
-    (above (solid-circle (* height 1/2) "black")
-           (solid-circle (* height 2/3) "black")
-           (solid-circle (* height 5/6) "black"))))
-```
+In the latter case, even though the two drawings produce the same _visual_ output, they are not considered equal because they are _not made up of the same shapes_.
 
-Here are a few tests we've written to see whether it works.  The first is what some folks call a "corner" or "corner case" (also "edge" or "edge case"): one with a strange but valid input.  In this case, we've made a zero-height snowman.
+In such cases, how can we test correctness?
+Rather than checking whether the two drawings are made up of the same shapes, we can check to see if some _property_ of the two drawings are equal.
+For example, `image-width`, `image-height`, and `image-color` retrieve the width, height, and color of a drawing, respectively:
 
-```
-(test-equal? "zero height snowman" (image-height (my-snowman 0)) 0)
-(test-equal? "normal snowman" (image-height (my-snowman 40)) 40)
-(test-equal? "small snowman" (image-height (my-snowman 5)) 5)
-(test-equal? "large snowman" (image-height (my-snowman 100)) 100)
-```
+<pre class="scamper source">
+(import image)
+(import test)
 
-This time, we're going to put the tests in the definitions pane and click "Run".  What do you think will happen?  Let's see ...
+(define r1 (solid-rectangle 100 50 "red"))
+(define r2
+  (beside (solid-rectangle 50 50 "red")
+          (solid-rectangle 50 50 "red")))
 
-```
---------------------
-normal snowman
-. FAILURE
-name:       check-equal?
-location:   let-it-snow.rkt:13:0
-actual:     80
-expected:   40
---------------------
---------------------
-small snowman
-. FAILURE
-name:       check-equal?
-location:   let-it-snow.rkt:14:0
-actual:     10
-expected:   5
---------------------
---------------------
-large snowman
-. FAILURE
-name:       check-equal?
-location:   let-it-snow.rkt:15:0
-actual:     200
-expected:   100
---------------------
-```
+(test-case "are widths equal?"
+  equal? (image-width r1)
+  (lambda ()
+    (image-width r2)))
 
-Whoops!  There's something wrong with our procedure.  Interestingly, it got the right height for the "zero height" snowman, but not for the rest.  If we look closely, we see that each result is twice as large as it should be.  
+(test-case "are heights equal?"
+  equal? (image-height r1)
+  (lambda ()
+    (image-height r2)))
 
-```
-(define my-snowman
-  (lambda (height)
-    (above (solid-circle (* height 1/4) "outline")
-           (solid-circle (* height 1/3) "outline")
-           (solid-circle (* height 5/12) "outline"))))
+(test-case "are colors equal?"
+  equal? (image-color r1)
+  (lambda ()
+    (image-color r2)))
+</pre>
 
-(test-equal? "zero height snowman" (image-height (my-snowman 0)) 0)
-(test-equal? "normal snowman" (image-height (my-snowman 40)) 40)
-(test-equal? "small snowman" (image-height (my-snowman 5)) 5)
-(test-equal? "large snowman" (image-height (my-snowman 100)) 100)
-```
-
-What happens when I click run this time?
-
-```
-Welcome to DrRacket, version 8.11.1 [cs].
-Language: racket, with debugging; memory limit: 128 MB.
-> 
-```
-
-Whoo!  No errors.  That suggests that I got the height right.
-
-As this example suggests, we should put our tests immediately after our code in the definitions pane.  Then, when we click "Run", we'll quickly determine if there are any problems (and what those problems are).  If we see no reports, we can be sure that the code passed all of our tests.
-
-Note that to use these procedures, one must require the `rackunit` library with `(require rackunit)`.
-
-Now, on to the problems!
+In the problems below, you'll be ask to write a few tests. Sometimes the images are simple enough that you can write out the results by hand.
+But if the images are complex for that, you can instead compare properties like the widths or height of the expected image which are much easier to specify!
 
 ## Part 1: Making lists of shape parameters
 
@@ -344,11 +312,11 @@ b. Document, write one test for, and write a procedure, `(color-variants-1 stuff
 '((![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-808080-20x20-rectangle.png) ![a solid rosybrown 20-by-20 rectangle](../images/mps/shape-lists/solid-a07070-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-70a070-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-7070a0-20x20-rectangle.png)) (![a solid dark slate gray 20-by-20 rectangle](../images/mps/shape-lists/solid-404040-20x20-rectangle.png) ![a solid brown 20-by-20 rectangle](../images/mps/shape-lists/solid-603030-20x20-rectangle.png) ![a solid dark slate gray 20-by-20 rectangle](../images/mps/shape-lists/solid-306030-20x20-rectangle.png) ![a solid cornflower blue 20-by-20 rectangle](../images/mps/shape-lists/solid-303060-20x20-rectangle.png)) (![a solid silver 20-by-20 rectangle](../images/mps/shape-lists/solid-c0c0c0-20x20-rectangle.png) ![a solid lightpink 20-by-20 rectangle](../images/mps/shape-lists/solid-e0b0b0-20x20-rectangle.png) ![a solid silver 20-by-20 rectangle](../images/mps/shape-lists/solid-b0e0b0-20x20-rectangle.png) ![a solid light steel blue 20-by-20 rectangle](../images/mps/shape-lists/solid-b0b0e0-20x20-rectangle.png)))
 > (color-variants-1 (color-variants-0 (solid-square 15 (rgb 128 128 128))))
 '((![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-808080-15x15-rectangle.png) ![a solid rosybrown 15-by-15 rectangle](../images/mps/shape-lists/solid-a07070-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-70a070-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-7070a0-15x15-rectangle.png)) (![a solid rosybrown 15-by-15 rectangle](../images/mps/shape-lists/solid-a07070-15x15-rectangle.png) ![a solid indian red 15-by-15 rectangle](../images/mps/shape-lists/solid-c06060-15x15-rectangle.png) ![a solid dim gray 15-by-15 rectangle](../images/mps/shape-lists/solid-909060-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-906090-15x15-rectangle.png)) (![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-70a070-15x15-rectangle.png) ![a solid dim gray 15-by-15 rectangle](../images/mps/shape-lists/solid-909060-15x15-rectangle.png) ![a solid medium sea green 15-by-15 rectangle](../images/mps/shape-lists/solid-60c060-15x15-rectangle.png) ![a solid cadetblue 15-by-15 rectangle](../images/mps/shape-lists/solid-609090-15x15-rectangle.png)) (![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-7070a0-15x15-rectangle.png) ![a solid slategray 15-by-15 rectangle](../images/mps/shape-lists/solid-906090-15x15-rectangle.png) ![a solid cadetblue 15-by-15 rectangle](../images/mps/shape-lists/solid-609090-15x15-rectangle.png) ![a solid slate blue 15-by-15 rectangle](../images/mps/shape-lists/solid-6060c0-15x15-rectangle.png)))
-> (map (cut (apply beside <>))
+> (map (section apply beside _)
        (color-variants-1 (color-variants-0 (solid-square 15 (rgb 128 128 128)))))
 '(![a center-aligned sequence of images (a solid slategray 15-by-15 rectangle beside a solid rosybrown 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle)](../images/mps/shape-lists/image004.png) ![a center-aligned sequence of images (a solid rosybrown 15-by-15 rectangle beside a solid indian red 15-by-15 rectangle beside a solid dim gray 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle)](../images/mps/shape-lists/image005.png) ![a center-aligned sequence of images (a solid slategray 15-by-15 rectangle beside a solid dim gray 15-by-15 rectangle beside a solid medium sea green 15-by-15 rectangle beside a solid cadetblue 15-by-15 rectangle)](../images/mps/shape-lists/image006.png) ![a center-aligned sequence of images (a solid slategray 15-by-15 rectangle beside a solid slategray 15-by-15 rectangle beside a solid cadetblue 15-by-15 rectangle beside a solid slate blue 15-by-15 rectangle)](../images/mps/shape-lists/image007.png))
 > (apply above
-         (map (cut (apply beside <>))
+         (map (section apply beside _)
               (color-variants-1 (color-variants-0 (solid-square 15 (rgb 128 128 128))))))
 ![a four-by-four grid of various colors](../images/mps/shape-lists/image008.png)
 ```
@@ -607,8 +575,7 @@ f. Write a procedure, `(stack-then-sequence-then-stack stuff)`, that takeks a do
                                         (list purple-wide
                                               (list blue-medium red-medium))
                                         (list red-narrow blue-narrow purple-narrow blue-narrow red-narrow)))
-![The three previous images, stacked on top of each other.]
-(../images/mps/shape-lists/image034.png)
+![The three previous images, stacked on top of each other.](../images/mps/shape-lists/image034.png)
 > (stack-then-sequence-then-stack
    (shapes->solid-isosceles-triangles-2 (list (list (list red-narrow blue-medium purple-wide)
                                                     (list blue-medium purple-wide red-narrow)
@@ -640,20 +607,12 @@ To earn an E, you will need to write your own variants of the procedures in part
 Grading rubric
 --------------
 
-_Still under development, but nearly complete._
-
 ### Redo or above
 
 Submissions that lack any of these characteristics will get an I.
 
 ```
-[ ] Passes all of the one-star autograder tests.
-[ ] Includes the specified file, `shape-lists.rkt`.
-[ ] Includes an appropriate header on the file that indicates the
-    course, author, etc.
-[ ] Acknowledges appropriately.
-[ ] Code runs in DrRacket.
-[ ] Most procedures are documented in some form.
+[ ] Displays a good faith attempt to complete every required part of the assignment.
 ```
 
 ### Meets expectations or above
@@ -662,66 +621,47 @@ Submissions that lack any of these characteristics but have all of the
 prior characteristics will get an R.
 
 ```
-[ ] Passes all of the two-star autograder tests.  For example,
-    [ ] Correctly implements `color-variants-0`.
-    [ ] Correctly implements `color-variants-1`.
-    [ ] Correctly implements `color-variants-1x`.
-    [ ] Correctly implements `color-variants-2`.
-    [ ] Correctly implements `shape->solid-isosceles-triangle`.
-    [ ] Correctly implements `shapes->solid-isosceles-triangles-0`.
-    [ ] Correctly implements `shapes->solid-isosceles-triangles-1`.
-    [ ] Correctly implements `stack`.
-    [ ] Correctly implements `sequence`.
-    [ ] Correctly implements `sequence-then-stack`.
-    [ ] Correctly implements `stack-then-sequence`.
-[ ] Code is well-formatted with appropriate names and indentation.
-[ ] Code has been reformatted with Ctrl-I before submitting.
+[ ] Includes the specified file, `shapes-list.scm`.
+[ ] Includes an appropriate header on all submitted files that includes the course, author, etc.
+[ ] Code runs in Scamper without errors.
+[ ] Documents and names all core procedures correctly.
 [ ] Code generally follows style guidelines.
-[ ] Documentation for all core procedures is correct / has the correct form.
-[ ] Creates an image called `freestyle`.
-[ ] Includes all the specified tests.
+[ ] Code includes required tests.
+[ ] Basic functionality of all core functions is present and correct:
+    + `color-variants-0`.
+    + `color-variants-1`.
+    + `color-variants-1x`.
+    + `color-variants-2`.
+    + `shape->solid-isosceles-triangle`.
+    + `shapes->solid-isosceles-triangles-0`.
+    + `shapes->solid-isosceles-triangles-1`.
+    + `stack`.
+    + `sequence`.
+    + `sequence-then-stack`.
+    + `stack-then-sequence`.
+[ ] Freestyle function is present and operational.
 ```
 
 ### Exemplary / Exceeds expectations
 
-Submissions that lack any of these characteristics but have all of the
+Submissions that lack any of these characteristics but have all the
 prior characteristics will get an M.
 
 ```
-[ ] Passes all of the three-star autograder tests. For example,
-    [ ] Correctly implements `shapes->solid-isosceles-triangles-2`.
-    [ ] Correctly implements `sequence-then-stack-then-sequence`.
-    [ ] Correctly implements `stack-then-sequence-then-stack`.
-[ ] Adds a new procedure akin to `color-variants`.  That is, adds a 
+[ ] Function documentation is complete and appropriately evocative of each function's behvaior.
+[ ] Code follows style guidelines completely, with at most _three_ minor errors present.
+[ ] Code is well-designed, avoiding repeated work through decomposition and appropriate language constructs.
+[ ] Each set of tests includes at least one edge case (e.g., an empty list, if appropriate).
+[ ] Implementation of all core functions is completely correct.
+[ ] Freestyle implements variants of procedures found in previous parts:
+    + Adds a new procedure akin to `color-variants`.  That is, adds a 
     procedure that takes a `shape-params?` as a parameter and creates
     a list of `shape-params?` (or list of lists of ....)`.
-[ ] Adds a new procedure akin to `shape->solid-isosceles-triangles-1`.
-[ ] Adds a new procedure akin to `stack` or `sequence`. That is,
+    + Adds a new procedure akin to `shape->solid-isosceles-triangles-1`.
+    + Adds a new procedure akin to `stack` or `sequence`. That is,
     adds a procedure that combines a list of images into a single image.
     It might combine the images diagonally, or beside but bottom
     aigned, or overlay them, or ...
-[ ] Adds a new procedure akin to `stack-then-sequence`, that works
+    + Adds a new procedure akin to `stack-then-sequence`, that works
     with a singly nested list.
-[ ] Style is impeccable (or nearly so).
-[ ] Avoids repeated work.
-[ ] Documentation for all procedures is correct / has the correct form.
-[ ] Each set of tests includes at least one edge case (e.g., an empty
-    list, if appropriate).
 ```
-
-## Q&A
-
-### Testing
-
-Do we have to write tests for every procedure?
-
-> No. Only those we expicitly ask you to test.
-
-### Miscellaneous
-
-It says we are unlikely to need to use `doubly-nested-shape-list?`. Out of curiosity, what would be an example of a situation where it would be helpful?
-
-> Some of your procedures expect a doubly-nested shape list as a parameter. You might find it useful to verify that the parameter has the correct type.
-
-> I used it in documentation; you might want to, too.
-
