@@ -6,7 +6,7 @@ summary: |
   techniques for building complex images based on lists of shapes.
   Along the way, we will explore uses of "the big three" list
   procedures.
-link: false
+link: true
 preimg: true
 ---
 Please start with the [template code](../code/mps/shape-lists.scm).
@@ -609,7 +609,7 @@ Grading rubric
 
 ### Redo or above
 
-Submissions that lack any of these characteristics will get an I.
+Submissions that lack any of these characteristics will get an N.
 
 ```
 [ ] Displays a good faith attempt to complete every required part of the assignment.
