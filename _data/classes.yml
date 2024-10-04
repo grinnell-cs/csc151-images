@@ -188,12 +188,15 @@
   lab:
     - page: /labs/wrangling-data.html
 
-# - topic: Recursive decomposition
-#   abbrev: recursive-decomposition
-#   summary: |
-#     We continue our exploration of lists through some "finer-grained"
-#     operations and how they allow us to think of lists in a "recursive"
-#     manner.
+- topic: Thinking recursively
+  abbrev: recursion-intro
+  summary: |
+    We begin our exploration of *recursion*, the most general form
+    of repetition available in Scheme.  You can use recursion to
+    both build and iterate over different kinds of values.
+  reading:
+    - page: /readings/thinking-recursively.html
+  lab:
 
 # - topic: Introduction to list recursion
 #   abbrev: recursion-intro
