@@ -193,11 +193,15 @@
     - Incorporate sort and tally.
     - Consider incorporating the old /labs/drawing-lists.html
 
-- topic: Higher-order Functions
+- topic: Style and List Processing Practice
   abbrev: higher-order-functions
   summary: |
-    We examine how treating functions as values can simplify out code,
-    especially when employing the "big three" list procedures.
+    We continue practicing list process with the "big three."
+    Additionally, we also take the time to consider good style in programming.
+  reading:
+    - page: /readings/code-style.html
+  lab:
+    - page: /labs/wrangling-data.html
 
 # - topic: Recursive decomposition
 #   abbrev: recursive-decomposition
