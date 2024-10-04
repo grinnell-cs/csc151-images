@@ -185,6 +185,8 @@
     Additionally, we also take the time to consider good style in programming.
   reading:
     - page: /readings/code-style.html
+  lab:
+    - page: /labs/wrangling-data.html
 
 # - topic: Recursive decomposition
 #   abbrev: recursive-decomposition
