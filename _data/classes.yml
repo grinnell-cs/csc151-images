@@ -181,6 +181,7 @@
 
 - topic: Processing lists
   abbrev: processing-lists
+  slides_link: https://docs.google.com/presentation/d/19vkdeM3sogD51aW4UVQO7LKENB5EXl5KMO_VOvEH_L0/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We explore ways to use lists to work with collections of drawings 
     using "the big three" list procedures: `map`, `reduce`, and `filter`.
