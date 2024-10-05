@@ -195,6 +195,7 @@
 
 - topic: Style and List Processing Practice
   abbrev: higher-order-functions
+  slides_link: https://docs.google.com/presentation/d/1N-AHVkoSJRiXh3XN8MV1b1obc_-T3Otn-R3LeRaUH_E/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We continue practicing list process with the "big three."
     Additionally, we also take the time to consider good style in programming.
