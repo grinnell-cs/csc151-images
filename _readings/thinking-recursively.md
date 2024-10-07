@@ -184,6 +184,8 @@ We can read the definition of `singleton?` as follows:
 Those who have embraced the Zen of Boolean might express `singleton?` as:
 
 <pre class="scamper source">
+(import test)
+
 (define singleton?
   (lambda (lst)
     (and (not (null? lst))
@@ -220,6 +222,8 @@ We can *build* lists using this head-tail distinction with the `cons` function.
 Because the second argument to `cons` is a smaller list, we can use `cons` repeatedly to obtain the same effect as our list literal syntax:
 
 <pre class="scamper source">
+(import test)
+
 (test-case "list and cons produce the same results"
   equal? (list 1 2 3 4 5)
   (lambda () (cons 1
