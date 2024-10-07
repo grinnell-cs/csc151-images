@@ -197,25 +197,28 @@
   reading:
     - page: /readings/thinking-recursively.html
   lab:
+    - page: /labs/pattern-matching-and-recursive-tracing.html
 
-# - topic: Introduction to list recursion
-#   abbrev: recursion-intro
-#   summary: |
-#     We begin our exploration of *recursion*, the most general form
-#     of repetition available in Scheme.  You can use recursion to
-#     both build and iterate over different kinds of values.
-#   reading:
-#     - page: /readings/list-composition.html
-#     - page: /readings/recursion-basics.html
+- topic: Introduction to list recursion
+  abbrev: recursion-intro
+  summary: |
+    We begin our exploration of *recursion*, the most general form
+    of repetition available in Scheme.  You can use recursion to
+    both build and iterate over different kinds of values.
+  reading:
+    - page: /readings/pattern-matching.html
+    - page: /readings/recursion-over-lists.html
+  lab:
+    - page: /labs/recursion-practice.html
 
-# - topic: Recursion over lists
-#   summary: |
-#     We continue our introductory exploration of recursion in Scheme.
-#   reading:
-#     - page: /readings/recursion-basics.html
-#     - page: /readings/recursion-magic.html
-#   lab:
-#     - page: /labs/recursion-basics.html
+- topic: List motions
+  summary: |
+    We continue to explore list recursion by examining how we use recursion to
+    perform basic motions over lists.
+  reading:
+    - page: /readings/list-motions.html
+  lab:
+    - page: /labs/more-list-practice.html
 
 # - topic: List motions and unit testing
 #   summary: |
