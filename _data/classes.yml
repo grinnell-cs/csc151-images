@@ -206,6 +206,7 @@
 
 - topic: Thinking recursively
   abbrev: recursion-intro
+  slides_link: https://docs.google.com/presentation/d/1svNcebkd2SgtRBmoO41zCElM-cnDFcHBWSrMBM_jJKI/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We begin our exploration of *recursion*, the most general form
     of repetition available in Scheme.  You can use recursion to
