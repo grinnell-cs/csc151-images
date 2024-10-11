@@ -1,419 +1,240 @@
 ---
 title: Tail Recursion
-summary: |
-  In this reading, we explore problems and solutions associated with scaling recursive functions up to larger amounts of data.
 ---
 
-Consider the humble `length` function we analyzed several times in our previous discussions on recursive design.  Here, we define the function as `my-length` to avoid shadowing the standard library list `length` function.
+So far, we have not dwelled too much on _program efficiency_.
+By program efficiency, we mean two qualities:
 
-```racket
-(define my-length
-  (lambda (lst)
-    (if (null? lst)
-        0
-        (+ 1 (my-length (cdr lst))))))
-```
++   _Time efficiency_: how long a program takes to run?
++   _Space efficiency_: how much memory does a program consume during execution?
 
-We can observe that this function behaves like `length` pretty easily, *e.g.*, with Charles Dickens's [*A Tale of Two Cities*](https://www.gutenberg.org/files/98/98-0.txt):
+We will cover efficiency in depth in later courses.
+However, today we'll cover a particular problem of efficiency as it pertains to recursion and functional programming.
+Our solution to this problem, _tail recursion_, is a fundamental part of every functional programming language.
 
-```racket
-> (length (file->words "98-0.txt"))
-141606
-> (my-length (file->words "98-0.txt"))
-141606
-```
+# Blowing the Stack
 
-Not too bad! But what if the book is larger than A Tale of Two Cities?  Let's try faking a larger list using `range`:
+Consider the function `(make-list n v)` which makes a list of `n` copies of `v`, implemented recursively:
 
-```racket
-> (define big-list (range 0 1000000))   ; might take a minute or two to execute!
-```
+<pre class="scamper source-only">
+(define make-list
+  (lambda (n v)
+    (if (= n 0)
+        null
+        (cons v (make-list (- n 1) v)))))
+</pre>
 
-Now `length` works fine.  But on my machine at least, `my-length` takes noticeably longer to run.
+And let's trace its execution on an example:
 
+~~~scheme
+     (make-list 5 "z")
+-->* (cons "z" (make-list 4 "z"))
+-->* (cons "z" (cons "z" (make-list 3 "z")))
+-->* (cons "z" (cons "z" (cons "z" (make-list 2 "z"))))
+-->* (cons "z" (cons "z" (cons "z" (cons "z" (make-list 1 "z")))))
+-->* (cons "z" (cons "z" (cons "z" (cons "z" (cons "z" (make-list 0 "z"))))))
+-->* (cons "z" (cons "z" (cons "z" (cons "z" (cons "z" null)))))
+-->* (list "z" "z" "z" "z" "z")
+~~~
 
-```racket
-> (length big-list)     ; returns instantaneously
-1000000
-> (my-length big-list)  ; takes a solid couple of seconds to return
-1000000
-```
+Observe the "essence" of this computation: for every element of the input list, we "pop out" a `(cons "z" ...)` call.
+These `cons` calls do not immediately evaluate!
+Instead, we continue making recursive calls until we hit the base case.
+It isn't until _after_ this point that we evaluate the five `cons` calls that we accumulate along the way.
 
-When you try this example out on your own, you might find that your machine chokes on both `length` and `my-length` or is able to handle both fine.  Try varying the size of `big-list` by factors of 10, *i.e.*, add/remove `0`s from `range` until you see this difference in behavior!
+Looking at the trace, we see that if we pass in `n` to `make-list`, after `k` calls of `make-list`, we will have `n-k` pending calls to `cons` built up as we continue with the recursion:
 
-Recursion and memory usage
---------------------------
+~~~
+(cons "z" (cons "z" (cons "z" ... (cons "z" (make-list (- n k) "z")))))
+\                                         /
+ -----------------------------------------
+                      |
+                      k
+~~~
 
-Why is `my-length` slow whereas `length` is not slow?  It isn't because `length` is part of the standard library!  Our implementation, while technically correct, performs its execution in a way that is memory inefficient.  To see why, let's use our mental model to begin to evaluate `(my-length big-list)`:
+Observe that our mental model of computation suggests that our computer must store these pending calls somewhere!
+Each `(cons "z" ...)` call represents the work that a particular call to `make-list` must do _after_ it makes its recursive call.
+Indeed, behind the scenes, our program maintains a _call stack_, the collection of currently active function calls that are waiting to complete.
+The call stack contains a _stack frame_ for each active function call that records the information necessary for that function to continue when any function calls it makes finishes execution.
 
-```racket
-    (my-length big-list)
---> (+ 1 (my-length '(0 ... 999999)))
---> (+ 1 (+ 1 (my-length '(0 ... 999998))))
---> (+ 1 (+ 1 (+ 1 (my-length '(0 ... 999997)))))
---> ...
-```
+For five elements, this additional work does not seem to be a problem, but imagine if we tried to call `make-list` with, say, `n = 1000000`.
+We would need to allocate a million stack frames to perform this computation!
+To put this into context, let's imagine that a single stack frame, for simplicity's sake, is only 4 bytes big, an underestimate.
+(A _byte_, or 8 _bits_, is an elementary unit of data in a computer system.)
+We would need to allocate \\( 1000000 \times 4 = 4000000 \\) or 4 _megabytes_ (MB) of stack frames.
+It turns out that most programming language runtimes only allow for stacks to grow to, at most, several megabytes, so that the system's memory can be used for other tasks.
 
-We see that to evaluate `(my-length big-list)`, the resulting expression will first resolve all its recursive calls:
+When we run out of stack space to record active function calls, our programs raise a _stack overflow_ error indicating that it has run out of memory!
+These physical limits of memory become a problem in functional programming because we use recursion to perform our repetitive tasks.
+While we haven't encountered this problem yet, real-world programs might process data that contains millions or even billions of elements.
+Naively performing recursive computation in these situations simply does not work!
 
-```
-(+ 1 (+ 1 (+ 1 (+ 1 (+ 1 ... (+ 1 0))))))
-   \___________________________/
-          1000000 times!
-```
+(As an aside, stack overflow errors are precisely why we haven't seen "true" infinite loops in our programs.
+In virtually all of the recursive functions we've written so far, we would overflow the stack with an infinite loop, causing an error!)
 
-Only after resolving all of these calls will we begin to collapse the repeated additions into the final result.  However, Racket must still *remember* to perform all of these additions while it is carrying out the recursive `my-length` calls!  This is where the inefficiency of the function lies: Racket needs to remember `1000000` `(+ 1 ...)` expressions, one for each `my-length` call made, so that they can be resolved after the last `my-length` call that returns `0` resolves.
+# Tail Recursion
 
-Is there a way to rewrite `my-length` to avoid this inefficiency?  It turns out there is if we are willing to think a bit outside of the box.  Note the problem resides in the recursive case of the function:
+Consider this alternative version of `make-list`:
 
-```racket
-(+ 1 (my-length tail))
-```
-
-This expression:
-
-1.   Recursively calls `my-length` on the `tail` of the list.
-2.   Adds one to the result of the recursive call.
-
-What if we could reverse the steps?  Rather than acting on the *return value* of the recursive call, can we figure out a way to add one to the result and *pass that result to the recursive call*?  If we figured out some way of doing that, then we wouldn't have any work to do after the recursive call and the resulting expression would not grow in size like it currently does.
-
-However, `my-length` only takes one argument, a list.  So there seems no way to "add one" to the recursive call's parameters in any way.  This is, in fact true!
-Instead, we need to change the parameters to `my-length` so that we *can* add one to the parameters in some meaningful way.
-
-To do this, we'll add an additional parameter to `my-length` that is the *intended result of the computation so far*.  Rather than updating the result as it *returns* from successive recursive calls, we'll, instead, update the result as we *pass* it to successive recursive calls.  Here's our updated `my-length` function which we call `my-length/helper` for reasons that will be made clear shortly:
-
-```racket
-;;; (my-length/helper lst so-far) -> exact-nonnegative-integer?
-;;;   lst : list?
-;;;   so-far : exact-nonnegative-integer?
-;;; Returns the length of l plus the length of the list calculated so-far.
-(define my-length/helper
-  (lambda (lst so-far)
-    (if (null? lst)
+<pre class="scamper source-only">
+(define make-list
+  (lambda (so-far n v)
+    (if (= n 0)
         so-far
-        (my-length/helper (cdr lst) (+ 1 so-far)))))
-```
+        (make-list (cons v so-far) (- n 1) v))))
+</pre>
 
-`my-length/helper` differs from `my-length` in that it takes an extra argument, `so-far`.  This parameter is intended to be *the result computed so far in the recursion*.  We call this parameter an *accumulator parameter*.
-Our goal is to *update* this parameter on every recursive call so that we don't have to do any work when the function call returns.
+This version of `make-list` takes an extra argument, `so-far`, that represents the result of the function _accumulated so far_ in its execution.
+Let's trace execution of this function on the same example.
+Note that we pass `so-far` the initial value of `null` capturing the fact that, initially, we have not yet done any computation.
 
-* In the base case, because `so-far` is assumed to be the result of the computation.  Therefore, we return it as the final result since we've hit the base case.
-* In the recursive case, rather than updating the result of the recursive call (`(+ 1 (my-length/helper tail))`), we update `so-far` as it is *passed in* to the recursive call.
+~~~racket
+     (make-list null 5 "z")
+-->* (make-list (cons "z" null) (- 5 1) "z")
+-->* (make-list (list "z") 4 "z")
+-->* (make-list (cons (list "z")) (- 4 1) "z")
+-->* (make-list (list "z" "z") 3 "z")
+-->* (make-list (cons "z" (list "z" "z")) (- 3 1) "z")
+-->* (make-list (list "z" "z" "z") 2 "z")
+-->* (make-list (cons "z" (list "z" "z" "z")) (- 2 1) "z")
+-->* (make-list (list "z" "z" "z" "z") 1 "z")
+-->* (make-list (cons "z" (list "z" "z" "z" "z")) (- 1 1) "z")
+-->* (make-list (list "z" "z" "z" "z" "z") 0 "z")
+-->* (list "z" "z" "z" "z" "z")
+~~~
 
-Does `my-length/helper` behave as we'd like?  Let's consider how it executes, *e.g.*, `(my-length/helper '(1 2 3) 8)`:
+Observe how the "computation" occurs on the `so-far` argument rather than the result of the recursive call.
+We incrementally `cons` on an additional `"z"` onto `so-far` for each recursive call to the function.
+This `cons` is resolved before the next call to `make-list` is made.
 
-```racket
-    (my-length/helper '(1 2 3) 8)
---> (my-length/helper '(2 3) (+ 1 8))
---> (my-length/helper '(2 3) 9)
---> (my-length/helper '(3) (+ 1 9))
---> (my-length/helper '(3) 10)
---> (my-length '() (+ 1 10))
---> (my-length '() 11)
---> 11
-```
+Critically, because we evaluate arguments before calling functions, each recursive call of `make-list` perform its computation _before_ it makes its recursive call.
+As evidenced by our derivation, there is no work to do after the recursive call.
+Such a pattern of recursion is called _tail recursion_ and a function that exhibits this behavior is said to be in _tail-recursive form_.
 
-Note how the function executes: we *eagerly* evaluate the repeated additions rather than waiting for them to resolve after all the recursive function calls have made.  As a result, `my-length/helper` consumes far less memory than our original `my-length` function!
+> **Definition (Tail-Recursive Form):** a function is in _tail-recursive form_ if, for every recursive function call that it makes, that no additional work is performed after that call.
+> In other words, a tail recursive function immediately returns the result of any recursive call that it makes.
 
-There's only one catch---`my-length/helper` isn't the function we wanted to write!  We wanted to write `(my-length l)` which reports the length of `l`.
-Is there a way that we can write `my-length` in terms of `my-length/helper`?
-Certainly, we just need to provide an appropriate initial value for `so-far`!
+The second version of `make-list` is in tail-recursive form because it simply returns the result of its recursive call in its else-branch.
+In contrast, the first `make-list` is _not_ in tail-recursive form because it performs a `(cons ...)` call _after_ it makes its recursive call.
 
-To come up with such a value, we can answer the following question:
+Importantly, when a recursive function is in tail-recursive form, our language can perform an important optimization called _tail-call optimization_.
+If we look at our trace of the second `make-list` call, we see that our executing program never "grows" like the first case.
+Behind the scenes, this means that we do not need to keep around each stack frame for a tail-recursive call because we perform no work after that call is made---we simply return whatever the recursive call returns.
+This is strictly more efficient in terms of memory usage than regular recursive calls!
 
-+    What should the result of `my-length/helper` be if *we have not seen any elements of the list yet*?
+Tail-call optimization is so important in functional programming that most functional programming languages mandate that their interpreters and compilers must perform tail-call optimization so that programs can perform unbounded recursion, provided that functions are written in tail-call style.
+Scamper does not yet support tail-call optimization---it turns out to be quite a non-trivial program transformation behind the scenes.
+But this pattern is prevalent enough in real-world functional programming that it is important to internalize, even without the benefits!
 
-In this particular case, `0` is a reasonable value to return if we haven't seen any elements of the list yet---as far as we know, the list has no elements so far!
-This leads to a final, efficient implementation of `my-length` in terms of `my-length/helper`:
+# Converting Functions to Tail-recursive Form
 
-```racket
-(define my-length
-  (lambda (lst)                 ; or (r-s my-length/helper 0)!
-    (my-length/helper lst 0)))
-```
+We can see that `make-list` can be rewritten in tail recursive form.
+What about other recursive functions?
+Let's revisit the list `length` function:
 
-With this implementation, we can see that `my-length` is now as efficient as the standard library `length` function!
+<pre class="scamper source-only">
+(define length
+  (lambda (l)
+    (match l
+      [null 0]
+      [(cons _ tail) (+ 1 (length l))])))
+</pre>
 
-```racket
-> (define big-list (range 0 1000000))
-> (length big-list)
-1000000
-> (my-length big-list)  ; just as fast as `length`!
-1000000
-```
+`length` is not in tail-recursive form because it performs additional computation after its recursive call, `(+ 1 ...)`.
+Our goal in converting functions to tail-recursive form is to ensure that the function immediately returns the result of any recursive calls that it makes.
+Or to put it another way, we need to rewrite `length` so that it performs no additional computation after its recursive calls.
 
-Tail-recursive functions
-------------------------
+The key to this transformation is transferring any work done _after_ a recursive call to _before_ the recursive call, usually by performing that computation as an argument to the function.
+Such a transformation is impossible without modifying the signature of `length`.
+In particular, we'll add an argument, conventionally named `so-far`, to perform this computation over.
+Observe how the `(+ 1 ...)` performed on the recursive call is moved to the `so-far` argument.
 
-In the above example, we solved the memory inefficiency with `my-length` by taking computations that happen *after* the recursive call returns and turning them into computation that happens *before* the recursive call is made.
-We call such functions that do all their work before they make their recursive calls *tail-recursive functions*.
-*Tail-call optimization* refers to both the process of making a function tail-recursive by the programmer as well as specific optimizations done by Racket behind the scenes to make tail-recursive functions efficient.
-Consequently, tail-recursive functions are more efficient than their non-tail recursive counterparts when large inputs (lists in our case) are used.
+Additionally, we modify the base case to return `so-far`.
+When we hit the base case, we're done with the computation
+If `so-far` is the work performed so far in the recursive computation, `so-far` should contain the _completed_ computation at the base case, so we return it directly.
 
-As another example consider a naive recursive implementation of the `replicate` function.
+Finally, we create a _wrapper function_ that calls our recursive function, but with an appropriate initial argument for `so-far`.
+This wrapper function becomes the `length` function that users call, and we call the recursive function the _helper_ function that does the actual work.
+The initial value for `so-far` is the value returned by the base case in the original version of the function.
 
-```racket
-(define replicate
-  (lambda (n x)
-    (if (zero? n)
-        '()
-        (cons n (replicate (- n 1) x)))))
-```
+<pre class="scamper source">
+(import test)
 
-This function exhibits the same issues with large inputs as `length`.  If I give `replicate` a large `n`, say `1000000`, it takes a few seconds to execute, whereas the standard library equivalent, `make-list` returns instantaneously on the same `n`.
+(define length-helper
+  (lambda (so-far l)
+    (match l
+      [null so-far]
+      [(cons _ tail) (length-helper (+ 1 so-far) tail)])))
 
-Note that `replicate` is not tail recursive because work happens after the recursive call---namely, we `cons` `n` onto the result of the recursive call.
-Let's transform `replicate` into a tail-recursive function where this behavior does not occur.
+(define list-length
+  (lambda (l)
+    (length-helper 0 l)))
 
-First, we'll define a helper function that takes an extra argument that represents the result computed by `replicate` so far in its execution.  We then update the base case and recursive case use this argument:
+(test-case "list-length: non-empty"
+  equal? 5
+  (lambda ()
+    (list-length (list 1 2 3 4 5))))
+</pre>
 
-* In the base case, we return the result argument since it is assumed to contain the result of traversing the list up until this point.  Since we are in the base case of the recursion, we must have processed every element of the list, so the result argument contains our final result.
-* In the recursive case, rather than updating the result of the recursive call, we'll update the result argument as it is passed in to the recursive function.
-These changes result in the following helper function for `replicate`:
+It is instructive to state the recursive decomposition of `length-helper` and compare it to our decomposition of `length`:
 
-```racket
-(define replicate/helper
-  (lambda (n x so-far)
-    (if (zero? n)
-        so-far
-        (replicate/helper (- n 1) (cons x so-far)))))
-```
++   `length`
 
-Note that `replicate/helper` is a tail-recursive function because no computation happens after its recursive call.  We instead perform that computation beforehand with `so-far`.
+    > The length of a list `l`:
+    > +   If `l` is empty, then the length of `l` is zero.
+    > +   If `l` is non-empty, then the length of `l` is one plus the length of its tail.
 
-Finally, we note that if we have not processed `n` yet, then we have not replicated anything, so we expect `so-far` to be the empty list.  This motivates the definition of `replicate` in terms of our helper function.
++   `length-helper`
 
-```racket
-(define replicate
-  (lambda (n x) 
-    (replicate/helper n x null)))
-```
+    > The length of a list `l`, provided we computed the length `so-far`:
+    > +   If `l` is empty, then the length is the length we computed `so-far`.
+    > +   If `l` is non-empty, then the length is the length of the tail, observing we have computed one plus `so-far` for the length.
 
-In summary, we made a recursive function tail-recursive by:
+When decomposing a problem recursively in a tail-call style, we define the computation _in terms_ of what has been computed "so far."
 
-* Creating a helper function that acts like the original function but includes an extra parameter, an accumulator, that captures the result of the function "so far" in the computation.
-* Updating the helper function to use the accumulator parameter.  In the base case, this usually means returning the parameter as the overall result of the computation.  In the recursive case, this usually means updating the parameter in some way when making the recursive call.
-* Notably, for the function to be tail-recursive, no recursive call made by the function can contain computation *after* the function call returns.  To put it another way, in its recursive cases, the function is only allowed to return the result of a recursive call directly.
+## Generalizing Tail-call Conversion
 
-Local bindings for recursive helpers
-------------------------------------
+While it is not obvious, it turns out that we can convert _any_ recursive function into tail-recursive form by following the pattern we outlined above:
 
-In making our functions tail-recursive, we introduce a helper function, `replicate/helper` that was called exclusively by `replicate`.  It is highly unlikely that `replicate/helper` would ever be used any other function other than `replicate`.  So we would like to make `replicatee-helper` *local* to `replicate` reduce to avoid polluting the global namespace.
+1.  Create a recursive helper function that does the actual work of the function.
+    This function should take an additional argument, `so-far`, that records the results of the computation _before_ recursive calls are made.
+2.  Define the recursive helper function similarly to the original function, except:
+    +   The base case should return `so-far` since `so-far` should contain the overall result at this point in the computation.
+    +   The recursive case should have any work it does _after_ its recursive calls moved to the `so-far` argument passed to those recursive calls.
+3.  Create a wrapper function with the desired function's signature that simply calls the helper with a suitable initial value for the `so-far` argument.
 
-Our tool for introducing local bindings is `let`.  However, we encounter an issue if we use `let` to make `replicate/helper` local to `replicate`:
+In our examples, `so-far` has been a simple value that we've updated.
+More generally, we can expect `so-far` to become a _function_ that represents the accumulated work to be done so far.
+In this formulation, `so-far` is called a _continuation_ and the transformation is called _continuation-passing style_ (CPS) where _every_ function accept its continuation, _i.e._, what to do after the function completes execution.
+While seemingly weird and unnatural, it turns out continuation-passing style is useful in many contexts, even outside functional programming.
+For example, CPS is employed as a pattern in the Javascript programming language for writing asynchronous, callback-based code.
 
-```racket
-(define replicate
-  (lambda (n x)
-    (let ([replicate/helper
-           (lambda (n x so-far)
-             (if (zero? n)
-                 so-far
-                 (replicate/helper (- n 1) x (cons x so-far))))])
-      (replicate/helper n x '()))))
+# Self Checks
 
-Error: replicate/helper: unbound identifier in: replicate/helper
-```
+## Exercise 1: Tracing Tail-recursive Functions
 
-Recall that `let` introduced its bindings *simultaneously* so that a later binding could not refer to an earlier binding.
+Use your mental model of evaluation to give a step-by-step trace of `(length (list 1 2 3 4 5))` for both the non-tail-recursive and tail-recursive versions of `length`, demonstrating that the former implementation requires work done after each recursive call and the latter does not.
 
-```racket
-> (let ([x 1]
-        [y (+ x 1)])
-    (+ y 1))
-Error x: undefined;
- cannot reference an identifier before its definition
-```
+## Exercise 2: Tail-recursive Decompositions
 
-To solve this issue, we introduced `let*` which introduces its bindings sequentially:
+Give prose-based recursive decompositions for the original `make-list` function and its tail-recursive variant.
 
-```racket
-> (let* ([x 1]
-         [y (+ x 1)])
-    (+ y 1))
-3
-```
+## Exercise 3: Tail-recursive Append (‡)
 
-A similar issue occurs here but with *recursive identifiers*.  `let` does not make the identifier `replicate/helper` visible inside the definition of `replicate/helper`!
+Translate the standard implementation of `append` into tail-recursive form:
 
-To fix this issue, we use yet another variant of `let`, `letrec` which acts like `let*` but also allows for recursive identifiers:
+<pre class="scamper source">
+(import test)
 
-```racket
-(define replicate
-  (lambda (n x)
-    (letrec ([replicate/helper
-              (lambda (n x so-far)
-                (if (zero? n)
-                    so-far
-                    (replicate/helper (- n 1) x (cons x so-far))))])
-      (replicate/helper n x '()))))
-
-> (replicate 5 "!")
-'("!" "!" "!" "!" "!")
-```
-
-When defining tail-recursive functions, make sure to use `letrec` to make your helper functions local to the main function.  Because they are local, you also choose a pithier name for the helper so you less to type!  My personal preference is to call my local helper function `kernel` or `helper`:
-
-```racket
-(define replicate
-  (lambda (n x)
-    (letrec ([kernel
-              (lambda (n x so-far)
-                (if (zero? n)
-                    so-far
-                    (kernel (- n 1) x (cons x so-far))))])
-      (kernel n x '()))))
-
-> (replicate 5 "!")
-'("!" "!" "!" "!" "!")
-```
-
-## Top-down Versus Bottom-up Processing
-
-Up to this point, our recursive functions have computed in a *bottom-up* function by operating on the results of recursive calls.  With tail-recursion, we *invert* the order of computation by operating on the accumulator parameter in a *top-down* pattern.  For `length` and `replicate`, this didn't seem to change how the functions behaves.  But sometimes, the direction matters!
-
-For example, let's consider the `append` function which appends two lists together.  Here is the naive implementation:
-
-```racket
-(define append
+(define list-append
   (lambda (l1 l2)
-    (if (null? l1)
-        l2
-        (cons (car l1)
-              (append (cdr l1) l2)))))
-```
+    (match l1
+      [null l2]
+      [(cons head tail) (cons head (list-append tail l2))])))
 
-Now that we've introduced the notion of an accumulator parameter, you might notice that `l2` seems to almost serve this purpose in `append`!  It is returned as the result of the base case.  The only difference is that we do not modify it when calling `append`.  That seems easy enough to fix, so let's try it:
-
-```racket
-(define append-tail
-  (lambda (l1 l2)
-    (if (null? l1)
-        l2
-        (append-tail (cdr l1) (cons (car l1) l2)))))
-```
-
-`append-tail` is tail-recursive because the recursive case returns the result of `append` directly now, instead of consing an element onto that result before returning.  However, how does this version of the function behave?
-
-```racket
-> (append-tail (list 1 2 3) (list 4 5 6))
-'(3 2 1 4 5 6)
-```
-
-Whoops!  What is going on here?  Let's trace the execution of this expression:
-
-```racket
-    (append-tail (list 1 2 3) (list 4 5 6))
---> (append-tail '(2 3) (cons 1 '(4 5 6)))
---> (append-tail '(2 3) '(1 4 5 6))
---> (append-tail '(3) '(2 1 4 5 6))
---> (append-tail '() '(3 2 1 4 5 6))
---> '(3 2 1 4 5 6)
-```
-
-By consing the elements in a top-down fashion rather than bottom-up fashion, we've reversed the order of `l1` in the appended list!
-This occurred for `append` because `cons` is not a symmetric operator, that is:
-
-```racket
-(cons 3 (cons 2 (cons 1 '(4 5 6)))) ≠ (cons 1 (cons 2 (cons 3 '(4 5 6))))
-```
-
-The left-hand expression arises in the tail-recursive variant of append.  The right-hand expression arises with the naive version.
-
-You might think "well, duh; of course the order matters", but it didn't for `length`!  This is because `+` is a symmetric operator.  Suppose we ran `(length '(1 2 3))` on the tail-recursive and non-tail-recursive versions of `length`.  We find that:
-
-```racket
-(+ 3 (+ 2 (+ 1 0))) = (+ 1 (+ 2 (+ 3 0)))
-```
-
-The left-hand expression comes from the tail-call version (we start by summing `1` to the initial value of `so-far`), and the right-hand expression comes from the naive version (we start by summing `3` to the base case value `0`).
-
-How can we write a tail-call version of `append`?  We have do something a bit counter-intuitive if performance is our goal: we need to reverse `l1` before feeding it to `append`'s local helper!  Here's a complete implementation:
-
-```racket
-(define append
-  (lambda (l1 l2)
-    (letrec ([kernel (lambda (l1 l2)
-                       (if (null? l1)
-                           l2
-                           (kernel (cdr l1) (cons (car l1) l2))))])
-      (kernel (reverse l1) l2))))
-```
-
-Where `reverse` is the standard library implementation of `reverse`.  Now `append` is tail-recursive and behaves as we would like:
-
-```racket
-> (append '(1 2 3) '(4 5 6))
-'(1 2 3 4 5 6)
-```
-
-However, we need to be careful.  This implementation only works if `reverse` is tail-recursive!  Otherwise, if `l1` is really big, we run into all the same issues as before.  Luckily, we can use the fact that `cons` employed in a top-down fashion reverses a list to implement `reverse` in a tail-recursive manner!
-
-```racket
-;;; (reverse lst) -> list?
-;;;   lst : list?
-;;; Returns lst but reversed.
-(define reverse
-  (lambda (lst)
-    (letrec ([kernel
-              (lambda (lst so-far)
-                (if (null? lst)
-                    so-far
-                    (kernel (cdr lst) (cons (car lst) so-far))))])
-      (kernel lst '()))))
-
-> (reverse '(1 2 3 4 5))
-'(5 4 3 2 1)
-```
-
-And indeed the standard library implementation of `reverse` takes this approach, so we are safe!
-
-## A lesson on dptimization
-
-While our final version of `append` from the previous section is tail-recursive, that transformation came at a price:
-
-* Our implementation became decidedly more complicated.  Rather than being a simple recursive function, `append` requires a helper function as well as a call to `reverse`.
-* This complication also leads to potentially decreased performance in some situations.  `reverse` must walk the entire input list to reverse it.  So in effect, this tail-recursive version of `append` walks `l1` twice: once to perform the reversal and once to cons its elements onto the front of `l2`.
-* If the size of the inputs to `append` are small (thus not requiring us to use tail-recursion), then the tail-recursive version will be slower than its non-tail-recursive variant!
-
-In summary, tail-recursion is a powerful and necessary transformation to optimize our code in certain circumstances.  But these complications suggest to us the following maxim has merit:
-
-> Premature optimization is the root of all evil.
-
-That is, we should not necessarily pursue the most optimized code upfront This is because optimizations frequently come with a cost: decreased code readability and more time and effort spent, sometimes with lesser gains that expected!  Of course, we should strive to write efficient code when it is convenient to do so.  However, we should only consider more in-depth optimizations like tail-call optimization only when they are needed.
-
-In the specific case of tail-call optimization, we should only aggressively pursue tail-call optimization when we know that the inputs to our recursive functions will be large.  For example, if we are writing recursive functions to analyze all the words of a novel, we might consider making these function tail-recursive!
-
-## Self-checks
-
-### Check 1: To tail or not-tail?
-
-Imagine that we are defining a recursive function `func`.  Determine whether the given recursive calls to `func` will result in a *tail-recursive* definition of `func` or not.  (Throughout, assume that `x`, `y`, and `z` are variables that are bound to numbers and that `func` returns a number.)
-
-{:type="a"}
-1.   `(func x y)`
-2.   `(+ 5 (func x y))`
-3.   `(func x (+ 5 y))`
-4.   `(func x (func y z))`
-
-### Check 2: Tail tracing
-
-Give an execution trace for the following expression involving `reverse` using your mental model of computation.  You may assume that the execution trace steps from the initial call to `reverse` to the first step after the initial call to `go` is evaluated:
-
-```racket
-    (reverse '(1 2 3 4 5))
---> (kernel '(1 2 3 4 5) '())
---> ...
-```
-
-### Check 3: Making tails (‡)
-
-Transform the following recursive definition of `factorial` so that it is tail-recursive.  Make sure to use `letrec` to ensure `factorial`'s helper function is local relative to `factorial`'s definition.
-
-```racket
-(define factorial
-  (lambda (n)
-    (if (zero? n)
-        1
-        (* n (factorial (- n 1))))))
-```
+(test-case "list-append: non-empty"
+  equal? (list 1 2 3 4 5)
+  (lambda ()
+    (list-append (list 1 2 3)
+                 (list 4 5))))
+</pre>
