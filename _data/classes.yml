@@ -218,6 +218,7 @@
 
 - topic: Introduction to list recursion
   abbrev: recursion-intro
+  slides_link: https://docs.google.com/presentation/d/1zp_UWVsX3hLXWBAuOB795SqUfRHDTqD5EWDygv2ETwE/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We begin our exploration of *recursion*, the most general form
     of repetition available in Scheme.  You can use recursion to
@@ -232,6 +233,7 @@
   summary: |
     We continue to explore list recursion by examining how we use recursion to
     perform basic motions over lists.
+  slides_link: https://docs.google.com/presentation/d/1VemaRM4SH2lPjdeAAdN_AArD7nAQPP7qApSLW_KtuAc/edit#slide=id.g307c3f5f546_0_0
   reading:
     - page: /readings/list-motions.html
   lab:
