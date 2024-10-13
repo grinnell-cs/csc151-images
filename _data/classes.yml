@@ -239,41 +239,34 @@
   lab:
     - page: /labs/more-list-practice.html
 
-# - topic: List motions and unit testing
-#   summary: |
-#     We begin to categorize the different kinds of recursive "motions"
-#     over lists we have explored thus far. We also talk how we can
-#     better test the functions that we write.
+- topic: Recursion over numbers
+  abbrev: number-recursion
+  summary: |
+    We consider a slightly different kind of recursion, numeric
+    recursion.  In this technique, we once again have procedures
+    call themselves.  However, the parameter that we "simplify" at
+    every step is a number, rather than a list.
+  reading:
+    - page: /readings/recursion-over-numbers.html
+  # lab:
+  #   - page: /labs/numeric-recursion.html
 
-# - topic: Recursion over numbers
-#   abbrev: number-recursion
-#   summary: |
-#     We consider a slightly different kind of recursion, numeric
-#     recursion.  In this technique, we once again have procedures
-#     call themselves.  However, the parameter that we "simplify" at
-#     every step is a number, rather than a list.
-#   reading:
-#     - page: /readings/numeric-recursion.html
-#   lab:
-#     - page: /labs/numeric-recursion.html
+- topic: Higher-order Recursive Programming
+  abbrev: higher-order-recursive-programming
+  summary: |
+    We combine higher-order functions and recursive programming to implement the "big three" operations over lists.
+  reading:
+    - (No required reading for today!)
+  # lab:
+  #   - page: /labs/implementing-the-big-three.html
 
-# - topic: Recursive design
-#   abbrev: recursive-design
-#   summary: |
-#     We consider how we might recognize and utilize recursive
-#     decomposition in structures other than lists and numbers.
-
-# - topic: Tail recursion
-#   abbrev: tail-recursion
-#   summary: |
-#     We continue to stretch our brains with recursive thinking.  In 
-#     particular, We consider tail recursion, an advanced version of 
-#     recursion that is ubiquitous in functional programming.
-#   reading:
-#     - page: /readings/tail-recursion.html
-#     - page: /readings/list-recursion-revisited.html
-#   lab:
-#     - page: /labs/tail-recursion.html
+- topic: Tail Recursion
+  summary: |
+    We look at an advanced version of recursion that is ubiquitous in functional programming, tail recursion.
+  reading:
+    - page: /readings/tail-recursion.html
+  # lab:
+  #   - page: /labs/tail-recursion.html
 
 # - topic: Designing Higher-order functions
 #   abbrev: designing-higher-order-functions
