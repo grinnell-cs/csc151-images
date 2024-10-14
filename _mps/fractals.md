@@ -5,42 +5,40 @@ summary: |
   We explore fractals, images that are similar at different scales, as well
   as other images that can be built from numeric recursion.  Along the way,
   we practice with numeric recursion.
-collaboration: |
-  Each student should submit their own responses to this project. You may
-  consult other students in the class as you develop your solution.  If you
-  receive help from anyone, make sure to cite them in your responses. 
 link: false
 ---
-**Summary**: {{ page.summary }}
+**Starter code**: [`fractals.scm`](../code/mps/fractals.scm).
 
-**Starter code**: [`fractals.rkt`](../code/mps/fractals.rkt).
-
-Please save your code for this assignment as [`fractals.rkt`](../code/mps/fractals.rkt).  
-
-In addition to submitting `fractals.rkt`, submit at least three image from your procedure in part 4, named `my-fractal-01.png`, `my-fractal-02.png`, and `my-fractal-03.png`.
+Please save your code for this assignment as [`fractals.scm`](../code/mps/fractals.scm).  
 
 ## Background: Building Sierpinski triangles 
 
-Informally, _fractals_ are images that appear similar at different scales.  Although this mini-project will primarily emphasize fractals made from simple shapes, there are also fractals that are much less regular.  For example, the coastline of almost any country is considered a fractal because coastlines are similarly "jagged" at any scale.
+Informally, _fractals_ are images that appear similar at different scales.
+Although this assessment will primarily emphasize fractals made from simple shapes, there are also fractals that are much less regular.
+For example, the coastline of almost any country is considered a fractal because coastlines are similarly "jagged" at any scale.
 
-We will explain the self-similarity of regular shapes using one of the most straightforward regular fractals, the _Sierpinski Triangle_.  Here's how you might think of those triangles.
+We will explain the self-similarity of regular shapes using one of the most straightforward regular fractals, the _Sierpinski Triangle_.
+Here's how you might think of those triangles.
 
 We'll start with a blue, equilateral, triangle with side-length 128.
 
-`(define triangle-128 (solid-equilateral-triangle 128 "blue"))`
-
+<pre class="scamper source-only">
+(define triangle-128 (solid-equilateral-triangle 128 "blue"))
+</pre>
 ![A solid blue triangle with side-length 128.](../images/fractals/triangle-128.png)
 
 Let's build another triangle with half that side length.  If you recall your geometry, this triangle will have 1/4 the area of the original triangle.
 
-`(define triangle-64 (solid-equilateral-triangle 64 "blue"))`
-
+<pre class="scamper source-only">
+(define triangle-64 (solid-equilateral-triangle 64 "blue"))
+</pre>
 ![A solid blue triangle with side-length 64.](../images/fractals/triangle-64.png)
 
 We can get a similar triangle to the original one (but with a "hole" in the middle) by appropriately combining three of those triangles, two side by side and then one over them.
 
-`(above triangle-64 (beside triangle-64 triangle-64))`
-
+<pre class="scamper source-only">
+(above triangle-64 (beside triangle-64 triangle-64))
+</pre>
 ![A blue triangle with side length 128 composed of three blue triangles of side length 64 along with a white space in the middle.](../images/fractals/triangle-64-stack.png)
 
 Of course, we could use a similar process to build each of those three blue triangles.
@@ -63,24 +61,34 @@ And so forth.
 
 ![A continuation of the series of images above.](../images/fractals/fractal-triangle-128-6.png)
 
-If we do this process sufficiently many times (perhaps "arbitrarily many times"), we end up with a structure called the "Sierpinski Triangle".  Sierpinski triangles have many surprising mathematical properties, none of which are relevant to us at this time.  Instead, we will use Sierpinski triangles to make aesthically appealing images (or at least aesthetically appealing to them).
+If we do this process sufficiently many times (perhaps "arbitrarily many times"), we end up with a structure called the "Sierpinski Triangle".
+Sierpinski triangles have many surprising mathematical properties, none of which are relevant to us at this time.
+Instead, we will use Sierpinski triangles to make cool-looking drawings!
 
-We will start by defining the intermediate results recursively.  Here's one way.  We'll call a triangle that's been broken up `n` times a "level `n` fractal triangle".
+We will start by defining the intermediate results recursively.
+Here's one way.
+We'll call a triangle that's been broken up `n` times a "level-`n` fractal triangle".
 
-* A level-0 fractal equilateral triangle with edge-length `len` is just an equilateral triangle of edge-length `len`.
-* A level-n fractal equilateral triangle with edge-length `len` is built from three level-(n-1) fractal equilateral triangles, each with edge-length `len`/2.  For example, a level-5 fractal equilateral triangle with side-length 128 is built from three level-4 equilateral triangles, each with side length 64.
++   A level-0 fractal equilateral triangle with edge-length `len` is just an equilateral triangle of edge-length `len`.
++   A level-n fractal equilateral triangle with edge-length `len` is built from three level-(n-1) fractal equilateral triangles, each with edge-length `len`/2.
+    For example, a level-5 fractal equilateral triangle with side-length 128 is built from three level-4 equilateral triangles, each with side length 64.
 
-You can turn that into a recursive procedure, can't you?  Don't worry; you'll have a chance to do so in the exercises below.
+You can turn that into a recursive procedure, can't you?
+Don't worry; you'll have a chance to do so in the exercises below.
 
-Once we can build fractal triangles, we can start varying them.  For example, rather than making each sub-triangle the same color, we might make one lighter and another darker.  If we use the "standard" technique of adding 32 to each component to make colors "lighter" and subtracting 32 to make them "darker", we might end up with something like the following for a level-4 gray triangle.
+Once we can build fractal triangles, we can start varying them.
+For example, rather than making each sub-triangle the same color, we might make one lighter and another darker.
+If we use the "standard" technique of adding 32 to each color component to make colors "lighter" and subtracting 32 to make them "darker", we might end up with something like the following for a level-4 gray triangle.
 
 ![A fractal triangle that appears darker along the right side and lighter in the lower-left-hand corner.](../images/fractals/shaded-fractal-triangle-128-4.png)
 
-Here's another one that we've built by making the top triangle redder, the bottom-left triangle greener, and the bottom-right triangle bluer.  (I think this has six levels of recursion.)
+Here's another one that we've built by making the top triangle redder, the bottom-left triangle greener, and the bottom-right triangle bluer.
+(I think this has six levels of recursion.)
 
 ![A fractal triangle in rainbow colors.](../images/fractals/rgb-fractal-triangle-a-128-6.png)
 
-And one where we've turned each middle triangle into the base color.  (We've done that by overlaying the recursive result on a larger triangle.)
+And one where we've turned each middle triangle into the base color.
+(We've done that by overlaying the recursive result on a larger triangle.)
 
 ![Another fractal triangle in rainbow colors.](../images/fractals/rgb-fractal-triangle-b-128-6.png)
 
@@ -88,9 +96,9 @@ It looks a bit different if we just overlay the first one on gray.
 
 ![Yet another fractal triangle in rainbow colors.](../images/fractals/rgb-fractal-triangle-c-128-6.png)
 
-Just to continue exploring variations, let's rotate the result of each recursive call in the base version by 15 degrees clockwise. 
+<!-- Just to continue exploring variations, let's rotate the result of each recursive call in the base version by 15 degrees clockwise. 
 
-![Six "shapes" created by rotating triangles and combining them recursively.](../images/fractals/rotated-fractal-triangles.png)
+![Six "shapes" created by rotating triangles and combining them recursively.](../images/fractals/rotated-fractal-triangles.png) -->
 
 When we do enough recursion, it may not matter all that much whether or not the base case is a triangle.  (Is that surprising or intuitive?)  For example, here are a set of shapes using the `(above shape (beside shape shape))` formula with a square as the base case.
 
@@ -102,7 +110,9 @@ Somewhere along the way, I think we said that these techniques might help us mak
 
 ## Part one: Fractal triangles
 
-a. Write a procedure, `fractal-triangle`, that makes the basic fractal triangle described above.
+### Problem 1a: `fractal-triangle`
+
+Write a procedure, `fractal-triangle`, that makes the basic fractal triangle described above.
 
 ```
 ;;; (fractal-triangle side color n) -> image?
@@ -115,7 +125,9 @@ a. Write a procedure, `fractal-triangle`, that makes the basic fractal triangle 
 
 **Warning**: Because shapes generally can't have fractional width or height, you may find that `fractal-triangle` produces triangles that are slightly bigger than expected. Such a result is acceptable. You'll notice all of our tests use a size that's a power of two to address such issues.
 
-b. Write a procedure, `rgb-fractal-triangle`, that makes a fractal triangle in which the top triangle is "redder" than the basic color, the lower-left triangle is "greener" than the basic color, and the lower-right triangle is "bluer" than the basic color.
+### Problem 1b: `rgb-fractal-triangle`
+
+Write a procedure, `rgb-fractal-triangle`, that makes a fractal triangle in which the top triangle is "redder" than the basic color, the lower-left triangle is "greener" than the basic color, and the lower-right triangle is "bluer" than the basic color.
 
 ```
 ;;; (rgb-fractal-triangle side color n) -> image?
@@ -129,8 +141,11 @@ b. Write a procedure, `rgb-fractal-triangle`, that makes a fractal triangle in w
 ;;; color of the lower-right triangle is `(rgb-bluer color)`.  
 ```
 
-c. As you saw in our examples, once we start changing colors, it can be nice 
-to "fill in" the center triangle with the original color.  You will find it easiest to do so by overlaying the fractal triangle on a same-size triangle in the original color.
+### Problem 1c: `new-rgb-fractal-triangle`
+
+As you saw in our examples, once we start changing colors, it can be nice 
+to "fill in" the center triangle with the original color.
+You will find it easiest to do so by overlaying the fractal triangle on a same-size triangle in the original color.
 
 Write a procedure, `(new-rgb-fractal-triangle side color n)`, that does just that.
 
@@ -147,7 +162,9 @@ Write a procedure, `(new-rgb-fractal-triangle side color n)`, that does just tha
 ;;; color of the central triangle should be `color`.  
 ```
 
-d. Write a procedure, `(fractal-right-triangle height width color n)`, that builds a right triangle using the fractal approach.  
+<!-- ### Problem 1d: `fractal-right-triangle`
+
+Write a procedure, `(fractal-right-triangle height width color n)`, that builds a right triangle using the fractal approach.  
 
 ```
 ;;; (fractal-right-triangle height width color n) -> image?
@@ -156,17 +173,26 @@ d. Write a procedure, `(fractal-right-triangle height width color n)`, that buil
 ;;;   color : color?
 ;;;   n : non-negative integer
 ;;; Make a fractal right triangle using `color` as the primary color.
-```
+``` -->
 
 ## Part two: Fractal squares (carpets)
 
-Just as we can think of triangles as being made up of four sub-triangles, and we can use that idea to make fractal triangles, we can break squares up into sub-squares and use those to make fractal squares.  The most common approach is to make a three-by-three grid of squares, building all but the center square recursively.  How do we combine them?  We can make each row with `beside` and then stack the three rows with `above`.  What about the middle square, which we normally leave "blank"?  I find it easiest to specify a color to use for the center.  Here are the first few stages.
+Just as we can think of triangles as being made up of four sub-triangles, and we can use that idea to make fractal triangles, we can break squares up into sub-squares and use those to make fractal squares.
+The most common approach is to make a three-by-three grid of squares, building all but the center square recursively.
+How do we combine them?
+We can make each row with `beside` and then stack the three rows with `above`.
+What about the middle square, which we normally leave "blank"?
+I find it easiest to specify a color to use for the center.
+Here are the first few stages.
 
 ![Six levels of Sierpinski carpets.](../images/fractals/carpets.png)
 
-No, the limit of this is not a "Sierpinski square".  However, it is normally referred to as a Sierpinski carpet".
+No, the limit of this is not a "Sierpinski square".
+However, it is normally referred to as a Sierpinski carpet".
 
-**a. Write a procedure, `(carpet-a size color-x color-y n)` that makes an image like those above.**
+### Problem 2a. `carpet-a`
+
+Write a procedure, `(carpet-a size color-x color-y n)` that makes an image like those above.
 
 ```
 ;;; (carpet-a size color-x color-y n) -> image?
@@ -179,13 +205,17 @@ No, the limit of this is not a "Sierpinski square".  However, it is normally ref
 ;;; `color-y` as the center color.  
 ```
 
-b. Of course, there's no reason we have to recurse on those particular eight squares.  We could, for example, use only six.  Here's one such pattern.
+### Problem 2b. `carpet-b`
+
+Of course, there's no reason we have to recurse on those particular eight squares.
+We could, for example, use only six.
+Here's one such pattern.
 
 ![Five red-and-black square carpets.](../images/fractals/carpet-b-examples.png)
 
-_Here and elsewhere, we are seeing some strange artifacts from how DrRacket deals with sequares that have non-integer edge lengths._
+Here(and elsewhere, we are seeing some strange artifacts from our squares having non-integer edge lengths.)
 
-**Write a procedure, `(carpet-b size color-x color-y n)`, that makes images like this latest set.**
+Write a procedure, `(carpet-b size color-x color-y n)`, that makes images like this latest set.
 
 ```
 ;;; (carpet-b size color-x color-y n) -> image?
@@ -204,13 +234,16 @@ _Here and elsewhere, we are seeing some strange artifacts from how DrRacket deal
 ;;; where `X` means "recurse" and `y` means "square with `color-y`.
 ```
 
-c. Those big squares really stand out, don't they?  But we can handle that.  Instead
-of just making a rectangle of `color-y`, we can recurse in those squares, too, flipping
-the primary and secondary colors.  Here are the first few versions with that model, using the same pattern as in `carpet-b`.
+### Problem 2c: `carpet-c`
+
+Those big squares really stand out, don't they?
+But we can handle that.
+Instead of just making a rectangle of `color-y`, we can recurse in those squares, too, flipping the primary and secondary colors.
+Here are the first few versions with that model, using the same pattern as in `carpet-b`.
 
 ![Five red-and-black square carpets.](../images/fractals/carpet-c-examples.png)
 
-**Write a procedure, `(carpet-c size color-x color-y n)`, that makes images like the latest set.**
+Write a procedure, `(carpet-c size color-x color-y n)`, that makes images like the latest set.
 
 ```
 ;;; (carpet-c size color-x color-y n) -> image?
@@ -229,6 +262,8 @@ the primary and secondary colors.  Here are the first few versions with that mod
 ;;; where `X` means "recurse keeping colors as they are" and `Y` means
 ;;; "recurse swapping the two colors".
 ```
+
+### Problem 2d: `carpet-d`
 
 d. Just as we can recurse on the secondary squares, we can choose not to recurse on some of the primary color squares.  Here's an example with a somewhat different pattern.  You can see if you can determine the pattern by inspection, or you can read the documentation.
 
@@ -255,12 +290,16 @@ d. Just as we can recurse on the secondary squares, we can choose not to recurse
 ;;; and `y` means "square in `color-y`".
 ```
 
-e. At this point, you may feel like you want to experiment with different patterns of carpet recursion.  And you could do so by making slight changes to `carpet-d`.  However, it's much better to extend our procedure to take the pattern of recursion as a parameter.  For eample, the "pattern" for `carpet-d` is `"XyXxYxXyX"`.  
+### Problem 2e: `carpet`
 
+At this point, you may feel like you want to experiment with different patterns of carpet recursion.
+And you could do so by making slight changes to `carpet-d`.
+However, it's much better to extend our procedure to take the pattern of recursion as a parameter.
+For example, the "pattern" for `carpet-d` is `"XyXxYxXyX"`.  
 
-**Write a procedure, `(carpet pattern size color-x color-y n)`, that generalizes carpet generation using patterns.**
+Write a procedure, `(carpet pattern size color-x color-y n)`, that generalizes carpet generation using patterns.
 
-_This procedure is only required for an E._
+(_Note_: This procedure is only required for an E.)
 
 ```
 ;;; (carpet pattern size color-x color-y n) -> image?
@@ -285,7 +324,7 @@ _This procedure is only required for an E._
 ;;;      6 7 8
 ```
 
-## Part three: Spiraling shapes
+<!-- ## Part three: Spiraling shapes
 
 Let's move on to some fun with rotation.  These images are not quite fractals, but they give you some more experience with numeric recursion.
 
@@ -454,117 +493,58 @@ You may find the following procedure useful as you experiment.
 ;;; Add 64 to each component of color, cycling when we exceed 255.
 (define cyclically-add-64
   (rgb-transformer (lambda (c) (remainder (+ c 64) 256))))
-```
+``` -->
 
-## Part four: Freestyle
+## Part three: Freestyle
 
 Using variants of the fractal approaches from parts 1 and 2, along with anything else you consider useful, come up with a recursive procedure, `(my-fractal size color n)` that creates a self-similar (or otherwise numerically recursive) image using the starting size, color, and non-negative integer.
 
-Use your procedure to create three images that you'd like to share.  Save them as `my-fractal-01.png`, `my-fractal-02.png`, and `my-fractal-03.png`.  Your commands will look something like the following.
+Include _three invocations of `my-fractal`_ that demonstrate your fractal on a variety of inputs.
 
-```
-> (image-save (my-fractal 128 (rgb 255 0 255) 8) "my-fractal-01.png")
-```
-
-Include a comment in your code file that explains how you generated
-the image.
-
-Please check the rubric for other expectations.
-
-Grading rubric
---------------
+## Grading rubric
 
 ### Redo or above
 
-Submissions that lack any of these characteristics will get an I.
+Submissions that lack any of these characteristics will get an N.
 
-```
-[ ] Passes all of the "R" autograder tests.
-[ ] Includes the specified file, `fractals.rkt`.
-[ ] Includes an appropriate header on the file that indicates the
-    course, author, etc.
-[ ] Acknowledges appropriately.
-[ ] Code runs in DrRacket.
-[ ] `my-fractal` creates an image when given appropriate parameters.
-    (Note that for an R, you need not make a fractal.)
-[ ] Includes `my-fractal-01.png`, which seems to be generated by `my-fractal`.
-[ ] Includes `my-fractal-02.png`, which seems to be generated by `my-fractal`.
-[ ] Includes `my-fractal-03.png`, which seems to be generated by `my-fractal`.
-```
++ Displays a good faith attempt to complete every required part of the assignment.
 
 ### Meets expectations or above
 
-Submissions that lack any of these characteristics but have all of the
+Submissions that lack any of these characteristics but have all the
 prior characteristics will get an R.
 
-```
-[ ] Passes all of the "M" autograder tests.
-[ ] Used the starter code.  (Identifiable by the section separators
-    and such.)
-[ ] Code is well-formatted with appropriate names and indentation.
-[ ] Code has been reformatted with Ctrl-I before submitting.
-[ ] Code generally follows style guidelines.
-[ ] `my-fractal` involves explicit or implicit recursion other than
-    from invoking procedures in parts 1--3.
-[ ] Explains how each of the `my-fractal` images was created (that is, 
-    the parameters to `my-fractal`).
-```
++   Includes the specified file, `fractals.scm`.
++   Includes an appropriate header on all submitted files that includes the course, author, etc.
++   **Correctness**
+    +   Code runs without errors.
+    +   Core functions are present and correct (except for non-obvious corner cases, when present)
+        *   Part 1:
+            +   `(fractal-triangle side color n)`
+            +   `(rgb-fractal-triangle side color n)`
+            +   `(new-rgb-fractal-triangle side color n)`
+        *   Part 2:
+            +   `(carpet-a size color-x color-y n)`
+            +   `(carpet-b size color-x color-y n)`
+            +   `(carpet-c size color-x color-y n)`
+            +   `(carpet-d size color-x color-y n)`
+    +   Code includes required tests for all functions.
++   **Design**
+    +   Documents and names all core procedures correctly.
+    +   Code generally follows style guidelines.
+    +   `my-fractal` involves explicit or implicit recursion other than from invoking procedures in parts 1–3.
 
 ### Exemplary / Exceeds expectations
 
-Submissions that lack any of these characteristics but have all of the
+Submissions that lack any of these characteristics but have all the
 prior characteristics will get an M.
 
-```
-[ ] Passes all of the E star autograder tests.
-[ ] Includes a working version of `carpet` (2e).
-[ ] Style is impeccable (or nearly so).
-[ ] Avoids repeated work.  In particular, avoids identical recursive calls.
-[ ] Documentation for all procedures is correct / has the correct form.
-[ ] `my-fractal` involves a basic shape other than triangles, squares,
-    and rectangles.
-```
-
-## Q&A
-
-### General
-
-How do we do recursion without a list? What is the base case if we do not have a limit for the number of elements?
-
-> If we're doing recursion with numbers (as is appropriate on this assignment), we usually stop when we reach some target number (or target range of numbers). For example, we'll usually stop the fractals when `n` is 0. If we don't have an `n`, we'll stop when some other numeric parameter ges small enough, such as when `side` is less than 10. For the recursive case, we make the number closer to the target (e.g., subtracting 1, multiplying by a fraction less than 1).
-
-I think one of my fractal procedures is correct, but it's failing the tests. What's wrong?
-
-> Unfortunately, the "does this look right" procedure is imperfect. Check with your instructor to see if you missed something.
-
-What is the difference between explicit & implicit recursion? 
-
-> Explicit recursion is when a procedure calls itself. Implicit recursion happens when a procedure calls a recursive procedure or when a procedure calls another procedure that then calls the first procedure.
-
-What would be considered an identical recursive call?
-
-> For example, to make a fractal triangle of side length `s`, you need to make three fractal triangles of side length `s`/2. If you wrote something like
-
-```
-(above (fractal-triangle (/ side 2) color (- n 1))
-       (beside (fractal-triangle (/ side 2) color (- n 1))
-               (fractal-triangle (/ side 2) color (- n 1))))
-```
-
-> You have three identical recursive calls.
-
-How would you avoid identical recursive calls?
-
-> You avoid it by using `let` or a helper procedure.
-
-### Part one: Fractal triangles
-
-### Part two: Fractal squares (carpets)
-
-Would `let` be useful for naming X, x, Y, and y in the carpet procedures and if so, would we use `let` before or after `lambda`.
-
-> Yes, `let` will be very useful. Since what you get from the `let` will vary, it will need to be after the `lambda`. Since you only want to recurse when the base case test fails, the `let` will also have to be after the base case test.
-
-### Part three: Spiraling shapes
-
-### Part four: Freestyle
++   **Correctness**
+    - Implementation of all core functions is completely correct, even in non-obvious corner cases when present.
+    - Each set of tests includes at least one edge case (e.g., an empty list, if appropriate).
++   **Design**
+    - Function documentation is complete and appropriately evocative of each function's behavior.
+    - Code follows style guidelines completely, with at most _three_ minor errors present.
+    - Code is well-designed, avoiding repeated work through decomposition and appropriate language constructs.
+    - Includes a working version of `carpet-e` (Problem 2e)
+    - `my-fractal` involves a basic shape other than triangles, squares, and rectangles.

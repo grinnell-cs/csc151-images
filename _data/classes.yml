@@ -248,8 +248,8 @@
     every step is a number, rather than a list.
   reading:
     - page: /readings/recursion-over-numbers.html
-  # lab:
-  #   - page: /labs/numeric-recursion.html
+  lab:
+    - page: /labs/numeric-recursion.html
 
 - topic: Higher-order Recursive Programming
   abbrev: higher-order-recursive-programming

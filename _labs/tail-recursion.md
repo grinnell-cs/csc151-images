@@ -15,18 +15,16 @@ In this lab, we'll further expand our understanding of recursion, considering ho
 
 ## Preparation
 
-a. Introduce yourself to your partner, discuss strengths and weaknesses, work work procedures, and such.
+1. Introduce yourself to your partner, discuss strengths and weaknesses, work work procedures, and such.
 
-b. Go over your answers to the self checks.
+2. Go over your answers to the self checks.
 
-c. Grab the code.
+3. Grab the code.
 
-* [tail-recursion.rkt](../code/labs/tail-recursion.rkt)
+* [tail-recursion.scm](../code/labs/tail-recursion.rkt)
 
 d. Review the provided procedures.
 
 ## Acknowledgements
 
-This lab was rewritten in Fall 2021.  It is based relatively closely
-on [a similar lab from Spring 2019](https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CSC151/2019S/labs/helper-recursion.html).  It looks like
-that one was based on a long series of earlier labs.
+This lab was rewritten in Spring 2023 based on previous tail recursion labs, the most recent of which was Fall 2021.
