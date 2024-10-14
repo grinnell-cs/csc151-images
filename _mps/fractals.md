@@ -108,6 +108,18 @@ Somewhere along the way, I think we said that these techniques might help us mak
 
 ![A study in red.](../images/fractals/study-in-red.png)
 
+## Required "tests" for drawing functions
+
+In this assignment, we don't have a good way to test your code for correctness automatically!
+The starter code provides example invocations of your functions that you should check.
+However, in addition to these examples, you should **provide two additional invocations of each function**, demonstrating different behavior than what the given examples show.
+When writing these examples:
+
++   Write your two additional examples _below_ the given examples in the appropriate section.
++   Give each example an appropriate description with the `description` function.
++   Please ensure that your code runs to completion in a reasonable amount of time!
+    In other words, don't give your examples inputs that will take the program longer than a few seconds to execute!
+
 ## Part one: Fractal triangles
 
 ### Problem 1a: `fractal-triangle`
@@ -162,18 +174,18 @@ Write a procedure, `(new-rgb-fractal-triangle side color n)`, that does just tha
 ;;; color of the central triangle should be `color`.  
 ```
 
-<!-- ### Problem 1d: `fractal-right-triangle`
+### Problem 1d: `fractal-right-triangle`
 
-Write a procedure, `(fractal-right-triangle height width color n)`, that builds a right triangle using the fractal approach.  
+Write a procedure, `(fractal-right-triangle width height color n)`, that builds a right triangle using the fractal approach.  
 
 ```
 ;;; (fractal-right-triangle height width color n) -> image?
-;;;   height : positive-real?
 ;;;   width : positive-real?
+;;;   height : positive-real?
 ;;;   color : color?
 ;;;   n : non-negative integer
 ;;; Make a fractal right triangle using `color` as the primary color.
-``` -->
+```
 
 ## Part two: Fractal squares (carpets)
 
@@ -523,12 +535,13 @@ prior characteristics will get an R.
             +   `(fractal-triangle side color n)`
             +   `(rgb-fractal-triangle side color n)`
             +   `(new-rgb-fractal-triangle side color n)`
+            +   `(fractal-right-triangle width height n)`
         *   Part 2:
             +   `(carpet-a size color-x color-y n)`
             +   `(carpet-b size color-x color-y n)`
             +   `(carpet-c size color-x color-y n)`
             +   `(carpet-d size color-x color-y n)`
-    +   Code includes required tests for all functions.
+    +   Each function has two additional invocations beyond what is provided in the starter code.
 +   **Design**
     +   Documents and names all core procedures correctly.
     +   Code generally follows style guidelines.
@@ -540,11 +553,12 @@ Submissions that lack any of these characteristics but have all the
 prior characteristics will get an M.
 
 +   **Correctness**
-    - Implementation of all core functions is completely correct, even in non-obvious corner cases when present.
-    - Each set of tests includes at least one edge case (e.g., an empty list, if appropriate).
+    -   Implementation of all core functions is completely correct, even in non-obvious corner cases when present.
+    -   Each set of tests includes at least one edge case (e.g., an empty list, if appropriate).
+    -   Extra functions are present and completely correct:
+        +   Part 2, problem 2e: `(carpet pattern size color-x color-y n)`
 +   **Design**
-    - Function documentation is complete and appropriately evocative of each function's behavior.
-    - Code follows style guidelines completely, with at most _three_ minor errors present.
-    - Code is well-designed, avoiding repeated work through decomposition and appropriate language constructs.
-    - Includes a working version of `carpet-e` (Problem 2e)
-    - `my-fractal` involves a basic shape other than triangles, squares, and rectangles.
+    -   Function documentation is complete and appropriately evocative of each function's behavior.
+    -   Code follows style guidelines completely, with at most _three_ minor errors present.
+    -   Code is well-designed, avoiding repeated work through decomposition and appropriate language constructs.
+    -   `my-fractal` involves a basic shape other than triangles, squares, and rectangles.
