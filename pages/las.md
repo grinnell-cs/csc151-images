@@ -4,6 +4,9 @@ summary: One of the ways we assess your learning.
 permalink: /resources/
 ---
 
+## Progress tracking worksheet
+
+[**Progress tracking worksheet**](https://docs.google.com/spreadsheets/d/1VsnfKqLtePowF5zxYxs2veijC5ijWJMpnUu0lY6AGiM/edit?gid=1408994778#gid=1408994778) -- Spreadsheet you can fill out to track your progress toward desired course grade.
 
 ## Sample problems
 
