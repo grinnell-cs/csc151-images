@@ -5,7 +5,7 @@ summary: |
   We explore fractals, images that are similar at different scales, as well
   as other images that can be built from numeric recursion.  Along the way,
   we practice with numeric recursion.
-link: false
+link: true
 ---
 **Starter code**: [`fractals.scm`](../code/mps/fractals.scm).
 
