@@ -249,7 +249,7 @@
   reading:
     - page: /readings/recursion-over-numbers.html
   lab:
-    - page: /labs/numeric-recursion.html
+    - (continue Friday's lab)
 
 - topic: Higher-order Recursive Programming
   abbrev: higher-order-recursive-programming
@@ -257,16 +257,17 @@
     We combine higher-order functions and recursive programming to implement the "big three" operations over lists.
   reading:
     - (No required reading for today!)
-  # lab:
-  #   - page: /labs/implementing-the-big-three.html
+  lab:
+    - page: /labs/numeric-recursion.html
 
 - topic: Tail Recursion
   summary: |
     We look at an advanced version of recursion that is ubiquitous in functional programming, tail recursion.
   reading:
     - page: /readings/tail-recursion.html
-  # lab:
-  #   - page: /labs/tail-recursion.html
+  lab:
+    - page: /labs/implementing-the-big-three.html
+    - page: /labs/tail-recursion.html
 
 # - topic: Designing Higher-order functions
 #   abbrev: designing-higher-order-functions

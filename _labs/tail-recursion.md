@@ -1,5 +1,5 @@
 ---
-title: Tail and helper recursion
+title: (Optional) Tail and helper recursion
 summary: |
   In this laboratory, you will explore recursive procedures
   in which we pass along intermediate computations, most typically
