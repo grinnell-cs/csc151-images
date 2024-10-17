@@ -250,8 +250,11 @@ We've seen one way to use binary procedures with lists: We can reduce a list of 
 
 (map list (range 10) (map increment (range 10)) (map square (range 10)))
 
-(define first-names (list "Addison" "Bailey" "Casey" "Devon" "Emerson"))
-(define last-names (list "Smith" "Jones" "Smyth" "Johnson" "Doe"))
+(define first-names (list "Yasaman" "Amal" "Tanesha" "Khoa" "Lin-Manuel"))
+(define last-names (list "Mohsani" "Neerad" "Morris" "Le" "Miranda"))
+
+;(define first-names (list "Addison" "Bailey" "Casey" "Devon" "Emerson"))
+;(define last-names (list "Smith" "Jones" "Smyth" "Johnson" "Doe"))
 
 (map (section string-append _ " " _) first-names last-names)
 (map (section string-append _ ", " _) last-names first-names)
@@ -273,11 +276,11 @@ show their derivation.
 In the last example, we used `map` to map two lists of names into a single list of names of the form `"last, first"`.
 
 <pre class="scamper source">
-(define first-names (list "Addison" "Bailey" "Casey" "Devon" "Emerson"))
-
-(define last-names (list "Smith" "Jones" "Smyth" "Johnson" "Doe"))
+(define first-names (list "Yasaman" "Amal" "Tanesha" "Khoa" "Lin-Manuel"))
+(define last-names (list "Mohsani" "Neerad" "Morris" "Le" "Miranda"))
 
 (map (section string-append _ ", " _) last-names first-names)
+
 </pre>
 
 Extend this expression with additional `filter` and `reduce` calls so that:
