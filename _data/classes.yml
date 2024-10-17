@@ -239,30 +239,32 @@
   lab:
     - page: /labs/more-list-practice.html
 
-- topic: Recursion over numbers
-  abbrev: number-recursion
-  summary: |
-    We consider a slightly different kind of recursion, numeric
-    recursion.  In this technique, we once again have procedures
-    call themselves.  However, the parameter that we "simplify" at
-    every step is a number, rather than a list.
+- topic: List Motions (continued)
+  slides_link: https://docs.google.com/presentation/d/1WtdvR6CdiZAo6MhRy2cO1txaM90vCRpLukjlfVaSSkE/edit#slide=id.g307c3f5f546_0_0
+  summary: | 
+    See above
   reading:
     - page: /readings/recursion-over-numbers.html
   lab:
     - (continue Friday's lab)
 
-- topic: Higher-order Recursive Programming
-  abbrev: higher-order-recursive-programming
-  summary: |
-    We combine higher-order functions and recursive programming to implement the "big three" operations over lists.
+- topic: Recursion over numbers
+  abbrev: number-recursion
+  slides_link: https://docs.google.com/presentation/d/1ue7b3pGi7Ohu_aOmrF1C4WV_P4Eg3aNW4wKom7p3C40/edit#slide=id.g307c3f5f546_0_0
+  summary: |    
+    We consider a slightly different kind of recursion, numeric
+    recursion.  In this technique, we once again have procedures
+    call themselves.  However, the parameter that we "simplify" at
+    every step is a number, rather than a list.
   reading:
     - (No required reading for today!)
   lab:
     - page: /labs/numeric-recursion.html
 
-- topic: Tail Recursion
+- topic: Higher-order Recursive Programming
+  abbrev: higher-order-recursive-programming
   summary: |
-    We look at an advanced version of recursion that is ubiquitous in functional programming, tail recursion.
+    We combine higher-order functions and recursive programming to implement the "big three" operations over lists. (Extra topic: Tail recursion -- We look at an advanced version of recursion that is ubiquitous in functional programming, tail recursion.)
   reading:
     - page: /readings/tail-recursion.html
   lab:
