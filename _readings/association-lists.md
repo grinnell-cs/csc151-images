@@ -49,9 +49,84 @@ The name "dictionary" is evocative of the prototypical example of these kinds of
 We say that the *keys* of the dictionary are the values we're "mapping from"—fruits in our example.
 The *values* of the dictionary are the values we're "mapping to"—numbers in our example.
 
+## An Aside: Pairs in Scheme
+
+In our dictionary data structure, we will need to associate a key with a value.
+The simplest way of doing this is with a _pair structure_ which holds two values.
+For example, we can represent $$x$$-$$y$$ coordinates in a two-dimensional space by using the `pair` function to create a pair.
+
+To get out the components of a `pair` we use the `car` and `cdr` functions:
+
+<pre class="scamper source">
+(define origin (pair 0 0))
+
+(display (pair 0 0))
+
+(define translate
+  (lambda (p dx dy)
+    (pair (+ (car p) dx) (+ (cdr p) dy))))
+
+(display (translate origin 3 5))
+</pre>
+
+But wait, we used `car` and `cdr` to access the head and tail of lists!
+
+<pre class="scamper source">
+(define lst (range 0 10))
+
+(display (car lst))
+
+(display (cdr lst))
+</pre>
+
+How can `car` and `cdr` serve these two different roles?
+
+The answer is both surprisingly simple but also thought-provoking: **a list _is_ a pair!**
+More specifically a list _is_ a pair of a value and a list, recursively!
+So `null` is a list, a pair of a value and `null` is a list, a pair of a value and _a pair of a value and `null` is a list_, and so forth!
+
+<pre class="scamper source">
+(display null)
+
+(display
+  (pair 5 null))
+
+(display
+  (pair "a"
+    (pair 5 null)))
+</pre>
+
+If the last component is not a `list`, Scamper will happily display the value as the collection of nested pairs that the value really is:
+
+<pre class="scamper source">
+; Observe how the nested pairs "bottom out" to
+; a number instead of a list.
+(display
+  (pair "a"
+    (pair 5 0)))
+</pre>
+
+In this sense, you can think of a value being displayed as a `list` as _convenient short-hand_ for nested pairs that meet this criteria!
+Dually, as you see above, `cons` and `pair` are interchangable—both produce pairs that may or may not be considered lists!
+
+A final note here is that because pairs and lists are interchangable, we can also use pattern matching to concisely access both elements of a pair.
+Here is the redefinition of the `translate` function above but using pattern matching.
+Note that the elementary pair value is `cons` rather than `pair`, so we need to pattern match on the `cons` constructor:
+
+<pre class="scamper source">
+(define origin (pair 0 0))
+
+(define translate
+  (lambda (p dx dy)
+    (match p
+      [(cons x y) (pair (+ x dx) (+ y dy))])))
+
+(display (translate origin 3 5))
+</pre>
+
 ## Association Lists
 
-How might we implement a dictionarie?
+With this in mind, how might we implement a dictionary?
 We can implement dictionaries by using a combination of *lists* and *pairs*, creating a structure called an *association list*.
 
 +   Individual mappings between elements can be captured with pairs.
@@ -64,9 +139,9 @@ We can implement dictionaries by using a combination of *lists* and *pairs*, cre
 
 With an implementation in mind, we can now talk about how we might implement the major operations over dictionaries we described above:
 
-+   `(assoc-key? k l)`: returns true if association list `d` contains an entry key `k`.
-+   `(assoc-ref k l)`: returns the value associated with key `k` in association list `d`.
-+   `(assoc-set k v l)`: returns a association list that is `l` with an updated entry associating key `k` with value `v`.
++   `(assoc-key? k lst)`: returns true if association list `lst` contains an entry key `k`.
++   `(assoc-ref k lst)`: returns the value associated with key `k` in association list `lst`.
++   `(assoc-set k v lst)`: returns a association list that is `lst` with an updated entry associating key `k` with value `v`.
 
 On top of this, we also note that the empty association list is simply the empty list, *i.e.*,
 
@@ -75,7 +150,7 @@ On top of this, we also note that the empty association list is simply the empty
 (define assoc-empty null)
 </pre>
 
-Since we know that the implementation of our dictionary is a list of pairs, we could write recursive implementations of each of these functions, and we'll do so in lab as an exercise.
+Since we know that the implementation of our dictionary is a list of pairs, we can write recursive implementations of each of these functions, and we'll do so in lab as an exercise.
 For example, `assoc-key?` is realized by the following recursive decomposition over the input list `l`:
 
 > Association list `l` contains key `k` as follows:
@@ -87,34 +162,36 @@ For example, `assoc-key?` is realized by the following recursive decomposition o
 The following implementation realizes this decomposition:
 
 <pre class="scamper output">
-(define assoc-key?
+(import test)
+
+(define my-assoc-key?
   (lambda (k l)
     (match l
       [null #f]
-      [(cons (pair key _) tail) (if (equal? k key) #t (assoc-key? k tail))])))
+      [(cons (pair key _) tail) (if (equal? k key) #t (my-assoc-key? k tail))])))
 
 (define example (list (pair 0 "foo") (pair 1 "bar") (pair 2 "baz")))
 
-(test-case "assoc-key? empty"
+(test-case "my-assoc-key? empty"
   equal?
   #f
-  (lambda () (assoc-key? 0 null)))
+  (lambda () (my-assoc-key? 0 null)))
 
-(test-case "assoc-key? non-empty in"
+(test-case "my-assoc-key? non-empty in"
   equal?
   #t
-  (lambda () (assoc-key? 1 example)))
+  (lambda () (my-assoc-key? 1 example)))
 
-(test-case "assoc-key? non-empty not in"
+(test-case "my-assoc-key? non-empty not in"
   equal?
   #f
-  (lambda () (assoc-key? 42 example)))
+  (lambda () (my-assoc-key? 42 example)))
 </pre>
 
-However, Scheme provides implementations of these functions in the standard library!
+Note that Scheme provides implementations of these functions in the standard library!
 Here is an example program that shows how we can fully realize our example fruit inventory in Scheme, complete with the operations from the standard library:
 
-<pre class="scamper output">
+<pre class="scamper source">
 (define inventory (list (pair "apples" 5) (pair "bananas" 2) (pair "oranges" 8)))
 
 (display inventory)

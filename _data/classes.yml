@@ -254,6 +254,8 @@
   summary: |
     We consider how we might use list recursion to build structures that allow
     us to store information for quick retrieval.
+  reading:
+    - page: /readings/association-lists.html
 
 - topic: Pause for breath
   abbrev: pause-2
