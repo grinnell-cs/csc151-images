@@ -279,6 +279,8 @@
     us to store information for quick retrieval.
   reading:
     - page: /readings/association-lists.html
+  lab:
+    - TBA
 
 - topic: Pause for breath
   abbrev: pause-2

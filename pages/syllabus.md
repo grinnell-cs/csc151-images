@@ -336,6 +336,7 @@ Reflections
 * You may spend late days on reading responses, labs, pre-reflections, post-reflections, take-home assessments, and take-home assessment revisions.  
 * You may spend one late day to submit any of the named assignments up to 24 hours late.  
 * You may spend up to two late days on any given assignment, for a maximum lateness of 48 hours on that assignment.
+* If you submit a late lab or reading response that earns an N, late days will not be charged.
 * You are responsible for keeping track of your own late days.  
 
 ### Redo and Revision Opportunities
