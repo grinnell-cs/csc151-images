@@ -272,21 +272,124 @@
     - page: /labs/implementing-the-big-three.html
     - page: /labs/tail-recursion.html
 
-# - topic: Designing Higher-order functions
-#   abbrev: designing-higher-order-functions
-#   summary: |
-#     We now consider how to design functions that utilize higher-order
-#     functions as inputs.
+- topic: Dictionaries
+  abbrev: dictionaries
+  summary: |
+    We consider how we might use list recursion to build structures that allow
+    us to store information for quick retrieval.
+  reading:
+    - page: /readings/association-lists.html
 
-# - topic: "Exam #2"
-#   abbrev: exam-2
-#   summary: |
-#     The second core examination.
+- topic: Pause for breath
+  abbrev: pause-2
+  summary: |
+    We review in preparation for the second examination.
 
-# - topic: Structures
-#   abbrev: structs
-#   summary: |
-#     We consider the `struct`, a way to define new types in Scheme.
+- topic: "Exam 2"
+  abbrev: exam-2
+  summary: |
+    The second core examination.
+
+- topic: Vectors
+  abbrev: vectors
+  summary: |
+    We explore vectors, an alternative to lists for storing data.
+
+- topic: Representation and performance
+  abbrev: representation-and-performance
+  summary: |
+    We compare and contrast how lists and vectors are represented underneath the hood, motivating why we might use one structure over another.
+
+- topic: Sequencing and effects
+  abbrev: sequencing-and-effects
+  summary: |
+    We discuss (finally!) what a side-effect is, why they are useful, and how functional programming (correctly) encourages us to moderate their use.
+
+- topic: Theme day!
+  abbrev: theme-day-2
+  summary: |
+    We dive deeper into how images are represented underneath the hood in anticipation for our final projects.
+
+- topic: Event-driven programming
+  abbrev: event-driven-programming
+  summary: |
+    We examine Scamper's facilities for interactive, media-based programming.
+
+- topic: Project kick-off
+  abbrev: project-kick-off
+  summary: |
+    We kick-off the final project, finalizing topics, forming groups, and building a plan of action!
+
+- topic: Structures
+  abbrev: structs
+  summary: |
+    We consider the `struct`, a way to define new types in Scheme.
+
+- topic: Hierarchical data
+  abbrev: hierarchical-dat
+  summary: |
+    We look at how structures form hierarchical data and how some of the key datatypes of this course form hierarchies, too!
+
+- topic: Trees
+  abbrev: trees
+  summary: |
+    We consider a common hierarchial mechanism for structuring data
+    and how to realize it in Scheme.
+  reading:
+    #- page: /readings/trees-ex.html
+    #- page: /readings/tree-structs.html
+  lab:
+    #- page: /labs/binary-trees.html
+
+- topic: Tree recursion
+  abbrev: tree-recursion
+  summary: |
+    We consider how to write recursive programs that process trees
+    and other tree-like structures.
+  reading:
+    # - page: /readings/tree-recursion.html
+    # - page: /readings/binary-search-trees.html
+  lab:
+    # - page: /labs/tree-recursion.html
+
+- topic: Project work day!
+  abbrev: project-work-day
+  summary: |
+    Before Thanksgiving break, we pause to give everyone time to make substantial progress on their final projects.
+
+- topic: Counting operations
+  abbrev: counting-operations
+  summary: |
+    We explore techniques for analyzing the number of calls made
+    in evaluating procedures, particularly recursive procedures.
+    We consider why such analysis is useful.  We then delve into
+    a common problem: That of finding values in a collection.
+  reading:
+    # - page: /readings/analysis.html
+    # - page: /readings/searching.html
+  lab:
+    # - page: /labs/searching.html
+
+- topic: Pause for breath
+  abbrev: pause-for-breath-3
+  summary: |
+    We review the material in this final leg of the course before the third exam.
+
+- topic: "Exam 3"
+  abbrev: exam-3
+  summary: |
+    The third core examination.
+
+- topic: "Case study: searching and sorting"
+  abbrev: searching-and-sorting
+  summary: |
+    As a case study of looking at computational complexity, we examine different ways of performing two ubiquitous operations in programming, searching and sorting.
+
+- topic: "Project presentations"
+  abbrev: project-presentations
+
+- topic: "Presentation wrap-up and conclusion"
+  abbrev: conclusion
 
 # # TODO: need to change this to be about dictionaries rather than hash tables
 
@@ -334,44 +437,7 @@
 #   lab:
 #     - page: /labs/vectors-continued.html
 
-# - topic: Counting operations
-#   abbrev: counting-operations
-#   summary: |
-#     We explore techniques for analyzing the number of calls made
-#     in evaluating procedures, particularly recursive procedures.
-#     We consider why such analysis is useful.  We then delve into
-#     a common problem: That of finding values in a collection.
-#   reading:
-#     - page: /readings/analysis.html
-#     - page: /readings/searching.html
-#   lab:
-#     - page: /labs/searching.html
-
 # - topic: Project work day
-
-# - topic: Trees
-#   abbrev: trees
-#   summary: |
-#     We consider a common hierarchial mechanism for structuring data
-#     and how to realize it in Scheme.
-#   reading:
-#     - page: /readings/trees-ex.html
-#     #- page: /readings/tree-structs.html
-#   lab:
-#     - page: /labs/binary-trees.html
-#   todo:
-#     - Don't forget to add code to draw a tree
-
-# - topic: Tree recursion
-#   abbrev: tree-recursion
-#   summary: |
-#     We consider how to write recursive programs that process trees
-#     and other tree-like structures.
-#   reading:
-#     - page: /readings/tree-recursion.html
-#     - page: /readings/binary-search-trees.html
-#   lab:
-#     - page: /labs/tree-recursion.html
 
 # - topic: "Exam #3"
 #   abbrev: exam-3
