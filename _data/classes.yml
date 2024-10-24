@@ -263,6 +263,7 @@
 
 - topic: Higher-order Recursive Programming
   abbrev: higher-order-recursive-programming
+  slides_link: https://docs.google.com/presentation/d/1kSry_wDS9t6O_ZiTUFqz1YIVutsFObV-3xkoTt2m1I4/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We combine higher-order functions and recursive programming to implement the "big three" operations over lists. (Extra topic: Tail recursion -- We look at an advanced version of recursion that is ubiquitous in functional programming, tail recursion.)
   reading:
