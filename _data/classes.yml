@@ -256,6 +256,8 @@
     us to store information for quick retrieval.
   reading:
     - page: /readings/association-lists.html
+  lab:
+    - page: /labs/letter-inventory.html
 
 - topic: Pause for breath
   abbrev: pause-2
@@ -367,75 +369,4 @@
 
 - topic: "Presentation wrap-up and conclusion"
   abbrev: conclusion
-
-# # TODO: need to change this to be about dictionaries rather than hash tables
-
-# - topic: Dictionaries and hash tables
-#   abbrev: dictionaries
-#   summary: |
-#     We consider structures that allow us to store information for
-#     quick retrieval.
-#   reading:
-#     - page: /readings/hash-tables.html
-#   lab:
-#     - page: /labs/hash-tables.html
-
-# - topic: Data modeling
-#   abbrev: data-modeling
-#   summary: |
-#     We consider how we might use an assortment of data structures to
-#     model real-world phenomena.
-
-# - topic: TBD theme topic
-
-# - topic: TBD theme topic
-
-# - topic: Project kick-off
-#   abbrev: project-kickoff
-#   summary: |
-#     We introduce the final project and form teams.
-
-# - topic: Vectors
-#   abbrev: vectors
-#   summary: |
-#     We explore vectors, an alternative to lists for storing data.
-#     We consider how data are stored in memory.
-#   reading:
-#     - page: /readings/vectors.html
-#   lab:
-#     - page: /labs/vectors.html
-
-# - topic: Sequencing and effects
-#   abbrev: sequencing-and-effects
-#   summary: |
-#     We continue to explore vectors and other effectful computation,
-#     acknowledging the trade-offs in program understanding when using
-#     such constructs.
-#   lab:
-#     - page: /labs/vectors-continued.html
-
-# - topic: Project work day
-
-# - topic: "Exam #3"
-#   abbrev: exam-3
-#   summary: |
-#     The third core examination.
-
-# - topic: "Case study: Sorting"
-#   abbrev: sorting-lab
-#   summary: |
-#     We ground our exploration of sorting in some details.
-#   reading:
-#     - page: /readings/sorting.html
-#   lab:
-#     - page: /labs/sorting.html
-
-# - topic: Project presentations
-#   abbrev: presentations
-#   summary: Students present their projects
-
-# - topic: Wrapup
-#   abbrev: wrapup
-#   summary: |
-#     We conclude the course.
 
