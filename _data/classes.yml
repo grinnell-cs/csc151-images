@@ -272,20 +272,26 @@
     - page: /labs/implementing-the-big-three.html
     - page: /labs/tail-recursion.html
 
+- topic: Higher-order Recursive Programming
+  abbrev: higher-order-recursive-programming
+  slides_link: https://docs.google.com/presentation/d/1CnClvS_jIC2_9Y27y-NhWg_f3QsaC9xZySfMLtAAhv8/edit#slide=id.g307c3f5f546_0_0
+  summary: |
+    We combine higher-order functions and recursive programming to implement the "big three" operations over lists. (Extra topic: Tail recursion -- We look at an advanced version of recursion that is ubiquitous in functional programming, tail recursion.)
+  reading:
+    - page: /readings/association-lists.html
+  lab:
+    - page: /labs/implementing-the-big-three.html
+    - page: /labs/tail-recursion.html
+
 - topic: Dictionaries
   abbrev: dictionaries
   summary: |
     We consider how we might use list recursion to build structures that allow
     us to store information for quick retrieval.
   reading:
-    - page: /readings/association-lists.html
+    - (Review association lists reading)
   lab:
     - page: /labs/letter-inventory.html
-
-- topic: Pause for breath
-  abbrev: pause-2
-  summary: |
-    We review in preparation for the second examination.
 
 - topic: "Exam 2"
   abbrev: exam-2
