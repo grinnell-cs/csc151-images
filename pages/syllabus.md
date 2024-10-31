@@ -332,7 +332,7 @@ Reflections
 **Late Days**
 
 * Late days are a currency that you can spend to turn in assignments late.
-* You start the semester with **10 late days**.  
+* You may spend up to **15 late days** over the course of the semester.
 * You may spend late days on reading responses, labs, pre-reflections, post-reflections, take-home assessments, and take-home assessment revisions.  
 * You may spend one late day to submit any of the named assignments up to 24 hours late.  
 * You may spend up to two late days on any given assignment, for a maximum lateness of 48 hours on that assignment.

@@ -285,6 +285,7 @@
 
 - topic: Dictionaries
   abbrev: dictionaries
+  slides_link: https://docs.google.com/presentation/d/1mWkGI6rNkAiRaSeWrWjpTSDERD_JyGn7MEuNOM2rB_U/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We consider how we might use list recursion to build structures that allow
     us to store information for quick retrieval.
