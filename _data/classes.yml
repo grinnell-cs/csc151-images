@@ -273,6 +273,8 @@
   abbrev: vectors
   summary: |
     We explore vectors, an alternative to lists for storing data.
+  reading:
+    - page: /readings/vectors.html
 
 - topic: Representation and performance
   abbrev: representation-and-performance
