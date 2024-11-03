@@ -275,16 +275,27 @@
     We explore vectors, an alternative to lists for storing data.
   reading:
     - page: /readings/vectors.html
-
-- topic: Representation and performance
-  abbrev: representation-and-performance
-  summary: |
-    We compare and contrast how lists and vectors are represented underneath the hood, motivating why we might use one structure over another.
+  lab:
+    # - page: /labs/vectors.html
 
 - topic: Sequencing and effects
   abbrev: sequencing-and-effects
   summary: |
     We discuss (finally!) what a side-effect is, why they are useful, and how functional programming (correctly) encourages us to moderate their use.
+  reading:
+    - page: /readings/sequencing-and-effects.html
+  lab:
+    # - page: /labs/sequencing-and-effects.html
+
+- topic: Randomness
+  abbrev: randomness
+  summary: |
+    We consider Scheme's `random` procedure and how one might use
+    that procedure in generating language.
+  reading:
+    - page: /readings/randomness.html
+  lab:
+    # - page: /labs/exploring-randomness.html
 
 - topic: Theme day!
   abbrev: theme-day-2
