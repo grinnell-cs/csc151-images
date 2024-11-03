@@ -43,104 +43,89 @@ unpredictable integer value between 0 and one less than its parameter,
 inclusive. By "unpredictable" we mean that we are unlikely to be
 able to predict the number that `random` will return.
 
-```
-> (random 10)
-1
-> (random 10)
-9
-> (random 10)
-7
-> (random 10)
-0
-> (random 10)
-5
-> (random 10)
-1
-> (random 10)
-0
-```
+(_Note_: remember that the code snippets in the reading are live. You can
+reload this page to see new random values!)
+
+<pre class="scamper source">
+(random 10)
+
+(random 10)
+
+(random 10)
+
+(random 10)
+
+(random 10)
+
+(random 10)
+
+(random 10)
+</pre>
 
 ## Simulating a die
 
 We can use `random` to write a program to simulate the rolling of a die. The simulation generates integers from 1 to 6, to correspond to the faces on the die cube. The details of this simulation are shown in the following procedure:
 
-```drracket
-;;; Procedure:
-;;;   roll-a-die
-;;; Parameters:
-;;;   None
-;;; Purpose:
-;;;   To simulate the rolling of one six-sided die.
-;;; Produces:
-;;;   An integer between 1 and 6, inclusive.
-;;; Preconditions:
-;;;   [None]
-;;; Postconditions:
-;;;   Returns an integer between 1 and 6, inclusive.
-;;;   It should be difficult (or impossible) to predict which
-;;;     number is produced.
+<pre class="scamper source">
+;;; (roll-a-die) -> number
+;;; Returns a random number in the range 1–6
 (define roll-a-die
   (lambda ()
-    (+ (random 6)    ; a value in the range [0 .. 5]
-       1)))          ; now in the range [1 .. 6]
-```
+    ; N.B., translates a value in the range 0–5 to 1–6
+    (+ (random 6) 1)))
+
+(roll-a-die)
+(roll-a-die)
+(roll-a-die)
+</pre>
 
 We can use that procedure to simulate the roll of multiple dice.
 The following procedure uses recursion to generate a list of random rolls by repeatedly calling `random`.
 
-```drracket
-;;; Procedure:
-;;;   roll-dice
-;;; Parameters:
-;;;   n, an integer
-;;; Purpose:
-;;;   Roll n six-sided dice and make a list of their values.
-;;; Produces:
-;;;   rolls, a list of integers
-;;; Preconditions:
-;;;   [No additional]
-;;; Postconditions:
-;;;   (length rolls) = n
-;;;   Each element of rolls is a value between 1 and 6.
-;;;   The values in rolls are reasonably evenly distributed.
-;;;   The values in rolls are difficult to predict.
+<pre class="scamper source">
+(define roll-a-die
+  (lambda ()
+    (+ (random 6) 1)))
+
+;;; (roll-dice n) -> list?
+;;;   n : natural-number?
+;;; Returns a list of randomly generated numbers in the range 1–6
 (define roll-dice
   (lambda (n)
     (if (zero? n)
         null
         (cons (roll-a-die) (roll-dice (- n 1))))))
-```
+
+(roll-dice 4)
+(roll-dice 12)
+</pre>
 
 ## Generating text
 
 We can also use `random` to select "unpredictable" elements of a list.
 Let's start with a simple procedure.
 
-```
-;;; Procedure:
-;;;   random-elt
-;;; Parameters:
-;;;   lst, a non-empty list 
-;;; Purpose:
-;;;   Unpredictably pick an element of lst.
-;;; Produces:
-;;;   val, a value
-;;; Preconditions:
-;;;   [No additional]
-;;; Postconditions:
-;;;   * val is an element of lst.
-;;;   * If lst contains more than one element, it is difficult to predict 
-;;;     which element val is.
+<pre class="scamper source-only">
+;;; (random-elt lst) -> any?
+;;;   lst: list?
+;;; Returns a random value from lst.
 (define random-elt
   (lambda (lst)
     (list-ref lst (random (length lst)))))
-```
+</pre>
 
 There are many ways to apply `random-elt`.  For example, here's
 a collection of procedures that make an unpredictable sentence.
-We'll consider a more general approach in an upcoming assignment.
+Make sure to study this so that you understand how it works!
 
-```
+<pre class="scamper source">
+;;; (random-elt lst) -> any?
+;;;   lst: list?
+;;; Returns a random value from lst.
+(define random-elt
+  (lambda (lst)
+    (list-ref lst (random (length lst)))))
+
 ;;; (sentence) -> string?
 ;;; Generate a random sentence.
 (define sentence
@@ -152,7 +137,7 @@ We'll consider a more general approach in an upcoming assignment.
 
 ;;; people -> listof string?
 ;;; A list of some of the folks who teach 151
-(define people (list "Peter-Michael" "Nicole" "Sarah" "SamR" "Barbara" "Jerod" "Priscilla"))
+(define people (list "Charlie" "Eric" "Fernanda" "Jerod" "Leah" "Nicole" "Peter-Michael" "Sam" "Sarah"))
 
 ;;; (random-person) -> string?
 ;;; Randomly select an element of the people list.
@@ -192,18 +177,17 @@ We'll consider a more general approach in an upcoming assignment.
      (random-elt articles) " "
      (random-elt adjectives) " "
      (random-elt nouns))))
-```
 
-Here's one example of the primary procedure in action.
+(sentence)
 
-```
-> (sentence)
-"Jerod borrowed a cold cup of coffee."
-```
+(sentence)
+
+(sentence)
+</pre>
 
 ## Self checks
 
-### Check 1: Testing `random` (‡)
+### Check: Testing `random` (‡)
 
 {:type="a"}
 1.  When you give the procedure `random` the parameter *`n`* (a non-negative integer), it will produce one of how many unique values?  What is the smallest value?  What is the largest?
@@ -217,74 +201,3 @@ Here's one example of the primary procedure in action.
 5.  What do you expect to happen if you call `random` with non-integer parameters.  Check your hypothesis experimentally.
 
 6.  Try calling `random` with no parameters. What happens?
-
-### Check 2: Rolling dice
-
-{:type="a"}
-1. Add the following two procedures to the definitions pane.
-
-    ```drracket
-    ;;; Procedure:
-    ;;;   roll-a-die
-    ;;; Parameters:
-    ;;;   None
-    ;;; Purpose:
-    ;;;   To simulate the rolling of one six-sided die.
-    ;;; Produces:
-    ;;;   An integer between 1 and 6, inclusive.
-    ;;; Preconditions:
-    ;;;   [None]
-    ;;; Postconditions:
-    ;;;   Returns an integer between 1 and 6, inclusive.
-    ;;;   It should be difficult (or impossible) to predict which
-    ;;;     number is produced.
-    (define roll-a-die
-      (lambda ()
-        (+ (random 6)    ; a value in the range [0 .. 5]
-           1)))          ; now in the range [1 .. 6]
-
-    ;;; Procedure:
-    ;;;   roll-dice
-    ;;; Parameters:
-    ;;;   n, an integer
-    ;;; Purpose:
-    ;;;   Roll n six-sided dice and make a list of their values.
-    ;;; Produces:
-    ;;;   rolls, a list of integers
-    ;;; Preconditions:
-    ;;;   [No additional]
-    ;;; Postconditions:
-    ;;;   (length rolls) = n
-    ;;;   Each element of rolls is a value between 1 and 6.
-    ;;;   The values in rolls are reasonably evenly distributed.
-    ;;;   The values in rolls are difficult to predict.
-    (define roll-dice
-      (lambda (n)
-        (if (zero? n)
-            null
-            (cons (roll-a-die) (roll-dice (- n 1))))))
-    ```
-
-2. Using `roll-dice`, roll ten dice.
-
-3. Using `roll-dice`, roll ten dice.
-    (Yes, this instruction is the same as the previous instruction.
-    You should do it twice.)
-
-4. Did you get the same list of values each time? Why or why not?
-
-5. What other procedures have you encountered that may return different values each time you call them with the same parameters?  (The answer may be "none".)
-
-Questions and Answers
----------------------
-
-Is there a way to return a fraction output randomly with the random procedure?
-
-> It depends on what range you want for your fractions.  If you want 
-  fractions in the range 0 to 1, you could use `(inexact->exact (random))`.
-  You could also use something like `(/ (random 1000) (+ 1 (random 1000)))`, 
-  although that gives a very strange distribution of numbers.
-
-What if I want numbers in the range 0 to 5.5?
-
-> Use `(* 5.5 (random))`.
