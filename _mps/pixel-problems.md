@@ -1,5 +1,5 @@
 ---
-title: Take-home assessment 7
+title: Take-home assessment 8
 subtitle: Pixel problems
 summary: |
   We consider a variety of mechanisms for manipulating images according
