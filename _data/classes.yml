@@ -306,7 +306,7 @@
   reading:
     - page: /readings/vectors.html
   lab:
-    # - page: /labs/vectors.html
+    - page: /labs/vectors.html
 
 - topic: Sequencing and effects
   abbrev: sequencing-and-effects
