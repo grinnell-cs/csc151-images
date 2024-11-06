@@ -301,6 +301,7 @@
 
 - topic: Vectors
   abbrev: vectors
+  slides_link: https://docs.google.com/presentation/d/1dk0tiIiiwqEPjgIwWXSFM_w1wafnoL3VT6hSeb1OIXI/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We explore vectors, an alternative to lists for storing data.
   reading:
