@@ -316,7 +316,7 @@
   reading:
     - page: /readings/sequencing-and-effects.html
   lab:
-    # - page: /labs/sequencing-and-effects.html
+    - page: /labs/sequencing-and-effects.html
 
 - topic: Randomness
   abbrev: randomness
