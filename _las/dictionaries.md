@@ -9,7 +9,37 @@ Suppose `counts` is a dictionary that whose keys are words and whose values are 
 
 > _Space for an answer._
 
-Here's a sample dictionary to get you started.
+## Association List
+
+(For semesters that are using association lists) Here's a sample dictionary to get you started.
+
+``` 
+(define word-counts
+  (list (pair "sentient" 20)
+        (pair "triskaidecaphobia" 2)
+        (pair "malicious" 20)
+        (pair "hello" 1021)
+        (pair "optimism" -1)
+        (pair "um" 82531)
+        (pair "fail" 0)))
+```
+
+```
+; list out words with a frequency of at least 100
+(frequent-words word-counts 100)
+> (list "um" "hello")
+
+; list out words with a frequency of at least 10000
+(frequent-words word-counts 100)
+> (list)
+
+```
+  
+
+
+## Hash Set
+
+(For semesters that are using hash sets) Here's a sample dictionary to get you started.
 
 ```
 (define sam-counts (make-hash))
@@ -20,6 +50,15 @@ Here's a sample dictionary to get you started.
 (hash-set! sam-counts "optimism" -1)
 (hash-set! sam-counts "um" 82531)
 (hash-set! sam-counts "fail" 0)
+```
+```
+; list out words with a frequency of at least 100
+(frequent-words sam-counts 100)
+> (list "um" "hello")
+
+; list out words with a frequency of at least 10000
+(frequent-words word-counts 100)
+> (list)
 ```
 
 
