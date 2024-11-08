@@ -14,29 +14,17 @@ todo:
 ## Important procedures
 
 * `(random n)`: given a positive integer, generate a difficult-to-predict integer value between 0 (inclusive) and `n` (exclusive).
-* `(random)`: generate a difficult-to-predict real value between 0 (inclusive) and 1 (exclusive).
-* `(random a b)`: Given two exact integers, the second of which is larger than the first, generate a difficult-to-predict value between `a` (inclusive) and `b` (exclusive).
 
 ## Preparation
 
-<!--
-a. Decide who is side A and who is side B.  
 
-A side: [random-language-a.rkt](../code/labs/random-language-a.rkt)
+1. Introduce yourself to your partner, discuss strengths and weaknesses, decide how you wll approach the lab.
 
-B side: [random-language-b.rkt](../code/labs/random-language-b.rkt)
+2. Download the lab.
 
-b. Decide who will submit the lab.
--->
+* [random-language.scm](../code/labs/random-language.scm)
 
-a. Introduce yourself to your partner, discuss strengths and weaknesses, decide how you wll approach the lab.
-
-b. Download the lab.
-
-* [random-language.rkt](../code/labs/random-language.rkt)
-
-c. Review the procedures included in the lab to make sure you
-understand what they are intended to do.
+3. Review the procedures included in the lab to make sure you understand what they are intended to do.
 
 ## Acknowledgements
 
