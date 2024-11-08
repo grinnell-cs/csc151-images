@@ -4,10 +4,6 @@ subtitle: Word clouds and other analysis tools
 summary: |
   In this project, you will build "word clouds" of the most common
   words in texts.
-collaboration: |
-  Each student should submit their own responses to this project. You may
-  consult other students in the class as you develop your solution.  If you
-  receive help from anyone, make sure to cite them in your responses. 
 preimg: true
 link: true
 notes: |  
