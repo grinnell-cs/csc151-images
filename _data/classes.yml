@@ -285,7 +285,7 @@
   reading:
     - page: /readings/sequencing-and-effects.html
   lab:
-    # - page: /labs/sequencing-and-effects.html
+    - page: /labs/sequencing-and-effects.html
 
 - topic: Randomness
   abbrev: randomness
@@ -295,7 +295,7 @@
   reading:
     - page: /readings/randomness.html
   lab:
-    # - page: /labs/exploring-randomness.html
+    - page: /labs/random-language.html
 
 - topic: Theme day!
   abbrev: theme-day-2
