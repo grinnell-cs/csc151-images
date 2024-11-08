@@ -479,7 +479,7 @@ Here's a sample Racket procedure that does a simple form of Mad Libs.
 
 #|
 a. Try calling `mad-labs` with the parameters "sleepy", "tearful", 
-"defenestrate", "dragon", "dog", "cat", and "President Harris".
+"defenestrate", "dragon", "dog", "cat", and "Grinnell College President Anne Harris".
 
 <TODO: ENTER THE RESULT>
 |#

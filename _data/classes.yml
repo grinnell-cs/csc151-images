@@ -311,6 +311,7 @@
 
 - topic: Sequencing and effects
   abbrev: sequencing-and-effects
+  slides_link: https://docs.google.com/presentation/d/1RUfi7TImM7JW2ElhsUGI9Qva_eq4BLrnE6-GSlj5-b0/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We discuss (finally!) what a side-effect is, why they are useful, and how functional programming (correctly) encourages us to moderate their use.
   reading:
@@ -320,6 +321,7 @@
 
 - topic: Randomness
   abbrev: randomness
+  slides_link: https://docs.google.com/presentation/d/1peR8Mtk-t6u6nOwcST_qWIXmDG3y0IimFu3F-NTCzPs/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We consider Scheme's `random` procedure and how one might use
     that procedure in generating language.
