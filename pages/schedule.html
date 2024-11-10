@@ -125,7 +125,7 @@ permalink: /schedule/
                     {% else %}
                       <strong>Reading</strong>
                     {% endif %}
-                    {% include schedule_items.html items=reading default="_No reading_" %}
+                    {% include schedule_items.html items=reading default="_To be announced..._" %}
                   </div> <!-- reading -->
                   <div class="lab col-md-4 col-sm-4 col-xs-6">
                     {% assign lab = class.lab %}
@@ -134,7 +134,7 @@ permalink: /schedule/
                     {% else %}
                       <strong>Lab</strong>
                     {% endif %}
-                    {% include schedule_items.html items=lab default="_No lab_"%}
+                    {% include schedule_items.html items=lab default="_To be announced..._"%}
                   </div> <!-- lab -->
                   <div class="clearfix visible-xs-block"></div>
                   <div class="additional col-md-4 col-sm-4 col-xs-12 {% unless additional %}hidden-xs{% endunless %}">
