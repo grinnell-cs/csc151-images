@@ -392,8 +392,8 @@ of the students in a class.
 ;;; students : listof string?
 ;;; A list of students in a fictitious class
 (define students
-  (list "Andi" "Brook" "Casey" "Devin" "Drew" "Dylan" "Emerson" "Frances"
-        "Gray" "Harper" "Jamie" "Kennedy" "Morgan" "Phoenix" "Quinn" "Ryan"))
+  (list "Ahmad" "Brook" "Chandra" "Dylan" "Emerson" "Francisco" "Harper" "Innocent"
+        "Jamie" "María" "Muhammad" "Phoenix" "Quinn" "Yasaman" "Yejin" "Xi"))
 
 #|
 a. Write a zero-parameter procedure, `(random-student)`, that randomly
