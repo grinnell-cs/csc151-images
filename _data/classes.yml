@@ -297,10 +297,12 @@
   lab:
     - page: /labs/random-language.html
 
-- topic: Theme day!
-  abbrev: theme-day-2
+- topic: Per-pixel manipulation
+  abbrev: per-pixel-manipulation
   summary: |
     We dive deeper into how images are represented underneath the hood in anticipation for our final projects.
+  reading:
+    - page: /readings/iteration.html
 
 - topic: Event-driven programming
   abbrev: event-driven-programming
