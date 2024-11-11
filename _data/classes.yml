@@ -336,6 +336,8 @@
     We dive deeper into how images are represented underneath the hood in anticipation for our final projects.
   reading:
     - page: /readings/iteration.html
+  lab:
+    - page: /labs/pixel-manipulation.html
 
 - topic: Event-driven programming
   abbrev: event-driven-programming
