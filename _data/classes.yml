@@ -332,6 +332,7 @@
 
 - topic: Per-pixel manipulation
   abbrev: per-pixel-manipulation
+  slides_link: https://docs.google.com/presentation/d/1KoIOD5vf8TQe_zh0a4fpfz_597XENc1ipVJcuc-sTU0/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We dive deeper into how images are represented underneath the hood in anticipation for our final projects.
   reading:
