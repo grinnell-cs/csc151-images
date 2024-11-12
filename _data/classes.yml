@@ -317,6 +317,8 @@
   abbrev: project-kick-off
   summary: |
     We kick-off the final project, finalizing topics, forming groups, and building a plan of action!
+  reading:
+    - page: /readings/final-project.html
 
 - topic: Structures
   abbrev: structs
