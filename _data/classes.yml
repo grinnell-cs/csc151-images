@@ -306,10 +306,12 @@
   lab:
     - page: /labs/pixel-manipulation.html
 
-- topic: Event-driven programming
-  abbrev: event-driven-programming
+- topic: Animation
+  abbrev: animation
   summary: |
     We examine Scamper's facilities for interactive, media-based programming.
+  reading:
+    - page: /readings/animation.html
 
 - topic: Project kick-off
   abbrev: project-kick-off
