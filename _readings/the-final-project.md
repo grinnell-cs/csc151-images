@@ -1,6 +1,5 @@
 ---
 title: The Final Project
-link: false
 ---
 
 To conclude our semester, you will embark on a final project with 3--4 of your peers, developing a final project aligned with the themes of the course: 
@@ -45,8 +44,9 @@ The final deliverables consist of three artifacts:
 
 1.  One or more Scheme programs that address the problems you wish to solve.
     The programs should be complete and well-formatted according to the course style guides.
-2.  A presentation no more than 10 minutes in length giving an overview of your work along with a demo or performance.
+2.  A presentation no more than 8 minutes in length giving an overview of your work along with a demo or performance.
     You will produce a slide deck for this presentation and turn it in.
+    Be prepared to answer questions from the audience.
 3.  A short reflection on your work describing the problem you solved, your specific contributions to the project, and a bug that you personally encountered in your project and how you fixed it.
     These reflections will be completed _individually_ and will reflect each individual's contribution to the overall project.
 
@@ -60,17 +60,20 @@ Furthermore, you _should not_ use a large language model, _e.g._, ChatGPT, to he
 
 Your final reflection should be a written paper meeting the following specifications:
 
-+   At least two pages in length and no more than three pages in length.
++   PDF format.
++   At least 500 words and no more than 750 words in length.
 +   1" margins, 12 pt font, double-spaced.
 
-In your reflection, you should:
+Your reflection must include the following four parts:
 
-+   Give a brief overview of your project in your own words: what did you build and why?
-+   Give a brief overview of your project's architecture: how did your group break down the problem into components?
-+   Give a description of your contributions to the project: which components did you contribute code to and how much code did you contribute to each?
-+   Give a description of a bug that you _personally encountered_ during development and how you systematically solved the issue.
++   **Overview.** Give a brief overview of your project in your own words: what did you build and why?
++   **Architecture.** Give a brief overview of your project's architecture: how did your group break down the problem into components?
++   **Your Contributions.** Give a description of your contributions to the project: which components did you contribute code to and how much code did you contribute to each?
++   **Bug Log.** Give a description of a bug that you _personally encountered_ during development and how you systematically solved the issue. (More requirements below.)
 
-For this final point, you should answer the following questions in your description:
+Overview, Architecture, and Contribution sections should be in paragraph form. 
+
+In the Bug Log, you are encouraged to use a mix of paragraphs and numbered steps to best communicate your process. Your Bug Log should answer the following questions:
 
 +   What did you initially observe that indicated a bug was present?
 +   How did you fix the bug? You should describe the bug-fixing process as a cycle of the following two steps until a solution was found:
@@ -83,7 +86,9 @@ Such bugs should be _logic errors_, _i.e._, bugs that arise because your strateg
 
 ## Grading
 
-The course project will be graded on our EMRN scale according to the following criteria:
+*Our goal is that if you do the work and follow good habits, you should get at least an M.*
+
+*There are no redos available for this project.*
 
 +   **E**xcellent:
     -   Project code is high quality both in terms of functionality (_i.e._, the code accomplishes the task at hand) and style.
@@ -95,13 +100,6 @@ The course project will be graded on our EMRN scale according to the following c
     -   Project presentation covers all of the required points.
     -   Personal reflection covers all the required points but does not discuss them at sufficient depth.
 
-+   **R**equires revision:
-    -   Project code has significant bugs and/or serious style issues.
-    -   Project presentation only covers some of the required points.
-    -   Personal reflection is missing one or more points.
-
-+   **N**ot complete:
-    -   One or more of the deliverables are missing or incomplete.
 
 # Self-Checks
 
