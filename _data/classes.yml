@@ -357,6 +357,8 @@
     We kick-off the final project, finalizing topics, forming groups, and building a plan of action!
   reading:
     - page: /readings/the-final-project.html
+  lab: 
+    - none
 
 - topic: Structures
   abbrev: structs
