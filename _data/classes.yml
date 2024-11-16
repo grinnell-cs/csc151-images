@@ -347,6 +347,8 @@
     We examine Scamper's facilities for interactive, media-based programming.
   reading:
     - page: /readings/animation.html
+  lab:
+    - page: /labs/animation.html
 
 - topic: Project kick-off
   abbrev: project-kick-off
@@ -360,6 +362,9 @@
   abbrev: structs
   summary: |
     We consider the `struct`, a way to define new types in Scheme.
+  reading:
+    - page: /readings/data-abstraction.html
+    - page: /readings/preconditions.html
 
 - topic: Hierarchical data
   abbrev: hierarchical-dat
