@@ -1,5 +1,6 @@
 ---
 title: The Final Project
+link: true
 ---
 
 To conclude our semester, you will embark on a final project with 3--4 of your peers, developing a final project aligned with the themes of the course: 
