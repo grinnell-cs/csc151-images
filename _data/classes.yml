@@ -329,11 +329,8 @@
   reading:
     - page: /readings/data-abstraction.html
     - page: /readings/preconditions.html
-
-- topic: Hierarchical data
-  abbrev: hierarchical-dat
-  summary: |
-    We look at how structures form hierarchical data and how some of the key datatypes of this course form hierarchies, too!
+  lab:
+    - page: /labs/structs.html
 
 - topic: Trees
   abbrev: trees
@@ -345,6 +342,9 @@
     #- page: /readings/tree-structs.html
   lab:
     #- page: /labs/binary-trees.html
+
+- topic: Project work day!
+  abbrev: project-work-day
 
 - topic: Tree recursion
   abbrev: tree-recursion
