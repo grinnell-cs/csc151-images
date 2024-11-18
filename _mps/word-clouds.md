@@ -188,7 +188,6 @@ prior characteristics will get an M.
 +   **Correctness**
     - Implementation of all core functions is completely correct.
     - Removes the most common words in English (e.g., "The", "A").
-    - Handles texts with fewer than 50 different words (after filtering).
     - Ensures that various capitalized versions of the same word are treated
     as identical (e.g., "ahoy", "Ahoy", "AHOY").
     - Can handle files with thousands of words in a reasonable timeframe.
