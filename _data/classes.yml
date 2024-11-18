@@ -362,6 +362,7 @@
 
 - topic: Structures
   abbrev: structs
+  slides_link: https://docs.google.com/presentation/d/1bF-7PymXV6AmuLNNu6FcS1U9GMmkTHgWwmTDl7Vf3mI/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We consider the `struct`, a way to define new types in Scheme.
   reading:
