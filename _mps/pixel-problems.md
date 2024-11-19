@@ -12,7 +12,8 @@ link: false
 preimg: true
 mathjax: true
 ---
-Name your file for this assignment [`pixel-problems.rkt`](../code/mps/pixel-problems.rkt). Please make sure to begin with the [starter code](../code/mps/pixel-problems.rkt).
+
+Name your file for this assignment [`pixel-problems.scm`](../code/mps/pixel-problems.scm). Please make sure to begin with the [starter code](../code/mps/pixel-problems.scm).
 
 ## Background
 
@@ -55,28 +56,21 @@ We can turn a bitmap into a single `w*h` vector of pixels by putting each row ne
 
 As you may be able to tell, the pixel at position `(c,r)` can be found at `(+ c (* r w))`.
 
-The `csc151` library provides two primary procedures that permit us to convert between images and vectors of RGB colors.
+Scamper provides two primary procedures that permit us to convert between images and vectors of RGB colors.
 
-```
-;;; (image->pixels img) -> (vector-of rgb?)
-;;;   img : image? 
-;;; Get the pixels associated with img.
-```
-
-```
-;;; (pixels->image pixels width height description) -> image?
-;;;   pixels : (all-of (vector-of rgb?) (has-length (* width height)))
-;;;   width : postive-integer?
-;;;   height : positive-integer?
-;;;   description : string?
-;;; Create a bitmap image from a vector of colors.  Note that `pixels`
-;;; must have a length of `(* width height)`.
+<pre source="scamper source-only">
+;;; (image->pixels img) -> canvas?
+;;;   img: canvas?
+;;; Returns a vector of rgb values corresponding to the pixels of the given canvas.
 ;;;
-;;; In contrast to most other image-making procedures, which do not
-;;; require a description, `pixels->image` requires a description beacuse
-;;; a useful description cannot easily be created.
-```
+;;; (pixels->image pixels width height) -> canvas?
+;;;   pixels: vector? of rgb values
+;;;   width: integer?
+;;;   height: integer?
+;;; Returns a new canvas with the given pixels and dimensions width × height.
+</pre>
 
+<!--
 Let's explore these a bit.
 
 First, we'll create a very small circle.
@@ -156,6 +150,7 @@ Once we have the pixels in a vector, we can change them a bit. For example, let'
 > (scale new-squared-circle 30)
 ![a 3x3 grid of squares. The corners are light blue. The sides are darker blue. The center is pure red.](../images/mps/pixel-problems/image005.png)
 ```
+-->
 
 Part one: Setting rows and columns
 ----------------------------------
@@ -176,6 +171,7 @@ a. Write the following procedure:
 
 Here's a quick experiment you might try with the procedure.
 
+<!--
 ```
 > (define pixels (image->pixels (solid-rectangle 4 6 "blue")))
 > (set-row! pixels 4 6 1 (rgb 255 255 255))
@@ -183,6 +179,7 @@ Here's a quick experiment you might try with the procedure.
 > (set-row! pixels 4 6 2 (rgb 0 0 0))
 > (scale (pixels->image pixels 4 6 "a blue rectangle with one white row and one black row") 10)
 ```
+-->
 
 _Hint_: Write a helper procedure that recurses over the column.
 
@@ -219,6 +216,7 @@ c. Write the following procedure.
 
 Here's a quick experiment you might try with the procedure.
 
+<!--
 ```
 > (define pixels (image->pixels (solid-rectangle 4 6 "blue")))
 > (set-column! pixels 4 6 1 (rgb 255 255 255))
@@ -226,6 +224,7 @@ Here's a quick experiment you might try with the procedure.
 > (set-column! pixels 4 6 2 (rgb 0 0 0))
 > (scale (pixels->image pixels 4 6 "a blue rectangle with one white column and one black column") 10)
 ```
+-->
 
 _Hint_: Write a helper procedure that recurses over the row.
 
@@ -325,6 +324,7 @@ Let's see how it works.
 
 Interesting. Perhaps you can find better approaches in the freestyle.
 
+<!--
 Part three: Modifying images, revisited
 ---------------------------------------
 
@@ -509,11 +509,10 @@ Should we try our kitten? Of course!
 ```
 
 Not quite what I expected, but interesting nonetheless.
+-->
 
-Part four: Steganography
+Part three: Steganography
 ------------------------
-
-_You can do either part three or part four for an M. You must do **both** part three and part four for an E._
 
 _Steganography_ is a technique for hiding information within a larger corpus.  For example, some people conceal messages in letters by using, say, each fifth letter in the original message to represent a new message.  (I'm not talented enough to give an example.)
 
@@ -795,13 +794,16 @@ f. Document and write a procedure, `(steg-encode text img)`, that takes a string
 
 Wasn't that fun?
 
+<!--
 Part five: Freestyle
 --------------------
 
 Document and write a procedure that does something "interesting" using the vector representation of an image. You might try extensions of one of the approaches above (e.g., a more sophisticated image transformation that uses positions or neighboring pixels or a more robust or harder to detect stegonagraphic approach) or you might try something else.
 
 Make sure to include a description of your goals for the freestyle and instructions for how the grader should experiment with your procedure.
+-->
 
+<!--
 Grading rubric
 --------------
 
@@ -857,7 +859,9 @@ prior characteristics will get an M.
 [ ] Freestyle procedure is non-trivial.
 [ ] Freestyle procedure is described appropriately.
 ```
+-->
 
+<!--
 Questions
 ---------
 
@@ -930,4 +934,4 @@ I don't see newlines in my strings.
 What characters should I use for 30 and 31?
 
 > For 30, use underscore, `#\_`. For 31, use asterisk, `#\*`.
-
+-->
