@@ -378,9 +378,8 @@
     and how to realize it in Scheme.
   reading:
     - page: /readings/trees-ex.html
-    #- page: /readings/tree-structs.html
   lab:
-    #- page: /labs/binary-trees.html
+    - page: /labs/binary-trees.html
 
 - topic: Project work day!
   abbrev: project-work-day
