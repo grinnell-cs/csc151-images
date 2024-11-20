@@ -7,17 +7,15 @@ summary: |
 
 a. Have the normal start of lab conversation.  Introduce yourselves (on the off chance you haven't met each other yet).  Describe strengths and weaknesses.  Talk about work approaches.  
 
-b. If you have not done so recently, update your `csc151` package.
+b. Grab the code file
 
-c. Grab the code file
+* [binary-trees.scm](../code/labs/binary-trees.scm)
 
-* [binary-trees.rkt](../code/labs/binary-trees.rkt)
-
-d. Review any provided code at the top of the file to see what is
+c. Review any provided code at the top of the file to see what is
 new.  You should feel free to quickly experiment with any new
 procedures, but we'll also be looking at most of them in the lab.
 
-e. Review the self checks from the readings.
+d. Review the self checks from the readings.
 
 ## Acknowledgements
 
