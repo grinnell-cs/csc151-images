@@ -148,7 +148,7 @@
 
 - date: 2024-11-11
   assigned:
-    - The final project
+    - page: /readings/the-final-project.html
   due:
     - page: /mps/mp07.html
 
@@ -173,6 +173,7 @@
 - date: 2024-11-22
   due:
     - Quiz 8
+    - Final Project Milestone 2
 
 
 - date: 2024-11-25
@@ -184,6 +185,9 @@
     - Assessment 8 Post-reflection
 
 
+- date: 2024-12-02
+  due: 
+    - Final Project Milestone 3
 
 - date: 2024-12-04
   due:
@@ -195,14 +199,17 @@
 
 
 
-- date: 2024-12-09
+- date: 2024-12-10
   due:
-    - Final Project
+    - Final Project Milestone 4
 
 - date: 2024-12-11
   due:
     - Exam 3 Post-reflection
 
+- date: 2024-12-13
+  due:
+    - Final Project Milestone 5
 
 
 - date: 2024-12-18
