@@ -373,7 +373,7 @@
 
 - topic: Trees
   abbrev: trees
-  slides_link: https://docs.google.com/presentation/d/1s42KridrxOq8RUQBxcdqi3hMozCFmlAX4Xt4w0ATy6o/edit#slide=id.g306f4b7553e_0_308
+  slides_link: https://docs.google.com/presentation/d/1s42KridrxOq8RUQBxcdqi3hMozCFmlAX4Xt4w0ATy6o/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We consider a common hierarchial mechanism for structuring data
     and how to realize it in Scheme.
@@ -384,6 +384,10 @@
 
 - topic: Project work day!
   abbrev: project-work-day
+  reading:
+    - none
+  lab:
+    - none
 
 - topic: Tree recursion
   abbrev: tree-recursion
