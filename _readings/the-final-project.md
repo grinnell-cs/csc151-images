@@ -38,7 +38,7 @@ We will outline the details specifics of each deliverable in subsequent mileston
 +   **Milestone #4 (Tuesday 12/10)**: software artifact and project presentation is due.
 +   **Milestone #5 (Friday 12/13)**: individual reflections are due.
 
-## Final Deliverables
+## Final Deliverables Overview
 
 The final deliverables consist of three artifacts:
 
@@ -50,7 +50,30 @@ The final deliverables consist of three artifacts:
 3.  A short reflection on your work describing the problem you solved, your specific contributions to the project, and a bug that you personally encountered in your project and how you fixed it.
     These reflections will be completed _individually_ and will reflect each individual's contribution to the overall project.
 
-## Final Reflection
+## Milestone 2 Details
+You will submit a short write-up outlining your plans for the project.
+
+**Title.** Write a descriptive name for your project.
+
+**Contributors.** Write the names of all team members and your team name.
+
+**Topic Description (5-7 sentences).** Describe the project you intend to implement. In your writing, give your audience a clear vision of what your program will do, including its input, output, and user interaction (if applicable). If your program includes a visual component, include a simple hand drawn sketch or mock-up of what the program's output or interface will look like.
+
+**Architectural Outline.** Describe, using words or diagrams, the components of your program. You do not need to write any code yet. Rather, illustrate conceptually what components the code needs to have and how they will interact with each other. Your architectural outline will serve as a plan for implementing your future code, but you will not need to follow it exactly.
+
+**Submission on Gradescope.**
+* PDF format.
+* 1-2 pages. (You will probably need a 2nd page only if you have figures.)
+
+
+## Milestone 3 Details
+Coming soon
+
+## Milestone 4 Details
+Coming soon
+
+
+## Milestone 5 (Final Reflection)
 
 Your final project grade will come _primarily_ from your final reflection paper for the course.
 Note that the final reflection is an _individual_ deliverable.
