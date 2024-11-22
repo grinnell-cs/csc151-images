@@ -60,7 +60,7 @@
 ;;; representative integer.
 (define color->number
   (lambda (color)
-    (remainder (+ (color-red color) (color-green color) (color-blue color))
+    (remainder (+ (rgb-red color) (rgb-green color) (rgb-blue color))
                32))) 
 
 ;;; (color-decrement-to r g b a target) -> color?
@@ -114,10 +114,10 @@
     (let* ([current (color->number color)]
            [target (letter->number letter)]
            [pos-diff (remainder (+ 32 (- target current)) 32)]
-           [r (color-red color)]
-           [g (color-green color)]
-           [b (color-blue color)]
-           [a (color-alpha color)]
+           [r (rgb-red color)]
+           [g (rgb-green color)]
+           [b (rgb-blue color)]
+           [a (rgb-alpha color)]
            [goal (+ r g b pos-diff)])
       (if (> (+ r g b) (+ 1 (* 3 127)))
           (color-decrement-to r g b a (+ -32 goal))
@@ -205,7 +205,7 @@
 ;;; Sets the given row of the image to the specified color.
 (define set-row!
   (lambda (pixels width height row color)
-    ???))
+    {??}))
 
 (problem "1b. set-rows!")
 
@@ -220,7 +220,7 @@
 ;;; to the given color.
 (define set-rows!
   (lambda (pixels width height top bottom color)
-    ???))
+    {??}))
 
 (problem "1c. set-column!")
 
@@ -233,7 +233,7 @@
 ;;; Sets the given column of the image to the specified color.
 (define set-column! 
   (lambda (pixels width height column color)
-    ???))
+    {??}))
 
 (problem "1d. set-columns!")
 
@@ -248,7 +248,7 @@
 ;;; to the given color.
 (define set-columns!
   (lambda (pixels width height left right color)
-    ???))
+    {??}))
 
 (problem "1e. set-region!")
 
@@ -265,7 +265,7 @@
 ;;; (exclusive), on the top by `top`, and on the bottom by `bottom`.
 (define set-region!
   (lambda (pixels width height left right top bottom color)
-    ???))
+    {??}))
 
 ; -------------------------------------------------------------------
 (part "Part two: Modifying images")
@@ -277,50 +277,12 @@
 ;;; ???
 (define positionally-transform-pixels!
   (lambda (pixels width height)
-    ???))
-
-; -------------------------------------------------------------------
-(part "Part three: Modifying images, revisited")
-
-(problem "3a. neighboring-pixels")
-
-;;; (neighboring-pixels pixels width height col row) -> ???
-;;;   pixels : ???
-;;;   width : ???
-;;;   height : ???
-;;;   col : ???
-;;;   row : ???
-;;; ???
-(define neighboring-pixels
-  (lambda (pixels width height col row)
     {??}))
 
-(problem "3b. blur-pixels")
-
-;;; (blur-pixels pixels width height) -> (vector-of rgb?)
-;;;   pixels : (vector-of rgb?)
-;;;   width : positive-integer?
-;;;   height : positive-integer?
-;;; Blur all the pixels in `pixels` by averaging them with the surrounding
-;;; pixels.
-(define blur-pixels
-  {??})
-
-(problem "3c. enhance-pixels")
-
-;;; (enhance-pixels pixels width height) -> (vector-of rgb?)
-;;;   pixels : (vector-of rgb?)
-;;;   width : positive-integer?
-;;;   height : positive-integer?
-;;; "Enhance" all the pixels in `pixels` by increasing the difference
-;;; with the surrounding pixels.
-(define enhance-pixels
-  {??})
-
 ; -------------------------------------------------------------------
-(part "Part four: Steganography")
+(part "Part three: Steganography")
 
-(problem "4a. letter->number")
+(problem "3a. letter->number")
 
 ;;; (letter->number letter) -> (all-of nonnegative-exact-integer? (less-than 31))
 ;;;   letter : char?
@@ -346,7 +308,7 @@
 ;;; * 31: anything else
 (define letter->number
   (lambda (letter)
-    20))        ; STUB
+    {??}))
 
 (test-case "t"
   equal? 20
@@ -373,13 +335,14 @@
   (lambda ()
     (letter->number #\!)))
 
-(problem "4b. color->letter")
+(problem "3b. color->letter")
 
 ;;; (color->letter color) -> ???
 ;;;   color : ???
 ;;; ???
 (define color->letter
-  ???)
+  (lambda (color)
+    {??}))
 
 (test-case "null"
   equal? #\null
@@ -416,38 +379,33 @@
   (lambda ()
     (color->letter (rgb 32 64 (+ 128 31)))))
 
-(problem "4c. extract-text")
+(problem "3c. extract-text")
 
 ;;; (extract-text pixels) -> ???
 ;;;   pixels : ???
 ;;; ????
 (define extract-text
-  {??})
+  (lambda (pixels)
+    {??}))
 
 (test-case "extract-text: alphabet"
   equal? "abcdefghijklmnopqrstuvwxyz. \n_*"
   (lambda ()
     (extract-text
       (list->vector (map (lambda (x) (rgb x 0 0)) (range 1 65))))))
-  
+
 (test-case "extract-text: meow"
   equal? "cat"
   (lambda ()
     (extract-text (vector (rgb 1 1 1) (rgb 0 1 0) (rgb 5 5 10) (rgb 8 8 16)))))
 
-(problem "4d. steg-decode")
+(problem "3d. steg-decode")
 
 ;;; (steg-decode img) -> ???
 ;;;   img : ???
 ;;; ???
 (define steg-decode
   {??})
-
-(test-case "steg-decode: aaa"
-  equal? "aaa"
-  (lambda ()
-    (steg-decode (overlay (solid-circle 10 "black")
-                          (solid-square 10 (rgb 1 0 0))))))
   
 (test-case "steg-decode: alphabet"
   equal? "abcdefghijklmnopqrstuvwxyz. \n_*"
@@ -455,38 +413,38 @@
     (steg-decode
       (pixels->image
         (list->vector (map (section rgb _ 0 0) (range 1 65)))
-        8 8 "encoded text"))))
+        8 8))))
 
-(problem "4e. insert-text!")
+(problem "3e. insert-text!")
 
 ;;; (insert-text! text pixels) -> ???
 ;;;   text : ???
 ;;;   pixels : ???
 ;;; ???
 (define insert-text
-  {??})
+  (lambda (text pixels)
+    {??}))
 
-(problem "4f. steg-encode")
+(problem "3f. steg-encode")
 
 ;;; (steg-encode text img) -> ???
 ;;;   text : ???
 ;;;   img : ???
 ;;; ???
 (define steg-encode
-  {??})
+  (lambda (text img)
+    {??}))
 
 (test-case "steg-encode: aphorism"
   equal? "there is more to life than computer science"
   (lambda ()
     (steg-decode
       (steg-encode "there is more to life than computer science"
-                   (solid-circle 20 "blue")))))
+                   (drawing->image (solid-circle 20 "blue"))))))
   
 (test-case "steg-encode: empty string"
   equal? ""
   (lambda ()
     (steg-decode
-      (steg-encode "" (solid-square 5 "white")) "")))
-
-; -------------------------------------------------------------------
-(part "Part 5: Freestyle")
+      (steg-encode ""
+                   (drawing->image (solid-square 5 "white"))))))
