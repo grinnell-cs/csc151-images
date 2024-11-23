@@ -351,8 +351,8 @@
     We consider how to write recursive programs that process trees
     and other tree-like structures.
   reading:
-    # - page: /readings/tree-recursion.html
-    # - page: /readings/binary-search-trees.html
+    - page: /readings/tree-recursion.html
+    - page: /readings/binary-search-trees.html
   lab:
     # - page: /labs/tree-recursion.html
 
