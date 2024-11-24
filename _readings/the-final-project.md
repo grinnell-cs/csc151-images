@@ -67,7 +67,35 @@ You will submit a short write-up outlining your plans for the project.
 
 
 ## Milestone 3 Details
-Coming soon
+You will decompose the program outline into functions and work on the implementation of your code.
+
+You will submit a scamper file and a short write-up demonstrating your progress on the project.
+
+**Write up**
+- List at least 5 learning objectives from the course [syllabus](../syllabus/) that will appear in your program. 
+- At least two of them should be from Unit 2 or 3.
+- For each of your 5 chosen learning objectives:
+  - Indicate which part(s) of your code will implement it by naming at least one of the functions in your program.
+  - Describe why the given learning objective is needed for that part of the code.
+- Challenge topics
+  - When selecting your learning objectives, make sure that each member has at least one "challenge topic," that is, something they will work on that is not easy for that team member. Say which ones those are, e.g. "recursion is Leah's challenge topic."
+  - By the end of milestone 4, each team member should contribute meaningfully to the implementation of the code for their challenge topic.
+
+**Skeleton Code**
+- The term "skeleton code" refers to a working outline of a program in progress.
+- Your program should be able to compile without errors and run, even if it does not do very much yet. (As an example, consider the starter code that we provide for labs. The key functions in the starter code often contain placeholders instead of functional code, and the tests may not pass yet, but the scamper file can execute without errors.)
+- Your skeleton code should demonstrate functional decomposition of your program into parts.
+- Skeleton code is a minimum. It would be great if some parts of your program are fully implemented, documented, and tested!
+
+**Submission on Gradescope**
+- Write-up: PDF format, one half to one page
+- Skeleton code: `.scm` format
+
+**Tips**
+- Make sure that all team members are in constant communication about responsibilities and meeting times. Better to over-communicate than under-communicate.
+- Work on your code incrementally. Run it frequently and make sure each part works before going on to the next part.
+- It is normal for programmers to "break" their code as they are working on it. Periodically save working versions of the code in a separate file in case you have to go back to an earlier working version.
+- Get started on the documentation and testing early! Those components can help in the process of writing code, rather than being tacked on an afterthought.
 
 ## Milestone 4 Details
 Coming soon
