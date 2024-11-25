@@ -392,6 +392,7 @@
 
 - topic: Tree recursion
   abbrev: tree-recursion
+  slides_link: https://docs.google.com/presentation/d/1qvKCLERvLrpB5UAPN2rCkrHJMiwEVtXKD7aG5G_0hrE/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We consider how to write recursive programs that process trees
     and other tree-like structures.
