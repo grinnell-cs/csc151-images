@@ -11,7 +11,7 @@ a. Conduct your normal start-of-lab discussion.
 
 b. Grab the code file for the lab.
 
-* [tree-recursion.rkt](../code/labs/tree-recursion.rkt)
+* [tree-recursion.scm](../code/labs/tree-recursion.scm)
 
 c. Do any other preliminaries listed in the lab.
 
