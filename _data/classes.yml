@@ -354,7 +354,7 @@
     - page: /readings/tree-recursion.html
     - page: /readings/binary-search-trees.html
   lab:
-    # - page: /labs/tree-recursion.html
+    - page: /labs/tree-recursion.html
 
 - topic: Project work day!
   abbrev: project-work-day
