@@ -371,7 +371,6 @@
   reading:
     - page: /readings/interactivity-events-and-reactivity.html
     - page: /readings/analyzing-procedures.html
-    # - page: /readings/searching.html
   lab:
     # - page: /labs/searching.html
 
@@ -389,6 +388,9 @@
   abbrev: searching-and-sorting
   summary: |
     As a case study of looking at computational complexity, we examine different ways of performing two ubiquitous operations in programming, searching and sorting.
+  reading:
+    - page: /readings/searching.html
+    - page: /readings/sorting.html
 
 - topic: "Project presentations"
   abbrev: project-presentations
