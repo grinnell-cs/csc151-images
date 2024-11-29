@@ -301,7 +301,120 @@ Since our timer interval is `25` milliseconds, that means the shape effectively 
 One way we can improve this simple code is to use the `elapsed` value of our time event to move the shape in terms of time elapsed rather than a fixed amount per update.
 In addition to moving the shape, we also perform rudimentary _collision detection_, switching the direction of the shape if the shape runs over either side of the canvas.
 
-### Appendix: Complete Source Code
+### Reacting to Musical Compositions
+
+The events we've considered so far are managed by the Scamper runtime and the browser.
+However, sometimes our program may generate events that we wish to respond to.
+An example of this is reacting to musical compositions we write in Scamper.
+In the application below, we create a musical composition that programmatically controls the color of the shape.
+
+<pre class="scamper">
+(import canvas)
+(import image)
+(import music)
+(import reactive)
+
+(define mary-had-a-little-lamb
+  (seq
+    (par (note 58 qn) (note-event "blue"))
+    (note 56 qn)
+    (note 54 qn)
+    (note 56 qn)
+    (par (note 58 qn) (note-event "green"))
+    (note 58 qn)
+    (note 58 hn)
+    (par (note 56 qn) (note-event "purple"))
+    (note 56 qn)
+    (note 56 hn)
+    (par (note 58 qn) (note-event "red"))
+    (note 58 qn)
+    (note 58 hn)
+
+    (par (note 58 qn) (note-event "blue"))
+    (note 56 qn)
+    (note 54 qn)
+    (note 56 qn)
+    (par (note 58 qn) (note-event "green"))
+    (note 58 qn)
+    (note 58 hn)
+    (par (note 56 qn) (note-event "purple"))
+    (note 56 qn)
+    (par (note 58 qn) (note-event "red"))
+    (par (note 56 qn) (note-event "green"))
+    (par (note 54 hn) (note-event "blue"))))
+
+(define handlers (make-note-handlers))
+
+(reactive-canvas 100 100
+  "blue"
+  (lambda (st canv)
+    (begin
+      (canvas-rectangle! canv 0 0 100 100 "outline" "black")
+      (canvas-rectangle! canv 10 10 80 80 "solid" st)))
+  (lambda (msg st)
+    (match msg
+      [(event-note color) color]))
+  (on-note handlers))
+
+(display
+  (mod (note-handlers handlers)
+    (mod (tempo qn 240)
+        mary-had-a-little-lamb)))
+</pre>
+
+We trigger events in a composition with the `note-event` function.
+`(note-event v)` will generate a `(event-note v)` event message that we can capture in our `update` function.
+Observe that we play a `note-event` in parallel with the triggering note using `par` to ensure that the event is played alongside the given note.
+
+<pre class="scamper source-only">
+(define mary-had-a-little-lamb
+  (seq
+    (par (note 58 qn) (note-event "blue"))
+    (note 56 qn)
+    (note 54 qn)
+    (note 56 qn)
+    (par (note 58 qn) (note-event "green"))
+    ; ...))
+</pre>
+
+In our example, the value `v` carried by each event message will be the color of the shape we track as the state of our reactive program.
+
+We then need to hook up handlers to this composition and then register those handlers with our reactive canvas.
+The zero-argument function `make-note-handlers` creates an initially empty set of handlers.
+
+<pre class="scamper source-only">
+(define handlers (make-note-handlers))
+</pre>
+
+When creating our reactive canvas, we subscribe to these note events with the `on-note` function, passing these `handlers` along.
+
+<pre class="scamper source-only">
+(reactive-canvas 100 100
+  "blue"
+  (lambda (st canv)
+    (begin
+      (canvas-rectangle! canv 0 0 100 100 "outline" "black")
+      (canvas-rectangle! canv 10 10 80 80 "solid" st)))
+  (lambda (msg st)
+    (match msg
+      [(event-note color) color]))
+  (on-note handlers))
+</pre>
+
+As a side effect, `on-note` will add this new `reactive-canvas` to `handlers`.
+
+Finally, we play our composition _modded to utilize `handlers`_ to handle any events that the composition creates.
+
+<pre class="scamper source-only">
+(display
+  (mod (note-handlers handlers)
+    (mod (tempo qn 240)
+        mary-had-a-little-lamb)))
+</pre>
+
+### Appendix: Source Code
+
+#### Interactive Shape Example
 
 <pre class="scamper source-only">
 (import canvas)
@@ -392,4 +505,60 @@ In addition to moving the shape, we also perform rudimentary _collision detectio
     (on-timer interval)
     (on-mouse-click)
     (on-key-up)))
+</pre>
+
+### Animated Song Example
+
+<pre class="scamper source-only">
+(import canvas)
+(import image)
+(import music)
+(import reactive)
+
+(define mary-had-a-little-lamb
+  (seq
+    (par (note 58 qn) (note-event "blue"))
+    (note 56 qn)
+    (note 54 qn)
+    (note 56 qn)
+    (par (note 58 qn) (note-event "green"))
+    (note 58 qn)
+    (note 58 hn)
+    (par (note 56 qn) (note-event "purple"))
+    (note 56 qn)
+    (note 56 hn)
+    (par (note 58 qn) (note-event "red"))
+    (note 58 qn)
+    (note 58 hn)
+
+    (par (note 58 qn) (note-event "blue"))
+    (note 56 qn)
+    (note 54 qn)
+    (note 56 qn)
+    (par (note 58 qn) (note-event "green"))
+    (note 58 qn)
+    (note 58 hn)
+    (par (note 56 qn) (note-event "purple"))
+    (note 56 qn)
+    (par (note 58 qn) (note-event "red"))
+    (par (note 56 qn) (note-event "green"))
+    (par (note 54 hn) (note-event "blue"))))
+
+(define handlers (make-note-handlers))
+
+(reactive-canvas 100 100
+  "blue"
+  (lambda (st canv)
+    (begin
+      (canvas-rectangle! canv 0 0 100 100 "outline" "black")
+      (canvas-rectangle! canv 10 10 80 80 "solid" st)))
+  (lambda (msg st)
+    (match msg
+      [(event-note color) color]))
+  (on-note handlers))
+
+(display
+  (mod (note-handlers handlers)
+    (mod (tempo qn 240)
+        mary-had-a-little-lamb)))
 </pre>
