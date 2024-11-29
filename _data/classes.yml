@@ -369,7 +369,8 @@
     We consider why such analysis is useful.  We then delve into
     a common problem: That of finding values in a collection.
   reading:
-    # - page: /readings/analysis.html
+    - page: /readings/interactivity-events-and-reactivity.html
+    - page: /readings/analyzing-procedures.html
     # - page: /readings/searching.html
   lab:
     # - page: /labs/searching.html
