@@ -5,8 +5,6 @@ summary: |
   algorithms used to solve that problem.
 ---
 
-**This reading has been updated for Fall 2021.**
-
 ## Introduction
 
 To *search* a data structure is to examine its elements one-by-one
@@ -27,101 +25,65 @@ than hard-coding the particular criterion in the structure of the search.
 
 ## Sequential search
 
-In a linear data structure -- such as a flat list, a vector, or a
-file -- there is an obvious algorithm for conducting a search: Start
+In a linear data structure---such as a flat list, a vector, or a
+file---there is an obvious algorithm for conducting a search: Start
 at the beginning of the data structure and traverse it, testing
 each element. Eventually one will either find an element that has
 the desired property or reach the end of the structure without
 finding such an element, thus conclusively proving that there is
 no such element. Here are a few alternate versions of the algorithm.
 
-```drracket
-;;; Procedure:
-;;;   list-sequential-search
-;;; Parameters:
+<pre class="scamper source">
+;;; (list-sequential-search lst pred?) -> any?
 ;;;   lst, a list
 ;;;   pred?, a unary predicate
-;;; Purpose:
-;;;   Searches the list for a value that matches the predicate.
-;;; Produces:
-;;;   match, a value
-;;; Preconditions:
-;;;   pred? can be applied to all values in lst.
-;;; Postconditions:
-;;;   If lst contains an element for which pred? holds, match
-;;;     is one such value.
-;;;   If lst contains no elements for which pred? holds, match
-;;;     is false (#f).
+;;; Returns the first element of lst that satisfies pred or #f
+;;; if no such element exists.
 (define list-sequential-search
   (lambda (lst pred?)
-    (cond
+    (match lst
       ; If the list is empty, no values match the predicate.
-      [(null? lst) 
-       #f]
-      ; If the predicate holds on the first value, use that one.
-      [(pred? (car lst)) 
-       (car lst)]
-      ; Otherwise, look at the rest of the list
-      [else 
-       (list-sequential-search (cdr lst) pred?)])))
-```
+      [null #f]
+      [(cons head tail)
+       (if (pred? head)
+            ; If the predicate holds on the first value, use that one.
+           head
+            ; Otherwise, look at the rest of the list
+           (list-sequential-search tail pred?))])))
 
-```drracket
-;;; Procedure:
-;;;   vector-sequential-search
-;;; Parameters:
+(define helper
+  (lambda (i vec pred?)
+    (if (>= i (vector-length vec))
+        #f
+        (if (pred? (vector-ref vec i))
+            i
+            (helper (+ i 1) vec pred?)))))
+
+;;; (vector-sequential-search vec pred?) -> any?
 ;;;   vec, a vector
-;;;   pred?, predicate
-;;; Purpose: 
-;;;   Searches the vector for a value that matches the predicate.
-;;; Produces:
-;;;   match, a value
-;;; Preconditions:
-;;;   pred? can be applied to all elements of vec.
-;;; Postconditions:
-;;;   If vec contains an element for which pred? holds, match
-;;;     is the index of one such value.  That is,
-;;;     (pred? (vector-ref vec match)) holds.
-;;;   If vec contains no elements for which pred? holds, match
-;;;     is false (#f).
+;;;   pred?, a unary predicate
+;;; Returns the index of the first element of vec that satisfies
+;;; pred? or #f if no such element exists.
 (define vector-sequential-search
   (lambda (vec pred?)
-    ; Grab the length of the vector so that we don't have to
-    ; keep recomputing it.
-    (let ([len (vector-length vec)])
-      ; kernel: Keeps track of the position we're looking at.
-      (letrec ([kernel 
-                (lambda (position)
-                  (cond
-                    ; If we've run out of elements, give up.
-                    [(= position len) 
-                     #f]
-                    ; If the current element matches, use it.
-                    [(pred? (vector-ref vec position)) 
-                     position]
-                    ; Otherwise, look in the rest of the vector.
-                    [else 
-                     (kernel (+ position 1))]))])
-        (kernel 0)))))
-```
+    (helper 0 vec pred?)))
 
-Here's an example of the latter procedure in action.
+(define lst (list 1 3 5 7 8 11 13))
+(list-sequential-search lst even?)
+(list-sequential-search lst (lambda (x) (= 12 x)))
+(list-sequential-search lst (lambda (x) (< 9 x)))
 
-```drracket
-> (define sample (vector 1 3 5 7 8 11 13))
-> (vector-sequential-search sample even?)
-4 ; The position of 8
-> (vector-sequential-search sample (section = 12 <> ))
-#f
-> (vector-sequential-search sample (section < 9 <>))
-5 ; The position of 11
-```
+(define vec (vector 1 3 5 7 8 11 13))
+(vector-sequential-search vec even?)
+(vector-sequential-search vec (lambda (x) (= 12 x)))
+(vector-sequential-search vec (lambda (x) (< 9 x)))
+</pre>
 
 ### Alternative return values
 
 These search procedures return `#f` if the search is unsuccessful. The
 first returns the matched value if the search is successful. The second
-returns returns the position in the specified vector at which the desired
+returns the position in the specified vector at which the desired
 element can be found. There are many variants of this idea: One might,
 for instance, prefer to signal an error or display a diagnostic message if
 a search is unsuccessful. In the case of a successful search, one might
@@ -133,45 +95,40 @@ element having the desired property is present in or absent from the list.
 One of the most common “real-world” searching problems is that
 of searching a collection of compound values for one which matches a
 particular portion of the value, known as the *key*. For example, we might
-search a phone book for a phone number using a person's name as the key
-or we might search a phone book for a person using the number as key. 
+search a phone book for a phone number using a person's name as the key, or
+we might search a phone book for a person using the number as key.
 
-You've already seen a structure that supports such searching: hashes.
-But we're supposing that we don't have hashes (or don't yet have
-hashes).
+You've already seen a structure that supports such searching: association
+lists! Since association lists are lists, we can use `list-sequential-search`
+with an appropriate predicate to provide an alternative implementation of
+`assoc-key? lst k` which returns `#t` if `k` appears as a key somewhere
+inside of association list `lst`.
 
-Since each entry has various things we could use as the key, we should
-include a `get-key` procedure as a parameter to our search procedure.
+<pre class="scamper source">
+(define list-sequential-search
+  (lambda (lst pred?)
+    (match lst
+      ; If the list is empty, no values match the predicate.
+      [null #f]
+      [(cons head tail)
+       (if (pred? head)
+            ; If the predicate holds on the first value, use that one.
+           head
+            ; Otherwise, look at the rest of the list
+           (list-sequential-search tail pred?))])))
 
-```drracket
-;;; Procedure:
-;;;   keyed-list-sequential-search
-;;; Parameters:
-;;;   values, a list of compound values.
-;;;   get-key, a procedure that extracts a key from a compound value.
-;;;   key, a key to search for.
-;;; Purpose:
-;;;   Finds a member of the list that has a matching key.
-;;; Produces:
-;;;   match, a Scheme value
-;;;   #f, otherwise.
-;;; Preconditions:
-;;;   The get-key procedure can be applied to each element of values.
-;;; Postconditions:
-;;;   If there is no index for which
-;;;     (equal? key (get-key (list-ref values index)))
-(define keyed-list-sequential-search
-  (lambda (values get-key key)
-    (list-sequential-search
-      values
-      (lambda (val) (equal? key (get-key val))))))
-```
+(define my-assoc-key?
+  (lambda (lst key)
+    (list-sequential-search lst
+      (lambda (p) (equal? (car p) key)))))
+</pre>
 
-For example, consider the following directory. 
+However, we can also implement this behavior for an arbitrary list of
+`struct` values. For example, consider the following code that implements
+a directory of faculty members:
 
-```drracket
-(struct entry (surname given-name uid extension)
-  #:transparent)
+<pre class="scamper source-only">
+(struct entry (surname given-name uid extension))
 
 ;;; grinnell-directory : listof entry?
 ;;; A list of people at Grinnell with contact information and some
@@ -188,7 +145,7 @@ For example, consider the following directory.
    (entry  "Harris"          "Anne"    "babel-tower"  "3000")
    (entry  "Eikmeier"        "Nicole"  "graph-wiz"    "3370")
    (entry  "Johnson"         "Barbara" "code-maven"   "4695")))
-```
+</pre>
 
 As you may have noted, each entry is a structure with a surname, a
 given name, a user id, and an extension.  In the interest of
@@ -202,44 +159,75 @@ responsible programmers should handle a variety of kinds of names and accept
 arbitrary-length names.  (Of course, by that metric, there are very few
 responsible programmers.)
 
-To search by surname, we would use `entry-surname` for `get-key`.
-To search by given name, we would use `entry-given-name` for `get-key`.  
-And so on and so forth.
+If we wanted to search by a given field of the `struct`, we can generalize
+the behavior of `my-assoc-key?`. Observe that the key of an entry in an 
+association list is the first element of the pair corresponding to that
+entry. Hence, our implementation of `my-assoc-key?` uses `car` to retrieve
+that value from the pair. Accessing values of our `struct` is slightly
+different. For example:
 
-```drracket
-> (keyed-list-sequential-search grinnell-directory entry-surname "Osera")
-(entry "Osera" "PM" "type-snob" "4010")
-> (keyed-list-sequential-search grinnell-directory entry-surname "Sarah")
-#f
-> (keyed-list-sequential-search grinnell-directory entry-given-name "Sarah")
-(entry "Dahlby-Albright" "Sarah" "cheery-coach" "4362")
-```
++ To search by surname, we would use `entry-surname`.
++ To search by given name, we would use `entry-given-name`.
 
-To search by the combination of first and last name, we would most likely need a more complex procedure.
+This insight suggests that we can generalize `my-assoc-key?` by adding
+an additional parameter, the _projection function_ that should be used
+to retrieve the value from each element of the list that will then be fed
+to the predicate. The following function, `keyed-list-sequential-search`,
+implements this behavior.
 
-```drracket
-> (keyed-list-sequential-search grinnell-directory
-                                (lambda (entry) 
-                                  (string-append (entry-given-name entry) 
-                                                 " " 
-                                                 (entry-surname entry)))
+<pre class="scamper source">
+(struct entry (surname given-name uid extension))
+
+;;; grinnell-directory : listof entry?
+;;; A list of people at Grinnell with contact information and some
+;;; useful attributes.
+(define grinnell-directory
+  (list
+   (entry  "Rebelsky"        "Samuel"  "messy-office" "4410")
+   (entry  "Weinman"         "Jerod"   "map-reader"   "9812")
+   (entry  "Osera"           "PM"      "type-snob"    "4010")
+   (entry  "Curtsinger"      "Charlie" "systems-guy"  "3127")
+   (entry  "Dahlby-Albright" "Sarah"   "cheery-coach" "4362")
+   (entry  "Rodrigues"       "Liz"     "vivero"       "3362")
+   (entry  "Barks"           "Sarah"   "stem-careers" "4940")
+   (entry  "Harris"          "Anne"    "babel-tower"  "3000")
+   (entry  "Eikmeier"        "Nicole"  "graph-wiz"    "3370")
+   (entry  "Johnson"         "Barbara" "code-maven"   "4695")))
+
+(define keyed-list-sequential-search
+  (lambda (lst proj key)
+    (match lst
+      [null #f]
+      [(cons head tail)
+       (if (equal? (proj head) key)
+           head
+           (keyed-list-sequential-search tail proj key))])))
+
+(keyed-list-sequential-search grinnell-directory entry-surname "Osera")
+(keyed-list-sequential-search grinnell-directory entry-surname "Sarah")
+(keyed-list-sequential-search grinnell-directory entry-given-name "Sarah")
+
+; We can even do more complicated queries by adding complexity to
+; our projection function!
+(keyed-list-sequential-search grinnell-directory
+                              (lambda (entry)
+                                (string-append (entry-given-name entry)
+                                               " "
+                                               (entry-surname entry)))
                                 "Sarah Barks")
-(entry "Barks" "Sarah" "stem-careers" "4940")
-> (keyed-list-sequential-search grinnell-directory
-                                (lambda (entry) 
-                                  (string-append (entry-given-name entry) 
-                                                 " " 
-                                                 (entry-surname entry)))
+(keyed-list-sequential-search grinnell-directory
+                              (lambda (entry)
+                                (string-append (entry-given-name entry)
+                                               " "
+                                               (entry-surname entry)))
                                 "Sarah Dahlby-Algright")
-#f
-> (keyed-list-sequential-search grinnell-directory
-                                (lambda (entry) 
-                                  (string-append (entry-given-name entry) 
-                                                 " " 
-                                                 (entry-surname entry)))
+(keyed-list-sequential-search grinnell-directory
+                              (lambda (entry)
+                                (string-append (entry-given-name entry)
+                                               " "
+                                               (entry-surname entry)))
                                 "Sarah Dahlby-Albright")
-(entry "Dahlby-Albright" "Sarah" "cheery-coach" "4362")
-```
+</pre>
 
 ## Binary search
 
@@ -252,229 +240,236 @@ use the much faster *binary search* algorithm.
 
 Binary search is a more specialized algorithm than sequential search. It
 requires a random-access structure, such as a vector, as opposed to
-one that offers only sequential access, such as a list. Binary search
-is limited to the kind of test in which one is looking for a particular
-value that has a unique relative position in some ordering. For instance,
-one could use a binary search to look for an element equal to 12 in a
-vector of integers ordered from smallest to largest, since 12 is uniquely
-located between integers less than 12 and integers greater than 12;
-but one wouldn't use binary search to look for an even integer, since
-the even integers don't have a unique position in any natural ordering
-of the integers.
+one that offers only sequential access, such as a list. Furthermore, we
+require that the structure is _sorted_. What do these restrictions give
+us?
 
-Similarly, while we might use binary search to search for a surname in 
-a vector of entries sorted by last name, we would not use binary search
-to search by a first name, since they are not likely to be organized
-by first name.
+As a thought experiment, imagine we are searching for the number 12 in
+a vector of 100 numbers. Because our vector is random-access, we can grab
+any element from our vector and see if it is 12. Let's imagine we grabbed
+index 50 of the vector and found it was value 35. Here's the situation:
 
-In essence, this means that we have to organize the vector based
-on the kind of value we want to search for. If we want to search a
-directory by surname, we need it alphabetized by surname.  If we
-want to search it by phone extension, we organize it by phone
-extension.
+~~~
+[ <indices 0-49> | 12 | <indices 51-99> ]
+                   ^
+                  index 50
+~~~
 
-If you've explored binary search trees, you've seen something much like
-binary search.  BST's have the advantage that they are already structured
-in such a way to make binary search natural.  At each step, we look at the
-"middle" value and then stop, recurse on the left, or recurse on the right.
-But what if we just want to keep the values in a sorted vector rather than
-putting them in a tree?  We still want to keep track of the portion of the 
-data still of interest.  In a vector, we can do that by storing indices
-for the start of the region of interest (inclusive) and the end of the 
-region of interest (exclusive).  (If you've written or read a procedure
-that converts vectors to trees, you may have an idea about those indices.)
+So index 50 does not contain our desired value. In a standard search, we
+would need to check all the others indices, 0–49 and 51–99, for our value.
+However, since our vector is assumed to be sorted, we know something quite
+valuable!
 
-So, in binary search, we keep track of the vector, the value searched
-for, and the lower and upper bounds of the region still of interest.
-The central idea is to divide the region of interest of the sorted
-vector into two approximately equal parts, examining the element
-at the point of division to determine which of the parts must contain
-the value sought.
++   The values in indices 0–49 must all be less than or equal to 12.
++   The values in indices 51–99 must all be greater than or equal to 12.
 
-There are usually three possibilities for the relationship between the
-value sought and the element at the point of division.
+Pictorially, we know the following:
 
-* The key sought *is* the key of the element at the point of division. 
-  The search has succeeded.
-* The key sought cannot follow the key of the element at the point of 
-  division in the ordering that was used to sort the vector. In this
-  case, the value sought must be in a position with a lower index that
-  the element at the point of division (if it is present at all) -- in
-  other words, it must be in the left half of the region of interest. The
-  search procedure invokes itself recursively to search just the left
-  half of that region.
-* The value sought cannot precede the element at the point of division. 
-  In this case, the value sought must be in a higher-indexed position --
-  in the right half of the region -- if it is present at all. The search
-  procedure invokes itself recursively to search just the right half of
-  the region.
+~~~
+[ <indices 0-49> | 12 | <indices 51-99> ]
+       ≤ 12                   ≥ 12
+~~~
 
-There is one other way in which the recursion can terminate: If, in some
-recursive call, the region to be searched contains no elements at all,
-then the search obviously cannot succeed and the procedure should take
-the appropriate failure action.
+The value we are looking for is 35, so we know it _cannot_ be located in
+indices 0–49 because those values are all less than or equal to 12. We
+can _refine_ our search to be exclusively within the indices 51–99!
+Observe that this leaves us with a _smaller search problem_: we originally
+searched the indices 0–99 and then refined our search (by looking at
+index 50) to the indices 51–99. We could then repeat this process until
+we either find our desired value or run out of indices to search.
 
-Here, then, is the basic binary-search algorithm. The identifiers
-`lower-bound` and `upper-bound` denote the starting and ending positions
-of the region of the vector within which the value sought must lie,
-if it is present at all. (We use the convention that the starting and
-ending positions are *inclusive* in that they are positions within the
-vector that we must include in the search.)
+Before we formally describe this algorithm, _binary search_, let's
+try executing it on an example so that we have a feel for how it operates.
+Let's consider a vector of 10 numbers in sorted order:
+
+~~~
+[2, 3, 7, 9, 11, 15, 20, 28, 40, 50]
+~~~
+
+And suppose that we are looking for the value 20. If we performed a
+linear search of the vector, we would need to examine 7 elements to discover
+20. Let's see how binary search fares, instead.
+
+Initially, we will search _all_ of the indices of the vector, 0--9. Now
+we must choose a element to inspect. Which should we choose? It turns out
+that by choosing the _middle_ element of our range, we best take advantage
+of the information we gain when when compare this element against our
+target. In the case of an even number of elements, there isn't a "middle"
+element _per se_, but we can simply round up or down to obtain a concrete
+index to search.
+
+With this strategy, we would we choose index $$\lfloor (9 - 0) / 2 \rfloor + 0 = 4$$
+to inspect. At this point, there are three possibilities:
+
++   The chosen index _contains_ our target value. We have found our
+    desired value, so we are done.
++   The chosen index's value is _less than_ our target. This means that
+    our target value must be _to the right_ of the current index.
++   The chosen index's value is _greater than_ our target. This means
+    that our target value must _to the left_ of the current index.
+
+Index 4 of our vector contains the value 11 which is less than our target
+value, 20. Therefore, we refine our search to indices 5--9 and repeat the
+process. To summarize visually:
 
 ```
-;;; (binary-search vec key get-key less-equal?) -> integer?
-;;;   vec : vector?
-;;;   get-key? : procedure? unary?
-;;;   less-equal? : procedure? binary?
-;;; Search the vector for a value whose key is key.  Returns
-;;;   the index of the matching element or #f.
-;;; get-key is used to extract the keys and less-equal? 
-;;;   specifies the ordering.
-;;; Pre: (less-equal? (get-key (vector-ref vec i)) (get-key (vector-ref vec (+ i 1))))
-;;;   holds for all reasonable i.  That is, every element "comes before" the next
-;;;   element.
+[2, 3, 7, 9, 11, 15, 20, 28, 40, 50]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             ^
+           index 4
+```
+
+Initially, we search indices 0–9 and then inspect index 4. We see that the
+element at index 4, 11, is less than our target value 20. Therefore, we
+refine our search as follows:
+
+```
+[2, 3, 7, 9, 11, 15, 20, 28, 40, 50]
+                 ~~~~~~~~~~~~~~~~~~~
+                         ^
+                      index 7
+```
+
+The portion of the vector we are searching is underlined with tildes, _i.e._,
+`~~~`, indices 5–9. We then repeat the process with the middle index of
+this range, $$\lfloor (9 - 5) / 2 \rfloor + 5 = 7$$.
+
+Let's continue this process for a few more iterations:
+
+```
+[2, 3, 7, 9, 11, 15, 20, 28, 40, 50]
+                 ~~~~~~~~~~~~~~~~~~~
+                         ^
+                       index 7
+
+==> 28 > 20, so now we search indices 5–6
+
+[2, 3, 7, 9, 11, 15, 20, 28, 40, 50]
+                 ~~~~~~~
+                 ^
+                index 5
+
+==> 28 > 20, so now we search indices 5–6
+
+[2, 3, 7, 9, 11, 15, 20, 28, 40, 50]
+                     ~~~
+                      ^
+                    index 6
+
+==> We found 20 at index 6!
+```
+
+Our search ends once we find the target value. Note that if we were
+searching for a value not in the vector, _e.g._, 21, then we would
+eventually run out of indices to search. At that point, we would know
+that the target value was not in the vector.
+
+In summary, here is a step-by-step execution of the binary search
+algorithm on our vector. At each step, we note the indices under
+consideration by underlining them as well as the middle element that
+will be compared against the target value:
+
+```
+[2, 3, 7, 9, 11, 15, 20, 28, 40, 50]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             ^ (index 4)
+
+[2, 3, 7, 9, 11, 15, 20, 28, 40, 50]
+                 ~~~~~~~~~~~~~~~~~~~
+                          ^ (index 7)
+
+[2, 3, 7, 9, 11, 15, 20, 28, 40, 50]
+                 ~~~~~~~
+                 ^ (index 5)
+
+[2, 3, 7, 9, 11, 15, 20, 28, 40, 50]
+                     ~~~
+                     ^ (index 6)
+```
+
+### A Recursive Algorithm for Binary Search
+
+We can define the binary search algorithm as a recursive algorithm.
+Unlike the previous recursive algorithms we've seen which perform
+case analysis on the structure of a list or a single natural number, we
+instead perform analysis on the _range of the vector we're searching
+and its middle element_.
+
+To search indices `i` to `j` of a vector `vec` for a target value `t`
+(assuming `i ≤ j`):
+
++   If `(i, j)` is not a valid range of indices in `vec`, then we have
+    not found `t` in `vec`, return `#f`.
++   Otherwise, let `v` be the value at the middle index `k` of the
+    range `(i, j)`, computed via `k = floor((j - i) / 2) + i`:
+
+    -   If `v` is equal to `t`, then we have found `t`, return `#t`.
+    -   If `v` is less than `t`, then recursively search the range `(k+1, j)`.
+    -   Otherwise, `v` is greater than `t`. Recursively search the range `(i, k-1)`.
+
+To search the entire vector, we can start the search with indices `i = 0`
+and `j = length(vec) - 1`.
+
+While more complicated than other recursive decompositions we've seen,
+let's translate this into code. Here's our implementation of binary
+search in Scheme:
+
+<pre class="scamper source">
+;;; (search-helper vec target i j) -> integer? or #f
+;;;   vec: vector?, sorted
+;;;   target: any
+;;;   i, j: integer?, non-negative
+;;; Returns an index of value target within the indices (i, j) of
+;;; vec if it exists or #f if the target is not found.
+(define search-helper
+  (lambda (vec target i j)
+    (if (< (- j i) 0)
+        #f
+        (let* ([k (+ i (floor (/ (- j i) 2)))]
+               [v (vector-ref vec k)])
+          (cond
+            [(equal? target v) k]
+            [(< v target)      (search-helper vec target (+ k 1) j)]
+            [else              (search-helper vec target i (- k 1))])))))
+
+;;; (binary-search vec target) -> integer? or #f
+;;;   vec: vector? sorted
+;;;   target: any
+;;; Returns an index of value target within vec if it exists or #f
+;;; #f if the target is not found.
 (define binary-search
-  (lambda (vec key get-key less-equal?)
-    ; Search a portion of the vector from lower-bound (inclusive) 
-    ; to upper-bound (exclusive)
-    (letrec ([search-portion 
-              (lambda (lower-bound upper-bound)
-                ; If the portion is empty
-                (if (>= lower-bound upper-bound)
-                    ; Indicate the value cannot be found
-                    #f
-                    ; Otherwise, identify the middle point, the element at that 
-                    ; point and the key of that element.
-                    (let* ([midpoint (quotient (+ lower-bound upper-bound) 2)]
-                           [middle-element (vector-ref vec midpoint)]
-                           [middle-key (get-key middle-element)])
-                      (cond
-                        ; If the middle key equals the value, we use the middle value.
-                        [(and (less-equal? key middle-key)
-                              (less-equal? middle-key key))
-                         midpoint]
-                        ; If the middle key is too large, look in the left half
-                        ; of the region.
-                        [(less-equal? key middle-key)
-                         (search-portion lower-bound midpoint)]
-                        ; Otherwise, the middle key must be too small, so look 
-                        ; in the right half of the region.
-                        [else
-                         (search-portion (+ midpoint 1) upper-bound)]))))])
-      (search-portion 0 (vector-length vec)))))
-```
+  (lambda (vec target)
+    (search-helper vec target 0 (- (vector-length vec) 1))))
 
-### An example
+(binary-search (vector 2 3 7 9 11 15 20 28 40 50) 20)
+</pre>
 
-So, how do we use binary search to search a sorted vector? It depends on
-what the vector contains. Let's suppose each entry is a set of information
-on students, sorted by first name.  Here is one such vector.
+### An example: searching for primes
 
-```
-(struct student (given-name surname id major year)
-  #:transparent)
+As an example of the efficiency of binary search, let's take a detour into
+a traditional mathematical problem: *Given a number, n, how do you decide if
+n is prime?* As you might expect, there are a number of ways to determine
+whether a value is prime. Since we know a lot of primes, for small
+primes an easy technique is to search through a vector of known primes. We
+can use our `binary-search` function to determine if a number is prime from
+this vector.
 
-(define simulated-students
-  (vector
-   (student "Amy"       "Zevon"    1336804 "Computer Science"  2023)
-   (student "Bob"       "Smith"    1170605 "Mathematics"       2020)
-   (student "Charlotte" "Davis"    1304091 "Independent"       2022)
-   (student "Danielle"  "Jones"    1472662 "Undeclared"        2021)
-   (student "Devon"     "Smith"    1546921 "Computer Science"  2022)
-   (student "Erin"      "Anderson" 1320727 "Philosophy"        2023)
-   (student "Fred"      "Stone"    1260057 "Linguistics"       2022)
-   (student "Greg"      "Jones"    1668280 "Classics"          2020)
-   (student "Heather"   "Jones"    1046860 "Classics"          2021)
-   (student "Ira"       "Jackson"  1070103 "Political Science" 2022)
-   (student "Janet"     "Smith"    1488985 "Chemistry"         2023)
-   (student "Karla"     "Hill"     1821167 "Psychology"        2022)
-   (student "Leo"       "Levens"   1399810 "English"           2023)
-   (student "Maria"     "Moody"    1168059 "Computer Science"  2020)
-   (student "Ned"       "Black"    1177023 "Russian"           2022)
-   (student "Otto"      "White"    1908656 "Chinese"           2023)
-   (student "Paula"     "Hall"     1218704 "Psychology"        2022)
-   (student "Quentin"   "Smith"    1679081 "Art History"       2022)
-   (student "Rebecca"   "Davis"    1658200 "Biology"           2020)
-   (student "Sam"       "Sky"      1085519 "Mathematics"       2022)
-   (student "Ted"       "Tedly"    1480618 "GWSS"              2023)
-   (student "Urkle"     "Andersen" 1681805 "Anthropology"      2022)
-   (student "Violet"    "Teal"     1493989 "Economics"         2023)
-   (student "Xerxes"    "Homer"    1547425 "Economics"         2023)
-   (student "Yvonne"    "Stein"    1748611 "Sociology"         2022)
-   (student "Zed"       "Rebel"    1540899 "Computer Science"  2024)
-  ))
-```
+<pre class="scamper source">
+(define search-helper
+  (lambda (vec target i j)
+    (if (< (- j i) 0)
+        #f
+        (let* ([k (+ i (floor (/ (- j i) 2)))]
+               [v (vector-ref vec k)])
+          (cond
+            [(equal? target v) k]
+            [(< v target)      (search-helper vec target (+ k 1) j)]
+            [else              (search-helper vec target i (- k 1))])))))
 
-As in our prior directory example, there are some flaws in the data design.
-In addition to the name problem we mentioned earlier, we've assumed that each 
-student has only one major; some have more.  (The alumni directory also fails
-to acknowledge that situation.)  We've also assumed that student IDs start with 
-a digit other than zero.  I don't think that's the case here at Grinnell.  And
-what about students who are midyear graduates?  As always, we'll leave that as
-topics for more advanced programmers.
+(define binary-search
+  (lambda (vec target)
+    (search-helper vec target 0 (- (vector-length vec) 1))))
 
-Does it seem like we're writing really similar code for each of our structures?
-We are.  For now, you'll have to deal with it.  At least we're writing the code.
-But you should know that Racket (if not the original Scheme) provides things called
-"structs" that help simplify the creation of such structures.
-
-Where were we?  Oh, yes.  We were looking at binary search.
-
-As you may recall, `binary-search` has four parameters: a vector
-to search, a key, the procedure that extracts a key from each element
-in the vector, and the procedure used to compare keys.  For this
-example, the vector to search will be `simulated-students` and the
-key to search for will be whatever given name we want. To get the
-given name from an entry, we use `student-given-name`. To compare
-two names, we use `string-ci<=?`.
-
-So, to find out the index of the entry for the person whose first name is
-"Heather", we would write something like the following:
-
-```drracket
-> (binary-search simulated-students "Heather" student-given-name string-ci<=?)
-8
-> (vector-ref simulated-students 8)
-(student "Heather" "Jones" 1046860 "Classics" 2021)
-```
-
-To make it easier for people who don't want to write so much, we might
-wrap that instruction into a more-specific procedure that looks up
-people by given name and returns entries, rather than indicies.
-
-```
-;;; (lookup-by-given-name directory name) -> student? (or boolean?)
-;;;   directory : vectorof student?
-;;;   name : string?
-;;; Find the entry associated with name.  Return #f if no such entry
-;;; exists.
-(define lookup-by-given-name
-  (lambda (directory name)
-    (let ([index (binary-search directory name student-given-name string-ci<=?)])
-      (and index
-           (vector-ref directory index)))))
-```
-
-Let's see how it works.
-
-```
-> (lookup-by-given-name simulated-students "Heather")
-(student "Heather" "Jones" 1046860 "Classics" 2021)
-> (lookup-by-given-name simulated-students "sam")
-(student "Sam" "Sky" 1085519 "Mathematics" 2022)
-> (lookup-by-given-name simulated-students "Jon")
-#f
-```
-
-### Another example: Searching for primes
-
-Let's take a detour into a traditional mathematical problem: *Given
-a number, n, how do you decide if n is prime?* As you might expect,
-there are a number of ways to determine whether or not a value is
-prime. Since we know a lot of primes, for small primes an easy
-technique is to search through a vector of known primes.
-
-```
 ;;; Value:
 ;;;   small-primes
 ;;; Type:
@@ -494,37 +489,20 @@ technique is to search through a vector of known primes.
           701 709 719 727 733 739 743 751 757 761 769 773 787 797
           809 811 821 823 827 829 839 853 857 859 863 877 881 883 887
           907 911 919 929 937 941 947 953 967 971 977 983 991 997))
-```
 
-We could, of course, use a sequential search technique to look for a
-value in this vector. However, binary search is much more efficient. What
-procedure should we use for `get-key`? Well, each value is its own key,
-so we use `(lambda (x) x)`. The values are ordered numerically, so we use
-`<=` for *`less-equal?`*.
+; The number of primes smaller than 1000
+(vector-length small-primes)
 
-For example,
+(define is-prime
+  (lambda (n)
+    (not (equal? (binary-search small-primes n) #f))))
 
-```
-; Is 231 a prime?
-> (binary-search small-primes 231 (lambda (x) x) <=)
--1 ; No
-; Is 241 a prime?
-> (binary-search small-primes 241 (lambda (x) x) <=)
-52 ; Yes, it's prime number 52
-; How many primes are there less than 1000?
-> (vector-length small-primes)
-168 
-```
+(is-prime 231)
+(is-prime 241)
+(is-prime 967)
+</pre>
 
-In procedure form, we might write
-
-```drracket
-(define small-prime?
-  (lambda (candidate)
-    (binary-search candidate small-primes (lambda (x) x) <=)))
-```
-
-Now, how many recursive calls do we do in determining whether or not a
+Now, how many recursive calls do we do in determining whether a
 candidate value is a small prime? If we were doing a sequential search,
 we'd need to look at all 168 primes less than 1000, so approximately
 168 recursive calls would be necessary. In binary search, we split
@@ -546,91 +524,37 @@ recursive calls in sequential search, but only add one to the number of
 recursive calls in binary search) is one of the reasons that computer
 scientists love binary search.
 
-### Verifying that a vector is sorted
-
-For `binary-search` to work correctly, we need to have a sorted
-vector. Checking that a vector is sorted will require looking at every
-neighboring pair of values, so it is not something we want to do every
-time we call binary search. However, it is helpful to have such a
-procedure available.
-
-```drracket
-;;; (vector-sorted? vec get-key less-equal?) -> boolean?
-;;;   vec : vector?
-;;;   get-key : procedure? unary?
-;;;   less-equal? : procedure? binary?
-;;; Determine if vec is sorted by key
-(define vector-sorted?
-  (lambda (vec get-key less-equal?)
-    (let ([veclen (vector-length vec)])
-      (letrec ([helper (lambda (i)
-                         (or (= i (- veclen 1))
-                             (and (less-equal? (get-key (vector-ref vec i))
-                                               (get-key (vector-ref vec (+ i 1))))
-                                  (helper (+ i 1)))))])
-        (helper 0)))))
-```
-
-Here are some tests for the vectors we defined earlier.
-
-```drracket
-> (vector-sorted? small-primes id <=)
-#t
-> (vector-sorted? simulated-students student-given-name string-ci<=?)
-#t
-> (vector-sorted? simulated-students student-surname string-ci<=?)
-#f
-```
-
 ## Self checks
 
-These checks might take you a little bit longer, but they're not
-complex. However, they are importantly designed to help you understand
-searching before starting the lab, so please make your best effort to
-complete them.
+### Check 1: Choices
 
-### Check 1: Where are my keys?
+In our description of binary search, we claimed that it is "optimal"
+to choose the middle element of our search range to compare against
+the target. In a few sentences, explain why this strategy is
+best when we do not know anything about our target value or contents
+of our vector up front.
 
-a. Explain the role of the *`pred?`* parameter in
-`list-sequential-search`.
+### Check 2: Tracing binary search (‡)
 
-b. Explain the role of the *`get-key`* parameter in
-`keyed-list-sequential-search`.
+Give a step-by-step trace of the execution of binary search on the
+following vector:
 
-c. Explain how these parameters work together to implement a keyed
-sequential search.
+~~~
+[3, 8, 10, 14, 22, 30, 56, 58, 60, 75, 80, 99]
+~~~
 
-d. If we double the length of the list, what is the worst case effect
-on the number of recursive calls in `list-sequential-search`?
+With target values:
 
-### Check 2: Binary search (‡)
-
-a. Explain the role of the *`less-equal?`* in `binary-search`.
-
-b. In `binary-search`, how do we know if two values are equal?
-
-c. Explain the role of `midpoint`, `middle-element`, `middle-key`,
-which are bound in the `let*` of `binary-search`.
-
-d. Describe why and how the *`upper-bound`* of helper `search-portion`
-changes when the key we're looking for is less than the middle key.
-(If it doesn't change, explain why not.)
-
-e. Describe why and how the *`lower-bound`* of helper `search-portion`
-changes when the key we're looking for is greater than the middle key.
-(If it doesn't change, explain why not.)
-
-f. If we double the length of the vector, what is the worst case effect
-on the number of recursive calls in `binary-search`?
++ 14
++ 85
 
 ## Acknowledgements
 
-This reading was updated again in Fall 2023 to return to the use of vectors,
-since we didn't cover vectors (and may not for the near future).
-
 This reading was updated in Fall 2021 to use structs rather than vectors
 for the directory and student entries.  The Fall 2021 update also included
-other minor cleanup.
+other minor cleanup. The Fall 2022 update made the code examples live
+as well as removed from extraneous discussion to focus on the binary
+search algorithm itself.
 
 This reading was rewritten in Fall 2020 to (a) use the new documentation
 style, (b) add some comments on data design and assumptions, and
