@@ -594,9 +594,9 @@ final, sorted list.
 (_Note_: when you trace merge sort's execution by-hand, you do not need to take
 this detail into account. You can simply maintain regular sorted order and
 append onto the end of the `sorted` list. This is merely a technicality due to
-the nature of lists and the cons operator.)
+the nature of lists and the `cons` operator.)
 
-*   To merge the elements of sorted lists `l1` and l2` into a sorted list while maintaining a `reverse-sorted` list of the elements:
+*   To merge the elements of sorted lists `l1` and `l2` into a sorted list while maintaining a `reverse-sorted` list of the elements:
     +   If either `l1` or `l2` are empty, append the other list onto the end
         of the result of reversing `reverse-sorted`. (Note: this case covers
         the case when both `l1` and `l2` are empty!)
