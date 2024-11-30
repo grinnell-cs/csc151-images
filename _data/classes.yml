@@ -372,7 +372,7 @@
     - page: /readings/interactivity-events-and-reactivity.html
     - page: /readings/analyzing-procedures.html
   lab:
-    # - page: /labs/searching.html
+    - page: /labs/computational-complexity.html
 
 - topic: Pause for breath
   abbrev: pause-for-breath-3
