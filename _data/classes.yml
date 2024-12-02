@@ -410,6 +410,7 @@
 
 - topic: Counting operations
   abbrev: counting-operations
+  slides_link: https://docs.google.com/presentation/d/1mW6KU0H6nlu58X7PfQsyAvk48kaF34DV0qFw431xgK8/edit#slide=id.g307c3f5f546_0_0
   summary: |
     We explore techniques for analyzing the number of calls made
     in evaluating procedures, particularly recursive procedures.
