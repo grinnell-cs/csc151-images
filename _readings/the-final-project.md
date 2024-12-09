@@ -98,7 +98,37 @@ You will submit a scamper file and a short write-up demonstrating your progress 
 - Get started on the documentation and testing early! Those components can help in the process of writing code, rather than being tacked on an afterthought.
 
 ## Milestone 4 Details
-Coming soon
+You will submit your completed software artifact and the slides for your project presentation.
+
+**Code**
+
+One or more Scamper programs that address the problems you wish to solve. The programs should be complete, well documented, well tested, and well-formatted according to the course style guides. They should run without errors.
+
+**Presentation**
+- On Wednesday or Friday, you will give a presentation of at most 8 minutes about your project.
+- In the presentation, you should
+  - give an overview of your work
+  - discuss your design plans
+  - highlight one or more pieces of code that you are proud of
+  - be prepared to answer questions from the audience
+- As the breakdown for your 8 minute presentation, we recommend planning about 4-6 minutes to describe your work and about 2-4 minutes for your live demo. Audience Q&A can take place outside the 8 minutes.
+- All members of your team must have meaningful speaking parts in the presentation.
+- You will submit the slides for your presentation in the Milestone 4 submission via gradescope, along with your code.
+
+
+**Tips**
+- Rule of thumb is 1 slide per minute (give or take), equating to about 4-6 slides (give or take)
+- Make sure all text on your slides is large enough to be easily readable from the back row
+- Make sure that fonts and colors on your slide are legible. Consider color blind viewers who may not be able to distinguish between various colors.
+- Don't use stock imagery in a place where you could instead show a meaningful visualization of your work
+- Practice your presentation by plugging your laptop into the podium in our classroom before the day that you present
+
+
+**Submission on Gradescope**
+- Slides in PDF format
+  - Note that slides in .pptx, .key, and various other formats are not readable on gradescope. You may present using any format of slides, but you must convert to PDF to submit via gradescope.
+- Scamper code for your completed project
+
 
 
 ## Milestone 5 (Final Reflection)
@@ -119,7 +149,7 @@ Your reflection must include the following four parts:
 
 +   **Overview.** Give a brief overview of your project in your own words: what did you build and why?
 +   **Architecture.** Give a brief overview of your project's architecture: how did your group break down the problem into components?
-+   **Your Contributions.** Give a description of your contributions to the project: which components did you contribute code to and how much code did you contribute to each?
++   **Your Contributions.** Give a description of your contributions to the project: which components did you contribute to each? Describe your contributions to the code base, project management, team coordination, documentation, milestone write-ups, etc.
 +   **Bug Log.** Give a description of a bug that you _personally encountered_ during development and how you systematically solved the issue. (More requirements below.)
 
 Overview, Architecture, and Contribution sections should be in paragraph form. 
