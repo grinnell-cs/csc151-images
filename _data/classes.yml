@@ -443,6 +443,28 @@
 
 - topic: "Project presentations"
   abbrev: project-presentations
+  reading: 
+    - None
+  lab:
+    - None
 
 - topic: "Presentation wrap-up and conclusion"
   abbrev: conclusion
+  reading: 
+    - None
+  lab:
+    - None
+
+- topic: Exam 4 
+  summary: 2-5 pm in our regular classroom
+  reading: 
+    - None
+  lab:
+    - None
+
+- topic: Final due date
+  summary: The college will not allow you to turn in any work after 5pm on this day
+  reading: 
+    - None
+  lab:
+    - None
