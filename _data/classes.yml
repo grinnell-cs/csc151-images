@@ -43,6 +43,11 @@
   lab:
     - page: /labs/procedures.html
 
+- topic: Faculty retreat
+  abbrev: retreat
+  summary: |
+    Class is (mostly) cancelled for the faculty retreat.
+
 - topic: Computation via expressions
   abbrev: expressions
   summary: |
@@ -96,6 +101,19 @@
     - Make sure this works with the new model.
     - Combine the labs
 
+- topic: Transforming images
+  abbrev: transforming-images
+  summary: |
+    We expand our understanding of RGB transformations to image transformations.
+  reading:
+    - page: /readings/anonymous-procedures.html
+    - page: /readings/transforming-rgb.html
+    - page: /readings/transforming-images.html
+  lab:
+    - page: /labs/transforming-images.html
+  todo:
+    - Incorporate anonymous procedures. (At least that's the plan.)
+
 - topic: Pair programming
   abbrev: pair-programming
   summary: |
@@ -109,19 +127,6 @@
       resource: /files/DiverseTeams2016.pdf
   lab:
     - (TBA)
-
-- topic: Transforming images
-  abbrev: transforming-images
-  summary: |
-    We expand our understanding of RGB transformations to image transformations.
-  reading:
-    - page: /readings/anonymous-procedures.html
-    - page: /readings/transforming-rgb.html
-    - page: /readings/transforming-images.html
-  lab:
-    - page: /labs/transforming-images.html
-  todo:
-    - Incorporate anonymous procedures. (At least that's the plan.)
 
 - topic: Booleans, predicates, and conditionals
   abbrev: booleans
@@ -139,11 +144,6 @@
   abbrev: pause-01
   summary: |
     We pause to catch up on a variety of topics.
-
-- topic: Another pause for breath
-  abbrev: pause-week-5
-  summary: |
-    We continue to catch up on topics.
 
 - topic: Lists
   abbrev: lists
@@ -175,17 +175,6 @@
     - Incorporate sort and tally.
     - Consider incorporating the old /labs/drawing-lists.html
 
-- topic: Software engineering fundamentals
-  abbrev: software-engineering
-  summary: |
-    We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
-  reading:
-    - page: /readings/documenting-your-code.html
-    - page: /readings/rackunit.html
-    - page: /readings/hypothesis-driven-debugging.html
-  lab:
-    - page: /labs/rackunit.html
-
 - topic: Other ways to build lists
   abbrev: building-lists
   summary: |
@@ -197,6 +186,17 @@
     - page: /labs/list-composition.html
   todo:
     - It's a new lab! Students shouldn't be learning cons, car, and cdr at the same time they are learning recursion.
+
+- topic: Software engineering fundamentals
+  abbrev: software-engineering
+  summary: |
+    We consider the trifecta of software engineering: documentation, testing, and debugging.  That is, we explore why and how you document your code, why and how you test your code, and how you might find errors in your code.
+  reading:
+    - page: /readings/documenting-your-code.html
+    - page: /readings/rackunit.html
+    - page: /readings/hypothesis-driven-debugging.html
+  lab:
+    - page: /labs/rackunit.html
 
 - topic: Ethical considerations in computing
   abbrev: ethical
@@ -262,16 +262,6 @@
   summary: |
     We pause to explore and revisit ideas associated with recursion.
 
-- topic: Randomness
-  abbrev: randomness
-  summary: |
-    We consider Scheme's `random` procedure and how one might use
-    that procedure in generating images.
-  reading:
-    - page: /readings/randomness.html
-  lab:
-    - page: /labs/random-language.html
-
 - topic: Pairs
   abbrev: pairs
   summary: |
@@ -281,6 +271,16 @@
     - page: /readings/pairs.html
   lab:
     - page: /labs/pairs.html
+
+- topic: Randomness
+  abbrev: randomness
+  summary: |
+    We consider Scheme's `random` procedure and how one might use
+    that procedure in generating images.
+  reading:
+    - page: /readings/randomness.html
+  lab:
+    - page: /labs/random-language.html
 
 - topic: Vectors
   abbrev: vectors
@@ -309,6 +309,12 @@
   lab:
     - page: /labs/hash-tables.html
 
+- topic: Pause for breath
+  abbrev: pause-post-sola3
+  summary: |
+    We pause to reflect on recent topics, particularly the transition
+    from pure functional programming to imperative programming.
+
 - topic: Data abstraction
   abbrev: data-abstraction
   summary: |
@@ -319,12 +325,6 @@
     - page: /readings/data-abstraction.html
   lab:
     - page: /labs/data-abstraction.html
-
-- topic: Pause for breath
-  abbrev: pause-post-sola3
-  summary: |
-    We pause to reflect on recent topics, particularly the transition
-    from pure functional programming to imperative programming.
 
 - topic: Higher-order recursive design
   abbrev: higher-order-recursive-design
@@ -392,11 +392,6 @@
   lab:
     - page: /labs/tree-recursion.html
 
-- topic: Sorting out sorting
-  abbrev: sorting
-  summary: |
-    We dive into an important problem: Arranging the values in a list or vector.
-
 - topic: Project work day
   abbrev: project-work-day-2
   summary: |
@@ -424,8 +419,8 @@
   abbrev: end-of-semester
   summary: |
     The College requires that all work be submitted by 5pm.  The 
-    only work I will accept at this point will be redos of mini-projects
-    and learning assessments from SoLA 5.
+    only work I will accept at this point will be learning assessments
+    from SoLA 5 (none are new) and redos of mini-projects.
 
 - topic: Turtle graphics
   abbrev: turtle
@@ -441,4 +436,9 @@
   todo:
     - All new! (or all revised from a few years ago)
     - Will we ever find time to include this in the new version of the course?
+
+- topic: Sorting out sorting
+  abbrev: sorting
+  summary: |
+    We dive into an important problem: Arranging the values in a list or vector.
 
