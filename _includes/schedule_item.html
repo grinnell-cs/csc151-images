@@ -17,7 +17,7 @@
   {% endunless %}
   {% if page %}
     {% if page.link or jekyll.environment == 'test' %}<a href="{{ page.url | prepend: site.baseurl }}">{% endif %}
-    {{ page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %}
+    {{ page.title }}{% if page.subtitle and page.link %}: {{ page.subtitle }}{% endif %}
     {% if page.link or jekyll.environment == 'test %}</a>{% endif %}
   {% else %}
     {{ url }}
