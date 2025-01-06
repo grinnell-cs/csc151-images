@@ -9,7 +9,7 @@ collaboration: |
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
 preimg: true
-link: true
+link: false
 notes: |  
   Consider ways to autograde.
 ---
