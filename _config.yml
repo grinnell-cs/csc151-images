@@ -1,12 +1,12 @@
 # Jekyll Site settings
 
 # Course title
-title: CSC 151-XX (Spring 2024)
+title: CSC 151 (Spring 2025)
 
 # baseurl is used for redirects on the same server.
 # url is the full path name
-baseurl: /Courses/CSC151/2024Sp
-url: https://USERNAME.cs.grinnell.edu/Courses/CSC151/2024Sp/
+baseurl: /Courses/CSC151/2025Sp
+url: https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/
 
 # Are we online?  If not, we're in person.  (Some of the lab instructions are
 # affected by this choice.)
@@ -16,38 +16,38 @@ online: false
 term: false
 
 # Set the theme color. Options are blue, green, red, orange, purple, and gray
-color: gray
+color: purple
 
-instructor: Prof. Essor
+instructor: Samuel A. Rebelsky
 
-instructor_title: Professor P
+instructor_title: Professor Rebelsky
 
-instructor_homepage: https://instructor.cs.grinnell.edu
+instructor_homepage: https://rebelsky.cs.grinnell.edu
 
-instructor_email: isntructor@grinnell.edu
+instructor_email: rebelsky@grinnell.edu
 
-meeting_times: |
-  MWF N:NN&ndash;N:NN MM CT in Science 3813
-
-meeting_start_time: 2:30 PM
-
-evening_due_time: 10:00 PM
+meeting_times:
+  - MWF 8:30&ndash;9:50 AM CT in Science 3813 (Section 1)
+  - MWF 10:00&ndash;11:20 AM CT in Science 3813 (Section 2)
+  - MWF 2:30&ndash;3:50 PM CT in Science 3813 (Section 3)
 
 office_hours:
   - TBD
+  - "[Schedule a meeting](https://bit.ly/book-samr)"
+  - "I am also available at other times; use Teams Message to set a time"
 
-mentors: 
-  - Maddy Thompson (Section 1)
-  - Mai Hoang (Section 2)
+mentors:
+  - NAME NAME (Section 1)
+  - NAME NAME (Section 2)
+  - NAME NAME (Section 3)
 
 mentor_sessions:
-  - Tuesdays, 7pm, Science 3819
-  - Thursdays, 7pm, Science 3819
+  - TBD
 
 tutors:
   - Sundays, 3&ndash;5 PM; Sundays through Thursdays, 7&ndash;10 PM in Science 3813 and 3815
 
-all_work_deadline:  5:00 PM on Friday, 17 May 2024
+all_work_deadline:  5:00 PM on Friday, 16 May 2025
 # final_exam_time: TBD
 
 copyright: |
