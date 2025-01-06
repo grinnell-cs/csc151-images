@@ -13,8 +13,8 @@ permalink: /syllabus/
   <dt>Meeting Times</dt>
   <dd>
     <ul class="list-unstyled">
-      {% for item in site.meeting_times %}
-        <li>{{ item | markdownify | remove: "<p>" | remove: "</p>" }}</li>
+      {% for time in site.meeting_times %}
+        <li>{{ time | markdownify | remove: "<p>" | remove: "</p>" }}</li>
       {% endfor %}
     </ul>
   </dd>
@@ -185,7 +185,7 @@ We rely on six kinds of work to assess your mastery of the material.
 
 + **Reading problems**: quick assessments of the concepts found in the daily reading in preparation for in-class activities.  _**Reading problems are generally due at {{ site.evening_due_time }} the night before class**_ (e.g., the problems associated with a reading for Wednesday's class are due Tuesday at {{ site.evening_due_time }})
 + **Lab exercises**: practice problems worked on during class, frequently collaboratively, with a partner.  _**Lab exercises are generally due immediately before the next class**_ (e.g., the problems associated with the lab from Wednesday's class are due Friday at {{ site.meeting_start_time }} and the problems associated with the lab from Friday's class are due Monday at {{ site.meeting_start_time }}).
-+ **Mini-Projects**: individually completed, small-scale programming projects that apply the weekly concepts to the themes of the course. To earn an A, one must do an excellent job on most of the mini-projects and the group project.  (You will be able to re-do any project that earns less than excellent.)  _**Mini-Projects are generally due on Wednesdays at {{ site.evening_due_time }}.**_
++ **Mini-Projects**: individually completed, small-scale programming projects that apply the weekly concepts to the themes of the course. To earn an A, one must do an excellent job on most of the mini-projects and the group project.  (You will be able to re-do any project that earns less than excellent.)  _**Mini-Projects are generally due on Tuesdays at {{ site.evening_due_time }}.**_
 + **Group project**: a final, group-based project, that you will complete toward the end of the semester. The group project brings together the various materials you've learned throughout the semesters. In computing a final grade, we treat the group project as a mini-project.
 + **Learning assessments**: individually completed problems that directly assess your mastery of the learning goals of the course.  To earn an A, one must pass learning assessments for 22 of the 24 learning objectives.  (You will have the opportunity to retake any of the learning assessments you do not pass.)  _**Sets of Learning Assessments will be distributed at 4:00 p.m. on four Mondays throughout the semester and will be due on Wednesdays at {{ site.evening_due_time }}**_.  There will not be mini-projects in weeks that learning assessments are given.  _**Single learning assessments will also be given as quizzes in class on Fridays.**_
 + **Metacognitive reflections**: Short reflective pieces given before and after most assignments and exams.  _**Pre-task reflections are generally due the evening after a task is assigned.  Post-task reflections are generally due the day after the task is due.**_
@@ -390,9 +390,13 @@ This may be your first semester learning with Teams.  Things will likely mess up
 
 This may be your first semester using Gradescope.  Gradescope does some things well and some things less well.  Things will likely mess up from time to time.  That's okay; it's part of the process.  I'll make adjustments when you have difficulty.  I hope you'll accept my apologies when I do something wrong (or at least fail to adjust my processes to the way Gradescope thinks they should be done).
 
+### Mastery grading
+
+This may be your first semester in a class that uses a form of mastery grading. As I note elsewhere, the primary goal of mastery grading is that your grade depends on what you master, not when in the semester you master it. Most students find that the system works well for them, provided they try to keep up with the material. Please try each learning assessment and mini-project the first time it is offered. If you don't succeed, get help and then try again.
+
 ### Multiple sections
 
-There are multiple sections of this course. While the instructors and mentors will take generally similar approaches to the material, you'll see that there are differences. These differences should not affect your overall learning in the course.
+There are multiple sections of this course. While I'm teaching all three of them and will do my best to do the same thing in each section, the questions students have will likely affect the details, so there will be some differences.  These differences should not affect your overall learning in the course.
 
 ### Feeling overwhelmed
 
@@ -406,28 +410,36 @@ I'm confused about the grading scheme. Could you explain more?
 
 > Broad overview: To succeed in the class, you must do the learning assessments (LAs) and projects (MPs and the final project).  Since not everyone learns at the same rate, you will have the opportunity to make additional attempts at  LAs (although with new problems) and projects.  In addition, you must keep up with regular work for the class: readings (and reading responses), labs (and lab writeups), and reflections.  If you keep up with the work and achieve appropriate results on the LAs and projects by the end of the semester, you are likely to do well in the course.  Additional details are found above and in [the page on grading](../handouts/grading).
 
-> If that's not enough information, feel free to ask questions about particlar points.
+> If that's not enough information, feel free to ask questions about particular points.
 
-I plan to leave early for Spring break and won't be in class on Friday, 15 March 2024. What are the penalties for missing that class?
+I plan to leave early for Spring break and won't be in class on Friday, 8 March 2025. What are the penalties for missing that class?
 
 > As long as you let me know in advance, there is no penalty for your absence.
 
 > However, you will not be able to take the quiz that day, which means that you will have to complate that learning assessment in one of the following SoLAs.  In addition, you are responsible for making up the work from class on your own, and you are still responsible for turning in that labs.
 
-I have an accommodation that gives me extra time on in-class exams. What should I do about the Friday LA quizzes.
+I have an accommodation that gives me extra time on in-class exams. What should I do about the Friday LA quizzes?
 
-> Please chat with me.
+> Section 1: I would prefer that you arrive early. Section 2: You can take it immediately after class. Section 3: I would prefer that you arrive early, but you can also take it after class. (Those times are 8:00--8:30, 11:30--12:00, 2:00-2:30, and 4:00-4:30. Folks in any section can use any of those times.)
+
+I don't have an accommodation taht gives me extra time on in-class exams, but I feel like I need extra time.
+
+> You may use the same times.
 
 I did not achieve a grade of S on one of the in-class-only learning assessments.  How do I make that up?
 
-> I am happy to give those to you at 4:00 p.m. on the next Friday.
+> You may use those same times.
 
 I need a mental health day. What should I do?
 
-> Send me an email message telling me that you need a mental health day. Plan to make up the lab on your own and submit it before the next class. If you need extra time for the lab, you'll need to use a [token](../handouts/tokens).
+> Send me an email message telling me that you need a mental health day (or just that you aren't going to make it to class). Plan to make up the lab on your own and submit it before the next class. If you need extra time for the lab, you'll need to use a [token](../handouts/tokens).
 
 > More importantly, please take care of yourself.
 
 If I ask a question about the course, will it end up here?
 
 > Perhaps. It will depend on a variety of issues, such as whether I consider it of general interest and whether I have time to update the syllabus.
+
+I've heard that CSC-151 is intended as a "weed-out" course. Is that really the case?
+
+> I've always thought of CSC-151 as an opportunity to attract students to CS. While it's a challenging course, we try to have supports in place so that everyone can excel. My goal is that everyone earns an A. (I also hope that the course convinces those of you who were only planning to take one CS course to go on to another CS course.)
