@@ -135,21 +135,21 @@ Grinnell has indicated that a 4-credit course, like this one, should involve app
 In general, the twelve hours should work out to approximately
 
 * four hours per week in class,
-* three hours per week on readings (one hour per day),
-* four hours per week on either mini-projects (homework assignments) or SoLAs (exams), and
+* ninety minutes to three hours per week on readings (thirty minutes to one hour per day),
+* four to five-and-a-half hours per week on either mini-projects (homework assignments) or SoLAs (exams), and
 * one hour per week for mentor sessions.
 
-If you find yourself working much more than the expected amount in this course, please let me know ASAP.  It could be that other approaches to your work, or better support resources, can help.  It may also be that I'm assigning too much work.
+If you find yourself working much more than the expected amount in this course, please let me know ASAP. It could be that other approaches to your work or better support resources can help. It may also be that I'm assigning too much work.
 
 ## Diversity and inclusion
 
-I believe that any college-level course should challenge you and put you outside of your comfort zone. My mission as an instructor is to help you manage that discomfort so that you can grow in knowledge and maturity. Therefore, I strive to create a fully inclusive setting so that we all can ultimately succeed in the classroom.
+I believe that any college-level course should challenge you and put you outside of your comfort zone. Part of my mission as an instructor is to help you manage that discomfort so that you can grow in knowledge and maturity. Therefore, I strive to create a fully inclusive setting so that we all can ultimately succeed in the classroom.
 
 ### Learning needs
 
 I welcome you to talk to me as early as possible about your distinctive learning needs. I particularly encourage students with disabilities to meet with me and discuss how our classroom and course activities could impact their work and what accommodations would be essential. I will also make adjustments for students without documented disabilities.  However, I recommend that you seek official accommodations if it is possible and appropriate to do so. In particular, I recommend talking to our Coordinator for Student Disability Resources for guidance and further instructions:
 
-+ Jae Baldree, Steiner 209, x3089, baldreej@grinnell.edu
+Jae Baldree, Steiner 209, x3089, baldreej@grinnell.edu
 
 ### Religious observance policy
 
@@ -173,9 +173,9 @@ In some cases, I will recommend consulting with the [Academic Advising staff](ht
 
 This course employs a grading system based on [*mastery grading* and *specifications grading*](https://docs.google.com/document/d/13V1fsPve19IU-tFNt4AeQ78VepuqVakp3xizJrj5KwY/edit) to evaluate your work.  These systems, inspired by adult learning theory, are designed to create a "low-threat" learning environment where:
 
-+ Mastery obtained via exploration, experimentation, and failure is encouraged and valued as highly as "getting it right" the first time.
-+ Your final grade accurately reflects your mastery of the learning goals of the course.
-+ The expectations for grades should be easy to understand and easily trackable.
+* Mastery obtained via exploration, experimentation, and failure is encouraged and valued as highly as "getting it right" the first time.
+* Your final grade accurately reflects your mastery of the learning goals of the course.
+* The expectations for grades should be easy to understand and easily trackable.
 
 Ideally, all of you should be able to meet all of the goals in a reasonable amount of time (see the note about time and workload above).  To achieve high grades, some of you may find that you have to redo some of the work in the class.  Many of the components of the course have "no penalty" redos available.  See the notes below and in the [handouts](../handouts) for more details.
 
@@ -185,20 +185,20 @@ We rely on six kinds of work to assess your mastery of the material.
 
 + **Reading problems**: quick assessments of the concepts found in the daily reading in preparation for in-class activities.  _**Reading problems are generally due at {{ site.evening_due_time }} the night before class**_ (e.g., the problems associated with a reading for Wednesday's class are due Tuesday at {{ site.evening_due_time }})
 + **Lab exercises**: practice problems worked on during class, frequently collaboratively, with a partner.  _**Lab exercises are generally due immediately before the next class**_ (e.g., the problems associated with the lab from Wednesday's class are due Friday at {{ site.meeting_start_time }} and the problems associated with the lab from Friday's class are due Monday at {{ site.meeting_start_time }}).
-+ **Mini-Projects**: individually completed, small-scale programming projects that apply the weekly concepts to the themes of the course. To earn an A, one must do an excellent job on most of the mini-projects and the group project.  (You will be able to re-do any project that earns less than excellent.)  _**Mini-Projects are generally due on Tuesdays at {{ site.evening_due_time }}.**_
++ **Mini-Projects**: individually completed, small-scale programming projects that apply the weekly concepts to the themes of the course. To earn an A, one must do an excellent job on most of the mini-projects and the group project.  (You will be able to re-do any project that earns less than excellent.)  _**Mini-Projects are generally assigned on Fridays and due the following Thursday evening at {{ site.evening_due_time }}.**_
 + **Group project**: a final, group-based project, that you will complete toward the end of the semester. The group project brings together the various materials you've learned throughout the semesters. In computing a final grade, we treat the group project as a mini-project.
-+ **Learning assessments**: individually completed problems that directly assess your mastery of the learning goals of the course.  To earn an A, one must pass learning assessments for 22 of the 24 learning objectives.  (You will have the opportunity to retake any of the learning assessments you do not pass.)  _**Sets of Learning Assessments will be distributed at 4:00 p.m. on four Mondays throughout the semester and will be due on Wednesdays at {{ site.evening_due_time }}**_.  There will not be mini-projects in weeks that learning assessments are given.  _**Single learning assessments will also be given as quizzes in class on Fridays.**_
++ **Learning assessments**: individually completed problems that directly assess your mastery of the learning goals of the course.  To earn an A, one must pass learning assessments for 22 of the 24 learning objectives.  (You will have the opportunity to retake any of the learning assessments you do not pass.)  _**Sets of Learning Assessments will be distributed at 4:00 p.m. on four Mondays throughout the semester and will be due on Thursdays at {{ site.evening_due_time }}**_.  There will not be mini-projects in weeks that learning assessments are given.  _**Single learning assessments will also be given as quizzes in class on Fridays.**_
 + **Metacognitive reflections**: Short reflective pieces given before and after most assignments and exams.  _**Pre-task reflections are generally due the evening after a task is assigned.  Post-task reflections are generally due the day after the task is due.**_
 
 *Reading problems* and *lab exercises* are designed for you to practice and explore the concepts of the course in a supportive environment.  Consequently, you may collaborate on these problems with your classmates, consult external resources, or ask the course staff for questions, provide that you cite them in your produced deliverable.  These deliverables are checked primarily for completion and effort rather than total correctness.
 
 *Mini-projects* (MPs) are designed to give you the opportunity to demonstrate your knowledge and mastery on more complex problems.  Work you turn in for mini-projects should be your own.  You may consult others for ideas and help, provided you appropriately acknowledge that help.
 
-Mini-projects are graded on an EMRI scale. E is "Excellent or Exemplar". M is "Meets Expectations", the standard grade for a correct assignment. R is "Redo", the grade you'll receive for an assignment that does shows incomplete understanding. And I is "Incomplete", the grade you'll receive for an assignment that is missing key components. These grades will appear as 3, 2, 1, and 0 on Gradescope.
+Mini-projects are graded on an EMRI scale. E is "Excellent or Exemplar". M is "Meets Expectations", the standard grade for a correct assignment. R is "Redo", the grade you'll receive for an assignment that does shows incomplete understanding. And I is "Incomplete", the grade you'll receive for an assignment that is missing key components. These grades will appear as 4, 3, 2, and 1 on Gradescope.
 
 +*Learning assessments* (LAs) are designed to demonstrate your mastery of the courses naturally measurable learning goals.  You may only discuss these deliverables with the course staff.  (Since not all students will choose to take LAs at times that the course staff are available, the only questions the course staff are likely to answer are whether there's an error in a problem.)  These deliverables are checked for both correctness and appropriate design.  Learning assessments will come in at least two different forms: Weekly in-class quizzes (on Fridays) and regular take-home examinations/SoLAs (distributed on Mondays and due on Wednesdays at {{ site.evening_due_time }}).
 
-LAs are graded using a Satisficatory (S or 1) or Unsatisfactory (U or 0) scale.
+LAs are graded using a Satisficatory (S or 1) or Unsatisfactory/Not-yet-satisfactory (U, N, or 0) scale.
 
 *Metacognitive reflections* are intended to help you build your broader metacognitive skills and will generally ask you to reflect on what you expect from each project (assignment) or SoLA (exam) (e.g., "What will be the hardest part of this project?", "Which topic will you struggle most with on the SoLA?", "How can you best succeed on this SoLA?") and what you discovered from each project or SoLA (e.g., "What aspect of the project took you the most time and why?", "How can you do better on the next SoLA?").
 
@@ -326,7 +326,7 @@ Then click **OK**.  Finally, click **Run**.
 
 ## Help, collaboration, academic honesty, and academic integrity
 
-To help expedite your learning, you can rely on me, our class mentor, and your peers as outlets in this course.
+To help expedite your learning, you can rely on me, our class mentor, and your peers as resources in this course.
 
 ### The Instructor, course staff, and other resources
 
@@ -368,9 +368,15 @@ Furthermore, while you retain [copyright](https://www.plagiarism.org/blog/2017/0
 
 I recognize that there are times where you want to do this, *e.g.*, uploading projects to Github for your resume or to show to friendds and family, and so I encourage you come talk to me in advance, so that we can ensure that you upload a meaningful project that does not run afoul of this policy.
 
-### AI programming assistants
+### ChatGPT, LLMs, generative AI, and similar tools
 
-Please avoid the use of AI-based programming assistants, such as ChatGPT or Microsoft IntelliCode in this course.
+You may not use of AI-based programming assistants, such as ChatGPT or Microsoft IntelliCode in this course.
+
+You also may not use AI-based writing tools, such as Grammarly, in this course.
+
+If you find it appropriate or necessary to use Google Translate for this course,  you may do so. Please cite Google Translate if you use it in preparing work for the course.
+
+If you are considering using another similar tool, please check with your instructor for permission before doing so.
 
 ## Other issues
 
@@ -420,9 +426,9 @@ I plan to leave early for Spring break and won't be in class on Friday, 8 March 
 
 I have an accommodation that gives me extra time on in-class exams. What should I do about the Friday LA quizzes?
 
-> Section 1: I would prefer that you arrive early. Section 2: You can take it immediately after class. Section 3: I would prefer that you arrive early, but you can also take it after class. (Those times are 8:00--8:30, 11:30--12:00, 2:00-2:30, and 4:00-4:30. Folks in any section can use any of those times.)
+> Section 1: I would prefer that you arrive early. Section 2: You can take it immediately after class. Section 3: You can take it immediately after class. (Those times are 8:00--8:30, 11:30--12:00, and 4:00-4:30. Folks in any section can use any of those times.)
 
-I don't have an accommodation taht gives me extra time on in-class exams, but I feel like I need extra time.
+I don't have an accommodation that gives me extra time on in-class exams, but I feel like I need extra time.
 
 > You may use the same times.
 
