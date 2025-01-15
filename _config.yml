@@ -1,12 +1,15 @@
 # Jekyll Site settings
 
 # Course title
-title: CSC 151-XX (Spring 2024)
+title: CSC 151-XX (Spring 2025)
 
 # baseurl is used for redirects on the same server.
 # url is the full path name
-baseurl: /Courses/CSC151/2024Sp
-url: https://USERNAME.cs.grinnell.edu/Courses/CSC151/2024Sp/
+baseurl: /Courses/CSC151/2025Sp
+url: https://USERNAME.cs.grinnell.edu/Courses/CSC151/2025Sp/
+
+# Where  to find the reference page
+reference: https://rebelsky.cs.grinnell.edu/Courses/CSC151/reference/
 
 # Are we online?  If not, we're in person.  (Some of the lab instructions are
 # affected by this choice.)
@@ -47,7 +50,7 @@ mentor_sessions:
 tutors:
   - Sundays, 3&ndash;5 PM; Sundays through Thursdays, 7&ndash;10 PM in Science 3813 and 3815
 
-all_work_deadline:  5:00 PM on Friday, 17 May 2024
+all_work_deadline:  5:00 PM on Friday, 16 May 2025
 # final_exam_time: TBD
 
 copyright: |
