@@ -241,7 +241,7 @@ If your two primary grades are at different levels (e.g., projects at the B leve
 
 Your grade may also be affected by missing reading problems, labs, metacognitive reflections, and tokens.
 
-Note that Grinnell does not permit grades of C-, D+, or D-.  A grade below C and at least D will be recorded as a D.  A grade below a D will be recorded as an F.
+Note that Grinnell does not permit grades of C-, D+, or D-.  A grade below C and at least D will be recorded as a D.  A grade below a D will be recorded as an F. Note that these policies suggest that if either your LA or MP grade is a D or an F, you will receive a D or an F in the class.
 
 ### Reading problems, laboratory assignments, and metacognitive reflections
 
