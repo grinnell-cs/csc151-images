@@ -159,6 +159,12 @@ I also support the class's religious diversity and anyone who needs to balance a
 
 Our class is a community.  We should behave as such.  Among other things, that means treating others with respect, not only in the language that we use (no slurs, please), but also in taking others' ideas, approaches, perspectives, and identities seriously.  We will discuss appropriate guidelines for the class throughout the semester, developing those guidelines as a community.
 
+### Title IX and Pregnancy-related conditions
+  
+Grinnell College is committed to compliance with Title IX and to supporting the academic success of pregnant and parenting students and students with pregnancy-related conditions. If you are a pregnant student, have pregnancy-related conditions, or are a parenting student (child under one-year needs documented medical care) who wishes to request reasonable related supportive measures from the College under Title IX, please email the Title IX Coordinator at titleix@grinnell.edu. The Title IX Coordinator will work with Disability Resources and your professors to provide reasonable supportive measures in support of your education while pregnant or as a parent under Title IX.
+  
+If you are a pregnant student, have pregnancy-related conditions, or are a parenting student (of any age child) and would prefer to work with me directly, rather than through our Title IX office, I will do my best to support you through appropriate measures. Please reach out!
+
 ### Basic needs security
 
 Any student who has difficulty affording groceries or accessing sufficient food to eat every day, or who lacks a safe and stable place to live, should know that these difficulties are likely to affect their performance in the course. Such students are urged to contact the [Dean of Students](https://www.grinnell.edu/profiles/student-affairs/staff) or the [CRSSJ](https://www.grinnell.edu/about/offices-services/crssj) for support. You may also notify me, if you feel comfortable doing so, and I will do my best to help you identify and arrange other resources.
