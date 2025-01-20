@@ -376,7 +376,11 @@ I recognize that there are times where you want to do this, *e.g.*, uploading pr
 
 ### AI programming assistants
 
-Please avoid the use of AI-based programming assistants, such as ChatGPT or Microsoft IntelliCode in this course.
+You may not use AI-based programming assistants, such as ChatGPT, GitHub Copilot, or Microsoft IntelliCode in this course.
+
+### AI writing assistants
+
+While I would prefer that you not use AI-based writing assistants---such as Grammarly, Google translate, or ChatGPT---I understand that some of you rely on them. If you choose to use such tools, you _must_ cite them.
 
 ## Other issues
 
