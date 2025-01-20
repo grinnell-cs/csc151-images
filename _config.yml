@@ -8,6 +8,9 @@ title: CSC 151 (Spring 2025)
 baseurl: /Courses/CSC151/2025Sp
 url: https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/
 
+# Where  to find the reference page
+reference: https://rebelsky.cs.grinnell.edu/Courses/CSC151/reference/
+
 # Are we online?  If not, we're in person.  (Some of the lab instructions are
 # affected by this choice.)
 online: false
