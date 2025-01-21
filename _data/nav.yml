@@ -2,6 +2,8 @@
   path: /syllabus/
 - title: Schedule
   path: /schedule/
+- title: Eboards
+  path: /eboards/
 - title: LAs
   path: /las/
 - title: MPs
