@@ -383,9 +383,9 @@ Furthermore, while you retain [copyright](https://www.plagiarism.org/blog/2017/0
 
 I recognize that there are times where you want to do this, *e.g.*, uploading projects to Github for your resume or to show to friendds and family, and so I encourage you come talk to me in advance, so that we can ensure that you upload a meaningful project that does not run afoul of this policy.
 
-### ChatGPT, LLMs, generative AI, and similar tools
+### AI programming assistants
 
-You may not use AI-based programming assistants, such as ChatGPT, GitHub Copilot, or Microsoft IntelliCode in this course.
+You may not use AI-based programming assistants, such as ChatGPT, GitHub Copilot, or Microsoft IntelliCode in this course. You should also review [my policy on AI programming assistants](../handouts/ai).
 
 ### AI writing assistants
 
