@@ -385,13 +385,11 @@ I recognize that there are times where you want to do this, *e.g.*, uploading pr
 
 ### ChatGPT, LLMs, generative AI, and similar tools
 
-You may not use of AI-based programming assistants, such as ChatGPT or Microsoft IntelliCode in this course.
+You may not use AI-based programming assistants, such as ChatGPT, GitHub Copilot, or Microsoft IntelliCode in this course.
 
-You also may not use AI-based writing tools, such as Grammarly, in this course.
+### AI writing assistants
 
-If you find it appropriate or necessary to use Google Translate for this course,  you may do so. Please cite Google Translate if you use it in preparing work for the course.
-
-If you are considering using another similar tool, please check with your instructor for permission before doing so.
+While I would prefer that you not use AI-based writing assistants---such as Grammarly, Google translate, or ChatGPT---I understand that some of you rely on them. If you choose to use such tools, you _must_ cite them.
 
 ## Other issues
 
@@ -459,7 +457,7 @@ I need a mental health day. What should I do?
 
 If I ask a question about the course, will it end up here?
 
-> Perhaps. It will depend on a variety of issues, such as whether I consider it of general interest and whether I have time to update the syllabus.
+> Perhaps. It will depend on a variety of issues, such as whether I consider it of general interest and whether I have time to update the syllabus. If may also end up on the [FAQ page](../handouts/faq).
 
 I've heard that CSC-151 is intended as a "weed-out" course. Is that really the case?
 

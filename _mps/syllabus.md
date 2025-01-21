@@ -13,8 +13,6 @@ submitting: |
   Please submit your responses on Gradescope.
 link: true
 ---
-# {{ page.title }}
-
 As you might have been able to tell from the first day of class,
 I have a wide variety of opinions about learning and teaching in CS
 which are reflected in how I run the class.  You can (and should)
@@ -31,7 +29,7 @@ First, read the following items.
 * [My notes on taking notes]({% link _handouts/taking-notes.md %});
 * [The Computer Science Department's policy on academic honesty](https://www.cs.
 grinnell.edu/academic-honesty-policy);
-* [My answers to any questions students have already asked about the
+* [Some answers to any questions students have already asked about the
   course]({% link _handouts/faq.md %})
   (That page will change over the next few days as I start receiving and
   answering questions for students.  You need not keep returning to it,
@@ -40,7 +38,7 @@ grinnell.edu/academic-honesty-policy);
 * [Instructions for using Teams]({% link _handouts/teams.md %}).
 * [Some tips for working more productively]({% link _handouts/working-tips.md %})
 
-Next, log in to Gradescope and navigate to this class.
+Next, log in to Gradescope and navigate to this class. You can find a link to Gradescope at the top of each course page.
 
 Finally, look for the the "Course details" assignment, select it, and answer the questions there.
 
