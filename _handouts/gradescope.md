@@ -34,10 +34,10 @@ Gradescope only allows us to report numeric scores for deliverables, so we map n
 
 **EMRI Grades**
 
-+   **E**: 3
-+   **M**: 2
-+   **R**: 1
-+   **I**: 0
++   **E**: 4
++   **M**: 3
++   **R**: 2
++   **I**: 1
 
 You may also see additional fractional numbers from the automated tests.
 Note that the numeric results of the automated tests are not used in computing scores; they appear only to give you feedback.
