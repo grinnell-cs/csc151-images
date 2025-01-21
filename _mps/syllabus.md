@@ -27,10 +27,10 @@ First, read the following items.
 * [My additional notes on grading]({% link _handouts/grading.md %});
 * [Some additional notes on learning assessments]({% link pages/las.md %});
 * [My notes on taking notes]({% link _handouts/taking-notes.md %});
-* [The Computer Science Department's policy on academic honesty](https://www.cs.
-grinnell.edu/academic-honesty-policy);
-* [Some answers to any questions students have already asked about the
-  course]({% link _handouts/faq.md %})
+* [My notes on academic integrity]({% link _handouts/academic-integrity.md %});
+* [The Computer Science Department's policy on academic integrity](https://www.cs.grinnell.edu/policies/academic-integrity.html);
+* [My notes on AI programming assistants]({% link _handouts/ai.md %});
+* [Some answers to any questions students have already asked about the course]({% link _handouts/faq.md %})
   (That page will change over the next few days as I start receiving and
   answering questions for students.  You need not keep returning to it,
   although you may find it useful to do so.); 
