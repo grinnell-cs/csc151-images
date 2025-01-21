@@ -52,6 +52,10 @@ _You may also wish to take a mask._
 * I will record our class sessions (audio, mediocre transcript, and
   pointless video) using Teams and Otter.ai. You will be able to find the
   recordings on Teams.
+* I sent email to all students who were enrolled as of 10:00 a.m. on Tuesday.
+  Please let me know if you did not receive that email.
+    * Please let me know if you have trouble accessing Gradescope.
+    * Please let me know if you have trouble accessing our class Team.
 
 ### Other introductory stuff
 
