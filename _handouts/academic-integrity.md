@@ -232,10 +232,10 @@ were available at the specified location.
 Here is a sample citation for my academic integrity policy, using a slight
 variant of the APA format.
 
-> Rebelsky, Samuel (2024).  Academic Integrity .  Grinnell College
+> Rebelsky, Samuel (2025).  Academic Integrity.  Grinnell College
 Department of Computer Science.  Available at {{ site.url |
-append: '/handouts/academic-integrity' }} (Last modified 23 April
-2024; Visited 23 January 2024).
+append: '/handouts/academic-integrity' }} (Last modified 21 January
+2025; Visited 21 January 2025).
 
 Once again, although I prefer careful citations, I will accept anything
 that shows that you've made an appropriate effort to acknowledge any
@@ -274,7 +274,7 @@ that you have done so.
 
 Modern students rely on the Web for help.  As I note elsewhere in
 this document, that's typically fine.  However, for whatever reasons,
-some students neglect to cite their sources - maybe they forgot
+some students neglect to cite their sources---maybe they forgot
 that they looked something up, maybe they neglected to write down
 the URL, maybe they don't want me to know that they needed help.
 However, in many cases it's obvious to the experienced reader when
@@ -291,7 +291,7 @@ on the work that the student turns in.  It only takes a minute to add
 an acknowledgement, and it means a lot.  **Please include acknowledgements!**
 
 Finally, there are a few instances in which I see nearly identical
-solutions to a problem.  At times, that's reasonable - some problems
+solutions to a problem.  At times, that's reasonable---some problems
 have only a few natural solutions and I tend to assume that two
 similar common solutions were developed independently.  But when a
 problem admits a huge variety of possible solutions and I see similar
@@ -360,7 +360,7 @@ software company cannot legally use pieces of free and open-source
 code that are released under the GNU Public License (GPL) unless
 they arrange a separate license.
 
-Second, as my colleague John David Stone reminds me, computer
+Second, as my former colleague John David Stone would remind me, computer
 scientists, computer programmers, and software designers may all
 encounter significant pressures to behave less than ethically.  When
 deadlines are tight and the rewards are great, there are temptations
@@ -382,14 +382,17 @@ when they copy, and so neglect to do so.  Many students experience
 significant pressures to succeed and those pressures lead to bad
 decisions.  Other issues are also likely involved.
 
-Whatever the reason, we report a lot.  And I *hate* to have to report such
-cases.  First, I care a lot about my students, and don't like to see them
-go through the stress of a hearing.  Second, it takes a lot of my time to
-properly document a case, time I'd much rather spend doing work that will
-improve my courses.  Third, as noted above and in the department policy,
-I want to help students develop good habits and it bothers me when I fail.
+Whatever the reason, we report a lot.  And I *hate* to have to
+report such cases.  First, I care a lot about my students, and don't
+like to see them go through the stress of a hearing.  I also try
+to design my classes so that students are not tempted to violate
+policies. Second, it takes a lot of my time to properly document a
+case, time I'd much rather spend doing work that will improve my
+courses.  Third, as noted above and in the department policy, I
+want to help students develop good habits and it bothers me when I
+fail.
 
-Please don't make life more difficult for yourself or for me - take care
+Please don't make life more difficult for yourself or for me---take care
 in all of your work, include a citation whenever you copy (even if you
 modify after copying), and only rely on others when you are permitted
 to do so.
