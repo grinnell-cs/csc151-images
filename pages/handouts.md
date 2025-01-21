@@ -8,10 +8,8 @@ You'd think the [syllabus](../syllabus) and [schedule](../schedule) would provid
 
 ## Teaching, grading, and such
 
-<!-- Sam
 [On teaching and learning](teaching)
   : A bit of philosophy (more or less).
--->
 
 [Grading](grading)
   : More details on grading processes (and a bit on the underlying philosophy).
@@ -25,35 +23,22 @@ You'd think the [syllabus](../syllabus) and [schedule](../schedule) would provid
 [Tokens](tokens)
   : Information on gaining and spending tokens.
 
-[Progress Tracking Worksheet](https://docs.google.com/spreadsheets/d/1eLPgJ4DQqx9TMtx81qTI0JhXCGl_VsDPQFpfcK5_bBk/edit#gid=1408994778)
-  : Spreadsheet you can fill out to track your progress toward desired course grade and figure out which LAs to attempt in each SoLA.
-
-<!-- Sam
 [Mastery Grading, Revisited](mastery-grading-revisited)
   : Yet another explanation of the mastery grading approach.
--->
 
 ## Other important issues
 
-<!-- Sam
 [Accommodations and adjustments](accommodations)
   : Policies and practices (and why I use two terms)
--->
 
-<!-- Sam
 [Accessibility of Web pages](accessibility)
   : Why I try to keep pages accessible and who to report to when they're not.
--->
 
-<!-- Sam
 [Academic integrity](academic-integrity)
   : A long document that attempts to explain key issues of academic integrity in this course and in the discipline.
--->
 
-<!-- Sam
 [AI programming assistants](ai)
   : Some notes on why I discourage the use of AI programming assistants in my introductory classes.
--->
 
 [Metacognitive reflections (Pre-reflections and Post-reflection](prepost)
   : Advance warning of the questions we will ask before and after each 
@@ -82,18 +67,20 @@ You'd think the [syllabus](../syllabus) and [schedule](../schedule) would provid
 [Tracing `alphabetically-first`](tracing-alphabetically-first)
   : An exploration of some definitions of a recursive procedure.
 
+## Miscellaneous
+
+[Spam from Sam](spamr)
+  : An attempt to log all the email I sent this semester.
+
 ## Other versions of the course
 
 These also aren't strictly handouts, but we didn't have a better place for them.  The list is incomplete.
 
+[CSC-151 2024 Fall (Osera)](https://osera.cs.grinnell.edu/csc151/)
+  : Professor Osera's latest version, using the Scamper programming language and with both music- and image-based options.
+
 [CSC-151 2024 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2024Sp/)
-  : Professor Rebelsky's Spring 2024 version.
-
-[CSC-151 2023 Fall (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2023Fa/)
-  : Professor Rebelsky's Fall 2023 version, which uses a slightly different image library. This was the first image-based version since Spring 2017.
-
-[CSC-151 2023 Fall (Autry)](https://csc151.cs.grinnell.edu)
-  : The other Fall 2023 section of the course, which had a different theme (music) and a different version of Scheme (Scamper).
+  : The Spring 2024 version of this course.
 
 [CSC-151 2022 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC151/2022Sp)
   : An earlier offering of 151, focusing on digital humanities.
