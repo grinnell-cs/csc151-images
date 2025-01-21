@@ -38,7 +38,7 @@ Because you are beginning programmers, your questions will likely be markedly si
 
 Layers is a game (more or less) in which players have identical sets of colored squares with "holes" in them and compete to put them together as fast as possible to match a pattern of stacked cards.
 
-You can find the full rules of the game at <https://cdn.1j1ju.com/medias/46/2d/d7-layers-rulebook.pdf>.
+You can find the full rules of the game at <https://cdn.1j1ju.com/medias/46/2d/d7-layers-rulebook.pdf>. We should also have copies of the game in our classroom.
 
 We also have a Scheme-based version of layers which you can get by using `(require csc151/layers)` in the DrRacket definitions pane. Here are the pieces in their "normal" orientation.
 
@@ -231,6 +231,7 @@ There are four orange circles, three with their center cut out. So let's start b
 ```
 > (define orange-circle (solid-circle 72 "orange"))
 > orange-circle
+![a solid orange circle with diameter 72](../images/mps/layers/solid-orange-circle-72.png)
 ```
 
 Now, we have to add the white center, which we'll use for three of the circles.
@@ -238,6 +239,7 @@ Now, we have to add the white center, which we'll use for three of the circles.
 ```
 > (define hollow-orange-circle (overlay (solid-circle 36 "white") orange-circle))
 > hollow-orange-circle
+![overlaid images, aligned center-center (a solid white circle with diameter 36 over a solid orange circle with diameter 72)](../images/mps/layers/image020.png)
 ```
 
 Hmmm ... That center doesn't look big enough, does it? Let's try again.
@@ -245,6 +247,7 @@ Hmmm ... That center doesn't look big enough, does it? Let's try again.
 ```
 > (define hollow-orange-circle (overlay (solid-circle 44 "white") orange-circle))
 > hollow-orange-circle
+![overlaid images, aligned center-center (a solid white circle with diameter 44 over a solid orange circle with diameter 72)](../images/mps/layers/hollow-orange-circle.png)
 ```
 
 That's better. 
@@ -253,6 +256,7 @@ Now, let's make the first row. We have two circles. Can we put them beside each 
 
 ```
 > (beside hollow-orange-circle orange-circle)
+![a hollow orange circle beside a solid orange circle](../images/mps/layers/beside-hollow-filled-orange-circle.png)
 ```
 
 Whoops. We need them to overlap a little. And if we want them to overlap, we probably need overlay. And we'll have to shift the solid circle right a bit. Maybe 60 spaces.
@@ -260,6 +264,7 @@ Whoops. We need them to overlap a little. And if we want them to overlap, we pro
 ```
 > (define row1 (overlay/origin hollow-orange-circle (hshift orange-circle 60)))
 > row1
+![a hollow orange circle beside a solid orange circle; the edges of the circles overlap a bit](../images/mps/layers/row1.png)
 ```
 
 That looks pretty good. Now let's make the second row.
@@ -267,6 +272,7 @@ That looks pretty good. Now let's make the second row.
 ```
 > (define row2 (overlay/origin hollow-orange-circle (hshift hollow-orange-circle 60)))
 > row2
+![a hollow orange circle beside a holow orange circle; the edges of the circles overlap a bit](../images/mps/layers/row2.png)
 ```
 
 Now, we can put those two above each other. 
@@ -274,6 +280,7 @@ Now, we can put those two above each other.
 ```
 > (define circles (above row1 row2))
 > circles
+![two overlapping orange circles (hollow/filled) above two overlapping orange circles (hollow/hollow)](../images/mps/layers/above-row1-row2.png)
 ```
 
 Whoops! Once again, we'll need to overlay to get the overlap.
@@ -281,6 +288,7 @@ Whoops! Once again, we'll need to overlay to get the overlap.
 ```
 > (define circles (overlay/origin row1 (vshift row2 60)))
 > circles
+![a two-by-two grid of overlapping orange circles; all but the upper-right circle are hollow](../images/mps/layers/circles.png)
 ```
 
 Now, we can put that on a red background.
@@ -288,6 +296,7 @@ Now, we can put that on a red background.
 ```
 > (define my-layers-piece (overlay circles (solid-square 128 "dark red")))
 > my-layers-piece
+![a two-by-two grid of overlapping orange circles on a dark red square; all but the upper-right circle are hollow; the circles extend slightly beyond the red square](../images/mps/layers/my-layers-piece.png)
 ```
 
 Double whoops! I made the circles a bit too big. But you get the idea. Let's do one more step to make sure that the white circles are "cut out".
@@ -295,9 +304,10 @@ Double whoops! I made the circles a bit too big. But you get the idea. Let's do 
 ```
 > (define my-layers-piece (white->transparent (overlay circles (solid-square 128 "dark red"))))
 > (overlay my-layers-piece (solid-square 164 "gray"))
+![a two-by-two grid of overlapping orange circles on a dark red square on a larger grey square; all but the upper-right circle have a grey center with a bit of white at the edges; the circles extend slightly beyond the red square](../images/mps/layers/my-layers-piece-on-grey-square.png)
 ```
 
-That worked pretty well. I may have to go back and play with the numbers a bit.
+That worked pretty well, except for the infelicities with the sizes and the issues with `white->transparent`. We can't fix the second issue right now, but we may have to go back and play with the numbers a bit. We'll leave that as an exercise for the reader.
 
 ## The assignment
 
@@ -324,6 +334,7 @@ You can experiment with your pieces by combining them with the basic pieces.
 ```racket
 > (beside (overlay my-layers-piece-a three-rects-a)
           (overlay (rotate three-rects-a 90) my-layers-piece-b))
+![two orange and purple vertical bars viewed through a green portal on a yellow background beside three hollow rectangles over a green-on-orange circle](../images/mps/layers/mine-on-three-rects.png)
 ```
 
 You can also play the Layers game using your piece with a command like the following.
@@ -332,6 +343,7 @@ You can also play the Layers game using your piece with a command like the follo
 > (layers 3 my-layers-piece-a my-layers-piece-b
             three-rects-a three-rects-b
             diagonal-oval-a diagonal-oval-b)
+![a rotated three-bars orange piece over our new piece over the yellow on blue rectangle](../images/mps/layers/layers-with-my-piece.png)
 ```
             
 Ideally, you'll make your two pieces compatible with the other pieces (whatever that means to you).
