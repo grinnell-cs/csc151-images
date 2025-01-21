@@ -457,7 +457,7 @@ I need a mental health day. What should I do?
 
 If I ask a question about the course, will it end up here?
 
-> Perhaps. It will depend on a variety of issues, such as whether I consider it of general interest and whether I have time to update the syllabus. If may also end up on the [FAQ page](../handouts/faq).
+> Perhaps. It will depend on a variety of issues, such as whether I consider it of general interest and whether I have time to update the syllabus.
 
 I've heard that CSC-151 is intended as a "weed-out" course. Is that really the case?
 
