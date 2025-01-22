@@ -5,7 +5,41 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
-## [CSC-151 2025Sp] Welcome to the course! (Tuesday, 2024-01-21)
+## [CSC-151 2025Sp] Homework for Friday's class (Wednesday, 2025-01-22)
+
+Dear Sandwich Specifiers,
+
+I enjoyed meeting you today. I hope you learned something useful today. I look forward to seeing you again on Friday.
+
+I had promised to send you this week's homework assignments, so here goes.
+
+Read the following:
+
+* <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/readings/mathlan.html>
+* <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/readings/algorithm-building-blocks.html>
+* <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/readings/drracket.html>
+* https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/readings/intro-scheme.html>
+
+Answer the double-dagger questions at the end of the intro scheme reading. (You can answer the questions at the end of the other readings, too, but you need not submit them.) 
+
+Submit your answers at <https://www.gradescope.com/courses/948769/assignments/5641394> by 10:30 p.m. on Thursday evening.
+
+---
+
+The two assignments I distributed earlier are due on Friday night, although I'd prefer that you do them earlier.
+
+Course details: <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/mps/syllabus.html>
+  Submit at: <https://www.gradescope.com/courses/948769/assignments/5638758>
+Intro survey: <https://www.gradescope.com/courses/948769/assignments/5638761>
+
+Feel free to reach out via email or Teams if you have questions.
+
+Regards,
+
+-- SamR
+
+
+## [CSC-151 2025Sp] Welcome to the course! (Tuesday, 2025-01-21)
 
 Dear CSC-151 2025Sp Students,
 
