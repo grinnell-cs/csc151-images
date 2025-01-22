@@ -1,5 +1,5 @@
 ---
-title: "EBoard 01: Getting Started (Section 1)"
+title: "EBoard 01: Getting Started (Section 3)"
 number: 1
 section: eboards
 held: 2025-01-22
@@ -27,15 +27,19 @@ is working correctly).
 ### Introductory Notes
 
 * Hi, I'm Sam (or SamR).
-* Our class mentor is Sarah Deschamps
-    * Sarah will introduce herself
+* Our class mentor is Lilli Lewis
+    * Lilli will introduce herself
+    * Here to help you with the course
+    * Also for broader things (advice on CS, life at College, etc.)
+    * Hosts optional mentor sessions - Mentor sessions are to help you
+      when Sam fails to teach them correctly.
 * The class Web site is at 
   <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/>.
     * I will email you the link.
     * The class Web site is (always) a work in progress. 
 * CSC-151 is *an introductory course in computer science*.
     * You can succeed (and even excel) with no prior experience.
-    * We approach material differently than many other intro courses;
+    * We approach material differently than many other intro CS courses;
       prior experience may help, but it may also hinder.  For example,
       we will not let you re-assign variables.  (Don't worry if you
       don't know what that means.)
@@ -45,17 +49,12 @@ is working correctly).
       throughout the semester.
 * I type our online class notes in a format called "markdown".  You should
   find it relatively readable.  It permits me to make "nice" Web pages.
-    * Isn't this beautiful? (No, not really.)
-    * Sam: Don't forget to show off today's eboard.
+    * Isn't this beautiful?
     * **Don't just rely on my notes**; There is good evidence that taking 
       your own notes helps you learn.
 * I will record our class sessions (audio, mediocre transcript, and
   pointless video) using Teams and Otter.ai. You will be able to find the
   recordings on Teams.
-* I sent email to all students who were enrolled as of 10:00 a.m. on Tuesday.
-  Please let me know if you did not receive that email.
-    * Please let me know if you have trouble accessing Gradescope.
-    * Please let me know if you have trouble accessing our class Team.
 
 ### Other introductory stuff
 
@@ -66,7 +65,7 @@ is working correctly).
     * And pens.
     * And masks.
 * On that note ... a friendly reminder that Grinnellians are returning
-  from around the world and bringing viruses and bacteria back with them.
+  from around the world and brining viruses and bacteria back with them.
 * I prefer to have you book office hours. First priority in any time
   slot goes to those who book. <https:/bit.ly/book-samr>
     * Office hours are not yet available.
@@ -77,12 +76,12 @@ is working correctly).
 ### Apologies
 
 * I am old.  My hearing is not great, even with hearing aids.
-* Our Web site is not as up to date as I'd like.  But it will be.
+* Our Web site is not as up to date as I'd like.  
 * I am traditionally bad at names+faces.  I will be worse with masks.  It
   will take me some time to learn your names.
 * I experienced a significant loss in the fall and am still not back to
   normal. I expect to be less on top of things than I'd like.
-* I am snarky/sarcastic.
+* Sam is snarky. Snark is just love, msispelled.
 * More to come ....
 
 ### Upcoming activities
@@ -126,8 +125,7 @@ Wellness
 
 * Tuesday, 2025-01-28, 12:15--12:50 p.m., GCMoA.
   _Yoga in the Museum_.
-* Tuesday, 2025-01-28, 4:30--6:30 p.m., Dance Studio (?).
-  _Wellness Yoga_.
+* Tuesday, 2025-01-28, 4:30--6:30 p.m., Wellness Yoga.
 * Tuesday, 2025-01-28, 7:30--9:00 p.m., Harris Concert Hall.
   _Queer Stompede_
 
@@ -183,69 +181,56 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Excited About
 
-* UM
-* Theatre
-* Weather getting warmer
-* Ping pong
-* Couplilng things
-* Art
-* Mainstage Theatre
-* Spend time with friends
+* Bowling! [x2]
+* Friends back from abroad. [x2]
+* Being back in Iowa in the midst of the cold.
+* Classes [x2]
+* Putting extra effort into my classes because I'm taking 12 credits.
+* Film class (intro FMS)
 * Snow
-* Being excited about getting up in the morning
-* Baseball
-* Percussion ensemble
-* Completing my first year of college
-* Declaring a major
-* Travelling around the midwest for track events
-* Renfrow
-* Watching school basketball conference game
-* New things in classes.
-* Swimming and diving.
-* Pool. (The table thing, not the place you swim.)
-* Guitar.
-* Exploring Grinnell.
+* New friends in new classes
+* Pride week
+* The weather getting better
+* Violin
+* More STEM classes
+* Trying new foods (there's a great international food festival in Des Moine)
+* Philosophy class
+* Classes in classics 
 
 ### Q&A
 
-* UM: Do we Use Math in this class? Yes.
-* What's Sam's favorite thing about CS? I like to build things, and it's
-  easier to build fun things on the computer than in the physical world.
-  (I also like to build things in the physical world; sculpture was one
-  of my favorite classes.) I also like the problem-solving aspects.
-* How much homework do we have for this class? Lots!
-    * Readings and reading responses for most class days. (30 min--1 hour)
-    * Weekly "mini projects" (opportunities to write small programs outside
-      of class). (4--5.5 hrs) (tell me when you get close to 4 hours, so that I
-      can think about what made it take so long and ensure that the last bit
-      takes under 1.5 hrs)
-    * Daily labs + lab writeups (0 hrs to 1 hour)
-    * Weekly mentor sessions (1 hour) (optional)
-    * Four exams, which are all take-home and replace mini-projects in
-      the weeks they are assigned. (usually much less than four hours)
-* This class seems to have a weird grading system. Where do readings fall?
-    * Readings fall into the category of "If you don't do them, your grade
-      will drop".
-* What are the expectations for citation?
-    * If you use a resource, including a human being, cite that resource.
-    * I don't care what form you use. And it can be casual.
-    * <https://www.cs.grinnell.edu/~rebelsky/Courses/CSC151/syllabus>
-    * Rebelsky, Samuel (2025). CSC-151 Course Syllabus. Grinnell, IA:
-      Grinnell College Virtual Press.
-* What's your favorite part of teaching CSC-151. Making fun of students.
-  Getting to know new people. Exposing them to the wonders of CS.  Convincing 
-  some people that they should take more CS. We can make cool images in this
-  version of 151, and I enjoy doing that.
-* How long has Sam been teaching CS at Grinnell? Since fall of 1997.
-* What languages does the the language we use in the course (Scheme) 
-  resemble?
-    * Lisp
-    * I have heard people say that the conceptual design of Javascript
-      is based on Scheme.
-    * I have heard one of the designers of Java say that his goal in
-      designing newer versions of Java is to get it closer to Scheme.
-      (Again, conceptually.)
-    * Scheme looks nothing like Java or Javascript.
+* What's the hardest part of this class? Keeping up with the constant work.
+  Admitting that you don't understand something and you should give up for
+  the time being. (That's okay.)
+* What percentage of the class work is group projects?
+    * Almost every class is a "pair programming" lab.
+    * 8/9 homeworks are individual, but you can discuss them with anyone
+      (provided you cite)
+    * The last homework is a group assignment.
+* How do tokens work?
+    * In spite of your best efforts, you will find that you cannot turn
+      in a piece of work by the deadline. It costs a token for a two-day
+      extension.
+    * In spite of you being incredibly responsible, you may find that you
+      have an unexecused absence. It costs two tokens for an unexcused absence.
+* Tell me about the grading system.
+    * We use a mastery grading system in 151. The system is designed so that
+      it's fine if you don't get something right the first time; you always
+      get a second chance (and often a third and more ...).
+* How is the workload in this class?
+    * Readings for each class (30 min to 60 min per class)
+    * Daily labs and lab writeups. (Optional finishing outside of class)
+    * Weekly homework assignment (4hr - 5.5hr). Tell me when you hit 4hrs,
+      and we'll talk about what's going on and see what we can do.
+        * When we have exams, there are no homework assignments. Exams
+          are take home and should be less than 4 hrs.
+    * Weekly mentor session (optional) (1 hr)
+    * Quizzes (in class, usually Friday).
+    * [Unfortunately, this does not count makeup work.]
+* Does what you type show up somewhere?
+    * Yes, in the eboards section of our course web site.
+* Why are the parentheses blue? 
+    * Because the editor shows matching parens.
 
 What is computer science?
 -------------------------
@@ -275,25 +260,29 @@ Exercise
 
 _Practice writing algorithms!_
 
-* Form a group with other people with the same card number. E.g., all
-  the 4's should get together.
-* Write instructions so that Sam can make a ??? and ??? sandwich
-  using the box o' sandwich supplies.
+* Form a group with other people with the same card number.
+* Write unambiguous instructions so that Sam can make a wow butter and 
+  banana sandwich using the box o' sandwich supplies.
     * Assume that Sam is clueless. It's likely to be a good assumption.
 * _Apologies for the potential food waste._
-    * You should try to limit the food waste and the mess.
-
-Questions
-
-* What holds the bread bag closed? Write instructions that work for a
-  twist tie or a clip.
+* Additional guidelines
+    * You cannot look at the wow butter jar or the bread loaf
+    * The bread loaf has either a plastic clip or a twist tie
+    * The bread loaf is already sliced (Peppridge farm 100% whole wheat)
+    * You should attempt to minimize waste
+    * You should attempt to minimize mess
+    * Sam understands the names of things and how to grab items
+    * Things are out of the box already
+    * The tablecloth is on the table
+    * The apron is on the Sam
 
 Debrief
 -------
 
-* It's easier to write algorithms when you can observe what's happening
-  along the way and adapt.
-* Things will go wrong; the computer will misinterpret: When it does,
-  look back on today and remember laughing.
-* We think better in groups than alone.
-* _More next class._
+_What might you have learned?_
+
+* It's easier to write algorithms if we observe what is happening as we
+  go, rather than trying to write the whole thing at once.
+* There's more ambiguity in simple instructions than you might expect.
+* We write algorithms better as a team.
+* When things go wrong, laugh.

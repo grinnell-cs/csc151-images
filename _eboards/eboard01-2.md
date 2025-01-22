@@ -1,5 +1,5 @@
 ---
-title: "EBoard 01: Getting Started (Section 1)"
+title: "EBoard 01: Getting Started (Section 2)"
 number: 1
 section: eboards
 held: 2025-01-22
@@ -27,8 +27,9 @@ is working correctly).
 ### Introductory Notes
 
 * Hi, I'm Sam (or SamR).
-* Our class mentor is Sarah Deschamps
-    * Sarah will introduce herself
+* Our class mentor is Ishita Sarraf.
+    * Ishita will introduce themselves.
+    * Ishita has never dealt with Sam before. Ishita may be doomed.
 * The class Web site is at 
   <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/>.
     * I will email you the link.
@@ -45,17 +46,14 @@ is working correctly).
       throughout the semester.
 * I type our online class notes in a format called "markdown".  You should
   find it relatively readable.  It permits me to make "nice" Web pages.
-    * Isn't this beautiful? (No, not really.)
+  (This depends on what you think of as "nice".)
+    * Isn't this beautiful?
     * Sam: Don't forget to show off today's eboard.
     * **Don't just rely on my notes**; There is good evidence that taking 
       your own notes helps you learn.
 * I will record our class sessions (audio, mediocre transcript, and
   pointless video) using Teams and Otter.ai. You will be able to find the
   recordings on Teams.
-* I sent email to all students who were enrolled as of 10:00 a.m. on Tuesday.
-  Please let me know if you did not receive that email.
-    * Please let me know if you have trouble accessing Gradescope.
-    * Please let me know if you have trouble accessing our class Team.
 
 ### Other introductory stuff
 
@@ -77,12 +75,15 @@ is working correctly).
 ### Apologies
 
 * I am old.  My hearing is not great, even with hearing aids.
-* Our Web site is not as up to date as I'd like.  But it will be.
+* Our Web site is not as up to date as I'd like.
 * I am traditionally bad at names+faces.  I will be worse with masks.  It
   will take me some time to learn your names.
 * I experienced a significant loss in the fall and am still not back to
   normal. I expect to be less on top of things than I'd like.
-* I am snarky/sarcastic.
+* UH: U need Help to deal with Sam. 
+    * Sam has no life and will respond to emails and Teams Messages at odd
+      hours.
+    * Sam is snarky. Snark is love spelled strangely.
 * More to come ....
 
 ### Upcoming activities
@@ -126,8 +127,7 @@ Wellness
 
 * Tuesday, 2025-01-28, 12:15--12:50 p.m., GCMoA.
   _Yoga in the Museum_.
-* Tuesday, 2025-01-28, 4:30--6:30 p.m., Dance Studio (?).
-  _Wellness Yoga_.
+* Tuesday, 2025-01-28, 4:30--6:30 p.m., Wellness Yoga.
 * Tuesday, 2025-01-28, 7:30--9:00 p.m., Harris Concert Hall.
   _Queer Stompede_
 
@@ -183,69 +183,61 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Excited About
 
-* UM
-* Theatre
-* Weather getting warmer
-* Ping pong
-* Couplilng things
-* Art
-* Mainstage Theatre
-* Spend time with friends
-* Snow
-* Being excited about getting up in the morning
+* Teaching and mentoring this class.
+* Taking a CS class. (Or sucking up to my CS faculty.) [x5]
+* Taking an econ class. [x2]
+* Tennis Season. [x4]
+* February. Raspberries!
+* Spring coming in three months or so. [x2]
+* All of my courses. [x5]
+* Pella Tulip festival. (About 30 minutes from here. Parades. Quilt
+  shows. Really awesome baked goods. And tulips, because the people in
+  Pella are way too enamored of their Dutch ancestry (and haven't
+  studied economics?).)
+* The weather.
+* Less reading.
+* Longer days / more sunlight
+* New People
+* Swim season
 * Baseball
-* Percussion ensemble
-* Completing my first year of college
-* Declaring a major
-* Travelling around the midwest for track events
-* Renfrow
-* Watching school basketball conference game
-* New things in classes.
-* Swimming and diving.
-* Pool. (The table thing, not the place you swim.)
-* Guitar.
-* Exploring Grinnell.
+* 3D PS1 animations
 
 ### Q&A
 
-* UM: Do we Use Math in this class? Yes.
-* What's Sam's favorite thing about CS? I like to build things, and it's
-  easier to build fun things on the computer than in the physical world.
-  (I also like to build things in the physical world; sculpture was one
-  of my favorite classes.) I also like the problem-solving aspects.
-* How much homework do we have for this class? Lots!
-    * Readings and reading responses for most class days. (30 min--1 hour)
-    * Weekly "mini projects" (opportunities to write small programs outside
-      of class). (4--5.5 hrs) (tell me when you get close to 4 hours, so that I
-      can think about what made it take so long and ensure that the last bit
-      takes under 1.5 hrs)
-    * Daily labs + lab writeups (0 hrs to 1 hour)
-    * Weekly mentor sessions (1 hour) (optional)
-    * Four exams, which are all take-home and replace mini-projects in
-      the weeks they are assigned. (usually much less than four hours)
-* This class seems to have a weird grading system. Where do readings fall?
-    * Readings fall into the category of "If you don't do them, your grade
-      will drop".
-* What are the expectations for citation?
-    * If you use a resource, including a human being, cite that resource.
-    * I don't care what form you use. And it can be casual.
-    * <https://www.cs.grinnell.edu/~rebelsky/Courses/CSC151/syllabus>
-    * Rebelsky, Samuel (2025). CSC-151 Course Syllabus. Grinnell, IA:
-      Grinnell College Virtual Press.
-* What's your favorite part of teaching CSC-151. Making fun of students.
-  Getting to know new people. Exposing them to the wonders of CS.  Convincing 
-  some people that they should take more CS. We can make cool images in this
-  version of 151, and I enjoy doing that.
-* How long has Sam been teaching CS at Grinnell? Since fall of 1997.
-* What languages does the the language we use in the course (Scheme) 
-  resemble?
-    * Lisp
-    * I have heard people say that the conceptual design of Javascript
-      is based on Scheme.
-    * I have heard one of the designers of Java say that his goal in
-      designing newer versions of Java is to get it closer to Scheme.
-      (Again, conceptually.)
-    * Scheme looks nothing like Java or Javascript.
+* How does DrRacket differ from Scamper? They are both implementations of
+  the Scheme programming language. DrRacket (which we'll use in this class)
+  is a desktop-based implementation with twenty years of background and
+  many developers and a robust interactive development environment. Scamper
+  (which was used last semester) is a Web-based implementation with two years
+  of background and one develper at Grinnell and an iffy interactive 
+  developement environment. But it does some cool things that DrRacket doesn't.
+* Why do we use Scheme/DrRacket in this class? We started using Scheme about
+  twenty-eight years ago (before I came to Grinnell) and we revisit that
+  decision regularly. We like Scheme because (a) it has a simple syntax,
+  which makes it easier to learn; (b) almost no one has seen it, which means
+  that we have a more level playing field for students; (c) it has a very
+  different model than many people are used to, but it's a model we think
+  is important (when we first started using Scheme, no one though the
+  functional model was all that useful; now most modern languages have a
+  functional component, many emphasizing it); (d) it's one of the few 
+  languages in which you can write code that someone might call "beautiful".
+  We use DrRacket as our Scheme implementation because it's a robust
+  implementatIon.
+* What does a citation look like for coding? Like any other citation, but
+  I'm okay with casual forms. Just a URL is fine. A full MLA cite is fine,
+  but I wouldn't recommend it. A bit narrative never hurts "copied most of
+  this from URL, then changed the variable names" A full MLA cite is fine,
+  but I wouldn't recommend it. A bit narrative never hurts "copied most of
+  this from URL, then changed the variable names".
+* Do I have to cite looking up syntax? No.
+* What's Sam's favorite thing about teaching 151? Exposing students to the
+  wonders of CS! Playing with image making. Scheme!
+* Can we get help from friends who took the course in previous semesters?
+  Sure, as long as you cite them.
+* Will it make a difference that they learned in Scamper rather than DrRacket?
+  It shouldn't. There are a few other difference of opinion on how we teach
+  Scheme between faculty, so they may suggest you use techniques that I
+  dislike. We'll get by.
 
 What is computer science?
 -------------------------
@@ -275,25 +267,31 @@ Exercise
 
 _Practice writing algorithms!_
 
-* Form a group with other people with the same card number. E.g., all
-  the 4's should get together.
-* Write instructions so that Sam can make a ??? and ??? sandwich
-  using the box o' sandwich supplies.
+* Form a group with other people with the same card number. (E.g.,
+  all the fours go together.)
+* **Write instructions** so that Sam can make a sunflower butter and 
+  banana sandwich using the box o' sandwich supplies.
     * Assume that Sam is clueless. It's likely to be a good assumption.
 * _Apologies for the potential food waste._
-    * You should try to limit the food waste and the mess.
-
-Questions
-
-* What holds the bread bag closed? Write instructions that work for a
-  twist tie or a clip.
+* Some restrictions and opportunities.
+    * You should try to limit food waste.
+    * You should try to limit mess.
+    * You may not look at the bread or the sunflower jar.
+    * You can assume the bread has either a plastic clip or a twist-tie.
+      (You don't know which.)
+    * You can assume I understand things like "grab" and "left hand".
+    * I'm already wearing the apron and the "table" is already covered
+      by the table cloth.
+    * Everything is out of the box.
 
 Debrief
 -------
 
-* It's easier to write algorithms when you can observe what's happening
-  along the way and adapt.
-* Things will go wrong; the computer will misinterpret: When it does,
-  look back on today and remember laughing.
-* We think better in groups than alone.
-* _More next class._
+* Damn! My instructor is clueless. Or my instructor will do anything for a
+  laugh.
+* We need to know what the capabilities of the "computer" are.
+* It's easier to write instructions if we can watch what happens step by
+  step.
+* Things will go wrong; assumptions don't always match. When that happens,
+  laugh.
+* We do better in groups than alone.
