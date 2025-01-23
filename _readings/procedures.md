@@ -31,20 +31,22 @@ For example, we might want to define a procedure, `square`, that takes as input 
 
 As you may have noted, `square` can have multiple meanings.  If
 we're making drawings, it could also mean "make a square".  Let's
-consider an example.
+consider an example. (Although our procedures are called `solid-square`
+and `outlined-square`, there's also an older version that takes the
+type of square as the second parameter.)
 
 ```drracket
-> (square 10 "red")
+> (square 10 "solid" "red")
 ![A red square of side-length 10.]({{ "/images/procedures-01.png" | relative_url }})
-> (square 5 "blue")
+> (square 5 "solid" "blue")
 ![A blue square of side length 10.]({{ "/images/procedures-02.png" | relative_url }})
-> (above (square 12 "red")
-         (beside (square 8 "blue")
-                 (square 8 "purple")))
+> (above (square 12 "solid" "red")
+         (beside (square 8 "solid" "blue")
+                 (square 8 "solid" "purple")))
 ![A large red square placed on top of smaller blue and purple squares.]({{ "/images/procedures-03.png" | relative_url }})
 ```
 
-The `csc151` library already defines a `square` procedure, so it's unlikely to be a good idea for us to define our own `square` procedure, whether for numbers or images.
+As we noted, the `csc151` library already defines a `square` procedure, so it's unlikely to be a good idea for us to define our own `square` procedure, whether for numbers or images.
 More generally, when we choose names in Scheme, we should try not to conflict with existing names.
 Sometimes Scheme will stop us from reusing a name; other times it will blithely move along, letting us break things through such reuse.
 
