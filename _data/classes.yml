@@ -18,19 +18,6 @@
     - page: /labs/mathlan.html
     - page: /labs/racket-intro-mathlan.html
 
-- topic: Algorithmic decomposition
-  abbrev: decomposition
-  summary: |
-    We consider a key technique in algorithmic thinking, how one “decomposes” a
-    more complex problem or algorithm into simpler ones.
-  reading:
-    - page: /readings/images.html
-    - page: /readings/decomposition.html
-  lab:
-    - page: /labs/decomposition.html
-  todo:
-    - Check the images reading to make sure it works with the new model.
-
 - topic: Reading and writing procedures
   abbrev: procedures
   summary: |
@@ -39,9 +26,24 @@
     And we develop some mental models for what happens when we run
     Scheme/Racket programs.
   reading:
+    - page: /readings/images.html
+    - page: /readings/decomposition.html
     - page: /readings/procedures.html
   lab:
     - page: /labs/procedures.html
+
+- topic: RGB colors
+  abbrev: rgb-colors
+  summary: |
+    We explore one of the basic color models used by computers.
+  reading:
+    - page: /readings/design-and-color.html
+    - page: /readings/rgb-colors.html
+  lab:
+    - page: /labs/rgb-colors.html
+  todo:
+    - Make sure this works with the new model.
+    - Combine the labs
 
 - topic: Faculty retreat
   abbrev: retreat
@@ -88,19 +90,6 @@
   lab:
     - page: /labs/strings.html
 
-- topic: RGB colors
-  abbrev: rgb-colors
-  summary: |
-    We explore one of the basic color models used by computers.
-  reading:
-    - page: /readings/design-and-color.html
-    - page: /readings/rgb-colors.html
-  lab:
-    - page: /labs/rgb-colors.html
-  todo:
-    - Make sure this works with the new model.
-    - Combine the labs
-
 - topic: Transforming images
   abbrev: transforming-images
   summary: |
@@ -113,20 +102,6 @@
     - page: /labs/transforming-images.html
   todo:
     - Incorporate anonymous procedures. (At least that's the plan.)
-
-- topic: Pair programming
-  abbrev: pair-programming
-  summary: |
-    We explore the whys and hows of working with others.  
-  reading:
-    - title: How Pair Programming Really Works (Wray)
-      resource: /files/PairProgramming.pdf
-    - title: Coping with Hitchhikers and Couch Potatoes on Teams (from B. Oakley et. al (2004).  Turning Student Groups into Effective Teams.  <em>Journal of Student-Centered Learning</em> 2 (1).)
-      resource: /files/OakleyHitchhikers2004.pdf
-    - title: Diverse Teams Feel Less Comfortable -- and That's Why They Perform Better
-      resource: /files/DiverseTeams2016.pdf
-  lab:
-    - (TBA)
 
 - topic: Booleans, predicates, and conditionals
   abbrev: booleans
@@ -144,6 +119,20 @@
   abbrev: pause-01
   summary: |
     We pause to catch up on a variety of topics.
+
+- topic: Pair programming
+  abbrev: pair-programming
+  summary: |
+    We explore the whys and hows of working with others.  
+  reading:
+    - title: How Pair Programming Really Works (Wray)
+      resource: /files/PairProgramming.pdf
+    - title: Coping with Hitchhikers and Couch Potatoes on Teams (from B. Oakley et. al (2004).  Turning Student Groups into Effective Teams.  <em>Journal of Student-Centered Learning</em> 2 (1).)
+      resource: /files/OakleyHitchhikers2004.pdf
+    - title: Diverse Teams Feel Less Comfortable -- and That's Why They Perform Better
+      resource: /files/DiverseTeams2016.pdf
+  lab:
+    - (TBA)
 
 - topic: Lists
   abbrev: lists
@@ -186,6 +175,15 @@
     - page: /labs/list-composition.html
   todo:
     - It's a new lab! Students shouldn't be learning cons, car, and cdr at the same time they are learning recursion.
+
+- topic: Local bindings
+  abbrev: let
+  summary: |
+    We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
+  reading:
+    - page: /readings/local-bindings.html
+  lab:
+    - page: /labs/local-bindings.html
 
 - topic: Ethical considerations in computing
   abbrev: ethical
@@ -235,15 +233,6 @@
     - page: /readings/recursion-magic.html
   lab:
     - page: /labs/recursion-practice.html
-
-- topic: Local bindings
-  abbrev: let
-  summary: |
-    We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
-  reading:
-    - page: /readings/local-bindings.html
-  lab:
-    - page: /labs/local-bindings.html
 
 - topic: Recursion over numbers
   abbrev: number-recursion
@@ -325,6 +314,20 @@
     - page: /readings/data-abstraction.html
   lab:
     - page: /labs/data-abstraction.html
+
+- topic: Structured data
+  abbrev: structs
+  summary: |
+    We consider Racket's techniques for creating structured data types.
+  subjects:
+    - Structured data
+    - Using structs
+    - Mutable and immutable structs
+  reading:
+    - page: /readings/preconditions.html
+    - page: /readings/structs.html
+  lab:
+    - page: /labs/structs.html
 
 - topic: Higher-order recursive design
   abbrev: higher-order-recursive-design
@@ -441,4 +444,17 @@
   abbrev: sorting
   summary: |
     We dive into an important problem: Arranging the values in a list or vector.
+
+- topic: Algorithmic decomposition
+  abbrev: decomposition
+  summary: |
+    We consider a key technique in algorithmic thinking, how one “decomposes” a
+    more complex problem or algorithm into simpler ones.
+  reading:
+    - page: /readings/images.html
+    - page: /readings/decomposition.html
+  lab:
+    - page: /labs/decomposition.html
+  todo:
+    - Check the images reading to make sure it works with the new model.
 
