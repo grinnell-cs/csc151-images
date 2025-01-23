@@ -18,7 +18,7 @@ Read the following:
 * <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/readings/mathlan.html>
 * <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/readings/algorithm-building-blocks.html>
 * <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/readings/drracket.html>
-* https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/readings/intro-scheme.html>
+* <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/readings/intro-scheme.html>
 
 Answer the double-dagger questions at the end of the intro scheme reading. (You can answer the questions at the end of the other readings, too, but you need not submit them.) 
 
