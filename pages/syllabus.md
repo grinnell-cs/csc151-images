@@ -417,6 +417,20 @@ This may be your first semester in a class that uses a form of mastery grading. 
 
 There are multiple sections of this course. While I'm teaching all three of them and will do my best to do the same thing in each section, the questions students have will likely affect the details, so there will be some differences.  These differences should not affect your overall learning in the course.
 
+### Names
+
+I get names wrong.  I get names wrong all the time.  Evidence suggests that I am not just bad at remembering names, I also have some brain differencees that regularly lead me to mix up peoples' names.  I think, for example, of two of my favorite research students, one with blonde hair, from Minnesota, who also served as a teaching assistant for my software design course; the other with dark hair, from Massachusetts, who brought a wealth of background in education to my research projects.  I can tell you a lot about each student (although I wouldn't without their permission), including hobbies, where they studied abroad, what they are doing now (or at least what they were doing a year so so ago), and more.  But I inevitably reversed their names, calling Minnesota Massachusetts and Massachusetts Minnesota.
+
+When I discussed this issue with my family, my sons laughed and said "Dad, you get *our* names backwards, too; we just ignore you when you do so." And I've heard from other students I value highly that I do this and don't always notice.  (The other day, I almost referred to an alum by a different name.)
+
+If  I use the wrong name for you, it is not a sign that I do not respect you, that I do not care about you, or that I identify you based on superficial characteristics.  It's a deficiency in my processing, and one that I seem unable to fix.  Please accept and understand that disability, just as I will do my best to accept and understand your own differences.
+
+### Teaching is performative
+
+I believe that all teaching is a form of performance.  That performance may not always be explicit.  Nonetheless, I perform a particular role, perhaps even roles.  In my roles, I may say some things that seem strange.  Remember; it's a performance.
+
+Note also that I am snarky by nature. I find that my teaching performances are more successful when they follow this nature. Remember, **snark is love**.
+
 ### Feeling overwhelmed
 
 You may feel a bit overwhelmed by this point. I know that I do after re-reading it. **Don't worry**. CSC-151 has a great support system, a carefully designed pedagogical methodology, and an incredibly awesome topic. (Yes, I know I am biased.) Most students who take the course excel.  We'll enjoy this together.
