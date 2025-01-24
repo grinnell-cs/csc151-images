@@ -183,7 +183,7 @@ Do not try them on your own.
 
 ### Check 3: Precedence (‡)
 
-Consider the expression $3 - 4 × 5 - 6$.
+Consider the expression $$3 - 4 × 5 - 6$$.
 
 If we did not have rules for order of evaluation, one possible way to
 evaluate the expression would be to subtract six from five (giving us
