@@ -21,17 +21,11 @@ If you successfully completed [the MathLAN laboratory](../labs/mathlan.html), yo
 
 DrRacket comes with a comprehensive standard *library* of functions that we will use throughout the course.  However, we have created additional functionality for you to support your exploration of Racket in the form of the `csc151` package.  To install this package in your `DrRacket` installation:
 
-* Go to `File` → `Package Manager...` in the menu.
+* Go to `File` → `Install Package ...` in the menu.
 * Enter the following URL into the "Package Source" textbox: <https://github.com/grinnell-cs/csc151.git#main>
-* Click `Install` to install the package.
+* Click `Install` to install the package. (If you see `Update` rather than `Install`, click `Update`.)
 
-Occasionally, we will ask you to update this package as we add functionality to support new activities in the course.  To do this:
-
-* Go to `File` → `Package Manager...` in the menu.
-* Click the "Currently Installed" tab.
-* Scan the (long) list of installed packages for the `csc151` package.
-  Sorting by name by clicking the `Name` header in the table may be useful here.
-*  Click the line containing the `csc151` package and then click the `Update` button.
+Occasionally, we will ask you to update this package as we add functionality to support new activities in the course.  To do this, repeat the instructions above.
 
 If you haven't done so already today, please do so now to make sure you have the latest version of the library.  We'll be continuing to update it throughout the semester!
 
