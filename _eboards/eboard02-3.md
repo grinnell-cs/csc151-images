@@ -1,5 +1,5 @@
 ---
-title: "EBoard 02: Getting started with our lab equipment (Section 1)"
+title: "EBoard 02: Getting started with our lab equipment (Section 3)"
 number: 2
 section: eboards
 held: 2025-01-24
