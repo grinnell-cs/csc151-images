@@ -121,6 +121,12 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
+* If you choose to ingest substances that may alter your body chemistry,
+  please do so in moderation.
+* What is appropriate for you may be different than what is appropriate
+  for others. Consider in advance what your limits should be.
+* Consent is essential.
+
 ## Q&A
 
 _I have answered questions for all the reading responses that came in by
@@ -136,6 +142,10 @@ _I have answered questions for all the reading responses that came in by
 **Does Racket have any real-world or industry applications, or is it mainly just designed as a teaching tool?**
 
 > A variant of Racket was used to both the first version of Yahoo Stores. There are a few niche software development studios that use Racket. But DrRacket is mostly for teaching. [Walmart uses Clojure (a more robust Scheme-like language) for sales and inventory management](https://cognitect.com/blog/2015/6/30/walmart-runs-clojure-at-scale).
+
+**Is DrRacket related to DrJava?**
+
+> Yes.
 
 ### MathLAN
 
@@ -153,7 +163,8 @@ _I have answered questions for all the reading responses that came in by
 
 **What is a trivial expression?**
 
-> One that does not involve any operations, such as a number or a string.
+> One that does not involve any operations. Trival expressions include
+  numbers and strings.
 
 **What are values?** 
 
@@ -172,11 +183,15 @@ _I have answered questions for all the reading responses that came in by
 
 **Could you clarify what a delimiter is in the `string-split` procedure?**
 
+> `"Foo,Bar,Baz|Qux,Quux"`
+
 > The delimiter is the character (or sequence of characters) we use to
   identify where to split strings. We might split on commas or spaces
   or ....
 
 **What are last set of number inputs when using procedures like `outlined-circle`?**
+
+> `(outlined-circle 100 "blue" 10)`
 
 > For an outlined circle, the last set of numbers give the thickness of the 
   outline.
@@ -191,17 +206,48 @@ _I have answered questions for all the reading responses that came in by
   expect numbers, strings (words surrounded by quotation marks), images,
   ...? 
 
+**How much time has ellapsed?**
+
+> 25 minutes. I planned fifteen. Whoops.
+
 ## Debriefing
 
 ### The pre-instruction activity
 
-_How could we have made the partnering process more efficient?_ 
+_How could we have made the putting people in groups process more efficient?_ 
 (Think, Pair, Share)
+
+> Pre-identify locations in the classroom. "All the 4's go to the appropriate
+  location."
+
+> A leader could ask people with each value to raise their hands.
+
+> Show cards in a different way.
 
 ### The sandwich activity
 
 _What might you have learned from the sandwich activity?_ (TPS)
 
-## Labs!
+> Be detailed. Be specific.
+
+> Don't expect computers (or others) to have the same world view that we
+  do or to know what we know.
+
+> People have different ideas, it can be hard to combine them.
+
+> People have different ideas, listen to others' ideas.
+
+> Learn what the recipient of your instructions already knows.
+
+## Lab one
+
+* Make sure that both partners attempt the first lab.
+* The 2024Sp should be 2025Sp. Sorry!
+
+## Lab two
+
+* Jump ahead to 7 a, b, and c
+* And then 9
+* Turn it in now, even if you didn't get very far.
 
 ## Layers!

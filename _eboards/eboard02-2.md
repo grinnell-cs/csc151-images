@@ -56,9 +56,9 @@ Administrative stuff
   update the version you have. The lab will tell you how.
     * Also: Let me know when you encounter bugs or unexpected behavior.
 * You should only submit the reading checks with double-daggers (‡).
-* Consider setting up password reset on <https://passwordreset.grinnell.edu>.
 * Readings are taking people longer than I'd expected. If they continue
   to take many people more than an hour, I'll find ways to cut back.
+* Consider setting up password reset on <https://passwordreset.grinnell.edu>.
 
 ### Upcoming activities
 
@@ -121,6 +121,12 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
+* If you choose to take advantage of body/brain-altering substances, please
+  do so in moderation.
+* Remember that everyone has different limits. (Both physical and conceptual.)
+  Choose what is appropriate for you and try to stick to it.
+* Consent is absolutely essential (but not sufficient).
+
 ## Q&A
 
 _I have answered questions for all the reading responses that came in by
@@ -153,7 +159,8 @@ _I have answered questions for all the reading responses that came in by
 
 **What is a trivial expression?**
 
-> One that does not involve any operations, such as a number or a string.
+> One that does not involve any operations. Sample trivial expressions
+  include numbers and strings.
 
 **What are values?** 
 
@@ -171,6 +178,8 @@ _I have answered questions for all the reading responses that came in by
 > DrRacket tries to provide novice-friendly feedback about errors.
 
 **Could you clarify what a delimiter is in the `string-split` procedure?**
+
+> `(string-split "a,b,c|d,e,f" ",")`
 
 > The delimiter is the character (or sequence of characters) we use to
   identify where to split strings. We might split on commas or spaces
@@ -195,13 +204,35 @@ _I have answered questions for all the reading responses that came in by
 
 ### The pre-instruction activity
 
-_How could we have made the partnering process more efficient?_ 
+_How could we have made the group-forming process more efficient?_ 
 (Think, Pair, Share)
+
+* Assign people to the people next to them.
+* Assign different numbers to locations in the room.
+* The chaos was relatively efficient. Shouting out your number and holding
+  up the card worked well.
 
 ### The sandwich activity
 
 _What might you have learned from the sandwich activity?_ (TPS)
 
-## Labs!
+* Be very specific with your instructions.
+* The computer may not understand things in the same way that you do.
+  Computers (or Sams) think differently than we do.
+* Know what the state of your system is. Don't bother writing instructions
+  that the computer already knows.
+
+## Lab one
+
+* Make sure that both partners attempt the first lab.
+* The 2024Sp should be 2025Sp. Sorry!
+
+## Lab two
+
+* Get this from the class Web site.
+* Jump ahead to 7 a,b,c
+* Then 9
+* Then submit
+* Then go back and do what you've missed.
 
 ## Layers!

@@ -55,10 +55,10 @@ Administrative stuff
   updated regularly. Each time you sit down to work, you should try to 
   update the version you have. The lab will tell you how.
     * Also: Let me know when you encounter bugs or unexpected behavior.
-* You should only submit the reading checks with double-daggers (‡).
-* Consider setting up password reset on <https://passwordreset.grinnell.edu>.
 * Readings are taking people longer than I'd expected. If they continue
   to take many people more than an hour, I'll find ways to cut back.
+* You should only submit the reading checks with double-daggers (‡).
+* Consider setting up password reset on <https://passwordreset.grinnell.edu>.
 
 ### Upcoming activities
 
@@ -101,15 +101,17 @@ Misc
 
 _These do not earn tokens, but are worth your consideration._
 
+* Friday, 2025-01-24, 10:00 p.m.ish. 
+  _Nerf at Noyce_.
 * Saturday, 2025-02-01, 10:00 a.m.--1:00 p.m., Field House.
   _Grinnell Track and Field Invitational_.
 
 ### Upcoming work
 
-* Due Friday, 2024-01-24
+* Due Friday, 2025-01-24
     * [Read the Web site and answer questions](../mps/syllabus).
     * [Tell me about yourself](../mps/intro-survey).
-* Due Sunday, 2024-01-26
+* Due Sunday, 2025-01-26
     * [Lab writeup from today's class](https://www.gradescope.com/courses/948769/assignments/5656902/)
     * Read things in preparation for the third day of class.
         * [Simple images in Racket](../images)
@@ -120,6 +122,11 @@ _These do not earn tokens, but are worth your consideration._
     * [Pre-reflections on MP1](https://www.gradescope.com/courses/948769/assignments/5657155)
 
 ### Friday PSA
+
+* Please be moderate in mind and body altering acivities.
+* Decide what's right for you in advance and try to stick to those goals.
+* Know your limits.
+* Consent is absolutely essential.
 
 ## Q&A
 
@@ -153,7 +160,8 @@ _I have answered questions for all the reading responses that came in by
 
 **What is a trivial expression?**
 
-> One that does not involve any operations, such as a number or a string.
+> One that does not involve any operations. For example, a number or a string
+  is a trivial expression.
 
 **What are values?** 
 
@@ -166,7 +174,8 @@ _I have answered questions for all the reading responses that came in by
 
 **In the readings, it mentioned that DrRacket and also Scamper had modifications and features designed for beginners. what are these features specifically?**
 
-> Scamper provides a feature that lets you "trace" how a Scheme expression is evaluated.
+> Scamper provides a feature that lets you "trace" how a Scheme expression 
+  is evaluated.
 
 > DrRacket tries to provide novice-friendly feedback about errors.
 
@@ -175,6 +184,13 @@ _I have answered questions for all the reading responses that came in by
 > The delimiter is the character (or sequence of characters) we use to
   identify where to split strings. We might split on commas or spaces
   or ....
+
+```
+> (string-split "a,b,c|d,e,f" ",")
+'("a" "b" "c|d" "e" "f")
+> (string-split "a,b,c|d,e,f" "|")
+'("a,b,c" "d,e,f")
+```
 
 **What are last set of number inputs when using procedures like `outlined-circle`?**
 
@@ -195,13 +211,35 @@ _I have answered questions for all the reading responses that came in by
 
 ### The pre-instruction activity
 
-_How could we have made the partnering process more efficient?_ 
+_How could we have made the group formation process more efficient?_ 
 (Think, Pair, Share)
+
+* Assign locations for each card numbers
+* Someone could call out each number in turn and people with that number
+  could raise their hand. (More freedom on where to go.)
 
 ### The sandwich activity
 
 _What might you have learned from the sandwich activity?_ (TPS)
 
-## Labs!
+* You have to be specific in giving instructions. 
+* What you think something means doesn't necessarily mean that the person
+  following the instructions interprets it the same way.
+* Understand what the computer (or Sam) knows and doesn't know.
+* UM - Use Magic.
+* It's important to find the right level and type of language for your audience.
+
+## Lab one
+
+* Make sure that both partners attempt the first lab.
+* The 2024Sp should be 2025Sp. Sorry!
+* After you both finish the lab, move on to the Scheme lab.
+
+## Lab two
+
+* Get this from the class Web site.
+* 3:35 - Move on to 7 a, b, and c. Then 9.
+* 3:40 - Turn it in.
+* 3:45 - Move on to the game
 
 ## Layers!
