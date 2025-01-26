@@ -5,6 +5,22 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
+## [CSC-151 2025Sp] CS Tutor Hours + MP 1 Q&A (Sunday, 2025-01-26)
+
+Dear Students of Many Layers,
+
+I hope that you have been enjoying the sunny weekend.
+
+I mentioned this on the first day, but I thought I should re-emphasize it: We have "evening tutors" available in our classroom on Sundays from 3--5 p.m. and Sunday through Thursday evenings from 7--10 p.m. Evening tutors can answer questions and help with homework (mini-projects).
+
+I've read through the first few pre-assessments for MP1 and added answers to your questions to the assignment. Feel free to keep asking questions (via email, on Teams, whatever).
+
+Check the eboard or the schedule for other details of what work is due tonight.
+
+Regards,
+
+-- SamR
+
 ## [CSC-151 2025Sp] Homework for Friday's class (Wednesday, 2025-01-22)
 
 Dear Sandwich Specifiers,
