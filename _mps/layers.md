@@ -430,6 +430,7 @@ The beginning of `new-layers.rkt` should have an appropriate description of the 
 ```racket
 # lang racket
 (require csc151)
+(require csc151/layers)
 
 ;; new-layers.rkt
 ;;
