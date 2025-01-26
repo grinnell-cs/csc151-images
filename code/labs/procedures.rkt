@@ -9,16 +9,16 @@
 ;; Acknowledgements:
 ;;   ACKNOWLEDGEMENTS HERE
 
-; +------------------+-----------------------------------------------
-; | Helper functions |
-; +------------------+
+; +---------------+--------------------------------------------------
+; | Helper values |
+; +---------------+
 
 ;;; red-square : image?
-;;; A small red square, useful for exercises in this lab.
+;;; A small red square, useful for extra exercises in this lab.
 (define red-square (solid-square 20 "red"))
 
 ;;; black-square : image?
-;;; A small black square, useful for exercises in this lab.
+;;; A small black square, useful for extra exercises in this lab.
 (define black-square (solid-square 20 "black"))
 
 #| AB |#
@@ -34,7 +34,8 @@ a. From the "File" menu in DrRacket, select "Install package..."
 
 b. In the window that appears, enter 
      https://github.com/grinnell-cs/csc151.git#main
-   Make sure to include the `#main`.  Please don't include any spaces.
+   Please don't include any spaces.
+   If it doesn't work with the #main, try it without the #main.
 
 c. Click on "Install" or "Update".
 
@@ -44,72 +45,15 @@ e. When it is finished installing or updating, a "Close" button should be
    available.  Press it.
 |#
 
-#| AB |#
-
-; +---------------------------------------------+--------------------
-; | Exercise 1: Interpreting function execution |
-; +---------------------------------------------+
-
-#|
-Approximate time: 10 minutes
-For this problem, B side drives and A side navigates.
-
-In this exercise, we will use our substitutive model of Racket program
-execution to predict the behavior of some tricky scenarios involving
-functions.  We will then generalize what we see to arrive at some
-conclusions regarding the behavior of functions.
-
-Consider the following function definitions
-|#
-
-(define my-func-1
-  (lambda (x y)
-    (+ x (* y y) x)))
-
-(define my-func-2
-  (lambda (n)
-    (* n 2)))
-
-(define my-func-3
-  (lambda (n)
-    (+ (my-func-2 n) (my-func-2 8) n)))
-
-#|
-Give the execution trace (i.e., step-by-step evaluation) of each of
-the following expressions in the space above them.  Note that when you
-evaluate an arithmetic operator with more than 2 arguments, you can
-evaluate the addition in one step, e.g., (+ 1 1 1) --> 3.
-
-Use the interactions pane (i.e., the real-eval-print loop or REPL)
-to check that your trace produces the correct value.  We recommend
-checking each intermediate expression as you go.
-|#
-
-#| A |#
-
-#| 
-a.
-     (my-func-1 (+ 1 1) 5)
- --> ...
-|#
-
-#| B |#
-
-#| 
-b.
-    (my-func-2 (my-func-2 (my-func-2 3)))
---> ...
-|#
-
 #| A |#
 
 ; +--------------------+---------------------------------------------
-; | Exercise 2: Houses |
+; | Exercise 1: Houses |
 ; +--------------------+
 
 #|
 Our reading on procedures contained a procedure to make a simple house,
-reproduced below for your use.
+which we have reproduced below for your use.
 |#
 
 ; Copied from the CSC-151 reading "Writing your own procedures"
@@ -139,7 +83,8 @@ adapted this code from the reading.  We always credit our sources!
 |#
 
 (define painted-house
-  ???)
+  (lambda (size color)
+    ???))
 
 #|
 c.  In addition to this simple-house procedure, the reading also
@@ -155,6 +100,25 @@ scales with the size of the house.
     ???))
 
 #| B |#
+
+; +--------------------------+---------------------------------------
+; | Exercise 2: Party people |
+; +--------------------------+
+
+#|
+The lab page has a picture of something we often call a "party person".
+It's a stick figure with a purple triangular party hat and a red bow-tie.
+Write a procedure, `(party-person hat-color tie-color)`, that makes a 
+similar figure, but with a hat and tie of the specified colors.
+
+Note that you do not have to match our figure exactly.
+|#
+
+(define party-person
+  (lambda (hat-color tie-color)
+    ???))
+
+#| A |#
 
 ; +------------------------+-----------------------------------------
 ; | Exercise 3: Snowpeople |
@@ -191,13 +155,29 @@ something similar to ensure that you get the right height.
   (lambda (height)
     ???))
 
-#|
-c.  Complete the definition of (snowperson-with-hat height) that
-behaves like snowperson-revisited but adds a black top hat to the
-top of the snowperson.  Note that the total height should include
-the top hat.
+#| B |#
 
-Once again, make sure to try `(image-height (snowperson-revisited
+; +----------------------+-------------------------------------------
+; | Exercise 4: Top hats |
+; +----------------------+
+
+#|
+a. Write a procedure, `(top-hat width height)`, that makes a black
+top hat of the given width and height.
+|#
+
+(define top-hat
+  (lambda (width height)
+    ???))
+
+#|
+b.  Complete the following definition of (snowperson-with-hat height)
+that behaves like snowperson-revisited but adds a black top hat to
+the top of the snowperson.  
+
+**Note that the total height should include the top hat.**
+
+Once again, make sure to try `(image-height (snowperson-with-hat
 100))` or something similar to ensure that you get the right height.
 |#
 
@@ -206,13 +186,13 @@ Once again, make sure to try `(image-height (snowperson-revisited
     ???))
 
 #|
-d.  From the prior exercise, you might have realized that top hats
-are universal and should be applicable to any image you can think
-of.  Define a function (add-top-hat width height image) that places
-a top hat on the given size above the provided image.  
+c.  From the prior sub-exercise, you might have realized that top
+hats are universal and should be applicable to any image you can
+think of.  Define a function (add-top-hat width height image) that
+places a top hat on the given size above the provided image.
 
 For example, `(add-top-hat 20 10 (circle 20 'solid 'blue))` will
-add a top hat that is twenty units wide and ten units h igh to a
+add a top hat that is twenty units wide and ten units high to a
 circle of radius 10 and `(addtop-hat 20 30 (snowperson-revisited 50))`
 will had a top had that is 20 units wide and 30 units high to the
 top of a 50-unit-high snowperson.
@@ -263,13 +243,16 @@ Extra 1, which reveals some important ideas.
 
 #|
 a.  Complete the procedure (grid image) below that takes an image and
-    makes a 2-by-2 grid with that image.  For example, (grid (circle ...))
+    makes a 2-by-2 grid with that image.  For example, 
+      (grid (solid-circle ...))
     should make something like the this.
 
        o o
        o o
 
-    Similarly (grid (house ...)) should make something like this.
+    Similarly,
+      (grid (house ...)) 
+    should make something like this.
 
       /\  /\
       ||  ||
@@ -345,21 +328,8 @@ TODO: fill in the definition of smiley-face
   (lambda (size)
     (circle 100 'solid "yellow")))
 
-; +-----------------------+------------------------------------------
-; | Extra 4: More tracing |
-; +-----------------------+
-
-#|
-If you feel like you did not completely understand tracing, try tracing
-one more function call.
-
-    (my-func-3 11)
---> ...
-|#
-(define example-expr-3 (my-func-3 11))
-
 ; +-------------------------+----------------------------------------
-; | Extra 5: Counting words |
+; | Extra 4: Counting words |
 ; +-------------------------+
 
 #|

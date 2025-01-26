@@ -15,6 +15,20 @@ notes: |
 * Function expressions: `(lambda (<parameters>) <expression>)`.
 * Defining functions: `(define <name> (lambda (<parameters>) <expression>))`
 
+## Introducing Pair Programming
+
+For today's exercises, we will continue to try out *pair programming*.  Pair programming is a particular discipline of collaborative programming that we will be using extensively in our lab work.  We'll have more to say in the coming weeks about the nitty-gritty of working in pairs, but we would like you to dive head-first into the experience.
+
+* One person, the *driver*, will be in control of keyboard.  They will often take the lead on designing and coding a solution, speaking aloud about their design thoughts as they work.  
+* The other person, the *navigator*, helps keep them from going too far off track.  They observe and consider strategic design issues.  They look for potential problems and raise them with the driver.  If they happen to have a separate computer, they can serve as a resource to look things up, such as the syntax of an operation. (They do not, however, work on their own computer.) They try to keep track of time.
+
+Between each exercise, you will swap driver and navigator roles so that you and your partner get experience with both roles.  If you are in a group of three, you will have two navigators and one driver!  Make sure to rotate roles so that everyone gets a turn as the driver.
+
+To encourage appropriate swapping, we have labeled each problem as "A" and "B" for pairs.  Whoever is closer to the board is partner "A" Whoever is further from the board is partner "B".  Partner A or Partner B drives as indicated in the lab.  If there is a third partner, ignore the labels and rotate appropriately.
+
+You should begin by copying and opening the file
+[procedures.rkt]({{ "/code/labs/procedures.rkt" | relative_url }}) (click on it) which contains both instructions and spaces for your answers.
+
 ## The lab
 
 {% if site.online %}
@@ -33,21 +47,16 @@ partner using a starter file.
 * [procedures.rkt](../code/labs/procedures.rkt)
 {% endif %}
 
-Remember to employ good pair programming practices as discussed in the [previous lab]({{ "/labs/decomposition.html" | relative_url }})!
-
-> +   One person, the *driver*, will share their screen via MS Teams and is in control of keyboard.
->     They focus on the immediate task of designing and coding a solution, speaking aloud about their design thoughts as they work.
-> +   The other person, the *navigator*, acts as a reviewer.
->     They observe and think more about strategic architectural issues.
->     They look for potential issues and raise them with the driver.
->     They are also responsible for keeping track of the time spent on the problem.
-
 ## Work
 {% if site.online %}
 **All of the instructions are in the two files!  Switch over to those now.**
 {% else %}
 **All of the instructions are in the file.  Switch to that now.**
 {% endif %}
+
+Here's the "Party Person" picture referenced in one of the exercises.
+
+![A stick figure with a purple hat and red bowtie](../images/party-person.png).
 
 ## Acknowledgements
 
