@@ -428,7 +428,7 @@ For this mini project, you will create one file: `new-layers.rkt`.  The particul
 The beginning of `new-layers.rkt` should have an appropriate description of the file, something liek the following. The semicolons are "comments"; text intended for the human reader of the file, rather than the computer reader..
 
 ```racket
-# lang racket
+#lang racket
 (require csc151)
 (require csc151/layers)
 
