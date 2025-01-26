@@ -460,10 +460,6 @@ The beginning of `new-layers.rkt` should have an appropriate description of the 
 ...
 ```
 
-## Q&A
-
-_Ask questions on Teams and I'll do my best to put the answers here._
-
 ## Partial rubric
 
 In grading these assignment, we will look for the following for each level.
@@ -516,3 +512,75 @@ Submissions that lack any of these characteristics will get an M or below.
 [ ] In Part 4, `my-layers-piece-a-128` appears the same as `my-layers-piece-a`,
     just smaller.
 ```
+
+## Q&A
+
+_Ask questions on Teams and I'll do my best to put the answers here._
+
+### General
+
+**Are there any guidelines or cheat sheets we can use?**
+
+> Just the assignment itself. But you can always ask questions, including suggestions for moving forward.
+
+**Are the numbers in the various procedures pixels?**
+
+> The numbers are pixels (approximately). I tend to treat them as "numbers in some geometric system that I don't quite understand".
+
+**What does a sub-image mean in the layers piece?**
+
+> Part of an image. For example, if you put two circles side by side, each circle is a sub-image.
+
+**How can we balance decomposition and concise code?**
+
+> Ideally, decomposition will lead to more concise code, since you won't repeat yourself. However, given the choice, I would lean toward decomposition.
+
+**Are we presenting a file without any signs of "trial and error" in terms of code (a cleaned/edited form)?**
+
+> Yes, I would prefer that you submit the cleaned/edited form of your work.
+
+**What does it mean by we cannot write any procedure of our own?**
+
+> For part 1, you must use the pre-coded procedures. For parts 2 and 3, you will write your own procedures.
+
+**Are we turning in all four parts into Gradescope as one assignment?**
+
+> Yes.
+
+**What kinds of things should I put in the "Acknowledgements" section of my comments at the top?**
+
+> You should acknowledge anyone you talk to about the assignment.
+
+> You should acknowledge any Web pages you reference (other than the assignment page).
+
+### Part two
+
+**What should we be doing in this part? Are we making pieces?**
+
+> You're making things that could be used in the construction of pieces.
+
+**Can we use previously defined helper procedures in other helper procedures? e.g., if I make a semicircle procedure, can I use that procedure to define a hollow-semicircle procedure?**
+
+> Yes, you may use your other helper procedures in defining new helper procedures.
+
+**In Part 2, what does a helper procedure need to do to be "innovative" as given in the grading rubric?**
+
+> To quote the Supreme Court of the United States, "We'll know it when we see it."
+
+**What is the most efficient way to go about orientating the shapes and making sure they are correct?**
+
+> It's okay not to be efficient in the first assignment; part of getting things "wrong" is learning from playing. But I find it helps to lay things out on paper first (say, using the grid paper).
+
+**What kind of procedures are useful to make more complex cards?**
+
+> Part of the goal is that you consider this issue. Perhaps you decide that you want wedges with white in the center. Perhaps you decide that you'll regularly want four items in a grid. There are lots of possibilities.
+
+### Part three
+
+**What should we be doing in this part?**
+
+> For this part, you are writing a procedure that makes pieces (as opposed to making them directly, which you did in part one).
+
+
+
+### Part four

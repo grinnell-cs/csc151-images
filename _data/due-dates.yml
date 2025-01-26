@@ -32,6 +32,10 @@
   due:
     - MP 2 Pre-reflection
 
+- date: 2025-02-05
+  due:
+    - Quiz 2
+
 - date: 2025-02-06
   due:
     - page: /mps/mp02.html
@@ -39,20 +43,18 @@
 - date: 2025-02-07
   assigned:
     - page: /mps/mp03.html
-  due:
-    - Quiz 2
 
 - date: 2025-02-09
   due:
     - MP 3 Pre-reflection
 
+- date: 2025-02-12
+  due:
+    - Quiz 3
+
 - date: 2025-02-13
   due:
     - page: /mps/mp03.html
-
-- date: 2025-02-14
-  assigned:
-    - Quiz 3
 
 - date: 2025-02-16
   due:
@@ -61,6 +63,10 @@
 - date: 2025-02-17
   assigned:
     - SoLA 1
+
+- date: 2025-02-19
+  due:
+    - Quiz 4
 
 - date: 2025-02-20
   due:
@@ -71,11 +77,14 @@
     - page: /mps/mp04.html
   due:
     - SoLA 1 Post-reflection
-    - Quiz 4
 
 - date: 2025-02-23
   due:
     - MP 4 Pre-reflection
+
+- date: 2025-02-26
+  due:
+    - Quiz 5
 
 - date: 2025-02-27
   due:
@@ -83,7 +92,6 @@
 
 - date: 2025-02-28
   due:
-    - Quiz 5
     - MP 4 Post-reflection
 
 - date: 2025-03-02
@@ -92,13 +100,16 @@
   due:
     - MP 5 Pre-reflection
 
+- date: 2025-03-05
+  due:
+    - Quiz 6
+
 - date: 2025-03-06
   due:
     - page: /mps/mp05.html
 
 - date: 2025-03-07
   due:
-    - Quiz 6
     - MP 5 Post-reflection
 
 - date: 2025-03-23
@@ -109,6 +120,10 @@
   assigned:
     - SoLA 2
 
+- date: 2025-03-26
+  due:
+    - Quiz 7
+
 - date: 2025-03-27
   due:
     - SoLA 2
@@ -117,12 +132,15 @@
   assigned:
     - page: /mps/mp06.html
   due:
-    - Quiz 7
     - SoLA 2 Post-reflection
 
 - date: 2025-03-30
   due:
     - MP6 Pre-Reflection
+
+- date: 2025-04-02
+  due:
+    - Quiz 8
 
 - date: 2025-04-03
   due:
@@ -132,7 +150,6 @@
   assigned:
     - page: /mps/mp07.html
   due:
-    - Quiz 8
     - MP 6 Post-reflection
 
 - date: 2025-04-06
@@ -141,11 +158,14 @@
 
 - date: 2025-04-09
   due:
+    - Quiz 9
+
+- date: 2025-04-10
+  due:
     - page: /mps/mp07.html
 
 - date: 2025-04-11
   due:
-    - Quiz 9
     - MP 7 Post-reflection
 
 - date: 2025-04-13
@@ -156,13 +176,16 @@
   assigned:
     - page: SoLA 3
 
+- date: 2025-04-16
+  due:
+    - Quiz 10
+
 - date: 2025-04-17
   due:
     - SoLA 3
     
 - date: 2025-04-18
   due:
-    - Quiz 10
     - SoLA 3 Post-reflection
   assigned:
     - page: /mps/mp08.html
@@ -171,13 +194,16 @@
   due:
     - MP 8 Pre-reflection
 
+- date: 2025-04-23
+  due:
+    - Quiz 11
+
 - date: 2025-04-24
   due:
     - page: /mps/mp08.html
 
 - date: 2025-04-25
   due:
-    - Quiz 11
     - MP 8 Post Reflection
   assigned:
     - page: /mps/mp09.html
@@ -186,7 +212,7 @@
   due:
     - MP 9 Pre-reflection
 
-- date: 2025-05-02
+- date: 2025-04-30
   due:
     - Quiz 12
 
@@ -209,7 +235,7 @@
     - SoLA 4 Post-reflection
     - End-of-course evaluation
 
-- date: 2025-05-12
+- date: 2025-05-13
   assigned:
     - SoLA 5
 
