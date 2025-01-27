@@ -46,8 +46,8 @@ Administrative stuff
       MP post-reflections due
     * Sundays: Friday's lab due; Monday's reading responses due;
       MP/SoLA pre-reflections due
-    * Mondays: Class; in some weeks, SoLAs distributed at the end of the day;
       mentor session (?)
+    * Mondays: Class; in some weeks, SoLAs distributed at the end of the day;
     * Tuesdays: Monday's lab due, Wednesday's reading responses due,
       mentor session (?)
     * Wednesdays: Class; quizzes
@@ -63,7 +63,7 @@ Scholarly
   _CS Table: Positive aspects of computing_
     * <https://www.sciencedaily.com/releases/2024/12/241211143603.htm>
     * <https://www.latimes.com/business/story/2025-01-21/tech-wildfires-ai-la-fires-nvidia-lockheed-martin>
-* Tuesday, 2025-01-28, 4:00--5:00 p.m., Chemistry Elbow Classroom.
+* Tuesday, 2025-01-28, 4:00--5:00 p.m., Chemistry Elbow Classroom (Science 2022).
   _CS Candidate Talk: Intelligent Tutoring Systems and Equity in Math
    Education_.
 * Thursday, 2025-01-30, 11:00 a.m.--noon, JRC 101.
@@ -81,6 +81,17 @@ Peer
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
+Pride week!
+
+* Monday, 2025-01-27, 4:00--6:00 p.m., SRC.
+  _Denim Dazzle Workshop_
+* Wednesday, 2025-01-29, 6:00--7:30 p.m., SRC.
+  _Jotería Game Night_ (Win prizes!)
+* Thursday, 2025-01-30, 5:00--7:00 p.m., JRC 101.
+  _Stonewall Pridefest_.
+* Friday, 2025-01_31, 7:00--8:00 p.m., Harris Gym.
+  _Covered in Melanin Drag Show_.
+
 Wellness
 
 * Tuesday, 2025-01-28, 12:15--12:50 p.m., GCMoA.
@@ -89,8 +100,8 @@ Wellness
   _Wellness Yoga_.
 * Tuesday, 2025-01-28, 7:30--9:00 p.m., Harris Concert Hall (aka Harris Gym).
   _Queer Stompede_
-* Wednesday, 2025-01-29, ???, ???.
-  _Current Events Support Space_
+* Wednesday, 2025-01-29, 12:00--1:00 p.m., Whale Room in the DHall.
+  _Current Events Support Space (with SHAW)_
 
 Misc
 
@@ -104,6 +115,8 @@ _These do not earn tokens, but are worth your consideration._
 
 * Saturday, 2025-02-01, 10:00 a.m.--1:00 p.m., Field House.
   _Grinnell Track and Field Invitational_.
+* Sunday, 2025-02-02, early afternoon, Field House.
+  _Men's Tennis_.
 
 ### Upcoming work
 
@@ -121,6 +134,7 @@ _These do not earn tokens, but are worth your consideration._
         * [Submit MP1 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5674195)
     * Lab writeup
 * Due Friday, 2025-01-30
+    * No Class!
     * [Post-reflection on MP1](https://www.gradescope.com/courses/948769/assignments/5674307)
 
 ### Attendance
@@ -180,11 +194,63 @@ _These do not earn tokens, but are worth your consideration._
 
 > We'll think about this in terms of the PB&J sandwich.
 
+> Get bread. Spread peanut butter on bread. Add bananas. Eat.
+
+> Open jar of peanut butter. Remove spoonful of peanut butter. Add to bread.
+  Spread with knifer.
+
+> Grab jar with lid facing upward using your dominant hand. Grab lid of
+  jar with other hand. ...
+
+> History suggests that this is a good way of thinking about problem solving.
+
 ### Procedures
 
 **Can we go over the specific parts of a procedures**
 
 > Certainly.
+
+> A procedure (subroutine, functions, methods) is a named collection of
+  code that takes input.
+
+> Three things to think about in how we write procedures in almost any
+  programming language.
+
+> * The name. How will we refer to the procedure in the future?
+
+> * The inputs. How will we refer to the inputs in the body of the procedure?
+    (In some languages, we give both names and types (integer, string, color,
+    ...) to inputs; in Scheme, we only give names.)
+
+> * The body: What the procedure actually does/computes.
+
+> In Scheme, we write
+
+```
+(define NAME
+  (lambda (INPUTS)
+    BODY))
+```
+
+Suppose we want a procedure that surrounds an image with semi-circles.
+
+```
+(define surround-with-semi-circles
+  (lambda (img color)
+    (beside (wedge (* 1/2 (image-height img)) color 180)
+            img
+            (wedge (* 1/2 (image-height img)) color 180))))
+```
+
+FIXED:
+
+```
+(define surround-with-semi-circles
+  (lambda (img color)
+    (beside (rotate (solid-wedge (* 1/2 (image-height img)) 180 color) 90)
+            img
+            (rotate (solid-wedge (* 1/2 (image-height img)) 180 color) -90))))
+```
 
 **I know the text mentioned we will cover lambda without define eventually but I would genuinely love to know why the idea of it being "anonymous" is so powerful.**
 
@@ -198,4 +264,4 @@ _These do not earn tokens, but are worth your consideration._
 
 **Make sure that you're doing the lab called "procedures". You may have to refresh your schedule.**
 
-
+Save save save save save.
