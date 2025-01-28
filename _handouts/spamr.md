@@ -5,6 +5,59 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
+## [CSC-151 2025Sp] Lab write-ups, Quizzes, MP1, and more (Monday, 2025-01-27)
+
+Dear Virtual house builders,
+
+I hope you enjoyed your first exposures to procedures in Scheme! I thought I'd fill in answers to a few questions people have been asking via email, on teams, or in person.
+
+LAB WRITE-UPS
+
+All you are required to submit for any lab-writeup is the work you complete in class. (I would prefer that you get the code runnable, which may require "commenting-out" the last procedure you wrote.)
+
+However, I encourage you to at least skim through the remaining exercises. Doing so will give you a sense of the kinds of things you can do or that you may need to consider as you do homework assignments (or even learning assessments). For example, the later problems on today's lab ask you to think about how you ensure that an image you create is a particular size.
+
+If you don't think you could solve the remaining exercises on a lab, I'd recommend that you chat with me or the evening tutors.
+
+QUIZZES
+
+Quizzes are in-class, on paper. Most ask you to write code. You need not write perfectly correct code. (In contrast, SoLAs are take-home, electronic, and generally expect correct code.) 
+
+The normal model is that you grab the quiz when you show up to class and work until fifteen minutes after the start of class. Hence, if you show up early, you can work longer. Since it's not possible to show up early to all of my classes, if you are in section 2 or 3 you can also turn in your quiz and then get it back at the end of class.
+
+You may bring one sheet of hand-written notes to the quiz. (Please stick to 8.5 x 11 inch or A4 paper. You can write on both sides.)
+
+If you want to prepare for the quiz, you can look at sample problems on the LAs page: <https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/las/>. You can also attend a mentor session (to be announced). You might also write your own sample problems of about the same complexity as the sample LA problems and then try to solve those.
+
+MP1
+
+You CAN use `define` in part one. You just can't define procedures. But individual parts are fine. For example,
+
+```
+(define my-circle-a 
+  (overlay (solid-circle 256 "white")
+           (solid-circle 512 "red")))
+
+(define my-background-a
+  (solid-square 512 "blue"))
+
+(define my-piece-a
+  (overlay my-circle-a
+           my-background-a))
+```
+
+REFERENCE PAGES
+
+You should be able to find some reference pages via the "Reference" link at the top of every page in the course web. The reference pages are even more of a work-in-progress than the main course web, but I'll do my best to fill in details for any prodedure if you ask.
+
+---
+
+As always, feel free to ask questions on Teams (Q&A channel or chat), via Email, or in class.
+
+Regards,
+
+-- SamR
+
 ## [CSC-151 2025Sp] CS Tutor Hours + MP 1 Q&A (Sunday, 2025-01-26)
 
 Dear Students of Many Layers,
