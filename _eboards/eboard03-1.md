@@ -36,6 +36,8 @@ Administrative stuff
 
 ### Introductory notes
 
+* Our mentor is unavailable today, so I'll be trying to handle things
+  on my own.
 * After talking with the mentors, I've decided to move quizzes to
   Wednesdays. (Having homework due on Thursday night and quizzes on
   Fridays seems inappropriate.)
@@ -43,7 +45,7 @@ Administrative stuff
   about that.
 * Here's the approximate "rhythm" of the class.
     * Fridays: Class; in most weeks, mini-projects distributed;
-      MP post-reflections due
+      MP/SoLA post-reflections due
     * Sundays: Friday's lab due; Monday's reading responses due;
       MP/SoLA pre-reflections due
     * Mondays: Class; in some weeks, SoLAs distributed at the end of the day;
@@ -63,7 +65,8 @@ Scholarly
   _CS Table: Positive aspects of computing_
     * <https://www.sciencedaily.com/releases/2024/12/241211143603.htm>
     * <https://www.latimes.com/business/story/2025-01-21/tech-wildfires-ai-la-fires-nvidia-lockheed-martin>
-* Tuesday, 2025-01-28, 4:00--5:00 p.m., Chemistry Elbow Classroom.
+    * If you are not on a meal plan, you can charge it to the department.
+* Tuesday, 2025-01-28, 4:00--5:00 p.m., Noyce 2022
   _CS Candidate Talk: Intelligent Tutoring Systems and Equity in Math
    Education_.
 * Thursday, 2025-01-30, 11:00 a.m.--noon, JRC 101.
@@ -80,6 +83,9 @@ Peer
 
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
+
+* Saturday, 2025-02-01, 10:00 a.m.--1:00 p.m., Field House.
+  _Grinnell Track and Field Invitational_.
 
 Wellness
 
@@ -102,8 +108,6 @@ Misc
 
 _These do not earn tokens, but are worth your consideration._
 
-* Saturday, 2025-02-01, 10:00 a.m.--1:00 p.m., Field House.
-  _Grinnell Track and Field Invitational_.
 
 ### Upcoming work
 
@@ -121,6 +125,7 @@ _These do not earn tokens, but are worth your consideration._
         * [Submit MP1 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5674195)
     * Lab writeup
 * Due Friday, 2025-01-30
+    * No class.
     * [Post-reflection on MP1](https://www.gradescope.com/courses/948769/assignments/5674307)
 
 ### Attendance
@@ -128,7 +133,7 @@ _These do not earn tokens, but are worth your consideration._
 ## About MP1
 
 * Part one: Make pieces "by hand" (well, by code)
-* Part two: Write some potentially useful procedures
+* Part two: Write five potentially useful procedures
 * Part three: Write a procedure to make pieces
 * Part four: Call your procedure four times to build four (specific) pieces
 * Make sure to read the rubric!
@@ -161,7 +166,11 @@ _These do not earn tokens, but are worth your consideration._
 
 **Why won't DrRacket load the csc151 library on my computer?**
 
-> I'm not sure.
+> I'm not sure. Chat with me individually.
+
+**Can I just run a few lines of the code in the definitions pane?**
+
+> Not usually. The assumption is that we'll run all of the lines.
 
 ### Racket/Scheme
 
@@ -180,11 +189,49 @@ _These do not earn tokens, but are worth your consideration._
 
 > We'll think about this in terms of the PB&J sandwich.
 
+> Big picture: Get bread, add peanut butter, add jelly, eat.
+
+> But we may need to explain more.
+
+> To get bread, you need to open the bag, pull out the top two pieces of
+  bread, put them on the plate side by side face up.
+
 ### Procedures
 
 **Can we go over the specific parts of a procedures**
 
 > Certainly.
+
+> There are three main important things for most procedures (subroutines,
+  functions):
+
+> * The name of the procedure (how we'll refer to it)
+
+> * The names of the inputs to the procedure (also the types, but Scheme
+    doesn't require those).
+
+> * The actions the procedure is supposed to do. (The "body")
+
+> In Scheme/Racket, we put all of this together with
+
+```
+(define PROCEDURE
+  (lambda (INPUTS)
+    BODY))
+```
+
+> For example,
+
+```
+(define boxed-circle
+  (lambda (box-size box-color circle-color)
+    (overlay (solid-circle box-size circle-color)
+             (solid-square box-size box-color))))
+```
+
+**Can you define local named things within a procedure?**
+
+> Yes, there's a way to do so. We will not teach you it yet.
 
 **I know the text mentioned we will cover lambda without define eventually but I would genuinely love to know why the idea of it being "anonymous" is so powerful.**
 
@@ -194,8 +241,20 @@ _These do not earn tokens, but are worth your consideration._
 
 > The quotation marks mean "Take it verbatim" rather than "treat this as an input to the method". There's no color named "color", so it gives an error.
 
+### MP1
+
+**How do we keep things grouped together for a layer?**
+
+> Usually with a `define` of the compound thing.
+
+**Can you explain more about the parts of the rubric?**
+
+> I'd prefer to focus on individual parts. Ask on Teams.
+
 ## Lab
 
 **Make sure that you're doing the lab called "procedures". You may have to refresh your schedule.**
 
-
+* If you're having trouble making the door, it's in the reading on procedures.
+    * Make sure to cite that reading if you figure out the door.
+* Make sure to save as `procedures.rkt`.

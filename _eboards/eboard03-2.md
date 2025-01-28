@@ -45,9 +45,9 @@ Administrative stuff
     * Fridays: Class; in most weeks, mini-projects distributed;
       MP post-reflections due
     * Sundays: Friday's lab due; Monday's reading responses due;
-      MP/SoLA pre-reflections due
-    * Mondays: Class; in some weeks, SoLAs distributed at the end of the day;
+      MP/SoLA pre-reflections due;
       mentor session (?)
+    * Mondays: Class; in some weeks, SoLAs distributed at the end of the day;
     * Tuesdays: Monday's lab due, Wednesday's reading responses due,
       mentor session (?)
     * Wednesdays: Class; quizzes
@@ -63,7 +63,7 @@ Scholarly
   _CS Table: Positive aspects of computing_
     * <https://www.sciencedaily.com/releases/2024/12/241211143603.htm>
     * <https://www.latimes.com/business/story/2025-01-21/tech-wildfires-ai-la-fires-nvidia-lockheed-martin>
-* Tuesday, 2025-01-28, 4:00--5:00 p.m., Chemistry Elbow Classroom.
+* Tuesday, 2025-01-28, 4:00--5:00 p.m., Chemistry Elbow Classroom (2022).
   _CS Candidate Talk: Intelligent Tutoring Systems and Equity in Math
    Education_.
 * Thursday, 2025-01-30, 11:00 a.m.--noon, JRC 101.
@@ -80,6 +80,9 @@ Peer
 
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
+
+* Sunday, 2025-02-02, Noon?, Field House.
+  _Mens Tennis, vs. Quincy_
 
 Wellness
 
@@ -163,6 +166,10 @@ _These do not earn tokens, but are worth your consideration._
 
 > I'm not sure.
 
+**Is there a keyboard shortcut for commenting?**
+
+> I'm not sure. You'll hear me say that a lot. Deal.
+
 ### Racket/Scheme
 
 **Can DrRacket's image model use hexadecimal color?**
@@ -180,11 +187,42 @@ _These do not earn tokens, but are worth your consideration._
 
 > We'll think about this in terms of the PB&J sandwich.
 
+> Starting view: "Put bread on plate; spread peanut-butter on bread; cut up banana onto peanut butter; eat."
+
+> Whoops. We need to explain concepts. "To spread peanut butter on bread, first open the peanut butter, then remove some and place on the bread. THen grab a knive (by the handle please, not in the slasher orientation). MOve the blade of the knife on the peanut butter."
+
+> Too many years of software development suggests that this is a good way to think about design..
+
 ### Procedures
 
-**Can we go over the specific parts of a procedures**
+**Can we go over the specific parts of a procedures?**
 
 > Certainly.
+
+> There are three main parts to a procedure (subroutine, function, method).
+
+> * The _name_ of the procedure; how we refer to it.
+
+> * The _inputs_ to the procedure; how we refer to them. (In some programming
+    languages (not Scheme), we also give an explicit "type" to the inputs - 
+    this is a number, this is a string, this is an image.)
+
+> * The _instructions_ for the procedure (code), often call that the body.
+
+> In Scheme (or at least our policy on Scheme), we write procedures with
+
+```
+(define NAME
+  (lambda (INPUTS)
+    BODY))
+```
+
+```
+(define grid
+  (lambda (image)
+    (above (beside image image)
+           (beside image image))))
+```
 
 **I know the text mentioned we will cover lambda without define eventually but I would genuinely love to know why the idea of it being "anonymous" is so powerful.**
 
@@ -198,4 +236,4 @@ _These do not earn tokens, but are worth your consideration._
 
 **Make sure that you're doing the lab called "procedures". You may have to refresh your schedule.**
 
-
+Make sure to save! (`procedures.rkt`)
