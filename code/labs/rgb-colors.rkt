@@ -187,9 +187,9 @@ d. Create a palette of these three colors.
 a. Write a procedure, `(ccc c1 c2 c3)`, that takes three colors as
 parameters and creates an image with three concentric circles, each
 on top of the next.  The largest/back circle should be colored
-c3 and have radius 30.  The middle circle should be colored c2 and
-have radius 20.  The smallest/front circle should be colored c1 and
-have radius 10.
+c3 and have diameter 60.  The middle circle should be colored c2 and
+have diameter 40.  The smallest/front circle should be colored c1 and
+have diameter 20.
 |#
 
 ;;; (cc c1 c2 c3) -> image?
@@ -326,6 +326,7 @@ bit for you.)
 b. Verify that it seems to work appropriately by creating a darker
 version of the kitten.
 
+    
     > (pixel-map color-darker kitten)
 
 |#
@@ -341,7 +342,7 @@ a. Write a procedure, `(darker-versions c)`, that takes a color as
 a parameter and produces an image that contains (a) concentric
 circles of `c`, `(color-darker c)`, and `(color-darker (color-darker c))
 and (b) a color palette of those same three colors, with the circles
-placed over the palette (as in `overlay`).
+placed above the palette (using `above`, not `overlay`).
 |#
 
 ;;; (darker-versions c) -> image?
@@ -429,6 +430,7 @@ issue an error message (if they do not).
 b. Verify that it seems to work appropriately by creating a restricted
 version of the kitten.
 
+    > (define kitten (image-load "kitten.jpg"))
     > (pixel-map color-restrict kitten)
 
 |#
@@ -519,6 +521,7 @@ from each of the green and blue components.
 d. Try each procedure on the kitten to see which version you find
 most successful (or most appropriate).
 
+    > (define kitten (image-load "kitten.jpg"))
     > (pixel-map color-redder-a kitten)
     > (pixel-map color-redder-b kitten)
     > (pixel-map color-redder-c kitten)
