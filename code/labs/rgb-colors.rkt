@@ -222,40 +222,40 @@ components to 255.
 |#
 
 #|
-b. What color do you expect to get if you mix red and blue?
+a. What color do you expect to get if you mix red and blue?
 (That is, what color do you expect for `(rgb 255 0 255)`?)
 
 <ENTER YOUR ANSWER HERE>
 |#
 
 #|
-c. Check your answer by creating a set of concentric circles
+b. Check your answer by creating a set of concentric circles
 of red, the red-blue mix, and blue.
 |#
 (define red-blue-mix ???)
 
 #|
-d. What color do you expect to get if you mix red and green?
+c. What color do you expect to get if you mix red and green?
 (That is, what color do you expect for `(rgb 255 255 0)`?)
 
 <ENTER YOUR ANSWER HERE>
 |#
 
 #|
-e. Check your answer by creating a set of concentric circles
+d. Check your answer by creating a set of concentric circles
 of green, the red-green mix, and red.
 |#
 (define red-green-mix ???)
 
 #|
-f. What color do you expect to get if you mix blue and green?
+e. What color do you expect to get if you mix blue and green?
 (That is, what color do you expect for `(rgb 0 255 255)`?)
 
 <ENTER YOUR ANSWER HERE>
 |#
 
 #|
-g. Check your answer by creating a set of concentric circles
+f. Check your answer by creating a set of concentric circles
 of blue, the blue-green mix, and green.
 |#
 (define blue-green-mix ???)
@@ -341,7 +341,7 @@ a. Write a procedure, `(darker-versions c)`, that takes a color as
 a parameter and produces an image that contains (a) concentric
 circles of `c`, `(color-darker c)`, and `(color-darker (color-darker c))
 and (b) a color palette of those same three colors, with the circles
-placed over the palette.
+placed over the palette (as in `overlay`).
 |#
 
 ;;; (darker-versions c) -> image?
@@ -447,9 +447,9 @@ start with the first extra problem.
 
 To turn in your work:
 
-a. Ensure that your file runs properly.  (E.g., when we click "Run", it should
-   work not produce errors.)
-b. Make sure that this file is named `rgb-colors.rkt`.
+a. Make sure that this file is named `rgb-colors.rkt`.
+b. Ensure that your file runs properly.  (E.g., when we click "Run", it should
+   work and not produce errors.)
 c. Submit this final file to Gradescope.  Make sure to submit your work 
    as a group submission and include your partner in the submission.
 d. Wait for the autograder results to make sure that you met the
