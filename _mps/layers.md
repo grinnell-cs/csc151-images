@@ -554,7 +554,79 @@ _Ask questions on Teams and I'll do my best to put the answers here._
 
 > You should acknowledge any Web pages you reference (other than the assignment page).
 
+**What's the difference between a card, a piece, and a layer?**
+
+> We are using the terms interchangably.  All of them are the cards for the _Layers_ game.
+
+**What are the most useful procedures that we have to remember?**
+
+> The shape procedures and the procedures used to combine shapes.
+
+**Do we have label out each part from one to four? Or we just write them in order?**
+
+> You can just write them in order. However, it makes it easier for the graders if you label them.
+
+**Do we have to write comments beside the codes (except the introduction format you gave us in the mini-project 1 guideline)?**
+
+> No, you do not have to write comments for this assignment.
+
+**Do we use `(require csc151)` or `(require csc151/layers)` in our definitions pane?**
+
+> Both.
+
+**Are there specific edge cases we should consider for each problem?**
+
+> You don't need to worry about edge cases at this point.
+
+**Does it matter how we code it? For example how, the other reading had us compare two different lines of code, both of which did the same thing, but one was more streamlined and didn't have as many lines.**
+
+> More streamlined code is more likely to earn you an E.
+
+**What are some effective strategies to get ready for this assignment?**
+
+> Make sure that you understand what's expected of you.
+
+> Make a list of resources that you think will be useful.
+
+> Make a list of useful procedures. (Ideally, you'll be doing this anyway.)
+
+> Sketch an approach to each part.
+
+> Jump in!
+
+**I want to know the difference between "overlay" and "overlay/origin". I have tried using both of them in coding the overlapped hollow-orange-circle and orange circle. However, I don't really understand why the images look so different.**
+
+> `overlay` overlays the two images, matching the centers. `overlay/origin` overlays the two images, matching their upper-left-hand corners.
+
+**If I were to go into the library's documentation because I forgot what a procedure was called, would I cite that or not?**
+
+> I don't require you to cite documentation from our reference pages. Noneth3eless, it's good practice to do so anyway.
+
+### Part one
+
+**I'm confused by what it means to "create a pair of 512x512 layers pieces".**
+
+> The cards we used at the end of class on Friday are "_Layers_ pieces". In the physical world, we had two sides to each piece. In the virtual computer world, we'll have two one-sided pieces. The 512x512 is the size of the piece (in the units we use for making circles, squares, and such).
+
+**Should we make one of the pre-existing cards?**
+
+> No. You should use your creativity to design a new pair of cards.
+
+**Are there restrictions on the cards I make?**
+
+> They should be 512x512 (using whatever the units DrRacket uses for images).
+
+> They should be made of at least four "shapes".
+
+**How do you group all of the images on the plane and to keep them as one? Is that done in the definitions tab?**
+
+> Yes, you should do so in the definitions pane. Procedures like `overlay` and `above` will help you group images. 
+
 ### Part two
+
+**When we are making procedures, are we just using `define` and `lambda`?**
+
+> Yes, you are using `define` and `lambda`. You are also using the parameters to the procedure and some of the image-make procedures to make an image.
 
 **What should we be doing in this part? Are we making pieces?**
 
@@ -564,7 +636,7 @@ _Ask questions on Teams and I'll do my best to put the answers here._
 
 > Yes, you may use your other helper procedures in defining new helper procedures.
 
-**In Part 2, what does a helper procedure need to do to be "innovative" as given in the grading rubric?**
+**What does a helper procedure need to do to be "innovative" as given in the grading rubric?**
 
 > To quote the Supreme Court of the United States, "We'll know it when we see it."
 
@@ -576,12 +648,12 @@ _Ask questions on Teams and I'll do my best to put the answers here._
 
 > Part of the goal is that you consider this issue. Perhaps you decide that you want wedges with white in the center. Perhaps you decide that you'll regularly want four items in a grid. There are lots of possibilities.
 
+
 ### Part three
 
 **What should we be doing in this part?**
 
-> For this part, you are writing a procedure that makes pieces (as opposed to making them directly, which you did in part one).
-
+> For this part, you are writing a procedure that makes pieces (as opposed to making them directly, which you did in part one). That is, it takes the three parameters (background color, foreground color, and size) and makes a piece of the given size, background color, and foreground color. It's up to you what you call the foreground color and the background color.
 
 
 ### Part four
