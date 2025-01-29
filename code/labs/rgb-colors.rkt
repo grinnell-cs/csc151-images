@@ -340,8 +340,8 @@ version of the kitten.
 a. Write a procedure, `(darker-versions c)`, that takes a color as
 a parameter and produces an image that contains (a) concentric
 circles of `c`, `(color-darker c)`, and `(color-darker (color-darker c))
-and (b) a color palette of those same three colors, stacked on
-top of each other.
+and (b) a color palette of those same three colors, with the circles
+placed over the palette.
 |#
 
 ;;; (darker-versions c) -> image?
@@ -386,7 +386,8 @@ a. Write a procedure, `(color-restrict c)`, that produces a new version
 of `c` in which each component is restricted to the range [64..192],
 with components above 192 dropped to 192 and components below 64 raised
 to 64.  Note that clever application of `min` and `max` should help 
-you with this.
+you with this. You may also find it useful to write another procedure
+that reduces one component to that range.
 |#
 
 ;;; (color-restrict c) -> color?
