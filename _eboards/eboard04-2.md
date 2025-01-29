@@ -54,6 +54,11 @@ Administrative stuff
   topic the first time through.
     * Most of the time: You can make it up on the SoLAs.
     * Some of the time: You can also try the next week.
+* If you don't do well on the quiz, consider the following.
+    * Visit with Sam
+    * Visit with the evening tutors
+    * Re-read the reading and/or review the lab
+    * Do more problems
 
 ### A note on pre-reflections 
 
@@ -86,7 +91,7 @@ Scholarly
 
 Artistic
 
-* Sunday, 2025-02-02, Bucksbaum 191 (Flanagan Theatre).
+* Sunday, 2025-02-02, 2:00 p.m., Bucksbaum 191 (Flanagan Theatre).
   _How the Light Gets In_ (with Celeste Miller).
     * Tickets in Bucksbaum Box Office starting tomorrow.
 * Tuesday, 2025-02-04, 4:00-5:00 p.m., Bucksbaum 131 (GCMoA).
@@ -104,6 +109,9 @@ Peer
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
+* Sunday, 2025-02-02, Noon?, Field House.
+  _Mens Tennis, vs. Quincy_
+
 Wellness
 
 * Wednesday, 2025-01-29, Noon--1:00 p.m., Whale Room.
@@ -115,9 +123,8 @@ Wellness
 
 Misc
 
-* Thursday, 2025-01-30, 4:00--5:00 p.m., Noyce ????.
+* Thursday, 2025-01-30, 4:00--5:00 p.m., Noyce 2022.
   _CS Major Declaration Info Session_.
-    * Snacks beforehand in the CS Commons.
 
 ### Other good things
 
@@ -224,3 +231,6 @@ _These do not earn tokens, but are worth your consideration._
 
 ## Lab
 
+* Make sure to save your code as `rgb-colors.rkt` (in the same folder as
+  your `kitten.jpg`).
+* When you submit, please upload both `rgb-colors.rkt` and `kitten.jpg`.

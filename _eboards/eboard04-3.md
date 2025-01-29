@@ -54,6 +54,12 @@ Administrative stuff
   topic the first time through.
     * Most of the time: You can make it up on the SoLAs.
     * Some of the time: You can also try the next week.
+* If you struggled,
+    * Talk to Sam or
+    * Talk to an evening tutor or
+    * Reread the reading or
+    * Redo the corresponding lab or
+    * Attend a mentor session and ask questions
 
 ### A note on pre-reflections 
 
@@ -106,8 +112,6 @@ students are welcome._
 
 Wellness
 
-* Wednesday, 2025-01-29, Noon--1:00 p.m., Whale Room.
-  _Current Events Support Space with SHAW._
 * Tuesday, 2025-02-04, 12:15--12:50 p.m., GCMoA.
   _Yoga in the Museum_.
 * Tuesday, 2025-02-04, 4:30--6:30 p.m., BRAC P103 (Multipurpose Dance Studio).
@@ -115,9 +119,8 @@ Wellness
 
 Misc
 
-* Thursday, 2025-01-30, 4:00--5:00 p.m., Noyce ????.
+* Thursday, 2025-01-30, 4:00--5:00 p.m., Noyce 2022
   _CS Major Declaration Info Session_.
-    * Snacks beforehand in the CS Commons.
 
 ### Other good things
 
@@ -125,6 +128,10 @@ _These do not earn tokens, but are worth your consideration._
 
 * Saturday, 2025-02-01, 10:00 a.m.--1:00 p.m., Field House.
   _Grinnell Track and Field Invitational_.
+* Saturday, ???, Darby
+  _Basketball_.
+* Sunday, Noon, Field Hourse.
+  _Men's Tennis_.
 
 ### Upcoming work
 
@@ -224,3 +231,6 @@ _These do not earn tokens, but are worth your consideration._
 
 ## Lab
 
+* Make sure to save your code as `rgb-colors.rkt` (in the same folder as
+  your `kitten.jpg`).
+* When you submit, please upload both `rgb-colors.rkt` and `kitten.jpg`.

@@ -16,8 +16,7 @@ _Today's start-of-class procedure_
 * Navigate to that computer.
 * If you are first, log in, but do not start the lab.
 * Start the quiz.
-* When a second person arrives, introduce yourselves (and then resume/start
-  the quiz).
+* When you finish the quiz, introduce yourselves.
 
 **Warning! You are being recorded** (and transcribed) (provided the technology
 is working correctly).
@@ -54,6 +53,8 @@ Administrative stuff
   topic the first time through.
     * Most of the time: You can make it up on the SoLAs.
     * Some of the time: You can also try the next week.
+* If you struggle on a quiz, you might want to make an appointment to see
+  Sam, or stop in to chat with an evening tutor, or revisit the material.
 
 ### A note on pre-reflections 
 
@@ -86,7 +87,7 @@ Scholarly
 
 Artistic
 
-* Sunday, 2025-02-02, Bucksbaum 191 (Flanagan Theatre).
+* Sunday, 2025-02-02, 2:00 p.m., Bucksbaum 191 (Flanagan Theatre).
   _How the Light Gets In_ (with Celeste Miller).
     * Tickets in Bucksbaum Box Office starting tomorrow.
 * Tuesday, 2025-02-04, 4:00-5:00 p.m., Bucksbaum 131 (GCMoA).
@@ -104,6 +105,9 @@ Peer
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
+* Saturday, 2025-02-01, 10:00 a.m.--1:00 p.m., Field House.
+  _Grinnell Track and Field Invitational_.
+
 Wellness
 
 * Wednesday, 2025-01-29, Noon--1:00 p.m., Whale Room.
@@ -115,22 +119,20 @@ Wellness
 
 Misc
 
-* Thursday, 2025-01-30, 4:00--5:00 p.m., Noyce ????.
+* Thursday, 2025-01-30, 4:00--5:00 p.m., Noyce 2022.
   _CS Major Declaration Info Session_.
-    * Snacks beforehand in the CS Commons.
+    * Snacks beforehand?
 
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
-
-* Saturday, 2025-02-01, 10:00 a.m.--1:00 p.m., Field House.
-  _Grinnell Track and Field Invitational_.
 
 ### Upcoming work
 
 * Due Thursday, 2025-01-30
     * [Mini-Project 1](../mps/mp01)
         * [Submit MP1 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5674195)
+* No class on Friday due to Faculty Retreat.
 * Due Friday, 2025-01-31
     * [Submit post-reflection on MP1](https://www.gradescope.com/courses/948769/assignments/5674307)
 * Due Sunday, 2025-02-02
@@ -168,6 +170,22 @@ _These do not earn tokens, but are worth your consideration._
    overlays the two images, matching their upper-left-hand corners.
 
 > I'll try demoing.
+
+```
+> (define thing1 (solid-circle 100 "red"))
+> (define thing2 (solid-square 200 "black"))
+> (overlay thing1 thing2)
+.
+> (overlay/origin thing1 thing2)
+.
+> (define thing3 (hshift thing2 50))
+> thing3
+.
+> (overlay thing1 thing3)
+.
+> (overlay/origin thing1 thing3)
+.
+```
 
 ### Racket/Scheme
 
@@ -224,3 +242,8 @@ _These do not earn tokens, but are worth your consideration._
 
 ## Lab
 
+Important observations:
+
+* In order to load the image, you must have saved your `.rkt` file in the
+  same directory as the image.
+* Larger numbers are lighter, smaller numbers are darker.
