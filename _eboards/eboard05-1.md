@@ -27,13 +27,14 @@ _Approximate optimistic overview_
 * Lab [50 min]
 * Submit [5 min]
 
-Quiz!
------
-
 Administrative stuff
 --------------------
 
 ### Introductory notes
+
+* In sections 2 & 3, we're going to switch to doing quizzes at the end
+  of class, rather than the beginning. The "stop then start again" model
+  didn't seem to work well.
 
 ### Upcoming activities
 
@@ -71,7 +72,21 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Upcoming work
 
-## Q&A
+* Tuesday, 2025-02-04
+    * Readings for Wednesday's class.
+* Wednesday, 2025-02-05
+    * Quiz! (tracing)
+* Thursday, 2025-02-06
+* Friday, 2025-02-07
+* Sunday, 2025-02-09
+
+A note from last class
+----------------------
+
+I saw many of you doing something like this.
+
+Q&A
+---
 
 ### Administrative
 
