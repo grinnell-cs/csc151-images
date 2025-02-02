@@ -45,9 +45,9 @@ The Lisp family of languages (including Scheme and Racket) set themselves apart 
 
 ## Building new procedures through composition
 
-You may have already seen composition in your study of mathematics. The composition of two functions, _f_ and _g_, is written _f_∘_g_ and represents a function that first applies _g_ and then _f_.  That is, (_f_∘_g_)(_x_) = _f_(_g_(_x_)).
+You may have already seen composition in your study of mathematics. The composition of two functions, $$f$$ and $$g$$, is written $$f\circ g$$ and represents a function that first applies $$g$$ and then $$f$$  That is, $$(f\circ g)(x)$$ = $$f(g(x))$$.
 
-In the CSC 151 Racket library, we use `o` to represent function composition.  Let's start by composing a few procedures with themselves.
+In the CSC 151 Racket library, we use `o` (a lowercase "oh") to represent function composition.  Let's start by composing a few procedures with themselves.
 
 ```drracket
 > (sqr 3)
@@ -92,7 +92,7 @@ As these examples suggest, the composed procedure applies the other procedures f
 
 Some programmers find this right-to-left behavior perfectly natural since it mimics both mathematics and the way we write things in Racket.  That is, if we want to add1 and then square, we write `(sqr (add1 5))`, with the first operation on the right. Others find the right-to-left behavior backwards, since we speak of the operations from left to write ("add then square").  For now, we'll stick with the right-to-left behavior.  Later in the semester, we may explore some variants of the composition operation.
 
-You can also compose more than two procedures.  For example, we might write the following silly procedure.
+You can also compose more than two procedures.  For example, we might write the following silly procedure, which adds one to its parameter, squares it, and then adds another 1..
 
 ```drracket
 > (define fun (o add1 sqr add1))
