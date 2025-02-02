@@ -62,6 +62,19 @@
   lab:
     - page: /labs/mental-models-of-computation.html
 
+- topic: Transforming images
+  abbrev: transforming-images
+  summary: |
+    We expand our understanding of RGB transformations to image transformations.
+  reading:
+    - page: /readings/anonymous-procedures.html
+    - page: /readings/transforming-rgb.html
+    - page: /readings/transforming-images.html
+  lab:
+    - page: /labs/transforming-images.html
+  todo:
+    - Incorporate anonymous procedures. (At least that's the plan.)
+
 - topic: Expressions and types
   abbrev: exprs-and-types
   summary: |
@@ -89,19 +102,6 @@
     strings.
   lab:
     - page: /labs/strings.html
-
-- topic: Transforming images
-  abbrev: transforming-images
-  summary: |
-    We expand our understanding of RGB transformations to image transformations.
-  reading:
-    - page: /readings/anonymous-procedures.html
-    - page: /readings/transforming-rgb.html
-    - page: /readings/transforming-images.html
-  lab:
-    - page: /labs/transforming-images.html
-  todo:
-    - Incorporate anonymous procedures. (At least that's the plan.)
 
 - topic: Booleans, predicates, and conditionals
   abbrev: booleans
