@@ -12,11 +12,11 @@ We'll then enhance that model with the `define` construct that we have seen thro
 
 You will do most labs on the computer.  You will submit those labs on Gradescope.  In most cases, we will ask you to upload a file or to copy a procedure you've written.  _It is fine if the code does not work perfectly (or at all).  Just let us know that you're aware of the problems._  Most of the time, you will only turn in a few of the exercises.
 
-Other labs, such as this one, you will do some/most of your work on paper and submit the paper.
+Other labs, such as this one, you will do some/most of your work on paper and submit the paper at the end of class.
 
 Whether electronic or paper, labs are due before the next class.  You can use a token to submit a lab late, but it must be in before before the subsequent class.
 
-While we would prefer that you finish the lab with your partner, if you decide to finish th elab separately, you may do so.  Please make sure to cite your partner when submitting the lab.
+While we would prefer that you finish the lab with your partner, if you decide to finish the lab separately, you may do so.  Please make sure to cite your partner when submitting the lab.
 
 In most labs, we will have distinguished driver/navigator roles where:
 
@@ -59,8 +59,7 @@ this a _trace_ or _evaluation trace_).  If you're not sure what
 we're asking for, grab one of the course staff (professor or mentors).
 
 b. The `csc151` library has a simple tool that permits you to trace some
-kinds of code.  (It's new for 2023Fa, so there may be bugs.)  Let's try
-it.  In DrRacket, 
+kinds of code.  (Warning: Ithas some bugs.)  Let's try it.  In DrRacket, 
 
 i. Add `(require csc151/trace)` to the definitions pane.
 
@@ -95,8 +94,6 @@ Consider the following arithmetic expressions.
 1.  $$3 * (4 - \frac{1}{7})$$. (Driver A)
 2.  $$1 + (-2 + (3 + (4 + -5)))$$. (Driver B)
 
-(Recall that the function `(expt a b)` computes $$a^b$$.)
-
 For each of these arithmetic expressions.
 
 a. Translate the expression into an equivalent Scheme expression.
@@ -105,7 +102,17 @@ b. Give the step-by-step evaluation of that Scheme expression to a final value.
 
 c. Check your work by entering in DrRacket.
 
-### Exercise 3: Parts of Expressions
+### Exercise 3: Tracing `map`
+
+We briefly explored the `map` procedure in the introductory reading. 
+
+a. Trace the evaluation of `(map sqr (list 1 2 3 4))` using DrRacket.
+
+b. Trace the evaluation of `(map string-length (string-split "this and that"))` using DrRacket.
+
+c. Explain, in your own word, what `map` seems to be doing.
+
+### Exercise 4: Parts of Expressions
 
 **For this problem, alternate drivers between each expression.**
 
@@ -123,6 +130,8 @@ For each of the following expressions, identify:
 
 In addition to this information, try to "read" the expression and in a sentence, describe what you believe the expression evaluates to.
 Check your work in DrRacket.
+
+Note that `(expt a b)` computes `a` to the `b`th power.
 
 ```racket
 ; (a) (Driver B)
@@ -148,7 +157,7 @@ Finally, with your partner, review your results for parts (a) and (c) and consid
 
 Explain why this statement makes sense given what you know about how expressions evaluate and how they are syntactically formed.
 
-### Exercise 4: Making a Statement (Driver A)
+### Exercise 5: Making a Statement (Driver A)
 
 In our first Scheme work, we learned that `define` is a construct that allowed us to introduce _identifiers_ or _named values_ into our programs.  Each identifier/name is associated with ("bound to") a value.  (Some people call these "variables"; since they don't vary, we will try to avoid that name.)
 
@@ -185,7 +194,7 @@ For example, perhaps we can get the same effect as the code above by _inlining_ 
 3.  Write down the output or errors that you get in each case.
 4.  Answer the following question based on your experience: **Is the `define` form an expression?**
 
-### Exercise 5: The syntax of `define` (Driver B)
+### Exercise 6: The syntax of `define` (Driver B)
 
 From the previous exercise , you should have concluded that `define` is _not_ an expression!
 We certainly do not seem to be able to put a `define` form anywhere an expression is expected.
@@ -218,7 +227,7 @@ With your partner, try out `define` statements with different potential identifi
 You should try out various constructs that you've learned in the reading so far, in particular, the different forms of expressions.
 From your experimentation, describe in a sentence what can appear in the final position of a `define` statement and complete the syntax rule with the syntactic category allowed in that position.
 
-### Exercise 6: Potential complexities (alternating Drivers)
+### Exercise 7: Potential complexities (alternating Drivers)
 
 Now let's think about how `define` statements execute.
 In short, we execute statements in our program in sequential fashion.
@@ -268,7 +277,7 @@ Note that some of these programs produce errors; that is intentional!
 (+ x y)
 ```
 
-### Exercise 7: Explaining `define`
+### Exercise 8: Explaining `define`
 
 In your own words, explain how our Scheme interpreter deals with a sequence of (interleaved expressions and define statements).  
 That is, what does the Scheme interpreter do if you write some define statements and some expressions and some more define statements and some more expressions and so on and so forth?
