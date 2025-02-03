@@ -39,7 +39,8 @@ Administrative stuff
 * There will also be a makeup quiz on procedures.
 * In sections 2 & 3, we're going to switch to doing quizzes at the end
   of class, rather than the beginning. The "stop then start again" model
-  didn't seem to work well.
+  didn't seem to work well. For section 2, quizzes will start at 11:05.
+  When you're done, you can turn in the quiz and leave.
 * Don't forget that you can bring a page of hand-written notes to the quiz!
 
 ### Upcoming activities

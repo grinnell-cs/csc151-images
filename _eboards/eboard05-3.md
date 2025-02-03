@@ -39,7 +39,8 @@ Administrative stuff
 * There will also be a makeup quiz on procedures.
 * In sections 2 & 3, we're going to switch to doing quizzes at the end
   of class, rather than the beginning. The "stop then start again" model
-  didn't seem to work well.
+  didn't seem to work well. In section 3, we'll start the quizzes at 3:35.
+  You can leave when you are finished.
 * Don't forget that you can bring a page of hand-written notes to the quiz!
 
 ### Upcoming activities
@@ -64,6 +65,9 @@ Peer
 
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
+
+* Friday, 2025-02-07, 5:30 p.m., Suzie's Boutique downtown.
+  _Con Brio sings acapella._
 
 Wellness
 
@@ -105,6 +109,7 @@ _These do not earn tokens, but are worth your consideration._
 * Wednesday, 2025-02-05
     * Turn in today's lab if you didn't do so today.
     * Quiz! (decomposition)
+    * Makeup quiz! (procedures)
 * Thursday, 2025-02-06
     * [Mini-project 2](../mps/mp02) due
     * [Submit mini-project 2 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5717086)
@@ -135,10 +140,22 @@ I saw many of you doing something like this.
 
 Why might I object to that definition of `red-blue-mix`? (TPS)
 
+We've already written `ccc`, so why not use it?
+
+```
+(define red-blue-mix (ccc (rgb 255 0 0) (rgb 255 0 255) (rgb 0 0 255)))
+```
+
+Moral: If you have procedures to do something, use them. Don't copy
+their bodies.
+
+Moral: If you find yourself writing the same code again and again and
+again, write a procedure to make things shorter.
+
 Notes and questions on MP2 and beyond
 -------------------------------------
 
-Will you please discribe DrRacket's understanding of the cordinate system? A visual representation would be useful.
+Will you please discribe DrRacket's understanding of the coordinate system? A visual representation would be useful.
 
 > I'll draw one in class.
 
@@ -146,9 +163,52 @@ How does the `describe-image` procedure work?
 
 > When you make an image (using almost any image-making procedure), you can specify a description of the image. `describe-image` then grabs that description. If you don't provide a description, it does the best job it can. (We'll do an example in class.)
 
+```
+> (define tri (solid-polygon (list (pt 0 0) (pt 25 75) (pt 0 100)) ))
+. . solid-polygon: arity mismatch;
+ the expected number of arguments does not match the given number
+  given: 1
+> (define tri (solid-polygon (list (pt 0 0) (pt 25 75) (pt 0 100)) "blue"))
+> tri
+.
+> (describe-image tri)
+"a solid blue polygon built from the points (list (pt 0 0) (pt 25 75) (pt 0 100))"
+> (define tri (solid-polygon (list (pt 0 0) (pt 25 75) (pt 0 100)) "blue"
+                             "a somewhat boring blue triangle"))
+> tri
+.
+> (describe-image tri)
+"a somewhat boring blue triangle"
+> (define something (above (solid-isosceles-triangle 50 40 "red")
+                           (solid-square 40 "brown")))
+> (describe-image something)
+"a center-aligned stack of images (a solid red 50-by-40 isosceles triangle above a solid brown square with side length 40)"
+> (define something (above (solid-isosceles-triangle 50 40 "red")
+                           (solid-square 40 "brown")
+                           "a boring brown house with a red roof"))
+> something
+.
+> (describe-image something)
+"a boring brown house with a red roof"
+```
+
 Can you provide more clarification on this part of the assignment: "You should use `outlined-polygon` for this part of the assignment. Note that `outlined-polygon` only works correctly if you create the points in clockwise order. Otherwise, the outline goes on the "inside" rather than the "outside"."
 
 > I'll try drawing pictures in class
+
+```
+> (define outlined-tri (solid-polygon (list (pt 0 0) (pt 25 75) (pt 0 100)) "blue"
+                                      "our really awesome blue triangle, now in white with a blue outline"))
+> outlined-tri
+.
+> (define outlined-tri (outlined-polygon (list (pt 0 0) (pt 25 75) (pt 0 100)) "blue" 20
+                                         "our really awesome blue triangle, now in white with a blue outline"))
+> outlined-tri
+.
+> (define outlined-tri (outlined-polygon (list (pt 0 0) (pt 0 100) (pt 25 75)) "blue" 20
+                                         "our really awesome blue triangle, now in white with a blue outline"))
+> outlined-tri
+```
 
 What is meant by "Code has been reformatted with Ctrl-I before submitting."
 
@@ -158,13 +218,111 @@ What does the "arity mismatch" error message mean and how can we fix the error?
 
 > It usually means that you've provided the wrong number of arguments in calling a procedure. You fix it by providing the correct number of arguments. You may have to look at the documentation to figure out what arguments you are missing.
 
+```
+> (define tri (solid-polygon (list (pt 0 0) (pt 25 75) (pt 0 100))))
+. . solid-polygon: arity mismatch;
+ the expected number of arguments does not match the given number
+  given: 1
+> (define tri (outlined-polygon (list (pt 0 0) (pt 25 75) (pt 0 100)) "blue"))
+. . outlined-polygon: arity mismatch;
+ the expected number of arguments does not match the given number
+  given: 2
+> (define tri (outlined-polygon (list (pt 0 0) (pt 25 75) (pt 0 100)) "blue" 20))
+> (define tri (outlined-polygon (list (pt 0 0) (pt 25 75) (pt 0 100) "blue") 20))
+. . outlined-polygon: arity mismatch;
+ the expected number of arguments does not match the given number
+  given: 2
+> (define tri
+    (outlined-polygon (list (pt 0 0) (pt 25 75) (pt 0 100)
+                            "blue")
+                      20))
+. . outlined-polygon: arity mismatch;
+ the expected number of arguments does not match the given number
+  given: 2
+> (define tri
+    (outlined-polygon (list (pt 0 0) (pt 25 75) (pt 0 100))
+                      "blue"
+                      20))
+```
+
 I still don't quite understand what the program does when it shifts the image. "As the documentation for solid-polygon suggests, no matter what coordinates you use for the vertices, the polygon gets shifted so that the leftmost point is at the left edge of the image and the topmost point is at the top edge of the image. You can likely use this feature to your advantage. For example, if you’re making a somewhat symmetrical image, you can use (0,0) as the center."
 
 > I'll try to go over that in class.
 
+```
+> (overlay/origin
+   (solid-polygon (list (pt 0 0) (pt 25 75) (pt 0 100)) "blue")
+   (solid-polygon (list (pt 25 75) (pt 50 150) (pt 25 175)) "green"))
+.
+> (solid-polygon (list (pt 25 75) (pt 50 150) (pt 25 175)) "green")
+.
+> (overlay/origin
+   (solid-polygon (list (pt 0 0) (pt 25 75) (pt 0 100)) "blue")
+   (vshift (hshift (solid-polygon (list (pt 25 75) (pt 50 150) (pt 25 175)) "green")
+                   25)
+           75))
+```
+
 Can we make a pentagon "by hand" so that I understand all of the steps?
 
 > Certainly.
+
+```drracket
+> (define theta (* 2/5 pi))
+> (define radius (/ 50 (sin (* 1/5 pi))))
+> (make-polar radius theta)
+26.286555605956682+80.90169943749473i
+> (define pt1x (real-part (make-polar radius theta)))
+> (define pt1y (imag-part (make-polar radius theta)))
+> pt1x
+26.286555605956682
+> pt1y
+80.90169943749473
+> (define pt2x (real-part (make-polar radius (* 2 theta))))
+> (define pt2y (imag-part (make-polar radius (* 2 theta))))
+> pt2x
+-68.81909602355866
+> pt2y
+50.00000000000001
+> (define pt3 (pt (real-part (make-polar radius (* 3 theta)))
+                  (imag-part (make-polar radius (* 3 theta)))))
+> (define pt4 (pt (real-part (make-polar radius (* 4 theta)))
+                  (imag-part (make-polar radius (* 4 theta)))))
+> pt3
+(pt -68.81909602355869 -49.999999999999986)
+> pt4
+(pt 26.28655560595666 -80.90169943749474)
+> (define pentagon (solid-polygon (list (pt radius 0)
+                                        (pt pt1x pt1x)
+                                        (pt pt2x pt2y)
+                                        pt3
+                                        pt4)
+                                  "yellow"
+                                  "a yellow pentagon of side-length 100"))
+> pentagon
+. ; whoops, Sam screwed up by using `pt1x` twice.
+> (define pentagon (solid-polygon (list (pt radius 0)
+                                        (pt pt1x pt1y)
+                                        (pt pt2x pt2y)
+                                        pt3
+                                        pt4)
+                                  "yellow"
+                                  "a yellow pentagon of side-length 100"))
+> pentagon
+. ; yay! that's better
+> (define pentagon (solid-polygon (list (pt radius 0)
+                                        (pt pt1x pt1y)
+                                        (pt pt2x pt2y)
+                                        pt3
+                                        pt4)
+                                  "blue"
+                                  "a blue pentagon of side-length 100"))
+> pentagon
+.
+> (beside (solid-square 100 "black")
+          pentagon)
+.
+```
 
 Q&A
 ---
@@ -180,7 +338,7 @@ What does "non-trivial" mean?
 
 > Alternately, for a typical expression, if there are parentheses around
   any part, that part is non-trivial. If there aren't parentheses, it's
-  trivial.
+  trivial. `2`: trivial. `"hello"`: trivial. `(sqr 2)` : non-trivial
 
 In the example: `(add-3 (* 2 3) (+ 8 3) (/ 1 2))`, do we start with solving 
 `(/ 1 2)` first? Or `(* 2 3)` first? Or all together?
