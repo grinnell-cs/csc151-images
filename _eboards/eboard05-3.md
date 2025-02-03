@@ -1,5 +1,5 @@
 ---
-title: "EBoard 05: Mental models (Section 1)"
+title: "EBoard 05: Mental models (Section 3)"
 number: 5
 section: eboards
 held: 2025-02-03
@@ -48,7 +48,7 @@ Scholarly
 
 * Tuesday, 2025-02-04, Noon--12:50 p.m., PDR 224C (White Dining Room).
   _CS Table: Video Games_
-* Thursday, 2025-02-06, 11:00 a.m.--Noon, JRC 101.
+* Thursday, 2025-02-13, 11:00 a.m.--Noon, JRC 101.
   _Grinnell Lecture: Darrius Hills on "The Achievement of Identity: Soul Work, Salvation, and Black Manhood in the Religious Imagination of James Baldwin"_.
 
 Artistic
@@ -75,13 +75,17 @@ Wellness
   _Therapy Dogs_.
 * Tuesday, 2025-02-04, 7:15--8:15 p.m., HSSC S1003 (Atrium).
   _Therapy Dogs_.
+* Wednesday, 5 February 2025, 4:00--6:00 p.m., Harris.
+  _Org Fair!_
 
 Misc
 
-* Tuesday, 4 Febraury 2025, 7:00--8:00 p.m., Science 2810.
+* Tuesday, 4 Febraury 2025, 7:00--8:00 p.m., Science 3820.
   _Mentor Session_.
 * Thursday, 6 February 2025, 4:15--5:00 p.m., Herrick.
-  _Installatioon Ceremony for Endowed Professorshops_.
+  _Installation Ceremony for Endowed Professorships_.
+* Friday, 7 February 2025, 5:30--8:00 p.m., Downtown Grinnell.
+  _The Sweet Stroll_.
 * Tuesday, 18 February 2025. 6:00--7:00 p.m., HSSC A1231.
   _Make a Portfolio Website_.
     * Please register at ????
@@ -119,6 +123,10 @@ I saw many of you doing something like this.
     (overlay (solid-circle 20 c1)
              (solid-circle 40 c2)
              (solid-circle 60 c3))))
+
+; Instructions: Make three concentric circles with red, a mix of red and
+; blue, and then blue.
+
 (define red-blue-mix
   (overlay (solid-circle 20 (rgb 255 0 0))
            (solid-circle 40 (rgb 255 0 255))
@@ -129,6 +137,10 @@ Why might I object to that definition of `red-blue-mix`? (TPS)
 
 Notes and questions on MP2 and beyond
 -------------------------------------
+
+Will you please discribe DrRacket's understanding of the cordinate system? A visual representation would be useful.
+
+> I'll draw one in class.
 
 How does the `describe-image` procedure work?
 
@@ -145,10 +157,6 @@ What is meant by "Code has been reformatted with Ctrl-I before submitting."
 What does the "arity mismatch" error message mean and how can we fix the error?
 
 > It usually means that you've provided the wrong number of arguments in calling a procedure. You fix it by providing the correct number of arguments. You may have to look at the documentation to figure out what arguments you are missing.
-
-Will you please discribe DrRacket's understanding of the cordinate system? A visual representation would be useful.
-
-> I'll draw one in class.
 
 I still don't quite understand what the program does when it shifts the image. "As the documentation for solid-polygon suggests, no matter what coordinates you use for the vertices, the polygon gets shifted so that the leftmost point is at the left edge of the image and the topmost point is at the top edge of the image. You can likely use this feature to your advantage. For example, if you’re making a somewhat symmetrical image, you can use (0,0) as the center."
 
@@ -170,6 +178,10 @@ What does "non-trivial" mean?
 > "Trivial" means "as simple as possible". Non-trivial means "not trivial". 
   In Scheme, if it needs to be further evaluated, it's non-trivial.
 
+> Alternately, for a typical expression, if there are parentheses around
+  any part, that part is non-trivial. If there aren't parentheses, it's
+  trivial.
+
 In the example: `(add-3 (* 2 3) (+ 8 3) (/ 1 2))`, do we start with solving 
 `(/ 1 2)` first? Or `(* 2 3)` first? Or all together?
 
@@ -178,4 +190,4 @@ In the example: `(add-3 (* 2 3) (+ 8 3) (/ 1 2))`, do we start with solving
 
 ## Lab
 
-Today's lab is on paper! Grab a sheet of paper and a pane.
+Today's lab is on paper! Grab a sheet of paper and a pen.

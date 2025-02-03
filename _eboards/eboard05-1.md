@@ -46,7 +46,7 @@ Scholarly
 
 * Tuesday, 2025-02-04, Noon--12:50 p.m., PDR 224C (White Dining Room).
   _CS Table: Video Games_
-* Thursday, 2025-02-06, 11:00 a.m.--Noon, JRC 101.
+* Thursday, 2025-02-13, 11:00 a.m.--Noon, JRC 101.
   _Grinnell Lecture: Darrius Hills on "The Achievement of Identity: Soul Work, Salvation, and Black Manhood in the Religious Imagination of James Baldwin"_.
 
 Artistic
@@ -77,6 +77,8 @@ Wellness
   _Therapy Dogs_.
 * Tuesday, 2025-02-04, 7:15--8:15 p.m., HSSC S1003 (Atrium).
   _Therapy Dogs_.
+* Friday, 2025-02-07, 5:30--8:00 p.m., Downtown Grinnell.
+  _The Sweet Stroll_.
 
 Misc
 
