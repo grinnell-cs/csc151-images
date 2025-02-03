@@ -309,11 +309,39 @@ How do I add a description to an image?
 "a 100-by-200 blue isosceles triangle"
 ```
 
-The second is much clearer.
+> The second is much clearer.
+
+What is meant by "Code has been reformatted with Ctrl-I before submitting"?
+
+> If you hit Ctrl-I, the code is re-indented for readability. You're now at the stage where you should be striving for moderately well organized code.
+
+What is meant by "Avoids repeated work"?
+
+> We mean (at least) two things: First, you don't recompute the same thing again and again and again. Second, you don't repeat the same (or nearly the same) code again and again and again.
+
+How does the describe-image procedure work?
+
+> When you make an image (using almost any image-making procedure), you can specify a description of the image. `describe-image` then grabs that description. If you don't provide a description, it does the best job it can.
+
+### Part 1
+
+Can I make the dart by overlaying isosceles triangles?
+
+> You can certainly make a solid dart by overlaying isosceles triangles. However, you'll find that the outlined dart is much harder. Hence, I'd recommend that you make both by using polygons.
 
 ### Part 2
 
+I understand the formulae, but I'm not sure where to go next in making the pentagon..
+
+> I'd start by decomposing a bit. You'll probably want a procedure that, given a side length and an angle, gives the radius. You'll also probably want a procedure that, given the radius and an angle, gives you the corresponding point.
+
+> Once you put those two procedures together, you should be able to compute each point in the pentagon.
+
 ### Part 3
+
+For Part 3, does reusing the same framework of code for creating different polygons count as "repeated work" as given in the grading rubric?
+
+> Ideally, if you find yourself writing similar code, you'd put the similar code in a procedure that both your procedures call.
 
 ## Acknowledgements
 
