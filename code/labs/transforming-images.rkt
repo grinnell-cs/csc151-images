@@ -343,28 +343,35 @@ write a procedure, `rgb-less-red`, that makes its parameter less red.
   (o ???))
 
 #|
-g. Consider the following transformation.
+g. In the interactions pane, apply your procedure to one of the images using
+a command like the following.
+
+    > (pixel-map rgb-less-red (image-load "kitten.jpg"))
 |#
 
-(define rgb-transform-g
+#|
+h. Consider the following transformation.
+|#
+
+(define rgb-transform-h
   (o rgb-darker rgb-darker rgb-lighter rgb-lighter))
 
 #|
-At first glance, `rgb-transform-g` seems to return its input value.
+At first glance, `rgb-transform-h` seems to return its input value.
 
-> (rgb->string (rgb-transform-g (rgb 128 128 128)))
+> (rgb->string (rgb-transform-h (rgb 128 128 128)))
 "128/128/128"
-> (rgb->string (rgb-transform-g (rgb 60 70 80)))
+> (rgb->string (rgb-transform-h (rgb 60 70 80)))
 "60/70/80"
 
-i. Are there any colors for which `rgb-transform-g` does *not* return
+i. Are there any colors for which `rgb-transform-h` does *not* return
 the same color?
 
 Your answer:
 
-ii. What effect, if any, do you expect `rgb-transform-g` to have
+ii. What effect, if any, do you expect `rgb-transform-h` to have
 on an image?  (That is, what do you expect for something like
-`(pixel-map rgb-transform-g img)`.
+`(pixel-map rgb-transform-h img)`.
 
 Your answer:
 
@@ -553,16 +560,17 @@ then check in DrRacket.)
 
 (define transform-image-7a
   (lambda (img)
-    (pixel-map (o rgb-bluer rgb-redder) img)))
+    (pixel-map (lambda (c)
+                 (rgb (rgb-red c) 0 (rgb-blue c)))
+               img)))
 
 #|
 a. Answer for `transform-image-7a` (see above).
 
 |#
-
 (define transform-image-7b
   (lambda (img)
-    (pixel-map (o rgb-pseudo-complement rgb-greener rgb-pseudo-complement) img)))
+    (pixel-map (o rgb-bluer rgb-redder) img)))
 
 #|
 b. Answer for `transform-image-7b` (see above).
@@ -571,7 +579,7 @@ b. Answer for `transform-image-7b` (see above).
 
 (define transform-image-7c
   (lambda (img)
-    (pixel-map (cut (image-subtract <> (rgb 100 0 100))) img)))
+    (pixel-map (o rgb-pseudo-complement rgb-greener rgb-pseudo-complement) img)))
 
 #|
 c. Answer for `transform-image-7c` (see above).
@@ -580,10 +588,19 @@ c. Answer for `transform-image-7c` (see above).
 
 (define transform-image-7d
   (lambda (img)
+    (pixel-map (cut (image-subtract <> (rgb 100 0 100))) img)))
+
+#|
+c. Answer for `transform-image-7d` (see above).
+
+|#
+
+(define transform-image-7e
+  (lambda (img)
     (pixel-map (cut (image-subtract (rgb 255 255 255) <>)) img)))
 
 #|
-d. Answer for `transform-image-7d` (see above).
+d. Answer for `transform-image-7e` (see above).
 
 |#
 
