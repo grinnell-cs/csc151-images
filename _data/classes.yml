@@ -45,11 +45,6 @@
     - Make sure this works with the new model.
     - Combine the labs
 
-- topic: Faculty retreat
-  abbrev: retreat
-  summary: |
-    Class is (mostly) cancelled for the faculty retreat.
-
 - topic: Computation via expressions
   abbrev: expressions
   summary: |

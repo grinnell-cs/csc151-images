@@ -19,7 +19,7 @@
     - { date: 2025-01-28 }
     - { date: 2025-01-29, class: true }
     - { date: 2025-01-30 }
-    - { date: 2025-01-31, class: true }
+    - { date: 2025-01-31 }
     - { date: 2025-02-01 }
 
 - week: "Week 3"
