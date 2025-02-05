@@ -286,6 +286,6 @@ Write a procedure, `(rgb-grey c)`, that takes an RGB color as input and produces
 
 _Only do this check if you've studied composition._
 
-a. Without using `lambda, write a procedure, `(rgb-purpler c)`, that makes `c` redder and bluer.
+a. Without using `lambda`, write a procedure, `(rgb-purpler c)`, that makes `c` redder and bluer.
 
 b. Without using `lambda`, write a procedure, `(rgb-much-darker c)`, that applies `rgb-darker` three times in sequence to `c`.
