@@ -78,14 +78,12 @@
     how one builds more complex expressions.  We also continue 
     building our mental model.
   reading:
+    - page: /readings/types.html
     - page: /readings/exprs-and-types.html
     - page: /readings/numbers.html
-    - page: /readings/strings.html
-    - page: /readings/symbols.html
   lab:
     - page: /labs/numbers.html
   todo:
-    - Consider adding symbols to the lab.
     - Consider which types reading to use (or combine them).
     - Might do some cleanup; we split numbers and strings in 2024Sp
 
@@ -95,8 +93,13 @@
     We explore the ways in which we represent text in Scheme,
     including both strings and the characters we use to build
     strings.
+  reading:
+    - page: /readings/strings.html
+    - page: /readings/symbols.html
   lab:
     - page: /labs/strings.html
+  todo:
+    - Consider adding symbols to the lab.
 
 - topic: Booleans, predicates, and conditionals
   abbrev: booleans
