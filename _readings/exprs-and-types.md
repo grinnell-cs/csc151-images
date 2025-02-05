@@ -143,13 +143,13 @@ As you have likely noticed, keeping the type of a function in mind is *really im
 For example, consider the following erroneous call to `circle`:
 
 ~~~racket
-> (circle "red" "solid" 500)
-.../lang/prim.rkt:24:44: circle: expects a non negative real number as first argument, given "red"
+> (solid-circle "red" 500)
+. . solid-circle: expects nonnegative-real? for parameter 1 (diameter), received red
 ~~~
 
-If we recall that the type of circle is:
+If we recall that the type of `solid-circle` is:
 
-+   `circle` is a function that takes a number (the radius), a string or symbol (the fill), and string or symbol (the color) as input and produces an image as output.
++   `solid-circle` is a function that takes a number (the radius) and a color as input and produces an image as output.
 
 We'll note that the problem with the code is that we've incorrectly interchanged the radius and the color!
 
@@ -160,28 +160,3 @@ Whenever you write code, try to keep in mind:
 
 This mentality will bring you one step closer towards truly writing code in an intentional, purposeful fashion and not simply throwing random stuff at the wall and seeing if it works!
 
-## Primitive data in Racket
-
-The remainder of today's readings are broken up into readings for three of the major primitive types we see in Racket:
-
-+ [Numbers]({{ "/readings/numbers.html" | relative_url }})
-+ [Characters and Strings]({{ "/readings/strings.html" | relative_url }})
-+ [Symbols]({{ "/readings/symbols.html" | relative_url }})
-
-For each of these primitives, we introduce the following concepts:
-
-1.  What does a datum of this type represent?
-2.  How do we make values of this type?
-3.  What library functions are available for manipulating values of these types?
-
-You do not have to memorize all of this information in one go as it is a lot of stuff!
-Instead, you should look initially to get the *big picture*: what broad sorts of operations are possible with each type of data and what can I expect to do?
-From there, you can always refer back to these readings and the [Racket referenece](https://docs.racket-lang.org/reference/index.html) to find particular functions to achieve the effect you are looking for.
-
-## Self-checks
-
-The readings on primitive data have a number of self-checks.
-Please complete the following self-checks for your reading question set for this collection:
-
-+ (‡) [Numbers]({{ "/readings/numbers.html" | relative_url }}): Check 1 (Exploring exponentiation)
-+ (‡) [Strings and Collating Sequences]({{ "/readings/strings.html" | relative_url }}): Check 2 (Collating sequences)
