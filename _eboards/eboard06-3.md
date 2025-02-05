@@ -9,7 +9,6 @@ link: true
 
 _Today's start-of-class procedure_
 
-* Grab one or two quizzes.
 * Take one of the business cards from **OUTSIDE** the jar.
 * Identify where the named computer is.
 * Drop the business card in the jar.
@@ -22,11 +21,11 @@ is working correctly.
 
 _Approximate optimistic overview_
 
-* Quiz [15 min]
-* Administrative stuff [5 min]
+* Administrative stuff [10 min]
 * Questions [5 min]
-* Lab [50 min]
-* Turn in lab [5 min]
+* Lab [45 min]
+* Turn in lab [5 min] (15:30)
+* Quiz [15 min]
 
 Administrative stuff
 --------------------
@@ -58,7 +57,7 @@ Scholarly
 
 Artistic
 
-* Friday, 7 February 2025, 3:00--55:00 p.m., Burling Digital Studio.
+* Friday, 7 February 2025, 3:00--5:00 p.m., Burling Digital Studio.
   _Make a Fidget Workshop_.
     * Fill out form at <https://grinnell.co1.qualtrics.com/jfe/form/SV_1MRN686rnUjKrt4>.
 * Tuesday, 11 February 2025, 4:00--5:00 p.m., Bucksbaum 131 (GCMoA).
@@ -66,7 +65,7 @@ Artistic
 
 Multicultural
 
-* Friday, 7 February 2025, HSSC N1170 (Global Living Room)
+* Friday, 7 February 2025, 4:00-5:00 p.m., HSSC N1170 (Global Living Room)
   _Middle of Everywhere: How to Order a Coffee in Singapore_.
 
 Peer
@@ -74,9 +73,8 @@ Peer
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
-* Wednesday, 5 February 2025, 4:00--6:00 p.m., Harris.
-  _Org Fair!_
-    * Try to find Sarah Zoomba-ing around.
+* Friday, 2025-02-07, 5:30 p.m., Suzie's Boutique downtown.
+  _Con Brio sings acapella._
 
 Wellness
 
@@ -90,11 +88,9 @@ Wellness
 
 Misc
 
-* Wednesday, 5 February 2025, Noon--12:45 p.m., Science 2021.
-  _Learn about the UIowa U2G (aka 4+1) program_.
 * Thursday, 6 February 2025, 4:15--5:00 p.m., Herrick.
   _Installation Ceremony for Endowed Professorships_.
-* Sunday, 9 February 2025, ???, ???.
+* Sunday, 9 February 2025, 7:30--8:30pm, Science 3819. 
   _Mentor Session_.
 * Tuesday, 11 February 2025, 7:00--8:00 p.m., Science 3820.
   _Mentor Session_.
@@ -158,8 +154,22 @@ For self-check 4, how can we create a procedure that specifies colors by both th
 
 Are there problems with `outlined-polygon` when coordinates are negative?
 
-> Yes.
+> Yes. It's on my list, but it will take a while to fix.
 
 ## Lab
 
 Please make sure to copy the code from the lab page into DrRacket. 
+
+Use a relatively small picture! 
+
+When you submit: If you reference the images in your definitions pane, then
+you'll need to upload those, too.
+
+This is a lab in which I'd recommend that you read the rest somewhat carefully.
+You don't need to figure out numbers, but you should understand the cuts and
+such.
+
+## Quiz
+
+Drop it with the class mentor on the way out.
+

@@ -58,7 +58,7 @@ Scholarly
 
 Artistic
 
-* Friday, 7 February 2025, 3:00--55:00 p.m., Burling Digital Studio.
+* Friday, 7 February 2025, 3:00--5:00 p.m., Burling Digital Studio.
   _Make a Fidget Workshop_.
     * Fill out form at <https://grinnell.co1.qualtrics.com/jfe/form/SV_1MRN686rnUjKrt4>.
 * Tuesday, 11 February 2025, 4:00--5:00 p.m., Bucksbaum 131 (GCMoA).
@@ -66,17 +66,13 @@ Artistic
 
 Multicultural
 
-* Friday, 7 February 2025, HSSC N1170 (Global Living Room)
+* Friday, 7 February 2025, 4:00-5:00 p.m., HSSC N1170 (Global Living Room)
   _Middle of Everywhere: How to Order a Coffee in Singapore_.
 
 Peer
 
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
-
-* Wednesday, 5 February 2025, 4:00--6:00 p.m., Harris.
-  _Org Fair!_
-    * Try to find Sarah Zoomba-ing around.
 
 Wellness
 
@@ -94,7 +90,7 @@ Misc
   _Learn about the UIowa U2G (aka 4+1) program_.
 * Thursday, 6 February 2025, 4:15--5:00 p.m., Herrick.
   _Installation Ceremony for Endowed Professorships_.
-* Sunday, 9 February 2025, ???, ???.
+* Sunday, 9 February 2025, 7:30--8:30pm, 3819. 
   _Mentor Session_.
 * Tuesday, 11 February 2025, 7:00--8:00 p.m., Science 3820.
   _Mentor Session_.
@@ -163,3 +159,10 @@ Are there problems with `outlined-polygon` when coordinates are negative?
 ## Lab
 
 Please make sure to copy the code from the lab page into DrRacket. 
+
+When you submit: If you reference the images in your definitions pane, then
+you'll need to upload those, too.
+
+This is a lab in which I'd recommend that you read the rest somewhat carefully.
+You don't need to figure out numbers, but you should understand the cuts and
+such.
