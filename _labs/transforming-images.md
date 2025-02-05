@@ -22,7 +22,7 @@ Basic color procedures
 Transforming colors
 
 * `(rgb-darker c)` - create a darker version of `c` (if possible).
-* `(rgb-ligheter c)` - create a lighter version of `c` (if possible).
+* `(rgb-lighter c)` - create a lighter version of `c` (if possible).
 * `(rgb-redder c)` - create a redder version of `c` (if possible).
 * `(rgb-greener c)` - create a greener version of `c` (if possible).
 * `(rgb-bluer c)` - create a bluer version of `c` (if possible).
@@ -54,6 +54,7 @@ Working with procedures
 
 * `(cut (expression-with-diamonds))` - Build a new procedure that takes one parameter for each diamond in `expression-with-diamonds`.
 * `(o fun1 fun2 fun3 ... funn)` - Build a new procedure that applies `funn` then ... then `fun3` then `fun2` then `fun1` to its parameter.
+i* `(lambda (params) body)` - Build a new procedure with the given parameters and instructions.
 
 The lab
 -------
@@ -67,4 +68,4 @@ Acknowledgements
 
 The kitten image was downloaded from <http://public-photo.net/displayimage-2485.html>.  Unfortunately, the site behind that URL has disappeared.  Nonetheless, the kitten image lives on.
 
-This lab was newly written for 2024Sp, based on [a lab from 2017Sp](https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CSC151/2017S/labs/transforming-images-early-lab.html).
+This lab was newly written for Spring 2024, based on [a lab from Spring 2017](https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CSC151/2017S/labs/transforming-images-early-lab.html). It was updated somewhat in Spring 2025.
