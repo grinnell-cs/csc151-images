@@ -288,7 +288,7 @@ ii. Check your answers experimentally.
 |#
 
 #|
-b. 
+c. 
 Consider the following definition.
 |#
 
