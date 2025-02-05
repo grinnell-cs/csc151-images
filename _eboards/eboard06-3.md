@@ -21,11 +21,11 @@ is working correctly.
 
 _Approximate optimistic overview_
 
-* Administrative stuff [5 min]
+* Administrative stuff [10 min]
 * Questions [5 min]
-* Lab [50 min]
+* Lab [45 min]
 * Turn in lab [5 min] (15:30)
-* Quiz [15 min] 
+* Quiz [15 min]
 
 Administrative stuff
 --------------------
@@ -73,6 +73,9 @@ Peer
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
+* Friday, 2025-02-07, 5:30 p.m., Suzie's Boutique downtown.
+  _Con Brio sings acapella._
+
 Wellness
 
 * Friday, 7 February 2025, 5:30--8:00 p.m., Downtown Grinnell.
@@ -85,11 +88,9 @@ Wellness
 
 Misc
 
-* Wednesday, 5 February 2025, Noon--12:45 p.m., Science 2021.
-  _Learn about the UIowa U2G (aka 4+1) program_.
 * Thursday, 6 February 2025, 4:15--5:00 p.m., Herrick.
   _Installation Ceremony for Endowed Professorships_.
-* Sunday, 9 February 2025, 7:30--8:30pm, 3819. 
+* Sunday, 9 February 2025, 7:30--8:30pm, Science 3819. 
   _Mentor Session_.
 * Tuesday, 11 February 2025, 7:00--8:00 p.m., Science 3820.
   _Mentor Session_.
