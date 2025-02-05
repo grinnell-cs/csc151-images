@@ -20,12 +20,12 @@ Basic value
   : A value that does not contain other values.  Examples include numbers, strings, the empty list, and images.
 
 Compound value
-  : A value that does contain other values.  Examples include nonempty lists and vectors.
+  : A value that contains other values.  Examples include strings, nonempty lists, and vectors. Images built with operations like `overlay` and `above` are also considered compound values.
 
 Expression
   : Initially, either (a) a value or (b) the application of a function to a sequence of expressions.  That application is written with an open parenthesis, the function (often represented by an identifier), the sequence of expressions (often called arguments) separated by spaces, and a close parenthesis.  For example `(+ 2 3)` or `(string-length (string-append "hello" "scheme"))`.  Eventually, we'll also see some expressions that start with keywords.
 
-Nontrivial expression
+Non-trivial expression
   : Any expression that is not a basic value.  `(+ 2 3)` is a nontrivial expression.  `2` is a trivial expression.
 
 Immediate subexpression
