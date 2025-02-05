@@ -49,8 +49,8 @@ Note that these are *pure* procedures. When you compute a darker or lighter vers
 ### Transforming components
 
 In addition to making the color uniformly darker or lighter, we can also
-increase individual components using `irgb-redder`, `irgb-greener`, and
-`irgb-bluer`.
+increase individual components using `rgb-redder`, `rgb-greener`, and
+`rgb-bluer`.
 
 ```
 > (color-name->rgb "blueviolet")
@@ -71,7 +71,7 @@ increase individual components using `irgb-redder`, `irgb-greener`, and
 "122/27/255"
 ```
 
-As the examples suggest, for some people, making a color slightly redder, greener, or bluer is hard to detect. Sometimes it's easier to see the changes if we make the transformations a few times. (Since the first call to `irgb-bluer` increases the blue component to its largest value, we may not see further increases.)
+As the examples suggest, for some people, making a color slightly redder, greener, or bluer is hard to detect. Sometimes it's easier to see the changes if we make the transformations a few times. (Since the first call to `rgb-bluer` increases the blue component to its largest value, we may not see further increases.)
 
 ```
 > (rgb-redder (rgb-redder (color-name->rgb "blueviolet")))
@@ -90,7 +90,7 @@ As the examples suggest, for some people, making a color slightly redder, greene
 
 ### Other simple transformations 
 
-The `irgb-rotate` procedure rotates the red, green, and blue components of a color, setting red to green, green to blue, and blue to red. It is intended mostly for fun, but it can also help us think about the use of these components.
+The `rgb-rotate` procedure rotates the red, green, and blue components of a color, setting red to green, green to blue, and blue to red. It is intended mostly for fun, but it can also help us think about the use of these components.
 
 ```
 > (color-name->rgb "blueviolet")
@@ -107,7 +107,7 @@ The `irgb-rotate` procedure rotates the red, green, and blue components of a col
 "226/138/43"
 ```
 
-The `irgb-phaseshift` procedure is another procedure with less clear uses. It adds 128 to each component with a value less than 128 and subtracts 128 from each component with a value of 128 or more. While this is somewhat like the computation of a pseudo-complement, it also differs in some ways. Hence, the `csc151` library also provides an `rgb-pseudo-complement` procedure that computes the pseudo-complement of an RGB color.
+The `rgb-phaseshift` procedure is another procedure with less clear uses. It adds 128 to each component with a value less than 128 and subtracts 128 from each component with a value of 128 or more. While this is somewhat like the computation of a pseudo-complement, it also differs in some ways. Hence, the `csc151` library also provides an `rgb-pseudo-complement` procedure that computes the pseudo-complement of an RGB color.
 
 ```
 > (color-name->rgb "blueviolet")
