@@ -70,6 +70,15 @@
   todo:
     - Incorporate anonymous procedures. (At least that's the plan.)
 
+- topic: Building procedures, revisited
+  abbrev: procedures
+  summary: |
+    We continue our explorations from the previous class.
+  reading:
+    - page: /readings/anonymous-procedures.html
+  lab:
+    - page: /labs/transforming-images.html
+
 - topic: Expressions and types
   abbrev: exprs-and-types
   summary: |
@@ -112,11 +121,6 @@
     - page: /labs/conditionals.html
   todo:
     - Last semester, we needed two days for this. I'm inserting a pause for breath
-
-- topic: Pause for Breath
-  abbrev: pause-01
-  summary: |
-    We pause to catch up on a variety of topics.
 
 - topic: Pair programming
   abbrev: pair-programming
