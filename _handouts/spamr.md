@@ -5,6 +5,52 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
+## [CSC-151 2025Sp] Schedule, MP1, Quizzes, Etc. (Wednesday, 2025-02-05)
+
+Dear Producers of Playful Polygons,
+
+As normal, I'm writing to you about a variety of things. And, as usual, you should feel free to reach out with comments and questions.
+
+SCHEDULE UPDATE
+
+Anonymous procedures, particularly cut and compose, are important enough that I've decided we should continue today's (Wednesday's) lab on Friday. You'll see that the schedule has been rearranged. Fortunately, I'd included a "Pause for breath" a week from Friday, so we'll slip into that. Because of the change, you don't have readings for tomorrow night! I'll reserve some extra time for questions on Friday, too.
+
+MINI-PROJECT ONE
+
+a. Mini-project one is now graded. Your grade and comments are available on Gradescope. Ignore the fractional part of your grade, which is assigned by the autograder; the whole number is what matters. 4 is an E (Exemplary), 3 is an M (Meets Expectations), 2 is an R (Redo), and 1 is an I (Incomplete). If you have no score, we don't seem to have evidence that you turned it in.
+
+b. If you didn't turn it in, I'll be turning in an Academic Alert. AA's are not intended as punitive; rather, they exist to start a dialogue with Academic Affairs to ensure that you do well. (Starting with MP2, I'll also send in Academic Alerts for those who get I's.)
+
+c. Everyone gets a free chance to redo mini-project one (or to do it, if you didn't turn it in). The redo is posted on Gradescope and is due on Sunday, 16 February 2025. Ideally, there's enough guidance on your mini-project to ensure that you can bring your score up to an E next time. Feel free to ask me about any comments you received. When you turn in a redo, you must include a file called "CHANGES.txt" that summarizes the problems from last time and the changes you've made. For example,
+
+```
+Mini-Project 1 Redo
+Your Name Here
+Sunday, 15 February 2025
+
+In this redo, I've made the following changes in response to comments.
+
+I was told that the cards in part 4 don't match the cards in part 1. I changed how I defined the cards in part 1, and they now match.
+
+I only used three subimages in the cards in part 1. My cards in part 1 now have four subimages.
+```
+
+Please only submit the `CHANGES.txt` file when you are ready to have your revised mini-project graded. If you're just submitting to get feedback from the autograder, leave out the `CHANGES.txt` file.
+
+TODAY'S QUIZZES
+
+Graded versions of today's quizzes are also available on Gradescope. Please take the time to read over any comments. In many cases, folks did not sufficiently decompose the code, so there is still a lot of repeated code. We'll go over the quizzes in class on Friday, too.
+
+ANOTHER TOKEN ACTIVITY
+
+Thursday at 11:00, the Rosenfield Program will hold a roundtable on the first two weeks of the new Trump administration, in which experts from campus will discuss new executive orders, tariffs, and administrative policies since the inauguration. The event will take place on Thursday, February 6, at 11:00 in the second-floor HSSC auditorium. News is breaking quickly, but we expect to cover at least four themes: tariff policy, efforts to defund/demoralize the federal bureaucracy, federal grants and science funding, and criticism of so-called "radical indoctrination" by K-12 schools.
+
+OTHER THINGS
+
+I forgot to mention: In the US, it's 2/5/25. Isn't that cool?
+
+-- SamR
+
 ## [CSC-151 2025Sp] Lab write-ups, Quizzes, MP1, and more (Monday, 2025-01-27)
 
 Dear Virtual house builders,
