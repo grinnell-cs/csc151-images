@@ -3,7 +3,7 @@ title: "EBoard 07: Cut and compose (Section 2)"
 number: 7
 section: eboards
 held: 2025-02-07
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -30,6 +30,7 @@ Administrative stuff
 
 ### Introductory notes
 
+* I'm running out of time on Otter.ai, so I'll only be recording section 1.
 * Please try to avoid putting images and colors in the definitions pane.
   When you do so, your Racket file ends up saving in a strange format that
   doesn't work with Gradescope. Yay computers!
@@ -196,6 +197,25 @@ I got an I on MP2. Will you charge me tokens for redoing MP2?
 
 > Yes. Tokens are my way of encouraging you to make sure you make an
   appropriate start on mini-projects.
+
+When do we make up quizzes?
+
+> Option 1: During the next quiz day, there will (usually) be make-ups
+  for past quizzes. (They aren't identical.)
+
+> Option 2: On the SoLA (take-home exams).
+
+Can you tell us more about take-home exams?
+
+> Yes, when I distribute them. But not today.
+
+Is it okay that I learned things from the Racket Web site and cited them?
+
+> Yes.
+
+When redoing a mini-project do I have to start over?
+
+> Generally, no. Just fix the parts that we tell you need fixing.
 
 ### Readings
 
