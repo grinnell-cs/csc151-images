@@ -10,7 +10,7 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
-link: false
+link: true
 preimg: true
 ---
 You will create only one file for this mini-project, `image-transformations.rkt`. You should begin your project with [this starter code](../code/mps/image-transformations.rkt).
@@ -103,7 +103,7 @@ In a few cases, we can use composition to write the color transformations that a
                img)))
 ```
 
-Here's the effect on the kitten.
+Here's its effect on the kitten.
 
 ![The kitten, once again. This time, the fur is a bit redder and the green rug looks much bluer.](../images/transforming-images/kitten-decrease-green.jpg)
 
@@ -129,7 +129,7 @@ These few procedures give you a sample of the kinds of "basic" RGB transformatio
 
 ## 1a. Extreme components
 
-Write a procedure, `(rgb-extreme color)`, that takes one parameter, an RGB color, and turns each component to 255 if it is at least 128 and to 0 if it is less than 128.
+Write a procedure, `(rgb-extreme color)`, that takes one parameter, an RGB color, and turns each component to 255 if it is at least 128 and to 0 if it is less than 128. You should not use conditionals for this procedure, particularly since we haven't covered them yet. Consider how division and rounding and such will help.
 
 ```
 > (rgb->string (rgb-extreme (rgb 0 64 200)))
@@ -154,9 +154,11 @@ Write a procedure, `(rgb-enhance-dominant color), that takes one parameter, an R
 "255/0/0"
 > (rgb->string (rgb-enhance-dominance (rgb 10 0 10)))
 "255/0/255"
+> (rgb->string (rgb-enhance-dominance (rgb 10 10 10)))
+"255/255/255"
 ```
 
-Hint: While you can write this procedure with conditionals, you might be able to achieve more concise code with a clever combination of max, addition, division, rounding, and multiplication.
+You should not write this procedure with conditionals. Rather, you should think about a clever combination of max, addition, division, rounding, and multiplication.
 
 We've provided a procedure, `(enhance-dominance img)`, that applies `rgb-enhance-dominance` to each pixel in an image.
 
@@ -192,6 +194,8 @@ You may then want to see the effect this procedure has on various images.
 ![The kitten, looking more like the original, but with larger sections of identical colors.](../images/transforming-images/kitten-flatten-32.jpg)
 
 Hint: The sample code for computing nearest multiples of 32 should help.
+
+Note: As in the previous procedures, you may not use conditionals.
 
 ### 1d. Eight-bit colors
 
@@ -536,11 +540,11 @@ Document and write a procedure, `(set-hue img new-hue)`, that takes an  image an
 Part three: Freestyle
 ---------------------
 
-a. Document and write a procedure, `(my-rgb-transformation img value)`, that transforms `img` using `value` and the RGB components of the image.
+a. Document and write a procedure, `(my-rgb-transformation img value)`, that transforms `img` using `value` and the RGB components of each pixel in the image. It is up to you how you change individual pixels, but you should strive to do something "interesting".
 
 b. Using your procedure, create three images---`kitten-rgb-transformed-01.jpg`, `kitten-rgb-transformed-02.jpg`, and `kitten-rgb-transformed-03.jpg`---that demonstrate how your procedure affects our kitten image. In a comment, indicate how you created each image.
 
-c. Document and write a procedure, `(my-hsv-transformation img value)`, that transforms `img` using `value` and the HSV components of the image.
+c. Document and write a procedure, `(my-hsv-transformation img value)`, that transforms `img` using `value` and the HSV components of the image. It is up to you how you change individual pixels, but you should strive to do something "interesting".
 
 d. Using your procedure, create three images---`kitten-hsv-transformed-01.jpg`, `kitten-hsv-transformed-02.jpg`, and `kitten-hsv-transformed-03.jpg`---that demonstrate how your procedure affects our kitten image. In a comment, indicate how
 you created each image.
@@ -558,7 +562,7 @@ Grading rubric
 Submissions that lack any of these characteristics will get an I.
 
 ```
-[ ] Passes all of the one-star autograder tests.
+[ ] Passes all of the **R** autograder tests.
 [ ] Includes the specified file, `image-transformations.rkt`.
 [ ] Includes an appropriate header on the file that indicates the
     course, author, etc.
@@ -573,7 +577,7 @@ Submissions that lack any of these characteristics but have all of the
 prior characteristics will get an R.
 
 ```
-[ ] Passes all of the two-star autograder tests.
+[ ] Passes all of the **M** autograder tests.
 [ ] Code is well-formatted with appropriate names and indentation.
 [ ] Code has been reformatted with Ctrl-I before submitting.
 [ ] Code generally follows style guidelines, including limiting the
@@ -587,7 +591,7 @@ Submissions that lack any of these characteristics but have all of the
 prior characteristics will get an M.
 
 ```
-[ ] Passes all of the three-star autograder tests.
+[ ] Passes all of the **E** autograder tests.
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.
 [ ] Uses `cut` and composition when appropriate.
