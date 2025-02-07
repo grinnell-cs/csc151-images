@@ -1,9 +1,9 @@
 ---
-title: "EBoard 07: Cut and compose (Section 1)"
+title: "EBoard 07: Cut and compose (Section 2)"
 number: 7
 section: eboards
 held: 2025-02-07
-link: true
+link: false
 ---
 # {{ page.title }}
 
