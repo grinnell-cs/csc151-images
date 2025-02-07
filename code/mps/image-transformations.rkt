@@ -4,7 +4,7 @@
 
 ;;; image-transformations.rkt
 ;;;   A variety of procedures that transform images, created for MP3 in
-;;;   CSC-151-XX 2024Sp.
+;;;   CSC-151-XX SEMESTER.
 ;;;
 ;;; Author: Your Name Here
 ;;; Date submitted: YYYY-MM-DD
@@ -14,6 +14,7 @@
 ;;; * Starter code provided by SamR and Leah.  That code includes 
 ;;;   this header, the "provided code" section below, and a bit of
 ;;;   other material.
+;;; * ...
 
 ; +---------------+--------------------------------------------------
 ; | Provided code |
