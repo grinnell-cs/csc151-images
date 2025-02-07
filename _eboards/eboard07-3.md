@@ -3,16 +3,18 @@ title: "EBoard 07: Cut and compose (Section 3)"
 number: 7
 section: eboards
 held: 2025-02-07
-link: false
+link: true
 ---
 # {{ page.title }}
 
-_Today's start-of-class procedure_
-
-Plan to sit with your partner from last class (in the same place).
-
 **Warning! You are being recorded** and transcribed, provided the technology
 is working correctly.
+
+_Today's start-of-class procedure_
+
+* Plan to sit with your partner from last class (in the same place).
+* Don't forget to introduce yourselves again!
+* Whoever was logged in last time should log in again. Bring up the lab.
 
 _Approximate optimistic overview_
 
@@ -41,10 +43,10 @@ Administrative stuff
 
 Scholarly
 
-* Tuesday, 11 February 2025, Noon--12:50 p.m., PDR 224C (White Dining Room).
-  _CS Table: ???_
 * Thursday, 13 February 2025, 11:00 a.m.--Noon, JRC 101.
   _Grinnell Lecture: Darrius Hills on "The Achievement of Identity: Soul Work, Salvation, and Black Manhood in the Religious Imagination of James Baldwin"_.
+* Tuesday, 18 February 2025, Noon--12:50 p.m., PDR 224C (White Dining Room).
+  _CS Table: ???_
 
 Artistic
 
@@ -124,9 +126,9 @@ _These do not earn tokens, but are worth your consideration._
 
 Example one: A student comment from mini-project 2. 
 
-> _For the pentagon, I did get a little bit of help from the programming assitant 
-  chatgpt, I was having trouble with knowing how to incorporate real-part,
-  imag-part, and tying it all together._
+> _For the pentagon, I did get a little bit of help from the programming 
+  assitant chatgpt, I was having trouble with knowing how to incorporate
+  real-part, imag-part, and tying it all together._
 
 * Thanks for citing.
 * However, **Do not use AI programming assistants!**
@@ -142,18 +144,21 @@ Example two: Some code from mini-project 2
   Interweb. (Hopefully not with ChatGPT.) 
 * Let's see where (of course, they cited it).
 * Nope.
-* **In general, I'd prefer that you not go far beyond what we've learned in class.**
+* **Citing is important!!**
+* **In general, I'd prefer that you not go far beyond what we've learned 
+  in class.**
 
 Example three: Strange file uploaded
 
 About Wednesday's Quizzes
 -------------------------
 
-There are many goals and processes for decomposition. Not only are we breaking
-a big problem into smaller parts, we are also trying to avoid repeating ourselves.
+There are many goals and processes for decomposition. Not only are we
+breaking a big problem into smaller parts, we are also trying to avoid
+repeating ourselves.
 
 In many cases, I saw that you did some decomposition well, but left some
-repeated code. My inititial inclination was to mark all of those as "Redo".
+repeated code. My initial inclination was to mark all of those as "Redo".
 After some reflection, I decided that talking about it in class would suffice.
 If there's more than one case of repetition, you have a redo. If there's
 only one, you have an S.
@@ -224,5 +229,5 @@ When redoing a mini-project do I have to start over?
 Lab
 ---
 
-Same partners, new submission
+Same partners, new submission. (Submit for class 7, not class 6.)
 

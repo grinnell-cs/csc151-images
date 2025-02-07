@@ -9,7 +9,10 @@ link: true
 
 _Today's start-of-class procedure_
 
-Plan to sit with your partner from last class (in the same place).
+* Plan to sit with your partner from last class (in the same place). 
+* Greet each other.
+* Log in.
+* Bring up the lab.
 
 **Warning! You are being recorded** and transcribed, provided the technology
 is working correctly.
@@ -41,10 +44,10 @@ Administrative stuff
 
 Scholarly
 
-* Tuesday, 11 February 2025, Noon--12:50 p.m., PDR 224C (White Dining Room).
-  _CS Table: ???_
 * Thursday, 13 February 2025, 11:00 a.m.--Noon, JRC 101.
   _Grinnell Lecture: Darrius Hills on "The Achievement of Identity: Soul Work, Salvation, and Black Manhood in the Religious Imagination of James Baldwin"_.
+* Tuesday, 18 February 2025, Noon--12:50 p.m., PDR 224C (White Dining Room).
+  _CS Table: ???_
 
 Artistic
 
@@ -120,17 +123,28 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
+* You are awesome.
+* People care about you.
+* Please take care of yourself.
+* Please be moderate.
+* Choose what is right for you.
+* Consent is essential, but insufficient.
+
 ### Academic Integrity
 
 Example one: A student comment from mini-project 2. 
 
-> _For the pentagon, I did get a little bit of help from the programming assitant 
-  chatgpt, I was having trouble with knowing how to incorporate real-part,
-  imag-part, and tying it all together._
+> _For the pentagon, I did get a little bit of help from the programming
+  assitant chatgpt, I was having trouble with knowing how to incorporate
+  real-part, imag-part, and tying it all together._
 
 * Thanks for citing.
 * However, **Do not use AI programming assistants!**
 * Ask a human being. Don't ask the computer.
+* There are (at least) two kinds of evening help
+    * Evening tutors (Sunday through Thursday, 7-10 p.m.): Answer
+      questions individually.  (Also Sunday 3-5)
+    * Mentor sessions (Sunday 7:30-8:30, Tuesday 7-8): Review sessions.
 
 Example two: Some code from mini-project 2
 
@@ -142,18 +156,22 @@ Example two: Some code from mini-project 2
   Interweb. (Hopefully not with ChatGPT.) 
 * Let's see where (of course, they cited it).
 * Nope.
+* **Please cite!**
 * **In general, I'd prefer that you not go far beyond what we've learned in class.**
 
 Example three: Strange file uploaded
 
+* Be careful to upload the right file.
+
 About Wednesday's Quizzes
 -------------------------
 
-There are many goals and processes for decomposition. Not only are we breaking
-a big problem into smaller parts, we are also trying to avoid repeating ourselves.
+There are many goals and processes for decomposition. Not only are we
+breaking a big problem into smaller parts, we are also trying to avoid
+repeating ourselves.
 
 In many cases, I saw that you did some decomposition well, but left some
-repeated code. My inititial inclination was to mark all of those as "Redo".
+repeated code. My initial inclination was to mark all of those as "Redo".
 After some reflection, I decided that talking about it in class would suffice.
 If there's more than one case of repetition, you have a redo. If there's
 only one, you have an S.
@@ -176,6 +194,54 @@ _Sam, how do I reduce redundancy in my `compute-pentagon-point` procedure?_
   so that you don't have to duplicate the conversion of side length to
   radius!
 * Second, TPS!
+
+```
+(define that-point
+  (lambda (radius num)
+    (make-polar radius (* 2/5 num pi))))
+ 
+(define compute-pentagon-point
+  (lambda (radius num)
+    (pt (real-part (that-point radius num)) 
+        (imag-part (that-point radius num)))))
+```
+
+Another solution
+
+```
+(define polar->point
+  (lambda (polar)
+    (pt (real-part polar)
+        (imag-part polar))))
+
+(define compute-pentagon-point
+  (lambda (radius num)
+    (polar->point (make-polar radius (* 2/5 num pi)))))
+```
+
+A solution that I'd prefer you not use (yet).
+
+```
+(define compute-pentagon-point
+  (lambda (radius num)
+    (define polar (make-polar radius (* 2/5 num pi)))
+    (pt (real-part polar)
+        (imag-part polar))))
+```
+
+Sam doesn't like this last version because
+
+* It uses `define` within `define`, which is known to cause weird behavior.
+* It avoids decomposing the procedure into subprocedures. _More this._
+
+Lessons:
+
+* When confronted with repeated code, you may be tempted to put the repeated
+  code in a separate procedure (good temptation), but you should also put
+  the enclosing code in a separate procedure (also a good temptation).
+* Think about the kinds of values you're working with and how you change
+  them to other kinds of values.
+* Break complicated things into smaller parts. (Aka, decompose)
 
 About Mini-Project Three
 ------------------------
@@ -216,6 +282,31 @@ Is it okay that I learned things from the Racket Web site and cited them?
 When redoing a mini-project do I have to start over?
 
 > Generally, no. Just fix the parts that we tell you need fixing.
+
+What should documentation look like?
+
+```
+;;; (PROCEDURE PARAMS) -> type?
+;;;   PARAM : type?
+;;;   PARAM : type?
+;;;   PARAM : type?
+;;; SHORT DESCRIPTION OF WHAT THE PROCEDURE DOES.
+```
+
+```
+;;; (compute-pentagon-point side num) -> point?
+;;;   side : positive-real?
+;;;   num : integer? (in the range 1 .. 4)
+;;; Compute one point on a pentagon, numbering them clockwise.
+```
+
+If I used one semicolon rather than three, do I need to resubmit.
+
+> Nah.
+
+Cool?
+
+> Of course. It's winter in Iowa.
 
 ### Readings
 
