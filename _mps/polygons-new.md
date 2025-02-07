@@ -247,7 +247,9 @@ prior characteristics will get an R.
 [ ] Passes all of the **M** autograder tests.
 [ ] Code is well-formatted with appropriate names and indentation.
 [ ] Code has been reformatted with Ctrl-I before submitting.
+[ ] Each polygon procedure generates an description.
 [ ] All the primary procedures are documented.
+[ ] Freestyle procedure generates a description.
 [ ] Documentation for most procedures is correct / has the correct form.
 ```
 
@@ -260,12 +262,19 @@ prior characteristics will get an M.
 [ ] Passes all of the **E** autograder tests.
 [ ] Avoids repeated work.
 [ ] All helper procedures are documented.
-[ ] Each procedure generates an appropriate description.
+[ ] Each polygon procedure generates an appropriate description.
 [ ] Includes a particularly creative procedure in the freestyle.
+[ ] Freestyle procedure generates an appropriate description.
 [ ] `freestyle-examples` shows off different aspects of the procedure.
 ```
 
+## Q&A
+
 ### General
+
+I'm having some trouble with outlined shapes when some of the coordinates are negative.
+
+> It appears there's a bug in `outlined-polygon` in such situations. A fix probably won't be in place soon.
 
 How do I add a description to an image?
 
@@ -309,7 +318,7 @@ How do I add a description to an image?
 "a 100-by-200 blue isosceles triangle"
 ```
 
-> The second is much clearer.
+> The second description is much clearer.
 
 What is meant by "Code has been reformatted with Ctrl-I before submitting"?
 
@@ -331,17 +340,34 @@ Can I make the dart by overlaying isosceles triangles?
 
 ### Part 2
 
-I understand the formulae, but I'm not sure where to go next in making the pentagon..
+I understand the formulae, but I'm not sure where to go next in making the pentagon.
 
 > I'd start by decomposing a bit. You'll probably want a procedure that, given a side length and an angle, gives the radius. You'll also probably want a procedure that, given the radius and an angle, gives you the corresponding point.
 
 > Once you put those two procedures together, you should be able to compute each point in the pentagon.
+
+Do I have to create a description for these shapes?
+
+> If you want an E.
+
+Do you consider the following repeated work?
+
+```
+(pt (real-part (make-polar radius angle))
+    (imag-part (make-polar radius angle)))
+```
+
+> Yes. You've called `make-polar` twice on the same parameters. Write a helper function to avoid the repeated work.
 
 ### Part 3
 
 For Part 3, does reusing the same framework of code for creating different polygons count as "repeated work" as given in the grading rubric?
 
 > Ideally, if you find yourself writing similar code, you'd put the similar code in a procedure that both your procedures call.
+
+Do I have to create an automatic description for my shape?
+
+> If you want an E.
 
 ## Acknowledgements
 
