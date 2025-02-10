@@ -13,7 +13,7 @@ collaboration: |
 link: true
 preimg: true
 ---
-You will create only one file for this mini-project, `image-transformations.rkt`. You should begin your project with [this starter code](../code/mps/image-transformations.rkt).
+You will create only one file for this mini-project, [`image-transformations.rkt`](../code/image-transformations.rkt). You should begin your project with [this starter code](../code/mps/image-transformations.rkt).
 
 You will submit both that file and some images you create in part three.
 
@@ -583,6 +583,7 @@ prior characteristics will get an R.
 [ ] Code generally follows style guidelines, including limiting the
     length of lines to about 80 characters.
 [ ] Documentation for all core procedures is correct / has the correct form.
+[ ] Includes all the images.
 ```
 
 ### Exemplary / Exceeds expectations
