@@ -2,7 +2,7 @@
 
 (require csc151)
 
-;; CSC 151 (SEMESTER)
+;; CSC 151-XX (SEMESTER)
 ;; Lab: Numbers
 ;; Authors: YOUR NAMES HERE
 ;; Date: THE DATE HERE
@@ -25,7 +25,8 @@ will drive on the exercises marked "B".
 
 #|
 
-1. Make sure to introduce yourself to your partner.
+1. Make sure to introduce yourself to your partner. You should also discuss
+work habits and such.
 
 2. Make sure to save this file as numbers.rkt.
 
@@ -233,7 +234,7 @@ return an exact number and sometimes return an inexact number.
 
 #|
 a. Present a hypothesis as to when `max` will return an exact
-number and when they will return an inexact number.
+number and when it will return an inexact number.
 
 `max` will return an exact number when:
 ADD AN ANSWER
@@ -242,7 +243,7 @@ ADD AN ANSWER
 ADD AN ANSWER
 
 Note that your answers should be comprehensive; someone should be able 
-to use your answers to predict the exactitude of any call to `max`.
+to use your answers to predict the exactness of any call to `max`.
 |#
 
 #|
@@ -322,6 +323,9 @@ digit) in that number.  For example:
 0
 |#
 
+;;; (ones-digit-of n) -> integer?
+;;;   n : integer?
+;;; Find the last digit of `n`.
 (define ones-digit-of
   (lambda (n)
     ???))
@@ -337,6 +341,10 @@ the number has only one digit, then 0 is returned.  For example:
 0
 |#
 
+;;; (truncate-ones-from n) -> integer?
+;;;   n : integer?
+;;; Find all but the last digit of `n`. If `n` has only one digit,
+;;; returns 0.
 (define truncate-ones-from
   (lambda (n)
     ???))
