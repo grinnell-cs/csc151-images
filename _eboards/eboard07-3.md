@@ -72,6 +72,8 @@ Wellness
 
 * Friday, 7 February 2025, 5:30--8:00 p.m., Downtown Grinnell.
   _The Sweet Stroll_.
+* Friday, 7 February 2025, 6:00--8:00 p.m., The Aux Gym.
+  _Badminton_.
 * Tuesday, 11 February 2025, 12:15--12:50 p.m., GCMoA.
   _Yoga in the Museum_.
 * Tuesday, 11 February 2025, 4:30--6:30 p.m., 
@@ -115,12 +117,19 @@ _These do not earn tokens, but are worth your consideration._
     * [Submit reading responses on Gradescope](https://www.gradescope.com/courses/948769/assignments/5732137)
     * [Submit pre-reflection for mini-project 3 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5732264)
 * Tuesday, 2025-02-10
-    * Readings for Monday's class.
+    * Readings for Wednesday's class.
         * [Characters and strings](../readings/strings)
         * [Symbolic values](../readings/symbols)
     * [Submit reading responses on Gradescope](https://www.gradescope.com/courses/948769/assignments/5732140)
 
 ### Friday PSA
+
+* You're awesome.
+* People care about you.
+* Take care of yourself this weekend! (and every weekend)
+* What is right for you may not be the same as what is right for others.
+* Moderation is essential.
+* Consent is essential, but not sufficient.
 
 ### Academic Integrity
 
@@ -133,6 +142,10 @@ Example one: A student comment from mini-project 2.
 * Thanks for citing.
 * However, **Do not use AI programming assistants!**
 * Ask a human being. Don't ask the computer.
+* Evening tutor sessions (Sunday to Thursday, 7--10pm, here): Individualized
+  help (usually on homework assignments). (Also Sunday 3--5:00 pm.)
+* Evening mentor sessions (Sunday, 7:30--8:30 in 3819, Tuesday 7:00-8:00 p.m.
+  in 3820): Review of topics. Quiz prep.
 
 Example two: Some code from mini-project 2
 
@@ -149,6 +162,8 @@ Example two: Some code from mini-project 2
   in class.**
 
 Example three: Strange file uploaded
+
+* Make sure to upload the correct file.
 
 About Wednesday's Quizzes
 -------------------------
@@ -182,8 +197,53 @@ _Sam, how do I reduce redundancy in my `compute-pentagon-point` procedure?_
   radius!
 * Second, TPS!
 
+```
+(define compute-pentagon-polar
+  (lambda (radius num)
+    (make-polar radius (* 2/5 num pi))))
+
+(define compute-pentagon-point
+  (lambda (radius num)
+    (pt (real-part (compute-pentagon-polar radius num))
+        (imag-part (compute-pentagon-polar radius num)))))
+```
+
+We've made the code more readable (or may have, if we choose the right
+name for that helper procedure), but we haven't eliminated redundancy.
+
+```
+(define polar->point 
+  (lambda (polar)
+    (pt (real-part polar)
+        (imag-part polar))))
+
+(define compute-pentagon-point
+  (lambda (radius num)
+    (polar->point (compute-pentagon-polar radius num))))
+```
+
+Combining them
+
+```
+(define compute-pentagon-point
+  (lambda (radius num)
+    (polar->point (make-polar radius (* 2/5 num pi)))))
+```
+
+Important lessons
+
+* If we have redundant computations, we should create a helper procedure
+  that does part of the computation.
+    * One helper for the redudant code
+    * One helper that takes the result of the redundant code
+* Decompose! It makes things more readable.
+
 About Mini-Project Three
 ------------------------
+
+Transform images!
+
+Have fun with kittens.
 
 Q&A
 ---
