@@ -58,7 +58,7 @@ When you are done, upload your `numbers.rkt` file to Gradescope.
 
 ## Notes
 
-### Notes on From reals to integers {#anchor-real2int-notes}
+### Notes on from reals to integers {#anchor-real2int-notes}
 
 Here are the ways we tend to think of the four functions:
 
