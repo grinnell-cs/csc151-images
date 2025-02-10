@@ -3,7 +3,7 @@ title: "EBoard 08: Numbers (Section 3)"
 number: 8
 section: eboards
 held: 2025-02-10
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -30,8 +30,11 @@ Administrative stuff
 * Please do not use your electronic devices for anything other than classwork
   or a _quick_ check of your email/texts. Anything else may lead to us
   defenestrating your device.
-* My weekend fell apart a bit, so I'm a bit behind on everything. In particular,
-  I haven't looked at your pre-reflections or reading responses. Apologies!
+* My weekend fell apart a bit, so I'm a bit behind on everything. In
+  particular, I haven't looked at your pre-reflections or reading
+  responses. Apologies!
+* I'm running out of my time allocation on Otter.ai, so I won't be using 
+  it to record sections 2 or 3.
 
 ### Upcoming activities
 
@@ -51,8 +54,10 @@ Artistic
 
 Multicultural
 
-* Friday, 14 February 2025, 4:00-5:00 p.m., HSSC N1170 (Global Living Room)
-  _Middle of Everywhere: ???_
+* Friday, 14 February 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room)
+  _Middle of Everywhere: Japan / Bento Boxes_
+* Saturday, 15 February 2025, ?:00-?:00 p.m., Harris Gym.
+  _Lunar New Year_
 
 Peer
 
@@ -73,11 +78,11 @@ Misc
   _Fill out the survey at <https://www.surveymonkey.com/r/GrinnellParksandRec>._
 * Tuesday, 11 February 2025, 7:00--8:00 p.m., Science 3820.
   _Mentor Session_.
+* Sunday, 16 February 2025, 7:30--8:30 p.m., Science 3819. 
+  _Mentor Session: Quiz and SoLA prep_.
 * Tuesday, 18 February 2025. 6:00--7:00 p.m., HSSC A1231.
   _Make a Portfolio Website_.
     * Please register at <https://grinnell.joinhandshake.com/edu/events/1679688>
-* Sunday, 16 February 2025, 7:30--8:30 p.m., Science 3819. 
-  _Mentor Session: Quiz prep_.
 * Tuesday, 18 February 2025, 7:00--8:00 p.m.
   _No Mentor Session!_ (so no token)
 
@@ -85,17 +90,23 @@ Misc
 
 _These do not earn tokens, but are worth your consideration._
 
+* Friday, 14 February 2025, 4:00--?. Field (of Dreams) House.
+  _Darren Young Classic_.
+* Saturday, 15 February 2025, 10:00--?. Field House.
+  _Darren Young Classic, Continued_.
+  
 ### Upcoming work
 
 * Tuesday, 2025-02-10
     * [Submit lab writeup for today's lab](https://www.gradescope.com/courses/948769/assignments/5760010)
-    * Readings for Monday's class.
+    * Readings for Wednesdays's class.
         * [Characters and strings](../readings/strings)
         * [Symbolic values](../readings/symbols)
     * [Submit reading responses on Gradescope](https://www.gradescope.com/courses/948769/assignments/5732140)
 * Wednesday, 2025-02-11
     * Quiz: Tracing
     * Makeup quiz: Decomposition
+    * Makeup quiz: Procedures
 * Thursday, 2025-02-12
     * Readings for Friday's class.
         * [How Pair Programming Really Works (Wray)](../files/PairProgramming.pdf)
@@ -107,6 +118,16 @@ _These do not earn tokens, but are worth your consideration._
     * [Submit readings on Gradescope]
     * [Mini-project 3 due](../mps/mp03)
     * [Submit mini-project 3 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5758831)
+* Friday, 2025-01-14
+    * [Submit post-reflection for MP3](...)
+* Sunday, 2025-01-16
+    * [Submit reading reflection](...)
+        * [Boolean values](../readings/booleans)
+        * [Conditional expressions](../readings/conditionals)
+    * [Submit lab writeup from Friday's class](...)
+    * [Submit pre-reflection for SoLA 1](...)
+* Monday, 2025-01-17, 4:00 p.m.
+    * SoLA 1 released.
 
 About Wednesday's Quiz
 ----------------------
@@ -128,8 +149,27 @@ good to them. And again, and again, and again.
 
 ```
     (f (+ x y) (- x y)))
---> 
+--> (f (+ 10 y) (- 10 y))
+--> (f (+ 10 11) (- 10 11))
+--> (f 21 (- 10 11))
+--> (f 21 -1)
+--> (* (+ 21 2) (+ -1 3))
+--> (* 23 2)
+--> 46
 ```
+
+* Note: When substituting in for variables, do only one variable at a time.
+* Note: When replacing a function call by the body of the function, do
+  ALL the substitutions at once.
+* Note: We traditionally evaluate the subexpressions left to right.
+* Please do only one subexpression at a time; historical evidence suggests
+  that students (and Sams) make mistakes when we try to do more than one
+  thing at once.
+* Note: If you have a call to a built-in-function with more than two
+  parameters, you can do the work all at once.
+  `(+ 1 2 3)` -> `6`. `(string-append "hello" " " "bye")` -> `"hello bye"`.
+* `(map sqr (list 1 2 3 4))` -> `(list (sqr 1) (sqr 2) (sqr 3) (sqr 4))`.
+  [Don't worry; we won't have `map`.]
 
 Q&A
 ---
@@ -144,7 +184,59 @@ How many tokens does it cost to make up a missed mini-project?
 
 ### Readings
 
+### MP3
+
+In documenting procedures that work with colors, should I use something
+specific, like `rgb?`, or should I use `color?`.
+
+> You should use whichever is correct. If your procedure only works with
+  RGB colors, you should use `rgb?`. If it works with any color, use 
+  `color?`.
+
 Lab
 ---
 
 * Don't forget to make a copy of the code!
+* Save!
+* If you finish early, please do the extras.
+* If you all make good progress on this lab, Sam will have some questions.
+
+### `round`
+
+The `round` procedure rounds a number to the nearest whole number.
+
+* `(round 5/2)` -> `2`
+* `(round 7/2)` -> `4`
+
+When there are two equally near whole numbers, it rounds toward the even
+number.
+
+Note: Some of the weird behavior we see is intentionally thought out. (Not
+all of it, but some of it.)
+
+### `max`
+
+If all of the inputs to `max` are exact, the result will be exact.
+
+If any of the inputs to `max` are inexact, the result will be inexact.
+
+Why?  Because we lack complete info on inexact numbers, so assuming that
+our exact number is precise would be wrong.
+
+`(max (+ 4 (expt 2 100)) (+ 7 (expt 2.0 100)))`
+
+`(max (+ 4 (expt 2 100)) (+ 1 (expt 2.0 100)))`
+
+Once we've started estimating in one place, we have to estimate everywhere.
+
+### More fun
+
+`(+)`
+
+`(*)`
+
+`(max)`
+### Numerator and denominator of inexact numbers
+
+* `(numerator 1.2)` -> 
+* `(denominator 1.2)` -> 
