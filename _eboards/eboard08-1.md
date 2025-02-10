@@ -30,8 +30,9 @@ Administrative stuff
 * Please do not use your electronic devices for anything other than classwork
   or a _quick_ check of your email/texts. Anything else may lead to us
   defenestrating your device.
-* My weekend fell apart a bit, so I'm a bit behind on everything. In particular,
-  I haven't looked at your pre-reflections or reading responses. Apologies!
+* My weekend fell apart a bit, so I'm a bit behind on everything. In
+  particular, I haven't looked at your pre-reflections or reading
+  responses. Apologies!
 
 ### Upcoming activities
 
@@ -51,14 +52,21 @@ Artistic
 
 Multicultural
 
-* Friday, 14 February 2025, 4:00-5:00 p.m., HSSC N1170 (Global Living Room)
+* Friday, 14 February 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room)
   _Middle of Everywhere: ???_
+* Saturday, 15 February 2025, ?:00-?:00 p.m., Harris Gym.
+  _Lunar New Year_
 
 Peer
 
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
+* Friday, 14 February 2025, 4:00--?. Field (of Dreams) House.
+  _Darren Young Classic_.
+* Saturday, 15 February 2025, 10:00--?. Field House.
+  _Darren Young Classic, Continued_.
+  
 Wellness
 
 * Tuesday, 11 February 2025, 12:15--12:50 p.m., GCMoA.
@@ -73,11 +81,11 @@ Misc
   _Fill out the survey at <https://www.surveymonkey.com/r/GrinnellParksandRec>._
 * Tuesday, 11 February 2025, 7:00--8:00 p.m., Science 3820.
   _Mentor Session_.
+* Sunday, 16 February 2025, 7:30--8:30 p.m., Science 3819. 
+  _Mentor Session: Quiz and SoLA prep_.
 * Tuesday, 18 February 2025. 6:00--7:00 p.m., HSSC A1231.
   _Make a Portfolio Website_.
     * Please register at <https://grinnell.joinhandshake.com/edu/events/1679688>
-* Sunday, 16 February 2025, 7:30--8:30 p.m., Science 3819. 
-  _Mentor Session: Quiz prep_.
 * Tuesday, 18 February 2025, 7:00--8:00 p.m.
   _No Mentor Session!_ (so no token)
 
@@ -89,7 +97,7 @@ _These do not earn tokens, but are worth your consideration._
 
 * Tuesday, 2025-02-10
     * [Submit lab writeup for today's lab](https://www.gradescope.com/courses/948769/assignments/5760010)
-    * Readings for Monday's class.
+    * Readings for Wednesdays's class.
         * [Characters and strings](../readings/strings)
         * [Symbolic values](../readings/symbols)
     * [Submit reading responses on Gradescope](https://www.gradescope.com/courses/948769/assignments/5732140)
@@ -128,8 +136,26 @@ good to them. And again, and again, and again.
 
 ```
     (f (+ x y) (- x y)))
---> 
+--> (f (+ 10 y) (- 10 y))
+--> (f (+ 10 11) (- 10 11))
+--> (f 21 (- 10 11))
+--> (f 21 -1)
+--> (* (+ 21 2) (+ -1 3))
+--> (* 23 (+ -1 3))
+--> (* 23 2)
+--> 46
 ```
+
+* You can substitute all instances of one variable in one step.
+* You should substitute all the arguments for the parameters in expanding
+  a procedure call.
+* If you have something like `(* 2 3 4)`, you do it all at once.
+* We won't be using `map`, but if we were, you should do the full
+  "apply the function to each argument" at once.
+  `(map sqr (list 1 2 3 4))` -> `(list (sqr 1) (sqr 2) (sqr 3) (sqr 4))`.
+* What is `(/ 2 3 4)`? I'm pretty sure it's the same as `(/ (/ 2 3) 4)`
+  or `1/6`. Similarly, `(- 2 3 4)` is `(- (- 2 3) 4)`. All of these are
+  left-associative.
 
 Q&A
 ---
@@ -144,7 +170,47 @@ How many tokens does it cost to make up a missed mini-project?
 
 ### Readings
 
+### MP3
+
 Lab
 ---
 
 * Don't forget to make a copy of the code!
+* If you finish early, please do the extras.
+* If you all make good progress on this lab, Sam will have some questions.
+
+### The behavior of `round`.
+
+`round` rounds with the normal rules of "round to the nearest number". .5 rounds up, below .5 rounds down?
+
+`(round 5/2)` -> `3`. Nope, it's `2`.
+
+`(round 7/2)` -> `3`. Nope, it's `4`.
+
+What's going on here? Answer: Good statistics. When it's exactly halfway, 
+you round towards the nearest even number.
+
+Reminder: Experiment to understand!
+
+Also: Computer scientists make some strange design decisions. (There are
+often design decisions behind weird behaviors.)
+
+### The behavior of `max`.
+
+If any of the values are inexact, the result is inexact, even if the
+largest seems to be exact.
+
+If all of the values are exact, the result is exact.
+
+Why? If some of the numbers are inexact, it doesn't make sense to get
+an exact number; you can't get an exact number from an exact data set.
+
+Sam's example: Which is larger? 2^100 + 2 or 2.0^100 + 7.
+
+### Numerators and denominators of inexact numbers
+
+You will see very strange numerators and denominators for inexact numbers.
+
+1.2
+
+
