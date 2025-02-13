@@ -96,6 +96,11 @@
     - Consider which types reading to use (or combine them).
     - Might do some cleanup; we split numbers and strings in 2024Sp
 
+- topic: Snow day
+  abbrev: snow
+  summary: | 
+    It snows. Sam cancels class.
+
 - topic: Characters and strings
   abbrev: strings
   summary: |
@@ -178,15 +183,6 @@
   todo:
     - It's a new lab! Students shouldn't be learning cons, car, and cdr at the same time they are learning recursion.
 
-- topic: Local bindings
-  abbrev: let
-  summary: |
-    We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
-  reading:
-    - page: /readings/local-bindings.html
-  lab:
-    - page: /labs/local-bindings.html
-
 - topic: Ethical considerations in computing
   abbrev: ethical
   summary: |
@@ -208,6 +204,15 @@
     - page: /readings/hypothesis-driven-debugging.html
   lab:
     - page: /labs/rackunit.html
+
+- topic: Local bindings
+  abbrev: let
+  summary: |
+    We explore issues of redundacy in code and mechanisms for reducing such reducnancy.
+  reading:
+    - page: /readings/local-bindings.html
+  lab:
+    - page: /labs/local-bindings.html
 
 - topic: Introduction to list recursion
   abbrev: recursion-intro
@@ -247,11 +252,6 @@
     - page: /readings/numeric-recursion.html
   lab:
     - page: /labs/numeric-recursion.html
-
-- topic: Pause for breath
-  abbrev: pause
-  summary: |
-    We pause to explore and revisit ideas associated with recursion.
 
 - topic: Pairs
   abbrev: pairs

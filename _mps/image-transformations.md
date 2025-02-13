@@ -594,12 +594,15 @@ prior characteristics will get an M.
 ```
 [ ] Passes all of the **E** autograder tests.
 [ ] Style is impeccable (or nearly so).
+[ ] All helper procedures are documented.
 [ ] Avoids repeated work.
 [ ] Uses `cut` and composition when appropriate.
 ```
 
 Q&A
 ---
+
+### General
 
 For certain parts of the mini-project such as 1c-flattening, are we allowed to create a color procedure and then use that to apply to the entire image or are we supposed to only make an image transformation by itself?
 
@@ -619,9 +622,31 @@ Can you explain when it is appropriate to use `cut` and composition?
 
 > One place your instructors used composition in solving this assignment was when they needed to convert an RGB color to an HSV color, manipulate the HSV values, and then convert back to an RGB color.
 
+### Part one
+
 Why are we finding the remainder in `cyclic-add-90`?
 
 > Because we want to "wrap around to zero" when we hid 256, and remainder achieves that for us.
+
+I've tried using 36 and 37 as the even distribution values for the 3-bit components of the 8-bit color. Neither seems to work (as in they don't meet the tests).
+
+> You should probably use 255/7, which lets you precisely distribute the components. It may require a bit more care in rounding.
+
+Can you explain a bit more about gamma correction?
+
+> We will gamma correct each component in the same way. It's a three step
+  process.
+
+> First we convert the component from a value in the range 0-255 to the range 0-1. For example, we'd convert 128 to about 0.5 and 64 to about 0.25. (You should be able to figure out how to do that.) Let's call that `cnew`.
+
+> Next, we take that new value and take it to the `gamma` power.  `(expt cnew gamma)`. That gives us a new value in the range 0-1.
+
+> We convert that value back to a corresponding value in the range 0-255.
+
+> It turns out this process makes the image brighter for gamma values less
+  than one and darker for gamma values greater than one.
+
+### Part two
 
 I can write `hsv-rotate-hue`, which rotates the hue of a single HSV color. However, for some reason, I am unable to extend that to an image using `pixel-map. Any ideas?
 
@@ -629,6 +654,3 @@ I can write `hsv-rotate-hue`, which rotates the hue of a single HSV color. Howev
 
 > You may also end up needing to cut that procedure, since `hsv-rotate-hue` needs two parameters and `pixel-map` needs a one-parameter procedure.
 
-I've tried using 36 and 37 as the even distribution values for the 3-bit components of the 8-bit color. Neither seems to work (as in they don't meet the tests).
-
-> You should probably use 255/7, which lets you precisely distribute the components. It may require a bit more care in rounding.

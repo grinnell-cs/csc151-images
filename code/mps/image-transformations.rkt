@@ -141,7 +141,7 @@
 ;;; (gamma-correct-two img) -> image?
 ;;;   img : image?
 ;;; Gamma correct `img` by correcting each pixel by 2.
-(define gamma-correct-color-two
+(define gamma-correct-two
   ???)
 
 ;;; (gamma-correct-half img) -> image?
