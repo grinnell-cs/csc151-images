@@ -17,7 +17,7 @@ _Approximate optimistic overview_
 * Administrative stuff [10 min]
 * About the SoLA [5 min]
 * Questions [5 min]
-* Lab [40 min] (Stop at 3:30)
+* Lab [40 min] (ends at 23:00)
 * Turn in lab [5 min]
 * Quiz [15 min]
 
@@ -44,13 +44,13 @@ Scholarly
     * Sean Illing. The Real Stakes of the War For Your Attention. Vox – The Gray Area. February 1, 2025. <https://www.vox.com/the-gray-area/397131/the-gray-area-chris-hayes-attention-economy> (also available as a podcast)
     * Yair Rosenberg. The Worst Page on the Internet. The Atlantic. January 27, 2025. <https://www.theatlantic.com/ideas/archive/2025/01/internet-browser-game-website/681461/?gift=irxCS5988mld06tNBmnuK3HS_YPx_iIBSFA9sGb9vjQ&utm_source=copy-link&utm_medium=social&utm_campaign=share>
     * You may want to spend a few minutes with the game mentioned in the second article. You can find the game at <https://neal.fun/stimulation-clicker/>.
+* Thursday, 20 February 2025, 11:00 a.m.--noon, JRC 101.
+  _Scholars’ Convocation: Steven Geofrey.  What Information Worlds Reveal about Climate Change Awareness, Advocacy, and Hope_
 
 Artistic
 
 * Friday, 14 February 2025, 5:00--6:30 p.m. (talk at 6:00), 926 Broad St (Stewart Arts Building).
   _Opening Reception for Artist Salon: Works by Grinnell College Art Majors_
-* Thursday, 20 February 2025, 11:00 a.m.--noon, JRC 101.
-  _Scholars’ Convocation: Steven Geofrey.  What Information Worlds Reveal about Climate Change Awareness, Advocacy, and Hope_
 
 Multicultural
 
@@ -64,11 +64,6 @@ Peer
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
-* Friday, 14 February 2025, 4:00 p.m.--?. Field House.
-  _Darren Young Classic_.
-* Saturday, 15 February 2025, 10:00 a.m.--?. Field House.
-  _Darren Young Classic, Continued_.
-  
 Wellness
 
 * Tuesday, 18 February 2025, 12:15--12:50 p.m., GCMoA.
@@ -97,6 +92,10 @@ Misc
 
 _These do not earn tokens, but are worth your consideration._
 
+* Friday, 14 February 2025, 4:00 p.m.--?. Field House.
+  _Darren Young Classic_.
+* Saturday, 15 February 2025, 10:00 a.m.--?. Field House.
+  _Darren Young Classic, Continued_.
 * Monday, 17 February 2025, 8:00--10:00 p.m., Bob's Underground.
   _Open Mic Night_.
 
@@ -109,6 +108,7 @@ _These do not earn tokens, but are worth your consideration._
     * [Mini-project 3 due](../mps/mp03)
     * [Submit mini-project 3 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5758831)
 * Sunday, 2025-02-16
+    * [Submit post-reflection on MP3](https://www.gradescope.com/courses/948769/assignments/5732265)
     * [Submit today's lab on Gradescope](https://www.gradescope.com/courses/948769/assignments/5789952)
     * Readings for Monday's class.
         * [How Pair Programming Really Works (Wray)](../files/PairProgramming.pdf)
@@ -133,6 +133,7 @@ SoLA 1
 
 * Model: Five or Six Learning Assessments
     * Since tracing is "paper only", there will be five on SoLA 1
+* Somewhat like a take-home exam.
 * Online, rather than on paper. 
 * Each should be similar difficulty to the quizzes you've been taking.
     * They are nonetheless capped at one hour each.
@@ -143,6 +144,7 @@ SoLA 1
 * Topics: See [the list of learning objectives](../las/).
 * **If you already have credit for a topic, such as decomposition, do
   not do the LA on the SoLA.**
+* The sample LA will not be graded.
 
 Q&A
 ---
@@ -162,10 +164,10 @@ Can you explain how I submit a redo?
 
 > Update your program to address the concerns raised in the first submission.
 
-> Submit it to make sure it passes all the tests (or as many tests as you're
-  satisfied passing). If it doesn't pass tests at first, keep fixing and
-  resubmitting until you've achieved a desired level. (Feel free to ask questions
-  along the way.)
+> Submit it to make sure it passes all the tests (or as many tests
+  as you're satisfied passing). If it doesn't pass tests at first, keep
+  fixing and resubmitting until you've achieved a desired level. (Feel
+  free to ask questions along the way.)
 
 > Once you've reached that level, submit both your updated .rkt file and a
   `CHANGES.txt` file that summarizes the changes you've made.
@@ -178,7 +180,8 @@ is there an example of how it can be used in a procedure?
 > We will and up using symbols either (a) with existing procedures
 that use symbols, or (b) when we want to compare them to each other.
 
-Could you elaborate on using symbols "to provide a mnemonic value to a procedure"?
+Could you elaborate on using symbols "to provide a mnemonic value to
+a procedure"?
 
 > We've been using strings for most of our mnemonic values, but
   here's one. `(solid-square 25 'blue)`.
@@ -202,11 +205,6 @@ What is the difference between `'a`, `"a"`, and `a`?
 > `a` is an identifier. It names something. (Or doesn't, if you haven't used
   it with `define`.)
 
-If you were designing a character set, where in the collating sequence 
-would you place the space character? Why?
-
-> I'd love to hear your answers.
-
 ### MP3
 
 Could we go over `rgb-cyclic-subtract`?
@@ -216,6 +214,36 @@ Could we go over `rgb-cyclic-subtract`?
 Could we go over `gamma-correct-component`?
 
 > Sure.
+
+When should you use `cut` vs. composition?
+
+> You generally use `cut` when you're calling another procedure and filling
+  in some of the parameters, but not all of them.
+
+> `(define blue-square (lambda (size) (solid-square size 'blue)))`
+
+> `(define blue-square (cut (solid-square <> 'blue)))`
+
+> If you're calling multiple one-parameter procedures in sequence, you
+  will often want to use composition.
+
+> `(pixel-map (lambda (color) (hsv->rgb (hsv-transformation (rgb->hsv color)))) (image-load "kitten.jpg"))`
+
+> `(pixel-map (o hsv->rgb hsv-transformation rgb->hsv) (image-load "kitten.jpg"))`
+
+Why can't I use `(max 1 (cut (- <> 1)))`? 
+
+> Because `max` needs numbers, not procedures.
+
+> Let's break down your steps. First you want to subtract 1. `(cut (- <> 1))`.
+  Then you want to take the max of 1 and that result. `(cut (max 1 <>))`.
+  We have two procedures that you want to do in sequence, so we'll use
+  composition.
+
+> `(o (cut (max 1 <>)) (cut (- <> 1)))`
+
+> vs. `(lambda (x) (max 1 (- x 1)))`; I'm not sure cut and compose
+  are that much better here.
 
 Lab
 ---
