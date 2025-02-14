@@ -115,8 +115,8 @@ c. Write an expression to extract the string "ment" from "Department".
 d. Write an expression to extract the string "a" from "Department".
 e. Write an expression to extract the empty string from "Department".
 f. Write an expression to extract the string "Dent" from
-   "Department". Note that you may need to use two calls to substring
-   along with a call to string-append.
+   "Department". Note that you may need to use two calls to `substring`
+   along with a call to `string-append`.
 g. Write an expression to extract the string "apartment" from
    "Department". Once again, you may need multiple calls.
 
@@ -275,7 +275,7 @@ c. Submit this final file to Gradescope.  Make sure, if appropriate,
 #|
 If you find that you finish all of these problems early, try one
 or more of the following problems.  Note that some of these problems
-require you to write functions.
+require you to write procedures.
 |#
 
 ; +-----------------------------------+------------------------------
