@@ -3,7 +3,7 @@ title: "EBoard 10: Strings (Section 3)"
 number: 10
 section: eboards
 held: 2025-02-14
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -17,7 +17,7 @@ _Approximate optimistic overview_
 * Administrative stuff [10 min]
 * About the SoLA [5 min]
 * Questions [5 min]
-* Lab [40 min] (ends at 23:00)
+* Lab [40 min] (ends at 3:30)
 * Turn in lab [5 min]
 * Quiz [15 min]
 
@@ -57,7 +57,7 @@ Multicultural
 * Friday, 14 February 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
   _Middle of Everywhere: Japan and Bento Boxes_
 * Friday, 14 February 2025, 6:30--9:00 p.m., Harris Center.
-  _Chinese New Year & Latern Festival_
+  _Chinese New Year & Lantern Festival_
 
 Peer
 
@@ -104,6 +104,7 @@ _These do not earn tokens, but are worth your consideration._
 * Friday, 2025-02-14 (Today)
     * Quiz: Tracing
     * Makeup quiz: Decomposition
+    * Makeup quiz: Procedures
 * Saturday, 2025-02-15
     * [Mini-project 3 due](../mps/mp03)
     * [Submit mini-project 3 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5758831)
@@ -195,6 +196,17 @@ numerical characters into a list of just the numbers. (e.g.,
 > You could use `string-split` to break the string apart. You can
   use `string->number` to convert each part.
 
+```
+> (string-split "200/100/30")
+'("200/100/30")
+> (string-split "200/100/30" "/")
+'("200" "100" "30")
+> (string->number "200")
+200
+> (map string->number (string-split "200/100/30" "/"))
+'(200 100 30)
+```
+
 What is the difference between `'a`, `"a"`, and `a`?
 
 > `'a` is a symbol. Its primary purpose is for comparing to other symbols.
@@ -205,15 +217,78 @@ What is the difference between `'a`, `"a"`, and `a`?
 > `a` is an identifier. It names something. (Or doesn't, if you haven't used
   it with `define`.)
 
+```
+> 'a
+'a
+> (symbol? 'a)
+#t
+> (string? 'a)
+#f
+> "a"
+"a"
+> (symbol? "a")
+#f
+> (string? "a")
+#t
+> (string-length "a")
+1
+> (string-append "a" "ardvark")
+"aardvark"
+> (substring "a" 0 0)
+""
+> a
+. . a: undefined;
+ cannot reference an identifier before its definition
+> (define a 651)
+> a
+651
+> (define a +)
+> (a 10 52)
+62
+> (equal? 'a 'a)
+#t
+```
+
 ### MP3
 
 Could we go over `rgb-cyclic-subtract`?
 
 > Sure.
 
+> We subtract components. If we end up with a positive number, we're ok.
+  If we end up with a negative number, we add that number to 256 (not 255).
+
+> E.g., -1 -> 255, -5 -> 251, ...
+
+> `remainder` is your friend on the previous problem, so it's probably
+  your friend on this problem.
+
+> Hint: If `val` is non-negative, `(remainder (+ 256 val) 256)` = `(remainder val 256)`.
+
 Could we go over `gamma-correct-component`?
 
 > Sure.
+
+> Goal: Is to make colors (and therefore images) brighter or darker using
+  a more sensible approach than just adding/subtracting.
+
+> Step one: Convert each component from the range 0-255 to the range 0-1.
+  For example: 0 -> 0, 255 -> 1, 128 -> 0.5, 64 -> 0.25 (approximately).
+
+> How do we do step one, assuming `c` is our component: Divide by 255.
+
+> Take that converted value to the "gamma"th power. `(expt val gamma)`.
+  For example, if our original c was 128, it became 0.5. If gamma is
+  2, it's now .25.
+
+> Observation: If `val` is in the range 0-1, `(expt val gamma)` is
+  in the range 0-1.
+
+> Since we need a component, we need to back from 0-1 range to the 0-255.
+  We can do that by multiplying by 255.
+
+> This will make the image darker (gammas greater than 1) or lighter
+  (gammas less than 1)
 
 When should you use `cut` vs. composition?
 

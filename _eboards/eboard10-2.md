@@ -3,7 +3,7 @@ title: "EBoard 10: Strings (Section 2)"
 number: 10
 section: eboards
 held: 2025-02-14
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -57,7 +57,7 @@ Multicultural
 * Friday, 14 February 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
   _Middle of Everywhere: Japan and Bento Boxes_
 * Friday, 14 February 2025, 6:30--9:00 p.m., Harris Center.
-  _Chinese New Year & Latern Festival_
+  _Chinese New Year & Lantern Festival_
 
 Peer
 
@@ -195,6 +195,15 @@ numerical characters into a list of just the numbers. (e.g.,
 > You could use `string-split` to break the string apart. You can
   use `string->number` to convert each part.
 
+```
+> (string-split "100/200/50" "/")
+'("100" "200" "50")
+> (string->number "100")
+100
+> (map string->number  (string-split "100/200/50" "/"))
+'(100 200 50)
+```
+
 What is the difference between `'a`, `"a"`, and `a`?
 
 > `'a` is a symbol. Its primary purpose is for comparing to other symbols.
@@ -211,9 +220,41 @@ Could we go over `rgb-cyclic-subtract`?
 
 > Sure.
 
+> We want to subtract the corresponding components.
+
+> If we get a negative number, we add it to 256.
+
+> `remainder` is your friend.
+
+> Helpful note: If `val` is a number in the range 0 ... 255, 
+  `(remainder (+ 256 val) 256)` is the same as `(remainder val 256)`.
+
 Could we go over `gamma-correct-component`?
 
 > Sure.
+
+> Gamma correction makes images brighter or darker in a "sensible" way.
+
+> First step: Take each component (which is in the range 0 .. 255) and 
+  convert it to the range 0 .. 1 (including fractional numbers).
+  (0 -> 0, 255 -> 1, 128 -> 1/2). Divide by 255.
+
+> Next step, take that new value and compute the value to the gamma power.
+  `(expt val gamma)`.
+
+> If we take a number between 0 and 1 to any power, we always end up with
+  a number between 0 and 1.
+
+> We can then convert the result back to a component (in the range 0 .. 255)
+  by multiplying by 255.
+
+> Gamma correction does those three steps.
+
+> If you gamma correct with a number (exponent) less than one, you make
+  the image brighter.
+
+> If you gamma correct with a number (exponent) greater thanb one, you make
+  the image darker.
 
 When should you use `cut` vs. composition?
 
