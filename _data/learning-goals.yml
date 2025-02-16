@@ -1,6 +1,6 @@
 - assessment: Learning Assessments, Phase 1 (LAP 1)
   goals:
-    - "**Decomposition**. Decompose a computational problem into smaller sub-problems amendable to implementation with procedures."
+    - "**Decomposition**. Decompose a computational problem into smaller sub-problems amenable to implementation with procedures."
     - "**Procedural abstraction**. Take a concrete implementation in Racket and create a procedure that generalizes that behavior."
     - "**Tracing**. Trace the execution of a Racket program using a substitutive model of computation.  _This LA may only be completed in class._"
     - "**Primitive types**. Express basic computations over primitive values and their associated standard library functions."
