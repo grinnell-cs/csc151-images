@@ -27,8 +27,11 @@ Administrative stuff
 ### Introductory notes
 
 * Happy Junior Visit Day! I don't know if we'll have any visitors.
-* I have last Friday's quizzes mostly graded, but not yet uploaded to Gradescope.
-  Expect to see them tonight.
+* I have last Friday's quizzes mostly graded, but not yet uploaded to 
+  Gradescope.  Expect to see them tonight.
+* Thank you for making it to class on such a cold day!
+* Because I care about you, I brought you (discounted) Valentine's day
+  candy.
 
 ### Upcoming activities
 
@@ -236,6 +239,7 @@ YES
 --> (+ (square 5) (square (+ 3 4)))
 --> (+ (* 5 5) (square (+ 3 4)))
 --> (+ 25 (square (+ 3 4)))
+```
 
 Questions
 ---------
@@ -243,6 +247,14 @@ Questions
 ### Administrative
 
 ### SoLAs
+
+Is "Procedural Abstraction" just a long name for "Procedures"?
+
+> Yes.
+
+Do we have to know conditionals?
+
+> Not for this SoLA. I'll fix the page soon.
 
 Background
 ----------
@@ -258,18 +270,26 @@ Background
 An exercise
 -----------
 
-I love that you introduced yourselves.
-
 TPS: 
 
 * 1 min: Think to yourself for a minute. What did you hear? What would
   you like to talk about? What made you optimistic? What surprised you?
-  What worried  you?
+  What worried you?
 * 3 min: Talk to your partner about it
 * n min: Full class consideration
 
 What do we want to talk about?
 
-Reflecting on the readings
+Reflecting on the readings (TPS)
+--------------------------------
+
+_What are the key points from the readings?_ (TPS)
+
+### Pair Programming
+
+### Couch Potatoes and Hitchhikers
+
+### Diverse teams
 
 Lab
+---
