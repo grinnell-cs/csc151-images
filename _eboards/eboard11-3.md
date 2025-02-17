@@ -3,7 +3,7 @@ title: "EBoard 11: Pair programming (Section 3)"
 number: 11
 section: eboards
 held: 2025-02-17
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -72,7 +72,7 @@ Wellness
 Misc
 
 * Tuesday, 18 February 2025, 7:00--8:00 p.m., Science 3820.
-  _Mentor Session (Quiz prep for Documentation Quiz; Review Tracing)_ 
+  _Mentor Session (Quiz prep for Documentation Quiz; Review Tracing)_
 * Sunday, 23 February 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session_
 
@@ -127,7 +127,7 @@ Notes on the tracing quiz
 
 ### Please read the notes on your quiz, even if you got credit.
 
-### Do things one step at a time.
+### Do things one step at a time
 
 NO: 
 ```
@@ -274,11 +274,43 @@ TPS:
 
 * 1 min: Think to yourself for a minute. What did you hear? What would
   you like to talk about? What made you optimistic? What surprised you?
-  What worried you?
+  What worried you? What sounded familiar?
 * 3 min: Talk to your partner about it
 * n min: Full class consideration
 
 What do we want to talk about?
+
+* Pair programming is better (see reading on details). We generally
+  engage more in pairs.
+* There are benefits even if you "know more"; you learn by explaining.
+  (You also learn from different ideas or approaches.)
+* The challenges of partnering as someone who is non-neurotypical.
+* It's frustrating that people see you as not competent when you are
+  competent (particularly when they are not).
+
+What should you do if you ask your partner for help, they try to help,
+and you're still confused?
+
+* You could ask one of the course staff (mentor or professor).
+* You shouldn't be embarrassed to ask questions. If your partner gets
+  upset, it's their problem, not yours.
+* Make a choice: Will you benefit more for delving into that topic right
+  now, or will you possibly learn more going on in the lab? In some cases,
+  it may be worth going on. 
+* Note: You should be patient with your partner if they are in this
+  situation.
+
+How can you be a better partner (whether you are in the "I know more"
+camp or in the "I'm afraid I'm holding my partner back" camp)?
+
+* Ask questions when you're not sure.
+* Also ask "Why did you choose to do this" style questions.
+* Make suggestions.
+* Be explicitly appreciative. "It was great working with you." Or
+  "Thanks for that idea".
+* Remember that helping your partner helps yourself.
+* Be prepared.
+* Be understanding when your partner is not prepared (or even not engaged).
 
 Reflecting on the readings (TPS)
 --------------------------------
@@ -287,9 +319,39 @@ _What are the key points from the readings?_ (TPS)
 
 ### Pair Programming
 
+* Two core roles: Driver and navigator. It's important to rotate roles.
+* In large projects, it's important to switch pairs regularly so that you
+  get fresh eyes on things. Also so that you get experiences working with
+  people with different perspectives.
+* Although it seems inefficient to have two people work on the same code
+  together, if it's done right, it results in better code (often done
+  more efficiently).
+* When you're stuck, explaining what you're doing to a rubber duck will
+  help you find issues. Explaining to a real live human being is even better.
+
 ### Couch Potatoes and Hitchhikers
 
+* You want neither speeders (let's get everything done quickly) nor hitchhikers
+  (just watching, not doing). Switching A and B helps.
+* "Reflect back on the CP&Hs" (Hmmm ... we're not sure we understand or agree.)
+* In the long term, neither the hitchhiker nor the bus driver benefit from
+  the arrangement; the bus driver does more work, the hitchhiker learns
+  less. It's hard, but it's important to raise these issues when they come
+  up, rather than to wait.
+* Try to solve the problem amongst yourselves. But if that doesn't work,
+  bring it up with the class mentor or instructor.
+
 ### Diverse teams
+
+* Diverse experiences make pair programming and group work better.
+* Being open makes pair programming and group work better.
+* It's important to consider what other people bring to the table.
+* These can be hard to work in - people have different backgrounds, skills,
+  ways to approach problems. Those different ideas will create a better
+  output in the end. If everyone thinks about it the same, you won't
+  consider enough alternates.
+* There's some value in discomfort. Be open to being a little uncomfortable.
+  Aim for the ZPD!
 
 Lab
 ---
