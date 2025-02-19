@@ -69,7 +69,8 @@ habits and other topics.
 
 2. Save this file as `conditionals.rkt`.
 
-3. Update the `csc151` library.
+3. Update the `csc151` library. (There shouldn't be any changes, but it's
+best to be safe.)
 
 4. Note that Partner A is the partner closer to the board and Partner
 B is the partner further from the board.
@@ -250,6 +251,8 @@ Hint: `substring` may help with the additional check.
 (define founder-id?
   (lambda (str)
     ???))
+
+#| B |#
 
 ; +----------------------------------+-------------------------------
 ; | Exercise 3: Exploring brightness |
