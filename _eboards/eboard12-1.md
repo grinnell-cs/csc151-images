@@ -204,4 +204,4 @@ keywords and procedures?
 Lab
 ---
 
-Hint for `min-of-three`: Consider using `min` and `max`.
+Hint for `median-of-three`: Consider using `min` and `max`.

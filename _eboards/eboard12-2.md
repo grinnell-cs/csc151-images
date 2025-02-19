@@ -3,7 +3,7 @@ title: "EBoard 12: Conditionals (Section 2)"
 number: 12
 section: eboards
 held: 2025-02-19
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -66,6 +66,8 @@ students are welcome._
 
 * Thursday night--Sunday night, The Natatorium.
   _Swimming Conference Meet_.
+* Friday, 21 February 2025, 8:30 p.m. or so, Gardner Lounge
+  _Awesome opening act for random band._
 
 Wellness
 
@@ -141,6 +143,15 @@ timing. Can you help me?
 
 > Yes, I can reset them if you DM me.
 
+If I pass today's makeup tracing quiz, do I have to do it online?
+
+> You can only pass in-person tracing quizzes. If you don't pass today's,
+  you can try again next week.
+
+What about documentation?
+
+> Documentation is Phase 2, so it's not on this SoLA?
+
 ### Booleans and conditionals
 
 Why does the equality predicate `=` not also count as a comparator?
@@ -173,21 +184,40 @@ What would produce not false, but then not be true?
   we use them as the test/guard in a conditional, instead of an error,
   we'll see them treated as if they were true.
 
+Is there a "nothing" value in Scheme and is it truish or false?
+
+> Yes. It's the result of `(void)` and is treated as truish (because it
+  is something other than false).
+
 What do we need to understand when making the distinction between
 keywords and procedures?
 
 > You should understand that the order of evaluation is different
   (and, preferably, what that order is).
 
-> Normal (e.g., `(+ exp1 exp2 exp3)`):
+> Normal (e.g., `(+ exp1 exp2 exp3)`): Evaluate `exp1`, then `exp2`,
+  then `exp3`, then apply the sum operator.
 
-> Lambda (i.e., `(lambda (params) exp)`):
+> Lambda (i.e., `(lambda (params) exp)`): To apply a lambda expression,
+  we substitute the arguments for the parameters in the expression and
+  then evaluate the expression using the rules we're writing. But if
+  we just write the lambda expression, it does (almost) nothing. It
+  only builds a procedure.
 
-> If (i.e., `(if test consequent alternate)`):
+> If (i.e., `(if test consequent alternate)`): Evaluate the test.
+  If the test is truish, evaluates the consequent and returns its value.
+  If the test is false, evaluates the alternate and returns its value.
 
-> And (i.e., `(and exp1 exp2 exp3)`):
+> And (i.e., `(and exp1 exp2 exp3)`): Evaluate `exp1`. If it's false,
+  stops and returns false. Otherwise, goes on to the next expression.
+  If all of the expressions are truish, returns the value of the last
+  expression.
 
-> Or (ie.., `(or exp1 exp2 exp3)`):
+> Or (ie.., `(or exp1 exp2 exp3)`): Evaluate each expression in turn
+  until one of them is truish. Returns that value. If none of them
+  are truish, returns false.
 
 Lab
 ---
+
+When you get to `median-of-three`, you might find `min` and `max` useful.
