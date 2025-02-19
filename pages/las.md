@@ -55,14 +55,14 @@ Phase 1
 * [Procedural abstractions](procedures.html)
 * [Primitive types](primitive-types.html)
 * [Tracing](tracing.html)
-* [Conditionals](conditionals.html)
 * [Collaboration](collaboration.html)
+* [Lambda-free anonymous procedures](hop.html)
 
 Phase 2
 
 * [Documentation](documentation.html)
+* [Conditionals](conditionals.html)
 * [Testing](testing.html)
-* [Lambda-free anonymous procedures](hop.html)
 * [Lists](lists.html)
 * [Program style](program-style.html)
 * Ethics
