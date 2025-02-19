@@ -1,9 +1,9 @@
 ---
-title: "EBoard 12: Conditionals (Section 1)"
+title: "EBoard 12: Conditionals (Section 3)"
 number: 12
 section: eboards
 held: 2025-02-19
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -14,11 +14,11 @@ We are back to the standard start-of-class procedure.
 
 _Approximate optimistic overview_
 
-* Quiz [15 min]
 * Administrative stuff [10 min]
-* Questions and answers [10 min]
-* Lab [40 min]
+* Questions and answers [20 min]
+* Lab [30 min] (ends at 3:30)
 * Turn in Lab [5 min]
+* Quiz [15 min]
 
 Administrative stuff
 --------------------
@@ -26,12 +26,12 @@ Administrative stuff
 ### Introductory notes
 
 * I am out of Otter.ai minutes, so there is no Otter transcription/summary
-  for today's class. Sorry!
+  for any classes today.
 * In case you hadn't figured it out yet, you have an hour to complete an
   LA from the time that you start the LA, even if you close your computer
   or log out of Gradescope.
-* Remember that you can take both quizzes. For section 1, that means that
-  you might want to show up as early as 8:00 a.m.
+* Remember that you can take both/all quizzes. And you can stay until
+  thirty minutes after the end of class to complete them.
 
 ### Upcoming activities
 
@@ -179,29 +179,15 @@ keywords and procedures?
 > You should understand that the order of evaluation is different
   (and, preferably, what that order is).
 
-> Normal (e.g., `(+ exp1 exp2 exp3)`): Evaluate `exp1`, then `exp2`, then
-  `exp3` and only then attempt to add the three values.
+> Normal (e.g., `(+ exp1 exp2 exp3)`):
 
-> Lambda (i.e., `(lambda (params) exp)`): If we apply this, it substitutes
-  arguments for parameters in the expression and then evaluates the expression.
-  But if we just write it, it doesn't do any evaluation; it just builds a
-  procedure.
+> Lambda (i.e., `(lambda (params) exp)`):
 
-> If (i.e., `(if test consequent alternate)`): Evaluate `test`. If `test`
-  is a truish value, it evaluates `consequent`. Otherwise (that is, `test`
-  is `#f`) it evaluates `consequent`.
+> If (i.e., `(if test consequent alternate)`):
 
-> And (i.e., `(and exp1 exp2 exp3)`): WRONG: Evaluate all three expression. If
-  all of them are truish, return true. Otherwise, return false.
-  RIGHT: Evaluate each expression in turn. If any of them are false, return
-  false. Otherwise, return the value of the last one.
+> And (i.e., `(and exp1 exp2 exp3)`):
 
-> Or (ie.., `(or exp1 exp2 exp3)`): Evaluates `exp1`. If `exp1` is truish,
-  stop and return the value of the expession. Otherwise, go on to the
-  next expression (etc.). If all of the expressions are false, return
-  #f.
+> Or (ie.., `(or exp1 exp2 exp3)`):
 
 Lab
 ---
-
-Hint for `min-of-three`: Consider using `min` and `max`.

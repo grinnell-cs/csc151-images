@@ -1,9 +1,9 @@
 ---
-title: "EBoard 12: Conditionals (Section 1)"
-number: 12
+title: "EBoard 13: Lists (Section 1)"
+number: 13
 section: eboards
 held: 2025-02-19
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -14,10 +14,10 @@ We are back to the standard start-of-class procedure.
 
 _Approximate optimistic overview_
 
-* Quiz [15 min]
 * Administrative stuff [10 min]
+* Some notes from the last lab [10 min]
 * Questions and answers [10 min]
-* Lab [40 min]
+* Lab [45 min]
 * Turn in Lab [5 min]
 
 Administrative stuff
@@ -27,11 +27,6 @@ Administrative stuff
 
 * I am out of Otter.ai minutes, so there is no Otter transcription/summary
   for today's class. Sorry!
-* In case you hadn't figured it out yet, you have an hour to complete an
-  LA from the time that you start the LA, even if you close your computer
-  or log out of Gradescope.
-* Remember that you can take both quizzes. For section 1, that means that
-  you might want to show up as early as 8:00 a.m.
 
 ### Upcoming activities
 
@@ -117,91 +112,60 @@ _These do not earn tokens, but are worth your consideration._
         * [Submit reading responses on Gradescope](https://www.gradescope.com/courses/948769/assignments/5815253)
     * [Submit pre-reflection for MP4 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5815256)
 
+Notes from conditionals lab
+---------------------------
+
+### `is-even?`
+
+```
+(define is-even?
+  (lambda (val)
+    (if (= 0 (remainder val 2))
+        #t
+        #f)))
+```
+
+### Vocabulary: `zero?`
+
+```
+(define is-even?
+  (lambda (val)
+    (= 0 (remainder val 2))))
+```
+
+### Reminder: Cut and compose
+
+```
+```
+
+### Min of three
+
+```
+(define min-of-three
+  (lambda (x y z)
+    (cond
+      [(or (<= x y z) (<= z y x))
+       y]
+      [(or (<= y x z) (<= z x y))
+       x]
+      [(or (<= x z y) (<= y z x))
+       z])))
+```
+
+```
+(define min-of-three
+  (lambda (x y z)
+    (cond
+      [(or (<= x y z) (<= z y x))
+       y]
+      [(or (<= y x z) (<= z x y))
+       x]
+      [(or (<= x z y) (<= y z x))
+       z]
+      [else
+       #f])))
+```
+
 Q&A
 ---
 
-### Administrative
-
-When will we get grades on today's quizzes?
-
-> Sam hopes to have those done tonight.
-
-What should we submit for redos?
-
-> The updated `.rkt` file.
-
-> Any images required by the assignment.
-
-> A text (preferably) or PDF file name `CHANGES.txt` (or `CHANGES.pdf`)
-  that summarizes what problems you had the first time and what changes
-  you've made. It can also be `CHANGES.rkt`.
-
-I accidentally opened an LA early because I didn't understand the
-timing. Can you help me?
-
-> Yes, I can reset them if you DM me.
-
-### Booleans and conditionals
-
-Why does the equality predicate `=` not also count as a comparator?
-
-> Comparators are supposed to tell you whether one thing comes before 
-  another. `=` does not.
-
-Could you go over the `not` procedure and its uses?
-
-> Sure.
-
-> `(not expression)` -> Gives the "opposite" result of the expression.
-
-```racket
-;;; (anything-but-string? val) -> boolean?
-;;;   val : any?
-;;; Returns false if `val` is a string and true otherwise.
-(define anything-but-string?
-  (lambda (val)
-    (not (string? val))))
-```
-I read and reread the truish breakdown and was still confused. What
-are examples of statements that would result in a truish output?
-What would produce not false, but then not be true?
-
-> `(not #f)` is always true, `#t`.
-
-> However, there are values that are neither `#f` nor `#t`. For example,
-  `"hello"` or the result of `(+ 2 3)`. We consider those "truish". If
-  we use them as the test/guard in a conditional, instead of an error,
-  we'll see them treated as if they were true.
-
-What do we need to understand when making the distinction between
-keywords and procedures?
-
-> You should understand that the order of evaluation is different
-  (and, preferably, what that order is).
-
-> Normal (e.g., `(+ exp1 exp2 exp3)`): Evaluate `exp1`, then `exp2`, then
-  `exp3` and only then attempt to add the three values.
-
-> Lambda (i.e., `(lambda (params) exp)`): If we apply this, it substitutes
-  arguments for parameters in the expression and then evaluates the expression.
-  But if we just write it, it doesn't do any evaluation; it just builds a
-  procedure.
-
-> If (i.e., `(if test consequent alternate)`): Evaluate `test`. If `test`
-  is a truish value, it evaluates `consequent`. Otherwise (that is, `test`
-  is `#f`) it evaluates `consequent`.
-
-> And (i.e., `(and exp1 exp2 exp3)`): WRONG: Evaluate all three expression. If
-  all of them are truish, return true. Otherwise, return false.
-  RIGHT: Evaluate each expression in turn. If any of them are false, return
-  false. Otherwise, return the value of the last one.
-
-> Or (ie.., `(or exp1 exp2 exp3)`): Evaluates `exp1`. If `exp1` is truish,
-  stop and return the value of the expession. Otherwise, go on to the
-  next expression (etc.). If all of the expressions are false, return
-  #f.
-
-Lab
----
-
-Hint for `min-of-three`: Consider using `min` and `max`.
