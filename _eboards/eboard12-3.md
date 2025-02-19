@@ -3,7 +3,7 @@ title: "EBoard 12: Conditionals (Section 3)"
 number: 12
 section: eboards
 held: 2025-02-19
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -64,13 +64,10 @@ Peer
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
-* Thursday night--Sunday night, The Natatorium.
-  _Swimming Conference Meet_.
-
 Wellness
 
 * Friday, 21 February 2025, 9:00 p.m., Noyce Elbow.
-  _Nerf at Noyce_.
+  _Nerf at Noyce_. Shoot your mentor.
 * Tuesday, 25 February 2025, 12:15--12:50 p.m., GCMoA.
   _Yoga in the Museum_.
 * Tuesday, 25 February 2025, 4:30--6:30 p.m., 
@@ -87,6 +84,9 @@ Misc
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
+
+* Thursday night--Sunday night, The Natatorium.
+  _Swimming Conference Meet_.
 
 ### Upcoming work
 
@@ -150,8 +150,6 @@ Why does the equality predicate `=` not also count as a comparator?
 
 Could you go over the `not` procedure and its uses?
 
-> Sure.
-
 > `(not expression)` -> Gives the "opposite" result of the expression.
 
 ```racket
@@ -162,6 +160,7 @@ Could you go over the `not` procedure and its uses?
   (lambda (val)
     (not (string? val))))
 ```
+
 I read and reread the truish breakdown and was still confused. What
 are examples of statements that would result in a truish output?
 What would produce not false, but then not be true?
@@ -179,15 +178,41 @@ keywords and procedures?
 > You should understand that the order of evaluation is different
   (and, preferably, what that order is).
 
-> Normal (e.g., `(+ exp1 exp2 exp3)`):
+> Normal (e.g., `(+ exp1 exp2 exp3)`, `exp1` is `(* 3 4)`): Evaluate
+  each expression from left to right and then add them. (In general,
+  evaluate from left to right and then apply the procedure.)
 
-> Lambda (i.e., `(lambda (params) exp)`):
+> Lambda (i.e., `(lambda (params) exp)`): When we apply one of these,
+  we substitute the arguments for the corresponding parameters in the
+  expression and then evaluate the updated expression. What about
+  just the lambda? It builds a procedure, but does NOT evaluate the expression
+  until later. (It also doesn't evaluate the params.)
 
-> If (i.e., `(if test consequent alternate)`):
+> If (i.e., `(if test consequent alternate)`): Evaluate the `test`. If
+  it's true, evaluate the consequent and return its value. If the test
+  evaluated to false, evaluate the alternate and return its value.
 
-> And (i.e., `(and exp1 exp2 exp3)`):
+> And (i.e., `(and exp1 exp2 exp3)`): Evaluates the expressions one by
+  one. If any of them are false, immediately returns false and does not
+  evaluate the remaining expressions. If none of them are false (it has
+  evaluated all of them), return the value of the last expression.
+  `(and (string? s1) (string? s2) (string-append s1 s2))`.
 
-> Or (ie.., `(or exp1 exp2 exp3)`):
+> Or (ie.., `(or exp1 exp2 exp3)`): Evaluates the expressions one at a
+  time. If any of them are truish, returns that value. If all of them
+  are false, returns false.
 
 Lab
 ---
+
+A hint for `median-of-three`
+
+```
+(cond
+  [(<= x y z)
+   ?]
+  [(<= y z x)
+   ?
+  ...
+  ])
+```
