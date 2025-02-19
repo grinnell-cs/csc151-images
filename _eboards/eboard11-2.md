@@ -3,7 +3,7 @@ title: "EBoard 11: Pair programming (Section 2)"
 number: 11
 section: eboards
 held: 2025-02-17
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -27,8 +27,11 @@ Administrative stuff
 ### Introductory notes
 
 * Happy Junior Visit Day! I don't know if we'll have any visitors.
-* I have last Friday's quizzes mostly graded, but not yet uploaded to Gradescope.
-  Expect to see them tonight.
+* I have last Friday's quizzes mostly graded, but not yet uploaded to 
+  Gradescope.  Expect to see them tonight.
+* Thank you for making it to class on such a cold day!
+* Because I care about you, I brought you (discounted) Valentine's day
+  candy.
 
 ### Upcoming activities
 
@@ -106,7 +109,7 @@ _These do not earn tokens, but are worth your consideration._
         * [Decomposition](https://www.gradescope.com/courses/948769/assignments/5798661)
         * [Procedures](https://www.gradescope.com/courses/948769/assignments/5798726)
         * [Primitive types](https://www.gradescope.com/courses/948769/assignments/5798727)
-        * [Lambda-free anonymnous procedures](https://www.gradescope.com/courses/948769/assignments/5798741)
+        * [Lambda-free anonymous procedures](https://www.gradescope.com/courses/948769/assignments/5798741)
         * [Collaboration](https://www.gradescope.com/courses/948769/assignments/5798697)
 * Friday, 21 February 2025
     * MP4 released
@@ -236,6 +239,7 @@ YES
 --> (+ (square 5) (square (+ 3 4)))
 --> (+ (* 5 5) (square (+ 3 4)))
 --> (+ 25 (square (+ 3 4)))
+```
 
 Questions
 ---------
@@ -243,6 +247,33 @@ Questions
 ### Administrative
 
 ### SoLAs
+
+Is "Procedural Abstraction" just a long name for "Procedures"?
+
+> Yes.
+
+Do we have to know conditionals?
+
+> Not for this SoLA. I'll fix the page soon.
+
+Do all LAs get posted for everyone, even if we have credit?
+
+> Yes. Sorry. I'll try to send out lists of the ones you've done.
+
+Quick overview?
+
+> Five separate things on Gradescope. Each with a time limit of one hour.
+
+> You can do them all at the same time or one at a time.
+
+Should I open them all at once?
+
+> For each LA, you have an hour from the time you open it, so I'd recommend
+  that you finish one before going on to another.
+
+Do we have to do the sample LA?
+
+> No.
 
 Background
 ----------
@@ -258,18 +289,87 @@ Background
 An exercise
 -----------
 
-I love that you introduced yourselves.
-
 TPS: 
 
 * 1 min: Think to yourself for a minute. What did you hear? What would
   you like to talk about? What made you optimistic? What surprised you?
-  What worried  you?
+  What worried you? What have you encountered already.
 * 3 min: Talk to your partner about it
 * n min: Full class consideration
 
 What do we want to talk about?
 
-Reflecting on the readings
+* It's easier to deal with hitchhikers in this class because the labs
+  don't have to be completed.
+* We should be more intentional in the way we interact with each other.
+     * Partners should agree on some principles when they sit down.
+* You should be respectful to your classmates.
+* It's surprising that people are judged by how they look or sound.
+* Do these things get better as you go up the CS ladder?
+     * They sometimes get worse in 161 and 207.
+     * Once you hit upper-level classes, most students know each other
+       well enough that they have confidence in their partners.
+* Has talking about things made a positive difference? Yes, it seems to.
+  But people backslide (see notes on 161 and 207) and it's not perfect.
+* We don't always know what our partners are going through ... be kind.
+* How much of our reactions are due to past experiences?
+
+The "We were getting along ... and then they asked me on a date."
+
+* We laugh when hearing it because there's a shock factor.
+* It creates an odd social dynamic.
+
+Why can't people meet on Saturdays?
+
+* See above: Everyone has their own situations.
+* Many people value Saturday as a break from work. Value their mental health.
+* Grinnell already blurs the distinction between schoolwork and life; let
+  people include boundaries.
+* Religious obligations may prevent work on Saturdays.
+* Athletic obligations may prevent work on Saturdays.
+  
+General ways to be intentional in being a good partner.
+
+* Communicate openly - show that you're engaged.
+* Make a conscious effort
+* Be self aware - How are you treating your partner?
+* If you're struggling, let your partner know. "I'm sorry, I wasn't able
+  to do the reading."
+* Pay attention to your partner's needs and what they are asking for.
+* Make sure to let your partner know what you need.
+* Volunteer!
+* Be socially aware.
+
+Reflecting on the readings (TPS)
+--------------------------------
+
+_What are the key points from the readings?_ (TPS)
+
+### Pair Programming
+
+* Can be very fruitful if there's good communication.
+* However, if you do it incorrectly, it can slow things down. (Don't
+  try to communicate, one partner ignores the other.)
+* When you're stuck, it helps to talk things out, even to a rubber plant
+  (or stuffed animal or rubber duck), but talking to a human is even better.
+* Real pair programming involves working together, not splitting the task.
+
+### Couch Potatoes and Hitchhikers
+
+* Stand up for yourself when your partner is not pulling their weight. 
+  (But, as we said, make sure you understand that everyone has things
+  going on in their lives.)
+
+### Diverse teams
+
+* Some of it was very obvious; people in more accepting cultures work better.
+* It's okay to be a bit uncomfortable in group work; it often leads to
+  better outcomes.
+* Preconception: We're better off working with people that we're comfortable
+  with. However, the evidence suggests that we do better in groups of
+  people that make us a bit uncomfortable. (Some kinds of uncomfortable are
+  okay, such as when you have different approaches; others aren't, such as 
+  when you aren't being respected.)
 
 Lab
+---

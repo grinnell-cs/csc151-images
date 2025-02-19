@@ -27,8 +27,11 @@ Administrative stuff
 ### Introductory notes
 
 * Happy Junior Visit Day! I don't know if we'll have any visitors.
-* I have last Friday's quizzes mostly graded, but not yet uploaded to Gradescope.
-  Expect to see them tonight.
+* I have last Friday's quizzes mostly graded, but not yet uploaded to 
+  Gradescope.  Expect to see them tonight.
+* Thank you for making it to class on such a cold day!
+* Because I care about you, I brought you (discounted) Valentine's day
+  candy.
 
 ### Upcoming activities
 
@@ -236,6 +239,7 @@ YES
 --> (+ (square 5) (square (+ 3 4)))
 --> (+ (* 5 5) (square (+ 3 4)))
 --> (+ 25 (square (+ 3 4)))
+```
 
 Questions
 ---------
@@ -243,6 +247,14 @@ Questions
 ### Administrative
 
 ### SoLAs
+
+Is "Procedural Abstraction" just a long name for "Procedures"?
+
+> Yes.
+
+Do we have to know conditionals?
+
+> Not for this SoLA. I'll fix the page soon.
 
 Background
 ----------
@@ -258,18 +270,67 @@ Background
 An exercise
 -----------
 
-I love that you introduced yourselves.
-
 TPS: 
 
 * 1 min: Think to yourself for a minute. What did you hear? What would
   you like to talk about? What made you optimistic? What surprised you?
-  What worried  you?
+  What worried you?
 * 3 min: Talk to your partner about it
 * n min: Full class consideration
 
 What do we want to talk about?
 
-Reflecting on the readings
+* I was surprised to hear that we're doing more pair programming in
+  upper-level classes. (We think it's our responsibility to help you
+  learn to work with others.) (Students think so, too.)
+* Some people feel overshadowed by their partner. [We should talk about
+  this.]
+* There were also a lot of negative responses.
+* We could relate to some experiences, but not all of them.
+* We do both work alone (mini-projects, SoLAs) and work together (labs).
+* It's important to have mutual respect when working together.
+* Statistics of distribution? (Sam wrote all of them based on comments he
+  heard from students.)
+
+How do you avoid feeling overshadowed by your partner? How do you avoid
+overshadowing your partner?
+
+* One situation: Your partner knows (or seems to know more) than you.
+    * Change your mindset. You're here to learn. Talk with them.
+    * Be patient with your partner. Everyone is here to learn.
+* Another situation: Your partner thinks they know more; they are wrong.
+    * Be aggressive
+    * Be patient with your partner. You can always learn something from
+      your partner, even if you think they know less.
+* Talk through things; don't just give a solution to your partner.
+
+Reflecting on the readings (TPS)
+--------------------------------
+
+_What are the key points from the readings?_ (TPS)
+
+Pair Programming
+
+* Pairs work best when partners realize that both have background knowledge.
+* Pairing can let you solve problems that you would not solve individually.
+* You tend to write better code when someone is watching.
+* Posing a good question can help you understand better.
+* Working together helps you notice things you wouldn't notice yourself.
+
+Couch Potatoes and Hitchhikers
+
+* We are averse to confrontation. However, you benefit everyone if you
+  confront people who are not trying.
+* Self reflection: Maybe I have to do better at confronting.
+
+Diverse teams
+
+* We tend to gravitate toward people we are more comfortable with. That
+  doesn't help us develop.
+* A bit of discomfort can be good, it may mean that you're getting new
+  ideas.
+* People who choose their groups seem to be less productive. That's an
+  unexpected ("staggering") result.
 
 Lab
+---
