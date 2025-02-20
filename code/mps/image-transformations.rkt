@@ -10,8 +10,8 @@
 ;;; Date submitted: YYYY-MM-DD
 ;;;
 ;;; Acknowledgements:
-;;; 
-;;; * Starter code provided by SamR and Leah.  That code includes 
+;;;
+;;; * Starter code provided by SamR and Leah.  That code includes
 ;;;   this header, the "provided code" section below, and a bit of
 ;;;   other material.
 ;;; * ...
@@ -112,7 +112,7 @@
 ;;; (rgb-cyclic-subtract c1 c2) -> rgb?
 ;;;   c1 : rgb?
 ;;;   c2 : rgb?
-;;; "Cyclically subtract" each component of `c2` from the corresponding 
+;;; "Cyclically subtract" each component of `c2` from the corresponding
 ;;; components of c1, wrapping around to 255 when we go below zero.
 (define rgb-cyclic-subtract
   ???)
@@ -122,10 +122,10 @@
 ;;;   gamma : non-negative-real?
 ;;; Gamma correct `component` by `gamma` using the standard algorithm.
 ;;;
-;;; The standard algorithm is 
+;;; The standard algorithm is
 ;;; * Convert `component` to a number between 0 and 1 by dividing by 255.
 ;;; * Take that number to the `gamma` power.
-;;; * Multiply that number by 255 
+;;; * Multiply that number by 255
 ;;; * Round the result.
 (define gamma-correct-component
   ???)
@@ -178,6 +178,7 @@
 
 ;;; (rotate-hue img angle) -> image?
 ;;;   img : image?
+;;;   angle : integer?
 ;;; Create a new version of `img` in which the hue of each pixel is
 ;;; change by `angle`.
 (define rotate-hue
@@ -185,6 +186,7 @@
 
 ;;; (set-hue img hue) -> image?
 ;;;   img : image?
+;;;   hue : integer? (between 0 and 359, inclusive)
 ;;; Create a new version of `img` in which the hue of each pixel
 ;;; is set to `hue`.
 (define set-hue
@@ -196,14 +198,14 @@
 
 ;;; (my-rgb-transformation img value) -> image?
 ;;;   img : image?
-;;;   value : 
+;;;   value : ???
 ;;; ???
 (define my-rgb-transformation
   ???)
 
 ;;; (my-hsv-transformation img value) -> image?
 ;;;   img : image?
-;;;   value : 
+;;;   value : ???
 ;;; ???
 (define my-hsv-transformation
   ???)
