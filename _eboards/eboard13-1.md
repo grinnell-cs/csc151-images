@@ -31,6 +31,12 @@ Administrative stuff
   annual ACM Technical Symposium in Computer Science Education. 
     * I'll check Teams Messages from time to time.
     * You will have subs on Wednesday and Friday.
+* Many people struggled on MP3. I count 18 I's and 5 missing assignments.
+    * Please read the guidance for R and try to start by shooting for
+      R. (Sometimes it's easier than others.)
+    * Please reach out for help!
+    * Please use the evening tutors.
+* I have posted a redo for MP3.
 
 ### Upcoming activities
 
@@ -103,6 +109,8 @@ _These do not earn tokens, but are worth your consideration._
     * Quiz: Conditionals
     * Makeup quiz: Tracing
     * Makeup quiz: Documentation
+* Sunday, 2 March 2025
+    * [Submit redo of MP5 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5820169)
 
 Notes from conditionals lab
 ---------------------------
@@ -182,6 +190,16 @@ Do we have a final for this class?
 > We have an optional SoLA 5, which gives you one last chance to make up
   any missing LAs (except for the paper-only LAs). It will be online, so
   you can take it anywhere with Interweb access.
+
+Will I have another chance to make up the tracing LA?
+
+> Yes. We will have an in-class tracing quiz each week until one of 
+  the following situations happen: (a) everyone has passed or (b) we
+  reach the end of the semester.
+
+Are there any other in-class-only LAs?
+
+> Yes. There's one on diagramming structures in phase 3.
 
 ### Lists
 
