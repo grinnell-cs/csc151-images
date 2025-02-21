@@ -3,7 +3,7 @@ title: "EBoard 13: Lists (Section 2)"
 number: 13
 section: eboards
 held: 2025-02-19
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -77,6 +77,8 @@ students are welcome._
 
 * Thursday night--Sunday night, The Natatorium.
   _Swimming Conference Meet_.
+* Friday, 21 February 2025, 8:00 p.m., Gardner Lounge.
+  _Awesome opening act for Random band_
 
 Wellness
 
@@ -122,6 +124,10 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
+* You are awesome. Please take care of yourselves.
+* Moderation in everything.
+* Consent is essential, but not sufficient.
+
 Mini-Project 4
 --------------
 
@@ -159,9 +165,9 @@ Here's how many people defined `is-even?`.
 
 But the `#t` and `#f` are icky. Let's think about a better way.
 
-If `val` is even, what do we get from `(= (remainder val 2) 0)`?
+If `val` is even, what do we get from `(= (remainder val 2) 0)`? `#t`
 
-If `val` is odd, what do we get from `(= (remainder val 2) 0)`?
+If `val` is odd, what do we get from `(= (remainder val 2) 0)`? `#f`
 
 ### Vocabulary: `zero?`
 
@@ -184,11 +190,19 @@ We can make it slightly clearer this way.
 
 We make it even clearer using the amazing `zero?` predicate.
 
+```
+(define is-even?
+  (lambda (val)
+    (zero? (remainder val 2))))
+```
+
 ### Reminder: Cut and compose
 
-Can we make that even more concise with `cut` and composition?
+Can we make that even more concise with `cut` and composition? (TPS)
 
 ```
+(define is-even?
+  (o zero? (cut (remainder <> 2))))
 ```
 
 ### `is-even-integer?`
@@ -203,7 +217,15 @@ Here's one approach.
 
 Can we do better?
 
-### Min of three
+```
+(define is-even-integer?
+  (lambda (val)
+    (and (integer? val) (is-even? val))))
+```
+
+Reminder: When you've written a procedure, USE IT! (Don't copy the body.)
+
+### Median of three
 
 ```
 (define median-of-three
@@ -297,11 +319,19 @@ Another solution to 2b.
                  rainbow-colors)))
 ```
 
+```racket
+(apply beside
+       (map (lambda (c) (thickly-outlined-circle
+                         (rgb-darker (rgb-darker (color-name->rgb c)))))
+            rainbow-colors)))
+```
+
 How would composition help? (TPS)
 
 ```racket
 (apply beside
-       ???)
+       (map (o thickly-outlined-circle rgb-darker rgb-darker color-name->rgb)
+            rainbow-colors))
 ```
 
 Q&A
