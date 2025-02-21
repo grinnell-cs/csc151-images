@@ -3,7 +3,7 @@
 (require csc151)
 (require rackunit)
 
-;; CSC 151 (SEMESTER)
+;; CSC 151-NN (SEMESTER)
 ;; Lab: List Basics
 ;; Authors: YOUR NAMES HERE
 ;; Date: THE DATE HERE
@@ -26,6 +26,17 @@ c. If you haven't done so already, review the list of procedures
 in the lab page, making sure that each of you understands the 
 parameters and purpose of each procedure.  Experiment with the
 procedures as appropriate.
+
+d. Remember that partner A is the person closer to the board and
+partner B is the one further than the board. This lab uses the
+following pattern.
+
+1: A
+2: B
+3: B
+4: A
+
+[Feel free to fill in your own joke about Swedish pop groups.]
 |#
 
 #| A |#
