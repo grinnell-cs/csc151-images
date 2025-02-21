@@ -1,9 +1,9 @@
 ---
-title: "EBoard 13: Lists (Section 1)"
+title: "EBoard 13: Lists (Section 2)"
 number: 13
 section: eboards
 held: 2025-02-19
-link: true
+link: false
 ---
 # {{ page.title }}
 

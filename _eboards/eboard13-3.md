@@ -1,9 +1,9 @@
 ---
-title: "EBoard 13: Lists (Section 1)"
+title: "EBoard 13: Lists (Section 3)"
 number: 13
 section: eboards
 held: 2025-02-19
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -46,6 +46,9 @@ Administrative stuff
 * I have posted a redo for MP3.
 * I spent all my free time yesterday writing the new MP, so I was not able
   to review all the reading responses. 
+* A friend is defending their thesis at 3pm today, so I'm going to listen
+  to that while Lilli does the brunt of the work. But I'm happy to come
+  over if Lilli is busy or if you need my help.
 
 ### Upcoming activities
 
