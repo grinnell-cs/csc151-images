@@ -3,7 +3,7 @@ title: "EBoard 13: Lists (Section 3)"
 number: 13
 section: eboards
 held: 2025-02-19
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -79,9 +79,6 @@ Peer
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
-* Thursday night--Sunday night, The Natatorium.
-  _Swimming Conference Meet_.
-
 Wellness
 
 * Friday, 21 February 2025, 9:00 p.m., Noyce Elbow.
@@ -102,6 +99,9 @@ Misc
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
+
+* Thursday night--Sunday night, The Natatorium.
+  _Swimming Conference Meet_.
 
 ### Upcoming work
 
@@ -126,6 +126,10 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
+* You are awesome. Please take care of yourselves / stay awesome.
+* Moderation in everything.
+* Consent is essential, but not sufficient.
+
 Mini-Project 4
 --------------
 
@@ -139,15 +143,16 @@ Also:
   procedures, and one freestyle.
 * Less math. (There is a circle problem; ask me if you have trouble
   understanding the circle formula.)
+    * Lilli also works in the Math Lab 8-9pm on Mondays and Tuesdays.
 
 Notes from conditionals lab
 ---------------------------
 
 ### No-parameter versions
 
-What is `(and)`? Why?
+What is `(and)`? Why? `#t`
 
-What is `(or)`? Why?
+What is `(or)`? Why? `#f`
 
 ### `is-even?`
 
@@ -163,9 +168,9 @@ Here's how many people defined `is-even?`.
 
 But the `#t` and `#f` are icky. Let's think about a better way.
 
-If `val` is even, what do we get from `(= (remainder val 2) 0)`?
+If `val` is even, what do we get from `(= (remainder val 2) 0)`? `#t`
 
-If `val` is odd, what do we get from `(= (remainder val 2) 0)`?
+If `val` is odd, what do we get from `(= (remainder val 2) 0)`? `#f`
 
 ### Vocabulary: `zero?`
 
@@ -193,6 +198,14 @@ We make it even clearer using the amazing `zero?` predicate.
 Can we make that even more concise with `cut` and composition?
 
 ```
+(define is-even?
+  (lambda (val)
+    (zero? (remainder val 2))))
+```
+
+```
+(define is-even?
+  (zero? (cut (remainder <> 2))))
 ```
 
 ### `is-even-integer?`
@@ -207,7 +220,15 @@ Here's one approach.
 
 Can we do better?
 
-### Min of three
+```
+(define is-even-integer?
+  (lambda (val)
+    (and (integer? val) (is-even? val))))
+```
+
+Reminder: Use the procedures you've already written.
+
+### Median of three
 
 ```
 (define median-of-three
@@ -305,7 +326,8 @@ How would composition help? (TPS)
 
 ```racket
 (apply beside
-       ???)
+       (map (o thickly-outlined-circle rgb-darker rgb-darker color-name->rgb)
+            rainbow-colors))
 ```
 
 Q&A
