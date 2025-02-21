@@ -17,7 +17,7 @@ will be evaluated.
 
 `(list val1 val2 ... valn)` - another way that DrRacket sometimes 
 shows lists. (We don't know why it sometimes chooses one notation
-and other times another.)
+and other times another; we'll alo use both.)
 
 ### Creating lists
 
@@ -86,7 +86,7 @@ Then load the two halves of the lab.
 * [list-basics-a.rkt](../code/labs/list-basics-a.rkt)
 * [list-basics-b.rkt](../code/labs/list-basics-b.rkt)
 {% else %}
-c. Load the lab.  Remember that the person closer to the board is Side A and the person further fro the board is Side B.
+c. Load the lab.  Remember that the person closer to the board is Side A and the person further from the board is Side B.
 
 * [list-basics.rkt](../code/labs/list-basics.rkt)
 {% endif %}
