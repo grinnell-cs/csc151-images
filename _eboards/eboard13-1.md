@@ -42,10 +42,8 @@ Administrative stuff
       R. (It's easier on some MPs than others.)
     * Please reach out for help!
     * Please use the evening tutors.
-    * No charge for redoing the I's on MPp3.
+    * No charge for redoing the I's on MP3.
 * I have posted a redo for MP3.
-* I spent all my free time yesterday writing the new MP, so I was not able
-  to review all the reading responses. 
 
 ### Upcoming activities
 
@@ -122,6 +120,12 @@ _These do not earn tokens, but are worth your consideration._
 * Sunday, 2 March 2025
     * [Submit redo of MP3 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5820169)
 
+### Friday PSA
+
+* You are awesome. Please stay awesome. Take care of yourselves.
+* Moderation in everything.
+* Consent is essential, but not sufficient.
+
 Mini-Project 4
 --------------
 
@@ -133,7 +137,7 @@ Also:
 
 * Fewer problems: Six primary procedures, two "go from color to image" 
   procedures, and one freestyle.
-* Less math. (There is a circle problem; ask me if you have trouble
+* Less math. (There is a circle problem; ask one of us if you have trouble
   understanding the circle formula.)
 
 Notes from conditionals lab
@@ -159,9 +163,15 @@ Here's how many people defined `is-even?`.
 
 But the `#t` and `#f` are icky. Let's think about a better way.
 
-If `val` is even, what do we get from `(= (remainder val 2) 0)`?
+If `val` is even, what do we get from `(= (remainder val 2) 0)`? `#t`
 
-If `val` is odd, what do we get from `(= (remainder val 2) 0)`?
+If `val` is odd, what do we get from `(= (remainder val 2) 0)`? `#f`
+
+```
+(define is-even?
+  (lambda (val)
+    (= (remainder val 2) 0)))
+```
 
 ### Vocabulary: `zero?`
 
@@ -173,11 +183,19 @@ If `val` is odd, what do we get from `(= (remainder val 2) 0)`?
 
 We make it a little clearer using the amazing `zero?` predicate.
 
+```
+(define is-even?
+  (lambda (val)
+    (zero? (remainder val 2))))
+```
+
 ### Reminder: Cut and compose
 
 Can we make that even more concise with `cut` and composition?
 
 ```
+(define is-even?
+  (o zero? (cut (remainder <> 2))))
 ```
 
 ### `is-even-integer?`
@@ -192,10 +210,19 @@ Here's one approach.
 
 Can we do better?
 
-### Min of three
+```
+(define is-even-integer?
+  (lambda (val)
+    (and (integer? val) (is-even? val))))
+```
+
+Reminder: Once you've written a procedure and need something similar
+in another procedure, call the previous procedure, don't copy the body.
+
+### Median of three
 
 ```
-(define min-of-three
+(define median-of-three
   (lambda (x y z)
     (cond
       [(or (<= x y z) (<= z y x))
@@ -209,7 +236,7 @@ Can we do better?
 Hmmm ... shouldn't we have a default?
 
 ```
-(define min-of-three
+(define median-of-three
   (lambda (x y z)
     (cond
       [(or (<= x y z) (<= z y x))
@@ -225,7 +252,7 @@ Hmmm ... shouldn't we have a default?
 Or, better yet, 
 
 ```
-(define min-of-three
+(define median-of-three
   (lambda (x y z)
     (cond
       [(or (<= x y z) (<= z y x))
@@ -239,7 +266,7 @@ Or, better yet,
 If we didn't have `if` or `cond`, we could write
 
 ```
-(define min-of-three
+(define median-of-three
   (lambda (x y z)
     (or (and (or (<= x y z) (<= z y x))
              y)
@@ -249,6 +276,14 @@ If we didn't have `if` or `cond`, we could write
 ```
 
 No, I don't want you to take this last approach.
+
+There's also a math-based trick.
+
+```
+(define median-of-three
+  (lambda (x y z)
+    (- (+ x y z) (min x y z) (max x y z))))
+```
 
 A note on the self-checks
 -------------------------
@@ -267,6 +302,8 @@ One solution to 2b.
 Another solution to 2b.
 
 ```racket
+(define rainbox-colors
+  (list "red" "orange" "yellow" "green" "blue" "indigo" "violet"))
 (apply beside
        (map thickly-outlined-circle
             (map (lambda (c) (rgb-darker (rgb-darker (color-name->rgb c))))
@@ -274,6 +311,12 @@ Another solution to 2b.
 ```
 
 How would composition help? (TPS)
+
+```
+(apply beside
+       (map (o thickly-outlined-circle rgb-darker rgb-darker color-name->rgb) 
+            rainbow-colors))
+```
 
 Q&A
 ---

@@ -42,13 +42,12 @@ Administrative stuff
       R. (It's easier on some MPs than others.)
     * Please reach out for help!
     * Please use the evening tutors.
-    * No charge for redoing the I's on MPp3.
+    * No charge for redoing the I's on MP3.
 * I have posted a redo for MP3.
-* I spent all my free time yesterday writing the new MP, so I was not able
-  to review all the reading responses. 
-* A friend is defending their thesis at 3pm today, so I'm going to listen
-  to that while Lilli does the brunt of the work. But I'm happy to come
-  over if Lilli is busy or if you need my help.
+* A friend is defending their thesis at 3pm today, so I'll be sitting
+  here listening while Lilli supports you. However, if Lilli is busy
+  or you'd prefer to get help from me, just let me know and I'll come
+  over.
 
 ### Upcoming activities
 
@@ -125,6 +124,8 @@ _These do not earn tokens, but are worth your consideration._
 * Sunday, 2 March 2025
     * [Submit redo of MP3 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5820169)
 
+### Friday PSA
+
 Mini-Project 4
 --------------
 
@@ -174,7 +175,18 @@ If `val` is odd, what do we get from `(= (remainder val 2) 0)`?
     (= (remainder val 2) 0)))
 ```
 
-We make it a little clearer using the amazing `zero?` predicate.
+This is a bit hard to read because the 0 parameter to `=` is way off
+to the right.
+
+We can make it slightly clearer this way.
+
+```
+(define is-even?
+  (lambda (val)
+    (= 0 (remainder val 2))))
+```
+
+We make it even clearer using the amazing `zero?` predicate.
 
 ### Reminder: Cut and compose
 
@@ -198,7 +210,7 @@ Can we do better?
 ### Min of three
 
 ```
-(define min-of-three
+(define median-of-three
   (lambda (x y z)
     (cond
       [(or (<= x y z) (<= z y x))
@@ -212,7 +224,7 @@ Can we do better?
 Hmmm ... shouldn't we have a default?
 
 ```
-(define min-of-three
+(define median-of-three
   (lambda (x y z)
     (cond
       [(or (<= x y z) (<= z y x))
@@ -228,7 +240,7 @@ Hmmm ... shouldn't we have a default?
 Or, better yet, 
 
 ```
-(define min-of-three
+(define median-of-three
   (lambda (x y z)
     (cond
       [(or (<= x y z) (<= z y x))
@@ -242,7 +254,7 @@ Or, better yet,
 If we didn't have `if` or `cond`, we could write
 
 ```
-(define min-of-three
+(define median-of-three
   (lambda (x y z)
     (or (and (or (<= x y z) (<= z y x))
              y)
@@ -253,18 +265,31 @@ If we didn't have `if` or `cond`, we could write
 
 No, I don't want you to take this last approach.
 
+We could also ignore conditionals.
+
+```
+(define median-of-three
+  (lambda (x y z)
+    (- (+ x y z)
+       (min x y z)
+       (max x y z))))
+```
+
 A note on the self-checks
 -------------------------
 
 One solution to 2b.
 
 ```racket
+(define rainbow-colors
+  (list "red" "orange" "yellow" "green" "blue" "indigo" "violet"))
 (define dark-circles
   (apply beside
          (map thickly-outlined-circle
               (map rgb-darker
-                   (map color-name->rgb 
-                        (list "red" "orange" "yellow" "green" "blue" "indigo" "violet"))))))
+                   (map rgb-darker
+                        (map color-name->rgb 
+                             rainbow-colors))))))
 ```
 
 Another solution to 2b.
@@ -277,6 +302,11 @@ Another solution to 2b.
 ```
 
 How would composition help? (TPS)
+
+```racket
+(apply beside
+       ???)
+```
 
 Q&A
 ---
@@ -302,10 +332,6 @@ Are there any other in-class-only LAs?
 When is the next SoLA?
 
 > Week 8, right after spring break.
-
-### Lists
-
-### Other
 
 Lab
 ---
