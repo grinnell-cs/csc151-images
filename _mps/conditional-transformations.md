@@ -312,7 +312,7 @@ Although we used color blends in the example above, you should just use solid co
 ```drracket
 > (make-circle 100 100 100 200 200 (rgb 64 64 128) (rgb 64 0 64))
 ![a 200-by-200 approximately midnight blue image that contains part or all of a radius 100 approximately dark slate blue circle centered at (100,100)](../images/mps/conditional-transformations/circle-100-100-100.png)
-> (make-circle 50 150 100 200 200 (rgb 64 64 128) (rgb 64 0 64))
+> (make-circle 50 150 100 200 200 (rgb 64 0 64) (rgb 64 64 128))
 ![a 200-by-200 approximately dark slate blue image that contains part or all of a radius 100 approximately midnight blue circle centered at (50,150)](../images/mps/conditional-transformations/circle-50-150-100.png)
 > (make-circle 250 -50 150 200 200 (rgb 192 0 64) (rgb 64 0 128))
 ![a 200-by-200 approximately indigo image that contains part or all of a radius 150 approximately crimson circle centered at (250,-50)](../images/mps/conditional-transformations/circle-250--50-150.png)
@@ -370,6 +370,8 @@ Please do not include a call to `image-load` in your `.rkt` file. Any instructio
 Grading rubric
 --------------
 
+_Since this MP is new, the rubric may get updated._
+
 ### Redo or above
 
 Submissions that lack any of these characteristics will get an I.
@@ -396,6 +398,7 @@ prior characteristics will get an R.
 [ ] Code generally follows style guidelines, including limiting the
     length of lines to about 80 characters.
 [ ] Documentation for all core procedures is correct / has the correct form.
+[ ] The freestyle procedure uses `pixel-pos-map` (as directed).
 [ ] Includes all the images.
 ```
 
@@ -408,9 +411,9 @@ prior characteristics will get an M.
 [ ] Passes all of the **E** autograder tests.
 [ ] Style is impeccable (or nearly so).
 [ ] No `define` expressions within procedures.
+[ ] No `let` expressions (which we haven't covered yet).
 [ ] All helper procedures are documented.
 [ ] Avoids repeated work.
-[ ] Uses `cut` and composition when appropriate.
 [ ] The freestyle procedure has at least one conditional that depends 
     on the position of the pixel.
 [ ] The freestyle procedure has at least one conditional that depends
@@ -426,11 +429,37 @@ Do you have hints on reducing repetition?
 
 > You could use the same technique we used in `rgb-grayscale` and `rgb-4gray`. In those cases, we computed a value once and then passed it to a helper procedure that used the computed value. (This approach works in most cases.)
 
+How do I know when I can't decompose a conditional statement (or any statement in general) further?
+
+> We won't generally decompose conditionals all that much (except to reduce repetitions).
+
+> If you have no repetition and there aren't naturally subparts that you might reuse elsewhere, you've probably decomposed enough.
+
+Will we have to use polar-coordinates in any of these parts?
+
+> No. Or at least I hope not. I didn't use them in any of the solutions.
+
+How can we avoid using `define` within the body of procedures?
+
+> Write a helper procedure that makes the thing you're defining a parameter. See `rgb-grayscale` and `rgb-4gray` (and the code example at the end of the Q&A) as examples.
+
+How would be a good way to practice conditionals before doing this assignment? Just to become comfortable?
+
+> Finish the conditionals lab. The assignment is also intended to give you practice.
+
+Could you to give us tips on what to do if you get stuck for a long period of time?
+
+> After five minutes of being stuck, reach out on Teams (and, possibly, move on to another problem). Also: Work in our classroom while evening tutors are there so that you can ask help.
+
 ### Part one
+
+In 1a, if the target color is equidistant to 2+ of the 4 colors, then what should we return?
+
+> If two or more of the target colors are equidistant (and the smallest distance), you can return any of them.
 
 Do you have other hints on reducing repetition in problem 1?
 
-> In addition to the idea above, you might break down the problem of computing the closest of four to computing the closest of two.
+> You might try the general hint on reducing repetition. You also might break down the problem of computing the closest of four to computing the closest of two. (There are probably other approaches; these are two that worked for me.)
 
 `closest-color` expects five parameters. `pixel-map` expects a procedure that takes only one color as a parameter. How can I deal with that issue?
 
@@ -438,7 +467,7 @@ Do you have other hints on reducing repetition in problem 1?
 
 > For example, if we had a procedure, `rgb-average`, that averages two colors, and we wanted to extend it to a procedure that averages a color with every color in the image, we could write either of the following .
 
-> ```
+```racket
 (define average-with-color
   (lambda (img color)
     (pixel-map (cut (rgb-average <> color)) img)))
@@ -451,7 +480,95 @@ Do you have other hints on reducing repetition in problem 1?
 
 ### Part two
 
+In the MP4 part two a, I got confused about what each parameter represents. In the procedure `(make-rectangle left top width height image-width image-height color background-color)`, what do `left`, `top`, `width`, `height`, `image-height`, and `image-width` indicate in a rectangle that we are supposed to make?
+
+> `left` is the x coordinate of the left edge of the rectangle, `top` is the y coordinate of the top edge, `width` is the width of the rectangle, `height` is the height of the rectangle, `image-width` (`iwidth` in the documentation) is the width of the image that contains the rectangle, and `image-height` (`iheight` in the documentation) is the height of that image.
+
+And what is `bg`?
+
+> The background color.
+
 ### Part three
 
 ### Part four
 
+I struggle to write the freestyles. Any suggestions?
+
+> I often start by considering variations of what we've done already. I also look for inspiration from artists like Andy Warhol and Shepard Fairey who base some of their work on image transformations.
+
+What are you expecting when you say any instructions to load a file should be in a comment.  Where should the comment go?
+
+> Many of the MP3 submissions had something like `(image-load "kitten.jpg")` or `(image-load "/Users/student/Desktop/kitten.jpg")`, which prevented the autograder from running. I just want you to include the instructions at the end so we can see what you did.
+
+Do we need to include instructions for finding the image we used?
+
+> You don't need instructions for looking up the image online, but you should cite it.
+
+Did you (Sam) write any transformations for this part?
+
+> I didn't have a lot of time, so I wrote something that computes the hue based on the position. (That won't earn me an E, but it was fun to write.)
+
+```drracket
+> (rainbow2 kitten)
+![Our kitten, now in rainbow colors](../images/mps/conditional-transformations/kitten-rainbow2.jpg)
+```
+
+It also makes fun images when applied to solid-color rectangles.
+
+```drracket
+> (rainbow2 (solid-rectangle 400 300 "red"))
+![A bright set of concentric colors](../images/mps/conditional-transformations/rectangle-rainbow2.jpg)
+```
+
+> And yes, I also find that my time gets sucked away doing fun things with what we're learning.
+
+How did you do that?
+
+```racket
+;;; (rainbow img) -> image?
+;;;   img : image?
+;;; Create a concentric rainbow-like color scheme on img.
+;;;
+;;; This would suffice for an M but not an E.
+(define rainbow2
+  (lambda (img)
+    (rainbow2-helper img
+                     (* 1/2 (image-width img))
+                     (* 1/2 (image-height img)))))
+
+;;; (rainbow2-helper img half-width half-height)
+;;;   img : image?
+;;;   half-width : exact-positive-integer? (half the width of img)
+;;;   half-height : exact-positive-integer? (half the height of img)
+;;; Create a concentric rainbow-like color scheme on `img`, a
+;;; 2*`half-width`-by-2*`half-height` image.
+(define rainbow2-helper
+  (lambda (img half-width half-height)
+    (rainbow2-helper-helper img
+                            half-width half-height
+                            (+ (sqr half-width) (sqr half-height)))))
+
+;;; (rainbow2-helper-helper img half-width half-height max-distance)
+;;;   img : image?
+;;;   half-width : exact-positive-integer? (half the width of img)
+;;;   half-height : exact-positive-integer? (half the height of img)
+;;;   max-distance : exact positive-integer?
+;;; Create a concentric rainbow-like color scheme on `img`, a
+;;; 2*`half-width`-by-2*`half-height` image. `max-distance` is the
+;;; largest 
+(define rainbow2-helper-helper
+  (lambda (img half-width half-height max-distance)
+    (pixel-pos-map (lambda (color col row)
+                     (rgb-set-hue color
+                                  (* 360
+                                     (/ (+ (sqr (- col half-width))
+                                           (sqr (- row half-height)))
+                                        max-distance))))
+                   img)))
+```
+
+> I've included it primarily so that you can see how I avoid repeating code, such as the computation of the image width or height or the divisor I use when computing what color to use.
+
+Shouldn't you have used a square root somewhere?
+
+> Probably. I'm lazy. As I said, I was trying to make this quick.
