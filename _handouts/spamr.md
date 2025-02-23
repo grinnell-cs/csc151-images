@@ -7,7 +7,7 @@ _Here you will find most of the email that I sent out this semester, with the ne
 
 ## [CSC-151 2025Sp] Some notes on MP4 (Sunday, 2025-02-23)
 
-Dear Conditioners,
+Dear Conditioners of Colors,
 
 I hope that you are having a wonderful weekend and that you've found time to get some relaxation.
 
