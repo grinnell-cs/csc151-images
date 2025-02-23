@@ -5,6 +5,62 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
+## [CSC-151 2025Sp] Some notes on MP4 (Sunday, 2025-02-23)
+
+Dear Conditioners,
+
+I hope that you are having a wonderful weekend and that you've found time to get some relaxation.
+
+I've updated MP4 to incorporate more examples. I've also added answers to the questions I've received. There are also a few changes from my own attempts to do the assignment. (It took me about an hour to do the assignment from scratch, which seems like an okay time.)
+
+Some additional notes.
+
+1\. If you started the assignment early, you may be missing a few updates that I've made to the starter code. The first one is just a reminder in the "Acknowledgements" section. You should include a similar comment in your own.
+
+```
+;;; * I took the image I used in part four from …
+```
+
+2\. I realized that not all of you may have written `rgb-set-hue`, so I've added it to the starter code. Here's the code (in case you've started early).
+
+```
+;;; (rgb-set-hue color hue) -> rgb?
+;;;   color : rgb?
+;;;   hue : non-negative integer? (in the range 0-359)
+;;; Set the hue of `color` to `hue`.
+(define rgb-set-hue
+  (lambda (color hue)
+    (hsv->rgb (hsv-set-hue (rgb->hsv color) hue))))
+
+;;; (hsv-set-hue color hue) -> hsv?
+;;;   color : hsv?
+;;;   hue : non-negative integer? (in the range 0-359)
+;;; Set the hue of `color` to `hue`.
+(define hsv-set-hue
+  (lambda (color hue)
+    (hsv hue (hsv-saturation color) (hsv-value color) (hsv-alpha color))))
+```
+
+3\. Enough of the early pre-reflectors comment on cut and compose being a focus of the assignment (they weren't supposed to be) that I've elminated that part of the rubric. You'll benefit from cut on 1b, but that's about it.
+
+4\. Don't forget to submit the pre-reflections! I may not be able to look at them again today, but I'll get responses out as soon as I have time.
+
+<https://www.gradescope.com/courses/948769/assignments/5815256>
+
+5\. At least one student has told me that the dopamine rush that they got from writing image transformations made them spend extra time on part four. Please be careful!
+
+6\. The autograder probably won't be available until tomorrow night.
+
+As always, I'm happy to answer questions on Teams or via email.
+
+And don't forget that we have a mentor session tonight!
+
+Regards,
+
+-- SamR
+
+p.s. Grading the SoLA is next on my schedule for the weekend, so you may get another email from me in a few hours.
+
 ## [CSC-151 2025Sp] Schedule, MP1, Quizzes, Etc. (Wednesday, 2025-02-05)
 
 Dear Producers of Playful Polygons,
