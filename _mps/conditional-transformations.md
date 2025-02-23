@@ -113,12 +113,12 @@ Can you predict what image that will create? Give it a try and see.
 Now, let's try a slightly different version of that procedure.
 
 ```racket
-;;; (sample-pos2color-02 x y) -> rgb?
-;;;   x : exact-nonnegative-integer?
-;;;   y : exact-nonnegative-integer?
+;;; (sample-pos2color-02 col row) -> rgb?
+;;;   col : exact-nonnegative-integer?
+;;;   row : exact-nonnegative-integer?
 ;;; Compute a color based on x and y.
 (define sample-pos2color-02
-  (lambda (x y)
+  (lambda (col row)
     (cond
       [(< x 50)
        (rgb 0 0 y)]
@@ -220,45 +220,138 @@ Here's what we get when we apply `four-parts` to our kitten.
 Part one: Conditional transformations
 -------------------------------------
 
+### Four-color images
+
 a. Document and write a procedure, `(closest-color color option1 option2 option3 option4)`, that figures out which of the four options `color` is closest to. You can use `(rgb-distance color1 color2)` to figure out the distance between two colors.
 
+```drracket
+> (rgb->string (closest-color (rgb 100 200 0) 
+                              (rgb 255 0 0) 
+                              (rgb 0 255 0) 
+                              (rgb 0 0 255) 
+                              (rgb 128 128 128)))
+"0/255/0"
+> (rgb-distance (rgb 100 200 0) (rgb 255 0 0))
+64025
+> (rgb-distance (rgb 100 200 0) (rgb 0 255 0))
+13025
+> (rgb-distance (rgb 100 200 0) (rgb 0 0 255))
+115025
+> (rgb-distance (rgb 100 200 0) (rgb 128 128 128))
+22352
+```
+
 b. Document and write a procedure, `(four-color img option1 option2 option3 option4)`, that takes each pixel in `img` and converts it to the closest of the four options, using `closest-color`.
+
+```drracket
+> (four-color kitten (rgb 255 0 0) (rgb 0 255 0) (rgb 0 0 255) (rgb 255 255 255))
+![An image of a kitten converted into red, green, blue, and white.](../images/mps/conditional-transformations/kitten-rgbw.jpg)
+> (four-color kitten (rgb 128 128 0) (rgb 0 128 128) (rgb 128 0 128) (rgb 192 192 192))
+![An image of a kitten converted into dark somewhat greenish colors with a bit of purple.](../images/mps/conditional-transformations/kitten-camo.jpg)
+```
+
+### Enhancing colors
 
 c. As you may recall, we did some fancy math in the prior mini-project in order to enhance dominant components. Let's try again, this time taking advantage of Document and write a procedure, `(rgb-enhance-dominant color)`, that takes an RGB color as a parameter, determines which of the components is largest, multiplies that component by 1.1, and multiplies the other components by .9. For example,
 
 ```drracket
-> (rgb->string (rgb-enhance-dominant (rgb 100 90 90)))
-"110/81/81"
+> (rgb->string (rgb-enhance-dominant (rgb 100 90 80)))
+"110/81/72"
 > (rgb->string (rgb-enhance-dominant (rgb 200 10 200)))
 "220/9/220"
+> (rgb->string (rgb-enhance-dominant (rgb 100 100 100)))
+"110/110/110"
+> (rgb->string (rgb-enhance-dominant (rgb 60 50 250)))
+"54/45/255"
 ```
 
 d. Document and write a procedure, `(enhance-dominant img)`, that applies `rgb-enhance-dominant` to each pixel in `img`.
 
+```drracket
+> (enhance-dominant kitten)
+![An image of the kitten that appears a bit pixelated in places.](../images/mps/conditional-transformations/kitten-enhance-dominant.jpg)
+```
+
+No, I don't know why we get the weird pixelation in palces.
+
 Part two: Position-based images
 -------------------------------
 
+### Making rectangles
+
 a. As you saw in the background section, it's fairly straightforward to use `image-compute` to make a rectangular image. Document and write a procedure, `(make-rectangle left top width height image-width image-height color background-color)`, that makes the given rectangle.
 
+```
+> (make-rectangle 50 20 75 30 200 200 (rgb 255 0 0) (rgb 128 0 255))
+![a 200-by-200 approximately purple image that contains a 75-by-30 red rectangle](../images/mps/conditional-transformations/rectangle-50-20-75-30.png)
+> (make-rectangle 100 20 20 150 200 200 (rgb 0 0 255) (rgb 255 0 128))
+![a 200-by-200 approximately deeppink image that contains a 20-by-150 blue rectangle](../images/mps/conditional-transformations/rectangle-100-20-20-150.png)
+> (make-rectangle 50 100 300 300 200 200 (rgb 255 0 255) (rgb 128 0 128))
+![a 200-by-200 approximately darkmagenta image that contains a 300-by-300 fuchsia rectangle](../images/mps/conditional-transformations/rectangle-50-100-300-300.png)
+```
+
 Note that you should generate an appropriate description of the image.
 
-b. As you saw in the background section, it's only slightly more complicated `image-compute` to make a circle. Document and write a procedure, `(make-circle center-x center-y radius image-width image-height color background-color)`, that makes a circle of the specified radius centered at the given position
+```drracket
+> (describe-image (make-rectangle 50 20 75 30 200 200 (rgb 255 0 0) (rgb 128 0 255)))
+"a 200-by-200 approximately purple image that contains a 75-by-30 red rectangle"
+> (describe-image (make-rectangle 100 20 20 150 200 200 (rgb 0 0 255) (rgb 255 0 128)))
+"a 200-by-200 approximately deeppink image that contains a 20-by-150 blue rectangle"
+> (describe-image (make-rectangle 50 100 300 300 200 200 (rgb 255 0 255) (rgb 128 0 128)))
+"a 200-by-200 approximately darkmagenta image that contains a 300-by-300 fuchsia rectangle"
+```
 
-Although we used color blends in the example, you should just use solid colors for the circle and the background.
+As the last example suggests, you don't need to fix your description if the call provides an inappropriate rectangle width or height.
+
+### Making circles
+
+b. As you saw in the background section, it's only slightly more complicated to use `image-compute` to make a circle. Document and write a procedure, `(make-circle center-x center-y radius image-width image-height color background-color)`, that makes a circle of the specified radius centered at the given position
+
+Although we used color blends in the example above, you should just use solid colors for the circle and the background.
+
+```drracket
+> (make-circle 100 100 100 200 200 (rgb 64 64 128) (rgb 64 0 64))
+![a 200-by-200 approximately midnight blue image that contains part or all of a radius 100 approximately dark slate blue circle centered at (100,100)](../images/mps/conditional-transformations/circle-100-100-100.png)
+> (make-circle 50 150 100 200 200 (rgb 64 64 128) (rgb 64 0 64))
+![a 200-by-200 approximately dark slate blue image that contains part or all of a radius 100 approximately midnight blue circle centered at (50,150)](../images/mps/conditional-transformations/circle-50-150-100.png)
+> (make-circle 250 -50 150 200 200 (rgb 192 0 64) (rgb 64 0 128))
+![a 200-by-200 approximately indigo image that contains part or all of a radius 150 approximately crimson circle centered at (250,-50)](../images/mps/conditional-transformations/circle-250--50-150.png)
+```
 
 Note that you should generate an appropriate description of the image.
+
+```drracket
+> (describe-image (make-circle 50 150 100 200 200 (rgb 64 0 64) (rgb 64 64 128)))
+"a 200-by-200 approximately dark slate blue image that contains part or all of a radius 100 approximately midnight blue circle centered at (50,150)"
+> (describe-image (make-circle 100 100 100 200 200 (rgb 64 64 128) (rgb 64 0 64)))
+"a 200-by-200 approximately midnight blue image that contains part or all of a radius 100 approximately dark slate blue circle centered at (100,100)"
+> (describe-image (make-circle 250 -50 150 200 200 (rgb 192 0 64) (rgb 64 0 128)))
+"a 200-by-200 approximately indigo image that contains part or all of a radius 150 approximately crimson circle centered at (250,-50)"
+```
 
 Part three: Position-based color transformations
 ------------------------------------------------
 
+### Concentric color shifts
+
 a. In our sample position-based color transformation, we broke the image into four quadrants. Of course, there are many other ways to segment an image. Write a procedure, `(concentric-rectangles img)`, that breaks an image into four concentric rectangles (the innermost one is 1/4 the width and height of the original, the next one is 1/2 the width and height, the next is 3/4 the width and height, and the last is the width and height of the original). Set the hue of all the pixels in the center rectangle to 0, the hue of the pixels in the next rectangle to 90, the next to 180, and the outermost to 270.
 
-[Image forthcoming.]
+```drracket
+> (conentric-rectangles kitten)
+![The standard kitten image. A small box in the center of the image has been made red; a surrounding box has been made yellow-green; a surrounding box has been made teal; and a surrounding box has been made purple.](../images/mps/conditional-transformations/kitten-concentric.jpg)
+```
 
 b. We can also use color-based transformations to emphasize part of an image. 
 Document and write a procedure, `(emphasize-circle img x y radius)`, that leaves the circular region centered at (`x`,`y`) and of radius `radius` "as is" and truns the rest to grayscale.
 
-[Images forthcoming.]
+```drracket
+> (emphasize-circle kitten 220 180 100)
+![The kitten image, mostly grayscale, but with the face of the kitten still in color](../images/mps/conditional-transformations/kitten-circle-220-180-100.jpg)
+> (emphasize-circle kitten 350 250 100)
+![The kitten image, mostly grayscale, but with the carpet in the lower-right in color](../images/mps/conditional-transformations/kitten-circle-350-250-100.jpg)
+> (emphasize-circle kitten 0 0 250)
+![The kitten image, mostly grayscale, but with the top-left part in color](../images/mps/conditional-transformations/kitten-circle-0-0-250.jpg)
+```
 
 Part four: Freestyle
 ---------------------
@@ -329,7 +422,32 @@ Q&A
 
 ### General
 
+Do you have hints on reducing repetition?
+
+> You could use the same technique we used in `rgb-grayscale` and `rgb-4gray`. In those cases, we computed a value once and then passed it to a helper procedure that used the computed value. (This approach works in most cases.)
+
 ### Part one
+
+Do you have other hints on reducing repetition in problem 1?
+
+> In addition to the idea above, you might break down the problem of computing the closest of four to computing the closest of two.
+
+`closest-color` expects five parameters. `pixel-map` expects a procedure that takes only one color as a parameter. How can I deal with that issue?
+
+> `cut` is your friend. If `cut` remains confusing, `lambda` is also your friend.
+
+> For example, if we had a procedure, `rgb-average`, that averages two colors, and we wanted to extend it to a procedure that averages a color with every color in the image, we could write either of the following .
+
+> ```
+(define average-with-color
+  (lambda (img color)
+    (pixel-map (cut (rgb-average <> color)) img)))
+
+(define average-with-color
+  (lambda (img color)
+    (pixel-map (lambda (c) (rgb-average c color))
+               img)))
+```
 
 ### Part two
 

@@ -161,8 +161,8 @@
 
 ; 1b.
 
-;;; (four-color img  option1 option2 option3 option4) -> ???
-;;;   color : rgb?
+;;; (four-color img option1 option2 option3 option4) -> ???
+;;;   image : image?
 ;;;   option1 : rgb?
 ;;;   option2 : rgb?
 ;;;   option3 : rgb?
