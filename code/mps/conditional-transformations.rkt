@@ -13,7 +13,9 @@
 ;;;
 ;;; * Starter code provided by SamR.  That code includes this header, 
 ;;;   the "provided code" section below, and a bit of other material.
+;;; * I took the image I used in part four from ...
 ;;; * ...
+;;;
 
 ; +---------------------------------+--------------------------------
 ; | Sample code from the assignment |
@@ -142,6 +144,22 @@
                              (rgb-bluer pixel) 
                              (rgb-redder (rgb-greener pixel)))))
                    img)))
+
+;;; (rgb-set-hue color hue) -> rgb?
+;;;   color : rgb?
+;;;   hue : non-negative integer? (in the range 0-359)
+;;; Set the hue of `color` to `hue`.
+(define rgb-set-hue
+  (lambda (color hue)
+    (hsv->rgb (hsv-set-hue (rgb->hsv color) hue))))
+
+;;; (hsv-set-hue color hue) -> hsv?
+;;;   color : hsv?
+;;;   hue : non-negative integer? (in the range 0-359)
+;;; Set the hue of `color` to `hue`.
+(define hsv-set-hue
+  (lambda (color hue)
+    (hsv hue (hsv-saturation color) (hsv-value color) (hsv-alpha color))))
 
 ; +---------------------------------------------+--------------------
 ; | Part one: Conditional color transformations |
