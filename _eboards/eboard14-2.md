@@ -1,5 +1,5 @@
 ---
-title: "EBoard 14: Transforming lists (Section 1)"
+title: "EBoard 14: Transforming lists (Section 2)"
 number: 14
 section: eboards
 held: 2025-02-24
@@ -58,6 +58,8 @@ Artistic
     * Tickets available in the Bucksbaum Box Office, Thursday and Friday,
       noon--5:00 p.m.
     * Livestream at <https://tdps.sites.grinnell.edu>.
+* Saturday, 1 March 2025, 2:00 p.m., Sebring-Lewis.
+  _Grinnell Orchestra presents Rimsky-Korsakov Symphony No. 1._
 * Saturday, 1 March 2025, 2:00--3:00 p.m., Roberts Theatre.
   _Day/Dream_.
 * Saturday, 1 March 2025, 7:30--8:30 p.m., Roberts Theatre.
@@ -74,9 +76,6 @@ Peer
 
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
-
-* Saturday, 1 March 2025, 2:00 p.m., Sebring-Lewis.
-  _Grinnell Orchestra presents Rimsky-Korsakov Symphony No. 1._
 
 Wellness
 
@@ -110,7 +109,8 @@ _These do not earn tokens, but are worth your consideration._
 ### Upcoming work
 
 * Tuesday, 25 February 2025
-    * Readings!
+    * Only one reading!
+        * [List composition and decomposition](readings/list-composition)
         * [Submit reading response on Gradescope](https://www.gradescope.com/courses/948769/assignments/5842215)
     * [Submit today's lab on Gradescope](https://www.gradescope.com/courses/948769/assignments/5841746)
 * Wednesday, 26 February 2025
@@ -118,11 +118,11 @@ _These do not earn tokens, but are worth your consideration._
     * Makeup quiz: Tracing
     * Makeup quiz: Documentation
     * _Remember that you can bring a sheet of notes for each quiz._
-    * _Remember that you can show up as early as 8:00 a.m._
+    * _Remember that you can stay until about noon if you need extra time._
 * Thursday, 27 February 2025
     * [Submit Wednesday's lab on Gradescope](https://www.gradescope.com/courses/948769/assignments/5841761)
-    * Readings!
-        * ACM Code of Ethics
+    * Only one reading!
+        * [ACM Code of Ethics](https://www.acm.org/code-of-ethics)
         * [Submit reading response on Gradescope](https://www.gradescope.com/courses/948769/assignments/5842146)
     * [MP4](../mps/mp04) due.
         * [Submit MP4 on Gradescope]
@@ -130,17 +130,22 @@ _These do not earn tokens, but are worth your consideration._
     * [MP5](../mps/mp05) released.
     * [Submit post-reflection for MP4 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5815260)
 * Sunday, 2 March 2025
-    * [Submit Friday's lab on Gradescope]()
     * [Submit redo of MP3 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5820169)
-    * Readings:
-    * [Submit pre-reflection for MP5 on Gradescope]()
+    * Readings on Software Engineering Fundamentals:
+        * [Documenting your code](../readings/documenting-your-code)
+        * [Unit testing with Rackunit](../readings/rackunit)
+        * [Debugging](../readings/hypothesis-driven-debugging)
+        * [Submit reading response on Gradescope]()
+
+
+    * [Submit pre-reflection for MP5 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5842781)
 * Wednesday, 5 March 2025
     * Quiz: Lists (and the big three)
     * Makeup quiz: Tracing
     * Makeup quiz: Conditionals
     * Makeup quiz: Cut and compose
     * _Remember that you can bring a sheet of notes for each quiz._
-    * _Remember that you can show up as early as 8:00 a.m._
+    * _Remember that you can stay until about noon if you need extra time._
 
 On SoLA 1
 ---------
@@ -206,7 +211,7 @@ still have the stress of doing a CAS hearing.)
 **Their professor**. Feels unhappy. Wastes time on the stuff (including
 CAS cases). Undermines trust in students.
 
-**Their classmates (and other students)**. Trust undermined.
+**Their classmates (and other students)**. Trust undermined. Time wasted.
 
 **Their teammates** (if on a team).
 
@@ -230,7 +235,8 @@ Here are a few:
   with this crap.
 * ???
 
-Do you have any other suggestions?
+Do you have any other suggestions? (Note: Sam is not allowed to impose
+individual penalties for academic dishonsty.)
 
 We will come back to this topic next Monday, after you've had a chance
 to reflect on the issues. I also plan to post a survey.
@@ -264,11 +270,11 @@ What's the difference between `map` and `apply`?
 ```drracket
 > (map - (list 1 2 3 4 5))
 '(-1 -2 -3 -4 -5)
-> (apply - (list 1 2 3 4 5))
+> (apply - (list 1 2 3 4 5)) ; (- 1 2 3 4 5)
 -13
 > (map sqr (list 1 2 3 4 5))
 '(1 4 9 16 25)
-> (apply sqr (list 1 2 3 4 5))
+> (apply sqr (list 1 2 3 4 5)) ; (sqr 1 2 3 4 5)
 . . sqr: arity mismatch;
  the expected number of arguments does not match the given number
   expected: 1
