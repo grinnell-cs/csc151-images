@@ -1,5 +1,5 @@
 ---
-title: "EBoard 14: Transforming lists (Section 2)"
+title: "EBoard 14: Transforming lists (Section 3)"
 number: 14
 section: eboards
 held: 2025-02-24
@@ -23,7 +23,7 @@ Administrative stuff
 
 ### Introductory notes
 
-* Yay! We have otter.ai recordings again, at least for today. Does anyone 
+* Yay! We have Otter.ai recordings again, at least for today. Does anyone 
   use them?
 * I will be out of town Tuesday through Friday this week, attending the
   annual ACM Technical Symposium in Computer Science Education. 
@@ -68,6 +68,8 @@ Artistic
     * Livestream at <https://tdps.sites.grinnell.edu>.
 * Saturday, 1 March 2025, 2:00--3:00 p.m., Roberts Theatre.
   _Day/Dream_.
+* Saturday, 1 March 2025, 2:00 p.m., Sebring-Lewis.
+  _Grinnell Orchestra presents Rimsky-Korsakov Symphony No. 1._
 * Saturday, 1 March 2025, 7:30--8:30 p.m., Roberts Theatre.
   _Day/Dream_.
 * Sunday, 2 March 2025, 2:00--3:00 p.m., Roberts Theatre.
@@ -82,9 +84,6 @@ Peer
 
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
-
-* Saturday, 1 March 2025, 2:00 p.m., Sebring-Lewis.
-  _Grinnell Orchestra presents Rimsky-Korsakov Symphony No. 1._
 
 Wellness
 
@@ -128,7 +127,6 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Upcoming work
 
-
 * Tuesday, 25 February 2025
     * Only one reading!
         * [List composition and decomposition](readings/list-composition)
@@ -139,7 +137,7 @@ _These do not earn tokens, but are worth your consideration._
     * Makeup quiz: Tracing
     * Makeup quiz: Documentation
     * _Remember that you can bring a sheet of notes for each quiz._
-    * _Remember that you can stay until about noonish if you need extra time._
+    * _Remember that you can stay until about 4:30 p.m. if you need extra time._
 * Thursday, 27 February 2025
     * [Submit Wednesday's lab on Gradescope](https://www.gradescope.com/courses/948769/assignments/5841761)
     * Readings: Ethics
@@ -165,7 +163,7 @@ _These do not earn tokens, but are worth your consideration._
     * Makeup quiz: Conditionals
     * Makeup quiz: Cut and compose
     * _Remember that you can bring a sheet of notes for each quiz._
-    * _Remember that you can stay until about noonish if you need extra time._
+    * _Remember that you can stay until about 4:30 p.m. if you need extra time._
 
 On SoLA 1
 ---------
@@ -254,6 +252,8 @@ Here are a few:
   (which sounds increasingly appealing) so that I don't have to deal 
   with this crap.
 * ???
+* Suggestion: List all the valid procedures and keywords we can use on
+  each exam.
 
 Do you have any other suggestions? (Note: Sam is not allowed to impose
 individual penalties for academic dishonsty.)

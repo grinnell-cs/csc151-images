@@ -76,7 +76,7 @@ Artistic
 Multicultural
 
 * Friday, 28 February 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
-  _Middle of Everywhere: ???_ 
+  _Middle of Everywhere: International Women's Day_ 
 
 Peer
 
@@ -128,8 +128,11 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Upcoming work
 
+
+
 * Tuesday, 25 February 2025
-    * Readings!
+    * Only one reading!
+        * [List composition and decomposition](readings/list-composition)
         * [Submit reading response on Gradescope](https://www.gradescope.com/courses/948769/assignments/5842215)
     * [Submit today's lab on Gradescope](https://www.gradescope.com/courses/948769/assignments/5841746)
 * Wednesday, 26 February 2025
@@ -137,11 +140,12 @@ _These do not earn tokens, but are worth your consideration._
     * Makeup quiz: Tracing
     * Makeup quiz: Documentation
     * _Remember that you can bring a sheet of notes for each quiz._
-    * _Remember that you can show up as early as 8:00 a.m._
+    * _Remember that you can start as early as 8:00 a.m. if you need extra time._
 * Thursday, 27 February 2025
     * [Submit Wednesday's lab on Gradescope](https://www.gradescope.com/courses/948769/assignments/5841761)
-    * Readings!
-        * ACM Code of Ethics
+    * Readings: Ethics
+        * [ACM Code of Ethics](https://www.acm.org/code-of-ethics)
+        * [Feynman's Mistake](https://www.danmunro.ca/blog/2018/11/29/feynmans-error-on-ethical-thinking-and-drifting-nbsp)
         * [Submit reading response on Gradescope](https://www.gradescope.com/courses/948769/assignments/5842146)
     * [MP4](../mps/mp04) due.
         * [Submit MP4 on Gradescope]
@@ -149,17 +153,20 @@ _These do not earn tokens, but are worth your consideration._
     * [MP5](../mps/mp05) released.
     * [Submit post-reflection for MP4 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5815260)
 * Sunday, 2 March 2025
-    * [Submit Friday's lab on Gradescope]()
     * [Submit redo of MP3 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5820169)
-    * Readings:
-    * [Submit pre-reflection for MP5 on Gradescope]()
+    * Readings on Software Engineering Fundamentals:
+        * [Documenting your code](../readings/documenting-your-code)
+        * [Unit testing with Rackunit](../readings/rackunit)
+        * [Debugging](../readings/hypothesis-driven-debugging)
+        * [Submit reading response on Gradescope](https://www.gradescope.com/courses/948769/assignments/5843009)
+    * [Submit pre-reflection for MP5 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5842781)
 * Wednesday, 5 March 2025
     * Quiz: Lists (and the big three)
     * Makeup quiz: Tracing
     * Makeup quiz: Conditionals
     * Makeup quiz: Cut and compose
     * _Remember that you can bring a sheet of notes for each quiz._
-    * _Remember that you can show up as early as 8:00 a.m._
+    * _Remember that you can start as early as 8:00 a.m. if you need extra time._
 
 On SoLA 1
 ---------
