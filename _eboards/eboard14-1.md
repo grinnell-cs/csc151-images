@@ -17,7 +17,7 @@ _Approximate optimistic overview_
 * Administrative stuff [10 min]
 * On SoLA 1 [15 min]
 * Questions and answers [10 min]
-* Lab [60 min]
+* Lab [40 min]
 * Turn in Lab [5 min]
 
 Administrative stuff
@@ -25,12 +25,17 @@ Administrative stuff
 
 ### Introductory notes
 
-* Yay! We have otter.ai recordings again. Does anyone use them?
+* Yay! We have otter.ai recordings again, at least for today. Does anyone 
+  use them?
 * I will be out of town Tuesday through Friday this week, attending the
   annual ACM Technical Symposium in Computer Science Education. 
     * No office hours this week.
     * I'll check Teams Messages from time to time.
     * You will have subs on Wednesday and Friday.
+* For reasons we will discuss, today's class is less ready than normal.
+* I'm moving the cut and compose quiz to next week.
+* I may swear in class today. Apologies in advance. At times, profanity
+  seems necessary.
 
 ### Upcoming activities
 
@@ -43,10 +48,23 @@ Scholarly
     * <https://www.reuters.com/technology/artificial-intelligence/bytedance-seeks-11-mln-damages-intern-ai-breach-case-report-says-2024-11-28/>
 * Thursday, 27 February 2025, 11:00 a.m.--Noon, JRC 101.
   _Scholars' Convocation: Emily Wilson: Retranslating the Classics_
-* Tuesday, 25 February 2025, Noon--12:50 p.m., PDR 224C (White Dining Room).
+* Tuesday, 4 March 2025, Noon--12:50 p.m., PDR 224C (White Dining Room).
   _CS Table: TBD_ 
+* Thursday, 6 March 2025, 11:00 a.m.--Noon, JRC 101.
 
 Artistic
+
+* Friday, 28 February 2025, 7:30--8:30 p.m., Roberts Theatre.
+  _Day/Dream_.
+    * Tickets available in the Bucksbaum Box Office, Thursday and Friday,
+      noon--5:00 p.m.
+    * Livestream at <https://tdps.sites.grinnell.edu>.
+* Saturday, 1 March 2025, 2:00--3:00 p.m., Roberts Theatre.
+  _Day/Dream_.
+* Saturday, 1 March 2025, 7:30--8:30 p.m., Roberts Theatre.
+  _Day/Dream_.
+* Sunday, 2 March 2025, 2:00--3:00 p.m., Roberts Theatre.
+  _Day/Dream_.
 
 Multicultural
 
@@ -58,6 +76,9 @@ Peer
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
+* Saturday, 1 March 2025, 2:00 p.m., Sebring-Lewis.
+  _Grinnell Orchestra presents Rimsky-Korsakov Symphony No. 1._
+
 Wellness
 
 * Tuesday, 25 February 2025, 12:15--12:50 p.m., GCMoA.
@@ -67,15 +88,21 @@ Wellness
   _Wellness Yoga_.
 * Thursday, 27 February 2025, ???.
   _Forest Bathing_.
+* Friday, 28 February 2025, ?:?? p.m., ???
+  _Badminton Club_ (Smash that bird!)
 * Friday, 28 February 2025, 9:00 p.m., Noyce Elbow.
   _Nerf at Noyce_.
 
 Misc
 
-* Sunday, 23 February 2025, 7:30--8:30 p.m., Science 3819. 
-  _Mentor Session_
 * Tuesday, 25 February 2025, 7:00--8:00 p.m., Science 3820.
   _Mentor Session_
+* Sunday, 2 March 2025, 7:30--8:30 p.m., Science 3819. 
+  _Mentor Session_
+* Tuesday, 4 March 2025, 7:00--8:00 p.m., Science 3820.
+  _Mentor Session_
+* Sunday, 9 March 2025, 7:30--8:30 p.m., Science 3819. 
+  **NO Mentor Session**
 
 ### Other good things
 
@@ -88,7 +115,7 @@ _These do not earn tokens, but are worth your consideration._
     * Quiz: Conditionals
     * Makeup quiz: Tracing
     * Makeup quiz: Documentation
-    * Makeup quiz: Cut and compose
+    * _Remember that you can bring a sheet of notes for each quiz._
 * Thursday, 27 February 2025
 * Friday, 28 February 2025
     * [MP5](../mps/mp05) released
@@ -98,20 +125,30 @@ _These do not earn tokens, but are worth your consideration._
     * [Submit redo of MP3 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5820169)
     * Readings:
     * [Submit pre-reflection for MP5 on Gradescope]()
+* Wednesday, 5 March 2025
+    * Quiz: Lists
+    * Makeup quiz: Tracing
+    * Makeup quiz: Conditionals
+    * Makeup quiz: Cut and compose
+    * _Remember that you can bring a sheet of notes for each quiz._
 
-On MP1
-------
+On SoLA 1
+---------
 
 ### Observations
 
-Observations one: Pairs of students with (nearly) identical solutions
+Online
+
+### Observation types
+
+Type one: Pairs of students with (nearly) identical solutions
 turned in within a minute or two of each other.
 
-Observations two: Code that does not match the style we use in our 
+Type two: Code that does not match the style we use in our 
 course, but almost precisely matches what you get back when you plug
 our questions into ChatGPT.
 
-Observations three: Code that solves the problem using many different
+Type three: Code that solves the problem using many different
 procedures that we have not covered in class (e.g., solving the
 Olympic Scoring problem using lists, `car`, `cdr`, and `sort`).
 
@@ -149,6 +186,16 @@ I used to say, "I'd rather do what's right for the vast majority of students
 even though a few students might behave inappropriately." It's hard to say
 that when "a few" seems to be a "many".
 
+### Who cheating affects
+
+**The person who cheats**.
+
+**Their professor**.
+
+**Their classmates (and other students)**.
+
+**Their teammates** (if on a team).
+
 ### A pause
 
 I'm wearing my Polyanna hat with respect to this exam. I will assume
@@ -172,7 +219,7 @@ Here are a few:
 Do you have any other suggestions?
 
 We will come back to this topic next Monday, after you've had a chance
-to reflect on the issues.
+to reflect on the issues. I also plan to post a survey.
 
 Questions
 ---------
