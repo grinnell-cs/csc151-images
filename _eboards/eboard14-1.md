@@ -44,12 +44,20 @@ Scholarly
    human integrity?_
     * <https://web.archive.org/web/20241216031440/https://var-integrity-report.github.io/>
     * <https://www.reuters.com/technology/artificial-intelligence/bytedance-seeks-11-mln-damages-intern-ai-breach-case-report-says-2024-11-28/>
+* Wednesday, 26 February 2025, Noon--12:50 p.m., Noyce 1023.
+  _Dr. Dana Ulery '59: My Unexpected Journey as a Pioneer_
+* Wednesday, 26 February 2025, 4:00--5:00 p.m., Noyce 2024.
+  _Informal conversation with Dr. Ulery._
 * Thursday, 27 February 2025, 11:00 a.m.--Noon, JRC 101.
   _Scholars' Convocation: Emily Wilson: Retranslating the Classics_
 * Tuesday, 4 March 2025, Noon--12:50 p.m., PDR 224C (White Dining Room).
   _CS Table: TBD_ 
+* Tuesday, 4 March 2025, 7:00--9:00 p.m., Harris Concert Hall.
+  _Ray Young Bear: From Red Earth Drive: Creating Meskwaki Poetry and 
+   Songs through Animism and a Series of Otherworldly Events_
 * Thursday, 6 March 2025, 11:00 a.m.--Noon, JRC 101.
-  _Scholars' Convocation: ???_
+  _Scholars' Convocation: Lisa Mueller:
+   Most Protests Fail. It Doesn’t Have to Be That Way_
 
 Artistic
 
@@ -87,10 +95,21 @@ Wellness
   _Wellness Yoga_.
 * Thursday, 27 February 2025, ???.
   _Forest Bathing_.
-* Friday, 28 February 2025, ?:?? p.m., ???
+* Friday, 28 February 2025, 6:00 p.m.--8:00 p.m., Aux Gym.
   _Badminton Club_ (Smash that bird!)
 * Friday, 28 February 2025, 9:00 p.m., Noyce Elbow.
   _Nerf at Noyce_.
+* Saturday, 1 March 2025, 4:00 p.m.--6:00 p.m., Aux Gym.
+  _Badminton Club_ (Smash that bird!)
+* Tuesday, 5 March 2025, 12:15--12:50 p.m., GCMoA.
+  _Yoga in the Museum_.
+* Tuesday, 5 March 2025, 4:30--6:30 p.m., 
+  BRAC P103 (Multipurpose Dance Studio).
+  _Wellness Yoga_.
+* Tuesday, 5 March 2025, 5:00--6:00 p.m., HSSC S1003 (Atrium).
+  _Therapy Dogs_.
+* Tuesday, 5 March 2025, 7:15--8:15 p.m., HSSC S1003 (Atrium).
+  _Therapy Dogs_.
 
 Misc
 
