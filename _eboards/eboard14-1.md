@@ -3,7 +3,7 @@ title: "EBoard 14: Transforming lists (Section 1)"
 number: 14
 section: eboards
 held: 2025-02-24
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -15,6 +15,7 @@ We are back to the standard start-of-class procedure.
 _Approximate optimistic overview_
 
 * Administrative stuff [10 min]
+* On SoLA 1 [15 min]
 * Questions and answers [10 min]
 * Lab [60 min]
 * Turn in Lab [5 min]
@@ -36,9 +37,14 @@ Administrative stuff
 Scholarly
 
 * Tuesday, 25 February 2025, Noon--12:50 p.m., PDR 224C (White Dining Room).
-  _CS Table: TBD_ 
+  _CS Table: Should academic achievements take precedence over 
+   human integrity?_
+    * <https://web.archive.org/web/20241216031440/https://var-integrity-report.github.io/>
+    * <https://www.reuters.com/technology/artificial-intelligence/bytedance-seeks-11-mln-damages-intern-ai-breach-case-report-says-2024-11-28/>
 * Thursday, 27 February 2025, 11:00 a.m.--Noon, JRC 101.
   _Scholars' Convocation: Emily Wilson: Retranslating the Classics_
+* Tuesday, 25 February 2025, Noon--12:50 p.m., PDR 224C (White Dining Room).
+  _CS Table: TBD_ 
 
 Artistic
 
@@ -82,6 +88,7 @@ _These do not earn tokens, but are worth your consideration._
     * Quiz: Conditionals
     * Makeup quiz: Tracing
     * Makeup quiz: Documentation
+    * Makeup quiz: Cut and compose
 * Thursday, 27 February 2025
 * Friday, 28 February 2025
     * [MP5](../mps/mp05) released
@@ -92,6 +99,81 @@ _These do not earn tokens, but are worth your consideration._
     * Readings:
     * [Submit pre-reflection for MP5 on Gradescope]()
 
+On MP1
+------
+
+### Observations
+
+Observations one: Pairs of students with (nearly) identical solutions
+turned in within a minute or two of each other.
+
+Observations two: Code that does not match the style we use in our 
+course, but almost precisely matches what you get back when you plug
+our questions into ChatGPT.
+
+Observations three: Code that solves the problem using many different
+procedures that we have not covered in class (e.g., solving the
+Olympic Scoring problem using lists, `car`, `cdr`, and `sort`).
+
+### Commentary
+
+Class mentors: "Um, Sam, it looks like students are using ChatGPT
+for the LAs. Or maybe some other LLM."
+
+Sam: "The students indicated that they had not done so. They wouldn't
+lie, would they?" (Sam tends to adopt a Pollyanna-esque attitude.)
+
+A colleague: "It is...demoralizing when students take inappropriate
+shortcuts on tasks that have been designed to remove, as much as
+possible, the temptation to take inappropriate shortcuts."
+
+A class mentor; "This is not good. The entire point of take home exams 
+is being ruined."
+ 
+### Reflection
+
+I think in-class exams are stressful. Most students seem to agree. And
+many students would like to be able to use DrRacket when solving problems.
+
+Mastery grading is supposed to make all testing less stressful. If you
+miss something, you get more chances. So it shouldn't be a big deal if
+you miss something.
+
+In-class exams that also include "make up" problems create administrative
+issues. And perhaps more stress.
+
+Hence, take-home exams with mastery grading should be the appropriate 
+approach.
+
+I used to say, "I'd rather do what's right for the vast majority of students
+even though a few students might behave inappropriately." It's hard to say
+that when "a few" seems to be a "many".
+
+### A pause
+
+I'm wearing my Polyanna hat with respect to this exam. I will assume
+that there are other factors at play. That is, all of these things
+are coincidence. I will not make that assumption on future take-home
+exams (if we have future take-home exams).
+
+### Options
+
+Here are a few:
+
+* Switch to in-class exams without computers.
+* Switch to in-class exams with computers.
+* Maintain the status quo, but aggressively pursue the issues mentioned
+  above.
+* I can say IDGAFF (which isn't really true) and then plan to retire 
+  (which sounds increasingly appealing) so that I don't have to deal 
+  with this crap.
+* ???
+
+Do you have any other suggestions?
+
+We will come back to this topic next Monday, after you've had a chance
+to reflect on the issues.
+
 Questions
 ---------
 
@@ -101,7 +183,22 @@ Questions
 
 How can I learn about your expectations for Scheme style?
 
+> From [SamR's Style Guide for Racket](../handouts/style-guide), 
+  conveniently available from the Handouts menu.
+
 ### Readings
+
+What's the difference between `map` and `apply`?
+
+> `map` applies the procedure to each element separately.
+
+> `apply` applies the procedure to all the elements _en masse_.
+
+> `(map fun (list v1 v2 ... vn))` -> `(list (fun v1) (fun v2) ... (fun vn))`.
+
+> `(apply fun (list v1 v2 ... vn))` -> `(fun v1 v2 ... vn)`.
+
+> Perhpas Sam will do some examples.
 
 ### Other
 
