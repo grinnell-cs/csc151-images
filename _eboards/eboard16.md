@@ -13,13 +13,17 @@ is working correctly.
 _Approximate optimistic overview_
 
 * Potentially some administrative stuff
-* Q&A (likely won't be covered in class, but there for your edification)
 * Lots of discussion
 
 Administrative stuff
 --------------------
 
 ### Introductory notes
+
+* You are awesome. Take care of yourselves this weekend.
+* Sorry sbout the reading response fiasco.
+* Be nice to our substitute teacher.
+* I look forward to seeing you on Monday.
 
 ### Upcoming activities
 
@@ -125,5 +129,5 @@ Questions
 
 ### Other
 
-Lab
----
+Discussion
+----------
