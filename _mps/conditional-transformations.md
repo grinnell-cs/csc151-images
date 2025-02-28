@@ -337,7 +337,7 @@ Part three: Position-based color transformations
 a. In our sample position-based color transformation, we broke the image into four quadrants. Of course, there are many other ways to segment an image. Write a procedure, `(concentric-rectangles img)`, that breaks an image into four concentric rectangles (the innermost one is 1/4 the width and height of the original, the next one is 1/2 the width and height, the next is 3/4 the width and height, and the last is the width and height of the original). Set the hue of all the pixels in the center rectangle to 0, the hue of the pixels in the next rectangle to 90, the next to 180, and the outermost to 270.
 
 ```drracket
-> (conentric-rectangles kitten)
+> (concentric-rectangles kitten)
 ![The standard kitten image. A small box in the center of the image has been made red; a surrounding box has been made yellow-green; a surrounding box has been made teal; and a surrounding box has been made purple.](../images/mps/conditional-transformations/kitten-concentric.jpg)
 ```
 

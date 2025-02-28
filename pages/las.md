@@ -20,11 +20,11 @@ SoLAs consist of a set of individual assessment problems---one problem for each 
 
 The learning objectives are listed below by LA period.  
 
-Some of the LAs will appear as in-class paper-based ten-minute quiz, given at the start of class each Friday.
+Some of the LAs will appear as in-class paper-based ten-minute quiz, given at the start of class each Wednesday.
 
-All of the LAs in a phase (except those marked as in-class-only) will be released as a SoLA on gradescope.  **Do not discuss the problems on the SoLA with anyone until I have returned graded problems.**
+All of the LAs in a phase (except those marked as in-class-only) will be released as a SoLA on Gradescope.  **Do not discuss the problems on the SoLA with anyone until I have returned graded problems.**
 
-You may choose to attempt as many of the individual assessment problems as you wish for that period.  As described in the [syllabus]({{ "/syllabus" | relative_url }}), LA problems are graded on a binary *satisfactory (S)/not satisfactory (N)*.  Once you receive a satisfactory on a problem tied to a particular learning objective, you do not need to attempt additional problems tied to that learning objective in subsequent SoLAs, *i.e.*, you have demonstrated sufficient mastery of that objective, so you are done with it!
+You may choose to attempt as many of the individual assessment problems as you wish for that period.  As described in the [syllabus]({{ "/syllabus" | relative_url }}), LA problems are graded on a binary _(**S**atisfactory/**N**ot satisfactory_ scale.  Once you receive a satisfactory on a problem tied to a particular learning objective, you do not need to attempt additional problems tied to that learning objective in subsequent SoLAs, *i.e.*, you have demonstrated sufficient mastery of that objective, so you are done with it!
 
 ## Learning objectives
 
