@@ -1,5 +1,5 @@
 ---
-title: Mini-Project 4
+title: Mini-Project 5
 subtitle: Exploring lists of shapes (and lists of lists of shapes)
 summary: |
   As the subtitle suggests, in this assignment we will consider
@@ -312,7 +312,7 @@ a. Document, create at least three tests for, and write a procedure, `(color-var
 
 You should use `rgb-redder`, `rgb-greener`, and `rgb-bluer` to change the colors. 
 
-You should *not* use `pixel-map` in solving this problem.
+You should *not* use `pixel-map` in solving this problem. Rather, in each case, you should extract the width, height, and color from the shape, apply the transformation to the color, and then make a new shape from the width, height, and modified color (e.g., using `solid-rectangle`, `solid-ellipse`, or something similar).
 
 ```
 > (color-variants-0 (solid-square 20 (rgb 128 128 128)))
@@ -589,7 +589,7 @@ e. Write a procedure, `(sequence-then-stack-then-sequence stuff)`, that takes a 
 
 _We've written some fairly wide lines of code. You should avoid such wide linns._
 
-f. Write a procedure, `(stack-then-sequence-then-stack stuff)`, that takeks a doubly-nested list as input.  You should be able to guess what it should do.
+f. Write a procedure, `(stack-then-sequence-then-stack stuff)`, that takes a doubly-nested list as input.  You should be able to guess what it should do.
 
 ```
 >  (stack-then-sequence (list (list red-narrow blue-medium purple-wide)
@@ -639,8 +639,6 @@ To earn an E, you will need to write your own variants of the procedures in part
 
 Grading rubric
 --------------
-
-_Still under development, but nearly complete._
 
 ### Redo or above
 
