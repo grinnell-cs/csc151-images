@@ -15,6 +15,8 @@ _Approximate optimistic overview_
 * Potentially some administrative stuff
 * Lots of discussion
 
+**Real outline:** <https://rebelskyw.cs.grinnell.edu/wp-content/uploads/2025/02/GuestCSClassEthics.html>
+
 Administrative stuff
 --------------------
 
@@ -24,6 +26,8 @@ Administrative stuff
 * Sorry sbout the reading response fiasco.
 * Be nice to our substitute teacher.
 * I look forward to seeing you on Monday.
+* Words cannot express my anger at our legislature. Please take
+  care of yourselves and your friends.
 
 ### Upcoming activities
 
