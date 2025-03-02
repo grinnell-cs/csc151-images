@@ -10,7 +10,7 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
-link: false
+link: true
 preimg: true
 ---
 Please start with the [template code](../code/mps/shape-lists.rkt).
@@ -316,7 +316,7 @@ You should *not* use `pixel-map` in solving this problem. Rather, in each case, 
 
 ```
 > (color-variants-0 (solid-square 20 (rgb 128 128 128)))
-'(![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png) ![a solid rosybrown 20-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png))
+'(![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png) ![a solid rosybrown 20-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-20x20-rectangle.png) ![a solid greenish slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategraygreen-20x20-rectangle.png) ![a solid bluish slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategrayblue-20x20-rectangle.png))
 ```
 
 What will your tests look like? Here's one example.
