@@ -316,7 +316,7 @@ You should *not* use `pixel-map` in solving this problem. Rather, in each case, 
 
 ```
 > (color-variants-0 (solid-square 20 (rgb 128 128 128)))
-'(![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png) ![a solid rosybrown 20-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png) ![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png))
+'(![a solid slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategray-20x20-rectangle.png) ![a solid rosybrown 20-by-20 rectangle](../images/mps/shape-lists/solid-rosybrown-20x20-rectangle.png) ![a solid greenish slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategraygreen-20x20-rectangle.png) ![a solid bluish slategray 20-by-20 rectangle](../images/mps/shape-lists/solid-slategrayblue-20x20-rectangle.png))
 ```
 
 What will your tests look like? Here's one example.
