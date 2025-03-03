@@ -207,6 +207,15 @@
   lab:
     - page: /labs/rackunit.html
 
+- topic: Introduction to list recursion
+  abbrev: recursion-intro
+  summary: |
+    We begin our exploration of *recursion*, the most general form
+    of repetition available in Scheme.  You can use recursion to
+    both build and iterate over different kinds of values.
+  reading:
+    - page: /readings/recursion-basics.html
+
 - topic: Local bindings
   abbrev: let
   summary: |
@@ -215,16 +224,6 @@
     - page: /readings/local-bindings.html
   lab:
     - page: /labs/local-bindings.html
-
-- topic: Introduction to list recursion
-  abbrev: recursion-intro
-  summary: |
-    We begin our exploration of *recursion*, the most general form
-    of repetition available in Scheme.  You can use recursion to
-    both build and iterate over different kinds of values.
-  reading:
-    - page: /readings/list-composition.html
-    - page: /readings/recursion-basics.html
 
 - topic: Introduction to list recursion, continued
   summary: |
