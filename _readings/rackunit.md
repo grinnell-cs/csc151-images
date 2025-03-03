@@ -239,10 +239,6 @@ and an optional message.
   equality. If they are equal, do nothing. If they are not equal, print
   an error message. 
 
-`(test-not-equal? message expression expected)`{:.signature} [*requires `rackunit`*]
-  : Evaluate `expression`and `expected` and then compare them. If they
-  are not equal, do nothing. If they are equal, print an error message. 
-
 Although we will typically put checks into tests, we can run them on
 their own. When they succeed, they print no result. When they fail,
 they print an error message. For example,
@@ -341,12 +337,12 @@ and then click **Run**.
 RackUnit provides a variety of procedures to help you write tests.  They
 are described above.
 
-In the Interactions pane, try each of the operations (`test-=`, 
-`test-equal?`, `test-not-equal?`, `test-true`, and `test-false`) a
-few times to make sure that you understand their operation.  You
-should also look for both matching and non-matching expression and
-expected.  And you should see what happens when you include and do
-not include the message.
+In the Interactions pane, try each of the operations (`test-=`,
+`test-equal?`, `test-true`, and `test-false`) a few times to make
+sure that you understand their operation.  You should also look for
+both matching and non-matching expression and expected.  And you
+should see what happens when you include and do not include the
+message.
 
 Is this check vague?  Yes.  That's intentional.  We're at the point in
 the course when you should make it a matter of course (no pun intended)
