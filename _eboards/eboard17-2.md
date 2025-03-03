@@ -3,7 +3,7 @@ title: "EBoard 17: Software development (Section 2)"
 number: 17
 section: eboards
 held: 2025-03-03
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -119,14 +119,14 @@ MP5
 * Goal: Make abstract art by combining variants of images (simple shapes).
 * Primary objective: Practice with lists (and nested lists) and the procedures
   that manipulate lists, particularly `map` and `apply` or `reduce`.
-* Basic idea: We can think of many basic shapes as having threee
+* Basic idea: We can think of many basic shapes as having three
   primary attributes: width, height, and color.
     * We can transform those attributes to make variants.
     * We can ignore the shape type and think of them as parameters to
       another function.
 * Part one: Make lists of variants of the key attributes.
-* Part two: Turn lists of objects into lists of other objects.
-* Part three: Combine those lists of objects.
+* Part two: Turn lists of shapes into lists of other shapes.
+* Part three: Combine those lists of shapes.
 * Part four: Freestyle.
 
 ```
@@ -137,10 +137,10 @@ MP5
   (lambda (img)
     (list (image-width img) (image-height img) (image-color img))))
 
-;;; (something img) -> solid-isosceles-triangle?
+;;; (something img) -> image?
 ;;;   img : image?
-;;; Create a solid isosceles triangle of the same width, height, and
-;;; color as `img`.
+;;; Create a solid isosceles triangle with the width, height, and
+;;; color of the original image.
 (define something 
   (o (cut (apply solid-isosceles-triangle <>)) 
      shape-params))
@@ -157,6 +157,28 @@ Questions
 
 ### MP5
 
+What do the variants for part four look like?
+
+* Section 1 takes a shape and makes a list of variant shapes (e.g.,
+  changing size or color).
+* Section 2 takes a list (or list of lists) of shapes and turns them
+  all into the same shape. 
+* Section 3 takes a list (or list of lists) of shapes and alternately
+  puts them beside (centered) or above (centered) each other. You should
+  choose something else.
+
+Do we have to verify that the parameters are correct?
+
+> Nope. You can let it crash.
+
+Will we have to use conditionals to decide whether we have a list or not?
+
+> Yes.
+
+Can we copy our shapes from the polygons project?
+
+> Yes.
+
 ### Other
 
 Difficult issues
@@ -172,39 +194,47 @@ _You already have the background for this one._
 
 Quick closed-eye survey: What kind of exams would you prefer?
 
-* In-class, no computer (like quizzes). 
-* In-class, with computer. 
-* Take-home (like SoLA 1).
+* In-class, no computer (like quizzes).  [0]
+* In-class, with computer. [4]
+* Take-home (like SoLA 1). [Most]
 
 TPS: How should I address issues of inappropriate collaboration and
 potential ChatGPT/Generative AI use?
 
-* Make sure to limit options to the code we use and report people who use
-  other code.
-* Accept that there are coincidences.
-* Unfortunately, College policies do not allow "chat with students about it".
-* Unfortunately, College policies do not allow "I think you used ChatGPT,
-  you get a zero"
-* In both cases, I need to report to CAS.
-* Students need to understand that it's important to behave appropriately.
-* Maybe "Explain the code you wrote."
-* Maybe "Support your answers with relevant citations."
-* Reduce incentive to cheat.
+* I am not allowed to (a) talk to the students about the issue or (b)
+  do followup testing; I have to submit it as a CAS case for suspected
+  violations of academic integrity.
+* Some people will cheat no matter what you do, so do what's best for the
+  class and report suspicions.
+* If it looks like ChatGPT, try ChatGPT to see if you get something similar.
+* Cross our fingers that this conversation will remind people not to 
+  take shortcuts.
 
 ### Issue 2: Struggling students
 
 _Background: A higher percentage of students are struggling in CSC-151
 than I've ever seen. And, believe it or not, I've cut back on the work
 in the MPs. But there are also students who are doing fine, including
-students who haven't programmed before. What should I do?_
+students who haven't programmed before. What should I/we do?_
 
-* The ability to redo means that some of us are de-prioritizing the first
-  submission (we're planning on redos).
-* Use spring break (as not a break).
-* Finding the relevant readings is hard. (Think about a "guidance" page.)
-* Thursday deadline for submissions is hard. (Move to Sunday?) (But
-  lots of work is due on Sundays.) (Every time is hard.) Move late
-  deadline to Sunday. A little overlap is okay.
+Quick survey: Course pace
+
+* Too fast [4]
+* About right [16]
+* Too slow [0]
+
+What can we do?
+
+* Check on whether people go to mentor sessions and encourage them to do
+  so (or see if other hours would work better).
+* Check in with people who are struggling about what their issues are.
+  [Already]
+* Sam should talk less so that there's more time to work on lab.
+    * More time to work alone.
+* Think about how to make mini-projects feel less huge.
+* Sometimes we spin our wheels on labs (and MPs): Encourage people to ask
+  questions.
+* Send out answers to labs (or comments on labs).
 
 Lab
 ---

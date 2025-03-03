@@ -3,7 +3,7 @@ title: "EBoard 17: Software development (Section 3)"
 number: 17
 section: eboards
 held: 2025-03-03
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -119,14 +119,14 @@ MP5
 * Goal: Make abstract art by combining variants of images (simple shapes).
 * Primary objective: Practice with lists (and nested lists) and the procedures
   that manipulate lists, particularly `map` and `apply` or `reduce`.
-* Basic idea: We can think of many basic shapes as having threee
+* Basic idea: We can think of many basic shapes as having three
   primary attributes: width, height, and color.
     * We can transform those attributes to make variants.
     * We can ignore the shape type and think of them as parameters to
       another function.
 * Part one: Make lists of variants of the key attributes.
-* Part two: Turn lists of objects into lists of other objects.
-* Part three: Combine those lists of objects.
+* Part two: Turn lists of shapes into lists of other shapes.
+* Part three: Combine those lists of shapes.
 * Part four: Freestyle.
 
 ```
@@ -137,10 +137,10 @@ MP5
   (lambda (img)
     (list (image-width img) (image-height img) (image-color img))))
 
-;;; (something img) -> solid-isosceles-triangle?
-;;;   img : image?
-;;; Create a solid isosceles triangle of the same width, height, and
-;;; color as `img`.
+;;; (something umyeah) -> image?
+;;;   umyeah : image?
+;;; Get a solid isosceles triangle the same width, height, and color
+;;; as `umyeah`.
 (define something 
   (o (cut (apply solid-isosceles-triangle <>)) 
      shape-params))
@@ -157,6 +157,13 @@ Questions
 
 ### MP5
 
+What should we do for the freestyle?
+
+> Some "interesting" grid-like collection of shapes. Probably abstract.
+
+> No more sophisticated than what's in the reading (like the grid o'
+  triangles.)
+
 ### Other
 
 Difficult issues
@@ -172,24 +179,15 @@ _You already have the background for this one._
 
 Quick closed-eye survey: What kind of exams would you prefer?
 
-* In-class, no computer (like quizzes). 
-* In-class, with computer. 
-* Take-home (like SoLA 1).
+* In-class, no computer (like quizzes). [0]
+* In-class, with computer. [1]
+* Take-home (like SoLA 1). [12]
 
 TPS: How should I address issues of inappropriate collaboration and
 potential ChatGPT/Generative AI use?
 
-* Make sure to limit options to the code we use and report people who use
-  other code.
-* Accept that there are coincidences.
-* Unfortunately, College policies do not allow "chat with students about it".
-* Unfortunately, College policies do not allow "I think you used ChatGPT,
-  you get a zero"
-* In both cases, I need to report to CAS.
-* Students need to understand that it's important to behave appropriately.
-* Maybe "Explain the code you wrote."
-* Maybe "Support your answers with relevant citations."
-* Reduce incentive to cheat.
+* Add individual monitors to students.
+* Make the expectations clear and report instances.
 
 ### Issue 2: Struggling students
 
@@ -198,13 +196,18 @@ than I've ever seen. And, believe it or not, I've cut back on the work
 in the MPs. But there are also students who are doing fine, including
 students who haven't programmed before. What should I do?_
 
-* The ability to redo means that some of us are de-prioritizing the first
-  submission (we're planning on redos).
-* Use spring break (as not a break).
-* Finding the relevant readings is hard. (Think about a "guidance" page.)
-* Thursday deadline for submissions is hard. (Move to Sunday?) (But
-  lots of work is due on Sundays.) (Every time is hard.) Move late
-  deadline to Sunday. A little overlap is okay.
+Pace of class
+
+* Too fast [5]
+* About right [7]
+* Too slow [1]
+
+What approaches are there that might help?
+
+* Shift deadlines from Thursday to Sunday. (Other shifts, too.)
+* Find better support for weekend work.
+* More hints on MPs. (Ask more questions!)
+* A third mentor session for mini-project support.
 
 Lab
 ---
