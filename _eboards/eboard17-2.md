@@ -1,9 +1,9 @@
 ---
-title: "EBoard 17: Software development (Section 1)"
+title: "EBoard 17: Software development (Section 2)"
 number: 17
 section: eboards
 held: 2025-03-03
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -157,28 +157,6 @@ Questions
 
 ### MP5
 
-Can you make a procedure with any number of parameter?
-
-> Yes, I can. But you can't. If you want "any number of parameters", just
-  take a list as a parameter. Then the list can have as many things as
-  you want. (If you really want to do it, just don't put parens around
-  the parameter.)
-
-Can you do an example?
-
-> Sure. Suppose we want to turn a bunch of things into isosceles triangles
-  and we don't know how many.
-
-```
-(define to-isosceles-triangles
-  (lambda (list-of-shapes)
-    (map something list-of-shapes)))
-
-(define to-isosceles-triangles-two
-  (lambda shapes
-    (map something shapes)))
-```
-
 ### Other
 
 Difficult issues
@@ -194,9 +172,9 @@ _You already have the background for this one._
 
 Quick closed-eye survey: What kind of exams would you prefer?
 
-* In-class, no computer (like quizzes). [1]
-* In-class, with computer. [5]
-* Take-home (like SoLA 1). [12]
+* In-class, no computer (like quizzes). 
+* In-class, with computer. 
+* Take-home (like SoLA 1).
 
 TPS: How should I address issues of inappropriate collaboration and
 potential ChatGPT/Generative AI use?
