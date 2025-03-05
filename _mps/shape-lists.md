@@ -709,17 +709,94 @@ prior characteristics will get an M.
 
 ## Q&A
 
-### Testing
-
-Do we have to write tests for every procedure?
-
-> No. Only those we expicitly ask you to test.
-
-### Miscellaneous
+### General
 
 It says we are unlikely to need to use `doubly-nested-shape-list?`. Out of curiosity, what would be an example of a situation where it would be helpful?
 
 > Some of your procedures expect a doubly-nested shape list as a parameter. You might find it useful to verify that the parameter has the correct type.
 
 > I used it in documentation; you might want to, too.
+
+Do we have to verify that the parameters are correct?
+
+> Nope. You can let it crash.
+
+### Testing
+
+Do we have to write tests for every procedure?
+
+> No. Only those we explicitly ask you to test.
+
+### Part one
+
+Will we have to use conditionals to decide whether we have a list or not?
+
+> Yes.
+
+### Part two
+
+I'm getting weird error messages for some examples in part two. Do you have any hints?
+
+> You'll need to use a similar technique to that in part one: Write a helper that checks if its parameter is a shape and makes a decision based on that whether to transform the shape or to use `map`.
+
+### Part four
+
+What do the variants for part four look like?
+
+> Section 1 takes a shape and makes a list of variant shapes (e.g., changing size or color).
+
+> Section 2 takes a list (or list of lists) of shapes and turns them all into the same shape.
+
+> Section 3 takes a list (or list of lists) of shapes and alternately puts them beside (centered) or above (centered) each other. You should choose something else.
+
+Can we copy our shapes from the polygons project?
+
+> Yes, provided you build them with width, height, and color.
+
+What should we do for the freestyle?
+
+> Some "interesting" grid-like collection of shapes. Probably abstract.
+
+> It doesn't have to be any more sophisticated than what's in the reading (like the grid o' triangles or the funkier combinations.)
+
+### Advanced
+
+Can you make a procedure with any number of parameters?
+
+> Yes, I can. But you shouldn't. If you want "any number of parameters", just take a list as a parameter. Then the list can have as many things as you want. (If you really want to do it, just don't put parens around the parameter.)
+
+Can you do an example?
+
+> Sure. Suppose we want to turn a bunch of things into isosceles triangles and we don't know how many.
+
+> Here's how we'd normally do it.
+
+```
+(define to-isosceles-triangles
+  (lambda (list-of-shapes)
+    (map something list-of-shapes)))
+```
+
+> Here's the trick if you want to permit "any number of parameters".
+
+```
+(define to-isosceles-triangles-two
+  (lambda shapes
+    (map something shapes)))
+```
+
+> Sample calls to try.
+
+```
+> (to-isosceles-triangles-two)
+?
+> (to-isosceles-triangles-two (solid-circle 30 "blue"))
+?
+> (to-isosceles-triangles-two (solid-circle 30 "blue") (solid-square 20 "red"))
+?
+> (to-isosceles-triangles-two (solid-circle 30 "blue") 
+                              (solid-square 20 "red")
+                              (solid-circle 15 "orange"))
+?
+```
 
