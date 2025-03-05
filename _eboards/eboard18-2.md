@@ -1,5 +1,5 @@
 ---
-title: "EBoard 18: Recursion (Section 1)"
+title: "EBoard 18: Recursion (Section 2)"
 number: 18
 section: eboards
 held: 2025-03-05
@@ -12,12 +12,12 @@ is working correctly.
 
 _Approximate optimistic overview_
 
-* Quiz
 * Administrative stuff
 * Q&A
 * Recursion basics
 * Examples!
 * Converting to Scheme
+* Quiz
 
 Administrative stuff
 --------------------
@@ -115,11 +115,11 @@ _We're skipping recursion questions for now._
 
 When can I make up the Documentation LA?
 
-> On SoLA 2. (or SoLAs 3, 4, or 5)
+> On SoLA 2. (or SoLA 3, 4, 5)
 
 Suppose I don't do well on the lists LA. When can I make that up?
 
-> On SoLA 2. (or SoLAs 3, 4, or 5)
+> On SoLA 2. (or SoLA 3, 4, 5)
 
 ### MP5
 
@@ -130,117 +130,111 @@ I'm struggling with how to get part 2 to work. Any hints?
   its parameter is a shape or not and does different things based on
   that test.
 
-> This also applies for part 3.
+Tell me more about the doubly-nested lists.
 
-The autograder is borken.
+> The elements of doubly-nested lists are either (a) basic shapes or 
+  (b) singly-nested lists of basic shapes.
 
-> I'll work on fixing that today.
+> The elmeents of singly-nested lists are either (a) basic shapes or 
+  (b) lists of basic shapes.
 
-On the freestyle, how many procedures should we write?
-
-> I'd prefer that you write at least four procedures.
-
-> One will mimic part one. (Also helpers.)
-
-> One will mimic part two. (Also helpers.)
-
-> One will mimic part three. (Also helpers.)
-
-> One will tie everything together.
+```
+(list (solid-square 30 "blue") 
+      (list (solid-square 30 "green")) 
+      (list (solid-circle 100 "orange") 
+            (list solid-square 10 "yellow")))
+```
 
 ### Scheme
 
+What's the difference between a substring function that takes a inclusive 0-based index as start and an exclusivee 0-based index as end  parameters, and a substring function that takes a inclusive 1-based index for start and an inclusive 1-based index for end parameters?
+
+> In Scheme, we almost always use 0-based indexing. So you shouldn't worry
+  about 1-based indesing.
+
+> In Scheme, we almost always use "lower-bound inclusive; upper-bound 
+  exclusive".
+
+> `(substring "Hello" 1 3)` -> `"He"`
+
+> Let's talk.
+
 ### Other
-
-I have a complicated private question. Should I ask it in class?
-
-> You can Teams Message me.
 
 Recursion basics
 ----------------
 
-* Recursion is an algorithm design technique.
-* It bears some resemblance to decomposition.
-    * In decomposition, we break the problem into smaller problems.
-    * In recursion, we (generally) break the input into a smaller input.
-* To write your procedure, assume you already have a procedure that does
-  exactly the same thing, but only for smaller inputs.
-* Identify a case in which the input is simple enough that you can solve
-  it without a helper procedure.
-* With these two parts in place, your procedure will generally look
-  something like the following.
+Recursion is a technique for writing algorithms that need to do repeated
+work.
 
-```
-if the input is simple enough to solve directly
-  solve it directly
-otherwise
-  make the input a little bit smaller
-  solve the problem with the smaller input USING EXACTLY THE SAME
-    PROCESS
-  update that solution with the element (or elements) we removed to
-    make the input smaller.
-```
+One key idea is similar to that of decomposition.
 
-There's a magic recusion fairy who makes this work.
+* In decomposition, we break large problems into smaller problems and then
+  solve those smaller problems.
+* In recursion, we break large INPUTs into smaller inputs and then solve
+  the problem with the smaller INPUTs.
+    * We use the exact same procedure to solve the problem with the smaller
+      input.
+    * To write our procedure, we assume we've already written a version of
+      our procedure that only works for smaller inputs.
+* We also try to identify situations that are so simple that we can solve
+  them directly. (We call these base cases.)
 
 Examples!
 ---------
 
-### How many cards are in this stack of cards?
+### Count the cards in a stack
 
 ```
-if there's nothing left in the stack of cards
-  we have zero cards
-otherwise
-  remove one card
-  ask the same question of your assistant (the input is smaller so we
-    meet UGSDW regulations)
-  add 1 and return the result
-```
-
-We've written `length`.
-
-### How many cards in this stack have the same number of 1's and 0's.
-
-```
-if there's nothing left in the stack
+if there are no cards in the stack
   return 0
 otherwise
-  remove one card
-  ask the same question of your assistant
-  if you have the same number of 1's and 0's on that removed card
-    add 1 to the result you got from your assistant
-  otherwise
-    just pass along the result you got from your assistant.
+  remove a card
+  ask your assistant to count the cards in the modified stack
+  add 1 to what your assistant says and return that number
 ```
 
-We've written `tally`.
+We've figured out how `length` works!
 
-### Please give me the cards that have consonants
+### Count the number of cards that end with a one
 
 ```
-if there's nothing left in the stack
-  return nothing
+if there are no cards in the stacka
+  return 0
 otherwise
-  remove one 
-  ask your assistant to do the same task
-  if your card is a consonant
-    add that card to what you got from your assistant and return the
-      modified stack
-  otherwise
-    pass along what your assistant gave you
+  remove a card
+  ask your assistant to count the number of cards that end with a one in the rest
+  if your card ends with zero
+    return the count from your assistant
+  if your card ends with a one
+    add one to the count from your assistant
 ```
 
-We've written: `filter`
+We've just implemented `tally`
+
+### Select the cards that end with zero
+
+```
+if there are no cards the stack
+  return the empty stack
+otherwise
+  keep one card
+  ask your assistant to find the cards that end with zero in the rest
+  if your card ends with zero
+    add your card to the stack you got from your assistant and pass it on
+      to the next person
+  otherwise
+    return the stack that you got from your assistant
+```
+
+We've just implemented `filter`.
 
 Converting to Scheme
 --------------------
 
-Things we need to think about
-
-* How do we check if the list is empty?
-* How do we add 1?
-* How do we add something back to what our assistant returned?
+* Determine if a list is empty
+* Add 1 (for length and tally)
+* Add an element to a list (for filter)
 
 ```
 (define my-length
@@ -250,26 +244,14 @@ Things we need to think about
         (+ 1 (my-length (cdr lst))))))
 ```
 
-We got it right _on the first try!_
+It works! Yay!
 
-Note: If we don't simplify the parameter, we'll like get a giant error box
-and our computer might catch on fire.
-
-```
-(define tally-odds
-  (lambda (lst)
-    (if (null? lst)
-        0
-        (if (odd? (car lst))
-            (+ 1 (tally-odds (cdr lst)))
-            (+ 0 (tally-odds (cdr lst)))))))
-```
-
-We got it right _on the first try!_ (but with a bit of prompting)
-
-But ... adding zero is pointless.
+What if we forgot the cdr? It runs forever! (Well, until the computer crashes.)
 
 ```
+;;; (tally-odds ints) -> integer?
+;;;   ints : (list-of exact-integer?)
+;;; Count the number of odd numbers in the list.
 (define tally-odds
   (lambda (lst)
     (if (null? lst)
@@ -279,9 +261,13 @@ But ... adding zero is pointless.
             (tally-odds (cdr lst))))))
 ```
 
-But ... nested ifs should be replaced by conds.
+A slightly better answer
+
 
 ```
+;;; (tally-odds ints) -> integer?
+;;;   ints : (list-of exact-integer?)
+;;; Count the number of odd numbers in the list.
 (define tally-odds
   (lambda (lst)
     (cond
@@ -294,21 +280,12 @@ But ... nested ifs should be replaced by conds.
 ```
 
 ```
-(define select-evens
+(define select-even
   (lambda (lst)
-    (cond
-      [(null? lst)
-       null]
-      [(even? (car lst))
-       (cons (car lst) (select-evens (cdr lst)))]
-      [else
-       (select-evens (cdr lst))])))
+    (if (null? lst)
+        null
+        (if (even? (car lst))
+            (cons (car lst) 
+                  (select-even (cdr lst)))
+            (select-even (cdr lst))))))
 ```
-
-Algorithms review
------------------
-
-At the beginning of the semester, we said that we had to know how to do
-six tings in order to write algorithms. What were they? And what have
-we learned about them in Scheme?
-

@@ -1,5 +1,5 @@
 ---
-title: "EBoard 18: Recursion (Section 1)"
+title: "EBoard 18: Recursion (Section 3)"
 number: 18
 section: eboards
 held: 2025-03-05
@@ -12,12 +12,12 @@ is working correctly.
 
 _Approximate optimistic overview_
 
-* Quiz
 * Administrative stuff
 * Q&A
 * Recursion basics
 * Examples!
 * Converting to Scheme
+* Quiz
 
 Administrative stuff
 --------------------
@@ -115,11 +115,11 @@ _We're skipping recursion questions for now._
 
 When can I make up the Documentation LA?
 
-> On SoLA 2. (or SoLAs 3, 4, or 5)
+> On SoLA 2. (Or SoLAs 3, 4, 5)
 
 Suppose I don't do well on the lists LA. When can I make that up?
 
-> On SoLA 2. (or SoLAs 3, 4, or 5)
+> On SoLA 2. (Or SoLAs 3, 4, 5)
 
 ### MP5
 
@@ -130,117 +130,82 @@ I'm struggling with how to get part 2 to work. Any hints?
   its parameter is a shape or not and does different things based on
   that test.
 
-> This also applies for part 3.
-
-The autograder is borken.
-
-> I'll work on fixing that today.
-
-On the freestyle, how many procedures should we write?
-
-> I'd prefer that you write at least four procedures.
-
-> One will mimic part one. (Also helpers.)
-
-> One will mimic part two. (Also helpers.)
-
-> One will mimic part three. (Also helpers.)
-
-> One will tie everything together.
-
 ### Scheme
 
 ### Other
 
-I have a complicated private question. Should I ask it in class?
-
-> You can Teams Message me.
-
 Recursion basics
 ----------------
 
-* Recursion is an algorithm design technique.
-* It bears some resemblance to decomposition.
-    * In decomposition, we break the problem into smaller problems.
-    * In recursion, we (generally) break the input into a smaller input.
-* To write your procedure, assume you already have a procedure that does
-  exactly the same thing, but only for smaller inputs.
-* Identify a case in which the input is simple enough that you can solve
-  it without a helper procedure.
-* With these two parts in place, your procedure will generally look
-  something like the following.
+Recursion bears some similarity to decomposition.
 
-```
-if the input is simple enough to solve directly
-  solve it directly
-otherwise
-  make the input a little bit smaller
-  solve the problem with the smaller input USING EXACTLY THE SAME
-    PROCESS
-  update that solution with the element (or elements) we removed to
-    make the input smaller.
-```
-
-There's a magic recusion fairy who makes this work.
+* Decomposition: Take a bigger problem and break it up into smaller problems.
+* Recursion: Take a big INPUT and make it smaller.
+    * We assume that we've already solved the problem, but only for smaller
+      input.
+    * We write a solution that uses THE SAME PROCEDURE WE'RE ALREADY WRITING
+      as a helper.
+    * A magic recursion fairy makes the code work.
+* We also identify a situation in which we can answer the problem directly
+  (and then do so). We call this "the base case".
 
 Examples!
 ---------
 
-### How many cards are in this stack of cards?
+### To count the number of cards in a stack of cards
 
 ```
-if there's nothing left in the stack of cards
-  we have zero cards
-otherwise
-  remove one card
-  ask the same question of your assistant (the input is smaller so we
-    meet UGSDW regulations)
-  add 1 and return the result
-```
-
-We've written `length`.
-
-### How many cards in this stack have the same number of 1's and 0's.
-
-```
-if there's nothing left in the stack
+if the stack is empty
   return 0
 otherwise
   remove one card
-  ask the same question of your assistant
-  if you have the same number of 1's and 0's on that removed card
-    add 1 to the result you got from your assistant
-  otherwise
-    just pass along the result you got from your assistant.
+  ask your assistant to count the remaining cards
+  add 1
 ```
 
-We've written `tally`.
+This is the algorithm behind `length`.
 
-### Please give me the cards that have consonants
+### To count how many cards are odd
 
 ```
-if there's nothing left in the stack
-  return nothing
+if the stack is empty
+  return 0
 otherwise
-  remove one 
-  ask your assistant to do the same task
-  if your card is a consonant
-    add that card to what you got from your assistant and return the
-      modified stack
+  remove one card
+  ask your assistant to count the number of odd remaining cards
+  if the card is odd
+    add 1 to the number your assistant returned
   otherwise
-    pass along what your assistant gave you
+    return the number your assistant returned
 ```
 
-We've written: `filter`
+This is the algorithm behind: `tally`
+
+### To get the cards that are odd
+
+```
+if the stack is empty
+  return an empty stack
+otherwise
+  remove one card
+  ask you assistant to grab the odd cards in the remaining stack
+  if your card is odd
+    add your card to the stack of odd cards you received and pass the
+      updated stack along
+  otherwise
+    pass the odd cards along, skipping the even card.
+```
+
+This is the algorithm behind: `filter`
 
 Converting to Scheme
 --------------------
 
-Things we need to think about
-
-* How do we check if the list is empty?
-* How do we add 1?
-* How do we add something back to what our assistant returned?
+* How do I check if a list is empty?
+* How do I add one to a number?
+* How do I add an element to a list?
+* How do I remove an element from a list?
+* How do I check if the first element of a list is odd?
 
 ```
 (define my-length
@@ -250,65 +215,57 @@ Things we need to think about
         (+ 1 (my-length (cdr lst))))))
 ```
 
-We got it right _on the first try!_
-
-Note: If we don't simplify the parameter, we'll like get a giant error box
-and our computer might catch on fire.
+Yay! We wrote it correctly on the first try.
 
 ```
-(define tally-odds
+(define count-odd
   (lambda (lst)
     (if (null? lst)
         0
         (if (odd? (car lst))
-            (+ 1 (tally-odds (cdr lst)))
-            (+ 0 (tally-odds (cdr lst)))))))
+            (+ 1 (count-odd (cdr lst)))
+            (+ 0 (count-odd (cdr lst)))))))
 ```
 
-We got it right _on the first try!_ (but with a bit of prompting)
+Yay! We wrote it correctly on the first try.
 
-But ... adding zero is pointless.
+Except ... it can be improved.
 
 ```
-(define tally-odds
+(define count-odd
   (lambda (lst)
     (if (null? lst)
         0
         (if (odd? (car lst))
-            (+ 1 (tally-odds (cdr lst)))
-            (tally-odds (cdr lst))))))
+            (+ 1 (count-odd (cdr lst)))
+            (count-odd (cdr lst))))))
 ```
 
-But ... nested ifs should be replaced by conds.
+Or ...
 
 ```
-(define tally-odds
+(define count-odd
   (lambda (lst)
     (cond
       [(null? lst)
-       0]
+        0]
       [(odd? (car lst))
-       (+ 1 (tally-odds (cdr lst)))]
+       (+ 1 (count-odd (cdr lst)))]
       [else
-       (tally-odds (cdr lst))])))
+       (count-odd (cdr lst))])))
 ```
 
 ```
-(define select-evens
+(define select-odd
   (lambda (lst)
     (cond
       [(null? lst)
        null]
-      [(even? (car lst))
-       (cons (car lst) (select-evens (cdr lst)))]
-      [else
-       (select-evens (cdr lst))])))
+      [(odd? (car lst))
+       (cons (car lst) (select-odd (cdr lst)))]
+      [else 
+       (select-odd (cdr lst))])))
 ```
 
-Algorithms review
------------------
-
-At the beginning of the semester, we said that we had to know how to do
-six tings in order to write algorithms. What were they? And what have
-we learned about them in Scheme?
-
+With a fix to the base case (which needs to be the empty list rather than 0), 
+we got this right, too.
