@@ -529,7 +529,7 @@ c. Document and write a procedure, `(stack-then-sequence stuff)`, that takes a s
 
 Note that, as in the previous parts you will likely want to write a helper procedure.  In this case, it should check whether the parameter is a image or not.  If it's an image, you can leave it as is.  If it's a list, you probably want to stack it.  After applying that helper to each element of `stuff`, you can put them beside each other.
 
-d. Document and write a procedure, `(sequence-then-stack stuff)`, that takes a singly nested list of images as a parameter and returns an image in which each sublist is stacked and then the stacks are placed next to each other.  
+d. Document and write a procedure, `(sequence-then-stack stuff)`, that takes a singly nested list of images as a parameter and returns an image in which each sublist is sequenced and then the sequences are placed above each other.  
 
 ```
 > (sequence-then-stack (list (list red-narrow red-medium red-wide)
