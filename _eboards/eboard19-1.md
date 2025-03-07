@@ -116,8 +116,6 @@ _These do not earn tokens, but are worth your consideration._
 Questions
 ---------
 
-_We're skipping recursion questions for now._
-
 ### Administrative
 
 I seem to have missed a fair number of labs. Can I make them up over break?
@@ -149,6 +147,25 @@ Will you post more redos for over break?
 > First redos for MPs 4 and 5 are also due that Sunday.
 
 ### Reading (Local bindings)
+
+What is the benefit to using let to define a local helper procedure
+as opposed to defining it outside the main procedure?
+
+> The helper procedure may want to use the parameters to the enclosing procedure. This way, we don't have to pass all of those parameters to the helper.
+
+> We can worry less about name overlaps. For example, instead of `stack-and-sequence-helper`, we could just use `helper`.
+
+Why bother naming our helper procedures instead of using anonymous procedures?
+
+> Perhaps it avoids repetition. Perhaps it clarifies our code.
+
+It says that a let expression may have multiple bodies. If the let expression only takes the value of the last body, then why would a programmer use multiple bodies in a let expression?
+
+> There are some procedures we call for their "side effects"; they change the state of the system. We haven't encountered any such procedures yet, but we will.
+
+Can we please go over check 3, ratios revisited?
+
+> Certainly.
 
 ### Scheme
 
