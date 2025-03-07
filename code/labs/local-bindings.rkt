@@ -3,7 +3,7 @@
 (require csc151)
 (require rackunit)
 
-;; CSC 151 (SEMESTER)
+;; CSC-151-NN (SEMESTER)
 ;; Lab: Local Bindings (local-bindings.rkt)
 ;; Authors: YOUR NAMES HERE
 ;; Date: THE DATE HERE
@@ -106,6 +106,8 @@ predict the result.  Finally, check your answer experimentally.
 (define updated-nested-let*-fun
   "TODO: write the final let* here")
 
+#| A |#
+
 ; +--------------------------------+---------------------------------
 ; | Exercise 2: Observing bindings |
 ; +--------------------------------+
@@ -120,6 +122,8 @@ Add the following line to your definitions pane.
 Then rewrite the examples from above to use `verbose-let` or
 `verbose-let*`, as appropriate.  
 |#
+
+#| A |#
 
 ; +-------------------------------+----------------------------------
 ; | Exercise 3: Ordering bindings |
@@ -277,6 +281,48 @@ If your answer doesn't match, trace the computation.
                  [y (+ x 1)])
             (list x y)))))
 
+#| B |#
+
+; +---------------------------------+--------------------------------
+; | Exercise 6: Removing redundancy |
+; +---------------------------------+
+
+#|
+Consider the following procedure that makes a few trees beside each
+other.
+|#
+
+(define trees
+  (lambda (sz)
+    (beside
+     (above (overlay
+             (outlined-equilateral-triangle (* sz 1.5) "black" 2)
+             (solid-equilateral-triangle (* sz 1.5) "green"))
+            (overlay
+             (outlined-rectangle (/ sz 2) (* sz 2) "black" 2)
+             (solid-rectangle (/ sz 2) (* sz 2) "brown")))
+     (above (overlay
+             (outlined-equilateral-triangle (* sz 1.5) "black" 2)
+             (solid-equilateral-triangle (* sz 1.5) "green"))
+            (overlay
+             (outlined-rectangle (/ sz 2) (* sz 2) "black" 2)
+             (solid-rectangle (/ sz 2) (* sz 2) "brown")))
+     (above (overlay
+             (outlined-equilateral-triangle (* sz 1.5) "black" 2)
+             (solid-equilateral-triangle (* sz 1.5) "green"))
+            (overlay
+             (outlined-rectangle (/ sz 2) (* sz 2) "black" 2)
+             (solid-rectangle (/ sz 2) (* sz 2) "brown"))))))
+
+#|
+Rewrite the procedure using let bindings to reduce as much redundancy as 
+you can.
+|#
+
+(define new-trees
+  (lambda (sz)
+    ???))
+
 #| AB |#
 
 ; +-------------+----------------------------------------------------
@@ -291,6 +337,20 @@ that file on Gradescope.
 ; +---------------------------+--------------------------------------
 ; | For those with extra time |
 ; +---------------------------+
+
+; +-------------------------+----------------------------------------
+; | Extra 1: Improving code |
+; +-------------------------+
+
+#|
+Find a few procedure from recent mini-projects that involve a lot of
+repetition (or calling a helper procedure to reduce some of that
+repetition) and rewrite them using `let` bindings.
+|#
+
+; +-----------------------+------------------------------------------
+; | Extra 2: Other things |
+; +-----------------------+
 
 #|
 If you find that you have extra time, please start the reading for
