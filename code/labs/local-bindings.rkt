@@ -1,6 +1,7 @@
 #lang racket
 
 (require csc151)
+; (require csc151/verbose-define)
 (require rackunit)
 
 ;; CSC-151-NN (SEMESTER)
@@ -113,9 +114,14 @@ predict the result.  Finally, check your answer experimentally.
 ; +--------------------------------+
 
 #|
-Bindings happen behind the scenes. It may, however, be useful to see what bindings DrRacket is doing. The csc151 package includes a set of operations for viewing what happens when you do a binding: `verbose-define`, `verbose-let`, and `verbose-let*`. Since you will rarely need these procedures, we don’t include them in the primary csc151 package. Hence, you need to require them separately.
+Bindings happen behind the scenes. It may, however, be useful to
+see what bindings DrRacket is doing. The csc151 package includes a
+set of operations for viewing what happens when you do a binding:
+`verbose-define`, `verbose-let`, and `verbose-let*`. Since you will
+rarely need these procedures, we don't include them in the primary
+csc151 package. Hence, you need to require them separately.
 
-Add the following line to your definitions pane.
+Add the following line to the top of your definitions pane.
 
 (require csc151/verbose-bindings)
 
@@ -144,7 +150,8 @@ c. Confirm that years-to-seconds-a does, in fact, recompute the values each time
 
 d. Confirm that years-to-seconds-b does not recompute the values each time it is called.
 
-e. Given that years-to-seconds-b does not recompute each time, when does it do the computation? (Consider when you see the messages.)
+e. Given that years-to-seconds-b does not recompute each time, when does it 
+do the computation? (Consider when you see the messages.)
 |#
 
 (define years-to-seconds-a
