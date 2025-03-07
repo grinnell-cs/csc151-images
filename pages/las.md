@@ -10,11 +10,11 @@ To directly assess your mastery of the learning objectives of this course, we wi
 
 There are four primary SoLAs in the course, along with one optional final SoLA.
 
-+ SoLA 1 (LAP 1): Week 4, Monday--Tuesday, 12--13 February 2024
-+ SoLA 2 (LAPs 1&2): Week 7, Monday--Tuesday, 4--5 March 2024
-+ SoLA 3 (LAPs 1--3): Week 10, Monday--Tuesday, 8--9 April 2024
-+ SoLA 4 (LAPs 1--4): Week 14, Monday--Tuesday, 6--7 May 2024
-+ SoLA 5 (LAPs 1--4): Finals week (distributed Tuesday, 14 May 2024; due 5 p.m. Friday, 17 May 2024)
++ SoLA 1 (LAP 1): Week 5, Monday--Thursday, 17--20 February 2025
++ SoLA 2 (LAPs 1&2): Week 8, Monday--Thursday, 24--27 March 2025
++ SoLA 3 (LAPs 1--3): Week 11, Monday--Thursday, 14--17 April 2025
++ SoLA 4 (LAPs 1--4): Week 14, Monday--Thursday, 5--8 May 2025
++ SoLA 5 (LAPs 1--4): Finals week (distributed Tuesday, 13 May 2025; due 5 p.m. Friday, 16 May 2025)
 
 SoLAs consist of a set of individual assessment problems---one problem for each learning objective of the course covered so far.  
 
@@ -84,6 +84,16 @@ Phase 4
 * [Tree recursion](tree-recursion.html)
 * [Running time](running-time.html)
 * [Sorting and searching](searching.html)
+
+## Additional SoLA requirements
+
+The only resources you may use on a take-home SoLA are (a) your notes, (b) the class Web site, (c) the DrRacket reference pages, (d) DrRacket, and (e) yourself. You may not ask anyone else for help (except your instructor), you may not discuss the SoLA with anyone (except your instructor), you may not look elsewhere on the Internet for ideas or solutions, and you may not use a generative AI tool like Copilot or ChatGPT.
+
+Each LA on a take-home SoLA will ask you to list any resources you've used (other than yourself, your notes, and DrRacket) and to attest to your use of only permitted resources.
+
+> I used the following resources in answering this question: `[   ]`
+
+> I attest that I have acted with academic integrity on this assessment.  Among other things, I did not discuss this problem with other people, and the only resources I used are (a) my notes, (b) the class Web site, (c) the DrRacket reference pages, (d) DrRacket, and (e) myself. `[ ] Yes / [ ] No`
 
 ## An example of redos
 
