@@ -529,7 +529,7 @@ c. Document and write a procedure, `(stack-then-sequence stuff)`, that takes a s
 
 Note that, as in the previous parts you will likely want to write a helper procedure.  In this case, it should check whether the parameter is a image or not.  If it's an image, you can leave it as is.  If it's a list, you probably want to stack it.  After applying that helper to each element of `stuff`, you can put them beside each other.
 
-d. Write a procedure, `(sequence-then-stack stuff)`, that takes a singly nested list of images as a parameter and returns an image in which each sublist is stacked and then the stacks are placed next to each other.  
+d. Document and write a procedure, `(sequence-then-stack stuff)`, that takes a singly nested list of images as a parameter and returns an image in which each sublist is stacked and then the stacks are placed next to each other.  
 
 ```
 > (sequence-then-stack (list (list red-narrow red-medium red-wide)
@@ -552,7 +552,7 @@ d. Write a procedure, `(sequence-then-stack stuff)`, that takes a singly nested 
 
 As in the case of `stack-then-sequence`, you'll find a helper procedure useful.
 
-e. Write a procedure, `(sequence-then-stack-then-sequence stuff)`, that takes a doubly-nested list as input.  You should be able to guess what it should do.
+e. Document and write a procedure, `(sequence-then-stack-then-sequence stuff)`, that takes a doubly-nested list as input.  You should be able to guess what it should do.
 
 ```
 >  (sequence-then-stack (list (list red-narrow blue-medium purple-wide)
@@ -589,7 +589,7 @@ e. Write a procedure, `(sequence-then-stack-then-sequence stuff)`, that takes a 
 
 _We've written some fairly wide lines of code. You should avoid such wide linns._
 
-f. Write a procedure, `(stack-then-sequence-then-stack stuff)`, that takes a doubly-nested list as input.  You should be able to guess what it should do.
+f. Document and write a procedure, `(stack-then-sequence-then-stack stuff)`, that takes a doubly-nested list as input.  You should be able to guess what it should do.
 
 ```
 >  (stack-then-sequence (list (list red-narrow blue-medium purple-wide)
@@ -635,7 +635,7 @@ Using these procedures and any others you write, create an interesting image whi
 (define freestyle (stack-then-sequence-then-stack ...))
 ```
 
-To earn an E, you will need to write your own variants of the procedures in parts 1, 2, and 3.
+To earn an E, you will need to write your own variants of the procedures in parts 1, 2, and 3. See the rubric for the particular variants to write.
 
 Grading rubric
 --------------
@@ -678,6 +678,11 @@ prior characteristics will get an R.
 [ ] Documentation for all core procedures is correct / has the correct form.
 [ ] Creates an image called `freestyle`.
 [ ] Includes all the specified tests.
+    [ ] At least three tests for `color-variants-0`.
+    [ ] At least one test for `color-variants-1`.
+    [ ] At least two tests for `color-variants-1x`.
+    [ ] At least three tests for `shape->solid-isosceles-triangle`.
+    [ ] At least three tests for `shapes->solid-isosceles-triangles-0`.
 ```
 
 ### Exemplary / Exceeds expectations
@@ -690,21 +695,25 @@ prior characteristics will get an M.
     [ ] Correctly implements `shapes->solid-isosceles-triangles-2`.
     [ ] Correctly implements `sequence-then-stack-then-sequence`.
     [ ] Correctly implements `stack-then-sequence-then-stack`.
-[ ] Adds a new procedure akin to `color-variants`.  That is, adds a 
-    procedure that takes a `shape-params?` as a parameter and creates
-    a list of `shape-params?` (or list of lists of ....)`.
-[ ] Adds a new procedure akin to `shape->solid-isosceles-triangles-1`.
+[ ] Adds a new procedure akin to `color-variants-2`.  That is, adds a 
+    procedure that takes a `slightly-nested-shape-list?` as a parameter 
+    and creates a `doubly-nested-shape-list?`.
+[ ] Adds a new procedure akin to `shape->solid-isosceles-triangles-2`.
 [ ] Adds a new procedure akin to `stack` or `sequence`. That is,
     adds a procedure that combines a list of images into a single image.
     It might combine the images diagonally, or beside but bottom
-    aigned, or overlay them, or ...
+    aligned, or overlay them, or ...
 [ ] Adds a new procedure akin to `stack-then-sequence`, that works
-    with a singly nested list.
+    with a `slightly-nested-shape-list?`
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.
 [ ] Documentation for all procedures is correct / has the correct form.
 [ ] Each set of tests includes at least one edge case (e.g., an empty
     list, if appropriate).
+    [ ] At least one edge case for `color-variants-0`.
+    [ ] At least one edge case for `color-variants-1x`.
+    [ ] At least one edge case for `shape->solid-isosceles-triangle`.
+    [ ] At least one edge case for `shapes->solid-isosceles-triangles-0`.
 ```
 
 ## Q&A
@@ -725,13 +734,13 @@ Do we have to verify that the parameters are correct?
 
 Do we have to write tests for every procedure?
 
-> No. Only those we explicitly ask you to test.
+> No. Only those we explicitly ask you to test. See the rubric for details.
 
 ### Part one
 
 Will we have to use conditionals to decide whether we have a list or not?
 
-> Yes.
+> Yes. Alternately, you can test for an image and assume you have a list if it's not an image.
 
 ### Part two
 
@@ -748,6 +757,8 @@ What do the variants for part four look like?
 > Section 2 takes a list (or list of lists) of shapes and turns them all into the same shape.
 
 > Section 3 takes a list (or list of lists) of shapes and alternately puts them beside (centered) or above (centered) each other. You should choose something else.
+
+> See the rubric for particular details.
 
 Can we copy our shapes from the polygons project?
 
