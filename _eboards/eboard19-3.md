@@ -1,9 +1,9 @@
 ---
-title: "EBoard 19: Local Bindings (Section 2)"
+title: "EBoard 19: Local Bindings (Section 3)"
 number: 19
 section: eboards
 held: 2025-03-07
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -113,6 +113,10 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
+* You are awesome. Please remain awesome during spring break.
+* Be moderate.
+* Consent is both necessary and insufficient.
+
 Questions
 ---------
 
@@ -151,13 +155,18 @@ completed.
 
 > Yes. ??? minutes is 60 minutes.
 
-My quiz is missing. What's up with that?
-
-> I'll look during lab.
-
 When will we know how many tokens we've used and earned?
 
 > You should know. But I'll be counting during the first week of break.
+
+What if I had special exceptions?
+
+> Remind me of them if/when I charge you tokens.
+
+I know that reports on token events are due within 3 days. Can that be
+3 months instead?
+
+> Sure. 
 
 ### Reading (Local bindings)
 
@@ -212,9 +221,54 @@ Can we please go over check 3, ratios revisited?
        (tally consonant? (string->list str)))))
 ```
 
+Let's make it better using `let`.
+
+```
+(define v2c-ratio
+  (lambda (str)
+    (let ([chars (string->list str)])
+      (/ (tally vowel? chars)
+         (tally consonant? chars)))))
+```
+
+* If we needed to use `lst` more times, it's easy to do so.
+* Instead of two calls to `string->list`, we're only doing one.
+
+```
+(define v2c-ratio
+  (lambda (str)
+    (let ([count (lambda (pred?)
+                   (tally pred? (string->list str)))])
+      (/ (count vowel?)
+         (count consonant?)))))
+```
+
+* We're still converting `str` to a list twice. That's inefficient
+  as compared to the second version (but not the first).
+* Once again, if we are envisioning a world in which we need to do
+  lots of tallying, this could be useful.
+* Perhaps this is easier to read.
+
+Combining the strategies.
+
+```
+(define v2c-ratio
+  (lambda (str)
+    (let ([chars (string->list str)])
+      (let ([count (lambda (pred?)
+                     (tally pred? chars))])
+        (/ (count vowel?)
+           (count consonant?)))))
+```
+
+* This is perhaps more readable.
+* This is as efficient as the second.
+
 ### Scheme
 
 ### Other
 
 Lab
 ---
+
+

@@ -3,7 +3,7 @@ title: "EBoard 19: Local Bindings (Section 2)"
 number: 19
 section: eboards
 held: 2025-03-07
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -27,10 +27,11 @@ Administrative stuff
   takes much less effort than correct errors and then grading another LA.
     * But it's fine if you don't get them right the first time; it's simply
       a sign that you still have some misconceptions.
+    * Notes are good.
 * Thanks for all the suggestions on handling SoLAs and struggling students. 
   I'll let you know some of the changes after break.
 * I'm hoping to have all your grades to you by the end of the first week of
-  break.
+  break. (Including tokens.)
 
 ### Upcoming activities
 
@@ -113,6 +114,10 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
+* You are awesome. Please stay awesome.
+* Moderation.
+* Consent is essential, but not sufficient.
+
 Questions
 ---------
 
@@ -145,6 +150,10 @@ Will you post more redos for over break?
 > Yes. Second redos for MPs 1, 2, and 3 are due the Sunday after break.
 
 > First redos for MPs 4 and 5 are also due that Sunday.
+
+Will we have the first redos graded soon?
+
+> Yes, by the first Friday of spring break.
 
 If I make up a lab, can I stop after ??? minutes and submit whatever I've
 completed.
@@ -211,6 +220,63 @@ Can we please go over check 3, ratios revisited?
     (/ (tally vowel? (string->list str))
        (tally consonant? (string->list str)))))
 ```
+
+New version
+
+```
+(define v2c-ratio
+  (lambda (str)
+    (let ([(chars (string->list str))])
+      (/ (tally vowel? chars)
+         (tally consonant? chars)))))
+```
+
+We like this because we're only calling `string->list` once rather
+than twice.
+
+The input to the function is a little bit clearer; we don't have to spend
+time trying to understand each call to `(string->list str)` (and to make
+sure that they're the same).
+
+Another new version
+
+```
+(define v2c-ratio
+  (lambda (str)
+    (let ([count (lambda (pred?) 
+                   (tally pred? (string->list str)))])
+      (/ (count vowel?)
+         (count consonant?)))))
+```
+
+The "count vowel?" is pretty clear, perhaps clearer than `(tally vowel? chars)`.
+
+What does `count` do? Let's look
+
+```
+    (count vowel?)
+--> (tally vowel? (string->list str))
+```
+
+This has the same problem as the original that it will crash and burn
+if there are no consonants in the string.
+
+Although we've used `let`, we're still repeating work because we're
+calling `string->list` twice.
+
+Perhaps another
+
+```
+(define v2c-ratio
+  (lambda (str)
+    (let ([chars (string->list str)])
+      (let ([count (lambda (pred?) 
+                     (tally pred? chars))])
+        (/ (count vowel?)
+           (count consonant?))))))
+```
+
+This achieves both efficiency and clarity.
 
 ### Scheme
 
