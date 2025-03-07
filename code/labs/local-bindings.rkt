@@ -1,7 +1,7 @@
 #lang racket
 
 (require csc151)
-; (require csc151/verbose-define)
+; (require csc151/verbose-bindings)
 (require rackunit)
 
 ;; CSC-151-NN (SEMESTER)
