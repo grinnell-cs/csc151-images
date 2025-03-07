@@ -1,9 +1,9 @@
 ---
-title: "EBoard 19: Local Bindings (Section 1)"
+title: "EBoard 19: Local Bindings (Section 2)"
 number: 19
 section: eboards
 held: 2025-03-07
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -113,11 +113,6 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
-* Please be moderate.
-* You are awesome! Please remain that way. For yourself. For those who
-  care about you.
-* Consent is essential, but not sufficient.
-
 Questions
 ---------
 
@@ -216,45 +211,6 @@ Can we please go over check 3, ratios revisited?
     (/ (tally vowel? (string->list str))
        (tally consonant? (string->list str)))))
 ```
-
-Idea one:
-
-```
-(define v2c-ratio
-  (lambda (str)
-    (let ([num-vowels (tally vowel? (string->list str))]
-          [num-consonants (tally consonant? (string->list str))])
-      (/ num-vowels num-consonants))))
-```
-
-Benefit: Potentialy more readable. But doesn't solve the problem of
-calling `string->list` twice.
-
-```
-(define v2c-ratio
-  (lambda (str)
-    (let ([chars (string->list str)])
-      (let ([num-vowels (tally vowel? chars)]
-            [num-consonants (tally consonant? chars)])
-        (/ num-vowels num-consonants)))))
-```
-
-Benefit: Only convert the list to a string once.
-
-Here's a less good approach.
-
-```
-(define v2c-ratio
-  (lambda (str)
-    (let ([count-chars (lambda (pred?)
-                         (tally pred? (string->list str)))])
-      (/ (count-chars vowel?)
-         (count-chars consonant?)))))
-```
-
-If it works, it's a bit harder to read. But we're still doing 
-`string->list` twice. So this neither clarifies (except for Sam)
-nor speeds things up.
 
 ### Scheme
 
