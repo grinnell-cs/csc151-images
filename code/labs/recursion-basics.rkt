@@ -109,7 +109,11 @@ b. Trace
 
     ; for func-1a
     (func-1a 9 '(1 8 2))
+--> (if (null? '(1 8 2)) (list 9) (cons (car '(1 8 2)) (func-1a 9 (cdr '1 8 2))))
+--> (if #f (list 9) (cons (car '(1 8 2)) (func-1a 9 (cdr '1 8 2))))
+--> (cons (car '(1 8 2)) (func-1a 9 (cdr '(1 8 2))))
 --> 
+
 <TODO: Finish the derivation>
 |#
 
@@ -119,6 +123,7 @@ c. Explanation
 Base case: <TODO: write your explanation here>
 
 Recursive case: <TODO: write your explanation here>
+
 |#
 
 
@@ -221,7 +226,7 @@ When working through the step-by-step evaluation of your function,
 use the following expression.  It's fine if you do a more casual trace.
 
     (func-2a 7 '(2 1 7 2 7))
-    ; l is not null.  car l is not equal to x
+    ; l is not null. (car l) is 2. 2 is not equal to 7.
 --> (cons 2 (func2a 7 '(1 7 2 7)))
     ;
 --> 
