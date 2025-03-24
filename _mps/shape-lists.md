@@ -12,6 +12,7 @@ collaboration: |
   receive help from anyone, make sure to cite them in your responses. 
 link: true
 preimg: true
+notes: Increase the number of tests for color-variants-1x and require edge.
 ---
 Please start with the [template code](../code/mps/shape-lists.rkt).
 
@@ -711,7 +712,6 @@ prior characteristics will get an M.
 [ ] Each set of tests includes at least one edge case (e.g., an empty
     list, if appropriate).
     [ ] At least one edge case for `color-variants-0`.
-    [ ] At least one edge case for `color-variants-1x`.
     [ ] At least one edge case for `shape->solid-isosceles-triangle`.
     [ ] At least one edge case for `shapes->solid-isosceles-triangles-0`.
 ```
