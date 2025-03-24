@@ -12,7 +12,7 @@ is working correctly.
 
 _Approximate optimistic overview_
 
-* Administrative stuff
+* Administrative stuff (way too much)
 * Quick notes on MP5
 * Quick notes on SoLA 2
 * Q&A
@@ -26,6 +26,7 @@ Administrative stuff
 * Welcome back from break!
 * Someone cleaned up our room. Let's try to keep it clean.
 * Since you can't talk to people during the SoLA, I brought you ducks.
+* Today's lab is mostly thinking and tracing rather than programming.
 * A member of one section of 151 has severe peanut/nut allergies. If
   you eat food in the class, please don't eat food with peanuts/nuts.
   Even the leftover scent affects them.
@@ -43,7 +44,7 @@ Administrative stuff
   And I'm not sure that grades are promis'd joy. But you get
   the gist.
 * I treated most readings as a "check off" opportunity. If you turned it
-  in, you got a check. I did not look at your answers. If you have
+  in, you got a check. I did not alwaysd look at your answers. If you have
   outstanding questions, let me know.
     * No late penalties for ones I hadn't at least half graded:
         * Pre-reflection for MP5.
@@ -71,13 +72,13 @@ Scholarly
 
 Artistic
 
-* Thrusday, 27 March 2025, 7:30--9:30 p.m., Herrick Chael.
+* Thrusday, 27 March 2025, 7:30--9:30 p.m., Herrick Chapel.
   _Butcher Brown_.
 
 Multicultural
 
 * Friday, 28 March 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
-  _Middle of Everywhere: ???_ 
+  _Middle of Everywhere: Why you should visit Nepal_ 
 
 Peer
 
@@ -101,7 +102,7 @@ Wellness
 Misc
 
 * Tuesday, 25 March 2025, 7:00--8:00 p.m., Science 3820.
-  _Mentor Session_
+  _Mentor Session_ (only on conditionals)
 * Sunday, 30 March 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session_
 
@@ -111,27 +112,21 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Upcoming work
 
-* Sunday, 23 March 2025
-    * [Submit lab writeup from class 19](https://www.gradescope.com/courses/948769/assignments/5891749/)
-    * [Submit pre-reflection for SoLA 2](https://www.gradescope.com/courses/948769/assignments/5902194)
-    * Readings for class 20
-        * Review [recursion basics](../readings/recursion-basics).
-        * Nothing to submit.
 * Monday, 24 March 2025
-    * [SoLA 2](../las/) released.
+    * [SoLA 2](../las/) released at 4pm.
         * Old topics: Decomposition, Procedural abstraction, Primitive types,
           Collaboration, Lambda-free anonymous procedures (cut and compose).
-        * Semi-old topics: Conditionals, documentation, lists
+        * Semi-new topics: Conditionals, documentation, lists
         * New topics: Testing, program style, ethical considerations
 * Tuesday, 25 March 2025
-    * [Submit ab writeup from class 20 (recursion basics)](https://www.gradescope.com/courses/948769/assignments/5978041)
+    * [Submit lab writeup from class 20 (recursion basics)](https://www.gradescope.com/courses/948769/assignments/5978041)
     * Readings:
         * [The magic of recursion](../readings/recursion-magic)
         * [Submit reading response on Gradescope](https://www.gradescope.com/courses/948769/assignments/5978086)
 * Wednesday, 26 March 2025
-    * Quiz: Local bindings
+    * Quiz: Local bindings (`let` and `let*`)
     * Makeup quiz: Tracing
-    * _Remember that you can bring a sheet of notes for each quiz._
+    * _Remember that you can bring a sheet of hand-written notes for each quiz._
     * _Remember that you can start as early as 8:00 a.m. (section 1) or
       stay until noon (section 2) or 4:30 p.m. (section 3)_
 * Thursday, 27 March 2025
@@ -156,6 +151,7 @@ Short notes on MP5 (and related issues)
 
 * As you might expect, we were dealing with similar procedures that work
   on lists of lists of ... to start you thinking about recursion.
+* We also wanted to give you practice with `map` and `apply`/`reduce`.
 * A few people said that this was the most straightforward mini-project
   so far. Others said that it was the hardest. Nested lists require a
   bit of brain twisting.
@@ -193,6 +189,8 @@ Short notes on MP5 (and related issues)
     * MPs will be "due" on Thursday and have a late submission on Sunday.
     * Turning in the MP on Thursday earns you two tokens.
     * There is no penalty for the Sunday submission.
+* If you have other things you think I should consider implementing, 
+  let me know.
 
 Short notes on SoLA 2
 ---------------------
@@ -206,7 +204,7 @@ Short notes on SoLA 2
 * There is (or should be) [a sample LA](https://www.gradescope.com/courses/948769/assignments/5975023/outline/edit) for you to check out.
 * If you define procedures using a form we haven't covered (e.g., other 
   than `lambda`, `cut`, `section`, composition, or aliasing) I will assume
-  that you've used inappropriate resources and must report you to CAS.
+  that you've used inappropriate resources and will report you to CAS.
 
 ### The pre-assessment
 
@@ -217,6 +215,8 @@ Short notes on SoLA 2
   like `(o fun1 fun2 fun3)`. I recall writing something like
   `(o (cut (+ <> 2)) sqr (cut - <> 2))`. [Note that the syntax there
   isn't quite right.]
+* This should hold for every subject: Trying to generate info is better
+  than re-reading.
 
 ### Particular topics
 
@@ -233,11 +233,35 @@ Do I earn a token when I attend my own (athletic/theatrical/musical) event?
 
 > No. Those kinds of tokens are for supporting classmates.
 
+### MP5
+
+Do I really have to document values in addition to procedures?
+
+> You shouldn't have to. But you can. Send me a regrade request.
+
+```
+;;; my-list : list-of color?
+;;; A list of really awesome colors for building strange images.
+```
+
+What should I do if there's essentially no feedback on my MP?
+
+> Email me.
+
+What does "edge case" mean?
+
+> Your tests should look at something a bit more complex ("edgy") in 
+  the input, such as empty lists or singleton lists.
+
 ### SoLA 2
 
 How do I check the line width?
 
-> 
+> First, go to Preferences -> Editor -> General Editor.
+
+> Set the line width to 80 (I think it starts at 102)
+
+> Then, View -> Show Column Width Guide
 
 How do I come up with good tests?
 
@@ -247,7 +271,8 @@ How do I come up with good tests?
   numbers or integer vs. real vs. complex. For colors, that may be
   colors with components that are at or near the extremes (0 or
   255). For lists, that may be small and large lists. Perhaps
-  lists with duplicates.
+  lists with duplicates. Lists in which the first or last element
+  has special properties.
 
 > Remember that it's good to have some straightforward tests, too.
 
