@@ -109,12 +109,12 @@ b. Trace
 
     ; for func-1a
     (func-1a 9 '(1 8 2))
---> (if (null? '(1 8 2)) (list 9) (cons (car '(1 8 2)) (func-1a 9 (cdr '1 8 2))))
---> (if #f (list 9) (cons (car '(1 8 2)) (func-1a 9 (cdr '1 8 2))))
+--> (if (null? '(1 8 2)) (list 9) (cons (car '(1 8 2)) (func-1a 9 (cdr '(1 8 2)))))
+--> (if #f (list 9) (cons (car '(1 8 2)) (func-1a 9 (cdr '(1 8 2)))))
 --> (cons (car '(1 8 2)) (func-1a 9 (cdr '(1 8 2))))
 --> 
 
-<TODO: Finish the derivation>
+<TODO: Finish the derivation above. Remember to work left to right.>
 |#
 
 #|
