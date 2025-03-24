@@ -3,7 +3,7 @@
 (require csc151)
 (require rackunit)
 
-;; CSC 151 (SEMESTER)
+;; CSC 151-NN (SEMESTER)
 ;; Lab: Recursion basics (recursion-basics.rkt)
 ;; Authors: YOUR NAMES HERE
 ;; Date: THE DATE HERE
