@@ -102,7 +102,7 @@ Wellness
 Misc
 
 * Tuesday, 25 March 2025, 7:00--8:00 p.m., Science 3820.
-  _Mentor Session_ (only on conditionals)
+  _Mentor Session_ (only on local bindings)
 * Sunday, 30 March 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session_
 
@@ -282,5 +282,21 @@ How do I come up with good tests?
 
 Lab
 ---
+
+```
+(define func-1a
+  (lambda (x l)
+    (if (null? l)
+        (list x)
+        (cons (car l) (func-1a x (cdr l))))))
+```
+
+```
+    (func-1a 9 '(1 8 2))
+--> (if (null? '(1 8 2)) (list 9) (cons (car '(1 8 2)) (func-1a 9 (cdr '1 8 2))))
+--> (if #f (list 9) (cons (car '(1 8 2)) (func-1a 9 (cdr '1 8 2))))
+--> (cons (car '(1 8 2)) (func-1a 9 (cdr '(1 8 2))))
+--> ...
+```
 
 

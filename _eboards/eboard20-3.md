@@ -3,7 +3,7 @@ title: "EBoard 20: Recursion (Section 3)"
 number: 20
 section: eboards
 held: 2025-03-24
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -44,7 +44,7 @@ Administrative stuff
   And I'm not sure that grades are promis'd joy. But you get
   the gist.
 * I treated most readings as a "check off" opportunity. If you turned it
-  in, you got a check. I did not alwaysd look at your answers. If you have
+  in, you got a check. I did not always look at your answers. If you have
   outstanding questions, let me know.
     * No late penalties for ones I hadn't at least half graded:
         * Pre-reflection for MP5.
@@ -66,7 +66,7 @@ Scholarly
 
 * Thursday, 27 March 2025, 11 am--noon. JRC 101.
   _Scholars’ Convocation: Lauren Klein 
-   "Doing Al Differently: Lessons from Intersectional Feminism"_
+   "Doing AI Differently: Lessons from Intersectional Feminism"_
     * This convo is important enough that you'll earn two tokens for
       attending. (Fill in two slots, please.)
 
@@ -102,7 +102,7 @@ Wellness
 Misc
 
 * Tuesday, 25 March 2025, 7:00--8:00 p.m., Science 3820.
-  _Mentor Session_ (only on conditionals)
+  _Mentor Session_ (only on local bindings)
 * Sunday, 30 March 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session_
 
@@ -116,7 +116,7 @@ _These do not earn tokens, but are worth your consideration._
     * [SoLA 2](../las/) released at 4pm.
         * Old topics: Decomposition, Procedural abstraction, Primitive types,
           Collaboration, Lambda-free anonymous procedures (cut and compose).
-        * Semi-new topics: Conditionals, documentation, lists
+        * Semi-new topics: Conditionals, documentation, lists (and big 3)
         * New topics: Testing, program style, ethical considerations
 * Tuesday, 25 March 2025
     * [Submit lab writeup from class 20 (recursion basics)](https://www.gradescope.com/courses/948769/assignments/5978041)
@@ -203,7 +203,7 @@ Short notes on SoLA 2
     * You must still respond to an academic integrity statement.
 * There is (or should be) [a sample LA](https://www.gradescope.com/courses/948769/assignments/5975023/outline/edit) for you to check out.
 * If you define procedures using a form we haven't covered (e.g., other 
-  than `lambda`, `cut`, `section`, composition, or aliasing) I will assume
+  than `lambda`, `cut`, `section`, composition, or aliasing), I will assume
   that you've used inappropriate resources and will report you to CAS.
 
 ### The pre-assessment
@@ -213,7 +213,7 @@ Short notes on SoLA 2
   regular "brain dumps" are good for you. The goal here is to see how
   much you can recall without resources. "Um ... composition looks
   like `(o fun1 fun2 fun3)`. I recall writing something like
-  `(o (cut (+ <> 2)) sqr (cut - <> 2))`. [Note that the syntax there
+  `(o (cut (+ <> 2)) sqr (cut - <> 2))`." [Note that the syntax there
   isn't quite right.]
 * This should hold for every subject: Trying to generate info is better
   than re-reading.
@@ -252,6 +252,13 @@ What does "edge case" mean?
 
 > Your tests should look at something a bit more complex ("edgy") in 
   the input, such as empty lists or singleton lists.
+
+Should the tests succeed?
+
+> Yes, that's the point of testing. If they don't succeed, either (a) you
+  wrote a bad test or (b) your code is wrong.
+
+> When tests succeed, they generate no output. Yay!
 
 ### SoLA 2
 

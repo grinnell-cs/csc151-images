@@ -3,7 +3,7 @@ title: "EBoard 20: Recursion (Section 2)"
 number: 20
 section: eboards
 held: 2025-03-24
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -44,7 +44,7 @@ Administrative stuff
   And I'm not sure that grades are promis'd joy. But you get
   the gist.
 * I treated most readings as a "check off" opportunity. If you turned it
-  in, you got a check. I did not alwaysd look at your answers. If you have
+  in, you got a check. I did not always look at your answers. If you have
   outstanding questions, let me know.
     * No late penalties for ones I hadn't at least half graded:
         * Pre-reflection for MP5.
@@ -66,7 +66,7 @@ Scholarly
 
 * Thursday, 27 March 2025, 11 am--noon. JRC 101.
   _Scholars’ Convocation: Lauren Klein 
-   "Doing Al Differently: Lessons from Intersectional Feminism"_
+   "Doing AI Differently: Lessons from Intersectional Feminism"_
     * This convo is important enough that you'll earn two tokens for
       attending. (Fill in two slots, please.)
 
@@ -98,11 +98,12 @@ Wellness
   _Nerf at Noyce_.
 * Saturday, 29 March 2025, 4:00 p.m.--6:00 p.m., Aux Gym.
   _Badminton Club_ (Smash that bird!)
+* GORP Trip. Sign up.
 
 Misc
 
 * Tuesday, 25 March 2025, 7:00--8:00 p.m., Science 3820.
-  _Mentor Session_ (only on conditionals)
+  _Mentor Session_ (only on local bindings)
 * Sunday, 30 March 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session_
 
@@ -189,6 +190,7 @@ Short notes on MP5 (and related issues)
     * MPs will be "due" on Thursday and have a late submission on Sunday.
     * Turning in the MP on Thursday earns you two tokens.
     * There is no penalty for the Sunday submission.
+    * _This is not retroactive._ (or radioactive) (unlike Grinnell water)
 * If you have other things you think I should consider implementing, 
   let me know.
 
@@ -283,4 +285,4 @@ How do I come up with good tests?
 Lab
 ---
 
-
+Remember that you can use copy and paste when tracing!
