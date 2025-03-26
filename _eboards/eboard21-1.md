@@ -1,5 +1,5 @@
 ---
-title: "EBoard 21: Recursion (Section 1)"
+title: "EBoard 21: Recursion practice (Section 1)"
 number: 21
 section: eboards
 held: 2025-03-26
@@ -13,7 +13,6 @@ is working correctly.
 _Approximate optimistic overview_
 
 * Administrative stuff (way too much)
-* Notes on Monday's lab
 * Q&A
 * Lab
 
@@ -22,25 +21,35 @@ Administrative stuff
 
 ### Introductory notes
 
+* Happy [Document Freedom Day](https://digitalfreedoms.org/en/dfd)
+* Since it's a quiz day, we're going to limit the Q&A.
+
 ### Upcoming activities
 
 Scholarly
 
 * Thursday, 27 March 2025, 11 am--noon. JRC 101.
   _Scholars’ Convocation: Lauren Klein 
-   "Doing Al Differently: Lessons from Intersectional Feminism"_
+  "Doing Al Differently: Lessons from Intersectional Feminism"_
     * This convo is important enough that you'll earn two tokens for
       attending. (Fill in two slots, please.)
+* Thursday, 3 April 2025, 11am--noon, JRC 101.
+  _Scholars’ Convocation: LeAnne Howe
+  "A Choctaw In King Abdullah’s Court"_
+    * Also important, but not directly relevant to this class.
 
 Artistic
 
-* Thrusday, 27 March 2025, 7:30--9:30 p.m., Herrick Chapel.
+* Thursday, 27 March 2025, 7:30--9:30 p.m., Herrick Chapel.
   _Butcher Brown_.
 
 Multicultural
 
 * Friday, 28 March 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
   _Middle of Everywhere: Why you should visit Nepal_ 
+* Friday, 28 March 2025, 5:30 .m., HSSC N2116.
+  _A Latine-based dinner and conversation with Dr. Gabriella Soto_.
+    * Dinner provided.
 
 Peer
 
@@ -67,6 +76,10 @@ Misc
   _Mentor Session_
 * Tuesday, 1 April 2025, 7:00--8:00 p.m., Science 3820.
   _Mentor Session_
+* Wednesday, 2 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
+  _Community Forum_
+    * "Weekly discussion on legal protections and recourse on issues 
+      that higher education – and Grinnell College are facing."
 
 ### Other good things
 
@@ -102,17 +115,44 @@ _These do not earn tokens, but are worth your consideration._
 Short notes on Monday's lab
 ------------------------------
 
+_More notes to follow on Friday._
+
 * We have you study tracing, in part, so that you can start figuring out
   what these more complex procedures do.
+* Once you have mastered tracing, you can skip steps. Until then, you
+  shouldn't.
 
-Questions
+Questjons
 ---------
 
 ### Administrative
 
-### MP5
+I still don't have my redo for MP N graded.
+
+> It's in the queue. At worst, I'll extend deadlines for the second redos.
+
+Can I get an E on a second redo?
+
+> Nope. Just the original or the first redo.
+
+All that's wrong with my MP is that I forgot to hit Ctrl-I. Do I really
+have to redo it?
+
+> Was it that hard to hit Ctrl-I before submitting?
 
 ### SoLA 2
+
+If I've completed the learning assessment for a topic on a quiz, do I also
+have to do it on the SoLA?
+
+> Nope. You only need to demonstrate your mastery of the topic on an LA once.
+
+> Focus on the LAs that are not checked off on your grade sheet.
+
+Do I have to do all of my missing LAs?
+
+> Nope. You can do as many or as few as you want. However, you should
+  strive to complete all of them by the end of the semester.
 
 ### Other
 
