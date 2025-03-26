@@ -276,12 +276,14 @@ or all of these functions in crafting your own recursive solution.
 #|
 Document, write tests for, and implement a recursive procedure, 
 `(alphabetically-first words)`, that finds the alphabetically first
-string in a list of strings.
+string in a nonempty list of strings.
 
 You can use `string-ci<=?` to compare any two strings for alphabetical 
 order.
 
 You may not use `sort` to solve this problem.
+
+Note: You should not use the empty list as the base case.
 |#
 
 (define alphabetically-first
