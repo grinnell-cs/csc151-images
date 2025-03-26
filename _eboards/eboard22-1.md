@@ -103,22 +103,187 @@ _These do not earn tokens, but are worth your consideration._
     * _Remember that you can start as early as 8:00 a.m. (section 1) or
       stay until noon (section 2) or 4:30 p.m. (section 3)_
 
-Short notes on Monday's lab
-------------------------------
+Short notes on recent labs
+--------------------------
 
-_More notes to follow on Friday._
+### From Monday's lab: Why trace?
 
 * We have you study tracing, in part, so that you can start figuring out
   what these more complex procedures do.
 * Once you have mastered tracing, you can skip steps. Until then, you
   shouldn't.
 
+### From Monday's lab: What do the procedures do? (TPS)
+
+### From Wednesday's lab: How you're supposed to approach problems
+
+* _Document first_. Documentation ensures, at minimum, that you've
+  thought about input and output types.
+* _Tests next_. (Or write tests.)  Your tests ensure that you've
+  thought about a few cases. You're going to "test" (experiment
+  with your code) in any case, so why not spend the extra 30 seconds
+  to write down your expectations?
+* _Implement last_. This may seem strange. Nonetheless, we're best off 
+  waiting to implement until we've considered the issues above.
+
+### From Wednesday's lab: Testing (TPS)
+
+Tests for ...
+
+Tests for `my-product`?
+
+### From Wednesday's lab: Alphabetically first (TPS)
+
+At least four versions. We're going to explore them a bit. But first,
+some documentation and tests.
+
+```
+;;; (alphabetically-first words) -> string?
+;;;   words : list-of string?
+;;; Find the alphabetically first string in `words`, using
+;;; string-ci<=? for comparison.
+```
+
+What about our tests? (TPS)
+
+```
+```
+
+Okay, on to our first version.
+
+```
+(define alphabetically-first-a
+  (lambda (lst)
+    (if (= 1 (len lst))
+        (car lst)
+        (if (string-ci<=? (car lst) (alphabetically-first-a (cdr lst)))
+            (car lst)
+            (alphabetically-first-a (cdr lst))))))
+```
+
+Hmmm ... Sam says that when we repeat code, we should use a `let` binding.
+What's repeated here?
+
+```
+(define alphabetically-first-b
+```
+
+Hmmm ... Sam said something about how to check for one-element lists. How
+do we update that code.
+
+```
+(define alphabetically-first-c
+```
+
+Does it make a difference? We'll start by defining a variety of values.
+
+```
+(define nums10 (map number->string (range 10)))
+(define nums20 (map number->string (range 20)))
+(define rev20 (reverse nums20))
+(define nums22 (map number->string (range 22)))
+(define rev22 (reverse nums22))
+(define nums25 (map number->string (range 25)))
+(define rev25 (reverse nums25))
+(define nums30 (map number->string (range 30)))
+(define rev30 (reverse nums30))
+(define nums100 (map number->string (range 100)))
+(define nums1000 (map number->string (range 1000)))
+(define nums10000 (map number->string (range 10000)))
+(define nums20000 (map number->string (range 20000)))
+(define nums40000 (map number->string (range 40000)))
+```
+
+And some experiments with those. First we'll look at version a.
+
+```
+```
+
+Let's compare version b.
+
+```
+```
+
+And on to version c
+
+```
+```
+
+Here's another approach.
+
+```
+(define alphabetically-first-d
+  (lambda (lst)
+    (if (= 1 (len lst))
+        (car lst)
+        (if (string-ci<=? (car lst) (cadr lst))
+            (alphabetically-first-d (cons (car lst) (cddr lst)))
+            (alphabetically-first-d (cdr lst))))))
+```
+
+And here's that same approach with a more sensible "does it have one item?"
+
+```
+(define alphabetically-first-e
+  (lambda (lst)
+    (if (null? (cdr lst))
+        (car lst)
+        (if (string-ci<=? (car lst) (cadr lst))
+            (alphabetically-first-e (cons (car lst) (cddr lst)))
+            (alphabetically-first-e (cdr lst))))))
+```
+
+And yes, it makes a difference.
+
+```
+> (time (alphabetically-first-d nums10000))
+???
+> (time (alphabetically-first-d nums40000))
+???
+> (time (alphabetically-first-e nums40000))
+???
+```
+
+Here's another approach.
+
+```
+(define alphabetically-first-of-two
+  (lambda (str1 str2)
+    (if (string-ci<=? str1 str2)
+        str1
+        str2)))
+
+(define alphabetically-first-f
+  (lambda (words)
+    (if (null? (cdr words))
+        (car words)
+        (alphabetically-first-of-two (car words)
+                                     (alphabetically-first-f (cdr words))))))
+```
+
+And one other.
+
+```
+(define alphabetically-first-g
+  (lambda (words)
+    (afg-helper (car words) (cdr words))))
+
+(define afg-helper
+  (lambda (word remaining)
+    (if (null? remaining)
+        word
+        (afg-helper (alphabetically-first-of-two word (car remaining))
+                    (cdr remaining)))))
+```
+
+TPS: Which do you prefer (c, e, f, or g)? Why?
+
 Questions
 ---------
 
 ### Administrative
 
-### SoLA 2
+### Numeric recursion
 
 ### Other
 
