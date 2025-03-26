@@ -48,9 +48,10 @@ Multicultural
 
 * Friday, 28 March 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
   _Middle of Everywhere: Why you should visit Nepal_ 
-* Friday, 28 March 2025, 5:30 .m., HSSC N2116.
+* Friday, 28 March 2025, 5:30 p.m., HSSC N2116.
   _A Latine-based dinner and conversation with Dr. Gabriella Soto_.
     * Dinner provided.
+    * "It's someting about immigration."
 
 Peer
 
@@ -137,6 +138,12 @@ have to redo it?
 
 > Was it that hard to hit Ctrl-I before submitting?
 
+If the MP grades in my email don't match my original MP grades, what does
+that mean?
+
+> It means your MP was graded, but since we haven't graded all of them,
+  we haven't published it yet.
+
 ### SoLA 2
 
 If I've completed the learning assessment for a topic on a quiz, do I also
@@ -170,7 +177,7 @@ How does check 2 relate to recursion?
   solve the problem on the simplified input, and then use the result of
   that call to solve the initial problem.
 
-> Check 2 asks us to dor that for a few problems.
+> Check 2 asks us to do that for a few problems.
 
 Can we go over the example in the reading?
 
@@ -179,3 +186,4 @@ Can we go over the example in the reading?
 Lab
 ---
 
+Make sure to think about types. What type should `my-product` return?
