@@ -12,7 +12,8 @@ is working correctly.
 
 _Approximate optimistic overview_
 
-* Administrative stuff (way too much)
+* Quiz
+* Administrative stuff
 * Q&A
 * Lab
 
@@ -101,10 +102,16 @@ _These do not earn tokens, but are worth your consideration._
         * New topics: Testing, program style, ethical considerations
     * Readings:
        * [Numeric recursion](../readings/numeric-recursion)
+       * [Submit reading response for class 22 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5989919)
+    * [Submit lab writeup from class 21 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5989924)
 * Friday, 28 March 2025
     * Mini-Project 6 assigned
 * Sunday, 30 March 2025
-    * Submit Pre-reflection for MP6 due
+    * [Submit lab writeup from class 22 on Gradescope]
+    * Readings
+        * [Pairs](../readings/pairs)
+        * [Submit reading response for class 23 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5989953)
+    * [Submit Pre-reflection for MP6](https://www.gradescope.com/courses/948769/assignments/5989931)
     * MP redos due
         * [Submit second redo of MP 1 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5902141)
         * [Submit second redo of MP 2 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5902142)
@@ -112,17 +119,7 @@ _These do not earn tokens, but are worth your consideration._
         * [Submit redo of MP4 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5902148)
         * [Submit redo of MP5 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5902152)
 
-Short notes on Monday's lab
-------------------------------
-
-_More notes to follow on Friday._
-
-* We have you study tracing, in part, so that you can start figuring out
-  what these more complex procedures do.
-* Once you have mastered tracing, you can skip steps. Until then, you
-  shouldn't.
-
-Questjons
+Questions
 ---------
 
 ### Administrative
@@ -154,7 +151,30 @@ Do I have to do all of my missing LAs?
 > Nope. You can do as many or as few as you want. However, you should
   strive to complete all of them by the end of the semester.
 
-### Other
+### Recursion
+
+How does check 2 relate to recursion?
+
+> A recursive procedure generally has three parts (or kinds of parts).
+
+> _A base-case test_.  When is the input "simple" enough that we can
+  give an immediate answer. For lists, this is typically "the list is
+  empty" or "the list has one element".  (There may also be multiple
+  base case tests, each with a different base-case value.)
+
+> _A base-case value_. The value we return when we reach the base
+  case.
+
+> _A recursive call_. If the input is not yet "simple enough", we must
+  simplify it (for lists, this usually means taking the cdr), recursively
+  solve the problem on the simplified input, and then use the result of
+  that call to solve the initial problem.
+
+> Check 2 asks us to dor that for a few problems.
+
+Can we go over the example in the reading?
+
+> Maybe on Friday.
 
 Lab
 ---
