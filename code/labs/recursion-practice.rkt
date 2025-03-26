@@ -20,7 +20,7 @@ you will explore the construction of some recursive procedures.
 ; +---------------+
 
 ;;; (sum numbers) -> number?
-;;;   numbers : listof number?
+;;;   numbers : list-of number?
 ;;; Add all the numbers in a list together.
 (define sum
   (lambda (numbers)
@@ -44,7 +44,7 @@ you will explore the construction of some recursive procedures.
 ;;; (count-value value values) -> integer?
 ;;;   value : any?
 ;;;   values : list?
-;;; Count how many times value appears in values.
+;;; Count how many times `value` appears in `values`.
 (define count-value
   (lambda (value values)
     (cond
@@ -56,8 +56,8 @@ you will explore the construction of some recursive procedures.
        (count-value value (cdr values))])))
 
 ;;; (largest numbers) -> integer?
-;;;   numbers : listof integer?
-;;; Finds the largest number in a list
+;;;   numbers : (all-of (list-of integer?) non-empty?)
+;;; Finds the largest number in a nonempty list.
 (define largest
   (lambda (numbers)
     (if (null? (cdr numbers))
@@ -208,6 +208,9 @@ that computes the product of the elements of a list.  (The product is
 the result of multiplying them together.)
 |#
 
+;;; (my-product l) -> number?
+;;;   l : list-of number?
+;;; Compute the product of all the values in `l`.
 (define my-product
   (lambda (l)
     (if (null? l)
@@ -224,7 +227,7 @@ a. Build a small test suite for this function using `rackunit` in the
 ; (test-equal? "sample test" (my-product '(2 3 4)) 24)
 ; (test-equal? "special case of empty list" (my-product '()) 1)
 
-;;; Write your additional rackunit tests for my-product here
+; Write your additional rackunit tests for my-product here.
 
 #|
 b. In your testing, you should have noted that the function doesn't
@@ -234,7 +237,7 @@ b. In your testing, you should have noted that the function doesn't
    function passes all of your tests. Describe the problem and your
    fix in the space below.
 
-;;; Write your explanation of the code's problem and your fix
+; Write your explanation of the code's problem and your fix.
 
 |#
 
@@ -263,6 +266,9 @@ count-value in your solution. Instead, use the ideas behind some
 or all of these functions in crafting your own recursive solution.
 |#
 
+;;; (tally-odd numbers) -> ???
+;;;   numbers : ???
+;;; ????
 (define tally-odd
   (lambda (numbers)
     -1))
@@ -286,6 +292,9 @@ You may not use `sort` to solve this problem.
 Note: You should not use the empty list as the base case.
 |#
 
+;;; (alphabetically-first words) -> ???
+;;;   words : ???
+;;; ???
 (define alphabetically-first
   (lambda (words)
     ""))
