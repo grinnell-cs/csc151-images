@@ -72,7 +72,7 @@ Scholarly
 
 Artistic
 
-* Thrusday, 27 March 2025, 7:30--9:30 p.m., Herrick Chapel.
+* Thursday, 27 March 2025, 7:30--9:30 p.m., Herrick Chapel.
   _Butcher Brown_.
 
 Multicultural
