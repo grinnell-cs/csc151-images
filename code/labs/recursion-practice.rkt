@@ -75,7 +75,7 @@ b. Save this file as `recursion-practice.rkt`.  And don't forget that
 when we write recursive procedures, we may accidentally write procedures
 that recurse forever.  Save early and often!
 
-c. Review the procedures above to make sure that you know what they are 
+c. Review the procedures above to make sure that you know what they are
 intended to do; you can go back and look at the details when you write
 variants.
 |#
@@ -248,8 +248,8 @@ b. In your testing, you should have noted that the function doesn't
 ; +--------------------------------------+
 
 #|
-The `length` procedure counts all the values in a list.  The `count-value` 
-procedure counts how many time a supplied value appears in a list.  What 
+The `length` procedure counts all the values in a list.  The `count-value`
+procedure counts how many time a supplied value appears in a list.  What
 if we want something in between the two: Rather than counting all the values,
 we only want to count some of them, and rather than counting a single value,
 we want to count all values matching a particular criterion?  (You may
@@ -257,7 +257,7 @@ think of this as `tally`.)
 |#
 
 #|
-Document, write tests for, and implement a recursive procedure, 
+Document, write tests for, and implement a recursive procedure,
 `(tally-odd numbers)` that, given a list of integers, counts how
 many are odd.
 
@@ -280,16 +280,17 @@ or all of these functions in crafting your own recursive solution.
 ; +-------------------------------+
 
 #|
-Document, write tests for, and implement a recursive procedure, 
+Document, write tests for, and implement a recursive procedure,
 `(alphabetically-first words)`, that finds the alphabetically first
 string in a nonempty list of strings.
 
-You can use `string-ci<=?` to compare any two strings for alphabetical 
+You can use `string-ci<=?` to compare any two strings for alphabetical
 order.
 
 You may not use `sort` to solve this problem.
 
-Note: You should not use the empty list as the base case.
+Note: Since the list is nonempty, you should not use the empty list as
+the base case.
 |#
 
 ;;; (alphabetically-first words) -> ???
@@ -308,7 +309,7 @@ Note: You should not use the empty list as the base case.
 #|
 As you've seen, `(null? lst)` checks if a list has zero elements.
 
-Suppose we want to write a procedure, `(singleton? lst)`, that checks 
+Suppose we want to write a procedure, `(singleton? lst)`, that checks
 whether a list has exactly one element.
 
 Many students are tempted to write the following.
@@ -338,14 +339,14 @@ ENTER YOUR ANSWER HERE
 |#
 
 #|
-c. Write a non-recursive procedure, `(simple-length lst)` that returns 
+c. Write a non-recursive procedure, `(simple-length lst)` that returns
 
 * "empty", if the list has no elements;
-* "one", if the list has one element; 
+* "one", if the list has one element;
 * "two", if the list has two elements; and
 * "many", if the list has more than two elements.
 
-You may not use `length` or `my-length` or recursion in solving this 
+You may not use `length` or `my-length` or recursion in solving this
 problem.
 |#
 
@@ -379,7 +380,7 @@ of these issues, consider implementing any of the following procedures.
 ; +--------------------------+
 
 #|
-Document, write tests for, and write a procedure, `(find-first-skip lst)` 
+Document, write tests for, and write a procedure, `(find-first-skip lst)`
 that takes a list of symbols as a parameter and returns the index
 of the first instance of the symbol `'skip` in `lst`, if `skip` appears
 in `lst`, and false otherwise.
@@ -401,7 +402,7 @@ in `lst`, and false otherwise.
 ; +--------------------------+
 
 #|
-Document, write tests for, and implement a recursive procedure, 
+Document, write tests for, and implement a recursive procedure,
 `(find-index val lst)`, that takes a value and a list of values as
 its parameters and returns the index of the first instance of val
 in lst, if the value appears in the list. If the value does not
