@@ -396,6 +396,8 @@ prior characteristics will get an R.
     [ ] 
     [ ] 
     [ ] 
+[ ] Includes a new procedure that manipulates lists of images.
+[ ] Includes instructions for making the first three freestyle images.
 ```
 
 ### Exemplary / Exceeds expectations
@@ -407,13 +409,17 @@ prior characteristics will get an M.
 [ ] Passes all of the **E** autograder tests. For example,
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.
+[ ] Avoids identical recursive calls.
+[ ] Does not use `length` in parts one, two, and five.
 [ ] Documentation for all procedures is correct / has the correct form.
 [ ] Each set of tests includes at least one edge case (e.g., an empty
     list, if appropriate).
     [ ] 
     [ ] 
     [ ] 
+[ ] Includes a new fractal procedure.
 [ ] Includes the three fractal images.
+[ ] Includes instructions for making the three fractal images.
 ```
 
 ## Q&A
@@ -436,7 +442,7 @@ What would be considered an identical recursive call?
 
 > For example, to make a fractal triangle of side length `s`, you need to make three fractal triangles of side length `s`/2. If you wrote something like
 
-```
+> ```
 (above (fractal-triangle (/ side 2) color (- n 1))
        (beside (fractal-triangle (/ side 2) color (- n 1))
                (fractal-triangle (/ side 2) color (- n 1))))
