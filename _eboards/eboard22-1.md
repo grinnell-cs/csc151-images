@@ -3,7 +3,7 @@ title: "EBoard 22: Pause for breath: Reflections on recursion (Section 1)"
 number: 22
 section: eboards
 held: 2025-03-28
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -13,9 +13,10 @@ is working correctly.
 _Approximate optimistic overview_
 
 * Administrative stuff 
+* MP6
+* Q&A
 * Notes on the local bindings quiz
 * Notes on recent labs (long)
-* Q&A
 * A few problems (if there's time)
 
 Administrative stuff
