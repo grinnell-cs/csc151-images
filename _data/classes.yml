@@ -242,6 +242,11 @@
   lab:
     - page: /labs/recursion-practice.html
 
+- topic: Pause for breath
+  abbrev: pause-recursion
+  summary: |
+    We pause to reflect on various recursion issues.
+
 - topic: Recursion over numbers
   abbrev: number-recursion
   summary: |
@@ -263,16 +268,6 @@
     - page: /readings/pairs.html
   lab:
     - page: /labs/pairs.html
-
-- topic: Randomness
-  abbrev: randomness
-  summary: |
-    We consider Scheme's `random` procedure and how one might use
-    that procedure in generating images.
-  reading:
-    - page: /readings/randomness.html
-  lab:
-    - page: /labs/random-language.html
 
 - topic: Vectors
   abbrev: vectors
@@ -301,11 +296,15 @@
   lab:
     - page: /labs/hash-tables.html
 
-- topic: Pause for breath
-  abbrev: pause-post-sola3
+- topic: Randomness
+  abbrev: randomness
   summary: |
-    We pause to reflect on recent topics, particularly the transition
-    from pure functional programming to imperative programming.
+    We consider Scheme's `random` procedure and how one might use
+    that procedure in generating images.
+  reading:
+    - page: /readings/randomness.html
+  lab:
+    - page: /labs/random-language.html
 
 - topic: Data abstraction
   abbrev: data-abstraction
