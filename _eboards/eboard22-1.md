@@ -1,5 +1,5 @@
 ---
-title: "EBoard 22: Numeric recursion (Section 1)"
+title: "EBoard 22: Pause for breath: Reflections on recursion (Section 1)"
 number: 22
 section: eboards
 held: 2025-03-28
@@ -12,15 +12,24 @@ is working correctly.
 
 _Approximate optimistic overview_
 
-* Administrative stuff (way too much)
-* Notes on recent labs
+* Administrative stuff 
+* Notes on the local bindings quiz
+* Notes on recent labs (long)
 * Q&A
-* Lab
+* A few problems (if there's time)
 
 Administrative stuff
 --------------------
 
 ### Introductory notes
+
+* It appears that some graders were a bit over-cautious on the edge case
+  requirements for MP2 (and, perhaps, elsewhere). If you'd like me to
+  review that issue, let me know.
+* Because the style LA was particularly painful, I'll plan a makeup style 
+  quiz that you should be able to do in fifteen minutes for next week.
+  Make sure to read [the handout on program style](../handouts/style)
+  before that quiz.
 
 ### Upcoming activities
 
@@ -114,6 +123,57 @@ Short notes on recent labs
   shouldn't.
 
 ### From Monday's lab: What do the procedures do? (TPS)
+
+#### `func1a`
+
+```
+;;; ??
+(define func-1a
+  (lambda (x l)
+    (if (null? l)
+        (list x)
+        (cons (car l) (func-1a x (cdr l))))))
+```
+
+#### `func1b`
+
+```
+(define func-1b
+  (lambda (l1 l2)
+    (if (null? l1)
+        l2
+        (cons (car l1) (func-1b (cdr l1) l2)))))
+```
+
+#### `func2a`
+
+```
+(define func-2a
+  (lambda (x l)
+    (if (null? l)
+        null
+        (if (equal? (car l) x)
+            (func-2a x (cdr l))
+            (cons (car l) (func-2a x (cdr l)))))))
+```
+
+#### `func2b`
+
+```
+(define func-2b
+  (lambda (l1 l2)
+    (if (null? l2)
+        l1
+        (func-2b (cons (car l2) l1) (cdr l2)))))
+```
+
+#### `r`
+
+```
+(define r
+  (lambda (lst)
+    (func-2b '() lst)))
+```
 
 ### From Wednesday's lab: How you're supposed to approach problems
 
@@ -244,14 +304,15 @@ And yes, it makes a difference.
 ???
 ```
 
-Here's another approach.
+Here's another approach, one based on `largest`.
+
 
 ```
-(define alphabetically-first-of-two
-  (lambda (str1 str2)
-    (if (string-ci<=? str1 str2)
-        str1
-        str2)))
+(define largest
+  (lambda (numbers)
+    (if (null? (cdr numbers))
+        (car numbers)
+        (max (car numbers) (largest (cdr numbers))))))
 
 (define alphabetically-first-f
   (lambda (words)
@@ -259,9 +320,13 @@ Here's another approach.
         (car words)
         (alphabetically-first-of-two (car words)
                                      (alphabetically-first-f (cdr words))))))
-```
 
-And one other.
+(define alphabetically-first-of-two
+  (lambda (str1 str2)
+    (if (string-ci<=? str1 str2)
+        str1
+        str2)))
+```
 
 ```
 (define alphabetically-first-g
