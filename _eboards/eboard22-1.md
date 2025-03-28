@@ -13,9 +13,10 @@ is working correctly.
 _Approximate optimistic overview_
 
 * Administrative stuff 
-* Notes on the local bindings quiz
-* Notes on recent labs (long)
+* Notes on MP6
 * Q&A
+* Notes on the local bindings quiz
+* Notes on recent labs
 * A few problems (if there's time)
 
 Administrative stuff
@@ -23,6 +24,11 @@ Administrative stuff
 
 ### Introductory notes
 
+* Today is a "talk and TPS day".
+* All the MPs have been returned (finally). Let me know if you need
+  extra time for othe next redo.
+* All the tokens earned are in place. We'll look quickly at how you
+  tell how you did.
 * It appears that some graders were a bit over-cautious on the edge case
   requirements for MP2 (and, perhaps, elsewhere). If you'd like me to
   review that issue, let me know.
@@ -30,17 +36,23 @@ Administrative stuff
   quiz that you should be able to do in fifteen minutes for next week.
   Make sure to read [the handout on program style](../handouts/style)
   before that quiz.
+* Wednesday's quiz also did not go well, so we'll be talking about thata.
 
 ### Upcoming activities
 
 Scholarly
 
+* Friday, 28 March 2025, 5:00--6;00 p.m., HSSC A2231.
+  _Conversations in the Humanities: Leadership in the Age of AI_
 * Thursday, 3 April 2025, 11am--noon, JRC 101.
   _Scholars’ Convocation: LeAnne Howe
   "A Choctaw In King Abdullah’s Court"_
     * Also important, but not directly relevant to this class.
 
 Artistic
+
+* Friday, 28 March 2025: 5:00--5:45 p.m., HSSC S1325.
+  _Kinetic Challenge Information Session_.
 
 Multicultural
 
@@ -63,11 +75,17 @@ Wellness
   _Nerf at Noyce_.
 * Saturday, 29 March 2025, 4:00 p.m.--6:00 p.m., Aux Gym.
   _Badminton Club_ (Smash that bird!)
+* Tuesday, 1 April 2025, Anywhere, Anytime.
+  _Conduct and reflect on a non-harmful April Fool's Day prank._
 * Tuesday, 1 April 2025, 12:15--12:50 p.m., GCMoA.
   _Yoga in the Museum_.
 * Tuesday, 1 April 2025, 4:30--6:30 p.m., 
   BRAC P103 (Multipurpose Dance Studio).
   _Wellness Yoga_.
+* Tuesday, 1 April 2025, 5:00--6:00 p.m., HSSC Atrium.
+  _Therapy Dogs_.
+* Tuesday, 1 April 2025, 7:15--8:15 p.m., HSSC Atrium.
+  _Therapy Dogs_.
 
 Misc
 
@@ -78,7 +96,7 @@ Misc
 * Wednesday, 2 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
   _Community Forum_
     * "Weekly discussion on legal protections and recourse on issues 
-      that higher education – and Grinnell College are facing."
+      that higher education and Grinnell College face."
 
 ### Other good things
 
@@ -86,16 +104,8 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Upcoming work
 
-* Thursday, 27 March 2025
-    * [SoLA 2](../las/) due.
-        * Old topics: Decomposition, Procedural abstraction, Primitive types,
-          Collaboration, Lambda-free anonymous procedures (cut and compose).
-        * Semi-new topics: Conditionals, documentation, lists
-        * New topics: Testing, program style, ethical considerations
-    * Readings:
-       * [Numeric recursion](../readings/numeric-recursion)
 * Friday, 28 March 2025
-    * Mini-Project 6 assigned
+    * [Mini-Project 6](../mps/mp06) assigned
 * Sunday, 30 March 2025
     * Submit Pre-reflection for MP6 due
     * MP redos due
@@ -111,6 +121,21 @@ _These do not earn tokens, but are worth your consideration._
     * _Remember that you can bring a sheet of hand-written notes for each quiz._
     * _Remember that you can start as early as 8:00 a.m. (section 1) or
       stay until noon (section 2) or 4:30 p.m. (section 3)_
+
+### Friday PSA
+
+Mini-Project 6
+--------------
+
+* Two topics, both recursive.
+* The first topic is newly written. The second is newly edited.
+
+Questions
+---------
+
+### Administrative
+
+### Other
 
 Short notes on recent labs
 --------------------------
@@ -188,9 +213,9 @@ Short notes on recent labs
 
 ### From Wednesday's lab: Testing (TPS)
 
-Tests for ...
+Tests for `tally-odd`
 
-Tests for `my-product`?
+Tests for `alphabetically-first`?
 
 ### From Wednesday's lab: Alphabetically first (TPS)
 
@@ -343,15 +368,23 @@ Here's another approach, one based on `largest`.
 
 TPS: Which do you prefer (c, e, f, or g)? Why?
 
-Questions
----------
+A few problems
+--------------
 
-### Administrative
+_We'll also do these as TPS._
 
-### Numeric recursion
+I'll ask for documentation, then tests, then code.
 
-### Other
+### `grab`
 
-Lab
----
+Like `take`, but still works if we try to grab more elements than there are.
+(in that case, it just returns what's there).
 
+### `skip`
+
+Like `drop`, but still works if we try to skip more elements than there are.
+
+### `(merge-alternating lst1 lst2)`
+
+Alternately grab elements from the two lists, which may have different
+lengths. When we run out of one, grab from the other.
