@@ -3,7 +3,7 @@ title: "EBoard 22: Pause for breath: Reflections on recursion (Section 2)"
 number: 22
 section: eboards
 held: 2025-03-28
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -26,7 +26,7 @@ Administrative stuff
 
 * Today is a "talk and TPS day".
 * All the MPs have been returned (finally). Let me know if you need
-  extra time for othe next redo.
+  extra time for the next redo.
 * All the tokens earned are in place. We'll look quickly at how you
   tell how you did.
 * It appears that some graders were a bit over-cautious on the edge case
@@ -35,14 +35,14 @@ Administrative stuff
 * Because the style LA was particularly painful, I'll plan a makeup style 
   quiz that you should be able to do in fifteen minutes for next week.
   Make sure to read [the handout on program style](../handouts/style)
-  before that quiz.
-* Wednesday's quiz also did not go well, so we'll be talking about thata.
+  before that quiz. Take notes.
+* Wednesday's quiz also did not go well, so we'll be talking about that.
 
 ### Upcoming activities
 
 Scholarly
 
-* Friday, 28 March 2025, 5:00--6;00 p.m., HSSC A2231.
+* Friday, 28 March 2025, 5:00--6:10 p.m., HSSC A2231.
   _Conversations in the Humanities: Leadership in the Age of AI_
 * Thursday, 3 April 2025, 11am--noon, JRC 101.
   _Scholars’ Convocation: LeAnne Howe
@@ -66,6 +66,9 @@ Peer
 
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
+
+* Sunday, 30 March 2025, 11 a.m., Tennis courts.
+  _Women's Tennis vs. Coe_ (Senior Day)
 
 Wellness
 
@@ -124,6 +127,11 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
+* Please be moderate.
+* Try to get enough sleep. Consider other wellness activities, such as a nice
+  walk on a nice day. Or singing in the rain.
+* Consent is essential, but not sufficient.
+
 Mini-Project 6
 --------------
 
@@ -137,7 +145,12 @@ Questions
 
 ### Other
 
-Short notes on recent labs
+Short notes on Wednesday's quiz
+-------------------------------
+
+See your notes or the recording.
+
+Not so short notes on recent labs
 --------------------------
 
 ### From Monday's lab: Why trace?
@@ -152,53 +165,90 @@ Short notes on recent labs
 #### `func1a`
 
 ```
-;;; ??
+;;; (func-1a x lst) -> list-of anything?
+;;;   x : any?
+;;;   lst : list-of anything?
+;;; Creates a new list consisting of the elements of `lst` with `x`
+;;; added to the end.
 (define func-1a
-  (lambda (x l)
-    (if (null? l)
+  (lambda (x lst)
+    (if (null? lst)
         (list x)
-        (cons (car l) (func-1a x (cdr l))))))
+        (cons (car lst) (func-1a x (cdr lst))))))
 ```
 
 #### `func1b`
 
 ```
+;;; (func-1b lst1 lst2) -> list?
+;;;   lst1 : list?
+;;;   lst2 : list?
+;;; Constructs a new list all the elements of list 1 followed by all the
+;;; elements of lst2.
 (define func-1b
-  (lambda (l1 l2)
-    (if (null? l1)
-        l2
-        (cons (car l1) (func-1b (cdr l1) l2)))))
+  (lambda (lst1 lst2)
+    (if (null? lst1)
+        lst2
+        (cons (car lst1) (func-1b (cdr lst1) lst2)))))
 ```
+
+```
+> (test-equal? "simple test" (func1b '(1 2 3) '(4 5 6)) '(1 2 3 4 5 6))
 
 #### `func2a`
 
 ```
+;;; (func-2a x lst) -> list?
+;;;   x : any?
+;;;   lst : list-of any?
+;;; Remove all values equal to x
 (define func-2a
-  (lambda (x l)
-    (if (null? l)
+  (lambda (x lst)
+    (if (null? lst)
         null
-        (if (equal? (car l) x)
-            (func-2a x (cdr l))
-            (cons (car l) (func-2a x (cdr l)))))))
+        (if (equal? (car lst) x)
+            (func-2a x (cdr lst))
+            (cons (car lst) (func-2a x (cdr lst)))))))
+```
+
+```
+(test-equal? "the value to remove is first" (func-2a 1 '(1 2 3)) '(2 3))
+(test-equal? "value to remove in middle" (func-2a 2 '(1 2 3 4)) '(1 3 4))
+(test-equal? "empty list" (func-2a "um" '()) '())
+(test-equal? "not in list" (func-2a 5 '(1 2 3)) '(1 2 3))
+(test-equal? "wawa" (func-2a 'wa (make-list 10 'wa)) '())
+(test-equal? "string in middle" (func-2a "two" '(1 "two" 3 4)) '(1 3 4))
+(test-equal? "value to remove at end" (func-2a 'd '(a b c d)) '(a b c))
+(test-equal? "multiple copies" 
+             (func-2a 'wa '(wa ter wa sh wa rn wa ck wa llaby))
+             '(ter sh rn ck llaby))
+ 
 ```
 
 #### `func2b`
 
 ```
+;;; (func-2b lst1 lst2) -> list?
+;;;   lst1 : list?
+;;;   lst2 : list?
+;;; The concatenation of `lst2` and `lst1`.
+;;; The concatenation of (the reverse of `lst2`) and `lst1`.
 (define func-2b
-  (lambda (l1 l2)
-    (if (null? l2)
-        l1
-        (func-2b (cons (car l2) l1) (cdr l2)))))
+  (lambda (lst1 lst2)
+    (if (null? lst2)
+        lst1
+        (func-2b (cons (car lst2) lst1) (cdr lst2)))))
 ```
 
 #### `r`
 
 ```
+; reverse `lst`
 (define r
   (lambda (lst)
     (func-2b '() lst)))
 ```
+
 
 ### From Wednesday's lab: How you're supposed to approach problems
 
@@ -251,6 +301,13 @@ What's repeated here?
 
 ```
 (define alphabetically-first-b
+  (lambda (lst)
+    (if (= 1 (len lst))
+        (car lst)
+        (let ([first-of-rest (alphabetically-first-b (cdr lst))])
+          (if (string-ci<=? (car lst) first-of-rest)
+              (car lst)
+              first-of-rest)))))
 ```
 
 Hmmm ... Sam said something about how to check for one-element lists. How

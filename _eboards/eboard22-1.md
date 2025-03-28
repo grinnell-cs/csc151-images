@@ -26,7 +26,7 @@ Administrative stuff
 
 * Today is a "talk and TPS day".
 * All the MPs have been returned (finally). Let me know if you need
-  extra time for othe next redo.
+  extra time for the next redo.
 * All the tokens earned are in place. We'll look quickly at how you
   tell how you did.
 * It appears that some graders were a bit over-cautious on the edge case
@@ -35,14 +35,14 @@ Administrative stuff
 * Because the style LA was particularly painful, I'll plan a makeup style 
   quiz that you should be able to do in fifteen minutes for next week.
   Make sure to read [the handout on program style](../handouts/style)
-  before that quiz.
-* Wednesday's quiz also did not go well, so we'll be talking about thata.
+  before that quiz. And have note!
+* Wednesday's quiz also did not go well, so we'll be talking about that.
 
 ### Upcoming activities
 
 Scholarly
 
-* Friday, 28 March 2025, 5:00--6;00 p.m., HSSC A2231.
+* Friday, 28 March 2025, 5:00--6:10 p.m., HSSC A2231.
   _Conversations in the Humanities: Leadership in the Age of AI_
 * Thursday, 3 April 2025, 11am--noon, JRC 101.
   _Scholars’ Convocation: LeAnne Howe
@@ -58,7 +58,7 @@ Multicultural
 
 * Friday, 28 March 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
   _Middle of Everywhere: Why you should visit Nepal_ 
-* Friday, 28 March 2025, 5:30 .m., HSSC N2116.
+* Friday, 28 March 2025, 5:30 p.m., HSSC N2116.
   _A Latine-based dinner and conversation with Dr. Gabriella Soto_.
     * Dinner provided.
 
@@ -115,7 +115,7 @@ _These do not earn tokens, but are worth your consideration._
         * [Submit redo of MP4 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5902148)
         * [Submit redo of MP5 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5902152)
 * Wednesday, 2 April 2025 
-    * Quiz: List recursion 
+    * Quiz: List recursion
     * Makeup quiz: Local bindings (`let` and `let*`)
     * Makeup quiz: Tracing
     * _Remember that you can bring a sheet of hand-written notes for each quiz._
@@ -123,6 +123,14 @@ _These do not earn tokens, but are worth your consideration._
       stay until noon (section 2) or 4:30 p.m. (section 3)_
 
 ### Friday PSA
+
+* If you choose to consume substances that alter your body, please do so
+  in moderation. 
+* If you choose to do activities that alter you body or brain, such sa
+  CS homework, please do so in moderation.
+* Try to get enough sleep!
+* If you cohabit, consent is essential, but not sufficient.
+* You are awesome, please stay awesome.
 
 Mini-Project 6
 --------------
@@ -136,6 +144,11 @@ Questions
 ### Administrative
 
 ### Other
+
+Short notes on Wednesday's quiz
+-------------------------------
+
+See recording or your notes or memory.
 
 Short notes on recent labs
 --------------------------
@@ -152,49 +165,81 @@ Short notes on recent labs
 #### `func1a`
 
 ```
-;;; ??
+;;; (func-1a x lst) -> list?
+;;;   x : anything?
+;;;   lst : list?
+;;; Put all elements in `lst` in front of `x`.
+;;; Alt definition: Put `x` at the end of `lst`.
 (define func-1a
-  (lambda (x l)
-    (if (null? l)
+  (lambda (x lst)
+    (if (null? lst)
         (list x)
-        (cons (car l) (func-1a x (cdr l))))))
+        (cons (car lst) (func-1a x (cdr lst))))))
 ```
 
 #### `func1b`
 
 ```
+;;; (func-1b lst1 lst2) -> list?
+;;;   lst1 : list?
+;;;   lst2 : list?
+;;; Joins the elements of `lst1` and `lst2` into a single list.
+;;; This is how `append` can be implemented.
 (define func-1b
-  (lambda (l1 l2)
-    (if (null? l1)
-        l2
-        (cons (car l1) (func-1b (cdr l1) l2)))))
+  (lambda (lst1 lst2)
+    (if (null? lst1)
+        lst2
+        (cons (car lst1) (func-1b (cdr lst1) lst2)))))
 ```
 
 #### `func2a`
 
 ```
+;;; (func-2a x lst) -> list?
+;;;   x : any?
+;;;   lst : list?
+;;; Removes all values equal to `x` from the list.
 (define func-2a
-  (lambda (x l)
-    (if (null? l)
+  (lambda (x lst)
+    (if (null? lst)
         null
-        (if (equal? (car l) x)
-            (func-2a x (cdr l))
-            (cons (car l) (func-2a x (cdr l)))))))
+        (if (equal? (car lst) x)
+            (func-2a x (cdr lst))
+            (cons (car lst) (func-2a x (cdr lst)))))))
+```
+
+```
+(test-equal? "all the same" (func-2a 1 '(1 1 1 1)) '())
+(test-equal? "different values, not the first" (func-2a 2 '(1 2 3 4)) '(1 3 4))
+(test-equal? "last element" (func-2a 'um '(uh i dunno um)) '(uh i dunno))
+(test-equal? "null list" (func-2a 'something '()) '())
 ```
 
 #### `func2b`
 
 ```
+;;; (func-2b lst1 lst2) -> list?
+;;;   lst1 : list?
+;;;   lst2 : list?
+;;; Put the elements of `lst2` in reverse order before the elements of `lst1`.
 (define func-2b
-  (lambda (l1 l2)
-    (if (null? l2)
-        l1
-        (func-2b (cons (car l2) l1) (cdr l2)))))
+  (lambda (lst1 lst2)
+    (if (null? lst2)
+        lst1
+        (func-2b (cons (car lst2) lst1) (cdr lst2)))))
 ```
 
+```
+(test-equal? "simple test" (func-2b '(1 2 3) '(4 5 6)) '(6 5 4 1 2 3))
+(test-equal? "another simple test" (func-2b '(1 2 3) '(4 5 6 7)) '(7 6 5 4 1 2 3))
+(test-equal? "edge case" (func-2b '(1 2 3) '()) '(1 2 3))
+(test-equal? "edge case 2" (func-2b '() '(4 5 6)) '(6 5 4))
+```
+```
 #### `r`
 
 ```
+; reverse a list
 (define r
   (lambda (lst)
     (func-2b '() lst)))
@@ -224,14 +269,20 @@ some documentation and tests.
 
 ```
 ;;; (alphabetically-first words) -> string?
-;;;   words : list-of string?
+;;;   words : (all-of list-of string? nonempty?)
 ;;; Find the alphabetically first string in `words`, using
-;;; string-ci<=? for comparison.
+;;; `string-ci<=?` for comparison.
 ```
 
 What about our tests? (TPS)
 
 ```
+(test-equal? "same words" (alphabetically-first '("same" "same" "same")) "same")
+(test-equal? "diff words" (alphabetically-first '("abra" "ama" "apple")) "abra")
+(test-equal? "one words" (alphabetically-first '("word")) "word")
+(test-equal? "diff words" (alphabetically-first '("abra" "Ama" "Apple")) "abra")
+(test-equal? "diff words, last" (alphabetically-first '("c" "b" "a")) "a")
+(test-equal? "diff words, middle" (alphabetically-first '("c" "b" "q")) "b")
 ```
 
 Okay, on to our first version.
@@ -251,6 +302,13 @@ What's repeated here?
 
 ```
 (define alphabetically-first-b
+  (lambda (lst)
+    (if (= 1 (len lst))
+        (car lst)
+        (let ([af-of-rest (alphabetically-first-b (cdr lst))])
+          (if (string-ci<=? (car lst) af-of-rest)
+              (car lst)
+              af-of-rest)))))
 ```
 
 Hmmm ... Sam said something about how to check for one-element lists. How
