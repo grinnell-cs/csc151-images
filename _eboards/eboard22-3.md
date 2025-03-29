@@ -3,7 +3,7 @@ title: "EBoard 22: Pause for breath: Reflections on recursion (Section 3)"
 number: 22
 section: eboards
 held: 2025-03-28
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -35,14 +35,14 @@ Administrative stuff
 * Because the style LA was particularly painful, I'll plan a makeup style 
   quiz that you should be able to do in fifteen minutes for next week.
   Make sure to read [the handout on program style](../handouts/style)
-  before that quiz.
-* Wednesday's quiz also did not go well, so we'll be talking about thata.
+  before that quiz. Take notes for yourself.
+* Wednesday's quiz also did not go well, so we'll be talking about that.
 
 ### Upcoming activities
 
 Scholarly
 
-* Friday, 28 March 2025, 5:00--6;00 p.m., HSSC A2231.
+* Friday, 28 March 2025, 5:00--6:10 p.m., HSSC A2231.
   _Conversations in the Humanities: Leadership in the Age of AI_
 * Thursday, 3 April 2025, 11am--noon, JRC 101.
   _Scholars’ Convocation: LeAnne Howe
@@ -118,11 +118,18 @@ _These do not earn tokens, but are worth your consideration._
     * Quiz: List recursion 
     * Makeup quiz: Local bindings (`let` and `let*`)
     * Makeup quiz: Tracing
+    * Makeup quiz: Style
     * _Remember that you can bring a sheet of hand-written notes for each quiz._
     * _Remember that you can start as early as 8:00 a.m. (section 1) or
       stay until noon (section 2) or 4:30 p.m. (section 3)_
 
 ### Friday PSA
+
+* If you decide to consume substances that alter your body chemistry,
+  please do so in moderation.
+* Make sure to do things other than homework. For example, walk in the
+  sun or rain.
+* Consent is essential, but not sufficient.
 
 Mini-Project 6
 --------------
@@ -133,12 +140,23 @@ Mini-Project 6
 Questions
 ---------
 
+### MP6
+
+Can we modify freestyles we've done on other project?
+
+> Yes.
+
 ### Administrative
 
 ### Other
 
-Short notes on recent labs
---------------------------
+Notes on Wednesday's quiz
+-------------------------
+
+See recording or your notes (or both). (Or your memory.)
+
+Notes on recent labs
+--------------------
 
 ### From Monday's lab: Why trace?
 
@@ -152,44 +170,86 @@ Short notes on recent labs
 #### `func1a`
 
 ```
-;;; ??
+;;; (func-1a x lst) -> list?
+;;;   x : any?
+;;;   lst : list?
+;;; Add `x` to the end of `lst`.
 (define func-1a
-  (lambda (x l)
-    (if (null? l)
+  (lambda (x lst)
+    (if (null? lst)
         (list x)
-        (cons (car l) (func-1a x (cdr l))))))
+        (cons (car lst) (func-1a x (cdr lst))))))
 ```
 
 #### `func1b`
 
 ```
+;;; (func-1b lst1 lst2) -> list?
+;;;   lst1 : list?
+;;;   lst2 : list?
+;;; Adds `lst2` to the end of `lst1`.
+;;; This is one way to implement `append`.
 (define func-1b
-  (lambda (l1 l2)
-    (if (null? l1)
-        l2
-        (cons (car l1) (func-1b (cdr l1) l2)))))
+  (lambda (lst1 lst2)
+    (if (null? lst1)
+        lst2
+        (cons (car lst1) (func-1b (cdr lst1) lst2)))))
 ```
 
 #### `func2a`
 
 ```
+;;; (func-2a x lst) -> list?
+;;;   x : any?
+;;;   lst : list?
+;;; Remove all copies of `x` from `lst`.
 (define func-2a
-  (lambda (x l)
-    (if (null? l)
+  (lambda (x lst)
+    (if (null? lst)
         null
-        (if (equal? (car l) x)
-            (func-2a x (cdr l))
-            (cons (car l) (func-2a x (cdr l)))))))
+        (if (equal? (car lst) x)
+            (func-2a x (cdr lst))
+            (cons (car lst) (func-2a x (cdr lst)))))))
+```
+
+```
+    (func-2a 2 '(1 2 3 4))
+    ; lst is not null, car lst is not 2
+--> (cons 1 (func-2a 2 '(2 3 4)))
+    ; lst is not null, car lst IS 2
+--> (cons 1 (func-2a 2 '(3 4)))
+    ; lst is not null, car lst is not 2
+--> (cons 1 (cons 3 (func-2a 2 '(4))))
+    ; lst is not null, car lst is not 2
+--> (cons 1 (cons 3 (cons 4 (func-2a 2 '()))))
+    ; lst IS null
+--> (cons 1 (cons 3 (cons 4 '())))
+--> (cons 1 (cons 3 '(4)))
+--> (cons 1 '(3 4))
+--> '(1 3 4))
+```
+
+```
+(check-equal? "traced" (func-2a 2 '(1 2 3 4)) '(1 3 4))
+(check-equal? "multiple 2's" (func-2a 2 '(1 2 2 3 2 4)) '(1 3 4))
+(check-equal? "all x's" (func-2a "ex" (make-list 20 "ex")) '())
+(check-equal? "big numbers; x is first" 
+              (func-2a 5000 '(5000 5002 5003 5004))
+              '(5002 5003 5004))
+(check-equal? "nested lists, match at end"
+              (func-2a '(a) '((y) (u) (c) (a)))
+              '((y) (u) (c)))
 ```
 
 #### `func2b`
 
 ```
+; reverse `lst2` and shove it at the front of `lst1`.
 (define func-2b
-  (lambda (l1 l2)
-    (if (null? l2)
-        l1
-        (func-2b (cons (car l2) l1) (cdr l2)))))
+  (lambda (lst1 lst2)
+    (if (null? lst2)
+        lst1
+        (func-2b (cons (car lst2) lst1) (cdr lst2)))))
 ```
 
 #### `r`
