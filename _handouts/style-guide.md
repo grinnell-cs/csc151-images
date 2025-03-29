@@ -23,7 +23,53 @@ Racket.  These follow the biases of SamR.  You may also find that some
 involve things you have not yet learned in Racket.  Feel free to
 ignore those.
 
-## Basic conventions
+## Language-agnostic concentions
+
+These are conventions that you should follow no matter what language
+you use.
+
+### Choose meaningful names
+
+The name of a procedure, parameter, or variable should tell the reader
+something about the procedure, parameter, or variable.  Sometimes it
+describes the type, as in when we name a parameter `str` or `lst`.
+Sometimes it describes the purpose, as in `sum-of-numbers`.  But
+it should convey something meaningful.
+
+It should also convey the right meaning.  Don't use `str` to name
+a list or `lst` to name an integer.  You've added to your cognitive
+load, made the world feel to your reader like the evil color test.
+
+### Avoid repeated code
+
+There are many problems with repeated code.  Repeated code often
+causes the computer to do extra work, which slows down your program.
+Repeated code is also harder to change; if you realize that the code
+you repeated needs to change, you need to make the change in
+multiple places.
+
+How do you avoid repeated code?  Early in the semester, you had
+only one approach: You write helper procedures that encapsulate
+portions of the program. By the middle of the semester, you should
+have seen another approach: You can use a `let` (or `let*`) to name
+a value you are using multiple times.
+
+### Avoid unnecessary work
+
+For a variety of reasons, some programmers tend to add unnecessary
+work to their program. They might multiply something by one or add
+zero to the same thing. In both cases, you end up with the same thing.
+They might put things into a list and then immediately decompose
+the list. That, too, adds work. Try to avoid such situations.
+
+### Decompose your procedures
+
+Decomposition is not just a stylistic issue; it's also a key aspect
+of computational thinking. If you're doing a complex computation,
+you should break it into smaller computations.  If you're solving
+a complex problem, you should break it into smaller problems.
+
+## Basic Scheme conventions
 
 ### Indent to show nesting
 
@@ -81,6 +127,9 @@ which is much easier to read than
  b
  c)
 ```
+
+_There may still be times that the latter form is the only way to fit
+things within 80 characters._
 
 ### Don't leave right parentheses on a line by themselves
 
@@ -159,7 +208,13 @@ re-indenting.
 See the example above.  We mostly do that to ensure that the body of the
 conditional is not indented too far.
 
+### Follow the Zen of Booleans
+
+Read [the Zen of Booleans](../handouts/zen-of-booleans) for more details.
+
 ### When using `match`, follow similar conventions to `cond`
+
+_Note that not all sections of CSC-151 use `match`._
 
 That is, a typical `match` expression should look something like the
 following.
@@ -272,33 +327,6 @@ much of that work in their head.  That is, they've thought about input
 and output types, about edge cases and normal cases, about how they
 might structure their code.  You just don't see all that work.  But if
 you ask them, they'll likely be able to talk about all of those issues.
-
-### Choose meaningful names
-
-The name of a procedure, parameter, or variable should tell the reader
-something about the procedure, parameter, or variable.  Sometimes it
-describes the type, as in when we name a parameter `str` or `lst`.
-Sometimes it describes the purpose, as in `sum-of-numbers`.  But
-it should convey something meaningful.
-
-It should also convey the right meaning.  Don't use `str` to name
-a list or `lst` to name an integer.  You've added to your cognitive
-load, made the world feel to your reader like the evil color test.
-
-### Avoid repeated code
-
-There are many problems with repeated code.  Repeated code often
-causes the computer to do extra work, which slows down your program.
-Repeated code is also harder to change; if you realize that the code
-you repeated needs to change, you need to make the change in
-multiple places.
-
-How do you avoid repeated code?  You've seen at least two approaches.
-You can use a `let` (or `let*`) to name a value you are using multiple
-times.  You can also write a procedure that encapsulates the key ideas.
-`let` bindings are more likely to help you avoid work and should be
-used for identical expressions.  Procedures can be used when you want
-to look at bigger-picture issues.
 
 ## Some negative examples
 
