@@ -91,7 +91,7 @@ _Note: You may find it useful to have the `ab` version call the `ba` version, an
 
 d. Of course, it makes sense to generalize our procedures. For the purposes of this assignment, we'll only ask you to generalize one.
 
-Document, write tests for, and implement a procedure, `(combine-neighbors-above n images)`, that takes a positive integer and a list of images as parameters, and combines them much like `combine-pairs-above`, except that it combines `n` images beside each other, rather than two.
+Document, write at least four tests for, and implement a procedure, `(combine-neighbors-above n images)`, that takes a positive integer and a list of images as parameters, and combines them much like `combine-pairs-above`, except that it combines `n` images beside each other, rather than two.
 
 _Note that due to infelicities with HTML, although the following lists appear bottom-aligned in HTML, they appear center-aligned here._
 
@@ -438,6 +438,10 @@ What is the difference between explicit & implicit recursion?
 
 > Explicit recursion is when a procedure calls itself. Implicit recursion happens when a procedure calls a recursive procedure or when a procedure calls another procedure that then calls the first procedure.
 
+Do we have to use local bindings to get an E?
+
+> No. But you are expected to avoid repeated work, such as identical recursive calls. Local bindings is one of the best ways to do so.
+
 What would be considered an identical recursive call?
 
 > For example, to make a fractal triangle of side length `s`, you need to make three fractal triangles of side length `s`/2. If you wrote something like
@@ -454,11 +458,31 @@ How would you avoid identical recursive calls?
 
 > You avoid it by using `let` or a helper procedure.
 
+Can you give an example and explain more on mutual recursion, I saw it mentioned in the `repeatedly-combine-pairs-ab` and `ba` part but I think I'm still slightly confused on how it works?
+
+> See [the new (draft) reading on mutual recursion](../readings/mutual-recursion).
+
 ### Part one: Combining lists of images
 
 ### Part two: Transforming shape lists
 
+Do I need a counter to keep track of which shape I'm supposed to change into?
+
+> You shouldn't. For 2a, you can use mutual recursion.
+
+> However, if you find it easier to write a recursive helper procedure with a counter, that's fine, too.
+
 ### Part three: Fractal triangles
+
+How should I get started?
+
+> Think about making the big triangle with smaller triangles and fewer levels of recursion. (That is, we've "simplified" two of the parameters.)
+
+> Think about the base case in terms of one/both of those parameters.
+
+How can I deal with the need to change colors?
+
+> One of the parameters to the recursive call is a color. You should modify the color in making each of the three recursive calls.
 
 ### Part four: Fractal squares (carpets)
 
@@ -467,3 +491,7 @@ How would you avoid identical recursive calls?
 We didn't write anything that makes multiple variants of an image in parts one and two. Can I write such a procedure for the freestyle?
 
 > Certainly.
+
+Can I make an irregular shape, like a U?
+
+> Sure.
