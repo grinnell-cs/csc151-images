@@ -43,12 +43,12 @@ _Hint: You will probably need two base cases._
 
 b. Write at least four tests for and implement a recursive procedure, `(combine-pairs-above shapes)`, that takes a list of images as input and places each pair of images in a stack of two, the first beside the next. If the list has an odd number of images, the last one should remain by itself. If the list is empty, you should return the empty list. Make sure that you have at least two edge cases. (Please label them as such.)
 
-_Note that due to infelicities with HTML, although the following lists appear bottom-aligned in HTML, they appear center-aligned here._
+_Note that due to infelicities with HTML, although the following lists appear bottom-aligned in DrRacket, they appear center-aligned here._
 
 ```
-> (combine-neighbors-above (make-list 10 (solid-diamond 20 10 "orange")))
+> (combine-pairs-above (make-list 10 (solid-diamond 20 10 "orange")))
 '(![a stack of two orange diamonds, one above the other](../images/mps/recursive-image-construction/two-orange-diamonds.png) ![a stack of two orange diamonds, one above the other](../images/mps/recursive-image-construction/two-orange-diamonds.png) ![a stack of two orange diamonds, one above the other](../images/mps/recursive-image-construction/two-orange-diamonds.png) ![a stack of two orange diamonds, one above the other](../images/mps/recursive-image-construction/two-orange-diamonds.png) ![a stack of two orange diamonds, one above the other](../images/mps/recursive-image-construction/two-orange-diamonds.png))
-> (combine-neighbors-above (make-list 5 (solid-diamond 20 10 "orange")))
+> (combine-pairs-above (make-list 5 (solid-diamond 20 10 "orange")))
 '(![a stack of two orange diamonds, one above the other](../images/mps/recursive-image-construction/two-orange-diamonds.png) ![a stack of two orange diamonds, one above the other](../images/mps/recursive-image-construction/two-orange-diamonds.png) ![a solid orange 20-by-10 diamond](../images/mps/recursive-image-construction/solid-orange-20x10-diamond.png))
 ```
 
@@ -136,7 +136,7 @@ You will likely find the following variants of `take` and `drop` useful.
 
 As we noted, one opportunity we have is to transform each element in a list differently, cycling through our options.
 
-a. Implement two procedures `(alternating-ellipses-and-rectangles shapes)` and `(alternating-rectangles-and-ellipses shapes)` that each takes a list of shapes as a parameter and returns a list of ellipses and rectangles, with each element having the same width, height, and color as the corresponding element of shapes. As you might expect, the list produced by `alternating-ellipses-and-rectangles` will start with an ellipse, and the list produced by `alternating-rectangles-and-ellipses` will start with a rectangle. 
+a. Implement two procedures `(shapes->ellipses&rectangles shapes)` and `(shapes->rectangles&ellipses shapes)` that each takes a list of shapes as a parameter and returns a list of ellipses and rectangles, with each element having the same width, height, and color as the corresponding element of shapes. As you might expect, the list produced by `shapes->ellipses&rectangles` will start with an ellipse, and the list produced by `shapes->rectangles&ellipses` will start with a rectangle. 
 
 ```drracket
 > (shapes->ellipses&rectangles (list (solid-rectangle 20 10 "red")
