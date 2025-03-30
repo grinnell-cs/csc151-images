@@ -62,12 +62,46 @@ zero to the same thing. In both cases, you end up with the same thing.
 They might put things into a list and then immediately decompose
 the list. That, too, adds work. Try to avoid such situations.
 
+Another bit of unnecessary work is redefining a constant. For example,
+it's generally pointless to write things like the following.
+
+```
+(let ([stack above]
+      [one-third 1/3])
+  ...)
+```
+
+Once in a while, such renaming adds clarity to your code. But such
+situations are rare at best.
+
 ### Decompose your procedures
 
 Decomposition is not just a stylistic issue; it's also a key aspect
 of computational thinking. If you're doing a complex computation,
 you should break it into smaller computations.  If you're solving
 a complex problem, you should break it into smaller problems.
+
+## Identifiers
+
+### No uppercase letters
+
+Schemers generally don't use uppercase letters in naming. If a procedure name or variable name needs multiple words, they tend to use hyphens.
+
+### Question marks represent Booleans
+
+If your procedure returns a Boolean value, end the name with a question mark. If you name a Boolean value, end the name with a question mark.
+
+Don't use question marks for other purposes.
+
+### Use `->` rather than `-to-`
+
+We use that "arrow" in procedures that return convert from one type to another, such as `rgb->string` or `string->number`.
+
+### Exclamation marks represent mutators
+
+Towards the end of the semester, you'll learn procedures that change one or more of their parameters. When you write a procedure that changes one of its parameters, end the name of the procedure with an exclamation mark. 
+
+Programmers often refer to this mark as "bang". Hence, `vector-set!` is pronounced "vector set bang". We may also skip avoid speaking it aloud, pronouncing `vector-set!` just as "vector set".
 
 ## Basic Scheme conventions
 
@@ -149,6 +183,11 @@ trying to pull the line apart.  By separating things, you make it easier
 for the reader to find the parts of the expression.  I generally try to
 ensure that no text goes beyond the 80th column.  I also try to use
 no more than six or so "words" on a line.
+
+### Formatting local bindings
+
+Try to keep the first binding on the same line as the `let`, `let*`, or
+`letrec`. Also, make sure to use square brackets for the individual bindings.
 
 ## Lambda procedures
 
