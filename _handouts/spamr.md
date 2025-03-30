@@ -5,6 +5,64 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
+## [CSC-151 2025Sp] LAs and MPs and quizzes, oh my! (Sunday, 2025-03-30)
+
+Dear Self-Reflexive Thinkers,
+
+I hope that you are having a good weekend and that you are enjoying the sun. This evening, I have a bunch of updates.
+
+### SoLA 2
+
+1\. I have completed the grading of SoLA 2 and your grades are now available on Gradescope. In a few cases, I marked your answer as "needs minor fixes" or something like that. In those cases, you can submit a regrade request with the minor fix and, if it's appropriate, your work will suffice.
+
+2\. I am sad to report that there were academic honesty issues on this SoLA. At least one of you let your classmate down by giving them your answers on some problems, presumably because you were worried about their stress. But now they will be more stressed because they will have to deal with CAS. I also saw at least one submission that looks like it was written by ChatGPT and, as I indicated, I must now report it to CAS. I'd really prefer not to report cases. And, as I tried to indicate, you're better off asking me for help than copying from a colleague or an LLM.
+
+3\. Some of you haven't filled out the post-reflection for this SoLA. Please do so ASAP.
+
+### MP 6
+
+4\. I think I've fixed the typos in MP6. Please let me know if you see others. 
+
+5\. Don't forget to submit the pre-reflection by this evening. I believe I've responded to all the ones that have been submitted.
+
+6\. The autograder should appear tonight or tomorrow night.
+
+### Other MPs
+
+7\. As I mentioned in class, I'm happy to give you extensions on any of the MP redos that are due tonight. When asking for an extension (preferably on Teams), please let me know which MPs you want extensions on and when you want those extensions to be until.
+
+### Quizzes
+
+8\. There will be four quizzes available on Wednesday.
+
+* a. A new quiz on list recursion.
+
+* b. A makeup quiz on tracing. (Unfortunately, there are still some folks who haven't completed that one.)
+
+* c. A makeup quiz on local bindings.
+
+* d. A makeup quiz on style. As I noted, there were many struggles on the style LA, so this one will be more straightforward. Or at least I hope it will.
+
+9\. I will *not* provide you with a list of style issues to address on the style makeup quiz. I'd recommend that you review the style guidelines at 
+
+<https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/handouts/style-guide>
+
+Perhaps you will also find it useful to bring a page of *hand-written* notes.
+
+### Grade reports
+
+10\. I expect to send out your latest grade reports some time this evening. I might even manage to get tokens incorporated (or at least some of the tokens).
+
+11\. As is my practice, I will be submitting Academic Alerts for people who seem to be struggling. Signs of struggle include under 60% of LAs completed (in our case, 6 or fewer out of the 13), a failure to attempt SoLA 2, or missing MPs.
+
+### Other issues
+
+12\. There's a new reading available on mutual recursion, https://rebelsky.cs.grinnell.edu/Courses/CSC151/2025Sp/readings/mutual-recursion . I wrote it primarily in response to a request for more explanation of mutual recursion.
+
+13\. Don't forget we have a mentor session tonight! It will be a chance to review topics that you struggled on and to prepare for the next quiz. Maybe they'll even talk a bit about mutual recursion.
+
+-- SamR
+
 ## [CSC-151 2025Sp] Some notes on MP4 (Sunday, 2025-02-23)
 
 Dear Conditioners of Colors,
