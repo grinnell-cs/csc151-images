@@ -117,8 +117,8 @@ _These do not earn tokens, but are worth your consideration._
 * Wednesday, 2 April 2025 
     * Quiz: List recursion 
     * Makeup quiz: Local bindings (`let` and `let*`)
+    * Makeup quiz: Program style
     * Makeup quiz: Tracing
-    * Makeup quiz: Style
     * _Remember that you can bring a sheet of hand-written notes for each quiz._
     * _Remember that you can start as early as 8:00 a.m. (section 1) or
       stay until noon (section 2) or 4:30 p.m. (section 3)_
