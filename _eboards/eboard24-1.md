@@ -1,9 +1,9 @@
 ---
-title: "EBoard 23: Numeric recursion (Section 1)"
-number: 23
+title: "EBoard 24: Pairs and pair structures (Section 1)"
+number: 24
 section: eboards
-held: 2025-03-31
-link: true
+held: 2025-04-02
+link: false
 ---
 # {{ page.title }}
 
@@ -21,49 +21,18 @@ Administrative stuff
 
 ### Introductory notes
 
-* Eid Mubarak. I wish you an Eid filled with love, joy, and unforgettable
-  moments.
-* Also: Happy last day of March!
-
-### Academic honesty
-
-I'm going to read this so that I say the same things to each section.
-
-As I noted in my recent email, on the most recent Set of Learning
-Assessments, I observed issues that appear to be violations of our
-academic integrity policies.  These issues include two students
-submitting nearly identical LAs when that would be highly unlikely
-and one student submitting work that was likely written by ChatGPT
-because it doesn't follow our normal style and involves techniques
-I explicitly forbid.
-
-Although I would much prefer to sit down with these students and
-try to understand their motivations and discuss appropriate responses,
-College policies require me to report them to CAS. I am sorry that
-this adds extra stress to students' lives. I hope the CAS meetings
-are informative rather than stressful. And I mean. I care about you.
-
-I realize that there may also be violations that I did not notice.
-If you feel that you are fortunate in this case, please let this
-be the last time.  The odds are that someone will eventually notice.
-
-More importantly, if you feel pressure to use inappropriate resources
-such as ChatGPT or a classmate, please talk to me instead. And if
-a classmate asks you for your work, please suggest that they talk
-to me instead. You don't help them by giving them answers.
-
 ### Upcoming activities
 
 Scholarly
 
-* Tuesday, 1 April 2025, noon--1pm, Some PDR.
-  _CS Table: ArXiV.org_.
 * Thursday, 3 April 2025, 11am--noon, JRC 101.
   _Scholars’ Convocation: LeAnne Howe
   "A Choctaw In King Abdullah’s Court"_
     * Also important, but not directly relevant to this class.
-* Thursday, 4 April 2025, 4:00--5:00pm, probably the Kernel.
+* Thursday, 3 April 2025, 4:00--5:00pm, probably the Kernel.
   _CS Poster Session_
+* Tuesday, 15 April 2025, noon--1pm, Some PDR.
+  _CS Table: ???_
 
 Artistic
 

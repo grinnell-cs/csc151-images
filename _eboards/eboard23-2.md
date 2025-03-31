@@ -1,5 +1,5 @@
 ---
-title: "EBoard 23: Numeric recursion (Section 1)"
+title: "EBoard 23: Numeric recursion (Section 2)"
 number: 23
 section: eboards
 held: 2025-03-31
@@ -21,6 +21,12 @@ Administrative stuff
 
 ### Introductory notes
 
+* CPUs - Computing Peers United. A program that matches upperclassmen
+  with early students for mentoring. You can ask any question, like,
+  "What should I do when Prof. Rebelsky makes one of those things he
+  calls 'jokes'?" or "How do I complete a CS major without taking any
+  more classes from Prof. Rebelsky?" There's also money for you to eat
+  in the Spencer Grill. There's a QR code.
 * Eid Mubarak. I wish you an Eid filled with love, joy, and unforgettable
   moments.
 * Also: Happy last day of March!
@@ -41,7 +47,7 @@ Although I would much prefer to sit down with these students and
 try to understand their motivations and discuss appropriate responses,
 College policies require me to report them to CAS. I am sorry that
 this adds extra stress to students' lives. I hope the CAS meetings
-are informative rather than stressful. And I mean. I care about you.
+are informative rather than stressful. And I mean this. I care about you.
 
 I realize that there may also be violations that I did not notice.
 If you feel that you are fortunate in this case, please let this
@@ -62,7 +68,8 @@ Scholarly
   _Scholars’ Convocation: LeAnne Howe
   "A Choctaw In King Abdullah’s Court"_
     * Also important, but not directly relevant to this class.
-* Thursday, 4 April 2025, 4:00--5:00pm, probably the Kernel.
+* Thursday, 3 April 2025, 4:00--5:30pm, probably the Kernel (HSSC
+  Multipurpose Room).
   _CS Poster Session_
 
 Artistic
@@ -178,3 +185,5 @@ Lab
 
 If you happen to finish early, there are SIX (6) extra problems for your
 edification. Please work on those.
+
+Note that the autograder includes tests for the first extra problem. 

@@ -1,5 +1,5 @@
 ---
-title: "EBoard 23: Numeric recursion (Section 1)"
+title: "EBoard 23: Numeric recursion (Section 3)"
 number: 23
 section: eboards
 held: 2025-03-31
@@ -41,7 +41,7 @@ Although I would much prefer to sit down with these students and
 try to understand their motivations and discuss appropriate responses,
 College policies require me to report them to CAS. I am sorry that
 this adds extra stress to students' lives. I hope the CAS meetings
-are informative rather than stressful. And I mean. I care about you.
+are informative rather than stressful. And I mean it. I care about you.
 
 I realize that there may also be violations that I did not notice.
 If you feel that you are fortunate in this case, please let this
@@ -62,7 +62,7 @@ Scholarly
   _Scholars’ Convocation: LeAnne Howe
   "A Choctaw In King Abdullah’s Court"_
     * Also important, but not directly relevant to this class.
-* Thursday, 4 April 2025, 4:00--5:00pm, probably the Kernel.
+* Thursday, 4 April 2025, 4:00--5:30pm, probably the Kernel.
   _CS Poster Session_
 
 Artistic
@@ -76,19 +76,14 @@ Artistic
 Multicultural
 
 * Friday, 4 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
-  _Middle of Everywhere: ???_
+  _Middle of Everywhere: Vietnam_
 
 Peer
 
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
-* Saturday, 5 April 2025, Noon, Baseball field.
-  _Baseball vs. Monmouth_.
-* Saturday, 5 April 2025, 2:30 p.m., Baseball field.
-  _Baseball vs. Monmouth_.
-* Sunday, 6 April 2025, Noon, Baseball field.
-  _Baseball vs. Monmouth_.
+* Read K's articles in the S&B and comment online.
 
 Wellness
 
@@ -132,6 +127,12 @@ _These do not earn tokens, but are worth your consideration._
    in Contemporary China_
 * Tuesday, 1 April 2025, 3:00 p.m., Softball field.
   _Softball vs. Coe_
+* Saturday, 5 April 2025, Noon, Baseball field.
+  _Baseball vs. Monmouth_.
+* Saturday, 5 April 2025, 2:30 p.m., Baseball field.
+  _Baseball vs. Monmouth_.
+* Sunday, 6 April 2025, Noon, Baseball field.
+  _Baseball vs. Monmouth_.
 
 ### Upcoming work
 
