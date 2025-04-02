@@ -77,7 +77,7 @@ Note that we get a different result if we do the operations in the opposite orde
 '(![a center-aligned sequence of images (a center-aligned stack of images (a center-aligned sequence of images (a center-aligned stack of images (a solid black 5-by-20 ellipse above a solid black 7-by-20 ellipse) beside a center-aligned stack of images (a solid black 9-by-20 ellipse above a solid black 11-by-20 ellipse)) above a center-aligned sequence of images (a center-aligned stack of images (a solid black 13-by-20 ellipse above a solid black 15-by-20 ellipse) beside a center-aligned stack of images (a solid black 17-by-20 ellipse above a solid black 19-by-20 ellipse))) beside a center-aligned stack of images (a center-aligned sequence of images (a center-aligned stack of images (a solid black 21-by-20 ellipse above a solid black 23-by-20 ellipse) beside a center-aligned stack of images (a solid black 25-by-20 ellipse above a solid black 27-by-20 ellipse)) above a center-aligned sequence of images (a center-aligned stack of images (a solid black 29-by-20 ellipse above a solid black 31-by-20 ellipse) beside a solid black 33-by-20 ellipse)))](../images/mps/recursive-image-construction/image015.png))
 ```
 
-Write a pair of procedures, `repeatedly-combine-pairs-ab` and `repeatedly-combine-pairs-ba` that alternately apply `combine-pairs-ab` and `combine-pairs-ba` until the list contains only a single element. At that point, you should return that element. The `ab` version should start with `above`. The `ba` version should start with `beside`. If the list is empty, return the special value `empty-image`, which is defined in the supplied code.
+Write a pair of procedures, `repeatedly-combine-pairs-ab` and `repeatedly-combine-pairs-ba` that alternately apply `combine-pairs-above` and `combine-pairs-beside` until the list contains only a single element. At that point, you should return that element. The `ab` version should start with `above`. The `ba` version should start with `beside`. If the list is empty, return the special value `empty-image`, which is defined in the supplied code.
 
 ```
 > (repeatedly-combine-pairs-ab stuff)
@@ -495,3 +495,7 @@ We didn't write anything that makes multiple variants of an image in parts one a
 Can I make an irregular shape, like a U?
 
 > Sure.
+
+For the freestyle, would using a pentagon or hexagon be sufficient?
+
+> I think you'll have trouble making fractal pentagons, but you can try.
