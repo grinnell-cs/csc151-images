@@ -3,7 +3,7 @@ title: "EBoard 24: Pairs and pair structures (Section 3)"
 number: 24
 section: eboards
 held: 2025-04-02
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -50,14 +50,12 @@ Artistic
   _Educational Comics Workshop_.
     * You must attend all three sessions.
     * But you'll earn three tokens.
-* Sunday, 6 April 2025 2:00 p.m. Sebring-Lewis.
-  _Grinnell Singers_
 
 Multicultural
 
 * Friday, 4 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
   _Middle of Everywhere: Vietnam_
-* Friday, 4 April 2025, 6:00--9:00 p.m.,. JRC 101.
+* Friday, 4 April 2025, 6:00--9:00 p.m., JRC 101.
   _Eid Fest_
     * You need tickets for food.
 
@@ -66,13 +64,13 @@ Peer
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
+* Sunday, 6 April 2025, 2:00 p.m. Sebring-Lewis.
+  _Grinnell Singers_
+* Saturday at 7pm, Sunday at 2pm, a week from Thursday at 7:00 p.m. and
+  beyond. Stewart former-library.
+  _Rumors, a play by Neil Simon_
+    * Sam will pay.
 * Read S&B articles by your fellow CSC-151 students and comment on them online.
-* Saturday, 5 April 2025, Noon, Baseball field.
-  _Baseball vs. Monmouth_.
-* Saturday, 5 April 2025, 2:30 p.m., Baseball field.
-  _Baseball vs. Monmouth_.
-* Sunday, 6 April 2025, Noon, Baseball field.
-  _Baseball vs. Monmouth_.
 
 Wellness
 
@@ -96,21 +94,28 @@ Wellness
 
 Misc
 
-* Wednesday, 2 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
-  _Community Forum_
-    * "Weekly discussion on legal protections and recourse on issues 
-      that higher education and Grinnell College face."
-    * Also online.
 * Friday, 4 April 2025, 3:00--5:00 p.m., Burling Digital Studio.
   _GCIEL / Digital Studio Workshop: Spatial Audio and Immersive Soundscapes_
 * Sunday, 6 April 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session_
 * Tuesday, 8 April 2025, 7:00--8:00 p.m., Science 3820.
   _Mentor Session_
+* Wednesday, 9 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
+  _Community Forum_
+    * "Weekly discussion on legal protections and recourse on issues 
+      that higher education and Grinnell College face."
+    * Also online.
 
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
+
+* Saturday, 5 April 2025, Noon, Baseball field.
+  _Baseball vs. Monmouth_.
+* Saturday, 5 April 2025, 2:30 p.m., Baseball field.
+  _Baseball vs. Monmouth_.
+* Sunday, 6 April 2025, Noon, Baseball field.
+  _Baseball vs. Monmouth_.
 
 ### Upcoming work
 
@@ -123,7 +128,7 @@ _These do not earn tokens, but are worth your consideration._
     * _Remember that you can start as early as 8:00 a.m. (section 1) or
       stay until noon (section 2) or 4:30 p.m. (section 3)_
 * Thursday, 3 April 2025
-    * [Mini-project 6](../mps/mp06) is due ("on time" - 2 tokens).
+    * [Mini-project 6](../mps/mp06) is due ("on time" earns 2 tokens).
     * Readings
        * [Vectors](../readings/vectors)
        * [Submit reading response on Gradescope](https://www.gradescope.com/courses/948769/assignments/6026647)
@@ -172,7 +177,7 @@ Can I earn tokens retrospectively?
 
 Can I submit my MP6 post-reflection late without penalty?
 
-> Yes.
+> Yes, provided you're submitting your MP6 late.
 
 Does it matter whether I complete an LA as a quiz or on a SoLA?
 
@@ -213,17 +218,38 @@ I would like you to go over the check 2 in class.
 > a. How does the base case test for pair recursion differ from the
   base case test for other types of recursion you have seen?
 
+> > For list recursion, we normally check for the base case with
+    `(null? lst)` or `(null? (cdr lst))`.
+
+> > For numeric recursion, we normally check for the base case with
+    `(zero n)`, or `(= 1 n)`, or `(<= n 1)`?
+
+> > I would call these "positive" tests. "Does the parameter have
+    _this characteristic_?"
+
+> > For pair structure recursion, our base is usually "Is this *not*
+    a pair?" `(not (pair? param))`. So we're asking for a negative
+    characteristic, rather than a positive characteristic.
+
+> > Normal recursion often looks like 
+    `(if (base-case-test param) base-case recursive-case)`
+
+> > Pair recursion often looks like
+    `(if (pair? param) recursive-case base-case)`
+
 > b. Why are there two calls to `sum-of-number-tree` in its recursive 
   case?
 
-Could you describe more what's happening with `cddr` and stuff like
+> > Because the final value depends on both subtrees.
+
+Could you describe more what's happening with `cdadr` and stuff like
 that?
 
 > If we think in terms of pairs, each d means "follow the right reference
   from the pair" and each "a" means follow the left refrence.
 
 > If we think in terms of lists, and only have an a at the front, think
-  of each `d` as representing "drop one element".
+  of each `d` as representing "drop one element". `caddr` `cdddr`
 
 ### Mini-project 6
 
