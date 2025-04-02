@@ -21,6 +21,19 @@ Administrative stuff
 
 ### Introductory notes
 
+* Next week is preregistration. Yay! I hope that many of you are
+  considering pre-registering for CSC-161. Feel free to chat with me
+  if you have questions about the course.
+    * We should be able to fit all interested parties.
+* Section 1 only: One of you told a friend that you felt that I wasn't
+  very snarky in class and wished that I were more so. Hence, we have
+  a survey.
+    * Sam needs to be more snarky.
+    * Sam's snarkiness is about right.
+    * Sam needs to be less snarky.
+* Sorry about the delay on MP6 on Gradescope.
+* Every person needs a piece of paper.
+
 ### Upcoming activities
 
 Scholarly
@@ -29,7 +42,9 @@ Scholarly
   _Scholars’ Convocation: LeAnne Howe
   "A Choctaw In King Abdullah’s Court"_
     * Also important, but not directly relevant to this class.
-* Thursday, 3 April 2025, 4:00--5:00pm, probably the Kernel.
+* Thursday, 3 April 2025, 4:00--5:30pm, the Kernel.
+  _CS Poster Session_
+* Thursday, 10 April 2025, 4:00--5:30pm, the Kernel.
   _CS Poster Session_
 * Tuesday, 15 April 2025, noon--1pm, Some PDR.
   _CS Table: ???_
@@ -41,11 +56,15 @@ Artistic
   _Educational Comics Workshop_.
     * You must attend all three sessions.
     * But you'll earn three tokens.
+* Sunday, 6 April 2025 2:00 p.m. Sebring-Lewis.
+  _Grinnell Singers_
 
 Multicultural
 
 * Friday, 4 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
-  _Middle of Everywhere: ???_
+  _Middle of Everywhere: Vietnam_
+* Friday, 4 April 2025, 6:00--9:00 p.m.,. JRC 101.
+  _Eid Fest_
 
 Peer
 
@@ -61,28 +80,26 @@ students are welcome._
 
 Wellness
 
-* Tuesday, 1 April 2025, Anywhere, Anytime.
-  _Conduct and reflect on a non-harmful April Fool's Day prank._
-* Tuesday, 1 April 2025, 12:15--12:50 p.m., GCMoA.
-  _Yoga in the Museum_.
-* Tuesday, 1 April 2025, 4:30--6:30 p.m., 
-  BRAC P103 (Multipurpose Dance Studio).
-  _Wellness Yoga_.
-* Tuesday, 1 April 2025, 5:00--6:00 p.m., HSSC Atrium.
-  _Therapy Dogs_.
-* Tuesday, 1 April 2025, 7:15--8:15 p.m., HSSC Atrium.
-  _Therapy Dogs_.
 * Friday, 4 April 2025, 6:00 p.m.--8:00 p.m., Aux Gym.
   _Badminton Club_ (Smash that bird!)
 * Friday, 4 April 2025, 9:00 p.m., Noyce Elbow.
   _Nerf at Noyce_.
 * Saturday, 5 April 2025, 4:00 p.m.--6:00 p.m., Aux Gym.
   _Badminton Club_ (Smash that bird!)
+* Tuesday, 8 April 2025, Anywhere, Anytime.
+  _Conduct and reflect on a non-harmful April Fool's Day prank._
+* Tuesday, 8 April 2025, 12:15--12:50 p.m., GCMoA.
+  _Yoga in the Museum_.
+* Tuesday, 8 April 2025, 4:30--6:30 p.m., 
+  BRAC P103 (Multipurpose Dance Studio).
+  _Wellness Yoga_.
+* Tuesday, 15 April 2025, 5:00--6:00 p.m., HSSC Atrium.
+  _Therapy Dogs_.
+* Tuesday, 15 April 2025, 7:15--8:15 p.m., HSSC Atrium.
+  _Therapy Dogs_.
 
 Misc
 
-* Tuesday, 1 April 2025, 7:00--8:00 p.m., Science 3820.
-  _Mentor Session_
 * Wednesday, 2 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
   _Community Forum_
     * "Weekly discussion on legal protections and recourse on issues 
@@ -91,24 +108,15 @@ Misc
   _GCIEL / Digital Studio Workshop: Spatial Audio and Immersive Soundscapes_
 * Sunday, 6 April 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session_
+* Tuesday, 8 April 2025, 7:00--8:00 p.m., Science 3820.
+  _Mentor Session_
 
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
 
-* Monday, 31 March 2025, 4:15--5:30 p.m., HSSC N3110.
-  _Tamed Apocalypse, Engaged Nihilism, and Cthulhu-Cultivation Novels 
-   in Contemporary China_
-* Tuesday, 1 April 2025, 3:00 p.m., Softball field.
-  _Softball vs. Coe_
-
 ### Upcoming work
 
-* Tuesday, 1 April 2025
-    * [Submit lab writeup from today's class on Gradescope](https://www.gradescope.com/courses/948769/assignments/6012994)
-    * Readings
-       * [Pairs and pair structures](../readings/pairs)
-       * [Submit reading response on Gradescope](https://www.gradescope.com/courses/948769/assignments/5989953)
 * Wednesday, 2 April 2025 
     * Quiz: List recursion
     * Makeup quiz: Local bindings (`let` and `let*`)
@@ -119,24 +127,72 @@ _These do not earn tokens, but are worth your consideration._
       stay until noon (section 2) or 4:30 p.m. (section 3)_
 * Thursday, 3 April 2025
     * [Mini-project 6](../mps/mp06) is due.
+    * Readings
+       * [Vectors](../readings/vectors)
+       * [Submit reading response on Gradescope](https://www.gradescope.com/courses/948769/assignments/6026647)
+    * [Submit lab writeup from today's class on Gradescope](https://www.gradescope.com/courses/948769/assignments/6026671)
+* Friday, 4 April 2025
+    * [Submit post-reflection for MP6 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5989932)
+    * MP7 releaaed
+* Sunday, 6 April 2025
+    * Submit pre-reflection for MP7 on Gradescope
+    * Submit lab writeup for Class 25 on Gradescope
+    * No readings
+* Wednesday, 2 April 2025
+    * Quiz: Diagramming structures (paper only)
+    * Makeup quiz: List recursion
+    * Makeup quiz: Tracing
 
 Questions
 ---------
 
 ### Administrative
 
-How do I submit a regrade request?
+Gradescope is confusing. How do I know what work is coming up?
 
-> There should be a button at the bottom of the screen. I'll try to demo.
+> I'd suggest the "upcoming work" section of the daily eboard.
 
-How do I make up missing labs, readings, and reflections?
+What does AFK mean?
 
-> You can't. However, you are permitted to miss up to six of these before
-  it affects your grade.
+> Away from Keyboard. If I tell you that I'm AFK, it means I'm probably
+  answering a Teams Message or an email from my phone.
 
-> If you'd like me to consider an individual situation, let's talk.
+### Reading on Pairs
 
-Is that six collectively?
+I'm not exactly seeing the benefits of viewing pairs.
+
+> We study pairs so that we have a better understanding of how
+  Scheme functions (and why we get some of the outputs we do).
+  Understanding pairs also permits us to build more complex structures.
+
+Just like there are some procedures that only work with lists, are there any procedures that work only with nested pairs?
+
+> Most of the procedures that work with nested pairs also work with lists.
+  I suppose we could write some that only work with nested pairs.
+
+When the racket compiler displays pairs, it puts the dots in somewhat
+strange places, not just in between each element. How does it decide
+where to put them?
+
+> It puts it before the last element if the last element isn't null.
+
+Is this useful for MP6?
+
+> Probably not. Perhaps if you see periods in your output, it will
+  explain why.
+
+I would like you to go over the check 2 in class.
+
+> Okay.
+
+> a. How does the base case test for pair recursion differ from the
+  base case test for other types of recursion you have seen?
+
+> b. Why are there two calls to sum-of-number-tree in its recursive case?
+
+### Mini-project 6
+
+Should `combine-pairs-above` look remarkably like `combine-pairs-beside`?
 
 > Yes.
 
@@ -145,5 +201,5 @@ Is that six collectively?
 Lab
 ---
 
-If you happen to finish early, there are SIX (6) extra problems for your
-edification. Please work on those.
+The first problem requires paper. Die, trees, die! I suppose you could
+use a whiteboard.
