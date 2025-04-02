@@ -1,9 +1,9 @@
 ---
-title: "EBoard 24: Pairs and pair structures (Section 1)"
+title: "EBoard 24: Pairs and pair structures (Section 3)"
 number: 24
 section: eboards
 held: 2025-04-02
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -25,13 +25,6 @@ Administrative stuff
   considering pre-registering for CSC-161. Feel free to chat with me
   if you have questions about the course.
     * We should be able to fit all interested parties.
-* Section 1 only: One of you told a friend that you felt that I wasn't
-  very snarky in class and wished that I were more so. Hence, we have
-  a survey.
-    * Sam needs to be more snarky.
-    * Sam's snarkiness is about right.
-    * Sam needs to be less snarky. Too bad, so sad.
-    * Students need to be less snarky. WINS!
 * Sorry about the delay on MP6 on Gradescope.
 * Every person needs a piece of paper.
 
@@ -66,13 +59,14 @@ Multicultural
   _Middle of Everywhere: Vietnam_
 * Friday, 4 April 2025, 6:00--9:00 p.m.,. JRC 101.
   _Eid Fest_
+    * You need tickets for food.
 
 Peer
 
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
-* Read articles by your fellow CSC-151 students and comment on them online.
+* Read S&B articles by your fellow CSC-151 students and comment on them online.
 * Saturday, 5 April 2025, Noon, Baseball field.
   _Baseball vs. Monmouth_.
 * Saturday, 5 April 2025, 2:30 p.m., Baseball field.
@@ -129,15 +123,16 @@ _These do not earn tokens, but are worth your consideration._
     * _Remember that you can start as early as 8:00 a.m. (section 1) or
       stay until noon (section 2) or 4:30 p.m. (section 3)_
 * Thursday, 3 April 2025
-    * [Mini-project 6](../mps/mp06) is due.
+    * [Mini-project 6](../mps/mp06) is due ("on time" - 2 tokens).
     * Readings
        * [Vectors](../readings/vectors)
        * [Submit reading response on Gradescope](https://www.gradescope.com/courses/948769/assignments/6026647)
     * [Submit lab writeup from today's class on Gradescope](https://www.gradescope.com/courses/948769/assignments/6026671)
 * Friday, 4 April 2025
-    * MP7 releaaed
+    * MP7 released
     * [Submit post-reflection for MP6 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5989932)
 * Sunday, 6 April 2025
+    * Submit unpenalized "late" MP6 on Gradescope
     * Submit pre-reflection for MP7 on Gradescope
     * Submit lab writeup for Class 25 on Gradescope
     * No readings
@@ -158,10 +153,34 @@ Gradescope is confusing. How do I know what work is coming up?
 > If you have other suggestions of ways I can help you know what work is
   coming up, please let me know.
 
+Can you send grade report emails more frequently?
+
+> I can try.
+
+Did anyone attempt to fool Sam yesterday?
+
+> I don't think so.
+
 What does AFK mean?
 
-> Away from Keyboard. If I tell you that I'm AFK, it means I'm probably
+> Away from keyboard. If I tell you that I'm AFK, it means I'm probably
   answering a Teams Message or an email from my phone.
+
+Can I earn tokens retrospectively?
+
+> Yes. We only look at your end-of-semester total.
+
+Can I submit my MP6 post-reflection late without penalty?
+
+> Yes.
+
+Does it matter whether I complete an LA as a quiz or on a SoLA?
+
+> No. The important issue is that you complete the LA. You can tell from
+  your grade report which ones you've completed.
+
+> Two of the LAs can only be completed on paper (tracing and diagramming
+  structures).
 
 ### Reading on Pairs
 
@@ -194,26 +213,8 @@ I would like you to go over the check 2 in class.
 > a. How does the base case test for pair recursion differ from the
   base case test for other types of recursion you have seen?
 
-> For lists, our test is usually either `(null? lst)` or
-  `(null? (cdr lst))`.
-
-> > For numbers, our test is usually `(zero? n)` or `(<= n 1)`.
-
-> > In both cases, the test is an affirmative. Is this thing ____?
-
-> > For pair structures, our base case test is usually "Is it NOT a pair.?
-  `if (not (pair? thing)) (base-computation) ...)`
-
-> > It's a negative test.
-
 > b. Why are there two calls to `sum-of-number-tree` in its recursive 
   case?
-
-> > Number trees have two parts, and we need to extract data from both
-    parts. Since the parts themselves may be complex, we need to recurse
-    in both directions.
-
-> > In effect, you're using two assistants, rather than one.
 
 Could you describe more what's happening with `cddr` and stuff like
 that?
@@ -231,6 +232,11 @@ Should `combine-pairs-above` look remarkably like `combine-pairs-beside`?
 > Yes.
 
 Can we repeat code in tests?
+
+> Yes.
+
+Just for clarity, we get two tokens for turning it in tomorrow and
+don't pay any tokens for turning it in on Sunday, right?
 
 > Yes.
 
