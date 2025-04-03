@@ -5,7 +5,7 @@
 
 ;;; pixel-problems.rkt
 ;;;   A variety of fractals and other shapes, created for MP7 in
-;;;   CSC-151 2024Sp
+;;;   CSC-151-NN SEMESETER
 ;;;
 ;;; Author: Your Name Here
 ;;; Date submitted: YYYY-MM-DD
@@ -13,7 +13,7 @@
 ;;; Acknowledgements:
 ;;; 
 ;;; * Starter code provided by SamR and Leah.  
-;;; * Add other acknowledgements here
+;;; * Add other acknowledgements here.
 
 ; +---------------+--------------------------------------------------
 ; | Provided code |
@@ -183,12 +183,29 @@
             (remainder (round (sqrt (+ (sqr (- col 50)) (sqr (- row 50)))))
                        64))
          (+ (rgb-green color)
-            (* 2 (remainder (round (sqrt (+ (sqr (- col 150)) (sqr (- row 50)))))
+            (* 2
+               (remainder (round (sqrt (+ (sqr (- col 150)) (sqr (- row 50)))))
                             32)))             
          (+ (rgb-blue color)
-            (* 3 (remainder (round (sqrt (+ (sqr (- col 200)) (sqr (- row 200)))))
+            (* 3
+               (remainder (round (sqrt (+ (sqr (- col 200)) (sqr (- row 200)))))
                             25)))
          (rgb-alpha color))))
+
+;;; sample-pixels : (vector-of rgb?)
+;;; A set of sixteen sample pixels for our tests. 
+(define sample-pixels
+  (list->vector (map (lambda (x) (rgb (* 16 x) 0 0))
+                     (range 16))))
+
+;;; (red-less-than? c1 c2) -> boolean?
+;;;   c1 : rgb?
+;;;   c2 : rgb? 
+;;; Determine if the red component of `c1` is less than the red component
+;;; of `c2`.
+(define red-less-than? 
+  (lambda (c1 c2)
+    (< (rgb-red c1) (rgb-red c2))))
 
 ; +------------------------------------+-----------------------------
 ; | Part one: Setting rows and columns |
@@ -296,6 +313,34 @@
 (define neighboring-pixels
   (lambda (pixels width height col row)
     ???))
+
+#|
+(test-equal? "sample, upper-left corner"
+             (sort (neighboring-pixels sample-pixels 4 4 0 0) red-less-than?)
+             (list (rgb 0 0 0) (rgb 16 0 0)
+                   (rgb 64 0 0) (rgb 80 0 0)))
+(test-equal? "sample, col 1 row 0"
+             (sort (neighboring-pixels sample-pixels 4 4 1 0) red-less-than?)
+             (list (rgb 0 0 0) (rgb 16 0 0) (rgb 32 0 0)
+                   (rgb 64 0 0) (rgb 80 0 0) (rgb 96 0 0)))
+(test-equal? "sample, upper-right corner"
+             (sort (neighboring-pixels sample-pixels 4 4 3 0) red-less-than?)
+             (list (rgb 32 0 0) (rgb 48 0 0)
+                   (rgb 96 0 0) (rgb 112 0 0)))
+(test-equal? "sample, col 1 row 1"
+             (sort (neighboring-pixels sample-pixels 4 4 1 1) red-less-than?)
+             (list (rgb 0 0 0) (rgb 16 0 0) (rgb 32 0 0)
+                   (rgb 64 0 0) (rgb 80 0 0) (rgb 96 0 0)
+                   (rgb 128 0 0) (rgb 144 0 0) (rgb 160 0 0)))
+(test-equal? "sample, lower-left corner"
+             (sort (neighboring-pixels sample-pixels 4 4 0 3) red-less-than?)
+             (list (rgb 128 0 0) (rgb 144 0 0)
+                   (rgb 192 0 0) (rgb 208 0 0)))
+(test-equal? "sample, lower-right corner"
+             (sort (neighboring-pixels sample-pixels 4 4 3 3) red-less-than?)
+             (list (rgb 160 0 0) (rgb 176 0 0)
+                   (rgb 224 0 0) (rgb 240 0 0)))
+|#
 
 ; 3b. blur-pixels
 
