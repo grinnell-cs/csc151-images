@@ -5,6 +5,18 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
+## [CSC-151 2025Sp] Mini-Project 6 (Wednesday, 2025-04-02)
+
+Dear Factalists,
+
+Mini-project 6 (including the autograder) is now posted to Gradescope.
+
+Since there's no penalty for turning it in on Sunday, if you're submitting it for the bonus tokens (due by 10:30 p.m. Thursday), please DM me when you're ready to have it graded.
+
+Thanks!
+
+-- SamR
+
 ## [CSC-151 2025Sp] LAs and MPs and quizzes, oh my! (Sunday, 2025-03-30)
 
 Dear Self-Reflexive Thinkers,
