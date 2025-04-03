@@ -177,7 +177,7 @@ You may find the following procedures helpeful.
 
 _Hint: You should consider defining each procedure in terms of the other. This is often called "mutual recursion"._
 
-b. Write at least three tests for and implement a recursive procedure, `(shapes->rects&tris&diamonds shapes)`, that takes a list of shapes as a parameter and converts each shape into a rectangle, triangle, or diamond, cycling through the three options. Make sure to include at least one edge-case test.
+b. Write at least three tests for and implement a recursive procedure, `(shapes->rects&tris&diamonds shapes)`, that takes a list of shapes as a parameter and converts each shape into a rectangle, isosceles triangle, or diamond, cycling through the three options. Make sure to include at least one edge-case test.
 
 ```
 > (shapes->rects&tris&diamonds (list (solid-rectangle 20 10 "red")
@@ -324,7 +324,7 @@ No, the limit of this is not a "Sierpinski square".  However, it is normally ref
 ;;; `color-y` as the center color.  
 ```
 
-b. Of course, there's no reason we have to recurse on those particular eight squares.  We could, for example, use only six.  Here's one such pattern.
+b. Of course, there's no reason we have to recurse on those particular eight squares.  We could, for example, use only six.  Here's one such pattern. (We haven't included level 0 of the recursion, which is just a black square.)
 
 ![Five red-and-black square carpets.](../images/fractals/carpet-b-examples.png)
 
@@ -364,8 +364,6 @@ d. Using your procedure, create three new images called `fractal-1.png`, `fracta
 Grading rubric
 --------------
 
-_The grading rubric is forthcoming. The version below is a very rough draft._
-
 ### Redo or above
 
 Submissions that lack any of these characteristics will get an I.
@@ -378,7 +376,10 @@ Submissions that lack any of these characteristics will get an I.
 [ ] Acknowledges appropriately.
 [ ] Code runs in DrRacket.
 [ ] Most procedures are documented in some form.
-[ ] Includes all the specified images.
+[ ] Includes images from part 5b.
+    [ ] `combination-1.png`
+    [ ] `combination-2.png`
+    [ ] `combination-3.png`
 ```
 
 ### Meets expectations or above
@@ -393,9 +394,13 @@ prior characteristics will get an R.
 [ ] Code generally follows style guidelines.
 [ ] Documentation for all core procedures is correct / has the correct form.
 [ ] Includes all the specified tests.
-    [ ] 
-    [ ] 
-    [ ] 
+    [ ] Four tests for `combine-pairs-beside`.
+    [ ] Four tests for `combine-pairs-above`. These can be similar to those
+        for `combine-pairs-beside`.
+    [ ] Four tests for `combine-neighbors-above`.
+    [ ] Three tests for `shapes->ellipses&rectangles`.
+    [ ] Three tests for `shapes->rectangles&ellipses`.
+    [ ] Three tests for `shapes->rects&tris&diamonds`.
 [ ] Includes a new procedure that manipulates lists of images.
 [ ] Includes instructions for making the first three freestyle images.
 ```
@@ -406,19 +411,27 @@ Submissions that lack any of these characteristics but have all of the
 prior characteristics will get an M.
 
 ```
-[ ] Passes all of the **E** autograder tests. For example,
+[ ] Passes all of the **E** autograder tests. 
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.
-[ ] Avoids identical recursive calls.
+[ ] Avoids identical recursive calls, particularly for fractals.
 [ ] Does not use `length` in parts one, two, and five.
+[ ] All procedures are documented, including helpers.
 [ ] Documentation for all procedures is correct / has the correct form.
+[ ] No `define` statements within procedures.
 [ ] Each set of tests includes at least one edge case (e.g., an empty
     list, if appropriate).
-    [ ] 
-    [ ] 
-    [ ] 
+    [ ] `combine-pairs-beside`
+    [ ] `combine-pairs-above` (can be similar to `combine-pairs-beside`)
+    [ ] `conbine-neighbors-above`
+    [ ] `shapes->ellipses&rectangles`.
+    [ ] `shapes->rectangles&ellipses`.
+    [ ] `shapes->rects&tris&diamonds`.
 [ ] Includes a new fractal procedure.
 [ ] Includes the three fractal images.
+    [ ] `fractal-1.png`
+    [ ] `fractal-2.png`
+    [ ] `fractal-3.png`
 [ ] Includes instructions for making the three fractal images.
 ```
 
@@ -480,11 +493,27 @@ How should I get started?
 
 > Think about the base case in terms of one/both of those parameters.
 
-How can I deal with the need to change colors?
+What should my recursive call for 3a look like?
+
+> Presumably something like `(fractal-triangle (/ side 2) color (- n 1))`.
+
+Do I need to use exponentiation to get small enough triangles?
+
+> No! Trust the recursion.
+
+How can I deal with the need to change colors in 3b?
 
 > One of the parameters to the recursive call is a color. You should modify the color in making each of the three recursive calls.
 
 ### Part four: Fractal squares (carpets)
+
+What's our base case?
+
+> When `n` is 0.
+
+What should our output be for `carpet-a` be when `n` is 0?
+
+> A `size`-by-`size` square of `color-x`. (There's no center color this time.)
 
 ### Part five: Freestyle
 
