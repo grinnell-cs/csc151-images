@@ -8,7 +8,7 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
-link: false
+link: true
 preimg: true
 mathjax: true
 ---
@@ -16,7 +16,7 @@ Name your file for this assignment [`pixel-problems.rkt`](../code/mps/pixel-prob
 
 ## Background
 
-As you may recall from your recent work, we can envision each image as a width-by-height grid of colored "pixels".  We call such a structure a "bitmap".  As you might expect, each pixel in the grid is indexed by a column and a row. Here's a diagram of the indices in a `w`-by-`h` bitmap.
+As you may recall, we can envision each image as a width-by-height grid of colored "pixels".  We call such a structure a "bitmap".  As you might expect, each pixel in the grid is indexed by a column and a row. Here's a diagram of the indices in a `w`-by-`h` bitmap.
 
 ```
        0     1     2     3              w-2   w-1
@@ -294,6 +294,8 @@ Write a procedure, `(positionally-transform-pixels! pixels width height)`, that 
 
 _Hint_: Think about how to decompose the problem. You will likely find it helpful to write helper procedures (e.g., that process a row or a column).
 
+_Note_: You are, in effect, writing something much like `pixel-pos-map` but with a particular transformation. Hence, you may not use `pixel-pos-map` in writing `positionally-transform`.
+
 Once you've written `positionally-transform-pixels!`, you can see its effect on an image with the following procedure.
 
 ```
@@ -304,9 +306,11 @@ Once you've written `positionally-transform-pixels!`, you can see its effect on 
 ;;; average of the row and column to the green component.
 (define positionally-transform
   (lambda (img)
-    (let ([pixels (image->pixels img)])
-      (positionally-trasform-pixels! pixels)
-      (pixels->image pixels (image-width img) (image-height img)))))
+    (let ([pixels (image->pixels img)]
+          [width (image-width img)]
+          [height (image-height img)])
+      (positionally-transform-pixels! pixels width height)
+      (pixels->image pixels width height))))
 ```
 
 Let's see how it works.
@@ -335,41 +339,49 @@ Of course, one can also use other kinds of context to affect pixels. For example
 a. Document and write a procedure, `(neighboring-pixels pixels width height col row)`, that grabs the pixels around the specified position (including the pixel at the position). Note that your procedure will normally return nine colors, but will return fewer when its at the borders of the image. (E.g., at position (0,0), there are no pixels in the row above or column to the left, so you'll only return four colors.)
 
 ```
+;;; sample-pixels : (vector-of rgb?)
+;;; A set of sixteen sample pixels for our tests.
 (define sample-pixels
   (list->vector (map (lambda (x) (rgb (* 16 x) 0 0))
                      (range 16))))
-(define red-less-than
+
+;;; (red-less-than? c1 c2) -> boolean?
+;;;   c1 : rgb?
+;;;   c2 : rgb?
+;;; Determine if the red component of `c1` is less than the red component
+;;; of `c2`.
+(define red-less-than?
   (lambda (c1 c2)
     (< (rgb-red c1) (rgb-red c2))))
 
 (test-equal? "sample, upper-left corner"
-             (sort (neighboring-pixels sample-pixels 4 4 0 0) red-less-than)
+             (sort (neighboring-pixels sample-pixels 4 4 0 0) red-less-than?)
              (list (rgb 0 0 0) (rgb 16 0 0)
                    (rgb 64 0 0) (rgb 80 0 0)))
 (test-equal? "sample, col 1 row 0"
-             (sort (neighboring-pixels sample-pixels 4 4 1 0) red-less-than)
+             (sort (neighboring-pixels sample-pixels 4 4 1 0) red-less-than?)
              (list (rgb 0 0 0) (rgb 16 0 0) (rgb 32 0 0)
                    (rgb 64 0 0) (rgb 80 0 0) (rgb 96 0 0)))
 (test-equal? "sample, upper-right corner"
-             (sort (neighboring-pixels sample-pixels 4 4 3 0) red-less-than)
+             (sort (neighboring-pixels sample-pixels 4 4 3 0) red-less-than?)
              (list (rgb 32 0 0) (rgb 48 0 0)
                    (rgb 96 0 0) (rgb 112 0 0)))
 (test-equal? "sample, col 1 row 1"
-             (sort (neighboring-pixels sample-pixels 4 4 1 1) red-less-than)
+             (sort (neighboring-pixels sample-pixels 4 4 1 1) red-less-than?)
              (list (rgb 0 0 0) (rgb 16 0 0) (rgb 32 0 0)
                    (rgb 64 0 0) (rgb 80 0 0) (rgb 96 0 0)
                    (rgb 128 0 0) (rgb 144 0 0) (rgb 160 0 0)))
 (test-equal? "sample, lower-left corner"
-             (sort (neighboring-pixels sample-pixels 4 4 0 3) red-less-than)
+             (sort (neighboring-pixels sample-pixels 4 4 0 3) red-less-than?)
              (list (rgb 128 0 0) (rgb 144 0 0)
                    (rgb 192 0 0) (rgb 208 0 0)))
 (test-equal? "sample, lower-right corner"
-             (sort (neighboring-pixels sample-pixels 4 4 3 3) red-less-than)
+             (sort (neighboring-pixels sample-pixels 4 4 3 3) red-less-than?)
              (list (rgb 160 0 0) (rgb 176 0 0)
                    (rgb 224 0 0) (rgb 240 0 0)))
 ```
 
-b. Write a procedure, `(blur-pixels pixels width height)`, that creates a new version of `pixels` in which each pixel is blurrd by averaging the neighboring pixels. (There are other ways to blur an image; you _must_ use this approach.)
+b. Write a procedure, `(blur-pixels pixels width height)`, that creates a new version of `pixels` in which each pixel is blurred by averaging the neighboring pixels. (There are other ways to blur an image; you _must_ use this approach.)
 
 Here's a procedure that may help.
 
@@ -915,7 +927,17 @@ How do I make sure that I only grab 4 or 6 pixels if I'm grabbing the pixels aro
 
 > If the row is 0, you shouldn't grab anything from above. If the row is `(- height 1)`, you shouldn't grab anything from below.
 
-> I ended up with a bunch of `if` statements.
+How do I achieve that result?
+
+> You might write an `if` statement for each of the positions (returning either the color or false), put the results in a list, and then filter for the colors.
+
+Any other suggestions?
+
+> I'd suggest writing a procedure, `(get-pixel-at pixels col row width height)` that returns the pixel at the given position (if it's a valid position) or `#f` (if it's not a valid position).
+
+Why do the tests for `neighboring-pixels` have a call to `sort`?
+
+> Since I don't know the order in which you'll return the neighboring pixels, I've designed the test so that it should work no matter what order you choose.
 
 ### Part four: Steganography
 

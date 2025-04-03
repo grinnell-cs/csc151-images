@@ -477,6 +477,28 @@ Can you give an example and explain more on mutual recursion, I saw it mentioned
 
 ### Part one: Combining lists of images
 
+I'm failing some of the tests that refer to `black-diamond` and `red-diamond`. Is that because I haven't defined them?
+
+> No. They are defined in the test code.
+
+> If you'd like to rerun the tests, you can use the following definitions.
+
+> ```
+; black-diamond : shape?
+; A black diamond. Intended mostly for tests.
+(define black-diamond (solid-diamond 30 20 "black"))
+```
+
+> ```
+; red-diamond : shape?
+; A red diamond. Intended mostly for tests.
+(define red-diamond (solid-diamond 30 20 "red"))
+```
+
+Were you thinking of Kiss or playing cards when you created the first of those shapes?
+
+> The Replacements, believe it or not. I keep forgetting that it's a Kiss song. But the red diamond made me think of playing cards, too.
+
 ### Part two: Transforming shape lists
 
 Do I need a counter to keep track of which shape I'm supposed to change into?
