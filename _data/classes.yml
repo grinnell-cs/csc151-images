@@ -286,16 +286,6 @@
   lab:
     - page: /labs/vectors-continued.html
 
-- topic: Dictionaries and hash tables
-  abbrev: dictionaries
-  summary: |
-    We consider structures that allow us to store information for
-    quick retrieval.
-  reading:
-    - page: /readings/hash-tables.html
-  lab:
-    - page: /labs/hash-tables.html
-
 - topic: Randomness
   abbrev: randomness
   summary: |
@@ -305,6 +295,16 @@
     - page: /readings/randomness.html
   lab:
     - page: /labs/random-language.html
+
+- topic: Dictionaries and hash tables
+  abbrev: dictionaries
+  summary: |
+    We consider structures that allow us to store information for
+    quick retrieval.
+  reading:
+    - page: /readings/hash-tables.html
+  lab:
+    - page: /labs/hash-tables.html
 
 - topic: Data abstraction
   abbrev: data-abstraction
