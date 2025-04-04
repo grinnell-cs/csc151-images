@@ -1,5 +1,5 @@
 ---
-title: "EBoard 25: Vectors (Section 2)"
+title: "EBoard 25: Vectors (Section 3)"
 number: 25
 section: eboards
 held: 2025-04-04
@@ -48,8 +48,6 @@ Artistic
   _Educational Comics Workshop_.
     * You must attend all three sessions.
     * But you'll earn three tokens.
-* Sunday, 6 April 2025 2:00 p.m. Sebring-Lewis.
-  _Grinnell Singers_
 
 Multicultural
 
@@ -57,23 +55,21 @@ Multicultural
   _Middle of Everywhere: Vietnam_
 * Friday, 4 April 2025, 6:00--9:00 p.m.,. JRC 101.
   _Eid Fest_
-* Saturday, 5 April 2025, 5:30--7:00 p.m., HSSC Atrium.
-  _Slavic Coffee House_.
 * Friday, 11 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
-  _Middle of Everywhere:??? 
+  _Middle of Everywhere: ???_
 
 Peer
 
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
-* Read articles by your fellow CSC-151 students and comment on them online.
-* Saturday, 5 April 2025, Noon, Baseball field.
-  _Baseball vs. Monmouth_.
-* Saturday, 5 April 2025, 2:30 p.m., Baseball field.
-  _Baseball vs. Monmouth_.
-* Sunday, 6 April 2025, Noon, Baseball field.
-  _Baseball vs. Monmouth_.
+* Read articles by your fellow CSC-151 student and comment on them online.
+* Saturday at 7pm, Sunday at 2pm, a week from Thursday at 7:00 p.m. and
+  beyond. Stewart former-library.
+  _Rumors, a play by Neil Simon_
+    * Sam will pay.
+* Sunday, 6 April 2025 2:00 p.m. Sebring-Lewis.
+  _Grinnell Singers_
 
 Wellness
 
@@ -115,6 +111,12 @@ Misc
 _These do not earn tokens, but are worth your consideration._
 
 * Lots of softball games this weekend.
+* Saturday, 5 April 2025, Noon, Baseball field.
+  _Baseball vs. Monmouth_.
+* Saturday, 5 April 2025, 2:30 p.m., Baseball field.
+  _Baseball vs. Monmouth_.
+* Sunday, 6 April 2025, Noon, Baseball field.
+  _Baseball vs. Monmouth_.
 
 ### Upcoming work
 
@@ -130,8 +132,8 @@ _These do not earn tokens, but are worth your consideration._
 * Tuesday, 8 April 2025
     * [Submit lab writeup for Class 26 on Gradescope]
     * Readings
-        * [Randomness]
-        * [Submit reading response on Gradescope]
+        * Randomness
+        * Submit reading response on Gradescope
 * Wednesday, 9 April 2025
     * Quiz: Diagramming structures (paper only)
     * Makeup quiz: List recursion
@@ -139,8 +141,8 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
-* You're awesome. Please try to remain that way.
-* Please be moderate in what you do. Cake to excess is bad.
+* You are awesome. Please take of yourselves.
+* Please be moderate in all you do.
 * Consent is essential but not sufficient.
 
 Mini-Project 7
@@ -148,7 +150,7 @@ Mini-Project 7
 
 * Key idea: Play with an underlying representation of images.
 * Part one: Explore rows and columns.
-* Part two: Using the idea to make a variant of images.
+* Part two: Using the idea to make variants of images.
 * Part three: More variants.
 * Part four: Steganography.
 * Part five: Freestyle.
@@ -163,13 +165,6 @@ Questions
 
 ### Mini-project 6
 
-For some of my fractals, it said my images didn't look correct. What should
-I do?
-
-> Option 1: Fingers crossed.
-
-> Option 2: Ask Sam via Teams Message.
-
 ### Other
 
 Vectors
@@ -179,74 +174,95 @@ Vectors
 
 _TPS_
 
-### What is a vector?
+What is a vector?
 
-* It's like a list. That is, it represents a sequence of values.
-* Unlike lists, you change them.
+* A mechanism for storing sequential data (something like a list).
 
-### What are the key vector operations?
+What are the key vector procedures?
 
-* `(vector-set! vec index new-value)` - Puts the new value at the given
-  position. (We don't know of a list equivalent.)
-* `(make-vector length val)` - Makes a vector of the given length containing
-  that many copies of the value. (Similar operation for lists: `make-list`).
-* `(vector val0 ...)` - Makes a vector containing those values. (Similar
-  operation for lists: `list`.)
-* `(vector-length vec)` - Tells you the length of the vector (size, number
-  of elements in the vector). (Similar operation for lists: `length`.)
-* `(vector-ref vec pos)` - Extract an element from the vector. (For
-  lists, we have `list-ref`).
+* `(vector-set! vec index new-value)` - Go to the index in the vector
+  and put in `new-value`. There is no corresponding list procedure (at
+  least not one we've seen).
+* `(make-vector n val)` - Makes a vector with the given number of copies
+  of `val`.
+  A lot like `(make-list n val)` - Makes a list with the given number
+  of copies of `val.
+* `(vector-length vec)` - Tells you how many values are in the vector.
+  A lot like `(length lst)`.
+* `(vector-ref vec index)` - extract the value at the given index.
+  `(list-ref lst index)` - extract the value at the given index.
+    * `vector-ref` is generally *much* faster because lists require
+      us to call `cdr` a lot of times.
+* `(vector val0 val1 ...)` - Makes a vector of values.
+  `(list val0 val1 ...)` - Makes a list of values.
 
-### What are the three key C list operations?
+What are the three C list procedures?
 
-* `(cons val lst)` - Creates a new list by adding an element to the 
-  front of `lst`. We did not learn an equivalent operation for vectors
-  (there isn't really one).  Vectors have a fixed length.
-* `(car lst)` - Returns the element at index 0. We use `vector-ref`
-  to achieve a similar goal.
-* `(cdr lst)` - Returns a "new" list without the first element of `lst`.
-  Sam did not teach us a similar vector operation (because there isn't
-  really one).
+* `(cons val lst)` - Builds a new list by adding `val` to the front of `lst`.
+  No equivalent for vectors.
+* `(car lst)` - Grabs the first value in `lst`. We can use 
+   `(vector-ref vec 0)` to get the equivalent behavior for vectors.
+* `(cdr lst)` - Returns a new list that contains all but the first value
+  of `lst`.
+  No equivalent for vectors.
 
-### What distinguishes vectors from lists?
+What distinguishes vectors from lists?
 
-* Unlike lists, you change vectors.
-* Unlike lists, vectors have a fixed length.
-* It's much faster to find the `i`th element of a vector than a list.
-    * For a list, we need to cdr through the list `i` times and then
-      call `car`.
-    * For a vector, we can quickly compute a new memory location.
+* Vectors are mutable; you can change the elements inside. We can't
+  change the elements in lists. (We just build new, similar lists.)
+* Accessing elements in lists is slow (unless we want to access them
+  from front to back). Accessing elements in vectors is fast.
+* You can make lists shorter and longer; you can't generally make
+  vectors shorter and longer.
 
-### Why would you use one rather than the other?
+Why would you use one rather than the other?
 
-* If you're going to be doing lots of indexing (not in sequential order),
-  vectors are much better.
-* If you're going to be adding and removing elements, you probably want
-  to use a list.
-* If you're going to be changing elements, you should use vector.
+* We use vectors when we want to change the elements of our collection.
+* We use vectors when we may need to "randomly" access the elements of
+  our collection.
+* We use lists when we may want to change the length of our collection
+  (e.g., remove elements).
 
-### How does `vector-set!` differ from other procedures we've seen?
+How does `vector-set!` differ from other procedures we've seen?
 
+* `vector-set!` is the first procedure we've encountered that changes
+  its input. This will affect how we approach programming.
+* It has an exclamation point! (Also known as a "bang" because
+  programmers are somewhat lazy.)
 * It doesn't return anything.
-* It changes one of its parameters.
-* `(define tn3 (vector-set! (vector-set! (make-vector 2 0) 0 7) 1 11))`
-    * The inner `vector-set!` returns nothing, and so the outer `vector-set!`
-      doesn't have a vector to modify.
-* If you don't name the vector and use vector-set!, the vector is lost!
+    * It's easy to lose things if you don't name them first.
 
-### Programming with vectors
+```
+> (vector-set! (make-vector 5 11) 0 2)
+> (define stuff (make-vector 5 11))
+> stuff
+'#(11 11 11 11 11)
+> (vector-set! stuff 0 2)
+> stuff
+'#(2 11 11 11 11)
+```
 
-_How might programming with vectors differ from the other kinds of
+Detour:
+
+* You may have noted that Scheme lists and Scheme expression look
+  nearly the same. You can evaluate and Scheme list as if it were
+  a Scheme expression.
+
+How might programming with vectors differ from the other kinds of
 programming we've done? (Think especially about recursive programming
-and `vector-set!`.)_
+and/or the effects of `vector-set!`.)
 
-* Historically, we have sequenced operations by nesting.
-  `(proc3 (proc2 (proc1 vall)))`.
-* Since `vector-set!` doesn't return anything, we must sequence by
-  writing things one after another.
-* ```
-(vector-set! vec 0 "zero")
-(vector-set! vec 1 "one")
+* We're going to change how we sequence things.
+* In the past, we'd write `(proc3 (proc2 (proc1 val)))`.
+* That generally won't work if one of the procedures returns nothing.
+* `(define vec3 (vector-set! (vector-set! (make-vector 2 0) 0 7) 1 11))`
+  doesn't work.
+* We will write things in sequence, rather than nesting.
+```
+(define vec3 (make-vector 2 0))
+(vector-set! vec3 0 7)
+(vector-set! vec3 1 11)
+vec3
 ```
 
 ### Some exercises
@@ -261,21 +277,44 @@ and `vector-set!`.)_
 
 ;;; (vector-tally-odd-helper vec index) -> integer?
 ;;;   vec : (vector-of exact-integer?)
-;;;   index : exact-integer? (between 0 and (vector-length vec))
-;;; Tally the odd element in vector starting at the given index.
+;;;   index : exact-integer? (index in the vector)
+;;; Count how many odd numbers are in the vector starting at the given
+;;; index.
+(define vector-tally-odd-helper
+  (lambda (vec index)
+    (if BASE-CASE
+        BASE-VALUE
+        (POST-PROCESS (vector-tally-odd-helper vec (CHANGE index))))))
 ```
 
-* We'll need to use `vector-ref` to get elements out of the vector.
-* We'll need to index to run from 0 (inclusive) to `(vector-length vec)`
-  (exclusive)
-* If we need to keep track of the index, we'll need a helper procedure.
-* We're going to need to use recursion.
-    * Base case test: Index is greater than or equal to length vector
-    * Base case value: 0
-    * Recursive call
-    * Pre-recursion or post-recursion step
+* We'll need to use recursion, but we'll need to keep track of the
+  current index in order to do so.
+    * We'll need to create a helper procedure.
+* We'll get to use `vector-ref` to count elements
+* It will look a lot like the list recursive version
+
+As dedicated recursive programmers, we know to ask four basic questions.
+
+* What's the base case? When the index is the length of the vector.
+* What's the base value? (If I start at index 5 in a length 5 vector, how
+  many odd numbrs can I see between index 5 and the end of the vector?).
+  0
+* What's the recursive call?
+* What do we do with the result of the recursive call?
 
 ```
+;;; (vector-tally-odd vec) -> integer?
+;;;   vec : (vector-of exact-integer?)
+;;; Count how many odd numbers are in the vector.
+(define vector-tally-odd
+  (lambda (vec)
+    (vector-tally-odd-helper vec 0)))
+
+;;; (vector-tally-odd-helper vec index) -> integer?
+;;;   vec : (vector-of exact-integer?)
+;;;   index : exact-integer? (index in the vector)
+;;; Count how many odd numbers are in the vector starting at the given
+;;; index.
 (define vector-tally-odd-helper
   (lambda (vec index)
     (if (>= index (vector-length vec))
@@ -284,6 +323,21 @@ and `vector-set!`.)_
              1
              0)
            (vector-tally-odd-helper vec (+ 1 index))))))
+```
+
+```
+> (vector-tally-odd (vector))
+0
+> (vector-tally-odd (vector 2))
+0
+> (vector-tally-odd (vector 1))
+1
+> (vector-tally-odd (vector 1 -1 3 11 5 1))
+6
+> (vector-tally-odd (vector 2 1 2 -1 3 2 2 11 2 5 2 2 1))
+6
+> (vector-tally-odd (vector 2 1 2 -1 3 2 2 0 0 11 2 5 2 2 1 -2))
+6
 ```
 
 ```
