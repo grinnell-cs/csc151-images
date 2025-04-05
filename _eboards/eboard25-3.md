@@ -124,20 +124,37 @@ _These do not earn tokens, but are worth your consideration._
     * [MP7](../mps/mp07) released
     * [Submit post-reflection for MP6 on Gradescope](https://www.gradescope.com/courses/948769/assignments/5989932)
 * Sunday, 6 April 2025
-    * [Submit pre-reflection for MP7 on Gradescope]
-    * [Submit late but not late MP6 on Gradescope]
+    * [Submit pre-reflection for MP7 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6043507)
+    * [Submit late but not late MP6 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6030730)
     * No readings
 * Monday, 7 April 2025
-    * [Submit late but not late MP6 post-reflection on Gradescope]
+    * [Submit late but not late MP6 post-reflection on Gradescope](https://www.gradescope.com/courses/948769/assignments/5989932)
 * Tuesday, 8 April 2025
-    * [Submit lab writeup for Class 26 on Gradescope]
+    * Submit lab writeup for Class 26 on Gradescope
     * Readings
-        * Randomness
-        * Submit reading response on Gradescope
+        * [Randomness](../readings/randomness)
+        * Submit reading response on randomness on Gradescope
 * Wednesday, 9 April 2025
     * Quiz: Diagramming structures (paper only)
     * Makeup quiz: List recursion
     * Makeup quiz: Tracing
+* Thursday, 10 April 2025
+    * Readings
+        * [Dictionaries, maps, and hash tables](../readings/hash-tables)
+        * Submit reading response on Gradescope
+    * [MP7](../mps/mp07) due
+    * [Submit MP7 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6036267)
+* Friday, 11 April 2025
+    * [Submit post-reflection for MP7 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6043508)
+* Sunday, 13 April 2025
+    * Submit pre-reflection for SoLA 3 on Gradescope
+    * Readings 
+        * [Data abstraction](../readings/data-abstraction)
+        * Submit reading response on Gradescope
+    * Submit Friday's lab on Gradescope
+    * [Submit late but not late MP7 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6036267)
+* Monday, 14 April 2025
+    * [Submit late but not late post-reflection for MP7 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6043508)
 
 ### Friday PSA
 
