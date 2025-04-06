@@ -397,7 +397,7 @@ We've also provided a `slightly-nested-shape-list?` predicate.
 ;;; (slightly-nested-shape-list? val) -> boolean?
 ;;;   val : any?
 ;;; Determines whether `val` is a slightly-nested shape list. That is,
-;;; either a shape or a shape list.
+;;; a list of values that are either shapes or shape lists.
 (define slightly-nested-shape-list?
   (list-of (any-of shape? (list-of shape?))))
 ```
@@ -430,7 +430,8 @@ As you might expect, we've provided a `doubly-nested-shape-list` predicate.
 ;;; (doubly-nested-shape-list? val) -> boolean?
 ;;;   val : any?
 ;;; Determines whether `val` is a doubly-nested shape list. That is,
-;;; a shape list, shape lists, and slightly-nested shape lists.
+;;; a list of values that either shapes, shape lists, or slightly-nested
+;;; shape lists. 
 (define doubly-nested-shape-list?
   (list-of (any-of shape?
                    slightly-nested-shape-list)))
