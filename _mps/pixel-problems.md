@@ -310,7 +310,9 @@ Once you've written `positionally-transform-pixels!`, you can see its effect on 
           [width (image-width img)]
           [height (image-height img)])
       (positionally-transform-pixels! pixels width height)
-      (pixels->image pixels width height))))
+      (pixels->image pixels width height
+                     (string-append (image-description img)
+                                    ", positionally transformed")))))
 ```
 
 Let's see how it works.
