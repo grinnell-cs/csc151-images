@@ -129,7 +129,7 @@ _These do not earn tokens, but are worth your consideration._
     * Readings
         * [Dictionaries, maps, and hash tables](../readings/hash-tables)
         * [Submit reading response on dictionaries on Gradescope](https://www.gradescope.com/courses/948769/assignments/6047029)
-    * [MP7](../mps/mp07) due
+    * [MP7](../mps/mp07) "due"
     * [Submit MP7 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6036267)
 * Friday, 11 April 2025
     * [Submit post-reflection for MP7 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6043508)
@@ -159,14 +159,15 @@ _The mentors asked me to give you a quick summary._
 Some basic principles.
 
 * Any time you have a `cons`, draw a cons cell (pair).
+    * Each box in the cons cell can hold ONE thing (a null or an arrow)
 * Any time you have a list of length `n`, draw `n` cons cells in
   sequence, with a null at the end. Draw downward arrows to each value.
-  In the list.
+  in the list (except for nulls).
 * For any explict nulls, draw a slash.
 
 Example,
 
-* `'((a b ()) c (d e) ((f)))`
+* `'((a b ()) c (d e) () ((f)))`
 
 ### Questions
 
@@ -175,7 +176,29 @@ Questions
 
 ### Administrative
 
+Will we have another chance after the final redo for a mini project?
+
+> Nope. Original. First redo. Second redo. Ultimate redo.
+
+Will we have a redo for MP9?
+
+> Nope. It's all or nothing. But it has a very clear rubric which focuses
+  primarily on "do this minimal stuff in this amount of time".
+
+> It's also a (self-formed) group project.
+
 ### Mini-project 7
+
+In mini-project 6, we needed to use local bindings to avoid identical
+recursion, which makes things VERY slow. Do we have the same issue on
+mini-project 7. If so, can you give an example?
+
+> I don't believe so. We'll mostly use direct recursion here.
+
+How should we implement `enhance-color`?
+
+> For each position, find the neighboring pixels (including the pixel
+  at that position), find their average, call `(enhance-color pixel average)`.
 
 ### Vectors
 
@@ -214,8 +237,33 @@ Vectors
        (vector-increment-odd-helper! vec (+ index 1))])))
 ```
 
-Other ways to think about doing this.
+Note that we prefer not to explicitly write `void`, so we could also
+use a `when` here.
+
+```
+(define vector-increment-odd-helper!
+  (lambda (vec index)
+    (when (< index (vector-length vec)) ; we're checking whether or not to continue
+       (when (odd? (vector-ref vec index))
+          (vector-set! vec index (increment (vector-ref vec index))))
+       (vector-increment-odd-helper! vec (+ index 1))])))
+```
+
+Semantics of `when`
+
+```
+(when (TEST)
+  consequent1
+  ...
+  consequentn)
+```
+
+* Evaluates the TEST. 
+* If the TEST holds (evaluates to a truish value), we evaluate each of the
+  consequents in turn and return the value of the last one.
+* If the TEST fails (evaluates to false), we return NOTHING (`void`).
 
 Lab
 ---
 
+Today's lab is Vectors, continued.
