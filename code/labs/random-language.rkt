@@ -3,7 +3,7 @@
 (require csc151)
 (require rackunit)
 
-;; CSC-151 (SEMESTER)
+;; CSC-151-NN (SEMESTER)
 ;; Authors: YOUR NAMES HERE
 ;; Date: THE DATE HERE
 ;; Acknowledgements:
@@ -47,7 +47,7 @@
 
 ;;; people -> listof string?
 ;;; A list of some of the folks who teach 151
-(define people (list "Peter-Michael" "Nicole" "Sarah" "SamR" "Barbara" "Priscilla" "Jerod"))
+(define people (list "Peter-Michael" "Nicole" "Sarah" "SamR" "Eric" "Fernanda" "Jerod" "Leah" "Charlie"))
 
 ;;; (random-person) -> string?
 ;;; Randomly select an element of the people list.
