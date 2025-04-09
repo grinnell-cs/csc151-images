@@ -3,7 +3,7 @@ title: "EBoard 27: Randomness (Section 2)"
 number: 27
 section: eboards
 held: 2025-04-09
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -29,7 +29,7 @@ Administrative stuff
       mentor sessions). You can also (e) ask the evening tutors if they are
       not busy. 
     * If you need help with a mini-project, you can (a) ask the evening
-      tutors, (b) TM Sam, (c) sign up for a meeting with Sam. (d) as
+      tutors, (b) TM Sam, (c) sign up for a meeting with Sam. (d) ask
       in class (provided it's a general question). _Individual tutors are
       not supposed to be for homework help!_
     * You can also ask a fellow student about these issues (except on
@@ -60,7 +60,7 @@ Multicultural
   _Klezmer Workshop_. 
     * Learn to dance a Hora, a Bulgar, a Cosidle, or a Freylekhe.
 * Friday, 11 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
-  _Middle of Everywhere:???_
+  _Middle of Everywhere: Sindhi Community in Pakistan_
 
 Artistic / Multicultural
 
@@ -113,7 +113,7 @@ Misc
       that higher education and Grinnell College face."
     * Also online.
     * This week: Karen Edwards on Immigration Regulations.
-* Sunday, 15 April 2025, 7:30--8:30 p.m., Science 3819. 
+* Sunday, 13 April 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session: SoLA 3_
 * Tuesday, 15 April 2025, 7:00--8:00 p.m., Science 3820.
   _Mentor Session: Dictionaries_
@@ -123,13 +123,14 @@ Misc
 _These do not earn tokens, but are worth your consideration._
 
 * Track and Field Home Meet this weekend.
+* Scarlet and Give Back Day.
 
 ### Upcoming work
 
 * Wednesday, 9 April 2025
     * Quiz: Diagramming structures (paper only)
     * Makeup quiz: List recursion
-    * Makeup quiz: Tracing
+    * Makeup quiz: Tracing (paper only)
 * Thursday, 10 April 2025
     * [Submit today's lab on Gradescope](https://www.gradescope.com/courses/948769/assignments/6059345)
     * Readings
@@ -166,7 +167,30 @@ Questions
 
 ### Administrative
 
+Do we have an in-class quiz on local bindings?
+
+> No. Our general pattern for quizzes is in-class, in-class makeup, and then
+  SoLA.
+
 ### Mini-project 7
+
+Can we have a hint on 1e?
+
+> `(set-region! pixels width height left top right bottom color)`
+
+> You've written `set-row!`. You can write a `set-partial-row!` that 
+  fills in part of a row (from left (inclusive) to right (exclusive)).
+
+> You've written `set-rows!`. `set-region!` will look remarkably like
+  `set-rows!` except you'll be calling `set-partial-row!` instead.
+
+How is the MP?
+
+> Frustrating and difficult, but you can still get it done.
+
+> New policy: You need to do 3 or 4 for an E. You need not do 3 or 4 for an M.
+
+> Use the DrRacket reference page!
 
 ### Randomness
 
@@ -214,3 +238,8 @@ What's so special about the number 4,294,967,296?
 Lab
 ---
 
+Side note: This is one of my favorite labs because (a) there's a really
+bad pun in the lab, (b) those who get to the later problems have fun,
+and (c) the "Rolling Rolling Rolling" reminds me of two of my favorite
+performances (John Belushi and band performing "Rawhide" in _The Blues
+Brothers_ and any of the many Tina Turner performances of "Proud Mary").

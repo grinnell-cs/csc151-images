@@ -3,7 +3,7 @@ title: "EBoard 27: Randomness (Section 3)"
 number: 27
 section: eboards
 held: 2025-04-09
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -29,7 +29,7 @@ Administrative stuff
       mentor sessions). You can also (e) ask the evening tutors if they are
       not busy. 
     * If you need help with a mini-project, you can (a) ask the evening
-      tutors, (b) TM Sam, (c) sign up for a meeting with Sam. (d) as
+      tutors, (b) TM Sam, (c) sign up for a meeting with Sam, (d) ask
       in class (provided it's a general question). _Individual tutors are
       not supposed to be for homework help!_
     * You can also ask a fellow student about these issues (except on
@@ -60,7 +60,7 @@ Multicultural
   _Klezmer Workshop_. 
     * Learn to dance a Hora, a Bulgar, a Cosidle, or a Freylekhe.
 * Friday, 11 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
-  _Middle of Everywhere:???_
+  _Middle of Everywhere: Sindhi Community in Pakistan_
 
 Artistic / Multicultural
 
@@ -84,9 +84,13 @@ _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
+* Thursday at 7pm, Friday at 7pm, or Saturday at 2pm. Stewart Art Center.
+  _Rumors_ (with a classmate as Charlie/Understudy)
 
 Wellness
 
+* Tuesday, 10 April 2025, 12:00--12:45 p.m., Dance Studio.
+  _HIIT Training._
 * Thursday, 10 April 2025. ???. ???.
   _Forest Bathing._
 * Friday, 11 April 2025, 6:00 p.m.--8:00 p.m., Aux Gym.
@@ -96,9 +100,11 @@ Wellness
 * Saturday, 12 April 2025, 4:00 p.m.--6:00 p.m., Aux Gym.
   _Badminton Club_ (Smash that bird!)
 * Tuesday, 15 April 2025, 5:00--6:00 p.m., HSSC Atrium.
-  _Therapy Dogs_.
+  _Therapy Dogs._
 * Tuesday, 15 April 2025, 7:15--8:15 p.m., HSSC Atrium.
-  _Therapy Dogs_.
+  _Therapy Dogs._
+* Tuesday, 15 April 2025, 12:00--12:45 p.m., Dance Studio.
+  _HIIT Training._
 * Tuesday, 15 April 2025, 12:15--12:50 p.m., GCMoA.
   _Yoga in the Museum_.
 * Tuesday, 15 April 2025, 4:30--6:30 p.m., 
@@ -107,29 +113,33 @@ Wellness
 
 Misc
 
-* Wednesday, 9 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
+* Sunday, 13 April 2025, 7:30--8:30 p.m., Science 3819. 
+  _Mentor Session: SoLA 3_
+* Tuesday, 15 April 2025, 7:00--8:00 p.m., Science 3820.
+  _Mentor Session: Dictionaries_
+* Wednesday, 16 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
   _Community Forum_
     * "Weekly discussion on legal protections and recourse on issues 
       that higher education and Grinnell College face."
     * Also online.
-    * This week: Karen Edwards on Immigration Regulations.
-* Sunday, 15 April 2025, 7:30--8:30 p.m., Science 3819. 
-  _Mentor Session: SoLA 3_
-* Tuesday, 15 April 2025, 7:00--8:00 p.m., Science 3820.
-  _Mentor Session: Dictionaries_
+    * This week: ???
 
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
 
 * Track and Field Home Meet this weekend.
+* Scarlet and Give Back Day
+
+### Bad things
+
+* Fight Club.
 
 ### Upcoming work
 
 * Wednesday, 9 April 2025
     * Quiz: Diagramming structures (paper only)
     * Makeup quiz: List recursion
-    * Makeup quiz: Tracing
 * Thursday, 10 April 2025
     * [Submit today's lab on Gradescope](https://www.gradescope.com/courses/948769/assignments/6059345)
     * Readings
@@ -152,6 +162,8 @@ _These do not earn tokens, but are worth your consideration._
     * Quiz: Dictionaries
     * Makeup quiz: Diagramming structures (paper only)
     * Makeup quiz: Tracing (paper only)
+    * Reminder: You can bring a sheet of hand-written notes for each quiz.
+      Many of you would benefit from doing so.
 * Sunday, 20 April 2025
     * Submit first redo for MP6 on Gradescope (I hope)
     * Submit second redo for MP4 on Gradescope
@@ -167,6 +179,12 @@ Questions
 ### Administrative
 
 ### Mini-project 7
+
+Mini-project 7 took me more than six hours, but I'm done. Could you make
+it easier for my classmates who haven't started yet?
+
+> Yes. Parts three and four are now both optional. You must do three OR
+  four for an E. You must still do parts one, two, and five.
 
 ### Randomness
 
@@ -214,3 +232,8 @@ What's so special about the number 4,294,967,296?
 Lab
 ---
 
+Side note: This is one of my favorite labs because (a) there's a really
+bad pun in the lab, (b) those who get to the later problems have fun,
+and (c) the "Rolling Rolling Rolling" reminds me of two of my favorite
+performances (John Belushi and band performing "Rawhide" in _The Blues
+Brothers_ and any of the many Tina Turner performances of "Proud Mary").

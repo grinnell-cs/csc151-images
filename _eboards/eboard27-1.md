@@ -3,7 +3,7 @@ title: "EBoard 27: Randomness (Section 1)"
 number: 27
 section: eboards
 held: 2025-04-09
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -22,7 +22,6 @@ Administrative stuff
 
 ### Introductory notes
 
-* I think we still have an unidentified quiz.
 * For clarity, here are the kinds of help you can obtain.
     * If you don't understand a topic, you can (a) attend mentor sessions,
       (b) sign up for a meeting with Sam, (c) TM Sam, (d) ask for an
@@ -30,7 +29,7 @@ Administrative stuff
       mentor sessions). You can also (e) ask the evening tutors if they are
       not busy. 
     * If you need help with a mini-project, you can (a) ask the evening
-      tutors, (b) TM Sam, (c) sign up for a meeting with Sam. (d) as
+      tutors, (b) TM Sam, (c) sign up for a meeting with Sam. (d) ask
       in class (provided it's a general question). _Individual tutors are
       not supposed to be for homework help!_
     * You can also ask a fellow student about these issues (except on
@@ -61,7 +60,7 @@ Multicultural
   _Klezmer Workshop_. 
     * Learn to dance a Hora, a Bulgar, a Cosidle, or a Freylekhe.
 * Friday, 11 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
-  _Middle of Everywhere:???_
+  _Middle of Everywhere: Sindhi community in Pakistan_
 
 Artistic / Multicultural
 
@@ -183,9 +182,9 @@ Expand on why random is useful in other procedures.
 
 Random returns an integer, but each integer in the 'returnable' range of the given parameter for random has an equal chance of returning. How could you alter this chance? Say you had `(random 5)` but you wanted 1 to have an 80% less chance to return than the rest of the integers?
 
-You can't change the behavior of `random`. But you can write procedures that provide different distributions. For example, we could build a vector of the possible values, each in the proportion we want, and randomly select from that vector.
+> You can't change the behavior of `random`. But you can write procedures that provide different distributions. For example, we could build a vector of the possible values, each in the proportion we want, and randomly select from that vector.
 
-```
+> ```
 (define biased-random
   (let* ([vals (vector 0 0 0 0 0 1 2 2 2 2 2 3 3 3 3 3 4 4 4 4 4)]
          [valslen (vector-length vals)])
@@ -214,3 +213,8 @@ What's so special about the number 4,294,967,296?
 Lab
 ---
 
+Side note: This is one of my favorite labs because (a) there's a really bad
+pun in the lab and (b) the "Rolling Rolling Rolling" reminds me of two of
+my favorite performances (John Belushi and band performing "Rawhide"
+in _The Blues Brothers_ and any of the many Tina Turner performances of
+"Proud Mary".)
