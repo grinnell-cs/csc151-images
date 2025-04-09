@@ -1,5 +1,5 @@
 ---
-title: "EBoard 27: Randomness (Section 1)"
+title: "EBoard 27: Randomness (Section 3)"
 number: 27
 section: eboards
 held: 2025-04-09
@@ -12,17 +12,16 @@ is working correctly.
 
 _Approximate optimistic overview_
 
-* Quiz
 * Administrative stuff 
 * Q&A
 * Lab
+* Quiz
 
 Administrative stuff
 --------------------
 
 ### Introductory notes
 
-* I think we still have an unidentified quiz.
 * For clarity, here are the kinds of help you can obtain.
     * If you don't understand a topic, you can (a) attend mentor sessions,
       (b) sign up for a meeting with Sam, (c) TM Sam, (d) ask for an
@@ -85,7 +84,6 @@ _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
-* Track and Field Home Meet this weekend.
 
 Wellness
 
@@ -123,6 +121,8 @@ Misc
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
+
+* Track and Field Home Meet this weekend.
 
 ### Upcoming work
 
