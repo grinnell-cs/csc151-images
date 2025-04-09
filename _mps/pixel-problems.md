@@ -334,7 +334,7 @@ Interesting. Perhaps you can find better approaches in the freestyle.
 Part three: Modifying images, revisited
 ---------------------------------------
 
-_You can do either part three or part four for an M. You must do **both** part three and part four for an E._
+_You can do either part three or part four for an E. If you don't do part three or part four the highest you can earn is an M._
 
 Of course, one can also use other kinds of context to affect pixels. For example, one might enhance the colors in an image by increasing their distance from the surrounding colors or blur the image by averaging it with the surrounding pixels.
 
@@ -527,7 +527,7 @@ Not quite what I expected, but interesting nonetheless.
 Part four: Steganography
 ------------------------
 
-_You can do either part three or part four for an M. You must do **both** part three and part four for an E._
+_You can do either part three or part four for an E. If you don't do part three or part four the highest you can earn is an M._
 
 _Steganography_ is a technique for hiding information within a larger corpus.  For example, some people conceal messages in letters by using, say, each fifth letter in the original message to represent a new message.  (I'm not talented enough to give an example.)
 
@@ -845,13 +845,10 @@ prior characteristics will get an R.
 
 ```
 [ ] Passes all of the M autograder tests for parts one and two.
-[ ] Passes all of the M autograder tests for either part three or part four.
 [ ] Code is well-formatted with appropriate names and indentation.
 [ ] Code has been reformatted with Ctrl-I before submitting.
 [ ] Code generally follows style guidelines.
 [ ] All primary procedures are documented in the correct form.
-[ ] Includes at least three tests for `letter->number`.
-[ ] Includes at least three tests for `color->letter`.
 [ ] Freestyle procedure uses pixels.
 ```
 
@@ -861,9 +858,12 @@ Submissions that lack any of these characteristics but have all of the
 prior characteristics will get an M.
 
 ```
-[ ] Passes all of the M autograder tests for both part three and part four.
-[ ] Passes all of the E autograder tests.
-[ ] Includes solutions for both part three and part four.
+[ ] Passes all of the M autograder tests for either part three or part four.
+[ ] If doing part four, includes at least three tests for `letter->number`.
+[ ] If doing part four, Includes at least three tests for `color->letter`.
+[ ] Passes all of the E autograder tests for parts one and two.
+[ ] Passes all of the E autograder tests for eithe rpart three or art four.
+[ ] Includes solutions for three or part four.
 [ ] Style is impeccable (or nearly so).
 [ ] Avoids repeated work.  In particular, avoids identical recursive calls.
 [ ] Documentation for all procedures (including helper procedures) is 
