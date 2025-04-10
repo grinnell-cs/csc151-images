@@ -240,7 +240,7 @@ identical keys in an immutable hash table?
 
 <TODO: Enter your answer here>
 
-Check your answer experimentally.  Make sure that in one of your
+Check your answer experimentally.  Make sure that one of your
 experiments is to look at what `more-sidekicks` looks like.
 
 <TODO: Enter the experiments from the interactions pane>
