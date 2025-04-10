@@ -203,7 +203,7 @@ b. Write the following procedure.
 _Hint_: Write a helper procedure that recurses over the rows, calling
 `set-row!` for each row.
 
-_Note_: Do _not_ set the final row.
+_Note_: Do _not_ change row `bottom`. It's exclusive of bottom, not inclusive.
 
 c. Write the following procedure.
 
