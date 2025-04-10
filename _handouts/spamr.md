@@ -5,6 +5,40 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
+## [CSC-151 2025Sp] Update to MP7 (Wednesday 2025-04-09)
+
+Dear Pixel Pushers,
+
+I hope you were able to enjoy the sunshine today. And, while I'm sad that no one made it to the cool talk, I'm also a bit glad; it turns out we didn't have Pizza Hut, and I would prefer not to have misled you. But please consider attending tomorrow's (Thursday's) Scholar's Convocation. This week, it's in HSSC A1231 - Multi-purpose Room (aka "The Kernel").
+
+A few people reported that they'd spent far too much time on MP7, perhaps because they were simultaneously chatting with friends and watching YouTube videos. In any case, I'm cutting back on it. To earn an M, you need only complete parts one, two, and five (to appropriate levels of satisfaction). To earn an E, you must also complete part three OR part four (with all parts to appropriate levels of satisfaction).
+
+I've also posted grades for today's quizzes to Gradescope. Let me now if you have questions. The mentors will go over both quizzes and some important vector recursion problems (as well as numeric recursion and randomness) at Sunday's mentor session.
+
+Have a great evening!
+
+-- SamR
+
+## [CSC-151 2025Sp] Various things (Sunday, 2025-04-06)
+
+Dear students who go above and beyond what is expected (or perhaps above and beside),
+
+1\. I got the disco bonfire story wrong. Here's the real story: <https://en.wikipedia.org/wiki/Disco_Demolition_Night>. But what I said holds. If you choose to destroy disco records, do so in moderation.
+
+2\. I've graded your quizzes from Wednesday and posted them to Gradescope. Let me know if you have any questions on the grading. Some folks struggled on recursion or local bindings. The mentors will go over those problems in tonight's mentor session.
+
+3\. Some of my responses to the pairs reading were done after class. Let me know if you're still puzzled, especially since we have a quiz this week. Also, consider attending the mentor session tonight or Tuesday.
+
+4\. Don't forget to do the pre-reflection for MP7. I've responded to those I saw before 6pm or so.
+
+5\. The latest reports should be coming out sometime this evening. They are likely up to date only on LAs, readings, and reflections.
+
+6\. I've made an attempt at catching up on tokens earned, but I'm not yet done.
+
+Regards,
+
+-- SamR
+
 ## [CSC-151 2025Sp] Mini-Project 6 (Wednesday, 2025-04-02)
 
 Dear Factalists,
