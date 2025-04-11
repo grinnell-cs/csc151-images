@@ -1,9 +1,9 @@
 ---
-title: "EBoard 28: Dictionaries (Section 1)"
+title: "EBoard 28: Dictionaries (Section 3)"
 number: 28
 section: eboards
 held: 2025-04-11
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -74,8 +74,6 @@ _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
-* Saturday, 12 April 2025, 10:00 a.m.--1:00 p.m. The Track and Field.
-  _Dick Young Invitational_
 
 Wellness
 
@@ -124,6 +122,9 @@ Misc
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
+
+* Saturday, 12 April 2025, 10:00 a.m.--1:00 p.m. The Track and Field.
+  _Dick Young Invitational_
 
 ### Upcoming work
 
