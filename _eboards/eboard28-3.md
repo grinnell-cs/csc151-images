@@ -3,7 +3,7 @@ title: "EBoard 28: Dictionaries (Section 3)"
 number: 28
 section: eboards
 held: 2025-04-11
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -39,7 +39,7 @@ Administrative stuff
 Scholarly
 
 * Tuesday, 15 April 2025, noon--1pm, Some PDR.
-  _CS Table: ???_
+  _CS Table: Tarpits_
 
 Artistic
 
@@ -52,6 +52,8 @@ Multicultural
 
 * Friday, 11 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
   _Middle of Everywhere: Sindhi community in Pakistan_
+* Friday, 11 April 2025, 6:30--8:00 p.m., JRC 101.
+  _Solar New Year Celebration_
 * Saturday, 12 April 2025, 7:00--9:00 p.m., Harris Concert Hall.
   _Cultural Evening_
 
@@ -74,6 +76,10 @@ _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
+* Saturday, 12 April 2025, 11:00 a.m. Soccer Practice Field.
+  _Ultimate match_
+* Saturday, 12 April 2025, 1:00 p.m. Soccer Practice Field.
+  _Ultimate match_
 
 Wellness
 
@@ -81,8 +87,13 @@ Wellness
   _Badminton Club_ (Smash that bird!)
 * Friday, 11 April 2025, 6:30--8:00 p.m. Dance Studio.
   _Brazilian Jiu-Jitsu_
+* Friday, 11 April 2025, 7:00 p.m., Bucksbaum Rotunda.
+  _Succulent Planting_
 * Friday, 11 April 2025, 9:00 p.m., Noyce Elbow.
   _Nerf at Noyce_.
+* Saturday, 12 April 2025, 9:00 a.m.--5:00 p.m., JRC 209.
+  _Mental Health Certification_ 
+    * Two tokens
 * Saturday, 12 April 2025, 4:00--6:00 p.m., Aux Gym.
   _Badminton Club_ (Smash that bird!)
 * Monday, 14 April 2025, 6:30--8:00 p.m. Dance Studio.
@@ -110,8 +121,8 @@ Misc
 * Sunday, 13 April 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session: SoLA 3_
 * Tuesday, 15 April 2025, 7:00--8:00 p.m., Science 3820.
-  _Mentor Session: Dictionaries_
-* Wednesday, 9 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
+  _Mentor Session: Dictionaries and Diagramming Structures_
+* Wednesday, 16 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
   _Community Forum_
     * "Weekly discussion on legal protections and recourse on issues 
       that higher education and Grinnell College face."
@@ -143,8 +154,9 @@ _These do not earn tokens, but are worth your consideration._
         * Topics from phase two: Conditionals, Documentation, Testing,
           Lists (and "the big three"), Program Style, Ethical Considerations
         * Topics from phrase three you've done quizzes on: List recursion,
-          local bindings.
-        * New topics from phase three: Numeric recursion, vectors, randomness.
+          Local bindings.
+        * New topics from phase three: Numeric recursion, Vectors, Randomness.
+        * Email our class mentor if you want them to focus on anything.
 * Wednesday, 16 April 2025 
     * Quiz: Dictionaries
     * Makeup quiz: Diagramming structures (paper only)
@@ -177,9 +189,10 @@ _These do not earn tokens, but are worth your consideration._
 
 _Yes, I do this even though we have Prospective students here._
 
-* Please stay awesome. People care about you.
-* If you choose to do things that affect your body or brain chemistry,
-  please do so in moderation.
+* You are awesome. Please try to keep yourself that way. If not for you,
+  do it for the people who care about you.
+* Be moderate, particularly with substances that may alter your brain or
+  body.
 * Consent is essential, but insufficient.
 
 Questions
