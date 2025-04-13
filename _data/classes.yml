@@ -353,6 +353,13 @@
   lab:
     - page: /labs/tail-recursion.html
 
+- topic: Project kickoff
+  abbrev: final-project
+  summary: |
+    We introduce the final project for the semester.
+  reading:
+    - page: /mps/mp09.html
+
 - topic: Complexity analysis and binary search
   abbrev: search
   summary: |
@@ -365,13 +372,6 @@
     - page: /readings/searching.html
   lab:
     - page: /labs/searching.html
-
-- topic: Project kickoff
-  abbrev: final-project
-  summary: |
-    We introduce the final project for the semester.
-  reading:
-    - page: /mps/mp09.html
 
 - topic: Trees
   abbrev: trees
