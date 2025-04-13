@@ -3,7 +3,7 @@ title: "EBoard 28: Dictionaries (Section 2)"
 number: 28
 section: eboards
 held: 2025-04-11
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -43,6 +43,8 @@ Scholarly
 
 Artistic
 
+* Friday, 11 April 2025, 7:00 p.m., Herrick Chapel.
+  _Organ Concert_
 * Sunday, 13 April 2025, 2:00 p.m., Sebring-Lewis.
   _Collegium Musicum_
 * Sunday, 13 April 2025, 2:00--3:00 p.m., Central Campus Stage.
@@ -52,8 +54,6 @@ Multicultural
 
 * Friday, 11 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
   _Middle of Everywhere: Sindhi community in Pakistan_
-* Saturday, 12 April 2025, 7:00--9:00 p.m., Harris Concert Hall.
-  _Cultural Evening_
 
 Artistic / Multicultural
 
@@ -74,6 +74,8 @@ _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
+* Saturday, 12 April 2025, 7:00--9:00 p.m., Harris Concert Hall.
+  _Cultural Evening_
 
 Wellness
 
@@ -143,13 +145,13 @@ _These do not earn tokens, but are worth your consideration._
         * Topics from phase two: Conditionals, Documentation, Testing,
           Lists (and "the big three"), Program Style, Ethical Considerations
         * Topics from phrase three you've done quizzes on: List recursion,
-          local bindings.
-        * New topics from phase three: Numeric recursion, vectors, randomness.
+          Local bindings.
+        * New topics from phase three: Numeric recursion, Vectors, Randomness.
 * Wednesday, 16 April 2025 
     * Quiz: Dictionaries
     * Makeup quiz: Diagramming structures (paper only)
     * Makeup quiz: Tracing (paper only)
-    * _Don't forget that you can bring a page of _hand written_ notes for
+    * _Don't forget that you can bring a page of **hand written** notes for
       each quiz._
 * Thursday, 17 April 2025
     * [SoLA 3](../las) due
