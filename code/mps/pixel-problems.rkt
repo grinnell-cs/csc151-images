@@ -273,9 +273,10 @@
 ;;;   pixels : (all-of (vector-of rgb?) (has-length (* width height)))
 ;;;   width : positive-integer? (represents the width of the image)
 ;;;   height : positive-integer? (represents the height of the image)
-;;;   left : nonnegative-integer?
-;;;   right : nonnegative-integer?
-;;;   top : nonnegative-integer?
+;;;   left : non-negative integer? (at-most right)
+;;;   right : non-negative integer? (at-most width)
+;;;   top : non-negative integer? (at-most bottom)
+;;;   bottom : non-negative integer? (at-most width)
 ;;;   color : rgb?
 ;;; Set a rectangular region of the image to `color`. The region is
 ;;; bounded on the left by `left` (inclusive), on the right by `right`

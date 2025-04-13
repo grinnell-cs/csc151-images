@@ -254,9 +254,10 @@ e. Write the following procedure.
 ;;;   pixels : (all-of (vector-of rgb?) (has-length (* width height)))
 ;;;   width : positive-integer? (represents the width of the image)
 ;;;   height : positive-integer? (represents the height of the image)
-;;;   left : non-negative integer?
-;;;   right : non-negative integer?
-;;;   top : non-negative integer?
+;;;   left : non-negative integer? (at-most right)
+;;;   right : non-negative integer? (at-most width)
+;;;   top : non-negative integer? (at-most bottom)
+;;;   bottom : non-negative integer? (at-most width)
 ;;;   color : rgb?
 ;;; Set a rectangular region of the image to `color`. The region is
 ;;; bounded on the left by `left` (inclusive), on the right by `right`
@@ -827,7 +828,6 @@ Submissions that lack any of these characteristics will get an I.
 
 ```
 [ ] Passes all of the R autograder tests for parts one and two.
-[ ] Passes all of the R autograder tests for either part three or part four.
 [ ] Includes the specified file, `pixel-problems.rkt`.
 [ ] Includes an appropriate header on the file that indicates the
     course, author, etc.
@@ -858,6 +858,7 @@ Submissions that lack any of these characteristics but have all of the
 prior characteristics will get an M.
 
 ```
+[ ] Passes all of the R autograder tests for either part three or part four.
 [ ] Passes all of the M autograder tests for either part three or part four.
 [ ] If doing part four, includes at least three tests for `letter->number`.
 [ ] If doing part four, Includes at least three tests for `color->letter`.
