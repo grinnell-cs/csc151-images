@@ -1,7 +1,7 @@
 #lang racket
 
 ;; CSC-151-NN (SEMESTER)
-;; Library: Names as Bar Strings (data-abstraction.rkt)
+;; Library: Names as Bar Strings (names-as-bar-strings.rkt)
 ;;   A simple implementation of names as bar-separated strings.
 ;;   Note that the documentation can be found in `data-abstraction.rkt`.
 ;; Authors: Samuel A. Rebelsky and YOUR NAMES HERE
