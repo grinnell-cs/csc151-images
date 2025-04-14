@@ -236,7 +236,7 @@ Short notes on recent labs
 (test-equal? "edge case" (func-2b '(1 2 3) '()) '(1 2 3))
 (test-equal? "edge case 2" (func-2b '() '(4 5 6)) '(6 5 4))
 ```
-```
+
 #### `r`
 
 ```

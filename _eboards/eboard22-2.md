@@ -195,6 +195,7 @@ Not so short notes on recent labs
 
 ```
 > (test-equal? "simple test" (func1b '(1 2 3) '(4 5 6)) '(1 2 3 4 5 6))
+```
 
 #### `func2a`
 
