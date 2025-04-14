@@ -1,9 +1,9 @@
 ---
-title: "EBoard 29: Data abstraction (Section 2)"
-number: 29
+title: "EBoard 30: Structured Types (Section 1)"
+number: 30
 section: eboards
-held: 2025-04-14
-link: true
+held: 2025-04-16
+link: false
 ---
 # {{ page.title }}
 
@@ -12,74 +12,24 @@ is working correctly.
 
 _Approximate optimistic overview_
 
-* A pause
 * Administrative stuff 
+* A few notes from last class
+* Q&A
 * Lab
 
 Administrative stuff
 --------------------
 
-### The loss of a student
-
-_We'll start with a minute of silence._
-
-* There is drop-in support space at the CRSSJ from 9am to noon.
-* There is drop-in support space at JRC 202 from noon to 3pm.
-* The weekly Grief Group meets Mondays from 4:15--5:15 pm.
-
-Some thoughts.
-
-* I don't have special expertise in loss, other than having experienced
-  it multiple times. Nonetheless, I'd like to share some thoughts with you.
-* It is human nature to want to know more about what happened. However,
-  we don't have the right to know more. Asking can place a burden on
-  those grieving or add to their grief.
-* It's okay to feel sad, even if you didn't know him well. The loss of
-  someone your own age can feel particularly painful. It may also bring
-  up other losses in your life.
-* It's also okay not to feel sad, even if everyone around you seems to
-  be sad. We all react in our own way and in our own time.
-* Please try to find the time to take care of yourselves. I know that's
-  especially hard amidst the end-of-semester work. But try. I hope a 
-  quieter week in 151 will help.
-* Please pay attention to those around you and offer the support you can.
-  A hug. A note that you're thinking of them. Time to listen. All of these
-  can help.
-* Please ask for help when you need it. You are all high achievers, and you
-  may not be used to asking for help. But it may be necessary right now.
-  You may also not know what help you need. Sometimes saying "I need help"
-  can be enough; others can work with you on figuring out what's right.
-* This may be a particularly important week to visit the therapy dogs.
-
-Sharing
-
-* I debated whether or not to set aside time for sharing, particularly
-  since there aren't trained professionals in the room. But we can still
-  support each other, so I've set aside a few minutes in case anyone
-  wants to share. 
-* If you'd rather not be here for that, pleases step into the hallway.
-  We'll bring you back in when sharing is over.
-* Reinforcement: Things will come in waves. You can't be prepred, but
-  ask for help!
-
 ### Introductory notes
 
-* SoLA 3 has been moved to next week.
-* MP 9 will be in week 13.
-* SoLA 4 will be in week 14.
-* I think we'll have a visitor on Friday.
-* I'm running out of Otter.ai time, so I'll only be recording section 1.
+* Welcome to our visitor.
 
 ### Upcoming activities
 
 Scholarly
 
-* Tuesday, 15 April 2025, noon--1pm, Some PDR.
-  _CS Table: Trapping AI Tools_
-    * [AI Haters Build Tarpits to Trap and Trick AI Scrapers that Ignore Robots.txt](https://arstechnica.com/tech-policy/2025/01/ai-haters-build-tarpits-to-trap-and-trick-ai-scrapers-that-ignore-robots-txt/)
-    * [About `robots.txt`](https://www.robotstxt.org)
-* Thursday, 17 April 2025, 11:00 a.m.--noon, HSSC 1231 (Multipurpose Kernel).
-  _Scholars' Convocation: Barrett Klein on The Insect Epiphany: How our six legged allies shape human culture_
+* Tuesday, 22 April 2025, noon--1pm, White PDR.
+  _CS Table: ???_ 
 
 Artistic
 
@@ -105,7 +55,7 @@ Multicultural
   _Middle of Everywhere: ???_
 * Friday, 18 April 2025, 6:00 p.m.--Midnight, Harris Gym.
   _SOL Quinceañera_
-    * Tickets required for food.
+    * Tickets are required for the food. 
     * Clueless Sam question: Given that about 50% of Latin America is
       Catholic (big C), is Good Friday really the best day for this?
 * Saturday, 19 April 2025, 1:00--8:30 p.m., Cleveland Beach.
@@ -119,11 +69,6 @@ _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
-* Saturday, 19 April 2025, 9:00 a.m.--Noon, Tennis Courts.
-  _Men's Tennis vs. Ripon_
-* Saturday, 19 April 2025, 3:00--6:00 p.m., Tennis Courts.
-  _Men's Tennis vs. Lawrence_
-   * Strangely, they are also playing at WashU on Saturday.
 
 Wellness
 
@@ -180,6 +125,11 @@ _These do not earn tokens, but are worth your consideration._
 
 * Monday, 14 April 2025, 8:00--10:00 p.m., Bob's Underground.
   _Open Mic Night_.
+* Saturday, 19 April 2025, 9:00 a.m.--Noon, Tennis Courts.
+  _Men's Tennis vs. Ripon_
+* Saturday, 19 April 2025, 3:00--6:00 p.m., Tennis Courts.
+  _Men's Tennis vs. Lawrence_
+   * Strangely, they are also playing at WashU on Saturday.
 
 ### Upcoming work
 
@@ -241,20 +191,19 @@ _These do not earn tokens, but are worth your consideration._
     * Submit final redo for MP4 on Gradescope
     * Submit final redo for MP5 on Gradescope
 
-### Monday PSA
+### Wednesday PSA
 
 * People care about you. Please take care of yourselves.
+
+A few notes from last class
+---------------------------
 
 Questions
 ---------
 
 ### Administrative
 
-Will SoLA 5 give us the opportunity to make up questions from SoLA 4 (and
-before)?
-
-> Yes, that's it's goal. I hope to have grades to you by Sunday. SoLA 5
-  will be distributed on Tuesday of finals week and due on Friday at 5pm.
+### Mini-project 7
 
 Lab
 ---

@@ -1,9 +1,9 @@
 ---
-title: "EBoard 29: Dictionaries (Section 3)"
+title: "EBoard 29: Data abstraction (Section 3)"
 number: 29
 section: eboards
 held: 2025-04-14
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -12,8 +12,8 @@ is working correctly.
 
 _Approximate optimistic overview_
 
+* Pause for rememberance
 * Administrative stuff 
-* Q&A
 * Lab
 
 Administrative stuff
@@ -23,7 +23,9 @@ Administrative stuff
 
 _We'll start with a minute of silence._
 
-Some thoughts.
+* The weekly Grief Group meets Mondays from 4:15--5:15 pm.
+
+Some thoughts
 
 * I don't have special expertise in loss, other than having experienced
   it multiple times. Nonetheless, I'd like to share some thoughts with you.
@@ -53,15 +55,16 @@ Sharing
   since there aren't trained professionals in the room. But we can still
   support each other, so I've set aside a few minutes in case anyone
   wants to share. 
-* If you'd rather not be here for that, pleases step into the hallway.
+* If you'd rather not be here for that, please step into the hallway.
   We'll bring you back in when sharing is over.
 
 ### Introductory notes
 
+* Lilli brought you food. (Sam paid.)
 * SoLA 3 has been moved to next week.
 * MP 9 will be in week 13.
 * SoLA 4 will be in week 14.
-* Section 1 will likely have a visitor on Wednesday.
+* I'm running out of Otter.ai time, so I'll only be recording section 1.
 
 ### Upcoming activities
 
@@ -98,8 +101,7 @@ Multicultural
   _Middle of Everywhere: ???_
 * Friday, 18 April 2025, 6:00 p.m.--Midnight, Harris Gym.
   _SOL Quinceañera_
-    * I don't know if tickets are required for the food. They don't
-      convey such info to faculty.
+    * Tickets are required for food.
     * Clueless Sam question: Given that about 50% of Latin America is
       Catholic (big C), is Good Friday really the best day for this?
 * Saturday, 19 April 2025, 1:00--8:30 p.m., Cleveland Beach.
@@ -154,10 +156,9 @@ Misc
     * "Weekly discussion on legal protections and recourse on issues 
       that higher education and Grinnell College face."
     * Also online.
-    * This week (I think): Title VI, which prohibits discrimination 
-      based on race, color, national origin, or shared ancestry.
+    * This week (I think): Student Privacy (FERPA and HIPAA).
 * Wednesday, 16 April 2025, 6:30--7:30 p.m., JRC 101.
-  _Building yuour network_
+  _Building your network_
 * Thursday, 17 April 2025, 8:00--10:00 p.m., Herrick.
   _All-Campus Teach In_
 * Sunday, 20 April 2025, 7:30--8:30 p.m., Science 3819. 
@@ -189,7 +190,6 @@ _These do not earn tokens, but are worth your consideration._
 * Wednesday, 16 April 2025 
     * Quiz: Dictionaries
     * Makeup quiz: Diagramming structures (paper only)
-    * Makeup quiz: Tracing (paper only)
     * _Don't forget that you can bring a page of _hand written_ notes for
       each quiz._
 * Sunday, 20 April 2025
@@ -239,44 +239,16 @@ _These do not earn tokens, but are worth your consideration._
 
 * People care about you. Please take care of yourselves.
 
-Questions
----------
-
-### Administrative
-
-### Mini-project 7
-
-### Dictionaries etc.
-
-_Whoo! Almost no questions!_
-
-How is a hash table different from a list of pairs?
-
-> It provides more efficient access to elements (particularly when you 
-  have a lot of elements).
-
-> It lets us hide the underlying details. We think about the two or
-  three key operations. 
-
-> * Add an element `(hash-set! hash key value)`.
-> * Look up an element `(hash-ref hash key)`.
-
-We talked some about the look up time of a list vs a vector. Does
-a hash have a look up time and method more similar to vectors or a
-list?
-
-> Mutable hash tables have lookup time similar to vectors.
-
-Can you clarify what the common form means in terms of the new-hash 
-procedures?
-
-> When we want similar things to be treated the same, we must explicitly
-  convert them to a form in which they are extactly the same if we want
-  to use hash tables.
-
-> Basically, ignoring case and non-letters (if I recall correctly).
-
 Lab
 ---
 
+* Make sure that you've updated the header for `names-as-bar-strings.rkt`
+* If you've finished `names-as-bar-strings.rkt` ...
+    * Make sure that you currently require the `names-as-bar-strings.rkt`
+      library (rather than one of the other `names-as-???.rkt` libraries).
+    * Submit both `data-abstraction.rkt` and `names-as-bar-strings.rkt`.
+* Otherwise
+    * Make sure that you currently require the `names-as-lists.rkt` library.
+    * Submit `data-abstraction.rkt`, `names-as-lists.rkt`, and
+      `names-as-bar-strings.rkt`.
 

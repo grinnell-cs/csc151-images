@@ -1,5 +1,5 @@
 ---
-title: "EBoard 29: Dictionaries (Section 1)"
+title: "EBoard 29: Data abstraction (Section 1)"
 number: 29
 section: eboards
 held: 2025-04-14
@@ -12,6 +12,7 @@ is working correctly.
 
 _Approximate optimistic overview_
 
+* Grief time
 * Administrative stuff 
 * Q&A
 * Lab
@@ -22,6 +23,10 @@ Administrative stuff
 ### The loss of a student
 
 _We'll start with a minute of silence._
+
+* There is drop-in support space at the CRSSJ from 9am to noon.
+* There is drop-in support space at JRC 202 from noon to 3pm.
+* The weekly Grief Group meets Mondays from 4:15--5:15 pm.
 
 Some thoughts.
 
@@ -98,8 +103,7 @@ Multicultural
   _Middle of Everywhere: ???_
 * Friday, 18 April 2025, 6:00 p.m.--Midnight, Harris Gym.
   _SOL Quinceañera_
-    * I don't know if tickets are required for the food. They don't
-      convey such info to faculty.
+    * Tickets are required for the food. 
     * Clueless Sam question: Given that about 50% of Latin America is
       Catholic (big C), is Good Friday really the best day for this?
 * Saturday, 19 April 2025, 1:00--8:30 p.m., Cleveland Beach.
@@ -157,7 +161,7 @@ Misc
     * This week (I think): Title VI, which prohibits discrimination 
       based on race, color, national origin, or shared ancestry.
 * Wednesday, 16 April 2025, 6:30--7:30 p.m., JRC 101.
-  _Building yuour network_
+  _Building your network_
 * Thursday, 17 April 2025, 8:00--10:00 p.m., Herrick.
   _All-Campus Teach In_
 * Sunday, 20 April 2025, 7:30--8:30 p.m., Science 3819. 
@@ -246,37 +250,11 @@ Questions
 
 ### Mini-project 7
 
-### Dictionaries etc.
-
-_Whoo! Almost no questions!_
-
-How is a hash table different from a list of pairs?
-
-> It provides more efficient access to elements (particularly when you 
-  have a lot of elements).
-
-> It lets us hide the underlying details. We think about the two or
-  three key operations. 
-
-> * Add an element `(hash-set! hash key value)`.
-> * Look up an element `(hash-ref hash key)`.
-
-We talked some about the look up time of a list vs a vector. Does
-a hash have a look up time and method more similar to vectors or a
-list?
-
-> Mutable hash tables have lookup time similar to vectors.
-
-Can you clarify what the common form means in terms of the new-hash 
-procedures?
-
-> When we want similar things to be treated the same, we must explicitly
-  convert them to a form in which they are extactly the same if we want
-  to use hash tables.
-
-> Basically, ignoring case and non-letters (if I recall correctly).
-
 Lab
 ---
 
+* Make sure that you currently require the `names-as-bar-strings.rkt`
+  library (rather than one of the other `names-as-???.rkt` libraries).
+* Make sure that you've updated the header for `names-as-bar-strings.rkt`
+* Submit both `data-abstraction.rkt` and `names-as-bar-strings.rkt`.
 
