@@ -106,7 +106,7 @@ fields.
 #|
 Create a procedure, `(chirp author contents tags date time)`, that
 takes five parameters, verifies their types, and then creates a
-chirp kernel using those four parameters.  What about the identifier?
+chirp kernel using those five parameters.  What about the identifier?
 You should generate that automatically with `(gensym "chirp")`.
 `gensym` is a procedure that generates a unique symbol.
 |#
