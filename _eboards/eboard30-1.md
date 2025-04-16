@@ -12,6 +12,7 @@ is working correctly.
 
 _Approximate optimistic overview_
 
+* Quiz
 * Administrative stuff 
 * A few notes from last class
 * Q&A
@@ -22,12 +23,20 @@ Administrative stuff
 
 ### Introductory notes
 
-* Welcome to our visitor.
+* Welcome to our visitor!
+* A fascinating email: "Dear Sam, I'm prioritizing a homework assignment 
+  in another class over showing up for CSC-151. But I'd like to take the
+  quiz. So I'm going to show up for another section's quiz time."
+* MP6 is now graded. Our graders are rapidly finishing redos of MP4 and 
+  MP5. I'm going to leave the due dates for the redos as they are, but
+  set up a free late redo.
 
 ### Upcoming activities
 
 Scholarly
 
+* Thursday, 17 April 2025, 11:00 a.m.--noon, HSSC 1231 (Multipurpose Kernel).
+  _Scholars' Convocation: Barrett Klein on The Insect Epiphany: How our six legged allies shape human culture_
 * Tuesday, 22 April 2025, noon--1pm, White PDR.
   _CS Table: ???_ 
 
@@ -52,7 +61,7 @@ Artistic
 Multicultural
 
 * Friday, 18 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
-  _Middle of Everywhere: ???_
+  _Middle of Everywhere: Northern & Southern China on a Plate (Breakfast)_
 * Friday, 18 April 2025, 6:00 p.m.--Midnight, Harris Gym.
   _SOL Quinceañera_
     * Tickets are required for the food. 
@@ -72,17 +81,7 @@ students are welcome._
 
 Wellness
 
-* Monday, 14 April 2025, 6:30--8:00 p.m. Dance Studio.
-  _Brazilian Jiu-Jitsu_
-* Tuesday, 15 April 2025, 5:00--6:00 p.m., HSSC Atrium.
-  _Therapy Dogs_.
-* Tuesday, 15 April 2025, 7:15--8:15 p.m., HSSC Atrium.
-  _Therapy Dogs_.
-* Tuesday, 15 April 2025, 12:00--12:45 p.m., Dance Studio.
-  _HIIT Training_.
-* Tuesday, 15 April 2025, 12:15--12:50 p.m., GCMoA.
-  _Yoga in the Museum_.
-* Tuesday, 15 April 2025, 4:30--6:30 p.m., 
+* Tuesday, 22 April 2025, 4:30--6:30 p.m., 
   BRAC P103 (Multipurpose Dance Studio).
   _Wellness Yoga_.
 * Wednesday, 16 April 2025, 6:30--8:00 p.m., Dance Studio.
@@ -100,58 +99,66 @@ Wellness
   _Nerf at Noyce_.
 * Saturday, 19 April 2025, 4:00--6:00 p.m., Aux Gym.
   _Badminton Club_ (Smash that bird!)
+* Monday, 21 April 2025, 6:30--8:00 p.m. Dance Studio.
+  _Brazilian Jiu-Jitsu_
+* Tuesday, 22 April 2025, 12:00--12:45 p.m., Dance Studio.
+  _HIIT Training_.
+* Tuesday, 22 April 2025, 12:15--12:50 p.m., GCMoA.
+  _Yoga in the Museum_.
+* Tuesday, 29 April 2025, 5:00--6:00 p.m., HSSC Atrium.
+  _Therapy Dogs_.
+* Tuesday, 29 April 2025, 7:15--8:15 p.m., HSSC Atrium.
+  _Therapy Dogs_.
 
 Misc
 
-* Tuesday, 15 April 2025, 7:00--8:00 p.m., Science 3820.
-  _Mentor Session: Dictionaries and Diagramming_
 * Wednesday, 16 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
   _Community Forum_
     * "Weekly discussion on legal protections and recourse on issues 
       that higher education and Grinnell College face."
     * Also online.
-    * This week (I think): Title VI, which prohibits discrimination 
-      based on race, color, national origin, or shared ancestry.
+    * This week (I think): Student Privacy (FERPA and HIPAA)
 * Wednesday, 16 April 2025, 6:30--7:30 p.m., JRC 101.
   _Building your network_
 * Thursday, 17 April 2025, 8:00--10:00 p.m., Herrick.
   _All-Campus Teach In_
 * Sunday, 20 April 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session: SoLA 3_
+* Tuesday, 22 April 2025, 7:00--8:00 p.m., Science 3820.
+  _Mentor Session_
 
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
 
-* Monday, 14 April 2025, 8:00--10:00 p.m., Bob's Underground.
-  _Open Mic Night_.
 * Saturday, 19 April 2025, 9:00 a.m.--Noon, Tennis Courts.
   _Men's Tennis vs. Ripon_
 * Saturday, 19 April 2025, 3:00--6:00 p.m., Tennis Courts.
   _Men's Tennis vs. Lawrence_
-   * Strangely, they are also playing at WashU on Saturday.
 
 ### Upcoming work
 
-* Monday, 14 April 2025
-    * [Submit late but not late post-reflection for MP7 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6043508)
-        * These have also been extended further from some people.
-* Tuesday, 15 April 2025
-    * [Submit today's lab on Gradescope](https://www.gradescope.com/courses/948769/assignments/6084452)
-    * Readings
-        * [Preconditions](../readings/preconditions)
-        * [Structured types](../readings/structs)
-        * [Submit reading response on Gradescope](https://www.gradescope.com/courses/948769/assignments/6084446)
 * Wednesday, 16 April 2025 
     * Quiz: Dictionaries
     * Makeup quiz: Diagramming structures (paper only)
     * Makeup quiz: Tracing (paper only)
     * _Don't forget that you can bring a page of _hand written_ notes for
       each quiz._
+* Thursday, 17 April 2025
+    * [Submit Wednesday's lab on Gradescope](https://www.gradescope.com/courses/948769/assignments/6097525)
+    * Reading: 
+        * [Higher-order recursive design](../readings/higher-order-recursive-design)
+        * [Submit reading response on higher-order recursive design on Gradescope](https://www.gradescope.com/courses/948769/assignments/6091626)
+* Friday, 18 April 2025
+    * [Submit pre-reflection for SoLA 3 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6059333)
 * Sunday, 20 April 2025
-    * Submit first redo for MP6 on Gradescope
-    * Submit second redo for MP4 on Gradescope
-    * Submit second redo for MP5 on Gradescope
+    * [Submit Friday's lab on Gradescope](https://www.gradescope.com/courses/948769/assignments/6097526)
+    * Readings:
+         * [Tail recursion](../readings/tail-recursion)
+         * [List recursion, revisited](../readings/list-recursion-revisited)
+    * [Submit first redo for MP6 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6097560)
+    * [Submit second redo for MP4 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6045580)
+    * [Submit second redo for MP5 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6045581)
 * Monday, 21 April 2025
     * [SoLA 3](../las) distributed
         * Topics from phase one: Decomposition, Primitive types, Collaboration,
@@ -191,30 +198,61 @@ _These do not earn tokens, but are worth your consideration._
     * Submit final redo for MP4 on Gradescope
     * Submit final redo for MP5 on Gradescope
 
-### Wednesday PSA
-
-* People care about you. Please take care of yourselves.
-
 A few notes from last class
 ---------------------------
+
+* Key idea: We want to abstract away from the underlying representation 
+  of the data. If we access data in a compound object only through 
+  procedures, it doesn't/shouldn't matter how it's actually implement.
+* Implication: When we're dealing with a collection of data, we should
+  think about how to abstract away our own representations, using only
+  the procedures we design.
+* Side note: Often, we'll be called upon to implement someone else's
+  not-necessarily clear policies.
 
 Questions
 ---------
 
 ### Administrative
 
-### Mini-project 7
+### Readings
+
+Is it possible to change the mutability of structs like you can
+with vectors or hash tables?
+
+> Yes, we can make mutable structs. By default, structs are immutable,
+  but you can add `#:mutable` to either the struct as a whole or
+  individual fields to make them mutable. Check out the [Racket Guide
+  on Structs](https://docs.racket-lang.org/guide/define-struct.html)
+  for details.
+
+How do we know what we can put in a structure? (i.e. year, month, date)
+
+> Documentation!
+
+Can you explain what the difference between a husk and a kernel is?
+
+> You've noted we often have implicit restrictions on our procedures
+  (e.g., input types, limits on input values). Ideally, we should
+  "fail clearly" on bad inputs. But that means taking the effort to
+  check for bad inputs. The husk protects the kernel by checking
+  inputs; the kernel does the main work and assumes that it has
+  correctly inputs.
+
+Could you give a broad overview of why this reading is important?
+
+> We learned on Monday that it's good to separate what we do with
+  data from how we represent it. Structs give us a programmatic way
+  to do so.
+
+> Also: Structs automatically build a bunch of procedures for you.
+
+Where do `date-kernel-year`, `date-kernel-month`, and `date-kernel-day`
+come from?
+
+> They are generated automatically from
+  `(struct date-kernel (year month day))`.
 
 Lab
 ---
-
-* Make sure that you've updated the header for `names-as-bar-strings.rkt`
-* If you've finished `names-as-bar-strings.rkt` ...
-    * Make sure that you currently require the `names-as-bar-strings.rkt`
-      library (rather than one of the other `names-as-???.rkt` libraries).
-    * Submit both `data-abstraction.rkt` and `names-as-bar-strings.rkt`.
-* Otherwise
-    * Make sure that you currently require the `names-as-lists.rkt` library.
-    * Submit `data-abstraction.rkt`, `names-as-lists.rkt`, and
-      `names-as-bar-strings.rkt`.
 
