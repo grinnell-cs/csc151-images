@@ -130,7 +130,7 @@ You should generate that automatically with `(gensym "chirp")`.
          (and (list? (chirp-tags val))
               (andmap string? (chirp-tags val)))
          (date? (chirp-date val))
-         (time? (chirp-time val)))))
+         (clock? (chirp-time val)))))
 |#
 
 #| A |#
