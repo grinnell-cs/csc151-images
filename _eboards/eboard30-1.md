@@ -3,7 +3,7 @@ title: "EBoard 30: Structured Types (Section 1)"
 number: 30
 section: eboards
 held: 2025-04-16
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -65,8 +65,6 @@ Multicultural
 * Friday, 18 April 2025, 6:00 p.m.--Midnight, Harris Gym.
   _SOL Quinceañera_
     * Tickets are required for the food. 
-    * Clueless Sam question: Given that about 50% of Latin America is
-      Catholic (big C), is Good Friday really the best day for this?
 * Saturday, 19 April 2025, 1:00--8:30 p.m., Cleveland Beach.
   _Holi_
 * Saturday, 19 April 2025, 1:00--4:00 p.m., HSSC A1231  (Multi-purpose Kernel).
@@ -204,11 +202,14 @@ A few notes from last class
 * Key idea: We want to abstract away from the underlying representation 
   of the data. If we access data in a compound object only through 
   procedures, it doesn't/shouldn't matter how it's actually implement.
+     * This is "data abstraction" and it's one of the core aspects of
+       "computational thinking".
 * Implication: When we're dealing with a collection of data, we should
   think about how to abstract away our own representations, using only
   the procedures we design.
 * Side note: Often, we'll be called upon to implement someone else's
   not-necessarily clear policies.
+    * Father John Smith -> Father Smith John (nope)
 
 Questions
 ---------
@@ -255,4 +256,12 @@ come from?
 
 Lab
 ---
+
+How do I write a procedure that checks whether something is a list of strings?
+
+> `(list-of string?)` returns such a procedure. Isn't Racket cool?
+
+How do I use that procedure in my husk?
+
+> `[(not ((list-of string?) tags)) ...]`
 

@@ -1,9 +1,9 @@
 ---
-title: "EBoard 31: Structured Types (Section 2)"
+title: "EBoard 30: Structured Types (Section 2)"
 number: 30
 section: eboards
 held: 2025-04-16
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -23,7 +23,6 @@ Administrative stuff
 
 ### Introductory notes
 
-* Welcome to our visitor!
 * A fascinating email: "Dear Sam, I'm prioritizing a homework assignment 
   in another class over showing up for CSC-151. But I'd like to take the
   quiz. So I'm going to show up for another section's quiz time."
@@ -141,7 +140,6 @@ _These do not earn tokens, but are worth your consideration._
 * Wednesday, 16 April 2025 
     * Quiz: Dictionaries
     * Makeup quiz: Diagramming structures (paper only)
-    * Makeup quiz: Tracing (paper only)
     * _Don't forget that you can bring a page of _hand written_ notes for
       each quiz._
 * Thursday, 17 April 2025
@@ -203,17 +201,31 @@ A few notes from last class
 
 * Key idea: We want to abstract away from the underlying representation 
   of the data. If we access data in a compound object only through 
-  procedures, it doesn't/shouldn't matter how it's actually implement.
+  procedures, it doesn't/shouldn't matter how it's actually implemented.
+    * We call this "data abstraction". It's one of the core points of
+      a broader way of approaching problems called "Computational Thinking"
 * Implication: When we're dealing with a collection of data, we should
   think about how to abstract away our own representations, using only
   the procedures we design.
 * Side note: Often, we'll be called upon to implement someone else's
   not-necessarily clear policies.
+    * "Father John Doe" should be sorted as "Doe Father John"
+        * or "Doe John Father" [+1]
+        * or "Father Doe John"
+    * Policies can be hard to parse/understand.
 
 Questions
 ---------
 
 ### Administrative
+
+Will MP9 still be a group mini-project?
+
+> Yes.
+
+Can my group have size 1?
+
+> Yes.
 
 ### Readings
 
@@ -237,7 +249,7 @@ Can you explain what the difference between a husk and a kernel is?
   "fail clearly" on bad inputs. But that means taking the effort to
   check for bad inputs. The husk protects the kernel by checking
   inputs; the kernel does the main work and assumes that it has
-  correctly inputs.
+  correct inputs.
 
 Could you give a broad overview of why this reading is important?
 
@@ -253,6 +265,22 @@ come from?
 > They are generated automatically from
   `(struct date-kernel (year month day))`.
 
+> This also creates `date-kernel?`.
+
 Lab
 ---
+
+Interesting ideas from your classmates: "Hmmm. Once I've called
+`string-split` in `string->clock`, I have something that resembles the
+parameters to `clock`. I bet I can use `apply`." (_They needed to do a bit
+more than that, but I appreciate the idea._)
+
+How do I check if a list contains only strings?
+
+> `(andmap string? tags)`.
+
+What if `tags` isn't a list?
+
+> Check `(list? tags)` first.
+
 
