@@ -1,9 +1,9 @@
 ---
-title: "EBoard 30: Structured Types (Section 1)"
+title: "EBoard 30: Structured Types (Section 3)"
 number: 30
 section: eboards
 held: 2025-04-16
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -12,7 +12,7 @@ is working correctly.
 
 _Approximate optimistic overview_
 
-* Administrative stuff 
+* Administrative stuff
 * A few notes from last class
 * Q&A
 * Lab
@@ -23,7 +23,6 @@ Administrative stuff
 
 ### Introductory notes
 
-* Welcome to our visitor!
 * A fascinating email: "Dear Sam, I'm prioritizing a homework assignment 
   in another class over showing up for CSC-151. But I'd like to take the
   quiz. So I'm going to show up for another section's quiz time."
@@ -65,12 +64,10 @@ Multicultural
 * Friday, 18 April 2025, 6:00 p.m.--Midnight, Harris Gym.
   _SOL Quinceañera_
     * Tickets are required for the food. 
-    * Clueless Sam question: Given that about 50% of Latin America is
-      Catholic (big C), is Good Friday really the best day for this?
-* Saturday, 19 April 2025, 1:00--8:30 p.m., Cleveland Beach.
-  _Holi_
 * Saturday, 19 April 2025, 1:00--4:00 p.m., HSSC A1231  (Multi-purpose Kernel).
   _Japanese Spring Festival_
+* Saturday, 26 April 2025, 1:00--8:30 p.m., Cleveland Beach.
+  _Holi_
 
 Peer
 
@@ -141,7 +138,6 @@ _These do not earn tokens, but are worth your consideration._
 * Wednesday, 16 April 2025 
     * Quiz: Dictionaries
     * Makeup quiz: Diagramming structures (paper only)
-    * Makeup quiz: Tracing (paper only)
     * _Don't forget that you can bring a page of _hand written_ notes for
       each quiz._
 * Thursday, 17 April 2025
@@ -203,12 +199,17 @@ A few notes from last class
 
 * Key idea: We want to abstract away from the underlying representation 
   of the data. If we access data in a compound object only through 
-  procedures, it doesn't/shouldn't matter how it's actually implement.
+  procedures, it doesn't/shouldn't matter how it's actually implemented
+    * This idea is often referred "data abstraction" - we separate how
+      we use the data from how we represent them.
 * Implication: When we're dealing with a collection of data, we should
   think about how to abstract away our own representations, using only
   the procedures we design.
 * Side note: Often, we'll be called upon to implement someone else's
   not-necessarily clear policies.
+    * Father John Doe gets filed under
+        * "F" for "Father". Blah blah blah Religious Titles.
+        * "D" for "Doe". Look at the Sister example.
 
 Questions
 ---------
@@ -228,7 +229,7 @@ with vectors or hash tables?
 
 How do we know what we can put in a structure? (i.e. year, month, date)
 
-> Documentation!
+> Documentation! (or you could read the code)
 
 Can you explain what the difference between a husk and a kernel is?
 
@@ -252,6 +253,13 @@ come from?
 
 > They are generated automatically from
   `(struct date-kernel (year month day))`.
+
+> We also get the `date-kernel` constructor and the `date-kernel?` predicate.
+
+What are the paremeters to `date-kernel?`?
+
+> Any one value. The predicate returns true if it was created with
+  `date-kernel` (either directly or indirectly) and false otherwise.
 
 Lab
 ---
