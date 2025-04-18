@@ -3,7 +3,7 @@ title: "EBoard 31: Higher-order programming (Section 1)"
 number: 31
 section: eboards
 held: 2025-04-18
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -13,6 +13,7 @@ is working correctly.
 _Approximate optimistic overview_
 
 * Administrative stuff 
+* Reading
 * Q&A
 * Lab
 
@@ -95,7 +96,7 @@ Misc
 * Sunday, 20 April 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session: SoLA 3_
 * Tuesday, 22 April 2025, 7:00--8:00 p.m., Science 3820.
-  _Mentor Session_
+  _Mentor Session: Quizzes_
 * Wednesday, 23 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
   _Community Forum_
     * "Weekly discussion on legal protections and recourse on issues 
@@ -185,9 +186,51 @@ _TPS_
 
 What are the big ideas? (There are at least two.)
 
+* We can write things like `filter`, `map`, and `reduce`.
+    * We write them recursively.
+* We can write procedures that take other procedures as parameters.
+* We can write procedures that build and return new procedures.
+  (Examples include `right-section`, `make-multiplier`, ...)
+
+Side notes?
+
+* PM prefers `foldr` and `foldl` to `reduce`.
+* PM writes cool popup code things.
+
 How would you write `filter`?
 
+```
+(define filter
+  (lambda (pred? lst)
+    (if (null? lst)
+        lst ; or null, it's all the same
+        (if (pred? (car lst))
+            (cons (car lst) (filter pred? (cdr lst)))
+            (filter pred? (cdr lst))))))
+```
+
 ### Questions
+
+What does `andmap` do?
+
+> `(andmap pred? lst)`: Apply `pred?` to each element of the list and then
+  `and` all the results. (Except, it does it one by one, so as soon as we
+  get false, it stops.
+
+Could we talk about `make-multiplier`?
+
+> We can write procedures that build and return new procedures.
+
+> ```
+(define make-multiplier
+  (lambda (n)
+    (cut (* <> n))))
+(define make-multiplier
+  (lambda (n)
+    ; Return a procedure, procedures have the form (lambda (params) body)
+    (lambda (x)
+      (* n x))))
+```
 
 Questions
 ---------

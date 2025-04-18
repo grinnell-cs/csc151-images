@@ -3,7 +3,7 @@ title: "EBoard 31: Higher-order programming (Section 3)"
 number: 31
 section: eboards
 held: 2025-04-18
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -13,6 +13,7 @@ is working correctly.
 _Approximate optimistic overview_
 
 * Administrative stuff 
+* Discussion of reading
 * Q&A
 * Lab
 
@@ -95,7 +96,7 @@ Misc
 * Sunday, 20 April 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session: SoLA 3_
 * Tuesday, 22 April 2025, 7:00--8:00 p.m., Science 3820.
-  _Mentor Session_
+  _Mentor Session: Prep for quizzes_
 * Wednesday, 23 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
   _Community Forum_
     * "Weekly discussion on legal protections and recourse on issues 
@@ -182,9 +183,50 @@ Readings
 
 _TPS_
 
-What are the big ideas? (There are at least two.)
+What are the big ideas? (There are at least three.)
 
-How would you write `filter`?
+* You can write procedures that create new procedures. (This can be
+  powerful, but also dangerous.)
+* We can write the big three procedures! (`map`, `filter`, `reduce`)
+     * You have gained in knowledge. Yay!
+* You can write procedures that take other procedures as parameters.
+  (In fact, that's true of `map`, `filter`, and `reduce`.)
+* The ability to take and return procedures suggest that Racket is a
+  "higher order" programming language.
+  
+How would you write `filter`? (Recursively)
+
+```
+(define filter
+  (lambda (pred? lst)
+    (if (null? lst)
+        lst ; or null
+        (if (pred? (car lst))
+            (cons (car lst) (filter pred? (cdr lst)))
+            (filter pred? (cdr lst))))))
+```
+
+Suppose we had the list `'(1 2 3 4 5)` and we wanted to filter the odd
+numbers.
+
+```
+     (filter odd? '(1 2 3 4 5))
+     ; Not empty, pred holds
+---> (cons 1 (filter odd? '(2 3 4 5)))
+     ; Not empty, pred fails
+---> (cons 1 (filter odd? '(3 4 5)))
+     ; Not empty, pred holds
+---> (cons 1 (cons 3 (filter odd? '(4 5))))
+     ; Not empty, pred fails
+---> (cons 1 (cons 3 (filter odd? '(5))))
+     ; Not empty, pred holds
+---> (cons 1 (cons 3 (cons 5 (filter odd? '()))))
+     ; Empty
+---> (cons 1 (cons 3 (cons 5 '())))
+---> (cons 1 (cons 3 '(5)))
+---> (cons 1 '(3 5))
+---> '(1 3 5)
+```
 
 ### Questions
 
@@ -205,4 +247,21 @@ Can we go over the self check?
 
 Lab
 ---
+
+### `right-section`
+
+`(right-section binproc val)` is supposed to take a two-parameter procedure
+and a value, use the value as the second (right) parameter of `binproc`,
+and return a new procedure that expects the first first parameter.
+
+Very similar to `(cut (binproc <> val))`.
+
+For example, 
+
+* `(right-section + 3)` -> `(lambda (x) (+ x 3))`
+* `(right-section - 4)` -> `(lambda (x) (- x 4))`
+* `(right-section make-list "Scar")` -> `(lambda (n) (make-list n "Scar"))`
+
+No type checking is necessary.
+
 

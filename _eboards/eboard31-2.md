@@ -3,7 +3,7 @@ title: "EBoard 31: Higher-order programming (Section 2)"
 number: 31
 section: eboards
 held: 2025-04-18
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -13,6 +13,7 @@ is working correctly.
 _Approximate optimistic overview_
 
 * Administrative stuff 
+* Talk about the reading
 * Q&A
 * Lab
 
@@ -23,6 +24,8 @@ Administrative stuff
 
 * Apologies
 * Please make more use of the evening tutors!
+* Your mentor will be returning quizzes (I hope).
+* Welcome to our visitor!
 
 ### Upcoming activities
 
@@ -58,6 +61,10 @@ _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
+* Saturday, 19 April 2025, 9:00 a.m.--Noon, Tennis Courts.
+  _Men's Tennis vs. Ripon_
+* Saturday, 19 April 2025, 3:00--6:00 p.m., Tennis Courts.
+  _Men's Tennis vs. Lawrence_
 
 Wellness
 
@@ -95,7 +102,7 @@ Misc
 * Sunday, 20 April 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session: SoLA 3_
 * Tuesday, 22 April 2025, 7:00--8:00 p.m., Science 3820.
-  _Mentor Session_
+  _Mentor Session: Quiz prep_
 * Wednesday, 23 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
   _Community Forum_
     * "Weekly discussion on legal protections and recourse on issues 
@@ -106,11 +113,6 @@ Misc
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
-
-* Saturday, 19 April 2025, 9:00 a.m.--Noon, Tennis Courts.
-  _Men's Tennis vs. Ripon_
-* Saturday, 19 April 2025, 3:00--6:00 p.m., Tennis Courts.
-  _Men's Tennis vs. Lawrence_
 
 ### Upcoming work
 
@@ -182,9 +184,30 @@ Readings
 
 _TPS_
 
-What are the big ideas? (There are at least two.)
+What are the big ideas? (There are at least three.)
+
+* UM: Universal Methods. We can write the big three list procedures.
+* We can write procedures that take other procedures as parameters.
+* We can write procedures, like `right-section` or `make-multiplier`,
+  that return procedures. 
 
 How would you write `filter`?
+
+```
+(define filter 
+  (lambda (pred? lst)
+    (cond
+      [(null? lst)
+       null]
+      [(pred? (car lst))
+       (cons (car lst) (filter pred? (cdr lst)))]
+      [else
+       (filter pred? (cdr lst))])))
+```
+
+Can you explain how to write `map` or `filter` using `fold`?
+
+> At the end of class.
 
 ### Questions
 
@@ -197,6 +220,16 @@ Will dictionaries be on SoLA 3?
 
 > No.
 
+Will dictionaries be on SoLA 4?
+
+> Yes.
+
+Will SoLA 4 be the final SoLA?
+
+> No. However, it will be the last SoLA with new topics.
+
+> SoLA 5, due at the end of finals week, gives you one last chance.
+
 ### Readings
 
 Can we go over the self check?
@@ -206,3 +239,25 @@ Can we go over the self check?
 Lab
 ---
 
+Note: Trust the magic recursion fairy! "Suppose our recursive call succeeds.
+What next?"
+
+Can you explain how to write `map` or `filter` using `fold`?
+
+```
+(define fmap
+  (lambda (fun lst)
+    (foldr (lambda (val rest)
+             (cons (fun val) rest))
+           null
+           lst)))
+
+(define ffilter
+  (lambda (pred? lst)
+    (foldr (lambda (val rest)
+             (if (pred? val)
+                 (cons val rest)
+                 rest))
+           null
+           lst)))
+```
