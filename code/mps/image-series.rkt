@@ -5,9 +5,9 @@
 
 ;;; image-series.rkt
 ;;;   An exploration of TITLE by Hilma Af Klint
-;;;   A final project for CSC-151-NN 2024Sp
+;;;   A final project for CSC-151-NN 2025Sp
 ;;;
-;;; Authors:
+;;; Group NAME:
 ;;;   Person One
 ;;;   Person Two
 ;;;   Person Three
