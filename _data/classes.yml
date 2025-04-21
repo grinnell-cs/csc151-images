@@ -360,27 +360,13 @@
   reading:
     - page: /mps/mp09.html
 
-- topic: Complexity analysis and binary search
-  abbrev: search
-  summary: |
-    We explore techniques for analyzing the number of calls made
-    in evaluating procedures, particularly recursive procedures.
-    We consider why such analysis is useful.  We then delve into
-    a common problem: That of finding values in a collection.
-  reading:
-    - page: /readings/analysis.html
-    - page: /readings/searching.html
-  lab:
-    - page: /labs/searching.html
-
 - topic: Trees
   abbrev: trees
   summary: |
     We consider a common hierarchial mechanism for structuring data
     and how to realize it in Scheme.
   reading:
-    - page: /readings/trees-ex.html
-    #- page: /readings/tree-structs.html
+    - page: /readings/tree-structs.html
   lab:
     - page: /labs/binary-trees.html
   todo:
@@ -401,6 +387,19 @@
   abbrev: project-work-day-2
   summary: |
     We provide class time for students to their projects.
+
+- topic: Complexity analysis and binary search
+  abbrev: search
+  summary: |
+    We explore techniques for analyzing the number of calls made
+    in evaluating procedures, particularly recursive procedures.
+    We consider why such analysis is useful.  We then delve into
+    a common problem: That of finding values in a collection.
+  reading:
+    - page: /readings/analysis.html
+    - page: /readings/searching.html
+  lab:
+    - page: /labs/searching.html
 
 - topic: "Case study: Sorting"
   abbrev: sorting-lab
