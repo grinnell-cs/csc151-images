@@ -9,7 +9,7 @@ collaboration: |
   Each group should submit their responses to this project together. You may
   consult other students in the class as you develop your solution.  If you
   receive help or advice from anyone, make sure to cite them in your responses.
-link: false
+link: true
 ---
 The starter code for this project is [image-series.rkt](../code/mps/image-series.rkt).
 
@@ -31,7 +31,7 @@ As you may know, a multitude of (mostly) hidden design decisions go into each wo
 
 One of the nice things about computers is that they can let us write procedures that make variants of an image. Rather than drawing one variant of an image by hand, we can write a proram that makes dozens or even hundreds of variants. The ability to generate variants helps us better understand the original image. At the same time, it lets us "create" in that we can now make a Warholesque trove of variants.
 
-How many is enough? We'd like you to write a procedure that can make at least 1,000 different (but related) images, all based on a single starting image. What "at least 1,000"? So that we can subtitle the project "a procedure is worth a thousand pictures" (a play on the aphorism "a picture is worth a thousand words").
+How many is enough? We'd like you to write a procedure that can make at least 1,000 different (but related) images, all based on a single starting image. Why "at least 1,000"? So that we can subtitle the project "a procedure is worth a thousand pictures" (a play on the aphorism "a picture is worth a thousand words").
 
 Project specification
 ---------------------
@@ -46,7 +46,11 @@ Write a procedure, `(image-series n width height)`, that takes three non-negativ
 
 You should find ways to use the following in your project.
 
-* At least two of the ways we have of thinking about images: shapes, manipulating bitmaps by position, and manipulating bitmaps by using surrounding pixels.
+* At least two of the ways we have of thinking about images: 
+    * shapes, 
+    * manipulating bitmaps by color (using `pixel-map`), 
+    * manipulating bitmaps by position (using either `image-compute` or `pixel-pos-map`), and
+    * manipulating bitmaps directly based on the underlying vector of pixels.
 * At least two useful recursive procedures. (You can use any kind of recursion: list, numeric, vector, hash, tree, ...).
 
 Additional requirements
@@ -58,30 +62,30 @@ Rather than just building whatever comes to mind, you should begin by coming up 
 
 ### Presentation
 
-Your group will give a 5-minute presentation to the class on your project on Wednesday, 8 May 2024. In your presentation, you should plan to discuss the original image, your design plans, show some images you geneated, and highlight one or more pieces of code you are most proud of. You should also be prepared to answer questions.
+Your group will give a 5-minute presentation to the class on your project on Wednesday, 7 May 2025. In your presentation, you should plan to discuss the original image, your design plans, show some images you geneated, and highlight one or more pieces of code you are most proud of. You should also be prepared to answer questions.
 
 You must submit the slide deck for your presentation (PDF or Powerpoint) along with your project file.
 
 ### Time log
 
-This project is scheduled for slightly more than a week of class. We ask you to spend about four hours of out-of-class time plus about two and a half hours of in-class time per team member, which includes planning, writing, development, and presentation preparation. No one should spend less than six hours. No one should spend more than ten hours. Please keep track of your time as you go in a time log that includes start time, stop time, elapsed time, and activity . Here's an example.
+This project is scheduled for slightly more than a week of class. We ask you to spend about four hours of out-of-class time plus about two hours of in-class time per team member, which includes planning, writing, development, and presentation preparation. No one should spend less than five hours. No one should spend more than ten hours. Please keep track of your time as you go in a time log that includes start time, stop time, elapsed time, and activity . Here's an example.
 
 ```
-Taylor  2024-04-24 09:00-09:30  30 min  Met with reference librarian 
-Taylor  2024-04-24 15:00-15:15  15 min  Found some good images
-Taylor  2024-04-26 20:00-21:00  60 min  Discussed project with team
-Taylor  2024-04-27 09:00-09:30  30 min  Started designing concentric-circles
-Taylor  2024-04-28 11:15-12:00  45 min  Wrote concentric-circles; buggy
+Taylor  2025-04-24 09:00-09:30  30 min  Met with reference librarian 
+Taylor  2025-04-24 15:00-15:15  15 min  Found some good images
+Taylor  2025-04-26 20:00-21:00  60 min  Discussed project with team
+Taylor  2025-04-27 09:00-09:30  30 min  Started designing concentric-circles
+Taylor  2025-04-28 11:15-12:00  45 min  Wrote concentric-circles; buggy
 ...
-Toby    2024-04-25 14:00-14:15  15 min  Asked art history friend for ideas
-Toby    2024-04-26 20:00-21:00  60 min  Met with team; they chose my idea!
-Toby    2024-04-29 09:00-10:00  60 min  Helped Taylor debug concentric-circles
+Toby    2025-04-25 14:00-14:15  15 min  Asked art history friend for ideas
+Toby    2025-04-26 20:00-21:00  60 min  Met with team; they chose my idea!
+Toby    2025-04-29 09:00-10:00  60 min  Helped Taylor debug concentric-circles
 ...
 ```
 
 ### Learning summary
 
-Each group member should individually reflect on what they learned in the project.  You might consider what you learned about the work you are studying, programming, teamwork, yourself, etc.  You will enter this reflection in the MP9 post-reflection.
+Each group member should individually reflect on what they learned in the project.  You might consider what you learned about the work you are studying, programming, teamwork, yourself, etc.  You will enter this commentary in the MP9 post-reflection.
 
 What to submit
 --------------
@@ -133,6 +137,8 @@ _There are no redos available for this project._
 [ ] Project runs and produces different images for different values of `n`
 [ ] Includes design description
 [ ] Time log appears reasonable
+[ ] Includes two recursive procedures
+[ ] Includes two mechanisms for image making
 [ ] All team members document spending at least 6 hours on the project
 [ ] Presentation is approximately 5 minutes
 [ ] Presentation includes goals and code description
@@ -151,11 +157,6 @@ _There are no redos available for this project._
 [ ] A well-organized code file
 ```
 
-Examples
---------
-
-_Forthcoming._
-
 Questions and answers
 ---------------------
 
@@ -171,7 +172,19 @@ How big a picture can I make?
 
 > I wouldn't go much beyound 2,000 x 2,000 pixels.
 
+What do you mean by "variants of the original image"?
+
+> You might use different colors (or different combinations of colors), different ratios of shape sizes, manipulations of the pixels (e.g., modifications of the patterns she uses across large areas), and other things like that. Your images should still be recognizably similar to the original image.
+
+Can we use `random` in this assignment?
+
+> No. Your results for each `n` should be consistent.
+
+What if one of our team members works too few or too many hours?
+
+> They will receive an R or an I. It will not directly affect the grades of other team members (provided they turn in working code).
+
 Acknowledgements
 ----------------
 
-Although "A procedure is worth 1,000 pictures" has long been a part of the image-making versions of CSC-151, the use of the project as an analysis tool was inspired by the works of James Clayson in his explorations of "Radical Bricolage".
+Although "A procedure is worth 1,000 pictures" has long been a part of the image-making versions of CSC-151, this new form of the project was introduced in Spring 2024.  the use of the project as an analysis tool was inspired by the works of James Clayson in his explorations of "Radical Bricolage". 
