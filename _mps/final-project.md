@@ -42,7 +42,7 @@ This semester, will apply the "code as analysis" technique to the works of Hilma
 
 Identify an image by Hilma af Klint that you would like to use as a starting point. (We have placed a copy of her _Catalogue Raisonné_ in the classroom for you to browse. You can also find many of her images online.) Your goal will be to write a procedure that can generate a variety of variants of the image. In part, your goal is to be able to make individualized versions of the image. In part, your goal is to be able to better understand the underlying design ideas in the image.
 
-Write a procedure, `(image-series n width height)`, that takes three non-negative integers as input and generates a `width`-by-`height` image that is similar to but different from your source image. Different values of `n` should give observably different images. The same `n`/`width`/`height` triplet should always give the same image; do not use randomness. You should support values of `n` between 0 and 999, inclusive. (You may also support other values of `n`.) You should support aspect ratios between 1:2 and 2:1.
+Write a procedure, `(image-series n width height)`, that takes three non-negative integers as input and generates a `width`-by-`height` image that is similar to but different from your source image. Different values of `n` should give observably different images. The same `n`/`width`/`height` triplet should always give the same image; if you use randomness, you'll need to make it predictable randomness (use `(random-seed n)` at the start). You should support values of `n` between 0 and 999, inclusive. (You may also support other values of `n`.) You should support aspect ratios between 1:2 and 2:1.
 
 You should find ways to use the following in your project.
 
@@ -178,7 +178,7 @@ What do you mean by "variants of the original image"?
 
 Can we use `random` in this assignment?
 
-> No. Your results for each `n` should be consistent.
+> Yes. However, your results for each `n` should be consistent. You'll need to call `(random-seed n)` at the start. (That "seeds" the random number generator.)
 
 What if one of our team members works too few or too many hours?
 
