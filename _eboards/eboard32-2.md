@@ -47,6 +47,8 @@ Artistic
 
 * Monday, 21 April 2025, 4:00--5:00 p.m., GCMoA.
   _Poetry Reading by Lívia Stein Freitas_
+* All week (I think.) Bucksbaum Basement.
+  _Art Exhibit: If you woke and you were a fish, what would you do?_
 
 Multicultural
 
@@ -61,8 +63,6 @@ _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
-* All week (I think.) Bucksbaum Basement.
-  _Untitled Art Exhibit_
 * Saturday, 25 April 2025, Noon, Baseball field.
   _Baseball vs. Ripon_
 * Saturday, 25 April 2025, 2:30 p.m., Baseball field.

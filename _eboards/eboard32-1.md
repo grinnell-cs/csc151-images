@@ -62,7 +62,7 @@ students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
 * All week (I think.) Bucksbaum Basement.
-  _Untitled Art Exhibit_
+  _Art Exhibit: If you woke and you were a fish, what would you do?_
 * Saturday, 25 April 2025, Noon, Baseball field.
   _Baseball vs. Ripon_
 * Saturday, 25 April 2025, 2:30 p.m., Baseball field.
