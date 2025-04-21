@@ -14,14 +14,14 @@
 ; | Provided code |
 ; +---------------+
 
-;;; (num-sum number) -> number?
+;;; (new-sum number) -> number?
 ;;;   numbers : listof number?
 ;;; Find the sum of all the values in numbers
 (define new-sum
   (lambda (numbers)
     (new-sum/helper 0 numbers)))
 
-;;; (num-sum/helper sum-so-far remaining) -> number?
+;;; (nem-sum/helper sum-so-far remaining) -> number?
 ;;;   sum-so-far : number?
 ;;;   remaining : listof number?
 ;;; Find the sum of sum-so-far plus all the values
@@ -101,7 +101,7 @@ d. Review the purposes of the procedures above.
 ; +---------------------------+
 
 #|
-`num-sum/helper` (above) is intended to give a quick trace of
+`new-sum/helper` (above) is intended to give a quick trace of
 its own behavior.  Verify that it does with a few examples.
 
 TODO: Paste your examples from the interactions pane here.
