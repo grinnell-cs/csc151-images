@@ -3,7 +3,7 @@ title: "EBoard 32: Tail recursion (Section 1)"
 number: 32
 section: eboards
 held: 2025-04-21
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -13,6 +13,7 @@ is working correctly.
 _Approximate optimistic overview_
 
 * Administrative stuff 
+* Tail recursion
 * Q&A
 * Lab
 
@@ -25,7 +26,7 @@ Administrative stuff
   CLASS! (It's also okay if you decide to work alone.)
 * To help make the semester a bit more manageable, I will permit Es
   on second redos (except for MP1).
-    * If that affects the work you put into the MP2 redo, let me know.
+    * If that affects the work you put into the MP2 or MP3 redo, let me know.
 * I've extended the MP4, MP5, and MP6 redos another week.
 * Please please please submit mentor and evening tutor evaluations.
     * <https://grinnell.co1.qualtrics.com/jfe/form/SV_1YUJY7nJqaj9AtU>
@@ -51,7 +52,7 @@ Artistic
 Multicultural
 
 * Friday, 25 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
-  _Middle of Everywhere: ???_
+  _Middle of Everywhere: ROad Trip Around Spain_
 * Saturday, 26 April 2025, 1:00--8:30 p.m., Cleveland Beach.
   _Holi_
 
@@ -62,7 +63,7 @@ students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
 * All week (I think.) Bucksbaum Basement.
-  _Art Exhibit: If you woke and you were a fish, what would you do?_
+  _Art Exhibit: If you woke and you were a ghoti, what would you do?_
 * Saturday, 25 April 2025, Noon, Baseball field.
   _Baseball vs. Ripon_
 * Saturday, 25 April 2025, 2:30 p.m., Baseball field.
@@ -81,11 +82,11 @@ Wellness
 * Tuesday, 22 April 2025, 4:30--6:30 p.m., 
   BRAC P103 (Multipurpose Dance Studio).
   _Wellness Yoga_.
-* Wednesday, 16 April 2025, 6:30--8:00 p.m., Dance Studio.
+* Wednesday, 23 April 2025, 6:30--8:00 p.m., Dance Studio.
   _Brazilian Jiu-Jitsu_
-* Thursday, 17 April 2025, 12:00--12:45 p.m., Dance Studio.
+* Thursday, 24 April 2025, 12:00--12:45 p.m., Dance Studio.
   _HIIT Training_.
-* Thursday, 17 April 2025. 4:30--6:30 p.m., Off Campus.
+* Thursday, 24 April 2025. 4:30--6:30 p.m., Off Campus.
   _Forest Bathing._
     * Sign ups are required.
 * Friday, 25 April 2025, 6:00--8:00 p.m., Aux Gym.
@@ -112,7 +113,6 @@ Misc
     * Also online.
     * This week: ???
 * Sunday, 27 April 2025, 7:30--8:30 p.m., Science 3819. 
-  _Mentor Session: SoLA 3_
 
 ### Other good things
 
@@ -135,7 +135,7 @@ _These do not earn tokens, but are worth your consideration._
           local bindings.
         * New topics from phase three: Numeric recursion, vectors, randomness.
 * Tuesday, 22 April 2025
-    * [Submit today's lab on Gradescope](...)
+    * [Submit today's lab on Gradescope](https://www.gradescope.com/courses/948769/assignments/6115917)
     * Readings
         * [Mini-project 9](../mps/mp09)
         * _No reading response!_
@@ -198,35 +198,200 @@ _These do not earn tokens, but are worth your consideration._
 
 #### Vector recursion
 
+```
+(define vector-sum
+  (lambda (vec)
+    (vector-sum-helper! vec 0)))
+(define vector-sum-helper
+  (lambda (vec pos)
+    (if (>= pos (vector-length vec))
+        0
+        (+ (vector-ref vec pos)
+           (vector-sum-helper vec (+ pos 1))))))
+```
+
+```
+(define vector-increment-all!
+```
+
 #### Randomness
+
+* `(random n)` gives me an unpreditable number between 0 (inclusive)
+  and `n` (exclusive)
+* If I'm using a random number for multiple purposes (e.g., with 7/11),
+  I need to be careful not to call `random` a second time.
+* Sam makes bad puns.
 
 Tail Recursion
 --------------
 
 Would it be possible for you to run through how to do the reading
-question. I understand that tail end recursion requires that all
+question. I understand that tail recursion requires that all
 functions and procedures be done before the recursive call, but I'm
 not sure how to implement that.
 
 ### General principles
 
+* For tail recursion, we have to ensure that nothing happens after the
+  recursive call. (The computer does this quicker.)
+* We often achieve this goal by adding an extra parameter (or more) that
+  "accumulates" the intermediate results.
+
 ### `factorial`
 
 Normal recursion
 
+```
+(define factorial
+  (lambda (n)
+    (if (zero? n)
+        1
+        (* n (factorial (- n 1))))))
+```
+
 Tail recursion
+
+```
+(define factorial
+  (lambda (n)
+    (factorial/helper n 1)))
+
+(define factorial/helper
+  (lambda (n so-far)
+    (if (zero? n)
+        so-far
+        (factorial/helper (- n 1) (* so-far n)))))
+```
+
+Let's trace
+
+```
+    (factorial 5)
+--> (helper 5 1)
+--> (helper (- 5 1) (* 1 5))
+--> (helper 4 5)
+--> (helper (- 4 1) (* 5 4))
+--> (helper 3 20)
+--> (helper (- 3 1) (* 20 3))
+--> (helper 2 60)
+--> (helper (- 2 1) (* 60 2))
+--> (helper 1 120)
+--> (helper (- 1 1) (* 120 1))
+--> (helper 0 120)
+--> 120
+```
 
 ### `make-list`
 
 Normal recursion
 
+```
+(define make-list
+  (lambda (n val)
+    (if (zero? n)
+        null
+        (cons val (make-list (- n 1) val)))))
+```
+
 Tail recursion
+
+```
+(define make-list
+  (lambda (n val)
+    (helper n val null)))
+
+(define helper
+  (lambda (n val so-far)
+    (if (zero? n)
+        so-far
+        (helper (- n 1) val (cons val so-far)))))
+```
+
+Observations:
+
+* The base value in the original often becomes the start value for the
+  helper.
+* We usually use the same base-case test in the helper that we used
+  in the original.
+    * We return `so-far` instead of the base value.
+* In the recursive call, we change the "copied" parameters in the same
+  way `(- n 1)`.
+* We move the "outside the recursive call" stuff into something that
+  modifies the `so-far`.
+
+```
+    (make-list 3 "a")
+--> (helper 3 "a" '())
+--> (helper (- 3 1) "a" (cons "a" '()))
+--> (helper 2 "a" '("a"))
+--> (helper (- 2 1) "a" (cons "a" '("a")))
+--> (helper 1 "a" '("a" "a"))
+--> (helper (- 1 1) "a" (cons "a" '("a" "a")))
+--> (helper 0 "a" '("a" "a" "a"))
+--> '("a" "a" "a")
+```
 
 ### `filter`
 
 Normal recursion
 
+```
+(define filter 
+  (lambda (lst pred?)
+    (if (null? lst)
+        null
+        (if (pred? (car lst))
+            (cons (car lst)
+                  (filter (cdr lst) pred?))
+            (filter (cdr lst) pred?)))))
+```
+
 Tail recursion
+
+```
+(define filter
+  (lambda (lst pred?)
+    (helper lst pred? null)))
+
+(define helper
+  (lambda (lst pred? so-far)
+    (if (null? lst)
+        so-far
+        (if (pred? (car lst))
+            (helper (cdr lst) pred? (cons (car lst) so-far))
+            (helper (cdr lst) pred? so-far)))))
+```
+
+Whoops! This builds the list backwards!
+
+```
+> (filter '() odd?)
+'()
+> (filter '(2 4 6 8) odd?)
+'()
+> (filter '(1 1 1 2 1) odd?)
+'(1 1 1 1)
+> (filter '(1 2 3 4 5) odd?)
+'(5 3 1)
+```
+
+Let's trace
+
+```
+    (filter '(1 2 3 4 5) odd?)
+--> (helper '(1 2 3 4 5) odd? '())
+--> (helper '(2 3 4 5) odd? (cons 1 '()))
+--> (helper '(2 3 4 5) odd? '(1))
+--> (helper '(3 4 5) odd? '(1))
+--> (helper '(4 5) odd? (cons 3 '(1)))
+--> (helper '(4 5) odd? '(3 1))
+--> (helper '(5) odd? '(3 1))
+--> (helper '() odd? (cons 5 '(3 1)))
+--> (helper '() odd? '(5 3 1))
+--> '(5 3 1)
+```
+
+Solution: We need to reverse the order. SO the base case is `(reverse so-far)`.
 
 Questions
 ---------
@@ -252,8 +417,10 @@ memorizing and more so logic.
 What’s the difference between `letrec` and `let*`?
 
 > `let*` defines things in sequence. `letrec` builds recursive procedures.
-  You can't build a recursive procedure with `let*`.
+  You can't build a recursive procedure with `let*`. `letrec` doesn't really
+  do things in order.
 
 Lab
 ---
 
+Yay! Fun!

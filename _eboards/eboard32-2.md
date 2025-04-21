@@ -3,7 +3,7 @@ title: "EBoard 32: Tail recursion (Section 2)"
 number: 32
 section: eboards
 held: 2025-04-21
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -13,6 +13,7 @@ is working correctly.
 _Approximate optimistic overview_
 
 * Administrative stuff 
+* Tail recursion
 * Q&A
 * Lab
 
@@ -26,7 +27,7 @@ Administrative stuff
   CLASS! (It's also okay if you decide to work alone.)
 * To help make the semester a bit more manageable, I will permit Es
   on second redos (except for MP1).
-    * If that affects the work you put into the MP2 redo, let me know.
+    * If that affects the work you put into the MP2 or MP3 redo, let me know.
 * I've extended the MP4, MP5, and MP6 redos another week.
 * Please please please submit mentor and evening tutor evaluations.
     * <https://grinnell.co1.qualtrics.com/jfe/form/SV_1YUJY7nJqaj9AtU>
@@ -48,12 +49,12 @@ Artistic
 * Monday, 21 April 2025, 4:00--5:00 p.m., GCMoA.
   _Poetry Reading by Lívia Stein Freitas_
 * All week (I think.) Bucksbaum Basement.
-  _Art Exhibit: If you woke and you were a fish, what would you do?_
+  _Art Exhibit: If you woke up and you were a fish, what would you do?_
 
 Multicultural
 
 * Friday, 25 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
-  _Middle of Everywhere: ???_
+  _Middle of Everywhere: Road Trip Around Spain_
 * Saturday, 26 April 2025, 1:00--8:30 p.m., Cleveland Beach.
   _Holi_
 
@@ -81,11 +82,11 @@ Wellness
 * Tuesday, 22 April 2025, 4:30--6:30 p.m., 
   BRAC P103 (Multipurpose Dance Studio).
   _Wellness Yoga_.
-* Wednesday, 16 April 2025, 6:30--8:00 p.m., Dance Studio.
+* Wednesday, 23 April 2025, 6:30--8:00 p.m., Dance Studio.
   _Brazilian Jiu-Jitsu_
-* Thursday, 17 April 2025, 12:00--12:45 p.m., Dance Studio.
+* Thursday, 24 April 2025, 12:00--12:45 p.m., Dance Studio.
   _HIIT Training_.
-* Thursday, 17 April 2025. 4:30--6:30 p.m., Off Campus.
+* Thursday, 24 April 2025. 4:30--6:30 p.m., Off Campus.
   _Forest Bathing._
     * Sign ups are required.
 * Friday, 25 April 2025, 6:00--8:00 p.m., Aux Gym.
@@ -112,7 +113,7 @@ Misc
     * Also online.
     * This week: ???
 * Sunday, 27 April 2025, 7:30--8:30 p.m., Science 3819. 
-  _Mentor Session: SoLA 3_
+  _Mentor Session_
 
 ### Other good things
 
@@ -135,7 +136,7 @@ _These do not earn tokens, but are worth your consideration._
           local bindings.
         * New topics from phase three: Numeric recursion, vectors, randomness.
 * Tuesday, 22 April 2025
-    * [Submit today's lab on Gradescope](...)
+    * [Submit today's lab on Gradescope](https://www.gradescope.com/courses/948769/assignments/6115917)
     * Readings
         * [Mini-project 9](../mps/mp09)
         * _No reading response!_
@@ -143,7 +144,6 @@ _These do not earn tokens, but are worth your consideration._
     * Quiz: Data abstraction / structs
     * Makeup quiz: Dictionaries
     * Makeup quiz: Diagramming structures (paper only)
-    * Makeup quiz: Tracing (paper only)
     * _Don't forget that you can bring a page of hand-written notes for
       each quiz._
 * Thursday, 24 April 2025
@@ -198,40 +198,214 @@ _These do not earn tokens, but are worth your consideration._
 
 #### Vector recursion
 
+```
+(define vector-increment-odd!
+  (lambda (vec)
+    (vio/helper! vec 0)))
+
+(define vio/helper!
+  (lambda (vec pos)
+    (when (< pos (vector-length vec))
+      (when (odd? (vector-ref vec pos))
+         (vector-set! vec pos (+ 1 (vector-ref vec pos))))
+      (voi/helper! vec (+ pos 1)))))
+```
+
 #### Randomness
+
+* There's a procedure, `(random n)` that produces an unpredictable number
+  between 0 and n.
+* We can use `(vector-ref vec (vector-length vec))` to get a random value
+  in a vector.
+* We can make stupid stories using that principle.
+* In the 7/11 example, we got slightly incorrect results by calling a
+  random procedure more than once. (We use `let` to help.)
 
 Tail Recursion
 --------------
 
 Would it be possible for you to run through how to do the reading
-question. I understand that tail end recursion requires that all
+question. I understand that tail recursion requires that all
 functions and procedures be done before the recursive call, but I'm
 not sure how to implement that.
 
 ### General principles
 
+* A procedure is tail-recursive if you directly return the recursive
+  result (without, say, adding to it or consing to it or whatever).
+* We often achieve this by adding an "accumulator" as a parameter in a helper.
+  The accumulator gathers the result as we go.
+* In case it wasn't clear, we'll often need a helper.
+
 ### `factorial`
 
 Normal recursion
 
+```
+(define factorial
+  (lambda (n)
+    (if (zero? n)
+        1
+        (* n (factorial (- n 1))))))
+```
+
 Tail recursion
+
+```
+(define factorial
+  (lambda (n)
+    (helper n 1)))
+
+(define helper
+  (lambda (n so-far)
+    (if (zero? n)
+        so-far ; What I've computed along the way
+        (helper (- n 1) (* n so-far)))))
+```
+
+A quick trace
+
+    (factorial 5)
+--> (helper 5 1)
+--> (helper (- 5 1) (* 5 1))
+--> (helper 4 5)
+--> (helper (- 4 1) (* 4 5))
+--> (helper 3 20)
+--> (helper (- 3 1) (* 3 20))
+--> (helper 2 60)
+--> (helper (- 2 1) (* 2 60))
+--> (helper 1 120)
+--> (helper (- 1 1) (* 1 120))
+--> (helper 0 120)
+--> 120
+```
+
+We tend to use tail recursion "whenever possible" because it ends up
+being faster than non-tail recursion.
+
+In some cases, tail recursion is not possible. Or overly difficult. 
+(It requires a different way of thinking.)
 
 ### `make-list`
 
 Normal recursion
 
+```
+; Make a list of `n` copies of `val`.
+(define make-list
+  (lambda (n val)
+    (if (zero? n)
+        null
+        (cons val (make-list (- n 1) val)))))
+```
+
 Tail recursion
+
+```
+(define helper
+  (lambda (n val so-far)
+    (if (zero? n)
+        so-far
+        (helper (- n 1) val (cons val so-far)))))
+
+(define make-list
+  (lambda (n val)
+    (helper n val null)))
+```
+
+```
+    (make-list 3 "J")
+--> (helper 3 "J" '())
+--> (helper 2 "J" (cons "J" '()))
+--> (helper 2 "J" '("J"))
+--> (helper 1 "J" (cons "J" '("J")))
+--> (helper 1 "J" '("J" "J"))
+--> (helper 0 "J" (cons "J" '("J" "J")))
+--> (helper 0 "J" '("J" "J" "J"))
+--> '("J" "J" "J")
+```
+
+### Four steps 
+
+to (partially) convert a regular recursive function to a tail-recursive fucntion.
+
+* The base case test seems to be the same.
+    * In the tail recursive version, we return `so-far`, rather than null.
+* The base value gets sent in as the original value of `so-far`.
+* In the recursive call, we "simplify" the parameter in the same way
+  `(- n 1)`.
+* The stuff outside the recursive call in the original gets moved 
+  inside the recursive call in the tail-recursive version; in fact,
+  it gets applied to the `so-far`.
 
 ### `filter`
 
 Normal recursion
 
+```
+(define filter
+  (lambda (lst pred?)
+    (if (null? lst)
+        null
+        (if (pred? (car lst))
+            (cons (car lst)
+                  (filter (cdr lst) pred?))
+            (filter (cdr lst) pred?)))))
+```
+
 Tail recursion
+
+```
+(define helper
+  (lambda (lst pred? so-far)
+    (if (null? lst)
+        so-far
+        (if (pred? (car lst))
+            (helper (cdr lst) pred? (cons (car lst) so-far))
+            (helper (cdr lst) pred? so-far)))))
+
+(define filter
+  (lambda (lst pred?)
+    (helper lst pred? null)))
+```
+
+Whoops, this is backwards
+
+```
+    (filter '(1 2 3 4 5 6) even?)
+--> (helper '(1 2 3 4 5 6) even? '())
+--> (helper '(2 3 4 5 6) even? '())
+--> (helper '(3 4 5 6) even? (cons 2 '()))
+--> (helper '(3 4 5 6) even? '(2))
+--> (helper '(4 5 6) even? '(2))
+--> (helper '(5 6) even? (cons 4 '(2)))
+--> (helper '(5 6) even? '(4 2))
+```
+
+How do we fix this to generate the list in the right order?
+
+```
+(define helper
+  (lambda (lst pred? so-far)
+    (if (null? lst)
+        so-far
+        (if (pred? (car lst))
+            (helper (cdr lst) pred? (cons (car lst) so-far))
+            (helper (cdr lst) pred? so-far)))))
+
+(define filter
+  (lambda (lst pred?)
+    (helper (reverse lst) pred? null)))
+```
 
 Questions
 ---------
 
 ### Administrative
+
+When will the SoLA be released?
+
+> 4pm
 
 ### Readings
 
