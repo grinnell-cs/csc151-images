@@ -45,7 +45,7 @@ Scholarly
   _Annual McKibben Lecture: Love in a Time of Bankruptcy: Calculations
    in Catullus_
 * Tuesday, 29 April 2025, noon--1pm, White PDR.
-  _CS Table: ??? 
+  _CS Table: ???_
 
 Artistic
 
@@ -55,7 +55,7 @@ Multicultural
   _Holocaust Memorial Day Program with Andre Holtan_
 * Friday, 25 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
   _Middle of Everywhere: Road Trip Around Spain_
-* Saturday, 26 April 2025, 1:00--8:30 p.m., Cleveland Beach.
+* Sunday, 27 April 2025, 1:00--8:30 p.m., Cleveland Beach. (Estimates.)
   _Holi_
 
 Peer
@@ -64,7 +64,7 @@ _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
-* All week (I think.) Bucksbaum Basement.
+* Through this afternoon. Bucksbaum Basement.
   _Art Exhibit: If you woke up and you were a ghoti, what would you do?_
 * Saturday, 25 April 2025, Noon, Baseball field.
   _Baseball vs. Ripon_
@@ -181,8 +181,47 @@ Questions
 About the project
 -----------------
 
+* Conceptual background: Which we can apply our CS skills to tasks from
+  other disciplines.
+    * Perhaps being able to make images computationally helps us better
+      understand (abstract) art.
+* Often, when analyzing a picture, we want to think about why the artist
+  made the decisions they did (color, ratios, ...).
+* With computers, we can make lots and lots of variants of the same image
+  and consider whether there are particular characteristics that stand out.
+
+Goals:
+
+* Pick a piece of art by Hilma af Klint.
+* Write a program that makes variations of that piece of art.
+* Your procedure will be called `(image-series n width height)`
+    * The `n` lets us choose which element of the series we get. It affects
+      color, sizes, shapes, ....
+    * You should support an `n` between 0 (inclusive) and 1000 (exclusive).
+* You must write two recursive procedures.
+* You must use at least two "image making and manipulation techniques".
+* You should spend at least five hours on the project (including time in
+  class today and next Wednesday).
+    * You should not spend too much time on the project. Please don't
+      spend more than ten.
+* You will present on your work on Wednesday of week 14, but your slides
+  (powerpoint deck) are due on Sunday.
+* You should work in groups. But you can work in a group of one if you'd
+  prefer.
+* You post-assignment reflection will be about the process.
+    * If you don't turn in the post-assignment reflection, you get an I 
+      or an R.
+
 Questions and Clarifications
 ----------------------------
+
+Can we simplify the images?
+
+> Yes. That may be necessary.
+
+How big can the groups be?
+
+> One to four.
 
 Project skills
 --------------
@@ -191,26 +230,36 @@ _TPS: What are characteristics you'd like at least one team member to have?_
 
 ### Some group members (at least one)
 
-* Able to herd cats. (Aka "manage a group of Grinnellians".)
-* Debugging.
+* Leader: Able to herd cats. (Aka "manage a group of Grinnellians".) [RED]
+    * Perhaps more than one.
+    * Or not.
+    * Needs to set meeting times and make people show up.
+* Timekeeper.
+* Debugging / troubleshooting. [YELLOW]
+* Good at problem solving / idea generation. [YELLOW]
 * Understands abstract art.
+* Use Math.
+* Really good coder. [GREEN]
+* Formulates good questions.
+* Gadfly: Observes what's happening and speaks about it. [PURPLE]
+* External communicator [BLUE]
+    * Writer. [BLUE]
+    * Presentation designer. [BLUE]
 
 ### All group members
 
 * Cooperative.
 * Responsive.
+* Punctual.
+* Cares about the project.
+* Able to write Racket code.
+* Universally miserable.
+* Willing to ask for help.
 
 Group formation
 ---------------
 
-Please grab the cards that represent your skills.
-
-* White:
-* Red:
-* Yellow:
-* Green:
-* Blue:
-* Purple:
+Please grab the cards that represent your skills. (See above.)
 
 Try to form a group with five or six cards.
 

@@ -3,7 +3,7 @@ title: "EBoard 33: Project Kickoff (Section 2)"
 number: 33
 section: eboards
 held: 2025-04-23
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -44,11 +44,11 @@ Scholarly
   _Annual McKibben Lecture: Love in a Time of Bankruptcy: Calculations
    in Catullus_
 * Tuesday, 29 April 2025, noon--1pm, White PDR.
-  _CS Table: ??? 
+  _CS Table: ???_
 
 Artistic
 
-* All week (I think.) Bucksbaum Basement.
+* Through this afternoon. Bucksbaum Basement.
   _Art Exhibit: If you woke up and you were a ghoti, what would you do?_
 
 Multicultural
@@ -57,7 +57,7 @@ Multicultural
   _Holocaust Memorial Day Program with Andre Holtan_
 * Friday, 25 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
   _Middle of Everywhere: Road Trip Around Spain_
-* Saturday, 26 April 2025, 1:00--8:30 p.m., Cleveland Beach.
+* Sunday, 27 April 2025, 1:00--8:30 p.m., Cleveland Beach. (Maybe.)
   _Holi_
 
 Peer
@@ -114,7 +114,6 @@ _These do not earn tokens, but are worth your consideration._
     * Quiz: Data abstraction / structs
     * Makeup quiz: Dictionaries
     * Makeup quiz: Diagramming structures (paper only)
-    * Makeup quiz: Tracing (paper only)
     * _Don't forget that you can bring a page of hand-written notes for
       each quiz._
 * Thursday, 24 April 2025
@@ -159,7 +158,6 @@ _These do not earn tokens, but are worth your consideration._
     * Quiz: Higher-order programming
     * Makeup quiz: Data abstraction
     * Makeup quiz: Diagramming structures (paper only)
-    * Makeup quiz: Tracing (paper only)
     * _Don't forget that you can bring a page of hand-written notes for
       each quiz._
 * Sunday, 4 May 2025
@@ -176,13 +174,66 @@ _These do not earn tokens, but are worth your consideration._
 Questions
 ---------
 
+Are SoLAs still due Thursday?
+
+> Yes.
+
+Is Sam fixing the redo grades?
+
+> He hopes to.
+
+Should we submit a regrade request?
+
+> After the next grade report comes out if Sam hasn't fixed it by then.
+
 ### Administrative
 
 About the project
 -----------------
 
+Philosophical underpining
+
+* We can use our computing skills to understand the world.
+* We can use our ability to write programs that make/manipulate images to
+  better understand artworks. 
+* By making computer-based "sketches" of variants of an artwork, we can
+  better understand the artist's intent / decisions.
+
+Details
+
+* You are going to write programs that create variants of a work of art.
+* By making variants, you will (hopefully) understand design decisions
+  better.
+* We'll be using the artwork of Hilma af Klint.
+
+Expectations
+
+* Write `(image-series n width height)`, makes `n`th image in a series of
+  variants of whatever image you selected.
+    * `n` is an exact integer between 0 (inclusive) and 1000 (exclusive)
+* With at least two recursive procedures.
+* Using at least two image-making and image-manipulation techniques.
+* Write about what you've done and what you've learned.
+* Limit your time.
+    * No fewer than five hours (including in-class time) per person.
+    * No more than ten hours per person.
+    * The time making the presentation counts.
+    * The time writing about your code counts.
+* Working in a group (between one and four people).
+* Five-minute presentation in front of the class (and visitors) in week 
+  14 (Wednesday).
+* The post-reflection is REQUIRED.
+
 Questions and Clarifications
 ----------------------------
+
+Can we work with someone in another section?
+
+> No.
+
+How much fun is this mini project.
+
+> "Soooo fun."
 
 Project skills
 --------------
@@ -191,14 +242,42 @@ _TPS: What are characteristics you'd like at least one team member to have?_
 
 ### Some group members (at least one)
 
-* Able to herd cats. (Aka "manage a group of Grinnellians".)
-* Debugging.
+* Leader/Manager: Able to herd cats. (Aka "manage a group of Grinnellians".)
+  [YELLOW]
+    * Decisive.
+    * Sets meetings.
+    * Keeps people on task.
+    * Keeps people moving forward.
+* Mediator
+* Debugging / verifier / tester. [BLUE]
 * Understands abstract art.
+* Communicator: Will lead the making of the presentation.[GREEN]
+* Writer: Will lead the writing of the key parts.
+* Big picture person for code design
+* Stylist/Documenter. [RED]
+* Passionate coder.
+* Mathemagician [WHITE]
+* Simplifier. Can make complex code simpler. 
+* Artist. Able to sketch the thing.
+* Idea generator. [PURPLE]
 
 ### All group members
 
 * Cooperative.
 * Responsive.
+* Hard-working.
+* Accountable.
+* Capable.
+* Proactive. Do your work on time or let people know in advance that you're
+  screwing up.
+* Focused.
+* Coder
+* Professionalism
+* Patient.
+
+### No group members
+
+* Sarcastic.
 
 Group formation
 ---------------
@@ -231,3 +310,7 @@ Initial tasks:
 
 Quiz
 ----
+
+* Data abstraction
+* Dictionaries
+* Diagraming structures

@@ -3,7 +3,7 @@ title: "EBoard 33: Project Kickoff (Section 3)"
 number: 33
 section: eboards
 held: 2025-04-23
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -12,25 +12,23 @@ is working correctly.
 
 _Approximate optimistic overview_
 
-* Quiz!
 * Administrative stuff 
 * Questions! (admin)
 * About the project
 * Questions! (project)
 * Group formation
 * Work time
+* Quiz!
 
 Administrative stuff
 --------------------
 
 ### Introductory notes
 
-* Welcome to our guest!
 * Please please please submit mentor and evening tutor evaluations.
     * <https://grinnell.co1.qualtrics.com/jfe/form/SV_1YUJY7nJqaj9AtU>
     * A token for everyone if at least 30 people fill it out by the
       end of today.
-* Reminder that we'll have too many propsies on Friday.
 * I'm visiting a class on Thursday, so office hours will only be
   10:00--10:45.
 * I'll be guest teaching classes next Tuesday, so office hours will only
@@ -49,16 +47,13 @@ Scholarly
 
 Artistic
 
-* All week (I think.) Bucksbaum Basement.
-  _Art Exhibit: If you woke up and you were a ghoti, what would you do?_
-
 Multicultural
 
 * Wednesday, 23 April 2025, 4:15 p.m., HSSC S1325.
   _Holocaust Memorial Day Program with Andre Holtan_
 * Friday, 25 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
   _Middle of Everywhere: Road Trip Around Spain_
-* Saturday, 26 April 2025, 1:00--8:30 p.m., Cleveland Beach.
+* Sunday, 27 April 2025, 1:00--8:30 p.m., Cleveland Beach. (Uncertain.)
   _Holi_
 
 Peer
@@ -83,16 +78,16 @@ Wellness
 
 Misc
 
-* Wednesday, 23 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
-  _Community Forum_
-    * "Weekly discussion on legal protections and recourse on issues 
-      that higher education and Grinnell College face."
-    * Also online.
-    * This week: Disability and Accessibility
 * Sunday, 27 April 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session: Quizzes and Projects_
 * Tuesday, 29 April 2025, 7:00--8:00 p.m., Science 3820.
   _Mentor Session: Quizzes_
+* Wednesday, 30 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
+  _Community Forum_
+    * "Weekly discussion on legal protections and recourse on issues 
+      that higher education and Grinnell College face."
+    * Also online.
+    * This week: ???
 
 ### Other good things
 
@@ -115,7 +110,6 @@ _These do not earn tokens, but are worth your consideration._
     * Quiz: Data abstraction / structs
     * Makeup quiz: Dictionaries
     * Makeup quiz: Diagramming structures (paper only)
-    * Makeup quiz: Tracing (paper only)
     * _Don't forget that you can bring a page of hand-written notes for
       each quiz._
 * Thursday, 24 April 2025
@@ -160,7 +154,6 @@ _These do not earn tokens, but are worth your consideration._
     * Quiz: Higher-order programming
     * Makeup quiz: Data abstraction
     * Makeup quiz: Diagramming structures (paper only)
-    * Makeup quiz: Tracing (paper only)
     * _Don't forget that you can bring a page of hand-written notes for
       each quiz._
 * Sunday, 4 May 2025
@@ -182,6 +175,36 @@ Questions
 About the project
 -----------------
 
+Underlying perspective
+
+* You know how to program (at least a bit).
+* We can apply our programming knowledge to support our learning of other
+  fields.
+* Since we've learned about making and manipulating images, we can apply
+  that to trying to understand works of art.
+* Can we better understand the design decisions an artist has made by
+  creating variants of their work?
+* We'll pick a work, write a procedure that makes 1000 variants, see what
+  the variants tell us.
+
+Expectations
+
+* `(image-series n width height)`
+    * `n` is an integer between 0 (inclsive) and 1000 (exclusive).
+    * You can choose three things to vary, make ten variants of each.
+      (Ones digit chooses one variation aspect, tens chooses another,
+      hundreds chooses a third.)
+    * All your variations need not be perfectly distinguishable, but
+      some should be.
+* At least two (non-trivial) procedures that use recursion. 
+* At least two forms of image making or image manipulation.
+* Work in a group of size 1 to 4.
+* Give a five-minute presentation on the project two weeks from today.
+* Spend at least five hours per person over the next 1.5 weeks.
+    * Includes: Writing code, writing informative stuff, preparing a talk.
+    * NO MORE THAN TEN HOURS!
+* Tell me a bit about your work.
+
 Questions and Clarifications
 ----------------------------
 
@@ -192,14 +215,30 @@ _TPS: What are characteristics you'd like at least one team member to have?_
 
 ### Some group members (at least one)
 
-* Able to herd cats. (Aka "manage a group of Grinnellians".)
-* Debugging.
-* Understands abstract art.
+* Leader/Manager: Able to herd cats. (Aka "manage a group of Grinnellians".)
+    * [RED]
+    * Organize meetings
+    * Keep focused during meetings
+    * Etc.
+* Debugging. [YELLOW]
+* Understands abstract art. [BLUE]
+* Idea generator.
+* Cheerleader (keeps energy/spirits up). 
+* Use Mathematics [WHITE]
+* Organize ideas about the project.
+* Documenter / Code Stylist [GREEN]
+* Presenter [PURPLE] (might also lead cheers)
+* Presentation Designer
 
 ### All group members
 
 * Cooperative.
 * Responsive.
+* Will focus on the project when they're supposed to do so.
+
+### Imaginary characteristics
+
+* Grinnellian with free time.
 
 Group formation
 ---------------
