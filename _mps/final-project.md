@@ -139,7 +139,7 @@ _There are no redos available for this project._
 [ ] Time log appears reasonable
 [ ] Includes two recursive procedures
 [ ] Includes two mechanisms for image making
-[ ] All team members document spending at least 6 hours on the project
+[ ] All team members document spending at least 5 hours on the project
 [ ] Presentation is approximately 5 minutes
 [ ] Presentation includes goals and code description
 [ ] Answered questions well
@@ -183,6 +183,51 @@ Can we use `random` in this assignment?
 What if one of our team members works too few or too many hours?
 
 > They will receive an R or an I. It will not directly affect the grades of other team members (provided they turn in working code).
+
+How do variants help us understand the initial image? It was written matter-of-factly, however I am still confused on how that is analysis.
+  
+> Hypothetically, as you build variations, you'll come to better understand the design choices the artist made. Do other other pairings of colors seem less compelling, too relaxing, ...? In some sense, we're generating something like the artist's sketchbook for the piece.
+  
+Does working individually (stated at the beginning of the MP) mean that we can't work with people outside of our group, or does that mean we can't work directly with our team members?
+
+> Working individually means that you choose to form a team of one.
+
+> You can always talk to others, provided you cite them.
+
+I would like to see examples of the final images. Also how different should the images be? especially if we need 1000 of them, should the changes between one and another be super noticeable or can they be more discrete?
+
+> I'll work on some examples if I can find the time.
+
+> You can decide how different the images will be. They should be different enough that you'll learn something from the differences.
+
+How would you split up the work?
+
+> I'd suggest that you work as a team to decide upon the "big picture" of the project and how to decompose it. If you've decomposed well, you could have individuals or pairs work on each part.
+
+> However, I'll note that in the past the best teams seemed to work together (or at least nearby) most of the time.
+
+How should the in-class presentation be different from the coding and documentation portion?
+
+> Your professor is the audience from the coding and documentation.  Your classmates (and any visitors) are the audience for the presentation.  In the presentation, make sure to demo your images and something cool about your code.
+
+Should the time log be in a separate file or just somewhere with the rest of the code?
+
+> There's a space in the code for the time log.
+
+How can we work on the same Racket file from different computers at the same time?
+
+> That's one reason we decompose.
+
+> Know how you're communicating and communicate clearly.
+
+> You might use a Teams channel.
+
+> Mostly work together?
+
+> You could learn to use GitHub. (Sorry.)
+
+> You could sign up for a shared online coding platform. Repl.it is
+  reasonable.
 
 Acknowledgements
 ----------------
