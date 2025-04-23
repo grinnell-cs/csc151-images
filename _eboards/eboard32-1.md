@@ -113,6 +113,7 @@ Misc
     * Also online.
     * This week: ???
 * Sunday, 27 April 2025, 7:30--8:30 p.m., Science 3819. 
+  _Mentor Session_
 
 ### Other good things
 
