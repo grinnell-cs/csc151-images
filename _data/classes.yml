@@ -366,7 +366,7 @@
     We consider a common hierarchial mechanism for structuring data
     and how to realize it in Scheme.
   reading:
-    - page: /readings/tree-structs.html
+    - page: /readings/trees-ex.html
   lab:
     - page: /labs/binary-trees.html
   todo:
