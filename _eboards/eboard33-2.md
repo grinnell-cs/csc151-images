@@ -1,9 +1,9 @@
 ---
-title: "EBoard 33: Project Kickoff (Section 1)"
+title: "EBoard 33: Project Kickoff (Section 2)"
 number: 33
 section: eboards
 held: 2025-04-23
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -12,25 +12,24 @@ is working correctly.
 
 _Approximate optimistic overview_
 
-* Quiz!
 * Administrative stuff 
 * Questions! (admin)
 * About the project
 * Questions! (project)
 * Group formation
 * Work time
+* Quiz!
 
 Administrative stuff
 --------------------
 
 ### Introductory notes
 
-* Welcome to our guest!
 * Please please please submit mentor and evening tutor evaluations.
     * <https://grinnell.co1.qualtrics.com/jfe/form/SV_1YUJY7nJqaj9AtU>
     * A token for everyone if at least 30 people fill it out by the
       end of today.
-* Reminder that we'll have too many propsies on Friday.
+* Reminder that we'll have propsies on Friday.
 * I'm visiting a class on Thursday, so office hours will only be
   10:00--10:45.
 * I'll be guest teaching classes next Tuesday, so office hours will only
@@ -49,6 +48,9 @@ Scholarly
 
 Artistic
 
+* All week (I think.) Bucksbaum Basement.
+  _Art Exhibit: If you woke up and you were a ghoti, what would you do?_
+
 Multicultural
 
 * Wednesday, 23 April 2025, 4:15 p.m., HSSC S1325.
@@ -64,8 +66,6 @@ _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
-* All week (I think.) Bucksbaum Basement.
-  _Art Exhibit: If you woke up and you were a ghoti, what would you do?_
 * Saturday, 25 April 2025, Noon, Baseball field.
   _Baseball vs. Ripon_
 * Saturday, 25 April 2025, 2:30 p.m., Baseball field.
@@ -228,3 +228,6 @@ Initial tasks:
   some that speak to you (or at least that you want to do).
 * Start considering variations you might make.
 * Start considering how you might achieve different parts of the image.
+
+Quiz
+----

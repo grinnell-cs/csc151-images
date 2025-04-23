@@ -1,9 +1,9 @@
 ---
-title: "EBoard 33: Project Kickoff (Section 1)"
+title: "EBoard 33: Project Kickoff (Section 3)"
 number: 33
 section: eboards
 held: 2025-04-23
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -49,6 +49,9 @@ Scholarly
 
 Artistic
 
+* All week (I think.) Bucksbaum Basement.
+  _Art Exhibit: If you woke up and you were a ghoti, what would you do?_
+
 Multicultural
 
 * Wednesday, 23 April 2025, 4:15 p.m., HSSC S1325.
@@ -64,14 +67,6 @@ _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
-* All week (I think.) Bucksbaum Basement.
-  _Art Exhibit: If you woke up and you were a ghoti, what would you do?_
-* Saturday, 25 April 2025, Noon, Baseball field.
-  _Baseball vs. Ripon_
-* Saturday, 25 April 2025, 2:30 p.m., Baseball field.
-  _Baseball vs. Ripon_
-* Sunday, 26 April 2025, Noon, Baseball field.
-  _Baseball vs. Ripon_
 
 Wellness
 
@@ -107,6 +102,12 @@ _These do not earn tokens, but are worth your consideration._
   Softball vs. Cornell_ 
 * Saturday, 25 April 2025, 3:30 p.m., Softball field.
   Softball vs. Cornell_ 
+* Saturday, 25 April 2025, Noon, Baseball field.
+  _Baseball vs. Ripon_
+* Saturday, 25 April 2025, 2:30 p.m., Baseball field.
+  _Baseball vs. Ripon_
+* Sunday, 26 April 2025, Noon, Baseball field.
+  _Baseball vs. Ripon_
 
 ### Upcoming work
 
