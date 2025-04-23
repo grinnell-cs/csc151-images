@@ -149,7 +149,7 @@ _These do not earn tokens, but are worth your consideration._
 * Thursday, 24 April 2025
     * No lab writeup from Wednesday
     * Reading:
-        * [Trees](../readings/trees-structs)
+        * [Trees](../readings/trees-ex)
         * Submit reading response on Gradescope
     * [SoLA 3](../las) due
         * Topics from phase one: 
