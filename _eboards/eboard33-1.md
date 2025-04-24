@@ -34,7 +34,7 @@ Administrative stuff
 * I'm visiting a class on Thursday, so office hours will only be
   10:00--10:45.
 * I'll be guest teaching classes next Tuesday, so office hours will only
-  be 10:00--11:30.
+  be 8:30--9:45.
 * If you'd like to meet to me at other times, let me know.
 
 ### Upcoming activities
