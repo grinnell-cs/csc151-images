@@ -1,9 +1,9 @@
 ---
-title: "EBoard 34: Trees (Section 1)"
+title: "EBoard 34: Trees (Section 2)"
 number: 34
 section: eboards
 held: 2025-04-25
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -32,7 +32,6 @@ Administrative stuff
 * We are three people short on the mentor/tutor evals. If you haven't
   evaluated yet, please do so.
 * I'll be sending out notes on the quizzes tonight or tomorrow.
-* Congrats to Sarah on being elected to the SEPC!
 
 ### Upcoming activities
 
@@ -153,7 +152,6 @@ _These do not earn tokens, but are worth your consideration._
     * Quiz: Higher-order programming
     * Makeup quiz: Data abstraction
     * Makeup quiz: Diagramming structures (paper only)
-    * Makeup quiz: Tracing (paper only)
     * _Don't forget that you can bring a page of hand-written notes for
       each quiz._
 * Sunday, 4 May 2025
