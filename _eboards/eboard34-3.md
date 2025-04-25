@@ -3,7 +3,7 @@ title: "EBoard 34: Trees (Section 3)"
 number: 34
 section: eboards
 held: 2025-04-25
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -21,10 +21,6 @@ Administrative stuff
 
 ### Introductory notes
 
-* Welcome to our prospective/admitted students! Please introduce
-  yourself and ask a question. "Grinnellians ask hard questions and
-  question easy answers", or at least that's what our marketing
-  people used to say.
 * I'll be guest teaching classes next Tuesday, so office hours will only
   be 8:30--9:45.
 * As always, if you'd like to meet to me outside of office hours, let 
@@ -37,11 +33,11 @@ Administrative stuff
 
 Scholarly
 
-* Tuesday, 1 May 2025, 11:00 a.m.--noon, JRC 101.
-  _Dr. Tammy Kernodle: My Song is My Weapon: Women, Social Movements,
-  and the act of Freedom Singing_
 * Tuesday, 29 April 2025, noon--1pm, White PDR.
   _CS Table: ???_
+* Thursday, 1 May 2025, 11:00 a.m.--noon, JRC 101.
+  _Dr. Tammy Kernodle: My Song is My Weapon: Women, Social Movements,
+  and the act of Freedom Singing_
 
 Artistic
 
@@ -90,8 +86,10 @@ students are welcome._
 Wellness
 
 * When and where they usually occur.
-  _Badminton Club_, _Brazilian Jiu-Jitsu, _HIIT Training_,
+  _Badminton Club_, _Brazilian Jiu-Jitsu, _HIIT Training_ (May 6 is kickboxing),
   _Nerf at Noyce_, _Yoga_.
+* Friday, 26 April 2025, 6:00 p.m.--???. JRC 101.
+  _Spa Day_
 * Saturday, 26 April 2025, 9:30 a.m.--12:30 p.m. CERA (leaves from JRC).
   _Woodland Wildflower Walk_
 * Tuesday, 29 April 2025, 5:00--6:00 p.m., HSSC Atrium.
@@ -117,7 +115,7 @@ Misc
     * "Weekly discussion on legal protections and recourse on issues 
       that higher education and Grinnell College face."
     * Also online.
-    * This week: Disability and Accessibility
+    * This week: ???
 
 ### Other good things
 
@@ -164,6 +162,10 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
+* You are amazing people. You are cared about. Please take of yourselves.
+* Moderation!
+* Consent is essential, but insufficient.
+
 Questions
 ---------
 
@@ -196,9 +198,10 @@ Why is the default a binary tree and not more elements?
 
 What does `match` refer to?
 
-> Damn! I thought I'd gotten rid of that. `match` is a procedure that's in Scamper but we don't use in our section of 151.
+> Damn! I thought I'd gotten rid of that. `match` is a procedure that's
+  in Scamper but we don't use in our section of 151.
 
-What is the point of binary trees? is it just an easier way of
+What is the point of binary trees? Is it just an easier way of
 visualizing list within lists?
 
 > We don't have to represent binary trees as nested lists. We could,
@@ -214,3 +217,5 @@ How can we apply this idea of binary trees into coding to solve problems?
 
 Lab
 ---
+
+
