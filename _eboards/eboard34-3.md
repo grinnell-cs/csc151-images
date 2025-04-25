@@ -1,5 +1,5 @@
 ---
-title: "EBoard 34: Trees (Section 1)"
+title: "EBoard 34: Trees (Section 3)"
 number: 34
 section: eboards
 held: 2025-04-25
@@ -66,6 +66,10 @@ Artistic
 * Tuesday, 29 April 2025, 7:00--8:00 p.m., Herrick.
   _Jazz Ensemble_
     * Note that the poster has the wrong date.
+* Friday, 2 May 2025, 7:30--8:30 p.m., Flanagan.
+  _Dance Ensemble/ACTivate: A Rebours_
+* Saturday, 3 May 2025, 2:00--3:00 p.m., Flanagan.
+  _Dance Ensemble/ACTivate: A Rebours_
 
 Multicultural
 
@@ -99,17 +103,13 @@ Wellness
 * Thursday, 1 May 2025. 4:30--6:30 p.m., Off Campus.
   _Forest Bathing._
     * Sign ups are required.
-* Friday, 2 May 2025, 7:30--8:30 p.m., Flanagan.
-  _Dance Ensemble/ACTivate: A Rebours_
-* Saturday, 3 May 2025, 2:00--3:00 p.m., Flanagan.
-  _Dance Ensemble/ACTivate: A Rebours_
 
 Misc
 
 * Saturday, 26 April 2025, 11:00 a.m.--6:00 p.m., Mac Field.
   _DAG Field Day_
 * Sunday, 27 April 2025, 7:30--8:30 p.m., Science 3819. 
-  _Mentor Session: Quizes and MPs_
+  _Mentor Session: Quizzes and MPs_
 * Tuesday, 29 April 2025, 7:00--8:00 p.m., Science 3820.
   _Mentor Session: Quizzes_
 * Wednesday, 30 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
@@ -122,6 +122,9 @@ Misc
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
+
+* Softball Saturday
+* Baseball Saturday and Sunday
 
 ### Upcoming work
 

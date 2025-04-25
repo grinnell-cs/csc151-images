@@ -3,7 +3,7 @@ title: "EBoard 34: Trees (Section 2)"
 number: 34
 section: eboards
 held: 2025-04-25
-link: false
+link: tree
 ---
 # {{ page.title }}
 
@@ -37,11 +37,11 @@ Administrative stuff
 
 Scholarly
 
-* Tuesday, 1 May 2025, 11:00 a.m.--noon, JRC 101.
-  _Dr. Tammy Kernodle: My Song is My Weapon: Women, Social Movements,
-  and the act of Freedom Singing_
 * Tuesday, 29 April 2025, noon--1pm, White PDR.
   _CS Table: ???_
+* Thursday, 1 May 2025, 11:00 a.m.--noon, JRC 101.
+  _Dr. Tammy Kernodle: My Song is My Weapon: Women, Social Movements,
+  and the act of Freedom Singing_
 
 Artistic
 
@@ -66,6 +66,10 @@ Artistic
 * Tuesday, 29 April 2025, 7:00--8:00 p.m., Herrick.
   _Jazz Ensemble_
     * Note that the poster has the wrong date.
+* Friday, 2 May 2025, 7:30--8:30 p.m., Flanagan.
+  _Dance Ensemble/ACTivate: A Rebours_
+* Saturday, 3 May 2025, 2:00--3:00 p.m., Flanagan.
+  _Dance Ensemble/ACTivate: A Rebours_
 
 Multicultural
 
@@ -105,17 +109,13 @@ Wellness
 * Thursday, 1 May 2025. 4:30--6:30 p.m., Off Campus.
   _Forest Bathing._
     * Sign ups are required.
-* Friday, 2 May 2025, 7:30--8:30 p.m., Flanagan.
-  _Dance Ensemble/ACTivate: A Rebours_
-* Saturday, 3 May 2025, 2:00--3:00 p.m., Flanagan.
-  _Dance Ensemble/ACTivate: A Rebours_
 
 Misc
 
 * Saturday, 26 April 2025, 11:00 a.m.--6:00 p.m., Mac Field.
   _DAG Field Day_
 * Sunday, 27 April 2025, 7:30--8:30 p.m., Science 3819. 
-  _Mentor Session: Quizes and MPs_
+  _Mentor Session: Quizzes and MPs_
 * Tuesday, 29 April 2025, 7:00--8:00 p.m., Science 3820.
   _Mentor Session: Quizzes_
 * Wednesday, 30 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
@@ -123,7 +123,7 @@ Misc
     * "Weekly discussion on legal protections and recourse on issues 
       that higher education and Grinnell College face."
     * Also online.
-    * This week: Disability and Accessibility
+    * This week: ???
 
 ### Other good things
 
@@ -167,6 +167,11 @@ _These do not earn tokens, but are worth your consideration._
 
 ### Friday PSA
 
+* You are awesome. People care about you. Please take care of yourself.
+* Get some rest / do something for yourself.
+* Moderation is important!
+* Consent is essential and insufficient.
+
 Questions
 ---------
 
@@ -177,6 +182,10 @@ Questions
 How much time should we log for Wednesday?
 
 > 30 minutes.
+
+Should we all log that thirty minutes?
+
+> Yes.
 
 ### Trees
 
@@ -201,7 +210,7 @@ What does `match` refer to?
 
 > Damn! I thought I'd gotten rid of that. `match` is a procedure that's in Scamper but we don't use in our section of 151.
 
-What is the point of binary trees? is it just an easier way of
+What is the point of binary trees? Is it just an easier way of
 visualizing list within lists?
 
 > We don't have to represent binary trees as nested lists. We could,
@@ -217,3 +226,5 @@ How can we apply this idea of binary trees into coding to solve problems?
 
 Lab
 ---
+
+
