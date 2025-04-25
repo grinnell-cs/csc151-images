@@ -70,7 +70,7 @@ Artistic
 Multicultural
 
 * Friday, 25 April 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
-  _Middle of Everywhere: ???_
+  _Middle of Everywhere: Spain_
 * Sunday, 27 April 2025, 1:00--8:30 p.m., Cleveland Beach. (Estimates.)
   _Holi_
 * Friday, 2 May 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
