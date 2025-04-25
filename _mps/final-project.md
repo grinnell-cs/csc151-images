@@ -192,7 +192,7 @@ Does working individually (stated at the beginning of the MP) mean that we can't
 
 > Working individually means that you choose to form a team of one.
 
-> You can always talk to others, provided you cite them.
+> You can always talk to others provided you cite them.
 
 I would like to see examples of the final images. Also how different should the images be? especially if we need 1000 of them, should the changes between one and another be super noticeable or can they be more discrete?
 
@@ -228,6 +228,25 @@ How can we work on the same Racket file from different computers at the same tim
 
 > You could sign up for a shared online coding platform. Repl.it is
   reasonable.
+
+Do you have a recommendation for how to make 1000 different images?
+
+> Choose three things that you can have ten variants of (e.g., a color,
+  a size, which texture). Use the ones digit to choose the first variation.
+  Use the tens digit to choose the second variation. Use the hundreds
+  digit to choose the third variation.
+
+Can we simplify the image?
+
+> Certainly. For example, you may choose not to work with textures.
+
+What procedure should we use to make blends?
+
+> I'd suggest `image-compute` or `pixel-pos-map`.
+
+Can we use procedures to scale our image?
+
+> I'd prefer not.
 
 Acknowledgements
 ----------------
