@@ -1,9 +1,9 @@
 ---
-title: "EBoard 35: Tree recursion (Section 1)"
+title: "EBoard 35: Tree recursion (Section 3)"
 number: 35
 section: eboards
 held: 2025-04-28
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -73,8 +73,8 @@ _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
-  _This is the last week of normal S&B articles!_
-* Wednesday, 30 April 2025, 1pm, Baseball field.
+  _This is the last week of S&B articles!_
+* Wednesday, 30 April 2025, Baeball field.
   _Baseball vs. Cornell_
 * Saturday, 3 May 2025, Noon, Baseball field.
   _Baseball vs. Knox_ (senior day)
@@ -116,7 +116,7 @@ Misc
 _These do not earn tokens, but are worth your consideration._
 
 * Travel to watch the Tennis Team 
-* Travel to watch the Track and Field Team
+* Travel to watch the Cross Country Team
 
 ### Upcoming work
 
@@ -192,7 +192,7 @@ We made a fixed-size image. Can we just use `scale` to scale it?
 The original image is a square. What should I do with different aspect
 ratios?
 
-> Option 1: Stretch it in the longer direction by recalculating.
+> Option 1: Stretch it in the longer direction.
 
 > Option 2: Make a smaller-by-smaller square and then pad on the sides.
 
@@ -250,22 +250,7 @@ What are some common uses of binary search trees? They seem like a
 helpful way of organizing datasets. Are they used in hash tables?
 
 > Yes, they are used to implement dictionaries. (Hash tables use a
-  different algorithm, one covered in CSC-207.) "Self balancing binary trees"
+  different algorithm, one covered in 207.) "Self balancing binary trees"
   are probably used to implement immutable hashes in Scheme.
 
-Lab 
----
-
-Size 0: One shape.
-
-Size 1: One shape.
-
-Size 2: Two shapes. (0 left and 1 right; 1 left and 0 right)
-
-Size 3: Either 0 left and 2 right (2), 1 left and 1 right (1), or 2 left and 0 right (2). Total: Five different shapes.
-
-Size 4: Either 0 left and 3 right (5), 1 left and 2 right (2), 2 left and 1 right (2), or 3 left and 0 right (5). Total: Fourteen different shapes.
-
-Size 5: Either 0 left and 4 right (14), 1 left and 3 right (5), 2 left and 2 right (2x2 = 4), 3 left and 1 right (5), or 4 left and 0 right (14). Total: 42.
-
-Size 6: Either 0 left and 5 right (42), 1 left and 4 right (14), 2 left and 3 right (2x5 = 10), 3 left and 2 right (10), 4 left and 1 right (14), 5 left and 0 right (42). Total: 132 (I think)
+Lab ---

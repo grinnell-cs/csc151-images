@@ -1,5 +1,5 @@
 ---
-title: "EBoard 35: Tree recursion (Section 1)"
+title: "EBoard 35: Tree recursion (Section 2)"
 number: 35
 section: eboards
 held: 2025-04-28
@@ -115,7 +115,6 @@ Misc
 
 _These do not earn tokens, but are worth your consideration._
 
-* Travel to watch the Tennis Team 
 * Travel to watch the Track and Field Team
 
 ### Upcoming work
@@ -176,12 +175,16 @@ Some notes on SoLA 3
   (One tick mark covers the whole list)
 * On a similar note, please don't put expressions you expect to be evaluated
   in lists that you construct with tick marks. Those expresions are not
-  evaluated.
+  evaluated. Use `list`.
 
 Questions
 ---------
 
 ### Administrative
+
+Can we get grade reports tonight?
+
+> Yes. (Readings and reflections may not be up to date.)
 
 ### Project
 
@@ -192,7 +195,7 @@ We made a fixed-size image. Can we just use `scale` to scale it?
 The original image is a square. What should I do with different aspect
 ratios?
 
-> Option 1: Stretch it in the longer direction by recalculating.
+> Option 1: Stretch it in the longer direction.
 
 > Option 2: Make a smaller-by-smaller square and then pad on the sides.
 
@@ -203,8 +206,9 @@ ratios?
 What are some circumstances where "recursing on only half the tree" doesn't 
 work?
 
-> Finding the largest/smallest value in the tree. Printing all of
-  the elements in the tree. Converting the tree to a list or vector.
+> Finding the largest/smallest value in an unordered tree. Printing 
+  all of the elements in the tree. Converting the tree to a list 
+  or vector.
 
 I really am struggling to trace the `bst-find` function, would you
 mind explaining how to go about it?
@@ -250,11 +254,18 @@ What are some common uses of binary search trees? They seem like a
 helpful way of organizing datasets. Are they used in hash tables?
 
 > Yes, they are used to implement dictionaries. (Hash tables use a
-  different algorithm, one covered in CSC-207.) "Self balancing binary trees"
+  different algorithm, one covered in 207.) "Self balancing binary trees"
   are probably used to implement immutable hashes in Scheme.
+
+Does BST find only work when the tree is organized in the BST order?
+(Smaller things left, larger things right)
+
+> Yes!
 
 Lab 
 ---
+
+Ah, the joy of counting.
 
 Size 0: One shape.
 
@@ -264,7 +275,7 @@ Size 2: Two shapes. (0 left and 1 right; 1 left and 0 right)
 
 Size 3: Either 0 left and 2 right (2), 1 left and 1 right (1), or 2 left and 0 right (2). Total: Five different shapes.
 
-Size 4: Either 0 left and 3 right (5), 1 left and 2 right (2), 2 left and 1 right (2), or 3 left and 0 right (5). Total: Fourteen different shapes.
+Size 4: Either 0 left and 3 right (5), 1 left and 2 right (2), 2 left and 0 right (2), or 3 left and 1 right (5). Total: Fourteen different shapes.
 
 Size 5: Either 0 left and 4 right (14), 1 left and 3 right (5), 2 left and 2 right (2x2 = 4), 3 left and 1 right (5), or 4 left and 0 right (14). Total: 42.
 
