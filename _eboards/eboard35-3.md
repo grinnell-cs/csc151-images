@@ -3,7 +3,7 @@ title: "EBoard 35: Tree recursion (Section 3)"
 number: 35
 section: eboards
 held: 2025-04-28
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -63,7 +63,9 @@ Artistic
 Multicultural
 
 * Friday, 2 May 2025, 4:00--5:00 p.m., HSSC N1170 (Global Living Room).
-  _Middle of Everywhere: ???_
+  _Middle of Everywhere: Brazil_
+* Friday, 2 May 2025, 5:00 p.m., HSSC N 1164.
+  _ISO Scrap Book_
 * ???, ?? May 2025, 1:00--8:30 p.m., Cleveland Beach. (Estimates.)
   _Holi_
 
@@ -74,12 +76,6 @@ students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
   _This is the last week of S&B articles!_
-* Wednesday, 30 April 2025, Baeball field.
-  _Baseball vs. Cornell_
-* Saturday, 3 May 2025, Noon, Baseball field.
-  _Baseball vs. Knox_ (senior day)
-* Saturday, 3 May 2025, 2:30 p.m., Baseball field.
-  _Baseball vs. Knox_ 
 
 Wellness
 
@@ -105,7 +101,7 @@ Misc
     * "Weekly discussion on legal protections and recourse on issues 
       that higher education and Grinnell College face."
     * Also online.
-    * This week: ???
+    * This week: Title VI and Title IX
 * Friday, 2 May 2025, 5:00 p.m., Merrill Park West.
   _CS Picnic_
 * Sunday, 4 May 2025, 7:30--8:30 p.m., Science 3819. 
@@ -115,8 +111,14 @@ Misc
 
 _These do not earn tokens, but are worth your consideration._
 
+* Wednesday, 30 April 2025, 1pm, Baseball field.
+  _Baseball vs. Cornell_
+* Saturday, 3 May 2025, Noon, Baseball field.
+  _Baseball vs. Knox_ (senior day)
+* Saturday, 3 May 2025, 2:30 p.m., Baseball field.
+  _Baseball vs. Knox_ 
 * Travel to watch the Tennis Team 
-* Travel to watch the Cross Country Team
+* Travel to watch the Track and Field Team
 
 ### Upcoming work
 
@@ -128,7 +130,6 @@ _These do not earn tokens, but are worth your consideration._
     * Quiz: Higher-order programming
     * Makeup quiz: Data abstraction
     * Makeup quiz: Diagramming structures (paper only)
-    * Makeup quiz: Tracing (paper only)
     * _Don't forget that you can bring a page of hand-written notes for
       each quiz._
 * Sunday, 4 May 2025
@@ -203,7 +204,7 @@ ratios?
 What are some circumstances where "recursing on only half the tree" doesn't 
 work?
 
-> Finding the largest/smallest value in the tree. Printing all of
+> Finding the largest/smallest value in an unordered tree. Printing all of
   the elements in the tree. Converting the tree to a list or vector.
 
 I really am struggling to trace the `bst-find` function, would you
@@ -251,6 +252,21 @@ helpful way of organizing datasets. Are they used in hash tables?
 
 > Yes, they are used to implement dictionaries. (Hash tables use a
   different algorithm, one covered in 207.) "Self balancing binary trees"
-  are probably used to implement immutable hashes in Scheme.
+  are probably used to implement immutable hashes in Racket.
 
-Lab ---
+Lab 
+---
+
+Size 0: One shape.
+
+Size 1: One shape.
+
+Size 2: Two shapes. (0 left and 1 right; 1 left and 0 right)
+
+Size 3: Either 0 left and 2 right (2), 1 left and 1 right (1), or 2 left and 0 right (2). Total: Five different shapes.
+
+Size 4: Either 0 left and 3 right (5), 1 left and 2 right (2), 2 left and 1 right (2), or 3 left and 0 right (5). Total: Fourteen different shapes.
+
+Size 5: Either 0 left and 4 right (14), 1 left and 3 right (5), 2 left and 2 right (2x2 = 4), 3 left and 1 right (5), or 4 left and 0 right (14). Total: 42.
+
+Size 6: Either 0 left and 5 right (42), 1 left and 4 right (14), 2 left and 3 right (2x5 = 10), 3 left and 2 right (10), 4 left and 1 right (14), 5 left and 0 right (42). Total: 132 (I think)
