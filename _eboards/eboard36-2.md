@@ -3,17 +3,15 @@ title: "EBoard 36: Project work time (Section 2)"
 number: 36
 section: eboards
 held: 2025-04-28
-link: false
+link: true
 ---
 # {{ page.title }}
 
-**Warning! You are being recorded** and transcribed, provided the technology
-is working correctly.
-
 _Approximate optimistic overview_
 
-* Quiz
+* Quick Admin
 * Work time
+* Quiz
 
 Administrative stuff
 --------------------
@@ -23,7 +21,7 @@ Administrative stuff
 * In the interests of giving you as much time as possible to work with
   partner, I'm going to skip most of my normal "start of class" material.
   Please skim when you have time.
-    * Please consider The AI talk on Thursday and the Jean Salac on Monday.
+* Please consider The AI talk on Thursday and the Jean Salac on Monday.
 * I _think_ I'm up to date on grading token credits. Our three leaders
   have earned 24, 22, and 20 tokens.
 * It's the time of the semester for lasts.
