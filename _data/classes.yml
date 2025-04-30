@@ -402,13 +402,9 @@
     - page: /labs/searching.html
 
 - topic: "Case study: Sorting"
-  abbrev: sorting-lab
+  abbrev: sorting
   summary: |
-    We ground our exploration of sorting in some details.
-  reading:
-    - page: /readings/sorting.html
-  lab:
-    - page: /labs/sorting.html
+    We explore techniques for sorting lists and vectors
 
 - topic: Project presentations
   abbrev: presentations
