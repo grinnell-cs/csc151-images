@@ -3,7 +3,7 @@ title: "EBoard 37: Searching and analysis (Section 1)"
 number: 37
 section: eboards
 held: 2025-05-02
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -22,6 +22,7 @@ Administrative stuff
 
 ### Introductory notes
 
+* Congrats to our stickered student.
 * Please plan to attend class next Wednesday for project presentations.
 * Please plan to attend class next Friday for wrapup activities.
 * Our graders expect to finish grading the second redo of MPs 4 and 5
@@ -62,7 +63,7 @@ Multicultural
   _Middle of Everywhere: Brazil_
 * Friday, 2 May 2025, 5:00 p.m., HSSC N 1164.
   _ISO Scrap Book_
-* ???, ?? May 2025, 1:00--8:30 p.m., Cleveland Beach. (Estimates.)
+* Sunday, 4 May 2025, 2:00--8:30 p.m., Cleveland Beach. (Estimates.)
   _Holi_
 
 Peer
@@ -98,11 +99,12 @@ Misc
   _CS Picnic_
 * Sunday, 4 May 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session: SoLA 4_
-* Wednesday, 30 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
+* Wednesday, 7 May 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
   _Community Forum_
     * "Weekly discussion on legal protections and recourse on issues 
       that higher education and Grinnell College face."
     * Also online.
+    * Surviving the summer.
 
 ### Other good things
 
@@ -113,20 +115,20 @@ _These do not earn tokens, but are worth your consideration._
 * Sunday, 4 May 2025
     * [Submit pre-reflection for SoLA 4 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6169324) (_our last pre-reflection_)
     * [Submit lab writeup from Friday on Gradescope](https://www.gradescope.com/courses/948769/assignments/6167025) (_our last lab writeup_)
-    * [Submit MP9 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6166998)
+    * [Submit MP9 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6166998) (_our last MP_)
     * [Submit first redo for MP7 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6166971)
 * Monday, 5 May 2025
     * [SoLA 4](../la) released!
     * _Topics from Phase One_ (**4**): Collaboration, Decomposition, 
       Lambda-free anonymous procedures (aka cut and compose), Primitive types
     * _Topics from Phase Two_ (**6**): Conditionals, Documentation, Ethical
-      Considerations, Lists (and "the big three"), Program Style, Testing
+      Considerations, Lists (and "the big three"), Program style, Testing
     * _Topics from Phase Three_ (**5**): List recursion, Local bindings,
       Numeric recursion, Vectors, Randomness
     * _Topics from Phase Four w/prior quizzes_ (**3**): Data abstraction,
       Dictionaries, Higher-order programming
     * _Topics from Phase Four already covered_ (**1**): Tree recursion
-    * _Topics from Phase Four to be covered Friday_ (**2**): Running time,
+    * _Topics from Phase Four to be covered today_ (**2**): Running time,
       Searching
 * Wednesday, 7 May 2025
     * Project presentations.
@@ -134,7 +136,7 @@ _These do not earn tokens, but are worth your consideration._
     * End-of-course evaluations in class.
     * [Submit post-reflection for MP9 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6127774)
     * [Submit post-reflection for SoLA 4 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6169339)
-* Friday, 16 May 2025
+* Friday, 16 May 2025 (5pm)
     * Submit final redo for MP1 on Gradescope
     * Submit final redo for MP2 on Gradescope
     * Submit final redo for MP3 on Gradescope
@@ -142,6 +144,7 @@ _These do not earn tokens, but are worth your consideration._
     * Submit final redo for MP5 on Gradescope
     * Submit final redo for MP6 on Gradescope
     * Submit final redo for MP7 on Gradescope
+    * Submit SoLA 5 on Gradescope
 
 Friday PSA
 
@@ -169,13 +172,14 @@ Just in case it's not clear already:
   mini-projects or learning assessments.
 * You may not use a generative AI tool in any way for your SoLA responses.
 * In writing SoLA responses, you may rely only on yourself, your notes,
-  my course Web site, and the DrRacket reference.
+  my course Web site, the DrRacket reference, and DrRacket.
 * If you refer to my site or the DrRacket reference, you must cite your
   source (and cite it clearly).
 * If you feed course materials to a generative AI tool for other purposes
   (e.g., to get a summary or to generate problems), you must ensure that
   it does not use the course materials as training data. Otherwise, you
   are violating copyright.
+* Hire fellow students rather than using Dall-E.
 
 Questions
 ---------
@@ -196,19 +200,31 @@ Is there a limit to the number of tokens I can earn in a week?
 
 Can we go over the self check?
 
-> Certainly. We'll do it as a quick TPS exercise.
+> Certainly. We'll do it as a quick TPS exercise. 
 
-> `cdr` 
+> **Constant**: Independent of the "size" of the input.
 
-> `cddr`
+> **Linear**: As the size of the input goes up, the number of steps
+  goes up correspondingly (e.g., if we double the input size, we 
+  approximately double the number of steps).
 
-> `list-ref`
+> **Quadratic**
 
-> `vector-ref` 
+> `cdr` - Constant time; we just cross off the first element (or follow
+  the second box).
 
-> `map`
+> `cddr` -Constant time; Two steps to chop off the first two.
 
-> `range`
+> `list-ref` - Linear; we have to advance one step for each position
+
+> `vector-ref` - Constant; Sam told us so when we learned vectors.
+  Our experiments show this. 
+
+> `map` - Linear. We'll have to make a list of as many elements as
+  were in the first list.
+
+> `range` - Linear. For `(range n)`, we have to make a list of `n`
+  elements.
 
 Have we encountered any examples of quadratic time algorithms yet?
 
@@ -232,23 +248,63 @@ Can we go over the self check?
 
 > a. Explain the role of the *`less-equal?`* in `binary-search`.
 
+> > Sam did this. Lets us tell whether a value is less than or equal
+    to (or greater than) another value.
+
 > b. In `binary-search`, how do we know if two values are equal?
+
+> > If the middle key is less than the sought value and the sought
+    value is less than the middle key, they must be equal.
+
+> > Runner says "That's like double containment from linear."
+
+> > Sam says "If a <= b and b <= a, then a and b are the same."
 
 > c. Explain the role of `midpoint`, `middle-element`, `middle-key`,
 which are bound in the `let*` of `binary-search`.
 
+> > The index
+
+> > Element in the middle section
+
+> > Middle key is the key of that element; the thing we use when searching.
+
 > d. Describe what *`lower-bound`* and *`upper-bound`* represent.
+
+> > The left half and the right half of the section of the vector of
+    interest. `lower-bound` is inclusive (that means the value we're
+    searching could be at index `lower-bound`). `upper-bound` is
+    exclusive (that means the value we're searching for cannot be at
+    index `upper-bound` or that index `upper-bound` is outside the
+    range of the vector).
 
 > e. Describe why and how the *`upper-bound`* of helper `search-portion`
 changes when the key we're looking for is less than the middle key.
 (If it doesn't change, explain why not.)
 
+> > The upper bound becomes the middle index (`midpoint`).
+
+> > If we decreased by one `(- midpoint 1)`, we might miss an element
+    because upper bound is exclusive.
+
 > f. Describe why and how the *`lower-bound`* of helper `search-portion`
 changes when the key we're looking for is greater than the middle key.
 (If it doesn't change, explain why not.)
 
+> > The lower bound becomes `(+ midpoint 1)`.
+
+> > We use `(+ midpoint 1)` rather than `midpoint` because we know that
+    it's strictly after the middle (we've already compared to the middle)
+
 > g. If we double the length of the vector, what is the worst case effect
 on the number of recursive calls in `binary-search`?
 
+> > About one extra recursive call. We split the range of interest in half
+    each time. So we quickly go from double the size to the original size.
+
 Lab
 ---
+
+When you want to use the whole value as a key, use `(lambda (x) x)`
+as your `get-key` procedure.
+
