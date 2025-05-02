@@ -40,6 +40,8 @@ See the information below on how to submit reflections.
 
 At times, I may also offer tokens for other things, such as all of the class completing a survey.
 
+In general, you are limited to earning five tokens per week. If you'd like an exemption, please discuss it with me.
+
 ## Submitting reflections
 
 You will submit your reflection to the **Tokens** assignment on gradescope, but this requires some special instructions.  These instructions are forthcoming.
