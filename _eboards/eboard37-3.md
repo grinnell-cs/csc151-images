@@ -22,6 +22,7 @@ Administrative stuff
 
 ### Introductory notes
 
+* Congrats to our stickered student.
 * Please plan to attend class next Wednesday for project presentations.
 * Please plan to attend class next Friday for wrapup activities.
 * Our graders expect to finish grading the second redo of MPs 4 and 5
@@ -62,7 +63,7 @@ Multicultural
   _Middle of Everywhere: Brazil_
 * Friday, 2 May 2025, 5:00 p.m., HSSC N 1164.
   _ISO Scrap Book_
-* ???, ?? May 2025, 1:00--8:30 p.m., Cleveland Beach. (Estimates.)
+* Sunday, 4 May 2025, 2:00--8:30 p.m., Cleveland Beach. (Estimates.)
   _Holi_
 
 Peer
@@ -72,10 +73,6 @@ students are welcome._
 
 * Read articles by your fellow CSC-151 students and comment on them online.
   _This is the last week of normal S&B articles!_
-* Saturday, 3 May 2025, Noon, Baseball field.
-  _Baseball vs. Knox_ (senior day)
-* Saturday, 3 May 2025, 2:30 p.m., Baseball field.
-  _Baseball vs. Knox_ 
 
 Wellness
 
@@ -98,35 +95,41 @@ Misc
   _CS Picnic_
 * Sunday, 4 May 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session: SoLA 4_
-* Wednesday, 30 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
+* Wednesday, 7 May 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
   _Community Forum_
     * "Weekly discussion on legal protections and recourse on issues 
       that higher education and Grinnell College face."
     * Also online.
+    * Surviving the summer.
 
 ### Other good things
 
 _These do not earn tokens, but are worth your consideration._
+
+* Saturday, 3 May 2025, Noon, Baseball field.
+  _Baseball vs. Knox_ (senior day)
+* Saturday, 3 May 2025, 2:30 p.m., Baseball field.
+  _Baseball vs. Knox_ 
 
 ### Upcoming work
 
 * Sunday, 4 May 2025
     * [Submit pre-reflection for SoLA 4 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6169324) (_our last pre-reflection_)
     * [Submit lab writeup from Friday on Gradescope](https://www.gradescope.com/courses/948769/assignments/6167025) (_our last lab writeup_)
-    * [Submit MP9 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6166998)
+    * [Submit MP9 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6166998) (_our last MP_)
     * [Submit first redo for MP7 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6166971)
 * Monday, 5 May 2025
     * [SoLA 4](../la) released!
     * _Topics from Phase One_ (**4**): Collaboration, Decomposition, 
       Lambda-free anonymous procedures (aka cut and compose), Primitive types
     * _Topics from Phase Two_ (**6**): Conditionals, Documentation, Ethical
-      Considerations, Lists (and "the big three"), Program Style, Testing
+      Considerations, Lists (and "the big three"), Program style, Testing
     * _Topics from Phase Three_ (**5**): List recursion, Local bindings,
       Numeric recursion, Vectors, Randomness
     * _Topics from Phase Four w/prior quizzes_ (**3**): Data abstraction,
       Dictionaries, Higher-order programming
     * _Topics from Phase Four already covered_ (**1**): Tree recursion
-    * _Topics from Phase Four to be covered Friday_ (**2**): Running time,
+    * _Topics from Phase Four to be covered today_ (**2**): Running time,
       Searching
 * Wednesday, 7 May 2025
     * Project presentations.
@@ -134,7 +137,7 @@ _These do not earn tokens, but are worth your consideration._
     * End-of-course evaluations in class.
     * [Submit post-reflection for MP9 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6127774)
     * [Submit post-reflection for SoLA 4 on Gradescope](https://www.gradescope.com/courses/948769/assignments/6169339)
-* Friday, 16 May 2025
+* Friday, 16 May 2025 (5pm)
     * Submit final redo for MP1 on Gradescope
     * Submit final redo for MP2 on Gradescope
     * Submit final redo for MP3 on Gradescope
@@ -142,6 +145,7 @@ _These do not earn tokens, but are worth your consideration._
     * Submit final redo for MP5 on Gradescope
     * Submit final redo for MP6 on Gradescope
     * Submit final redo for MP7 on Gradescope
+    * Submit SoLA 5 on Gradescope
 
 Friday PSA
 
@@ -169,7 +173,7 @@ Just in case it's not clear already:
   mini-projects or learning assessments.
 * You may not use a generative AI tool in any way for your SoLA responses.
 * In writing SoLA responses, you may rely only on yourself, your notes,
-  my course Web site, and the DrRacket reference.
+  my course Web site, the DrRacket reference, and DrRacket.
 * If you refer to my site or the DrRacket reference, you must cite your
   source (and cite it clearly).
 * If you feed course materials to a generative AI tool for other purposes
@@ -196,7 +200,15 @@ Is there a limit to the number of tokens I can earn in a week?
 
 Can we go over the self check?
 
-> Certainly. We'll do it as a quick TPS exercise.
+> Certainly. We'll do it as a quick TPS exercise. 
+
+> **Constant**: Independent of the "size" of the input.
+
+> **Linear**: As the size of the input goes up, the number of steps
+  goes up correspondingly (e.g., if we double the input size, we 
+  approximately double the number of steps).
+
+> **Quadratic**
 
 > `cdr` 
 
