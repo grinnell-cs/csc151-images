@@ -612,15 +612,18 @@ b. In `binary-search`, how do we know if two values are equal?
 c. Explain the role of `midpoint`, `middle-element`, `middle-key`,
 which are bound in the `let*` of `binary-search`.
 
-d. Describe why and how the *`upper-bound`* of helper `search-portion`
+d. Describe what *`lower-bound`* and *`upper-bound`* represent in
+`search-portion`.
+.
+e. Describe why and how the *`upper-bound`* of helper `search-portion`
 changes when the key we're looking for is less than the middle key.
 (If it doesn't change, explain why not.)
 
-e. Describe why and how the *`lower-bound`* of helper `search-portion`
+f. Describe why and how the *`lower-bound`* of helper `search-portion`
 changes when the key we're looking for is greater than the middle key.
 (If it doesn't change, explain why not.)
 
-f. If we double the length of the vector, what is the worst case effect
+g. If we double the length of the vector, what is the worst case effect
 on the number of recursive calls in `binary-search`?
 
 ## Acknowledgements
