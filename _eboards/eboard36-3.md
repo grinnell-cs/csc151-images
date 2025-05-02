@@ -3,7 +3,7 @@ title: "EBoard 36: Project work time (Section 3)"
 number: 36
 section: eboards
 held: 2025-04-28
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -12,8 +12,9 @@ is working correctly.
 
 _Approximate optimistic overview_
 
-* Quiz
+* Quick admin
 * Work time
+* Quiz
 
 Administrative stuff
 --------------------
@@ -21,7 +22,7 @@ Administrative stuff
 ### Introductory notes
 
 * In the interests of giving you as much time as possible to work with
-  partner, I'm going to skip most of my normal "start of class" material.
+  partners, I'm going to skip most of my normal "start of class" material.
   Please skim when you have time.
     * Please consider The AI talk on Thursday and the Jean Salac on Monday.
 * I _think_ I'm up to date on grading token credits. Our three leaders
@@ -36,8 +37,6 @@ Administrative stuff
 * Our graders may have gotten confused by the change in policies for
   MP7. If your grade seems wrong, let me know. If I don't respond in
   a day, let me know again.
-* I don't speak Spanish well enough, but I'm pretty sure that Tralalero
-  Tralala is not an appropriate approach to MP9.
 * I brought you food for your work day.
     * There's a Keurig in the CS commons.
     * Obligatory joke about Sam bringing food.
@@ -109,18 +108,18 @@ Wellness
 
 Misc
 
-* Wednesday, 30 April 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
-  _Community Forum_
-    * "Weekly discussion on legal protections and recourse on issues 
-      that higher education and Grinnell College face."
-    * Also online.
-    * This week: Titles VI and IX
 * Friday, 2 May 2025, 3:30--5:00 p.m., Burling Digital Studio.
   _Vivero End-of-Year Showcase_
 * Friday, 2 May 2025, 5:00 p.m., Merrill Park West.
   _CS Picnic_
 * Sunday, 4 May 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session: SoLA 4_
+* Wednesday, 7 May 2025, Noon--1:00 p.m., HSSC A2231 (Auditorium)
+  _Community Forum_
+    * "Weekly discussion on legal protections and recourse on issues 
+      that higher education and Grinnell College face."
+    * Also online.
+    * This week: Surviving the Summer
 
 ### Other good things
 
