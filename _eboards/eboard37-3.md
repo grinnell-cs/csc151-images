@@ -3,7 +3,7 @@ title: "EBoard 37: Searching and analysis (Section 3)"
 number: 37
 section: eboards
 held: 2025-05-02
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -22,11 +22,12 @@ Administrative stuff
 
 ### Introductory notes
 
-* Congrats to our stickered student.
+* Candy
 * Please plan to attend class next Wednesday for project presentations.
 * Please plan to attend class next Friday for wrapup activities.
 * Our graders expect to finish grading the second redo of MPs 4 and 5
-  and the first redo of MP6 by Sunday night.
+  and the first redo of MP6 graded by Sunday night.
+* Do you get the csstudents email?
 
 ### Upcoming activities
 
@@ -91,7 +92,7 @@ Misc
 
 * Friday, 2 May 2025, 3:30--5:00 p.m., Burling Digital Studio.
   _Vivero End-of-Year Showcase_
-* Friday, 2 May 2025, 5:00 p.m., Merrill Park West.
+* Friday, 2 May 2025, 5:00 p.m., Natatorium.
   _CS Picnic_
 * Sunday, 4 May 2025, 7:30--8:30 p.m., Science 3819. 
   _Mentor Session: SoLA 4_
@@ -123,7 +124,7 @@ _These do not earn tokens, but are worth your consideration._
     * _Topics from Phase One_ (**4**): Collaboration, Decomposition, 
       Lambda-free anonymous procedures (aka cut and compose), Primitive types
     * _Topics from Phase Two_ (**6**): Conditionals, Documentation, Ethical
-      Considerations, Lists (and "the big three"), Program style, Testing
+      considerations, Lists (and "the big three"), Program style, Testing
     * _Topics from Phase Three_ (**5**): List recursion, Local bindings,
       Numeric recursion, Vectors, Randomness
     * _Topics from Phase Four w/prior quizzes_ (**3**): Data abstraction,
@@ -170,7 +171,8 @@ Just in case it's not clear already:
 
 * You may not use a generative AI tool to help you do your work in this
   class. In particular, you may not have a tool generate code for you for
-  mini-projects or learning assessments.
+  mini-projects, learning assessments, reading responses, meta-cognitive
+  reflections.
 * You may not use a generative AI tool in any way for your SoLA responses.
 * In writing SoLA responses, you may rely only on yourself, your notes,
   my course Web site, the DrRacket reference, and DrRacket.
@@ -208,19 +210,23 @@ Can we go over the self check?
   goes up correspondingly (e.g., if we double the input size, we 
   approximately double the number of steps).
 
-> **Quadratic**
+> `cdr`  - Constant. Throwing away the first element should not depend
+  on the number of elements in the list.
 
-> `cdr` 
+> `cddr` - Constant. Two constant operations are still constant.
 
-> `cddr`
+> `(list-ref lst n)` - Linear in `n` because we have to keep taking the 
+  `cdr` of the list `n` times.
 
-> `list-ref`
+> `(vector-ref vec n)` - Constant. Sam said that we can access the value
+  directly and the size doesn't matter. (Experiments confirm this.)
 
-> `vector-ref` 
+> `(map fun lst)` - Linear in length of list. We have to apply the 
+  procedure to each element; if we add elements, we have more steps to do.
 
-> `map`
-
-> `range`
+> `(range n)` - Linear in `n`. The have `n` elements in the list, so as
+  `n` increases, the number of times we call `cons` to build the list
+  increases directly.
 
 Have we encountered any examples of quadratic time algorithms yet?
 
@@ -229,7 +235,7 @@ Have we encountered any examples of quadratic time algorithms yet?
 
 ### Binary Search
 
-What exactly does 'less-equal?' check?
+What exactly does `less-equal?` check?
 
 > It depends on what kinds of values we're storing and what order they've
   been stored. It hould correspond to the order they've been stored.
@@ -244,23 +250,76 @@ Can we go over the self check?
 
 > a. Explain the role of the *`less-equal?`* in `binary-search`.
 
-> b. In `binary-search`, how do we know if two values are equal?
+> > We compare the sought key to the key of the middle element, which
+    lets us determine whether we're found that key or need to search
+    in the left half or the right half.
+
+> > As Sam just said, we know that the elements are ordered by `less-equal?`.
+
+> b. In `binary-search`, how do we know if two values (`a` and `b`)
+are equal?
+
+> > If a is less than or equal to b and b is less than or equal to a,
+    then a equals b. (For our particular code, we say that if key
+    is less than or equal to middle-key and middle-key is less than or
+    equal to key, than key = middle-key.)
+
+> > We shouldn't use `equal?`. It's not in the one on the reading, and
+    we're trying to use that one. Or ... some versions of `less-equal?`
+    give a different notion of equality. For example `string-ci<=`.
+    `(equal? "Lilli" "lilLI")` returns false. However
+    `(and (string-ci<=? "Lilli" "lilLI") (string-ci<=? "lilLI" "Lilli"))`
+    returns true.
 
 > c. Explain the role of `midpoint`, `middle-element`, `middle-key`,
 which are bound in the `let*` of `binary-search`.
 
+> > `midpoint` - the index of the middle of the section of interest.
+
+> > `middle-element` - the value at that index
+
+> > `middle-key` - the key of that element (e.g., the first name if
+  we've sorted by name and are searching by name)
+
 > d. Describe what *`lower-bound`* and *`upper-bound`* represent.
+
+> > They represent the area of the vector that we're searching.
+    Initially, they represent the whole vector. As we look in the
+    middle, we can usually throw away about half of the elements
+    in the area we're searching.
+
+> > `lower-bound` is inclusive. That means that we (usually) need to 
+    consider the value at index `lower-bound`.
+
+> > `upper-bound` is exclusive. This means that we should not consider
+    the value at index `upper-bound` (but should consider things
+    with smaller indices)
 
 > e. Describe why and how the *`upper-bound`* of helper `search-portion`
 changes when the key we're looking for is less than the middle key.
 (If it doesn't change, explain why not.)
 
+> > We use `midpoint`.
+
+> > We do not use `(- midpoint 1)` because the upper-bound is exclusive.
+    It won't look at `midpoint` based on our policy. If we set `upper-bound`
+    to `(- midpoint 1)`, that says "we'll never look at the value at
+    position `(- midpoint 1)`, and we know nothing about the value at
+    the position.
+
 > f. Describe why and how the *`lower-bound`* of helper `search-portion`
 changes when the key we're looking for is greater than the middle key.
 (If it doesn't change, explain why not.)
 
+> > We use `(+ midpoint 1)` rather than `midpoint` because the lower-bound
+    is inclusive, and we know that the value at `midpoint` is not what
+    we're looking for.
+
 > g. If we double the length of the vector, what is the worst case effect
 on the number of recursive calls in `binary-search`?
+
+> > It's just one more. In that one more, we cut it in half so it's back
+    to the original size.
 
 Lab
 ---

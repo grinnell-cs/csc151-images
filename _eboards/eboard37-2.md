@@ -332,3 +332,5 @@ Lab
 
 If you want to treat the whole value as the key, use `(lambda (x) x)` 
 as your `get-key` procedure.
+
+_Hmmmm ... that may be irrelevant._
