@@ -24,10 +24,13 @@ Administrative stuff
 
 ### Introductory notes
 
+* As you can tell, today is a talk day, not a lab day.
+* Happy _Cinco de Mayo_!
 * Happy Penultinmate Week! (At least for students.)
 * Congratulations to our baseballers who made it to the playoffs!
   (Also tennisers, trackers and fielders, ping-pongers, and others I've missed.)
 * Please plan to attend class Wednesday for project presentations.
+    * There will be fruit.
 * Please plan to attend class Friday for wrapup activities.
     * If you are unable to make it to class on Friday (e.g., because your
       team is traveling), please plan to come early on Wednesday (Section 1)
@@ -37,7 +40,7 @@ Administrative stuff
 * If you took the most recent diagramming structures quiz, you should have
   received an email message from Gradescope at about 9pm on May 1 entitled 
   _[CSC-151] The "last" diagraming structures quiz_. You should read
-  that email message.
+  that email message. Let me know if you didn't receive it.
 
 ### Upcoming activities
 
@@ -101,7 +104,7 @@ _These do not earn tokens, but are worth your consideration._
 ### Upcoming work
 
 * Monday, 5 May 2025
-    * [SoLA 4](../la) released at 4p!
+    * [SoLA 4](../la) released at 4pm!
     * _Topics from Phase One_ (**4**): Collaboration, Decomposition, 
       Lambda-free anonymous procedures (aka cut and compose), Primitive types
     * _Topics from Phase Two_ (**6**): Conditionals, Documentation, Ethical
@@ -149,6 +152,22 @@ things?
 
 > Labs help you learn the material. They may even be the primary way
   in which you learn the material.
+
+> I will, however, cap the grade decrease at one letter grade provided
+  (a) you turn in the post-reflection for MP9, (b) you turn in the
+  post-reflection for SoLA 4, (c) set up an appointment with academic
+  advising to discuss strategies for getting regular work done on time,
+  and (d) send me a message describing one or two strategies you've
+  decided upon.
+
+> Also: I will not be charging tokens for late reading responses, lab
+  writeups, or metacognitive reflections.
+
+I won't be in class on Friday. What should I do?
+
+> If you are unable to make it to class on Friday (e.g., because your
+  team is traveling), please plan to come early on Wednesday (Section 1)
+  or stay late on Wednesday (Sections 2 and 3).
 
 Background: What is computer science?
 -------------------------------------
