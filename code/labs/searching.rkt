@@ -87,7 +87,7 @@
 ; +-----------------------------+
 
 ; Note: Long lists/vectors of data are one of the few times that it
-; is acceptable to have close parents on a line by themselves.
+; is acceptable to have close parens on a line by themselves.
 
 ;;; simulated-students : vectorof student?
 ;;; Students organized by name
