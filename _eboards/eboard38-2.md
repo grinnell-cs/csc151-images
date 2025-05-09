@@ -1,5 +1,5 @@
 ---
-title: "EBoard 38: Sorting (Section 1)"
+title: "EBoard 38: Sorting (Section 2)"
 number: 38
 section: eboards
 held: 2025-05-05
@@ -31,12 +31,12 @@ Administrative stuff
   (Also tennisers, trackers and fielders, ping-pongers, and others I've missed.)
 * Please plan to attend class Wednesday for project presentations.
     * There will be fruit.
-    * Missing class without a good reason: Five tokens
+    * Five token charge to miss class without reasonable excuse.
 * Please plan to attend class Friday for wrapup activities.
     * If you are unable to make it to class on Friday (e.g., because your
       team is traveling), please plan to come early on Wednesday (Section 1)
       or stay late on Wednesday (Sections 2 and 3).
-    * Missing class without a good reason: Five tokens
+    * Five token charge to miss class without reasonable excuse.
 * This is my last week of bookable office hours. I'll be available
   by appointment during finals week.
 * If you took the most recent diagramming structures quiz, you should have
@@ -109,6 +109,7 @@ _These do not earn tokens, but are worth your consideration._
 ### Upcoming work
 
 * Monday, 5 May 2025
+    * MP9 due tonight. Please do only one submission per group.
     * [SoLA 4](../la) released at 4pm!
     * _Topics from Phase One_ (**4**): Collaboration, Decomposition, 
       Lambda-free anonymous procedures (aka cut and compose), Primitive types
@@ -144,6 +145,12 @@ Questions
 
 ### Administrative
 
+When will the MP redos be graded?
+
+> Most are graded, but we're waiting on one grader.
+
+> MP7 should be graded by Wednesday night.
+
 I've missed way too many reading responses, labs, and/or metacognitive
 reflections. Can you just waive the penalty for missing those things?
 
@@ -169,7 +176,7 @@ reflections. Can you just waive the penalty for missing those things?
 
 I won't be in class on Friday. What should I do?
 
-> If you are unable to make it to class on Friday (e.g., because your
+> If you may be unable to make it to class on Friday (e.g., because your
   team is traveling), please plan to come early on Wednesday (Section 1)
   or stay late on Wednesday (Sections 2 and 3).
 
@@ -182,39 +189,37 @@ Background: What is computer science?
 
 _TPS_
 
-Snarky answer: "The Science Behind Computing"
+The study of algorithms and (using math) (computers) data structures
 
-> A technique for better understanding the world.
+Algorithms are: Instructions for processing data in order to generate
+a result. (Sets of instructions for solving problems.)
 
-> Asking and answering questions.
+Data structures: A way to organize information. Maybe images. 
+Dictionaries/hashes let us organize information by keys. Trees
+let us organize hierarchical information. BSTs organize information
+for searching. Lists and vectors are two of the central mechanisms
+for organizing info.
 
-> A mechanism for understanding the world based on observation, hypothesis
-  generation, experiment design, experimentation, analysis, and hypotheseis 
-  revision.
+What problems do computer scientists solve? It depends. Many occur as
+part of "everyday work".
 
-> Perhaps our hypothesis is "My code will work". It's usually an incorrect
-  hypothesis.
+We also look for generalizable/generalized problems.
 
-Another suggestion: Solving problems by writing algorithms and data
-structures (ways of organizing information). [Good answer]
+Searching! (BSTs and binary search both provide fastish searching.)
 
-What problems do we solve? Usually ones that come up in the process of
-doing work. We also look to generalized problems.
+To do binary search, you need the data organized in a particular way.
+You need them in order from smallest to largest.
 
-One typical problem: Finding information. We can arrange the information
-in a dictionary, which makes it fast to find. We can just put in a list
-and use linear search, we can put it in a vector (ordered by something)
-and use binary search.
+We use the term "sort" to mean "put in order from smallest to largest
+or from largest to smallest".
 
-If we want our data ordered for binary search, we need a way to order
-information ("sort" - to put in order).
-
-Typical running times
+Detour: Typical running times
 ---------------------
 
-* **Constant time**: Independent of the size of the input
+* **Constant time**: Independent of the size of the input. If you double
+  the size of the input, you don't change the running time.
 * **Logarithmic**: Goes up by a constant amount each time you double
-  the size of the input.
+  the size of the input. (e.g., binary search)
 * **Linear**: Doubles each time you double the size of the input.
 * **Quadratic**: Quadruples every time you double the size of the input.
 * **Exponential**: Approximately doubles every time you add another element.
@@ -222,141 +227,103 @@ Typical running times
 The problem of sorting
 ----------------------
 
-Given a collection (list, vector) of values and a mechanism for comparing
-values (e.g., `<=`, `string<=?`, `char<=?`), put the values in order from
-smallest to largest (or largest to smallst).
-
 Designing sorting algorithms
 ----------------------------
 
-_TPS: Design a sorting algorithm_ 
+_TPS: Design a sorting algorithm_
 
 Inputs: A list or vector of values + a way to compare any two values
 
 Output: The same group of values, now in order. (for lists, we'll output
 a new list; for vectors, we'll change them in place)
 
-English instructions are fine. We'll try to be sensible about interpreting 
-your instructions.
+Describe how to sort a list or vector. (In English; assume good will on
+the part of the enactor.)
 
-### Algorithm 1: Put things from smallest to biggest (Selection Sort)
+`(my-sort lst less-equal?)` or `(my-sort! vec less-equal?)`.
 
-* Find the smallest in the list
-* Put it at the front `(cons (smallest lst less-than?) ...)`
-* Remove it from the list.
-* Repeat/Recurse
+### Algorithm 1: Bubble Sort
 
-How do we find the smallest?
+* Look at each pair of elements. If they are out of order, swap them.
+  Do that through the entire list.
+* If you didn't swap anything, you're done.
+* Otherwise, go back and do it all again.
 
-* Grab the first element. 
-* Compre to the next. 
-* Grab the smaller of the two.
-* Keep going.
+_TPS: What's the running time? Is it constant? Linear? Quadratic?
+(Assume the worst case.)_
 
-Is selection sort linear, quadratic, worse?
+* It's not constant.
+* Each "pass" requires looking at n elements.
+* We may do n passes through the list.
+* So we'll spend `n*n` (also known as n-squared) time doing this.
 
-* Smallest is linear
-* If we had 9 things in the list, we'd do 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1
-  steps, which is 45.
-* If we had 18 things in the list, we'd do 18 + 17 + ... + 1 = 171.
-* This algorithm is quadratic.
+### Algorithm 2: Insertion sort
 
-### Algorithm 2 (Bubble Sort, Sam's least favorite sorting algorithm)
+* Grab the first item. It's sorted.
+* Grab the next item. Put it in the appropriate place in the sorted list.
+* Grab the next item. Put it in the appropriate place in the sorted list.
+* ...
 
-Sub algorithm
+_TPS: Write this in Scheme_
 
-* Compare the first two elements
-* If they are in the wrong order, switch them.
-* Next do the second and third.
-* Keep doing that until you get to the end.
-* After one round of the sub algorithm, the largest is at the end.
+```
+(define insertion-sort
+  (lambda (lst less-equal?)
+    (insertion-sort/helper lst null less-equal?)))
 
-Repeat the sub-algorithm on smaller and smaller sections until
-everything is sorted.
+(define insertion-sort/helper
+  (lambda (remaining so-far less-equal?)
+     (if (null? remaining)
+         so-far
+         (insertion-sort/helper (cdr remaining)
+                                (insert (car remaining) so-far less-equal?)
+                                less-equal?))))
 
-"Worse than quadratic." WRONG
+;;; (insert val lst less-equal?) -> list?
+;;;   val : any?
+;;;   lst : list? (sorted?)
+;;;   less-equal? : binary predicate (applicable to val and elements of lst)
+;;; Put val at the appropriate place in lst.
+(define insert
+  (lambda (val lst less-equal?)
+    (cond
+      [(null? lst)
+       (list val)]
+      [(less-equal? val (car lst))
+       (cons val lst)]
+      [else
+       (cons (car lst)
+             (insert val (cdr lst) less-equal?))])))
+```
 
-The sub algorithm is linear.
+Or
 
-We run the sub algorithm n times. n times n = n squared.
+```
+(define insert
+  (lambda (val lst less-equal?)
+    (if (or (null? lst)
+            (less-equal? val (car lst)))
+        (cons val lst)
+        (cons (car lst)
+              (insert val (cdr lst) less-equal?)))))
+```
 
-### Divide and conquer (general)
+First we insert one value into an empty list, then one value into a list
+of one element, then one value into a list of two elements, ...
 
-* Break the list into two parts (based on what criteria?)
-* Sort each half
-* Combine together (how?)
+To sort ten elements, that's about 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10
+total steps. 55.
 
-### Divide and conquer option one
+To sort twenty elements, that's 1 + 2 + 3 ... + 20, which is 210. We've
+doubled the number of elements, and almost quadrupled the number of steps.
 
-* Find the average of the values
-* Divide into those things < the average, = the average, > average
-* Sort the smaller and larger things
-* You can just put them next to each other.
-
-Example
-
-* 6, 1, 4, 7, 8, 2, 9
-* Average is about 5.3
-* Less: 1, 4, 2
-* Greater: 6, 7, 8, 9
-* Magically sort
-* Less sorted: 1, 2, 4
-* Greater: 6, 7, 8, 9
-* Plug together: 1, 2, 4, 6, 7, 8, 9
-
-Another example
-
-* 100,000, 1, 10,000, 100, 1,000, 1,000,000, 10
-* Average is 158,000
-* Smaller: 100,000, 1, 10,000, 100, 1,000, 10
-* Larger: 1,000,000
-
-Hmmm
-
-* Let's try this with smaller. 
-* Average is about 20,000
-* Smaller: 1, 10,000, 100, 1,000, 10
-* Larger: 100,000
-
-Hmmm
-
-We are splitting into one thing and n-1 things. So this won't be any
-better than our previous sorts. At least not for this example.
-
-If we split at the median rather than average, th two halves will be
-approximately equal in size. (Finding the median is hard.)
+The magic formula for 1 + 2 + 3 + ... + `n`. $$n*(n+1)/2$$
 
 Implementing sorting algorithms
 -------------------------------
 
-_TPS: Selection Sort_ 
-
-* Find the smallest in the list
-* Put it at the front `(cons (smallest lst less-than?) ...)`
-* Remove it from the list.
-* Repeat/Recurse
-
-You'll need to implement
-
-* `(smallest lst less-equal?)`
-* `(remove val lst)`
-* `(selection-sort lst less-equal?)`
+_TPS: Document_
 
 ```
-(define smallest
-  (lambda (lst less-equal?)
-    (reduce (lambda (x y) (if (less-equal? x y) x y))
-            lst)))
-```
-
-`remove` is already defined.
-
-```
-(define selection-sort
-  (lambda (lst less-equal?)
-    (if (null? lst)
-        null
-        (let ([s (smallest lst less-equal?)])
-          (cons s
-                (selection-sort (remove s lst) less-equal?))))))
+;;; (sort ???) -> ???
 ```
