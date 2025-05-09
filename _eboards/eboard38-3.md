@@ -1,5 +1,5 @@
 ---
-title: "EBoard 38: Sorting (Section 1)"
+title: "EBoard 38: Sorting (Section 3)"
 number: 38
 section: eboards
 held: 2025-05-05
@@ -27,16 +27,14 @@ Administrative stuff
 * As you can tell, today is a talk day, not a lab day.
 * Happy _Cinco de Mayo_!
 * Happy Penultimate Week! (At least for students.)
-* Congratulations to our baseballers who made it to the playoffs!
-  (Also tennisers, trackers and fielders, ping-pongers, and others I've missed.)
 * Please plan to attend class Wednesday for project presentations.
     * There will be fruit.
-    * Missing class without a good reason: Five tokens
+    * Five tokens charged if you miss class without a good excuse.
 * Please plan to attend class Friday for wrapup activities.
     * If you are unable to make it to class on Friday (e.g., because your
       team is traveling), please plan to come early on Wednesday (Section 1)
       or stay late on Wednesday (Sections 2 and 3).
-    * Missing class without a good reason: Five tokens
+    * Five tokens charged if you miss class without a good excuse.
 * This is my last week of bookable office hours. I'll be available
   by appointment during finals week.
 * If you took the most recent diagramming structures quiz, you should have
@@ -48,8 +46,6 @@ Administrative stuff
 
 Scholarly
 
-* Monday, 5 May 2025, noon. HSSC S1235.
-  _Jean Salac: Emergent Gateways and Gaps in Responsible Computing Education_
 * Tuesday, 6 May 2025, noon--1:00 p.m., White PDR (JRC 224C).
   _CS Table: Supply Chain Attacks_
      * Alex Birsan. Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies. Feb 9, 2021. <https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610>
@@ -69,6 +65,8 @@ Multicultural
 
 * Monday, 5 May 2025, 4pm, Global Living Room.
   _Japanese Student Association Matcha Latte Event!_
+* Thursday, 8 May 2025, 7:30 p.m., Roberts.
+  _Gamelan Pawisik_ (tickets Wednesday and Thursday 12-5; also at door)
 
 Peer
 
@@ -119,8 +117,7 @@ _These do not earn tokens, but are worth your consideration._
     * _Topics from Phase Four w/prior quizzes_ (**3**): Data abstraction,
       Dictionaries, Higher-order programming
     * _Topics from Phase Four already covered_ (**1**): Tree recursion
-    * _Topics from Phase Four to be covered today_ (**2**): Running time,
-      Searching
+    * _Other topics from Phase Four (**2**): Running time, Searching
 * Wednesday, 7 May 2025
     * Project presentations.
 * Friday, 9 May 2025
@@ -177,44 +174,53 @@ Does only one team member submit the MP9?
 
 > Yes, only one member should submit MP9.
 
+Are there benefits for having earned extra tokens?
+
+> If your grade is between two grades, I'll probably choose the higher.
+
+Will you have the token charges soon?
+
+> Yes.
+
 Background: What is computer science?
 -------------------------------------
 
 _TPS_
 
-Snarky answer: "The Science Behind Computing"
+The study of algorithms and implementation of procedures; also data
+structures.
 
-> A technique for better understanding the world.
+Algorithms: Sets of instructions to accomplish tasks.
 
-> Asking and answering questions.
+Data structures: Ways to structure (organize) data. Trees. Vectors.
+Lists. Strings (organize characters). Hashes/dictionaries.
 
-> A mechanism for understanding the world based on observation, hypothesis
-  generation, experiment design, experimentation, analysis, and hypotheseis 
-  revision.
+In order to write algorithms, we must have problems that need algorithms.
+Where do they come from?
 
-> Perhaps our hypothesis is "My code will work". It's usually an incorrect
-  hypothesis.
+People have some kinds of problems that are amenable to solution by algorithms.
 
-Another suggestion: Solving problems by writing algorithms and data
-structures (ways of organizing information). [Good answer]
+Often, we also look for common problems and develop solutions to these common
+problems that we expect to see in many instances.
 
-What problems do we solve? Usually ones that come up in the process of
-doing work. We also look to generalized problems.
+One such problem: Searching. Given a bunch of information, find a
+particular entry. Hash tables (magic). `list-ref` and `vector-ref` to
+extract data if we know its position.  We can use binary search if we
+have an ordered vector of values. We can use linear search.
 
-One typical problem: Finding information. We can arrange the information
-in a dictionary, which makes it fast to find. We can just put in a list
-and use linear search, we can put it in a vector (ordered by something)
-and use binary search.
+Binary search is fast, but it requires that we have an ordered vector.
 
-If we want our data ordered for binary search, we need a way to order
-information ("sort" - to put in order).
+Hence, we have another general algorithm we might to write: Given a
+collection (list or vector) of values and a way to compare two values,
+put those values in order. (From least to greatest or vice versa.) We
+call that "sorting".
 
 Typical running times
 ---------------------
 
 * **Constant time**: Independent of the size of the input
 * **Logarithmic**: Goes up by a constant amount each time you double
-  the size of the input.
+  the size of the input. (Binary Search)
 * **Linear**: Doubles each time you double the size of the input.
 * **Quadratic**: Quadruples every time you double the size of the input.
 * **Exponential**: Approximately doubles every time you add another element.
@@ -222,136 +228,57 @@ Typical running times
 The problem of sorting
 ----------------------
 
-Given a collection (list, vector) of values and a mechanism for comparing
-values (e.g., `<=`, `string<=?`, `char<=?`), put the values in order from
-smallest to largest (or largest to smallst).
-
 Designing sorting algorithms
 ----------------------------
 
-_TPS: Design a sorting algorithm_ 
-
 Inputs: A list or vector of values + a way to compare any two values
+`(sort lst less-equal?)` or `(sort! vec less-equal?)`.
 
 Output: The same group of values, now in order. (for lists, we'll output
 a new list; for vectors, we'll change them in place)
 
-English instructions are fine. We'll try to be sensible about interpreting 
-your instructions.
+_TPS: Design a sorting algorithm_
 
-### Algorithm 1: Put things from smallest to biggest (Selection Sort)
+* You can express the algorithm in English; Lilli will do her best to
+  understand what you mean.
 
-* Find the smallest in the list
-* Put it at the front `(cons (smallest lst less-than?) ...)`
+### Algorithm 1: Oskate sort
+
+* Find the smallest value in the list.
 * Remove it from the list.
-* Repeat/Recurse
+* Move to the front.
+* Recurse on the rest.
 
-How do we find the smallest?
+Running time of this.
 
-* Grab the first element. 
-* Compre to the next. 
-* Grab the smaller of the two.
-* Keep going.
+* Find the smallest in n: n steps
+* Find the smallest in the remaining n-1 elements: n-1
+* Find the smallest in the remaining n-2 elements: n-2
+* ...
+* Find the smallest in the remaining 3 elements: 3
+* Find the smallest in the remaining 2 elements: 2
+* Find the smallest in the remaining 1 element: 1
 
-Is selection sort linear, quadratic, worse?
+Oskate sort on 10 elements: 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 steps.
+That equals: 55
 
-* Smallest is linear
-* If we had 9 things in the list, we'd do 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1
-  steps, which is 45.
-* If we had 18 things in the list, we'd do 18 + 17 + ... + 1 = 171.
-* This algorithm is quadratic.
+Okate sort on 20 elements: 20 + 19 + ... + 3 + 2 + 1: 210 steps
 
-### Algorithm 2 (Bubble Sort, Sam's least favorite sorting algorithm)
+This seems to suggest that O'skate sort is quadratic.
 
-Sub algorithm
+Detour: There is a formula for 1 + 2 + 3 + .... + n.
 
-* Compare the first two elements
-* If they are in the wrong order, switch them.
-* Next do the second and third.
-* Keep doing that until you get to the end.
-* After one round of the sub algorithm, the largest is at the end.
-
-Repeat the sub-algorithm on smaller and smaller sections until
-everything is sorted.
-
-"Worse than quadratic." WRONG
-
-The sub algorithm is linear.
-
-We run the sub algorithm n times. n times n = n squared.
-
-### Divide and conquer (general)
-
-* Break the list into two parts (based on what criteria?)
-* Sort each half
-* Combine together (how?)
-
-### Divide and conquer option one
-
-* Find the average of the values
-* Divide into those things < the average, = the average, > average
-* Sort the smaller and larger things
-* You can just put them next to each other.
-
-Example
-
-* 6, 1, 4, 7, 8, 2, 9
-* Average is about 5.3
-* Less: 1, 4, 2
-* Greater: 6, 7, 8, 9
-* Magically sort
-* Less sorted: 1, 2, 4
-* Greater: 6, 7, 8, 9
-* Plug together: 1, 2, 4, 6, 7, 8, 9
-
-Another example
-
-* 100,000, 1, 10,000, 100, 1,000, 1,000,000, 10
-* Average is 158,000
-* Smaller: 100,000, 1, 10,000, 100, 1,000, 10
-* Larger: 1,000,000
-
-Hmmm
-
-* Let's try this with smaller. 
-* Average is about 20,000
-* Smaller: 1, 10,000, 100, 1,000, 10
-* Larger: 100,000
-
-Hmmm
-
-We are splitting into one thing and n-1 things. So this won't be any
-better than our previous sorts. At least not for this example.
-
-If we split at the median rather than average, th two halves will be
-approximately equal in size. (Finding the median is hard.)
-
-Implementing sorting algorithms
--------------------------------
-
-_TPS: Selection Sort_ 
-
-* Find the smallest in the list
-* Put it at the front `(cons (smallest lst less-than?) ...)`
+* Find the smallest value in the list.
 * Remove it from the list.
-* Repeat/Recurse
-
-You'll need to implement
-
-* `(smallest lst less-equal?)`
-* `(remove val lst)`
-* `(selection-sort lst less-equal?)`
+* Move to the front.
+* Recurse on the rest.
 
 ```
 (define smallest
   (lambda (lst less-equal?)
-    (reduce (lambda (x y) (if (less-equal? x y) x y))
+    (reduce (lambda (a b) (if (less-equal? a b) a b))
             lst)))
-```
 
-`remove` is already defined.
-
-```
 (define selection-sort
   (lambda (lst less-equal?)
     (if (null? lst)
@@ -359,4 +286,13 @@ You'll need to implement
         (let ([s (smallest lst less-equal?)])
           (cons s
                 (selection-sort (remove s lst) less-equal?))))))
+```
+
+Implementing sorting algorithms
+-------------------------------
+
+_TPS: Document_
+
+```
+;;; (sort ???) -> ???
 ```
