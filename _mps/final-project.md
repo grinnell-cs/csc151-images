@@ -155,6 +155,7 @@ _There are no redos available for this project._
 [ ] All procedures documented clearly
 [ ] Almost no inefficient or otherwise bad code
 [ ] A well-organized code file
+[ ] Project handles different aspect ratios
 ```
 
 Questions and answers
@@ -244,9 +245,58 @@ What procedure should we use to make blends?
 
 > I'd suggest `image-compute` or `pixel-pos-map`.
 
-Can we use procedures to scale our image?
+Can we use `hscale` and `vscale` to scale our image?
 
 > I'd prefer not.
+
+Can we pad our image on both the sides and top and bottom?
+
+> No. You may only pad on either the sides or the top and bottom. If
+  the width and height change, your image should scale based on them.
+
+Code snippets
+-------------
+
+How can I crop a circle?
+
+> Using the [`(crop img left top width height description)`](https://rebelsky.cs.grinnell.edu/Courses/CSC151/reference/procs/crop.html) procedure.
+
+```
+(define cropped-ellipse
+  (lambda (width height color)
+    (crop (solid-ellipse (* 9/8 width)
+                         (* 9/8 height)
+                         color)
+          (* 1/16 width)
+          (* 1/16 height)
+          width
+          height
+          "A cropped ellipse")))
+```
+
+> You will, of course, have to play with the factors.
+
+How can I make a rainbow rectangle?
+
+> Using `image-compute` and HSV colors.
+
+```
+(define rainbow-rectangle
+  (lambda (width height)
+    (image-compute (lambda (col row)
+                     (hsv->rgb (hsv (* 360 (/ col width)) 100 100)))
+                   width
+                   height
+                   (string-append "a "
+                                  (number->string width)
+                                  "-by-"
+                                  (number->string height)
+                                  " rainbow rectangle"))))
+```
+
+I've forgotten. How do I make parts of my image transparent?
+
+> The `(white->transparent 
 
 Acknowledgements
 ----------------
