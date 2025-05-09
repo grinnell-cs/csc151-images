@@ -1,9 +1,9 @@
 ---
-title: "EBoard 40: Wrapup (Section 1)"
+title: "EBoard 40: Wrapup (Section 2)"
 number: 40
 section: eboards
 held: 2025-05-09
-link: true
+link: false
 ---
 # {{ page.title }}
 
@@ -154,7 +154,6 @@ How about if I visit two therapy dogs in the same session?
 Three?
 
 > No.
-
 A class activity, part 1
 ------------------------
 
@@ -163,35 +162,19 @@ Grab white cards.  Write things down.  Whee!
 "The subject matter of this class"
 ----------------------------------
 
-* "_Fill in the blank_ helped me learn **the subject matter of this class**."
+* "_Fill in the blank_ helped me learn **the subject matter of this class.**"
+* Scheme programming, Computational Thinking, Functional Problem Solving,
+  How to build software (testing), General skills, ...
 * The broad subject matter of the class
     * This is a course intended to help you learn computational thinking,
       develop problem-solving skills, and introduce you to the functional
       model of computation/programming.
-* Scheme programming, Computational Thinking, Functional Problem Solving,
-  How to build software (testing), General skills, ...
 * Another perspective
     * The 24 LAs
 * Other things that aren't evaluated, but may still be important. (_TPS_)
     * Be kind.
     * Be snarky. Snark is love. (Maybe "snark is life", for Ted Lasso fans.)
-    * The components of an algorithm (sequencing, conditionals)
-    * Credit those you get help from
-    * We can teach ourselves; Sam is pointless
-    * Practice asking questions
-    * We have multiple audiences for our code; documentation helps!
-    * Decomposition is an important skill, one that need not be limited to CS
-    * You don't have to know everything; it's good to ask questions and
-      ask for help [+1]
-    * The class is hard; acknowledge that hard classes sometimes suck
-    * There was so much work that we learned how to manage our time better [+2]
-    * Use math
-    * Pair programming can be useful in other situations; think about the
-      driver and navigator paradigm.
-    * Pay attention
-    * The big five:
-      You are awesome. People care about you. Take care of yourselves. 
-      Moderation. Consent.
+    * ...
 
 EOCEs
 -----
@@ -207,5 +190,3 @@ See part 1.
 
 Final comments
 --------------
-
-
