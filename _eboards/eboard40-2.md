@@ -3,7 +3,7 @@ title: "EBoard 40: Wrapup (Section 2)"
 number: 40
 section: eboards
 held: 2025-05-09
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -154,6 +154,7 @@ How about if I visit two therapy dogs in the same session?
 Three?
 
 > No.
+
 A class activity, part 1
 ------------------------
 
@@ -163,18 +164,42 @@ Grab white cards.  Write things down.  Whee!
 ----------------------------------
 
 * "_Fill in the blank_ helped me learn **the subject matter of this class.**"
-* Scheme programming, Computational Thinking, Functional Problem Solving,
-  How to build software (testing), General skills, ...
 * The broad subject matter of the class
     * This is a course intended to help you learn computational thinking,
       develop problem-solving skills, and introduce you to the functional
       model of computation/programming.
+* Scheme programming, Computational Thinking, Functional Problem Solving,
+  How to build software (testing), General skills, ...
 * Another perspective
     * The 24 LAs
 * Other things that aren't evaluated, but may still be important. (_TPS_)
     * Be kind.
     * Be snarky. Snark is love. (Maybe "snark is life", for Ted Lasso fans.)
-    * ...
+    * Speak up when your professor behaves inappropriately
+    * The Tennis team has an easy in-conference schedule (see "be snarky")
+    * Aesthetics of code are important
+    * Don't spend fifteen hours working on a homework assignment, even
+      if you're having fun doing so.
+        * And it's not fifteen hours when you're simultaneously watching
+          a TV show and playing Smash Bros.
+    * Use Math [+1]
+    * It's good to have ethics
+    * Practice getting out of your comfort zone and working with people
+      you don't know. [+3]
+    * Listening to others.
+    * It's okay to ask questions when you don't understand. Advocate for
+      yourself.
+    * Time management. (Forced upon you by astoundingly reasonable workload.) 
+      [+1]
+    * Self confidence.
+    * Snark is amazing.  "You need a Caden."
+    * Sometimes students dominate discussion in class. Ignore them.
+    * Five important things.
+        * You are awesome.
+        * People care about you.
+        * You have a responsibility to take of your ourselves.
+        * Be moderate.
+        * Consent is essential but insufficient.
 
 EOCEs
 -----
@@ -190,3 +215,5 @@ See part 1.
 
 Final comments
 --------------
+
+

@@ -3,7 +3,7 @@ title: "EBoard 40: Wrapup (Section 3)"
 number: 40
 section: eboards
 held: 2025-05-09
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -47,6 +47,8 @@ Artistic
 
 * Any day it's open. GCMoA.
   _BAX_
+* Friday, 9 May 2025 5:00 p.m. until 24 hours later. Where it always is.
+  _30 minutes of 24 hours of improv_
 
 Multicultural
 
@@ -55,10 +57,17 @@ Peer
 _Musical, theatric, sporting, and academic events involving this section's
 students are welcome._
 
+* Sunday 11 May 2025, 11:59pm, Grin City.
+  _Bakery run_ (bring your pcard)
+* Monday, 12 May 2025, 5pm. Bucksbaum Rotunda.
+  _Con Brio sings Beyonce and others (Cowboy Carter Mashup)_
+
 Wellness
 
 * Tonight.
   _Noyce at Nerf_
+* Sunday 11 May 2025, 11:00pm. Your bedroom. (Or your partner's.)
+  _Go to bed for the night._
 * Tuesday, 13 May 2025, 5:00--6:00 p.m., HSSC Atrium.
   _Therapy Dogs_.
 * Tuesday, 13 May 2025, 7:15--8:15 p.m., HSSC Atrium.
@@ -154,27 +163,55 @@ How about if I visit two therapy dogs in the same session?
 Three?
 
 > No.
+
+An arbitrarily large number?
+
+> No.
+
+Are there therapy cats?
+
+> Not that anyone has told me about. I'll suggest them if I can figure
+  out who to suggest them to.
+
 A class activity, part 1
 ------------------------
 
-Grab white cards.  Write things down.  Whee!
+Grab white cards. Write things down. Whee!
 
 "The subject matter of this class"
 ----------------------------------
 
 * "_Fill in the blank_ helped me learn **the subject matter of this class.**"
-* Scheme programming, Computational Thinking, Functional Problem Solving,
-  How to build software (testing), General skills, ...
 * The broad subject matter of the class
     * This is a course intended to help you learn computational thinking,
       develop problem-solving skills, and introduce you to the functional
       model of computation/programming.
+* Scheme programming, Computational Thinking, Functional Problem Solving,
+  How to build software (testing), General skills, ...
 * Another perspective
     * The 24 LAs
 * Other things that aren't evaluated, but may still be important. (_TPS_)
     * Be kind.
     * Be snarky. Snark is love. (Maybe "snark is life", for Ted Lasso fans.)
-    * ...
+    * Tokens teach you to manage your obligations
+    * Value the ideas of others, even if they are different than you
+    * Use Math
+    * You have awesome classmates; support them
+    * Be patient; you won't always get an answer immediately
+    * Sam gave us so much damn work that we had to learn how to manage our
+      time.
+    * Cooperate with others.
+    * Eat, bubala, eat. (Learning is better with snax.)
+    * Pavlov was right.
+    * It's okay to ask for help. It's often the right thing to do.
+    * College is supposed to be hard. Keep trying. You can do it.
+    * Never lose your childlike wonder. (Believe in the magic recursion fairy.)
+    * Five things
+        * You are awesome.
+        * You should take care of yourselves.
+        * People care about you.
+        * Moderation.
+        * Consent is essential but insufficient.
 
 EOCEs
 -----
@@ -190,3 +227,5 @@ See part 1.
 
 Final comments
 --------------
+
+
