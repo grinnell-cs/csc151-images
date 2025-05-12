@@ -140,10 +140,12 @@ _There are no redos available for this project._
 [ ] Includes two recursive procedures
 [ ] Includes two mechanisms for image making
 [ ] All team members document spending at least 5 hours on the project
+    (affects individuals, not group)
 [ ] Presentation is approximately 5 minutes
 [ ] Presentation includes goals and code description
 [ ] Answered questions well
 [ ] Code correctly formatted (a few mistakes are permissible)
+[ ] Post-reflections (affects individuals, not group)
 ```
 
 ### Required for E
