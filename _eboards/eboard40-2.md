@@ -1,5 +1,5 @@
 ---
-title: "EBoard 40: Wrapup (Section 1)"
+title: "EBoard 40: Wrapup (Section 2)"
 number: 40
 section: eboards
 held: 2025-05-09
@@ -163,7 +163,7 @@ Grab white cards.  Write things down.  Whee!
 "The subject matter of this class"
 ----------------------------------
 
-* "_Fill in the blank_ helped me learn **the subject matter of this class**."
+* "_Fill in the blank_ helped me learn **the subject matter of this class.**"
 * The broad subject matter of the class
     * This is a course intended to help you learn computational thinking,
       develop problem-solving skills, and introduce you to the functional
@@ -175,23 +175,31 @@ Grab white cards.  Write things down.  Whee!
 * Other things that aren't evaluated, but may still be important. (_TPS_)
     * Be kind.
     * Be snarky. Snark is love. (Maybe "snark is life", for Ted Lasso fans.)
-    * The components of an algorithm (sequencing, conditionals)
-    * Credit those you get help from
-    * We can teach ourselves; Sam is pointless
-    * Practice asking questions
-    * We have multiple audiences for our code; documentation helps!
-    * Decomposition is an important skill, one that need not be limited to CS
-    * You don't have to know everything; it's good to ask questions and
-      ask for help [+1]
-    * The class is hard; acknowledge that hard classes sometimes suck
-    * There was so much work that we learned how to manage our time better [+2]
-    * Use math
-    * Pair programming can be useful in other situations; think about the
-      driver and navigator paradigm.
-    * Pay attention
-    * The big five:
-      You are awesome. People care about you. Take care of yourselves. 
-      Moderation. Consent.
+    * Speak up when your professor behaves inappropriately
+    * The Tennis team has an easy in-conference schedule (see "be snarky")
+    * Aesthetics of code are important
+    * Don't spend fifteen hours working on a homework assignment, even
+      if you're having fun doing so.
+        * And it's not fifteen hours when you're simultaneously watching
+          a TV show and playing Smash Bros.
+    * Use Math [+1]
+    * It's good to have ethics
+    * Practice getting out of your comfort zone and working with people
+      you don't know. [+3]
+    * Listening to others.
+    * It's okay to ask questions when you don't understand. Advocate for
+      yourself.
+    * Time management. (Forced upon you by astoundingly reasonable workload.) 
+      [+1]
+    * Self confidence.
+    * Snark is amazing.  "You need a Caden."
+    * Sometimes students dominate discussion in class. Ignore them.
+    * Five important things.
+        * You are awesome.
+        * People care about you.
+        * You have a responsibility to take of your ourselves.
+        * Be moderate.
+        * Consent is essential but insufficient.
 
 EOCEs
 -----
