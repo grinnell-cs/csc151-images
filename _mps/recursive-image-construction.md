@@ -91,7 +91,7 @@ _Note: You may find it useful to have the `ab` version call the `ba` version, an
 
 d. Of course, it makes sense to generalize our procedures. For the purposes of this assignment, we'll only ask you to generalize one.
 
-Document, write at least four tests for, and implement a procedure, `(combine-neighbors-above n images)`, that takes a positive integer and a list of images as parameters, and combines them much like `combine-pairs-above`, except that it combines `n` images beside each other, rather than two.
+Document, write at least four tests for, and implement a procedure, `(combine-neighbors-above n images)`, that takes a positive integer and a list of images as parameters, and combines them much like `combine-pairs-above`, except that it combines `n` images above each other, rather than two.
 
 _Note that due to infelicities with HTML, although the following lists appear bottom-aligned in HTML, they appear center-aligned here._
 
@@ -103,6 +103,9 @@ _Note that due to infelicities with HTML, although the following lists appear bo
 
 > (combine-neighbors-above 5 (make-list 11 (solid-ellipse 20 10 "red")))
 '(![a stack of five red ellipses](../images/mps/recursive-image-construction/five-red-ellipses.png) ![a stack of five red ellipses](../images/mps/recursive-image-construction/five-red-ellipses.png) ![one red ellipse](../images/mps/recursive-image-construction/one-red-ellipse.png))
+
+> (combine-neighbors above 5 null)
+'()
 ```
 
 You will likely find the following variants of `take` and `drop` useful.
