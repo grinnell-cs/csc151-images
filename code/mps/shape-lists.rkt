@@ -4,8 +4,8 @@
 (require rackunit)
 
 ;;; shape-lists.rkt
-;;;   A variety of procedures that transform images, created for MP4 in
-;;;   CSC-151-XX 2024Sp.
+;;;   A variety of procedures that transform images, created for MP5 in
+;;;   CSC-151-XX SEMESTER.
 ;;;
 ;;; Author: Your Name Here
 ;;; Date submitted: YYYY-MM-DD
