@@ -25,7 +25,7 @@ When submitting a redo, you must limit yourself to the aspects of Scheme we had 
 
 ## The `CHANGES.rkt` file
 
-To ease our graders' workload, we ask that you submit a file called `CHANGES.rkt` along with the updated files for each redo. In the `CHANGES.rkt` file, you should include the following (as one or more Racket comments).
+To ease our graders' workload, we ask that you submit a file called `CHANGES.rkt` along with the updated files for each redo (or for your first submission if you missed the initial submission). In the `CHANGES.rkt` file, you should include the following (as one or more Racket comments).
 
 * A header giving the basic information.
 * Information about the previous version you submitted. (E.g., "I was unable to submit the original assignment" or "I submitted the original version but not the first redo.")
@@ -67,5 +67,19 @@ Issues I've addressed
   fixed that both where they noted it and also in `combine-all`. I've
   also been careful to reindent with Ctrl-I before submitting.
 
+|#
+```
+
+Here's a sample `CHANGES.rkt` file for someone submitting the first time as a redo.
+
+```
+#lang racket
+#|
+Mini-Project 2, Second Redo
+River Smith
+2025-02-17
+
+Prior version: None.
+  I did not submit the assignment previously.
 |#
 ```
