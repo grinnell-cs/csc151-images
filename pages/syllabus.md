@@ -279,7 +279,7 @@ Because I care more that you learn the material than that you learn it by a part
 
 In contrast, redos on reading responses, lab writeups, and metacognitive reflections are are rarely permitted.  Please speak with me if you would like to redo a reading response or lab writeup. Since metacognitive reflections only work when done with a task, you may not make those up.
 
-Your first redo on a mini-project is generally free.  Subsequent redos on mini-projects may require tokens; see [the handout on tokens](../handouts/tokens) for details.  When you receive a graded mini-project, it will generally include a checklist of issues that you must address to get a higher grade.  Please reproduce the checklist in your re-done project.  Where appropriate, you should indicate how you addressed the issues we have described. Please see the [handout on redoing mini-projects](../handouts/redos) for more details. You may only earn an E on a mini-project on the initial submission or the first redo.
+Your first redo on a mini-project is generally free. Subsequent redos on mini-projects may require tokens; see [the handout on tokens](../handouts/tokens) for details. When you receive a graded mini-project, it will generally include a checklist of issues that you must address to get a higher grade. Please reproduce the checklist in your re-done project. Where appropriate, you should indicate how you addressed the issues we have described. When re-doing a project, you may not use new Scheme features that you've learned since the project; Please see the [handout on redoing mini-projects](../handouts/redos) for more details.
 
 ### Final deadline for all work
 
