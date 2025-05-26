@@ -200,7 +200,7 @@ We rely on six kinds of work to assess your mastery of the material.
 
 *Mini-projects* (MPs) are designed to give you the opportunity to demonstrate your knowledge and mastery on more complex problems.  Work you turn in for mini-projects should be your own.  You may consult others for ideas and help, provided you appropriately acknowledge that help.
 
-Mini-projects are graded on an EMRI scale. E is "Excellent or Exemplar". M is "Meets Expectations", the standard grade for a correct assignment. R is "Redo", the grade you'll receive for an assignment that does shows incomplete understanding. And I is "Incomplete", the grade you'll receive for an assignment that is missing key components. These grades will appear as 3, 2, 1, and 0 on Gradescope.
+Mini-projects are graded on an EMRI scale. E is "Excellent or Exemplar". M is "Meets Expectations", the standard grade for a correct assignment. R is "Redo", the grade you'll receive for an assignment that does shows incomplete understanding. And I is "Incomplete", the grade you'll receive for an assignment that is missing key components. These grades will appear as 4, 3, 2, and 1 on Gradescope.
 
 +*Learning assessments* (LAs) are designed to demonstrate your mastery of the courses naturally measurable learning goals.  You may only discuss these deliverables with the course staff.  (Since not all students will choose to take LAs at times that the course staff are available, the only questions the course staff are likely to answer are whether there's an error in a problem.)  These deliverables are checked for both correctness and appropriate design.  Learning assessments will come in at least two different forms: Weekly in-class quizzes (on Fridays) and regular take-home examinations/SoLAs (distributed on Mondays and due on Wednesdays at {{ site.evening_due_time }}).
 
@@ -269,7 +269,7 @@ Because I care more that you learn the material than that you learn it by a part
 
 In contrast, redos on reading responses, lab writeups, and metacognitive reflections are are rarely permitted.  Please speak with me if you would like to redo a reading response or lab writeup. Since metacognitive reflections only work when done with a task, you may not make those up.
 
-Your first redo on a mini-project is generally free.  Subsequent redos on mini-projects may require tokens; see [the handout on tokens](../handouts/tokens) for details.  When you receive a graded mini-project, it will generally include a checklist of issues that you must address to get a higher grade.  Please reproduce the checklist in your re-done project.  Where appropriate, you should indicate how you addressed the issues we have described. Please see the [handout on redoing mini-projects](../handouts/redos) for more details.
+Your first redo on a mini-project is generally free. Subsequent redos on mini-projects may require tokens; see [the handout on tokens](../handouts/tokens) for details. When you receive a graded mini-project, it will generally include a checklist of issues that you must address to get a higher grade. Please reproduce the checklist in your re-done project. Where appropriate, you should indicate how you addressed the issues we have described. When re-doing a project, you may not use new Scheme features that you've learned since the project; Please see the [handout on redoing mini-projects](../handouts/redos) for more details.
 
 ### Final deadline for all work
 
