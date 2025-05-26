@@ -13,7 +13,7 @@ collaboration: |
 link: true
 preimg: true
 ---
-You will create only one file for this mini-project, [`image-transformations.rkt`](../code/image-transformations.rkt). You should begin your project with [this starter code](../code/mps/image-transformations.rkt).
+You will create only one file for this mini-project, [`image-transformations.rkt`](../code/mps/image-transformations.rkt). You should begin your project with [this starter code](../code/mps/image-transformations.rkt).
 
 You will submit both that file and some images you create in part three.
 
